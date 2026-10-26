@@ -11,12 +11,12 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { TrailerModal } from '@/components/trailer-modal';
 import { useTracking } from '@/hooks/use-tracking';
-import { canNavigate, cardBadges, filterYears, inEra, orderFilms, shuffleIds, overviewSentences, TRACKING_KEYS, type Provider } from '@/lib/discovery';
+import { canNavigate, cardBadges, inEra, orderFilms, shuffleIds, sortByRating, overviewSentences, TRACKING_KEYS, type Era, type Provider } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
 const years = (f: { year: number; yearEnd?: number }) => f.yearEnd ? `${f.year}–${f.yearEnd}` : String(f.year);
-const DECADES = [...new Set(CATALOGUE.map(f => Math.floor(f.year / 10) * 10))].sort();
+const ERAS: [Era, string][] = [['all', 'All eras'], ['recent', 'Recent'], ['2020s', '2020s'], ['2010s', '2010s'], ['2000s', '2000s'], ['pre2000', 'Pre-2000']];
 
 // Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched opens a saved list, ?q= is the search.
 const searchDefaults = { film: '', q: '', list: '' };
@@ -89,8 +89,7 @@ function Index() {
   const [type, setType] = useState<'all' | 'movie' | 'tv'>('all'); const [shown, setShown] = useState(PAGE);
   const [shortlist, toggleShort] = useTracking(TRACKING_KEYS.shortlist);
   const [watched, toggleWatched] = useTracking(TRACKING_KEYS.watched);
-  const [from, setFrom] = useState(''); const [to, setTo] = useState('');
-  const [decade, setDecade] = useState('all'); const [era, setEra] = useState<'all' | 'pre2000'>('all'); const [sort, setSort] = useState('random');
+  const [era, setEra] = useState<Era>('all'); const [sort, setSort] = useState('random');
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [backdrop, setBackdrop] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -98,9 +97,13 @@ function Index() {
   const fetchProviders = useServerFn(getIrishProviders);
   const list = useMemo(() => {
     const base = listFilter === 'shortlist' ? CATALOGUE.filter(f => shortlist.has(f.id)) : listFilter === 'watched' ? CATALOGUE.filter(f => watched.has(f.id)) : CATALOGUE;
-    return filterYears(searchCatalogue(sort === 'random' ? orderFilms(base, order) : base, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter)), from ? Number(from) : undefined, to ? Number(to) : undefined, decade, sort);
-  }, [filter, listFilter, shortlist, watched, from, to, decade, sort, query, type, era, order]);
-  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, from, to, decade, sort, era]);
+    const filtered = searchCatalogue(sort === 'random' ? orderFilms(base, order) : base, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter));
+    if (sort === 'imdb' || sort === 'rt') return sortByRating(filtered, SNAPSHOT, sort === 'imdb' ? 'imdb' : 'rottenTomatoes');
+    if (sort === 'newest') return [...filtered].sort((a, b) => b.year - a.year);
+    if (sort === 'oldest') return [...filtered].sort((a, b) => a.year - b.year);
+    return filtered;
+  }, [filter, listFilter, shortlist, watched, sort, query, type, era, order]);
+  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era]);
   // A shared link may name a film outside the current filters; show it anyway.
   const film = list.find(f => f.id === search.film) ?? CATALOGUE.find(f => f.id === search.film) ?? list[0];
   const idx = list.findIndex(f => f.id === film?.id);
@@ -134,8 +137,8 @@ function Index() {
     catch { window.prompt('Copy this link', url); }
   };
   const toggleList = (which: 'shortlist' | 'watched') => navigate({ search: prev => ({ ...prev, list: prev.list === which ? '' : which }) });
-  const clearFilters = () => { setFilter('all'); setFrom(''); setTo(''); setDecade('all'); setEra('all'); setType('all'); setSort('random'); updateQuery(''); if (listFilter) navigate({ search: prev => ({ ...prev, list: '' }) }); };
-  const activeFilters = [from, to, decade !== 'all', era !== 'all', sort !== 'random', listFilter === 'watched'].filter(Boolean).length;
+  const clearFilters = () => { setFilter('all'); setEra('all'); setType('all'); setSort('random'); updateQuery(''); if (listFilter) navigate({ search: prev => ({ ...prev, list: '' }) }); };
+  const activeFilters = [type !== 'all', sort !== 'random', listFilter === 'watched'].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
@@ -145,24 +148,19 @@ function Index() {
       <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={backToGallery}><Grid2X2 />Gallery</Button>
       <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Bookmark className={listFilter === 'shortlist' ? 'fill-primary text-primary' : ''} />Shortlist<span className="text-xs opacity-70">{shortlist.size}</span></Button>
     </div>
-    <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto py-2 no-scrollbar lg:flex-wrap lg:overflow-visible">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
+    <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto pt-2 no-scrollbar sm:flex-wrap sm:overflow-visible">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
+    <div className="flex flex-wrap items-center gap-1 py-1" role="group" aria-label="Era">
+      {ERAS.map(([id, label]) => <Button key={id} size="sm" variant={era === id ? 'default' : 'ghost'} aria-pressed={era === id} title={id === 'recent' ? 'Released in the last two years' : undefined} onClick={() => setEra(id)}>{label}</Button>)}
+    </div>
     <div className="mb-4 flex flex-wrap items-end gap-2 border-b border-border pb-3">
       <label className="min-w-40 flex-1 text-xs text-muted-foreground">Search<Input aria-label="Search title, alias or director" type="search" placeholder="Title, alias or director" value={query} onChange={e => updateQuery(e.target.value)} className="mt-1 h-8" /></label>
-      <label className="text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select" value={type} onChange={e => setType(e.target.value as 'all' | 'movie' | 'tv')}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
       <Popover open={filtersOpen} onOpenChange={setFiltersOpen}>
         <PopoverTrigger asChild><Button size="sm" variant="outline" className="self-end" aria-label="More filters"><SlidersHorizontal />Filters{activeFilters > 0 && <span className="rounded-full bg-primary px-1.5 text-[10px] font-semibold text-primary-foreground">{activeFilters}</span>}</Button></PopoverTrigger>
         <PopoverContent align="end" className="w-72">
           <div className="space-y-3">
-            <div className="flex gap-2">
-              <label className="flex-1 text-xs text-muted-foreground">From<Input aria-label="From year" type="number" min="1900" max="2100" placeholder="Any" value={from} onChange={e => setFrom(e.target.value)} className="mt-1 h-8" /></label>
-              <label className="flex-1 text-xs text-muted-foreground">To<Input aria-label="To year" type="number" min="1900" max="2100" placeholder="Any" value={to} onChange={e => setTo(e.target.value)} className="mt-1 h-8" /></label>
-            </div>
-            <div className="flex gap-2">
-              <label className="flex-1 text-xs text-muted-foreground">Decade<select aria-label="Decade" className="discovery-select w-full" value={decade} onChange={e => setDecade(e.target.value)}><option value="all">All decades</option>{DECADES.map(d => <option key={d} value={d}>{d}s</option>)}</select></label>
-              <label className="flex-1 text-xs text-muted-foreground">Order<select aria-label="Year sorting" className="discovery-select w-full" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
-            </div>
-            <div className="flex flex-wrap gap-1" role="group" aria-label="Era">
-              <Button size="sm" variant={era === 'pre2000' ? 'default' : 'outline'} aria-pressed={era === 'pre2000'} onClick={() => setEra(era === 'pre2000' ? 'all' : 'pre2000')}>Before 2000</Button>
+            <label className="block text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select mt-1 w-full" value={type} onChange={e => setType(e.target.value as 'all' | 'movie' | 'tv')}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
+            <label className="block text-xs text-muted-foreground">Order<select aria-label="Sort order" className="discovery-select mt-1 w-full" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="imdb">Top IMDb</option><option value="rt">Top Rotten Tomatoes</option></select></label>
+            <div className="flex flex-wrap gap-1">
               <Button size="sm" variant={listFilter === 'watched' ? 'default' : 'outline'} aria-pressed={listFilter === 'watched'} onClick={() => toggleList('watched')}><Check />Watched · {watched.size}</Button>
               <Button size="sm" variant="outline" onClick={reshuffle}><Shuffle />Shuffle</Button>
             </div>

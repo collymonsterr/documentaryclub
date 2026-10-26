@@ -80,6 +80,9 @@ describe('live Irish providers', () => {
 });
 
 describe('list page category coverage', () => {
+  it('every title has exactly one home category', () => {
+    expect(CATALOGUE.every(f => f.categories.length === 1)).toBe(true);
+  });
   it('every title appears under at least one category and every category is non-empty', () => {
     expect(CATALOGUE.every(f => f.categories.length >= 1)).toBe(true);
     for (const c of CATEGORIES) expect(CATALOGUE.some(f => f.categories.includes(c.id))).toBe(true);

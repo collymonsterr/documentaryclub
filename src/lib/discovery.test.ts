@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, cardBadges, filterYears, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardBadges, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, sortByRating, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -15,12 +15,20 @@ describe('curated catalogue and tracking', () => {
     localStorage.clear();
   });
 });
-describe('years', () => {
-  it('filters an inclusive year range', () => { expect(filterYears(FILMS,2023,2023,'all','curated').map(f => f.year)).toEqual(Array(6).fill(2023)); });
-  it('filters decades without losing the 2019 exception', () => { expect(filterYears(FILMS,undefined,undefined,'2010','curated').map(f => f.id)).toEqual(['fantastic-fungi']); });
-  it('sorts years ascending and descending', () => {
-    expect(filterYears(FILMS,undefined,undefined,'all','oldest')[0]?.year).toBe(2019);
-    expect(filterYears(FILMS,undefined,undefined,'all','newest')[0]?.year).toBe(2025);
+describe('eras and rating sort', () => {
+  it('pre-2000 includes 1999 and excludes 2000', () => { expect(inEra(1999, 'pre2000')).toBe(true); expect(inEra(2000, 'pre2000')).toBe(false); });
+  it('recent covers the last two years and decades are inclusive', () => {
+    expect(inEra(2025, 'recent', 2026)).toBe(true); expect(inEra(2024, 'recent', 2026)).toBe(true); expect(inEra(2023, 'recent', 2026)).toBe(false);
+    expect(inEra(2010, '2010s')).toBe(true); expect(inEra(2019, '2010s')).toBe(true); expect(inEra(2020, '2010s')).toBe(false);
+    expect(inEra(1999, '2000s')).toBe(false); expect(inEra(2019, 'all')).toBe(true);
+  });
+  it('sorts by rating with unrated titles last', () => {
+    const snap = { a: { omdb: { imdb: 7.1 } }, b: { omdb: { imdb: 8.4 } }, c: {} };
+    expect(sortByRating([{ id: 'a' }, { id: 'b' }, { id: 'c' }], snap, 'imdb').map(f => f.id)).toEqual(['b', 'a', 'c']);
+  });
+  it('firstSentence keeps only the opening sentence', () => {
+    expect(firstSentence('One two. Three four. Five.')).toBe('One two.');
+    expect(firstSentence('No terminator here')).toBe('No terminator here');
   });
 });
 describe('safe TMDB selection', () => {
