@@ -117,7 +117,8 @@ async function batch3() {
       } else res = await resolve(BATCH3_ALIASES[`${r.title}|${r.year}`] ?? r.title, r.year);
       if (res.meta) {
         const ident = `${res.meta.mediaType}:${res.meta.tmdbId}`, dup = priorIds.get(ident) ?? claimed.get(ident);
-        if (dup) { out.push({ ...base, id: dup, status: 'existing-match-verified', reason: `same TMDB identity ${ident}` }); continue; }
+        // A match against our own earlier snapshot entry (same id) is a re-resolve, not a duplicate.
+        if (dup && dup !== id) { out.push({ ...base, id: dup, status: 'existing-match-verified', reason: `same TMDB identity ${ident}` }); continue; }
         claimed.set(ident, id);
       }
       out.push({ ...base, id, status: res.status, reason: res.reason, chosen: res.meta ? { mediaType: res.meta.mediaType, tmdbId: res.meta.tmdbId, imdbId: res.meta.imdbId, canonicalTitle: res.meta.canonicalTitle, year: res.year, people: res.meta.people } : undefined, candidates: res.candidates });
