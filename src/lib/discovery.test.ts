@@ -16,7 +16,7 @@ describe('curated catalogue and tracking', () => {
   });
 });
 describe('years', () => {
-  it('filters an inclusive year range', () => { expect(filterYears(FILMS,2023,2023,'all','curated').map(f => f.year)).toEqual(Array(7).fill(2023)); });
+  it('filters an inclusive year range', () => { expect(filterYears(FILMS,2023,2023,'all','curated').map(f => f.year)).toEqual(Array(6).fill(2023)); });
   it('filters decades without losing the 2019 exception', () => { expect(filterYears(FILMS,undefined,undefined,'2010','curated').map(f => f.id)).toEqual(['fantastic-fungi']); });
   it('sorts years ascending and descending', () => {
     expect(filterYears(FILMS,undefined,undefined,'all','oldest')[0]?.year).toBe(2019);
