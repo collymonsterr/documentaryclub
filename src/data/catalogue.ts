@@ -22,7 +22,8 @@ const label = (id: string) => CATEGORIES.find(c => c.id === id)?.label ?? id;
 const batch2 = MANIFEST2.entries.filter(e => e.status === 'resolved' || e.status.startsWith('pending')).map(e => ({ title: e.input.title, year: e.input.year, yearEnd: e.input.yearEnd, category: SECTION[e.input.section] ?? 'strange' }));
 const imported: Film[] = [...IMPORT_LIST.filter(e => !MERGED_INTO[`${e.title}|${e.year}`]), ...batch2].map((e: { title: string; year: number; category: string; yearEnd?: number | undefined }) => {
   const id = importSlug(e.title), s = SNAPSHOT[id], resolved = s?.status === 'resolved';
-  const categories = (CATEGORY_OVERRIDES[e.title] ?? [e.category]) as Film['categories'];
+  // Strict 1-to-1 subjects: every title has exactly one home category (primary override wins).
+  const categories = [CATEGORY_OVERRIDES[e.title]?.[0] ?? e.category] as Film['categories'];
   const aliases = s?.canonicalTitle && s.canonicalTitle !== e.title ? [s.canonicalTitle] : [];
   return {
     id, title: e.title, year: e.year, director: s?.people?.join(', ') ?? '', genre: label(categories[0]!), categories,

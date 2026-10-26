@@ -94,13 +94,19 @@ export function selectAnyTrailer(videos?: { results?: { site: string; type: stri
   return pick('Trailer', true) ?? pick('Trailer') ?? pick('Teaser', true) ?? pick('Teaser');
 }
 
-// Era quick collection: 'pre2000' is release year < 2000 (1999 in, 2000 out). Series use first release year.
-export const inEra = (year: number, era: 'all' | 'pre2000') => era === 'all' || year < 2000;
-export function filterYears(films: Film[], from: number | undefined, to: number | undefined, decade: string, sort: string) {
-  const start = decade === 'all' ? undefined : Number(decade);
-  const list = films.filter(f => (from === undefined || f.year >= from) && (to === undefined || f.year <= to) &&
-    (start === undefined || (f.year >= start && f.year < start + 10)));
-  return sort === 'curated' || sort === 'random' ? list : [...list].sort((a, b) => sort === 'oldest' ? a.year - b.year : b.year - a.year);
+// Era facet: 'recent' = released within the last two years; decades are inclusive [start, start+10); 'pre2000' is year < 2000.
+export type Era = 'all' | 'recent' | '2020s' | '2010s' | '2000s' | 'pre2000';
+export function inEra(year: number, era: Era, now: number = new Date().getFullYear()) {
+  if (era === 'all') return true;
+  if (era === 'pre2000') return year < 2000;
+  if (era === 'recent') return year >= now - 2;
+  const start = Number(era.slice(0, 4));
+  return year >= start && year < start + 10;
+}
+// Rating sort: highest first, titles without that rating last (stable otherwise).
+export function sortByRating<T extends { id: string }>(films: T[], snap: Record<string, { omdb?: { imdb?: number | undefined; rottenTomatoes?: number | undefined } | undefined } | undefined>, key: 'imdb' | 'rottenTomatoes'): T[] {
+  const score = (id: string) => snap[id]?.omdb?.[key];
+  return [...films].sort((a, b) => (score(b.id) ?? -1) - (score(a.id) ?? -1));
 }
 
 export function canNavigate(target: EventTarget | null, dialogOpen: boolean) {

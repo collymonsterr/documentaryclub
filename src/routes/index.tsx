@@ -11,12 +11,12 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { TrailerModal } from '@/components/trailer-modal';
 import { useTracking } from '@/hooks/use-tracking';
-import { canNavigate, cardBadges, filterYears, inEra, orderFilms, shuffleIds, overviewSentences, TRACKING_KEYS, type Provider } from '@/lib/discovery';
+import { canNavigate, cardBadges, inEra, orderFilms, shuffleIds, sortByRating, overviewSentences, TRACKING_KEYS, type Era, type Provider } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
 const years = (f: { year: number; yearEnd?: number }) => f.yearEnd ? `${f.year}–${f.yearEnd}` : String(f.year);
-const DECADES = [...new Set(CATALOGUE.map(f => Math.floor(f.year / 10) * 10))].sort();
+const ERAS: [Era, string][] = [['all', 'All eras'], ['recent', 'Recent'], ['2020s', '2020s'], ['2010s', '2010s'], ['2000s', '2000s'], ['pre2000', 'Pre-2000']];
 
 // Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched opens a saved list, ?q= is the search.
 const searchDefaults = { film: '', q: '', list: '' };
@@ -89,8 +89,7 @@ function Index() {
   const [type, setType] = useState<'all' | 'movie' | 'tv'>('all'); const [shown, setShown] = useState(PAGE);
   const [shortlist, toggleShort] = useTracking(TRACKING_KEYS.shortlist);
   const [watched, toggleWatched] = useTracking(TRACKING_KEYS.watched);
-  const [from, setFrom] = useState(''); const [to, setTo] = useState('');
-  const [decade, setDecade] = useState('all'); const [era, setEra] = useState<'all' | 'pre2000'>('all'); const [sort, setSort] = useState('random');
+  const [era, setEra] = useState<Era>('all'); const [sort, setSort] = useState('random');
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [backdrop, setBackdrop] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
