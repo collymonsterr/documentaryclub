@@ -1,5 +1,7 @@
 // Approved brand mark: amber handheld camera (open top handle, dark side window and dot,
 // viewfinder wedge left, lens wedge right) + real text wordmark. Inline SVG, no banner image.
+import { Link } from '@tanstack/react-router';
+
 export function CameraMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 48" fill="none" aria-hidden="true" className={className}>
