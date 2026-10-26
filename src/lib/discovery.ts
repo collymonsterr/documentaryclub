@@ -29,7 +29,7 @@ export function matchMovie(film: Film, results: MovieCandidate[]): MovieCandidat
 type RawProvider = { provider_id: number; provider_name: string };
 type Region = { link?: string; flatrate?: RawProvider[]; rent?: RawProvider[]; buy?: RawProvider[] };
 export function parseIrishProviders(data?: { results?: Record<string, Region> }): Enrichment['providers'] {
-  const region = data?.results?.IE;
+  const region = data?.results?.['IE'];
   if (!region) return unknownProviders();
   const parse = (items?: RawProvider[]): Provider[] => [...new Map((items ?? []).filter(p => Number.isFinite(p.provider_id) && typeof p.provider_name === 'string').map(p => [p.provider_id, {
     id: p.provider_id, name: p.provider_name, highlighted: p.provider_id === 8 || p.provider_id === 9,
