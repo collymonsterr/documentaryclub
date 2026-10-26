@@ -9,3 +9,4 @@
 - [x] Discovery polish: Gallery default with per-visit shuffle, Shortlist in toggle row, Filters popover, hover rating badges, deep links (?film/?q/?list=), Share button, /list catalogue page, trailer backfill (283/306).
 - [x] Taxonomy rework: strict 1-to-1 subject categories, always-wrapping category pills, era facet row (All/Recent/2020s/2010s/2000s/Pre-2000), Filters panel reduced to Type/Order/Watched/Shuffle, Top IMDb and Top RT sorts.
 - [ ] Accolades facet (Oscar/Sundance winners & nominees) — deferred per user.
+- [ ] /list page: one-sentence summaries, boxed category sections, jump-link nav at top, keep AI-crawlable semantic HTML.
