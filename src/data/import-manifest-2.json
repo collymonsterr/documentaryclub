@@ -249,9 +249,18 @@
     "year": 1993
    },
    "id": "theremin-an-electronic-odyssey",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "evidence-pinned: 1993 festival premiere, TMDB release 1995",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 70042,
+    "imdbId": "tt0108323",
+    "canonicalTitle": "Theremin: An Electronic Odyssey",
+    "year": 1995,
+    "people": [
+     "Steven M. Martin"
+    ]
+   }
   },
   {
    "input": {
@@ -983,9 +992,18 @@
     "year": 1992
    },
    "id": "quiet-rage-the-stanford-prison-study",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "evidence-pinned: TMDB title Quiet Rage: The Stanford Prison Experiment",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 226763,
+    "imdbId": "tt3754572",
+    "canonicalTitle": "Quiet Rage: The Stanford Prison Experiment",
+    "year": 1992,
+    "people": [
+     "Ken Musen"
+    ]
+   }
   },
   {
    "input": {
@@ -1318,9 +1336,16 @@
     "year": 2021
    },
    "id": "sons-of-sam-a-descent-into-darkness",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "evidence-pinned: Netflix docuseries; TMDB title The Sons of Sam",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 122672,
+    "imdbId": "tt13156316",
+    "canonicalTitle": "The Sons of Sam: A Descent into Darkness",
+    "year": 2021,
+    "people": []
+   }
   },
   {
    "input": {
@@ -1965,9 +1990,18 @@
     "year": 1996
    },
    "id": "triumph-of-the-nerds",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "evidence-pinned: TMDB full title The Triumph of the Nerds: The Rise of Accidental Empires",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 15554,
+    "imdbId": "tt0115398",
+    "canonicalTitle": "The Triumph of the Nerds: The Rise of Accidental Empires",
+    "year": 1996,
+    "people": [
+     "Paul Sen"
+    ]
+   }
   },
   {
    "input": {
@@ -3473,9 +3507,18 @@
     "year": 2020
    },
    "id": "time",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "evidence-pinned: Garrett Bradley 2020 documentary (verified via director credits)",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 653729,
+    "imdbId": "tt11416746",
+    "canonicalTitle": "Time",
+    "year": 2020,
+    "people": [
+     "Garrett Bradley"
+    ]
+   }
   },
   {
    "input": {
@@ -3948,9 +3991,19 @@
     "year": 2011
    },
    "id": "5-broken-cameras",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "evidence-pinned: TMDB spells the number: Five Broken Cameras",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 84170,
+    "imdbId": "tt2125423",
+    "canonicalTitle": "Five Broken Cameras",
+    "year": 2011,
+    "people": [
+     "Guy Davidi",
+     "Emad Burnat"
+    ]
+   }
   },
   {
    "input": {
@@ -4770,9 +4823,18 @@
     "year": 2016
    },
    "id": "china-s-van-gogh",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "evidence-pinned: TMDB plural title China's Van Goghs",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 426619,
+    "imdbId": "tt6013920",
+    "canonicalTitle": "China's Van Goghs",
+    "year": 2016,
+    "people": [
+     "Yu Haibo"
+    ]
+   }
   },
   {
    "input": {
@@ -6512,22 +6574,18 @@
     "year": 2016
    },
    "id": "o-j-made-in-america",
-   "status": "pending-ambiguous",
-   "reason": "multiple verified documentary candidates",
-   "candidates": [
-    {
-     "mediaType": "movie",
-     "tmdbId": 377462,
-     "title": "O.J.: Made in America",
-     "year": 2016
-    },
-    {
-     "mediaType": "tv",
-     "tmdbId": 66738,
-     "title": "O.J.: Made in America",
-     "year": 2016
-    }
-   ]
+   "status": "resolved",
+   "reason": "evidence-pinned: Oscar-winning feature cut chosen over the identical ESPN miniseries listing",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 377462,
+    "imdbId": "tt5275892",
+    "canonicalTitle": "O.J.: Made in America",
+    "year": 2016,
+    "people": [
+     "Ezra Edelman"
+    ]
+   }
   },
   {
    "input": {

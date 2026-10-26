@@ -461,6 +461,14 @@ export const CATEGORY_OVERRIDES: Record<string, Subject[]> = {
 // shipwreck film, catalogued as "Endurance" (2024, Vasarhelyi/Chin/Hewit), not The Endurance (2000).
 export const BATCH2_PINS: Record<string, { media: 'movie' | 'tv'; id: number; evidence: RegExp; why: string }> = {
   'The Push|2018': { media: 'movie', id: 377319, evidence: /Derren Brown/, why: 'Derren Brown psychology experiment (cults/manipulation section); TMDB title Derren Brown: Pushed to the Edge' },
+  'Theremin: An Electronic Odyssey|1993': { media: 'movie', id: 70042, evidence: /Theremin/, why: '1993 festival premiere, TMDB release 1995' },
+  'Quiet Rage: The Stanford Prison Study|1992': { media: 'movie', id: 226763, evidence: /Zimbardo/, why: 'TMDB title Quiet Rage: The Stanford Prison Experiment' },
+  'Sons of Sam: A Descent into Darkness|2021': { media: 'tv', id: 122672, evidence: /Son of Sam/, why: 'Netflix docuseries; TMDB title The Sons of Sam' },
+  'Triumph of the Nerds|1996': { media: 'movie', id: 15554, evidence: /Triumph of the Nerds/, why: 'TMDB full title The Triumph of the Nerds: The Rise of Accidental Empires' },
+  'Time|2020': { media: 'movie', id: 653729, evidence: /^Time /, why: 'Garrett Bradley 2020 documentary (verified via director credits)' },
+  '5 Broken Cameras|2011': { media: 'movie', id: 84170, evidence: /Five Broken Cameras/, why: 'TMDB spells the number: Five Broken Cameras' },
+  "China's Van Gogh|2016": { media: 'movie', id: 426619, evidence: /China's Van Goghs/, why: "TMDB plural title China's Van Goghs" },
+  'O.J.: Made in America|2016': { media: 'movie', id: 377462, evidence: /O\.J\./, why: 'Oscar-winning feature cut chosen over the identical ESPN miniseries listing' },
   'The Endurance|2024': { media: 'movie', id: 947763, evidence: /Shackleton/, why: '2024 Shackleton shipwreck documentary by Vasarhelyi, Chin & Hewit; TMDB title Endurance' },
 };
 // Collections represented as one entry; parts outside the submitted range are excluded from coverage.
