@@ -2,7 +2,7 @@ import { createFileRoute, Link, stripSearchParams, useNavigate } from '@tanstack
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff, Search } from 'lucide-react';
 import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
 import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
@@ -67,6 +67,17 @@ function RatingLink({ site, film, score }: { site: 'imdb' | 'rt'; film: { title:
   const name = imdb ? 'IMDb' : 'Rotten Tomatoes';
   return <Popover><PopoverTrigger asChild><Button variant="outline" aria-label={`${name} rating`} className="px-2.5 font-bold">{imdb ? <span className="rounded-sm bg-primary px-1 text-[11px] text-primary-foreground">IMDb</span> : <span className="text-[11px] text-destructive">RT</span>}{score !== undefined && <span className="text-xs font-medium">{imdb ? score.toFixed(1) : `${score}%`}</span>}</Button></PopoverTrigger>
     <PopoverContent className="w-60 text-sm"><p className="text-xs text-muted-foreground">{name}</p><p className="mt-1 text-2xl font-semibold">{score === undefined ? 'No score' : imdb ? `${score.toFixed(1)}/10` : `${score}%`}</p>{!imdb && <p className="mt-1 text-xs text-muted-foreground">Tomatometer via OMDb.</p>}<Button asChild variant="link" size="sm" className="mt-2 h-auto px-0"><a href={href} target="_blank" rel="noreferrer">{imdb ? 'Open on IMDb' : 'Search on Rotten Tomatoes'}<ExternalLink /></a></Button></PopoverContent></Popover>;
+}
+// Free, legal viewing searches only (no piracy sources).
+function FreeLegal({ film }: { film: { title: string; year: number } }) {
+  const q = encodeURIComponent(film.title);
+  const links = [
+    ['YouTube (full length)', `https://www.youtube.com/results?search_query=${encodeURIComponent(`${film.title} ${film.year} full documentary`)}`],
+    ['Internet Archive', `https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22movies%22`],
+    ['Kanopy (library card)', `https://www.kanopy.com/en/search?query=${q}`],
+  ] as const;
+  return <Popover><PopoverTrigger asChild><Button variant="outline"><Search />Find it free</Button></PopoverTrigger>
+    <PopoverContent className="w-64"><p className="mb-1 text-xs text-muted-foreground">Free, legal sources — results not verified.</p>{links.map(([label, href]) => <Button key={label} asChild variant="link" size="sm" className="h-auto w-full justify-start px-0 py-1"><a href={href} target="_blank" rel="noreferrer">{label}<ExternalLink /></a></Button>)}</PopoverContent></Popover>;
 }
 function Index() {
   const search = Route.useSearch();
@@ -234,7 +245,7 @@ function Index() {
           <p className="mt-3 text-sm leading-relaxed text-foreground/90">{extra?.overview ? overviewSentences(`${extra.overview}${(extra.overview.match(/[.!?](?:\s|$)/g)?.length ?? 0) < 2 ? ` ${NOTES[film.id] ?? ''}` : ''}`) : `${film.synopsis} ${NOTES[film.id] ?? ''}`}</p>
           {!!film.awards.length && <ul className="mt-3 space-y-1">{film.awards.map(a => <li key={a} className="flex gap-2 text-xs leading-relaxed text-accent-foreground"><Award className="mt-0.5 size-3 shrink-0" />{a}</li>)}</ul>}
           {extra?.omdb?.awards && <p className="mt-2 text-xs leading-relaxed text-muted-foreground"><span className="font-medium">OMDb awards: </span>{extra.omdb.awards}</p>}
-          <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Heart className={shortlist.has(film.id) ? 'fill-red-500 text-red-500' : ''} />{shortlist.has(film.id) ? 'Saved' : 'Save'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button><RatingLink site="imdb" film={film} score={extra?.omdb?.imdb} /><RatingLink site="rt" film={film} score={extra?.omdb?.rottenTomatoes} /><Button variant="outline" onClick={share}><Link2 />{copied ? 'Link copied' : 'Share'}</Button></div>
+          <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Heart className={shortlist.has(film.id) ? 'fill-red-500 text-red-500' : ''} />{shortlist.has(film.id) ? 'Saved' : 'Save'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button><RatingLink site="imdb" film={film} score={extra?.omdb?.imdb} /><RatingLink site="rt" film={film} score={extra?.omdb?.rottenTomatoes} /><FreeLegal film={film} /><Button variant="outline" onClick={share}><Link2 />{copied ? 'Link copied' : 'Share'}</Button></div>
           <div className="mt-4 border-t border-border pt-3"><h3 className="mb-2 text-xs font-semibold">Watch in Ireland</h3>{providers.isFetching ? <p className="mb-2 text-xs text-muted-foreground" role="status">Checking Irish availability…</p> : !extra?.providers?.known && <p className="mb-2 text-xs text-muted-foreground">Availability unknown — check JustWatch.</p>}<div className="space-y-1"><Providers label="Subscription" items={extra?.providers?.flatrate ?? []} subscription /><Providers label="Rent" items={extra?.providers?.rent ?? []} /><Providers label="Buy" items={extra?.providers?.buy ?? []} /></div><Button asChild variant="link" size="sm" className="mt-1 h-auto px-0"><a href={extra?.providers?.link ?? justWatchLink(film)} target="_blank" rel="noreferrer">{extra?.providers?.link ? 'Check Irish availability' : 'Search JustWatch Ireland'}<ExternalLink /></a></Button></div>
           {!!extra?.backdrops?.length && <div className="mt-3 flex items-center gap-2"><span className="text-xs text-muted-foreground">Scene</span><Button variant="ghost" size="sm" aria-pressed={backdrop === null} onClick={() => setBackdrop(null)}>None</Button>{extra.backdrops.map((url, i) => <Button variant="ghost" key={url} aria-label={`Backdrop ${i + 1}`} aria-pressed={backdrop === i} className={`h-8 w-14 overflow-hidden p-0 ${backdrop === i ? 'ring-2 ring-primary' : ''}`} onClick={() => setBackdrop(i)}><img src={url} alt="" className="h-full w-full object-cover" loading="lazy" /></Button>)}</div>}
         </div>
