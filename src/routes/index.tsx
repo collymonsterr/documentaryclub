@@ -2,7 +2,7 @@ import { createFileRoute, Link, stripSearchParams, useNavigate } from '@tanstack
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff } from 'lucide-react';
 import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
 import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
@@ -11,8 +11,8 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { SiteLogo } from '@/components/site-logo';
 import { TrailerModal } from '@/components/trailer-modal';
-import { useTracking } from '@/hooks/use-tracking';
-import { canNavigate, cardBadges, inEra, orderFilms, shuffleIds, sortByRating, overviewSentences, TRACKING_KEYS, type Era, type Provider } from '@/lib/discovery';
+import { usePreference, useTracking } from '@/hooks/use-tracking';
+import { canNavigate, cardBadges, inEra, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Provider } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
@@ -58,6 +58,15 @@ const NOTES: Record<string, string> = {
 function Providers({ label, items, subscription = false }: { label: string; items: Provider[]; subscription?: boolean }) {
   if (!items.length) return null;
   return <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs"><span className="text-muted-foreground">{label}</span>{items.map(p => <span key={p.id} className={subscription && p.highlighted ? 'font-semibold text-primary' : 'text-foreground'}>{p.name}</span>)}</div>;
+}
+// IMDb / RT: a small popover with our stored score and a new-tab link (their pages block embedding).
+function RatingLink({ site, film, score }: { site: 'imdb' | 'rt'; film: { title: string; year: number; imdbId?: string }; score?: number }) {
+  const imdb = site === 'imdb';
+  if (imdb && !film.imdbId) return null;
+  const href = imdb ? `https://www.imdb.com/title/${film.imdbId}/` : `https://www.rottentomatoes.com/search?search=${encodeURIComponent(film.title)}`;
+  const name = imdb ? 'IMDb' : 'Rotten Tomatoes';
+  return <Popover><PopoverTrigger asChild><Button variant="outline" aria-label={`${name} rating`} className="px-2.5 font-bold">{imdb ? <span className="rounded-sm bg-primary px-1 text-[11px] text-primary-foreground">IMDb</span> : <span className="text-[11px] text-destructive">RT</span>}{score !== undefined && <span className="text-xs font-medium">{imdb ? score.toFixed(1) : `${score}%`}</span>}</Button></PopoverTrigger>
+    <PopoverContent className="w-60 text-sm"><p className="text-xs text-muted-foreground">{name}</p><p className="mt-1 text-2xl font-semibold">{score === undefined ? 'No score' : imdb ? `${score.toFixed(1)}/10` : `${score}%`}</p>{!imdb && <p className="mt-1 text-xs text-muted-foreground">Tomatometer via OMDb.</p>}<Button asChild variant="link" size="sm" className="mt-2 h-auto px-0"><a href={href} target="_blank" rel="noreferrer">{imdb ? 'Open on IMDb' : 'Search on Rotten Tomatoes'}<ExternalLink /></a></Button></PopoverContent></Popover>;
 }
 function Index() {
   const search = Route.useSearch();
@@ -165,9 +174,9 @@ function Index() {
   };
   const toggleList = (which: 'shortlist' | 'watched') => navigate({ search: prev => ({ ...prev, list: prev.list === which ? '' : which }) });
   // Director links: open the gallery filtered to everything we have by that filmmaker.
-  const searchDirector = (name: string) => { setFilter('all'); setEra('all'); setQuery(name); navigate({ search: prev => ({ ...prev, film: '', q: name, list: '' }) }); };
-  const clearFilters = () => { setFilter('all'); setEra('all'); setType('all'); setSort('random'); updateQuery(''); if (listFilter) navigate({ search: prev => ({ ...prev, list: '' }) }); };
-  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', listFilter === 'watched'].filter(Boolean).length;
+  const searchDirector = (name: string) => { setQuery(name); navigate({ search: prev => ({ ...prev, film: '', q: name, list: '', cat: 'all', era: 'all' }) }); };
+  const clearFilters = () => { setQuery(''); navigate({ search: prev => ({ ...prev, q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random' }), replace: true }); };
+  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', listFilter === 'watched', !hideWatched].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
@@ -184,12 +193,18 @@ function Index() {
         <PopoverTrigger asChild><Button size="sm" variant="outline" className="self-end" aria-label="More filters"><SlidersHorizontal />Filters{activeFilters > 0 && <span className="rounded-full bg-primary px-1.5 text-[10px] font-semibold text-primary-foreground">{activeFilters}</span>}</Button></PopoverTrigger>
         <PopoverContent align="end" className="w-72">
           <div className="space-y-3">
-            <label className="block text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select mt-1 w-full" value={type} onChange={e => setType(e.target.value as 'all' | 'movie' | 'tv')}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
+            <label className="block text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select mt-1 w-full" value={type} onChange={e => setType(e.target.value)}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
             <label className="block text-xs text-muted-foreground">Order<select aria-label="Sort order" className="discovery-select mt-1 w-full" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="imdb">Top IMDb</option><option value="rt">Top Rotten Tomatoes</option></select></label>
             <label className="block text-xs text-muted-foreground">Era<select aria-label="Era" className="discovery-select mt-1 w-full" value={era} onChange={e => setEra(e.target.value as Era)}>{ERAS.map(([id, label]) => <option key={id} value={id}>{id === 'recent' ? 'Recent (last 2 years)' : label}</option>)}</select></label>
             <div className="flex flex-wrap gap-1">
               <Button size="sm" variant={listFilter === 'watched' ? 'default' : 'outline'} aria-pressed={listFilter === 'watched'} onClick={() => toggleList('watched')}><Check />Watched · {watched.size}</Button>
               <Button size="sm" variant="outline" onClick={reshuffle}><Shuffle />Shuffle</Button>
+              <Button size="sm" variant={hideWatched ? 'default' : 'outline'} aria-pressed={hideWatched} onClick={() => setHideWatched(!hideWatched)}><EyeOff />Hide watched</Button>
+            </div>
+            <div className="flex flex-wrap items-center gap-1 border-t border-border pt-3"><span className="mr-auto text-xs text-muted-foreground">Backup lists</span>
+              <Button size="sm" variant="ghost" onClick={exportLists}><Download />Export</Button>
+              <Button size="sm" variant="ghost" onClick={() => importRef.current?.click()}><Upload />Import</Button>
+              <input ref={importRef} type="file" accept="application/json,.json" className="hidden" aria-label="Import lists file" onChange={e => { void importLists(e.target.files?.[0]); e.target.value = ''; }} />
             </div>
             {activeFilters > 0 && <Button size="sm" variant="ghost" className="w-full" onClick={clearFilters}>Clear filters</Button>}
           </div>
@@ -219,7 +234,7 @@ function Index() {
           <p className="mt-3 text-sm leading-relaxed text-foreground/90">{extra?.overview ? overviewSentences(`${extra.overview}${(extra.overview.match(/[.!?](?:\s|$)/g)?.length ?? 0) < 2 ? ` ${NOTES[film.id] ?? ''}` : ''}`) : `${film.synopsis} ${NOTES[film.id] ?? ''}`}</p>
           {!!film.awards.length && <ul className="mt-3 space-y-1">{film.awards.map(a => <li key={a} className="flex gap-2 text-xs leading-relaxed text-accent-foreground"><Award className="mt-0.5 size-3 shrink-0" />{a}</li>)}</ul>}
           {extra?.omdb?.awards && <p className="mt-2 text-xs leading-relaxed text-muted-foreground"><span className="font-medium">OMDb awards: </span>{extra.omdb.awards}</p>}
-          <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Heart className={shortlist.has(film.id) ? 'fill-red-500 text-red-500' : ''} />{shortlist.has(film.id) ? 'Saved' : 'Save'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button><Button variant="outline" onClick={share}><Link2 />{copied ? 'Link copied' : 'Share'}</Button></div>
+          <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Heart className={shortlist.has(film.id) ? 'fill-red-500 text-red-500' : ''} />{shortlist.has(film.id) ? 'Saved' : 'Save'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button><RatingLink site="imdb" film={film} score={extra?.omdb?.imdb} /><RatingLink site="rt" film={film} score={extra?.omdb?.rottenTomatoes} /><Button variant="outline" onClick={share}><Link2 />{copied ? 'Link copied' : 'Share'}</Button></div>
           <div className="mt-4 border-t border-border pt-3"><h3 className="mb-2 text-xs font-semibold">Watch in Ireland</h3>{providers.isFetching ? <p className="mb-2 text-xs text-muted-foreground" role="status">Checking Irish availability…</p> : !extra?.providers?.known && <p className="mb-2 text-xs text-muted-foreground">Availability unknown — check JustWatch.</p>}<div className="space-y-1"><Providers label="Subscription" items={extra?.providers?.flatrate ?? []} subscription /><Providers label="Rent" items={extra?.providers?.rent ?? []} /><Providers label="Buy" items={extra?.providers?.buy ?? []} /></div><Button asChild variant="link" size="sm" className="mt-1 h-auto px-0"><a href={extra?.providers?.link ?? justWatchLink(film)} target="_blank" rel="noreferrer">{extra?.providers?.link ? 'Check Irish availability' : 'Search JustWatch Ireland'}<ExternalLink /></a></Button></div>
           {!!extra?.backdrops?.length && <div className="mt-3 flex items-center gap-2"><span className="text-xs text-muted-foreground">Scene</span><Button variant="ghost" size="sm" aria-pressed={backdrop === null} onClick={() => setBackdrop(null)}>None</Button>{extra.backdrops.map((url, i) => <Button variant="ghost" key={url} aria-label={`Backdrop ${i + 1}`} aria-pressed={backdrop === i} className={`h-8 w-14 overflow-hidden p-0 ${backdrop === i ? 'ring-2 ring-primary' : ''}`} onClick={() => setBackdrop(i)}><img src={url} alt="" className="h-full w-full object-cover" loading="lazy" /></Button>)}</div>}
         </div>
