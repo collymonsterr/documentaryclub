@@ -19,16 +19,17 @@ const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film 
 const years = (f: { year: number; yearEnd?: number }) => f.yearEnd ? `${f.year}–${f.yearEnd}` : String(f.year);
 const ERAS: [Era, string][] = [['all', 'All eras'], ['recent', 'Recent'], ['2020s', '2020s'], ['2010s', '2010s'], ['2000s', '2000s'], ['pre2000', 'Pre-2000']];
 
-// Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched opens a saved list, ?q= is the search.
-const searchDefaults = { film: '', q: '', list: '' };
-const text = (value: unknown) => typeof value === 'string' ? value : '';
+// Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched, ?q= search, plus cat/era/type/sort filters.
+const searchDefaults = { film: '', q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random' };
+const text = (value: unknown, fallback = '') => typeof value === 'string' && value ? value : fallback;
+const SORTS = ['random', 'curated', 'newest', 'oldest', 'imdb', 'rt'];
 
 export const Route = createFileRoute('/')({
-  validateSearch: (search: Record<string, unknown>) => ({ film: text(search['film']), q: text(search['q']), list: text(search['list']) }),
+  validateSearch: (search: Record<string, unknown>) => ({ film: text(search['film']), q: text(search['q']), list: text(search['list']), cat: text(search['cat'], 'all'), era: text(search['era'], 'all'), type: text(search['type'], 'all'), sort: text(search['sort'], 'random') }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
   head: () => ({ meta: [
     { title: 'Documentary Club — Discover extraordinary true stories' },
-    { name: 'description', content: 'Explore 306 curated documentary films and series, documented festival awards, official trailers and streaming availability in Ireland.' },
+    { name: 'description', content: `Explore ${CATALOGUE.length} curated documentary films and series, documented festival awards, official trailers and streaming availability in Ireland.` },
     { property: 'og:title', content: 'Documentary Club — Extraordinary true stories' },
     { property: 'og:description', content: 'Discover curated documentaries in Spotlight or Gallery, save your favourites and find Irish streaming options.' },
     { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
