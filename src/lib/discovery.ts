@@ -121,6 +121,10 @@ export function overviewSentences(text: string): string {
   const sentences = text.match(/[^.!?]+[.!?]+(?:[”"']|$)?|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [text];
   return sentences.slice(0, 4).join(' ');
 }
+// /list page: exactly one sentence per title.
+export function firstSentence(text: string): string {
+  return text.match(/[^.!?]+[.!?]+(?:[”"']|$)?|[^.!?]+$/)?.[0]?.trim() || text;
+}
 // Fisher–Yates with injectable RNG: a new order per visit or explicit Shuffle, never per render/filter.
 export function shuffleIds(ids: string[], rng: () => number = Math.random): string[] {
   const a = [...ids];

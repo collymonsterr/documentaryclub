@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, cardBadges, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, sortByRating, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardBadges, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, sortByRating, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -25,6 +25,10 @@ describe('eras and rating sort', () => {
   it('sorts by rating with unrated titles last', () => {
     const snap = { a: { omdb: { imdb: 7.1 } }, b: { omdb: { imdb: 8.4 } }, c: {} };
     expect(sortByRating([{ id: 'a' }, { id: 'b' }, { id: 'c' }], snap, 'imdb').map(f => f.id)).toEqual(['b', 'a', 'c']);
+  });
+  it('firstSentence keeps only the opening sentence', () => {
+    expect(firstSentence('One two. Three four. Five.')).toBe('One two.');
+    expect(firstSentence('No terminator here')).toBe('No terminator here');
   });
 });
 describe('safe TMDB selection', () => {
