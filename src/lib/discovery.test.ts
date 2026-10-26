@@ -111,3 +111,19 @@ describe('trailer backfill tiers', () => {
     expect(selectAnyTrailer({ results: [yt('Trailer', true, 'bad'), { site: 'Vimeo', type: 'Trailer', official: true, key: 'fffffffffff' }] })).toBeUndefined();
   });
 });
+
+import { applyBackup, parseBackup } from './discovery';
+describe('saved/watched backup', () => {
+  const ids = new Set(['a', 'b', 'c']);
+  it('drops unknown ids and rejects junk', () => {
+    expect(parseBackup('{"saved":["a","zzz",3],"watched":["b"]}', ids)).toEqual({ saved: ['a'], watched: ['b'] });
+    expect(parseBackup('not json', ids)).toBeNull();
+    expect(parseBackup('{"foo":1}', ids)).toBeNull();
+  });
+  it('merge keeps both lists; watched removes from saved', () => {
+    expect(applyBackup({ saved: ['a', 'c'], watched: [] }, { saved: [], watched: ['c'] }, 'merge')).toEqual({ saved: ['a'], watched: ['c'] });
+  });
+  it('replace discards current lists', () => {
+    expect(applyBackup({ saved: ['a'], watched: ['b'] }, { saved: ['c'], watched: [] }, 'replace')).toEqual({ saved: ['c'], watched: [] });
+  });
+});
