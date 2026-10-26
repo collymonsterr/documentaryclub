@@ -27,6 +27,10 @@ describe("App routing", () => {
     render(<RouterProvider router={router} />);
 
     const link = screen.getByRole("link", { name: "Documentary Club home" });
-    expect(link.getAttribute("href")).toBe("/");
+    const target = new URL(link.getAttribute("href")!, "http://localhost");
+    expect(target.pathname).toBe("/");
+    // Opens the plain homepage: no film, saved list or search pinned (the live route
+    // strips these empty values, so the browser lands on a bare "/").
+    expect(Object.fromEntries(target.searchParams)).toEqual({ film: "", q: "", list: "" });
   });
 });
