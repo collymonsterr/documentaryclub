@@ -1,0 +1,6716 @@
+{
+ "generated": "2026-10-26",
+ "rawInputs": 342,
+ "entries": [
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Up series (1964–2019)",
+    "title": "Up series",
+    "year": 1964,
+    "yearEnd": 2019
+   },
+   "id": "up-series",
+   "status": "resolved",
+   "reason": "TMDB collection The Up Collection: 9 documentary parts within 1964–2019; 1 later part(s) excluded",
+   "chosen": {
+    "mediaType": "collection",
+    "tmdbId": 95051,
+    "canonicalTitle": "The Up Collection",
+    "year": 1964,
+    "people": []
+   }
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Gimme Shelter (1970)",
+    "title": "Gimme Shelter",
+    "year": 1970
+   },
+   "id": "gimme-shelter",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 132,
+    "imdbId": "tt0065780",
+    "canonicalTitle": "Gimme Shelter",
+    "year": 1970,
+    "people": [
+     "Charlotte Zwerin",
+     "David Maysles",
+     "Albert Maysles"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 132,
+     "title": "Gimme Shelter",
+     "year": 1970
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- F for Fake (1973)",
+    "title": "F for Fake",
+    "year": 1973
+   },
+   "id": "f-for-fake",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 43003,
+    "imdbId": "tt0072962",
+    "canonicalTitle": "F for Fake",
+    "year": 1973,
+    "people": [
+     "Orson Welles",
+     "François Reichenbach"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 43003,
+     "title": "F for Fake",
+     "year": 1973
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Grey Gardens (1975)",
+    "title": "Grey Gardens",
+    "year": 1975
+   },
+   "id": "grey-gardens",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 17346,
+    "imdbId": "tt0073076",
+    "canonicalTitle": "Grey Gardens",
+    "year": 1976,
+    "people": [
+     "Muffie Meyer",
+     "David Maysles",
+     "Ellen Hovde",
+     "Albert Maysles"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 17346,
+     "title": "Grey Gardens",
+     "year": 1976
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Gates of Heaven (1978)",
+    "title": "Gates of Heaven",
+    "year": 1978
+   },
+   "id": "gates-of-heaven",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 24998,
+    "imdbId": "tt0077598",
+    "canonicalTitle": "Gates of Heaven",
+    "year": 1978,
+    "people": [
+     "Errol Morris"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 24998,
+     "title": "Gates of Heaven",
+     "year": 1978
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Burden of Dreams (1982)",
+    "title": "Burden of Dreams",
+    "year": 1982
+   },
+   "id": "burden-of-dreams",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 42124,
+    "imdbId": "tt0083702",
+    "canonicalTitle": "Burden of Dreams",
+    "year": 1982,
+    "people": [
+     "Les Blank"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 42124,
+     "title": "Burden of Dreams",
+     "year": 1982
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Paris Is Burning (1990)",
+    "title": "Paris Is Burning",
+    "year": 1990
+   },
+   "id": "paris-is-burning",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 31225,
+    "imdbId": "tt0100332",
+    "canonicalTitle": "Paris Is Burning",
+    "year": 1991,
+    "people": [
+     "Jennie Livingston"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 31225,
+     "title": "Paris Is Burning",
+     "year": 1991
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Hearts of Darkness: A Filmmaker's Apocalypse (1991)",
+    "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+    "year": 1991
+   },
+   "id": "hearts-of-darkness-a-filmmaker-s-apocalypse",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 4539,
+    "imdbId": "tt0102015",
+    "canonicalTitle": "Hearts of Darkness: A Filmmaker's Apocalypse",
+    "year": 1991,
+    "people": [
+     "George Hickenlooper",
+     "Fax Bahr",
+     "Eleanor Coppola"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 4539,
+     "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+     "year": 1991
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Theremin: An Electronic Odyssey (1993)",
+    "title": "Theremin: An Electronic Odyssey",
+    "year": 1993
+   },
+   "id": "theremin-an-electronic-odyssey",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Crumb (1994)",
+    "title": "Crumb",
+    "year": 1994
+   },
+   "id": "crumb",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 26564,
+    "imdbId": "tt0109508",
+    "canonicalTitle": "Crumb",
+    "year": 1995,
+    "people": [
+     "Terry Zwigoff"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 26564,
+     "title": "Crumb",
+     "year": 1995
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Hoop Dreams (1994)",
+    "title": "Hoop Dreams",
+    "year": 1994
+   },
+   "id": "hoop-dreams",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 14275,
+    "imdbId": "tt0110057",
+    "canonicalTitle": "Hoop Dreams",
+    "year": 1994,
+    "people": [
+     "Steve James"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 14275,
+     "title": "Hoop Dreams",
+     "year": 1994
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Fast, Cheap & Out of Control (1997)",
+    "title": "Fast, Cheap & Out of Control",
+    "year": 1997
+   },
+   "id": "fast-cheap-out-of-control",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 25099,
+    "imdbId": "tt0119107",
+    "canonicalTitle": "Fast, Cheap & Out of Control",
+    "year": 1997,
+    "people": [
+     "Errol Morris"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 25099,
+     "title": "Fast, Cheap & Out of Control",
+     "year": 1997
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Hands on a Hardbody (1997)",
+    "title": "Hands on a Hardbody",
+    "year": 1997
+   },
+   "id": "hands-on-a-hardbody",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 18603,
+    "imdbId": "tt0116481",
+    "canonicalTitle": "Hands on a Hardbody: The Documentary",
+    "year": 1997,
+    "people": [
+     "S.R. Bindler"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 18603,
+     "title": "Hands on a Hardbody: The Documentary",
+     "year": 1997
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- American Movie (1999)",
+    "title": "American Movie",
+    "year": 1999
+   },
+   "status": "existing-match",
+   "id": "american-movie"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Mr. Death (1999)",
+    "title": "Mr. Death",
+    "year": 1999
+   },
+   "status": "existing-match",
+   "id": "mr-death"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- My Best Fiend (1999)",
+    "title": "My Best Fiend",
+    "year": 1999
+   },
+   "id": "my-best-fiend",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 8672,
+    "imdbId": "tt0200849",
+    "canonicalTitle": "My Best Fiend",
+    "year": 1999,
+    "people": [
+     "Werner Herzog"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 8672,
+     "title": "My Best Fiend",
+     "year": 1999
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Dark Days (2000)",
+    "title": "Dark Days",
+    "year": 2000
+   },
+   "status": "existing-match",
+   "id": "dark-days"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Lost in La Mancha (2002)",
+    "title": "Lost in La Mancha",
+    "year": 2002
+   },
+   "id": "lost-in-la-mancha",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 21189,
+    "imdbId": "tt0308514",
+    "canonicalTitle": "Lost in La Mancha",
+    "year": 2002,
+    "people": [
+     "Louis Pepe",
+     "Keith Fulton"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 21189,
+     "title": "Lost in La Mancha",
+     "year": 2002
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- The King of Kong (2007)",
+    "title": "The King of Kong",
+    "year": 2007
+   },
+   "status": "existing-match",
+   "id": "the-king-of-kong"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- My Kid Could Paint That (2007)",
+    "title": "My Kid Could Paint That",
+    "year": 2007
+   },
+   "id": "my-kid-could-paint-that",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 14279,
+    "imdbId": "tt0912592",
+    "canonicalTitle": "My Kid Could Paint That",
+    "year": 2007,
+    "people": [
+     "Amir Bar-Lev"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 14279,
+     "title": "My Kid Could Paint That",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Best Worst Movie (2009)",
+    "title": "Best Worst Movie",
+    "year": 2009
+   },
+   "id": "best-worst-movie",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 40819,
+    "imdbId": "tt1144539",
+    "canonicalTitle": "Best Worst Movie",
+    "year": 2009,
+    "people": [
+     "Michael Stephenson"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 40819,
+     "title": "Best Worst Movie",
+     "year": 2009
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- The Red Chapel (2009)",
+    "title": "The Red Chapel",
+    "year": 2009
+   },
+   "status": "existing-match",
+   "id": "the-red-chapel"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Winnebago Man (2009)",
+    "title": "Winnebago Man",
+    "year": 2009
+   },
+   "id": "winnebago-man",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 42918,
+    "imdbId": "tt1396557",
+    "canonicalTitle": "Winnebago Man",
+    "year": 2010,
+    "people": [
+     "Ben Steinbauer"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 42918,
+     "title": "Winnebago Man",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Catfish (2010)",
+    "title": "Catfish",
+    "year": 2010
+   },
+   "status": "existing-match",
+   "id": "catfish"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Exit Through the Gift Shop (2010)",
+    "title": "Exit Through the Gift Shop",
+    "year": 2010
+   },
+   "id": "exit-through-the-gift-shop",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 39452,
+    "imdbId": "tt1587707",
+    "canonicalTitle": "Exit Through the Gift Shop",
+    "year": 2010,
+    "people": [
+     "Banksy"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 39452,
+     "title": "Exit Through the Gift Shop",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Marwencol (2010)",
+    "title": "Marwencol",
+    "year": 2010
+   },
+   "id": "marwencol",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 52013,
+    "imdbId": "tt1391092",
+    "canonicalTitle": "Marwencol",
+    "year": 2010,
+    "people": [
+     "Jeff Malmberg"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 52013,
+     "title": "Marwencol",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Tabloid (2010)",
+    "title": "Tabloid",
+    "year": 2010
+   },
+   "status": "existing-match",
+   "id": "tabloid"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Room 237 (2012)",
+    "title": "Room 237",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "room-237"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Searching for Sugar Man (2012)",
+    "title": "Searching for Sugar Man",
+    "year": 2012
+   },
+   "id": "searching-for-sugar-man",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 84334,
+    "imdbId": "tt2125608",
+    "canonicalTitle": "Searching for Sugar Man",
+    "year": 2012,
+    "people": [
+     "Malik Bendjelloul"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 84334,
+     "title": "Searching for Sugar Man",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Stories We Tell (2012)",
+    "title": "Stories We Tell",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "stories-we-tell"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- The Imposter (2012)",
+    "title": "The Imposter",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "the-imposter"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Finding Vivian Maier (2013)",
+    "title": "Finding Vivian Maier",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "finding-vivian-maier"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Jodorowsky's Dune (2013)",
+    "title": "Jodorowsky's Dune",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "jodorowsky-s-dune"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- The Wolfpack (2015)",
+    "title": "The Wolfpack",
+    "year": 2015
+   },
+   "id": "the-wolfpack",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 307931,
+    "imdbId": "tt2415458",
+    "canonicalTitle": "The Wolfpack",
+    "year": 2015,
+    "people": [
+     "Crystal Moselle"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 307931,
+     "title": "The Wolfpack",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Author: The JT LeRoy Story (2016)",
+    "title": "Author: The JT LeRoy Story",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "author-the-jt-leroy-story"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Tickled (2016)",
+    "title": "Tickled",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "tickled"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Jim & Andy: The Great Beyond (2017)",
+    "title": "Jim & Andy: The Great Beyond",
+    "year": 2017
+   },
+   "id": "jim-andy-the-great-beyond",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 469019,
+    "imdbId": "tt7214762",
+    "canonicalTitle": "Jim & Andy: The Great Beyond",
+    "year": 2017,
+    "people": [
+     "Chris Smith"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 469019,
+     "title": "Jim & Andy: The Great Beyond",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Long Shot (2017)",
+    "title": "Long Shot",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "long-shot"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Bisbee '17 (2018)",
+    "title": "Bisbee '17",
+    "year": 2018
+   },
+   "id": "bisbee-17",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 490758,
+    "imdbId": "tt7520286",
+    "canonicalTitle": "Bisbee '17",
+    "year": 2018,
+    "people": [
+     "Robert Greene"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 490758,
+     "title": "Bisbee '17",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Operation Odessa (2018)",
+    "title": "Operation Odessa",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "operation-odessa"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Shirkers (2018)",
+    "title": "Shirkers",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "shirkers"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Three Identical Strangers (2018)",
+    "title": "Three Identical Strangers",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "three-identical-strangers"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Strange but True",
+    "raw": "- Cold Case Hammarskjöld (2019)",
+    "title": "Cold Case Hammarskjöld",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "cold-case-hammarskjold"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Titicut Follies (1967)",
+    "title": "Titicut Follies",
+    "year": 1967
+   },
+   "id": "titicut-follies",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 41212,
+    "imdbId": "tt0062374",
+    "canonicalTitle": "Titicut Follies",
+    "year": 1967,
+    "people": [
+     "Frederick Wiseman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 41212,
+     "title": "Titicut Follies",
+     "year": 1967
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Marjoe (1972)",
+    "title": "Marjoe",
+    "year": 1972
+   },
+   "id": "marjoe",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 38616,
+    "imdbId": "tt0068924",
+    "canonicalTitle": "Marjoe",
+    "year": 1972,
+    "people": [
+     "Howard Smith",
+     "Sarah Kernochan"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 38616,
+     "title": "Marjoe",
+     "year": 1972
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Quiet Rage: The Stanford Prison Study (1992)",
+    "title": "Quiet Rage: The Stanford Prison Study",
+    "year": 1992
+   },
+   "id": "quiet-rage-the-stanford-prison-study",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Jesus Camp (2006)",
+    "title": "Jesus Camp",
+    "year": 2006
+   },
+   "status": "existing-match",
+   "id": "jesus-camp"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Jonestown: The Life and Death of Peoples Temple (2006)",
+    "title": "Jonestown: The Life and Death of Peoples Temple",
+    "year": 2006
+   },
+   "status": "existing-match",
+   "id": "jonestown-the-life-and-death-of-peoples-temple"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Children of God: Lost and Found (2007)",
+    "title": "Children of God: Lost and Found",
+    "year": 2007
+   },
+   "id": "children-of-god-lost-and-found",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 307510,
+    "imdbId": "tt0806136",
+    "canonicalTitle": "Children of God: Lost and Found",
+    "year": 2007,
+    "people": [
+     "Noah Thomson"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 307510,
+     "title": "Children of God: Lost and Found",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Kumaré (2011)",
+    "title": "Kumaré",
+    "year": 2011
+   },
+   "status": "existing-match",
+   "id": "kumare"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Project Nim (2011)",
+    "title": "Project Nim",
+    "year": 2011
+   },
+   "status": "existing-match",
+   "id": "project-nim"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- The Source Family (2012)",
+    "title": "The Source Family",
+    "year": 2012
+   },
+   "id": "the-source-family",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 98064,
+    "imdbId": "tt2245223",
+    "canonicalTitle": "The Source Family",
+    "year": 2013,
+    "people": [
+     "Jodi Wille",
+     "Maria Demopoulos"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 98064,
+     "title": "The Source Family",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Going Clear (2015)",
+    "title": "Going Clear",
+    "year": 2015
+   },
+   "status": "existing-match",
+   "id": "going-clear"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Prophet's Prey (2015)",
+    "title": "Prophet's Prey",
+    "year": 2015
+   },
+   "id": "prophet-s-prey",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 319079,
+    "imdbId": "tt4188202",
+    "canonicalTitle": "Prophet's Prey",
+    "year": 2015,
+    "people": [
+     "Amy J. Berg"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 319079,
+     "title": "Prophet's Prey",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Holy Hell (2016)",
+    "title": "Holy Hell",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "holy-hell"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Wormwood (2017)",
+    "title": "Wormwood",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "wormwood"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Behind the Curve (2018)",
+    "title": "Behind the Curve",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "behind-the-curve"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Derren Brown: Sacrifice (2018)",
+    "title": "Derren Brown: Sacrifice",
+    "year": 2018
+   },
+   "id": "derren-brown-sacrifice",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 554175,
+    "imdbId": "tt9077188",
+    "canonicalTitle": "Derren Brown: Sacrifice",
+    "year": 2018,
+    "people": [
+     "Derren Brown"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 554175,
+     "title": "Derren Brown: Sacrifice",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- The Push (2018)",
+    "title": "The Push",
+    "year": 2018
+   },
+   "id": "the-push",
+   "status": "resolved",
+   "reason": "evidence-pinned: Derren Brown psychology experiment (cults/manipulation section); TMDB title Derren Brown: Pushed to the Edge",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 377319,
+    "imdbId": "tt5340856",
+    "canonicalTitle": "Derren Brown: Pushed to the Edge",
+    "year": 2016,
+    "people": [
+     "Jon Richards"
+    ]
+   }
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Wild Wild Country (2018)",
+    "title": "Wild Wild Country",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "wild-wild-country"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Bikram: Yogi, Guru, Predator (2019)",
+    "title": "Bikram: Yogi, Guru, Predator",
+    "year": 2019
+   },
+   "id": "bikram-yogi-guru-predator",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 621753,
+    "imdbId": "tt10883004",
+    "canonicalTitle": "Bikram: Yogi, Guru, Predator",
+    "year": 2019,
+    "people": [
+     "Eva Orner"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 621753,
+     "title": "Bikram: Yogi, Guru, Predator",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- The Family (2019)",
+    "title": "The Family",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "the-family"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Heaven's Gate: The Cult of Cults (2020)",
+    "title": "Heaven's Gate: The Cult of Cults",
+    "year": 2020
+   },
+   "id": "heaven-s-gate-the-cult-of-cults",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 113678,
+    "imdbId": "tt11210146",
+    "canonicalTitle": "Heaven's Gate: The Cult of Cults",
+    "year": 2020,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 113678,
+     "title": "Heaven's Gate: The Cult of Cults",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- The Vow (2020)",
+    "title": "The Vow",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "the-vow"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Sons of Sam: A Descent into Darkness (2021)",
+    "title": "Sons of Sam: A Descent into Darkness",
+    "year": 2021
+   },
+   "id": "sons-of-sam-a-descent-into-darkness",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- The Way Down (2021)",
+    "title": "The Way Down",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "the-way-down"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Keep Sweet: Pray and Obey (2022)",
+    "title": "Keep Sweet: Pray and Obey",
+    "year": 2022
+   },
+   "id": "keep-sweet-pray-and-obey",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 202880,
+    "imdbId": "tt20560404",
+    "canonicalTitle": "Keep Sweet: Pray and Obey",
+    "year": 2022,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 202880,
+     "title": "Keep Sweet: Pray and Obey",
+     "year": 2022
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 903523,
+     "title": "Keep Sweet",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Escaping Twin Flames (2023)",
+    "title": "Escaping Twin Flames",
+    "year": 2023
+   },
+   "status": "existing-match",
+   "id": "escaping-twin-flames"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Love Has Won (2023)",
+    "title": "Love Has Won",
+    "year": 2023
+   },
+   "status": "existing-match",
+   "id": "love-has-won"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Shiny Happy People (2023)",
+    "title": "Shiny Happy People",
+    "year": 2023
+   },
+   "status": "existing-match",
+   "id": "shiny-happy-people"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Waco: American Apocalypse (2023)",
+    "title": "Waco: American Apocalypse",
+    "year": 2023
+   },
+   "status": "existing-match",
+   "id": "waco-american-apocalypse"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Daughters of the Cult (2024)",
+    "title": "Daughters of the Cult",
+    "year": 2024
+   },
+   "id": "daughters-of-the-cult",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 241758,
+    "imdbId": "tt27922404",
+    "canonicalTitle": "Daughters of the Cult",
+    "year": 2024,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 241758,
+     "title": "Daughters of the Cult",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- Quiet on Set: The Dark Side of Kids TV (2024)",
+    "title": "Quiet on Set: The Dark Side of Kids TV",
+    "year": 2024
+   },
+   "id": "quiet-on-set-the-dark-side-of-kids-tv",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 245902,
+    "imdbId": "tt31193442",
+    "canonicalTitle": "Quiet on Set: The Dark Side of Kids TV",
+    "year": 2024,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 245902,
+     "title": "Quiet on Set: The Dark Side of Kids TV",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Cults, Psychology and Manipulation",
+    "raw": "- The Synanon Fix (2024)",
+    "title": "The Synanon Fix",
+    "year": 2024
+   },
+   "id": "the-synanon-fix",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 241230,
+    "imdbId": "tt21822256",
+    "canonicalTitle": "The Synanon Fix: Did the Cure Become a Cult?",
+    "year": 2024,
+    "people": [
+     "Mark Bailey",
+     "Rory Kennedy"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 241230,
+     "title": "The Synanon Fix: Did the Cure Become a Cult?",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Enron: The Smartest Guys in the Room (2005)",
+    "title": "Enron: The Smartest Guys in the Room",
+    "year": 2005
+   },
+   "status": "existing-match",
+   "id": "enron-the-smartest-guys-in-the-room"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Who the #$&% Is Jackson Pollock? (2006)",
+    "title": "Who the #$&% Is Jackson Pollock?",
+    "year": 2006
+   },
+   "id": "who-the-s-is-jackson-pollock",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 45664,
+    "imdbId": "tt0487092",
+    "canonicalTitle": "Who the #$&% Is Jackson Pollock?",
+    "year": 2006,
+    "people": [
+     "Harry Moses"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 45664,
+     "title": "Who the #$&% Is Jackson Pollock?",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Inside Job (2010)",
+    "title": "Inside Job",
+    "year": 2010
+   },
+   "status": "existing-match",
+   "id": "inside-job"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Betting on Zero (2016)",
+    "title": "Betting on Zero",
+    "year": 2016
+   },
+   "id": "betting-on-zero",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 385805,
+    "imdbId": "tt3762912",
+    "canonicalTitle": "Betting on Zero",
+    "year": 2016,
+    "people": [
+     "Ted Braun"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 385805,
+     "title": "Betting on Zero",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Sour Grapes (2016)",
+    "title": "Sour Grapes",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "sour-grapes"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- The China Hustle (2017)",
+    "title": "The China Hustle",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "the-china-hustle"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Dirty Money (2018)",
+    "title": "Dirty Money",
+    "year": 2018
+   },
+   "id": "dirty-money",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 76307,
+    "imdbId": "tt7889220",
+    "canonicalTitle": "Dirty Money",
+    "year": 2018,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 730893,
+     "title": "Dirty Money: Drug Short",
+     "year": 2018
+    },
+    {
+     "mediaType": "tv",
+     "tmdbId": 76307,
+     "title": "Dirty Money",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Fyre (2019)",
+    "title": "Fyre",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "fyre"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- The Inventor: Out for Blood in Silicon Valley (2019)",
+    "title": "The Inventor: Out for Blood in Silicon Valley",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "the-inventor-out-for-blood-in-silicon-valley"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- McMillion$ (2020)",
+    "title": "McMillion$",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "mcmillions"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Made You Look (2020)",
+    "title": "Made You Look",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "made-you-look"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- The Lady and the Dale (2021)",
+    "title": "The Lady and the Dale",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "the-lady-and-the-dale"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- LuLaRich (2021)",
+    "title": "LuLaRich",
+    "year": 2021
+   },
+   "id": "lularich",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 131295,
+    "imdbId": "tt15213278",
+    "canonicalTitle": "LuLaRich",
+    "year": 2021,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 131295,
+     "title": "LuLaRich",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Operation Varsity Blues (2021)",
+    "title": "Operation Varsity Blues",
+    "year": 2021
+   },
+   "id": "operation-varsity-blues",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 799555,
+    "imdbId": "tt14111734",
+    "canonicalTitle": "Operation Varsity Blues: The College Admissions Scandal",
+    "year": 2021,
+    "people": [
+     "Chris Smith"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 799555,
+     "title": "Operation Varsity Blues: The College Admissions Scandal",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- WeWork: or the Making and Breaking of a $47 Billion Unicorn (2021)",
+    "title": "WeWork: or the Making and Breaking of a $47 Billion Unicorn",
+    "year": 2021
+   },
+   "id": "wework-or-the-making-and-breaking-of-a-s47-billion-unicorn",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 795622,
+    "imdbId": "tt11188154",
+    "canonicalTitle": "WeWork: or The Making and Breaking of a $47 Billion Unicorn",
+    "year": 2021,
+    "people": [
+     "Jed Rothstein"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 795622,
+     "title": "WeWork: or The Making and Breaking of a $47 Billion Unicorn",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Bad Vegan (2022)",
+    "title": "Bad Vegan",
+    "year": 2022
+   },
+   "status": "existing-match",
+   "id": "bad-vegan"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Skandal! Bringing Down Wirecard (2022)",
+    "title": "Skandal! Bringing Down Wirecard",
+    "year": 2022
+   },
+   "id": "skandal-bringing-down-wirecard",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1014550,
+    "imdbId": "tt21836620",
+    "canonicalTitle": "Skandal! Bringing Down Wirecard",
+    "year": 2022,
+    "people": [
+     "James Erskine"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1014550,
+     "title": "Skandal! Bringing Down Wirecard",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- The Tinder Swindler (2022)",
+    "title": "The Tinder Swindler",
+    "year": 2022
+   },
+   "status": "existing-match",
+   "id": "the-tinder-swindler"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Trust No One: The Hunt for the Crypto King (2022)",
+    "title": "Trust No One: The Hunt for the Crypto King",
+    "year": 2022
+   },
+   "id": "trust-no-one-the-hunt-for-the-crypto-king",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 946327,
+    "imdbId": "tt15479902",
+    "canonicalTitle": "Trust No One: The Hunt for the Crypto King",
+    "year": 2022,
+    "people": [
+     "Luke Sewell"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 946327,
+     "title": "Trust No One: The Hunt for the Crypto King",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Bad Surgeon: Love Under the Knife (2023)",
+    "title": "Bad Surgeon: Love Under the Knife",
+    "year": 2023
+   },
+   "id": "bad-surgeon-love-under-the-knife",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 238959,
+    "imdbId": "tt28197236",
+    "canonicalTitle": "Bad Surgeon: Love Under the Knife",
+    "year": 2023,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 238959,
+     "title": "Bad Surgeon: Love Under the Knife",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Madoff: The Monster of Wall Street (2023)",
+    "title": "Madoff: The Monster of Wall Street",
+    "year": 2023
+   },
+   "id": "madoff-the-monster-of-wall-street",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 216005,
+    "imdbId": "tt23732458",
+    "canonicalTitle": "Madoff: The Monster of Wall Street",
+    "year": 2023,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 216005,
+     "title": "Madoff: The Monster of Wall Street",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- The Puppet Master: Hunting the Ultimate Conman (2023)",
+    "title": "The Puppet Master: Hunting the Ultimate Conman",
+    "year": 2023
+   },
+   "id": "the-puppet-master-hunting-the-ultimate-conman",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 153574,
+    "imdbId": "tt15479704",
+    "canonicalTitle": "The Puppet Master: Hunting the Ultimate Conman",
+    "year": 2022,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 153574,
+     "title": "The Puppet Master: Hunting the Ultimate Conman",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Scams and Grifts",
+    "raw": "- Bitconned (2024)",
+    "title": "Bitconned",
+    "year": 2024
+   },
+   "status": "existing-match",
+   "id": "bitconned"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Triumph of the Nerds (1996)",
+    "title": "Triumph of the Nerds",
+    "year": 1996
+   },
+   "id": "triumph-of-the-nerds",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Revolution OS (2001)",
+    "title": "Revolution OS",
+    "year": 2001
+   },
+   "id": "revolution-os",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 19433,
+    "imdbId": "tt0308808",
+    "canonicalTitle": "Revolution OS",
+    "year": 2001,
+    "people": [
+     "J.T.S. Moore"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 19433,
+     "title": "Revolution OS",
+     "year": 2001
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Startup.com (2001)",
+    "title": "Startup.com",
+    "year": 2001
+   },
+   "id": "startup-com",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 14268,
+    "imdbId": "tt0256408",
+    "canonicalTitle": "Startup.com",
+    "year": 2001,
+    "people": [
+     "Chris Hegedus",
+     "Jehane Noujaim"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 14268,
+     "title": "Startup.com",
+     "year": 2001
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Century of the Self (2002)",
+    "title": "The Century of the Self",
+    "year": 2002
+   },
+   "status": "existing-match",
+   "id": "the-century-of-the-self"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Trap: What Happened to Our Dream of Freedom (2007)",
+    "title": "The Trap: What Happened to Our Dream of Freedom",
+    "year": 2007
+   },
+   "status": "existing-match",
+   "id": "the-trap-what-happened-to-our-dream-of-freedom"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- We Live in Public (2009)",
+    "title": "We Live in Public",
+    "year": 2009
+   },
+   "status": "existing-match",
+   "id": "we-live-in-public"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- All Watched Over by Machines of Loving Grace (2011)",
+    "title": "All Watched Over by Machines of Loving Grace",
+    "year": 2011
+   },
+   "status": "existing-match",
+   "id": "all-watched-over-by-machines-of-loving-grace"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Ecstasy of Order: The Tetris Masters (2011)",
+    "title": "Ecstasy of Order: The Tetris Masters",
+    "year": 2011
+   },
+   "id": "ecstasy-of-order-the-tetris-masters",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 91921,
+    "imdbId": "tt1836974",
+    "canonicalTitle": "Ecstasy of Order: The Tetris Masters",
+    "year": 2012,
+    "people": [
+     "Adam Cornelius"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 91921,
+     "title": "Ecstasy of Order: The Tetris Masters",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Indie Game: The Movie (2012)",
+    "title": "Indie Game: The Movie",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "indie-game-the-movie"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Downloaded (2013)",
+    "title": "Downloaded",
+    "year": 2013
+   },
+   "id": "downloaded",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 173210,
+    "imdbId": "tt2033981",
+    "canonicalTitle": "Downloaded",
+    "year": 2013,
+    "people": [
+     "Alex Winter"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 173210,
+     "title": "Downloaded",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- TPB AFK: The Pirate Bay Away from Keyboard (2013)",
+    "title": "TPB AFK: The Pirate Bay Away from Keyboard",
+    "year": 2013
+   },
+   "id": "tpb-afk-the-pirate-bay-away-from-keyboard",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 50275,
+    "imdbId": "tt2608732",
+    "canonicalTitle": "TPB AFK: The Pirate Bay - Away from Keyboard",
+    "year": 2013,
+    "people": [
+     "Simon Klose"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 50275,
+     "title": "TPB AFK: The Pirate Bay - Away from Keyboard",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Web Junkie (2013)",
+    "title": "Web Junkie",
+    "year": 2013
+   },
+   "id": "web-junkie",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 200487,
+    "imdbId": "tt2064745",
+    "canonicalTitle": "Web Junkie",
+    "year": 2014,
+    "people": [
+     "Hilla Medalia",
+     "Shosh Shlam"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 200487,
+     "title": "Web Junkie",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Atari: Game Over (2014)",
+    "title": "Atari: Game Over",
+    "year": 2014
+   },
+   "id": "atari-game-over",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 284470,
+    "imdbId": "tt3715406",
+    "canonicalTitle": "Atari: Game Over",
+    "year": 2014,
+    "people": [
+     "Zak Penn"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 284470,
+     "title": "Atari: Game Over",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Citizenfour (2014)",
+    "title": "Citizenfour",
+    "year": 2014
+   },
+   "status": "existing-match",
+   "id": "citizenfour"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Free to Play (2014)",
+    "title": "Free to Play",
+    "year": 2014
+   },
+   "id": "free-to-play",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 256561,
+    "imdbId": "tt3203290",
+    "canonicalTitle": "Free to Play",
+    "year": 2014,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 256561,
+     "title": "Free to Play",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Internet's Own Boy (2014)",
+    "title": "The Internet's Own Boy",
+    "year": 2014
+   },
+   "status": "existing-match",
+   "id": "the-internet-s-own-boy"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Print the Legend (2014)",
+    "title": "Print the Legend",
+    "year": 2014
+   },
+   "id": "print-the-legend",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 253266,
+    "imdbId": "tt3557464",
+    "canonicalTitle": "Print the Legend",
+    "year": 2014,
+    "people": [
+     "Luis Lopez",
+     "J. Clay Tweel"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 253266,
+     "title": "Print the Legend",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Deep Web (2015)",
+    "title": "Deep Web",
+    "year": 2015
+   },
+   "status": "existing-match",
+   "id": "deep-web"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Steve Jobs: The Man in the Machine (2015)",
+    "title": "Steve Jobs: The Man in the Machine",
+    "year": 2015
+   },
+   "id": "steve-jobs-the-man-in-the-machine",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 324308,
+    "imdbId": "tt4425064",
+    "canonicalTitle": "Steve Jobs: The Man in the Machine",
+    "year": 2015,
+    "people": [
+     "Alex Gibney"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 324308,
+     "title": "Steve Jobs: The Man in the Machine",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- HyperNormalisation (2016)",
+    "title": "HyperNormalisation",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "hypernormalisation"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Lo and Behold, Reveries of the Connected World (2016)",
+    "title": "Lo and Behold, Reveries of the Connected World",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "lo-and-behold-reveries-of-the-connected-world"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Silicon Cowboys (2016)",
+    "title": "Silicon Cowboys",
+    "year": 2016
+   },
+   "id": "silicon-cowboys",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 381058,
+    "imdbId": "tt4938484",
+    "canonicalTitle": "Silicon Cowboys",
+    "year": 2016,
+    "people": [
+     "Jason Cohen"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 381058,
+     "title": "Silicon Cowboys",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Zero Days (2016)",
+    "title": "Zero Days",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "zero-days"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- AlphaGo (2017)",
+    "title": "AlphaGo",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "alphago"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Kim Dotcom: Caught in the Web (2017)",
+    "title": "Kim Dotcom: Caught in the Web",
+    "year": 2017
+   },
+   "id": "kim-dotcom-caught-in-the-web",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 438471,
+    "imdbId": "tt3640710",
+    "canonicalTitle": "Kim Dotcom: Caught in the Web",
+    "year": 2017,
+    "people": [
+     "Annie Goldson"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 438471,
+     "title": "Kim Dotcom: Caught in the Web",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Cleaners (2018)",
+    "title": "The Cleaners",
+    "year": 2018
+   },
+   "id": "the-cleaners",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 492994,
+    "imdbId": "tt7689936",
+    "canonicalTitle": "The Cleaners",
+    "year": 2018,
+    "people": [
+     "Hans Block",
+     "Moritz Riesewick"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 492994,
+     "title": "The Cleaners",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- General Magic (2018)",
+    "title": "General Magic",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "general-magic"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Great Hack (2019)",
+    "title": "The Great Hack",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "the-great-hack"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Coded Bias (2020)",
+    "title": "Coded Bias",
+    "year": 2020
+   },
+   "id": "coded-bias",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 653734,
+    "imdbId": "tt11394170",
+    "canonicalTitle": "Coded Bias",
+    "year": 2020,
+    "people": [
+     "Shalini Kantayya"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 653734,
+     "title": "Coded Bias",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Feels Good Man (2020)",
+    "title": "Feels Good Man",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "feels-good-man"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Speed Cubers (2020)",
+    "title": "The Speed Cubers",
+    "year": 2020
+   },
+   "id": "the-speed-cubers",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 720748,
+    "imdbId": "tt12038300",
+    "canonicalTitle": "The Speed Cubers",
+    "year": 2020,
+    "people": [
+     "Sue Kim"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 720748,
+     "title": "The Speed Cubers",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Can't Get You Out of My Head (2021)",
+    "title": "Can't Get You Out of My Head",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "can-t-get-you-out-of-my-head"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Fake Famous (2021)",
+    "title": "Fake Famous",
+    "year": 2021
+   },
+   "id": "fake-famous",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 788610,
+    "imdbId": "tt13890392",
+    "canonicalTitle": "Fake Famous",
+    "year": 2021,
+    "people": [
+     "Nick Bilton"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 788610,
+     "title": "Fake Famous",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- A Glitch in the Matrix (2021)",
+    "title": "A Glitch in the Matrix",
+    "year": 2021
+   },
+   "id": "a-glitch-in-the-matrix",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 696109,
+    "imdbId": "tt9847360",
+    "canonicalTitle": "A Glitch in the Matrix",
+    "year": 2021,
+    "people": [
+     "Rodney Ascher"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 696109,
+     "title": "A Glitch in the Matrix",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Q: Into the Storm (2021)",
+    "title": "Q: Into the Storm",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "q-into-the-storm"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Eat the Rich: The GameStop Saga (2022)",
+    "title": "Eat the Rich: The GameStop Saga",
+    "year": 2022
+   },
+   "status": "existing-match",
+   "id": "eat-the-rich-the-gamestop-saga"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Most Hated Man on the Internet (2022)",
+    "title": "The Most Hated Man on the Internet",
+    "year": 2022
+   },
+   "status": "existing-match",
+   "id": "the-most-hated-man-on-the-internet"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Grand Theft Hamlet (2024)",
+    "title": "Grand Theft Hamlet",
+    "year": 2024
+   },
+   "status": "existing-match",
+   "id": "grand-theft-hamlet"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- Money Electric: The Bitcoin Mystery (2024)",
+    "title": "Money Electric: The Bitcoin Mystery",
+    "year": 2024
+   },
+   "status": "existing-match",
+   "id": "money-electric-the-bitcoin-mystery"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Remarkable Life of Ibelin (2024)",
+    "title": "The Remarkable Life of Ibelin",
+    "year": 2024
+   },
+   "status": "existing-match",
+   "id": "ibelin"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Technology, Internet and Ideas",
+    "raw": "- The Thinking Game (2024)",
+    "title": "The Thinking Game",
+    "year": 2024
+   },
+   "status": "existing-match",
+   "id": "the-thinking-game"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Thin Blue Line (1988)",
+    "title": "The Thin Blue Line",
+    "year": 1988
+   },
+   "status": "existing-match",
+   "id": "the-thin-blue-line"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Aileen Wuornos: The Selling of a Serial Killer (1992)",
+    "title": "Aileen Wuornos: The Selling of a Serial Killer",
+    "year": 1992
+   },
+   "id": "aileen-wuornos-the-selling-of-a-serial-killer",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 97044,
+    "imdbId": "tt0103634",
+    "canonicalTitle": "Aileen Wuornos: The Selling of a Serial Killer",
+    "year": 1992,
+    "people": [
+     "Nick Broomfield"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 97044,
+     "title": "Aileen Wuornos: The Selling of a Serial Killer",
+     "year": 1992
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Brother's Keeper (1992)",
+    "title": "Brother's Keeper",
+    "year": 1992
+   },
+   "id": "brother-s-keeper",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 26755,
+    "imdbId": "tt0103888",
+    "canonicalTitle": "Brother's Keeper",
+    "year": 1992,
+    "people": [
+     "Bruce Sinofsky",
+     "Joe Berlinger"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 26755,
+     "title": "Brother's Keeper",
+     "year": 1992
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Paradise Lost (1996)",
+    "title": "Paradise Lost",
+    "year": 1996
+   },
+   "status": "existing-match",
+   "id": "paradise-lost"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Waco: The Rules of Engagement (1997)",
+    "title": "Waco: The Rules of Engagement",
+    "year": 1997
+   },
+   "id": "waco-the-rules-of-engagement",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 34044,
+    "imdbId": "tt0120472",
+    "canonicalTitle": "Waco: The Rules of Engagement",
+    "year": 1997,
+    "people": [
+     "William Gazecki"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 34044,
+     "title": "Waco: The Rules of Engagement",
+     "year": 1997
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- One Day in September (1999)",
+    "title": "One Day in September",
+    "year": 1999
+   },
+   "id": "one-day-in-september",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 34045,
+    "imdbId": "tt0230591",
+    "canonicalTitle": "One Day in September",
+    "year": 1999,
+    "people": [
+     "Kevin Macdonald"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 34045,
+     "title": "One Day in September",
+     "year": 1999
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Murder on a Sunday Morning (2001)",
+    "title": "Murder on a Sunday Morning",
+    "year": 2001
+   },
+   "id": "murder-on-a-sunday-morning",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 51391,
+    "imdbId": "tt0307197",
+    "canonicalTitle": "Murder on a Sunday Morning",
+    "year": 2001,
+    "people": [
+     "Jean-Xavier de Lestrade"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 51391,
+     "title": "Murder on a Sunday Morning",
+     "year": 2001
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Capturing the Friedmans (2003)",
+    "title": "Capturing the Friedmans",
+    "year": 2003
+   },
+   "status": "existing-match",
+   "id": "capturing-the-friedmans"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Staircase (2004)",
+    "title": "The Staircase",
+    "year": 2004
+   },
+   "status": "existing-match",
+   "id": "the-staircase"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Dear Zachary (2008)",
+    "title": "Dear Zachary",
+    "year": 2008
+   },
+   "status": "existing-match",
+   "id": "dear-zachary"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Cropsey (2009)",
+    "title": "Cropsey",
+    "year": 2009
+   },
+   "status": "existing-match",
+   "id": "cropsey"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Into the Abyss (2011)",
+    "title": "Into the Abyss",
+    "year": 2011
+   },
+   "id": "into-the-abyss",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 77365,
+    "imdbId": "tt1972663",
+    "canonicalTitle": "Into the Abyss",
+    "year": 2011,
+    "people": [
+     "Werner Herzog"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 77365,
+     "title": "Into the Abyss",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Central Park Five (2012)",
+    "title": "The Central Park Five",
+    "year": 2012
+   },
+   "id": "the-central-park-five",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 124067,
+    "imdbId": "tt2380247",
+    "canonicalTitle": "The Central Park Five",
+    "year": 2012,
+    "people": [
+     "Sarah Burns",
+     "Ken Burns",
+     "David McMahon"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 124067,
+     "title": "The Central Park Five",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The House I Live In (2012)",
+    "title": "The House I Live In",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "the-house-i-live-in"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Seven Five (2014)",
+    "title": "The Seven Five",
+    "year": 2014
+   },
+   "id": "the-seven-five",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 320882,
+    "imdbId": "tt4136056",
+    "canonicalTitle": "The Seven Five",
+    "year": 2015,
+    "people": [
+     "Tiller Russell"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 320882,
+     "title": "The Seven Five",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Cartel Land (2015)",
+    "title": "Cartel Land",
+    "year": 2015
+   },
+   "id": "cartel-land",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 317952,
+    "imdbId": "tt4126304",
+    "canonicalTitle": "Cartel Land",
+    "year": 2015,
+    "people": [
+     "Matthew Heineman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 317952,
+     "title": "Cartel Land",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Jinx (2015)",
+    "title": "The Jinx",
+    "year": 2015
+   },
+   "status": "existing-match",
+   "id": "the-jinx"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Making a Murderer (2015)",
+    "title": "Making a Murderer",
+    "year": 2015
+   },
+   "status": "existing-match",
+   "id": "making-a-murderer"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Witness (2015)",
+    "title": "The Witness",
+    "year": 2015
+   },
+   "id": "the-witness",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 356332,
+    "imdbId": "tt3568002",
+    "canonicalTitle": "The Witness",
+    "year": 2015,
+    "people": [
+     "James Solomon"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 356332,
+     "title": "The Witness",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- 13th (2016)",
+    "title": "13th",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "13th"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Amanda Knox (2016)",
+    "title": "Amanda Knox",
+    "year": 2016
+   },
+   "id": "amanda-knox",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 411009,
+    "imdbId": "tt5952332",
+    "canonicalTitle": "Amanda Knox",
+    "year": 2016,
+    "people": [
+     "Rod Blackhurst",
+     "Brian McGinn"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 411009,
+     "title": "Amanda Knox",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Killing for Love (2016)",
+    "title": "Killing for Love",
+    "year": 2016
+   },
+   "id": "killing-for-love",
+   "status": "resolved",
+   "reason": "only exact-year documentary among verified candidates",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 402919,
+    "imdbId": "tt4552298",
+    "canonicalTitle": "Killing for Love",
+    "year": 2016,
+    "people": [
+     "Marcus Vetter",
+     "Karin Steinberger"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 402919,
+     "title": "Killing for Love",
+     "year": 2016
+    },
+    {
+     "mediaType": "tv",
+     "tmdbId": 91741,
+     "title": "Killing for Love",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Southwest of Salem (2016)",
+    "title": "Southwest of Salem",
+    "year": 2016
+   },
+   "id": "southwest-of-salem",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 390766,
+    "imdbId": "tt5333812",
+    "canonicalTitle": "Southwest of Salem: The Story of the San Antonio Four",
+    "year": 2016,
+    "people": [
+     "Deborah S. Esquenazi"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 390766,
+     "title": "Southwest of Salem: The Story of the San Antonio Four",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Abducted in Plain Sight (2017)",
+    "title": "Abducted in Plain Sight",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "abducted-in-plain-sight"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Casting JonBenét (2017)",
+    "title": "Casting JonBenét",
+    "year": 2017
+   },
+   "id": "casting-jonbenet",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 430826,
+    "imdbId": "tt6333052",
+    "canonicalTitle": "Casting JonBenet",
+    "year": 2017,
+    "people": [
+     "Kitty Green"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 430826,
+     "title": "Casting JonBenet",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Keepers (2017)",
+    "title": "The Keepers",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "the-keepers"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Mommy Dead and Dearest (2017)",
+    "title": "Mommy Dead and Dearest",
+    "year": 2017
+   },
+   "id": "mommy-dead-and-dearest",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 438446,
+    "imdbId": "tt6442978",
+    "canonicalTitle": "Mommy Dead and Dearest",
+    "year": 2017,
+    "people": [
+     "Erin Lee Carr"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 438446,
+     "title": "Mommy Dead and Dearest",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Crime + Punishment (2018)",
+    "title": "Crime + Punishment",
+    "year": 2018
+   },
+   "id": "crime-punishment",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 489983,
+    "imdbId": "tt7689908",
+    "canonicalTitle": "Crime + Punishment",
+    "year": 2018,
+    "people": [
+     "Stephen T. Maing"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 489983,
+     "title": "Crime + Punishment",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Evil Genius (2018)",
+    "title": "Evil Genius",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "evil-genius"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Collective (2019)",
+    "title": "Collective",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "collective"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Don't F\\*\\*k with Cats (2019)",
+    "title": "Don't F**k with Cats",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "don-t-f-k-with-cats"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- American Murder: The Family Next Door (2020)",
+    "title": "American Murder: The Family Next Door",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "american-murder-the-family-next-door"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- I'll Be Gone in the Dark (2020)",
+    "title": "I'll Be Gone in the Dark",
+    "year": 2020
+   },
+   "id": "i-ll-be-gone-in-the-dark",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 103023,
+    "imdbId": "tt8259114",
+    "canonicalTitle": "I'll Be Gone in the Dark",
+    "year": 2020,
+    "people": [
+     "Liz Garbus"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 103023,
+     "title": "I'll Be Gone in the Dark",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Into the Deep (2020)",
+    "title": "Into the Deep",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "into-the-deep"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Pharmacist (2020)",
+    "title": "The Pharmacist",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "the-pharmacist"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Tiger King (2020)",
+    "title": "Tiger King",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "tiger-king"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Time (2020)",
+    "title": "Time",
+    "year": 2020
+   },
+   "id": "time",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Crime Scene: The Vanishing at the Cecil Hotel (2021)",
+    "title": "Crime Scene: The Vanishing at the Cecil Hotel",
+    "year": 2021
+   },
+   "id": "crime-scene-the-vanishing-at-the-cecil-hotel",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 116989,
+    "imdbId": "tt13837672",
+    "canonicalTitle": "Crime Scene: The Vanishing at the Cecil Hotel",
+    "year": 2021,
+    "people": [
+     "Joe Berlinger"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 116989,
+     "title": "Crime Scene: The Vanishing at the Cecil Hotel",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Murder Among the Mormons (2021)",
+    "title": "Murder Among the Mormons",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "murder-among-the-mormons"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Sophie: A Murder in West Cork (2021)",
+    "title": "Sophie: A Murder in West Cork",
+    "year": 2021
+   },
+   "id": "sophie-a-murder-in-west-cork",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 126396,
+    "imdbId": "tt14681732",
+    "canonicalTitle": "Sophie: A Murder in West Cork",
+    "year": 2021,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 126396,
+     "title": "Sophie: A Murder in West Cork",
+     "year": 2021
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 1514277,
+     "title": "Sophie",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Girl in the Picture (2022)",
+    "title": "Girl in the Picture",
+    "year": 2022
+   },
+   "id": "girl-in-the-picture",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 988046,
+    "imdbId": "tt21059520",
+    "canonicalTitle": "Girl in the Picture",
+    "year": 2022,
+    "people": [
+     "Skye Borgman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 988046,
+     "title": "Girl in the Picture",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- Our Father (2022)",
+    "title": "Our Father",
+    "year": 2022
+   },
+   "id": "our-father",
+   "status": "resolved",
+   "reason": "only exact-year documentary among verified candidates",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 962697,
+    "imdbId": "tt19704638",
+    "canonicalTitle": "Our Father",
+    "year": 2022,
+    "people": [
+     "Lucie Jourdan"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 962697,
+     "title": "Our Father",
+     "year": 2022
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 931373,
+     "title": "Our Father,",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Crime, Investigations and Injustice",
+    "raw": "- The Perfect Neighbor (2025)",
+    "title": "The Perfect Neighbor",
+    "year": 2025
+   },
+   "status": "existing-match",
+   "id": "perfect-neighbor"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Hearts and Minds (1974)",
+    "title": "Hearts and Minds",
+    "year": 1974
+   },
+   "id": "hearts-and-minds",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 42449,
+    "imdbId": "tt0071604",
+    "canonicalTitle": "Hearts and Minds",
+    "year": 1974,
+    "people": [
+     "Peter Davis"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 42449,
+     "title": "Hearts and Minds",
+     "year": 1974
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Harlan County, USA (1976)",
+    "title": "Harlan County, USA",
+    "year": 1976
+   },
+   "id": "harlan-county-usa",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 33324,
+    "imdbId": "tt0074605",
+    "canonicalTitle": "Harlan County U.S.A.",
+    "year": 1976,
+    "people": [
+     "Barbara Kopple"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 33324,
+     "title": "Harlan County U.S.A.",
+     "year": 1976
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Atomic Cafe (1982)",
+    "title": "The Atomic Cafe",
+    "year": 1982
+   },
+   "id": "the-atomic-cafe",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 26851,
+    "imdbId": "tt0083590",
+    "canonicalTitle": "The Atomic Cafe",
+    "year": 1982,
+    "people": [
+     "Jayne Loader",
+     "Kevin Rafferty",
+     "Pierce Rafferty"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 26851,
+     "title": "The Atomic Cafe",
+     "year": 1982
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Manufacturing Consent: Noam Chomsky and the Media (1992)",
+    "title": "Manufacturing Consent: Noam Chomsky and the Media",
+    "year": 1992
+   },
+   "id": "manufacturing-consent-noam-chomsky-and-the-media",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 36947,
+    "imdbId": "tt0104810",
+    "canonicalTitle": "Manufacturing Consent: Noam Chomsky and the Media",
+    "year": 1992,
+    "people": [
+     "Mark Achbar",
+     "Peter Wintonick"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 36947,
+     "title": "Manufacturing Consent: Noam Chomsky and the Media",
+     "year": 1992
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The War Room (1993)",
+    "title": "The War Room",
+    "year": 1993
+   },
+   "id": "the-war-room",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 26408,
+    "imdbId": "tt0108515",
+    "canonicalTitle": "The War Room",
+    "year": 1993,
+    "people": [
+     "Chris Hegedus",
+     "D. A. Pennebaker"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 26408,
+     "title": "The War Room",
+     "year": 1993
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Trials of Henry Kissinger (2002)",
+    "title": "The Trials of Henry Kissinger",
+    "year": 2002
+   },
+   "status": "existing-match",
+   "id": "the-trials-of-henry-kissinger"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Fog of War (2003)",
+    "title": "The Fog of War",
+    "year": 2003
+   },
+   "status": "existing-match",
+   "id": "the-fog-of-war"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Power of Nightmares (2004)",
+    "title": "The Power of Nightmares",
+    "year": 2004
+   },
+   "status": "existing-match",
+   "id": "the-power-of-nightmares"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Our Brand Is Crisis (2005)",
+    "title": "Our Brand Is Crisis",
+    "year": 2005
+   },
+   "id": "our-brand-is-crisis",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 43628,
+    "imdbId": "tt0492714",
+    "canonicalTitle": "Our Brand Is Crisis",
+    "year": 2005,
+    "people": [
+     "Rachel Boynton"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 43628,
+     "title": "Our Brand Is Crisis",
+     "year": 2005
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Why We Fight (2005)",
+    "title": "Why We Fight",
+    "year": 2005
+   },
+   "status": "existing-match",
+   "id": "why-we-fight"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- No End in Sight (2007)",
+    "title": "No End in Sight",
+    "year": 2007
+   },
+   "id": "no-end-in-sight",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 12901,
+    "imdbId": "tt0912593",
+    "canonicalTitle": "No End in Sight",
+    "year": 2007,
+    "people": [
+     "Charles Ferguson"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 12901,
+     "title": "No End in Sight",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Taxi to the Dark Side (2007)",
+    "title": "Taxi to the Dark Side",
+    "year": 2007
+   },
+   "status": "existing-match",
+   "id": "taxi-to-the-dark-side"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Burma VJ (2008)",
+    "title": "Burma VJ",
+    "year": 2008
+   },
+   "id": "burma-vj",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 26763,
+    "imdbId": "tt1333634",
+    "canonicalTitle": "Burma VJ: Reporting from a Closed Country",
+    "year": 2008,
+    "people": [
+     "Anders Østergaard"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 26763,
+     "title": "Burma VJ: Reporting from a Closed Country",
+     "year": 2008
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Restrepo (2010)",
+    "title": "Restrepo",
+    "year": 2010
+   },
+   "status": "existing-match",
+   "id": "restrepo"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- 5 Broken Cameras (2011)",
+    "title": "5 Broken Cameras",
+    "year": 2011
+   },
+   "id": "5-broken-cameras",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Act of Killing (2012)",
+    "title": "The Act of Killing",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "the-act-of-killing"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Gatekeepers (2012)",
+    "title": "The Gatekeepers",
+    "year": 2012
+   },
+   "id": "the-gatekeepers",
+   "status": "resolved",
+   "reason": "only exact-year documentary among verified candidates",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 127918,
+    "imdbId": "tt2309788",
+    "canonicalTitle": "The Gatekeepers",
+    "year": 2012,
+    "people": [
+     "Dror Moreh"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 127918,
+     "title": "The Gatekeepers",
+     "year": 2012
+    },
+    {
+     "mediaType": "tv",
+     "tmdbId": 87681,
+     "title": "The Gatekeepers",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Armstrong Lie (2013)",
+    "title": "The Armstrong Lie",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "the-armstrong-lie"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Square (2013)",
+    "title": "The Square",
+    "year": 2013
+   },
+   "id": "the-square",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 159037,
+    "imdbId": "tt2486682",
+    "canonicalTitle": "The Square",
+    "year": 2013,
+    "people": [
+     "Jehane Noujaim"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 159037,
+     "title": "The Square",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Unknown Known (2013)",
+    "title": "The Unknown Known",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "the-unknown-known"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Look of Silence (2014)",
+    "title": "The Look of Silence",
+    "year": 2014
+   },
+   "id": "the-look-of-silence",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 267480,
+    "imdbId": "tt3521134",
+    "canonicalTitle": "The Look of Silence",
+    "year": 2014,
+    "people": [
+     "Joshua Oppenheimer"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 267480,
+     "title": "The Look of Silence",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Bitter Lake (2015)",
+    "title": "Bitter Lake",
+    "year": 2015
+   },
+   "status": "existing-match",
+   "id": "bitter-lake"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Winter on Fire (2015)",
+    "title": "Winter on Fire",
+    "year": 2015
+   },
+   "id": "winter-on-fire",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 355020,
+    "imdbId": "tt4908644",
+    "canonicalTitle": "Winter on Fire: Ukraine's Fight for Freedom",
+    "year": 2015,
+    "people": [
+     "Evgeny Afineevsky"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 355020,
+     "title": "Winter on Fire: Ukraine's Fight for Freedom",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Shadow World (2016)",
+    "title": "Shadow World",
+    "year": 2016
+   },
+   "id": "shadow-world",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 390410,
+    "imdbId": "tt2626338",
+    "canonicalTitle": "Shadow World",
+    "year": 2016,
+    "people": [
+     "Johan Grimonprez"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 390410,
+     "title": "Shadow World",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Weiner (2016)",
+    "title": "Weiner",
+    "year": 2016
+   },
+   "id": "weiner",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 376261,
+    "imdbId": "tt5278596",
+    "canonicalTitle": "Weiner",
+    "year": 2016,
+    "people": [
+     "Josh Kriegman",
+     "Elyse Steinberg"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 376261,
+     "title": "Weiner",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Get Me Roger Stone (2017)",
+    "title": "Get Me Roger Stone",
+    "year": 2017
+   },
+   "id": "get-me-roger-stone",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 448448,
+    "imdbId": "tt6714534",
+    "canonicalTitle": "Get Me Roger Stone",
+    "year": 2017,
+    "people": [
+     "Daniel DiMauro",
+     "Dylan Bank",
+     "Morgan Pehme"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 448448,
+     "title": "Get Me Roger Stone",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Icarus (2017)",
+    "title": "Icarus",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "icarus"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Last Men in Aleppo (2017)",
+    "title": "Last Men in Aleppo",
+    "year": 2017
+   },
+   "id": "last-men-in-aleppo",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 433085,
+    "imdbId": "tt6333074",
+    "canonicalTitle": "Last Men in Aleppo",
+    "year": 2017,
+    "people": [
+     "Steen Johannessen",
+     "Feras Fayyad"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 433085,
+     "title": "Last Men in Aleppo",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Bellingcat: Truth in a Post-Truth World (2018)",
+    "title": "Bellingcat: Truth in a Post-Truth World",
+    "year": 2018
+   },
+   "id": "bellingcat-truth-in-a-post-truth-world",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 558739,
+    "imdbId": "tt7844518",
+    "canonicalTitle": "Bellingcat: Truth in a Post-Truth World",
+    "year": 2018,
+    "people": [
+     "Hans Pool"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 558739,
+     "title": "Bellingcat: Truth in a Post-Truth World",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Citizen K (2019)",
+    "title": "Citizen K",
+    "year": 2019
+   },
+   "id": "citizen-k",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 618360,
+    "imdbId": "tt10703826",
+    "canonicalTitle": "Citizen K",
+    "year": 2019,
+    "people": [
+     "Alex Gibney"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 618360,
+     "title": "Citizen K",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- For Sama (2019)",
+    "title": "For Sama",
+    "year": 2019
+   },
+   "id": "for-sama",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 576017,
+    "imdbId": "tt9617456",
+    "canonicalTitle": "For Sama",
+    "year": 2019,
+    "people": [
+     "Waad al-Kateab",
+     "Edward Watts"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 576017,
+     "title": "For Sama",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Dissident (2020)",
+    "title": "The Dissident",
+    "year": 2020
+   },
+   "id": "the-dissident",
+   "status": "resolved",
+   "reason": "only exact-year documentary among verified candidates",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 653746,
+    "imdbId": "tt11382384",
+    "canonicalTitle": "The Dissident",
+    "year": 2020,
+    "people": [
+     "Bryan Fogel"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 653746,
+     "title": "The Dissident",
+     "year": 2020
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 1058852,
+     "title": "The Dissident",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- The Mole: Undercover in North Korea (2020)",
+    "title": "The Mole: Undercover in North Korea",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "the-mole-undercover-in-north-korea"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- Navalny (2022)",
+    "title": "Navalny",
+    "year": 2022
+   },
+   "status": "existing-match",
+   "id": "navalny"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Politics and Geopolitics",
+    "raw": "- 20 Days in Mariupol (2023)",
+    "title": "20 Days in Mariupol",
+    "year": 2023
+   },
+   "status": "existing-match",
+   "id": "mariupol"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Roger & Me (1989)",
+    "title": "Roger & Me",
+    "year": 1989
+   },
+   "id": "roger-me",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1779,
+    "imdbId": "tt0098213",
+    "canonicalTitle": "Roger & Me",
+    "year": 1989,
+    "people": [
+     "Michael Moore"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1779,
+     "title": "Roger & Me",
+     "year": 1989
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- The Corporation (2003)",
+    "title": "The Corporation",
+    "year": 2003
+   },
+   "status": "existing-match",
+   "id": "the-corporation"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Darwin's Nightmare (2004)",
+    "title": "Darwin's Nightmare",
+    "year": 2004
+   },
+   "id": "darwin-s-nightmare",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 415253,
+    "imdbId": "tt0424024",
+    "canonicalTitle": "Darwin's Nightmare",
+    "year": 2005,
+    "people": [
+     "Hubert Sauper"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 415253,
+     "title": "Darwin's Nightmare",
+     "year": 2005
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Black Gold (2006)",
+    "title": "Black Gold",
+    "year": 2006
+   },
+   "id": "black-gold",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 49952,
+    "imdbId": "tt0492447",
+    "canonicalTitle": "Black Gold",
+    "year": 2006,
+    "people": [
+     "Marc J. Francis",
+     "Nick Francis"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 49952,
+     "title": "Black Gold",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Manufactured Landscapes (2006)",
+    "title": "Manufactured Landscapes",
+    "year": 2006
+   },
+   "id": "manufactured-landscapes",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 24582,
+    "imdbId": "tt0832903",
+    "canonicalTitle": "Manufactured Landscapes",
+    "year": 2006,
+    "people": [
+     "Jennifer Baichwal"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 24582,
+     "title": "Manufactured Landscapes",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Food, Inc. (2008)",
+    "title": "Food, Inc.",
+    "year": 2008
+   },
+   "id": "food-inc",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 18570,
+    "imdbId": "tt1286537",
+    "canonicalTitle": "Food, Inc.",
+    "year": 2008,
+    "people": [
+     "Robert Kenner"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 18570,
+     "title": "Food, Inc.",
+     "year": 2008
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Capitalism: A Love Story (2009)",
+    "title": "Capitalism: A Love Story",
+    "year": 2009
+   },
+   "id": "capitalism-a-love-story",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 22074,
+    "imdbId": "tt1232207",
+    "canonicalTitle": "Capitalism: A Love Story",
+    "year": 2009,
+    "people": [
+     "Michael Moore"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 22074,
+     "title": "Capitalism: A Love Story",
+     "year": 2009
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Big Men (2013)",
+    "title": "Big Men",
+    "year": 2013
+   },
+   "id": "big-men",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 174349,
+    "imdbId": "tt2789532",
+    "canonicalTitle": "Big Men",
+    "year": 2014,
+    "people": [
+     "Rachel Boynton"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 174349,
+     "title": "Big Men",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Inequality for All (2013)",
+    "title": "Inequality for All",
+    "year": 2013
+   },
+   "id": "inequality-for-all",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 159008,
+    "imdbId": "tt2215151",
+    "canonicalTitle": "Inequality for All",
+    "year": 2013,
+    "people": [
+     "Jacob Kornbluth"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 159008,
+     "title": "Inequality for All",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Money for Nothing: Inside the Federal Reserve (2013)",
+    "title": "Money for Nothing: Inside the Federal Reserve",
+    "year": 2013
+   },
+   "id": "money-for-nothing-inside-the-federal-reserve",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 221800,
+    "imdbId": "tt2752724",
+    "canonicalTitle": "Money for Nothing: Inside the Federal Reserve",
+    "year": 2013,
+    "people": [
+     "Jim Bruce"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 221800,
+     "title": "Money for Nothing: Inside the Federal Reserve",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Requiem for the American Dream (2015)",
+    "title": "Requiem for the American Dream",
+    "year": 2015
+   },
+   "id": "requiem-for-the-american-dream",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 333377,
+    "imdbId": "tt3270538",
+    "canonicalTitle": "Requiem for the American Dream",
+    "year": 2015,
+    "people": [
+     "Kelly Nyks",
+     "Jared P. Scott",
+     "Peter D. Hutchison"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 333377,
+     "title": "Requiem for the American Dream",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- The True Cost (2015)",
+    "title": "The True Cost",
+    "year": 2015
+   },
+   "id": "the-true-cost",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 339065,
+    "imdbId": "tt3162938",
+    "canonicalTitle": "The True Cost",
+    "year": 2015,
+    "people": [
+     "Andrew Morgan"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 339065,
+     "title": "The True Cost",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- China's Van Gogh (2016)",
+    "title": "China's Van Gogh",
+    "year": 2016
+   },
+   "id": "china-s-van-gogh",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Plastic China (2016)",
+    "title": "Plastic China",
+    "year": 2016
+   },
+   "id": "plastic-china",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 428574,
+    "imdbId": "tt6090264",
+    "canonicalTitle": "Plastic China",
+    "year": 2017,
+    "people": [
+     "Jiuliang Wang"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 428574,
+     "title": "Plastic China",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Generation Wealth (2018)",
+    "title": "Generation Wealth",
+    "year": 2018
+   },
+   "id": "generation-wealth",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 493014,
+    "imdbId": "tt5268348",
+    "canonicalTitle": "Generation Wealth",
+    "year": 2018,
+    "people": [
+     "Lauren Greenfield"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 493014,
+     "title": "Generation Wealth",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- American Factory (2019)",
+    "title": "American Factory",
+    "year": 2019
+   },
+   "id": "american-factory",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 565716,
+    "imdbId": "tt9351980",
+    "canonicalTitle": "American Factory",
+    "year": 2019,
+    "people": [
+     "Steven Bognar",
+     "Julia Reichert"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 565716,
+     "title": "American Factory",
+     "year": 2019
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 628756,
+     "title": "American Factory: A Conversation with the Obamas",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Capital in the Twenty-First Century (2019)",
+    "title": "Capital in the Twenty-First Century",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "capital-in-the-twenty-first-century"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Ascension (2021)",
+    "title": "Ascension",
+    "year": 2021
+   },
+   "id": "ascension",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 822138,
+    "imdbId": "tt14505430",
+    "canonicalTitle": "Ascension",
+    "year": 2021,
+    "people": [
+     "Jessica Kingdon"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 822138,
+     "title": "Ascension",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Economics, Corporations and Inequality",
+    "raw": "- Downfall: The Case Against Boeing (2022)",
+    "title": "Downfall: The Case Against Boeing",
+    "year": 2022
+   },
+   "id": "downfall-the-case-against-boeing",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 913862,
+    "imdbId": "tt11893274",
+    "canonicalTitle": "Downfall: The Case Against Boeing",
+    "year": 2022,
+    "people": [
+     "Rory Kennedy"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 913862,
+     "title": "Downfall: The Case Against Boeing",
+     "year": 2022
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 873735,
+     "title": "Downfall",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Kon-Tiki (1950)",
+    "title": "Kon-Tiki",
+    "year": 1950
+   },
+   "id": "kon-tiki",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 20088,
+    "imdbId": "tt0042650",
+    "canonicalTitle": "Kon-Tiki",
+    "year": 1950,
+    "people": [
+     "Thor Heyerdahl"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 20088,
+     "title": "Kon-Tiki",
+     "year": 1950
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Man Who Skied Down Everest (1975)",
+    "title": "The Man Who Skied Down Everest",
+    "year": 1975
+   },
+   "id": "the-man-who-skied-down-everest",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 37339,
+    "imdbId": "tt0073340",
+    "canonicalTitle": "The Man Who Skied Down Everest",
+    "year": 1975,
+    "people": [
+     "Lawrence Schiller",
+     "Bruce Nyznik"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 37339,
+     "title": "The Man Who Skied Down Everest",
+     "year": 1975
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Little Dieter Needs to Fly (1997)",
+    "title": "Little Dieter Needs to Fly",
+    "year": 1997
+   },
+   "id": "little-dieter-needs-to-fly",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 57976,
+    "imdbId": "tt0145046",
+    "canonicalTitle": "Little Dieter Needs to Fly",
+    "year": 1997,
+    "people": [
+     "Werner Herzog"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 57976,
+     "title": "Little Dieter Needs to Fly",
+     "year": 1997
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Touching the Void (2003)",
+    "title": "Touching the Void",
+    "year": 2003
+   },
+   "status": "existing-match",
+   "id": "touching-the-void"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Riding Giants (2004)",
+    "title": "Riding Giants",
+    "year": 2004
+   },
+   "id": "riding-giants",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 291,
+    "imdbId": "tt0389326",
+    "canonicalTitle": "Riding Giants",
+    "year": 2004,
+    "people": [
+     "Stacy Peralta"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 291,
+     "title": "Riding Giants",
+     "year": 2004
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Grizzly Man (2005)",
+    "title": "Grizzly Man",
+    "year": 2005
+   },
+   "status": "existing-match",
+   "id": "grizzly-man"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Deep Water (2006)",
+    "title": "Deep Water",
+    "year": 2006
+   },
+   "id": "deep-water",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 15030,
+    "imdbId": "tt0460766",
+    "canonicalTitle": "Deep Water",
+    "year": 2006,
+    "people": [
+     "Jerry Rothwell",
+     "Louise Osmond"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 15030,
+     "title": "Deep Water",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Stranded (2007)",
+    "title": "Stranded",
+    "year": 2007
+   },
+   "status": "existing-match",
+   "id": "stranded"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Man on Wire (2008)",
+    "title": "Man on Wire",
+    "year": 2008
+   },
+   "status": "existing-match",
+   "id": "man-on-wire"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Happy People: A Year in the Taiga (2010)",
+    "title": "Happy People: A Year in the Taiga",
+    "year": 2010
+   },
+   "status": "existing-match",
+   "id": "happy-people-a-year-in-the-taiga"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Senna (2010)",
+    "title": "Senna",
+    "year": 2010
+   },
+   "id": "senna",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 58496,
+    "imdbId": "tt1424432",
+    "canonicalTitle": "Senna",
+    "year": 2010,
+    "people": [
+     "Asif Kapadia"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 58496,
+     "title": "Senna",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Summit (2012)",
+    "title": "The Summit",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "the-summit"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Beyond the Edge (2013)",
+    "title": "Beyond the Edge",
+    "year": 2013
+   },
+   "id": "beyond-the-edge",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 211088,
+    "imdbId": "tt2468638",
+    "canonicalTitle": "Beyond the Edge",
+    "year": 2013,
+    "people": [
+     "Leanne Pooley"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 211088,
+     "title": "Beyond the Edge",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Maidentrip (2013)",
+    "title": "Maidentrip",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "maidentrip"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Barkley Marathons (2014)",
+    "title": "The Barkley Marathons",
+    "year": 2014
+   },
+   "id": "the-barkley-marathons",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 334495,
+    "imdbId": "tt2400291",
+    "canonicalTitle": "The Barkley Marathons: The Race That Eats Its Young",
+    "year": 2014,
+    "people": [
+     "Annika Iltis",
+     "Timothy James Kane"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 334495,
+     "title": "The Barkley Marathons: The Race That Eats Its Young",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Valley Uprising (2014)",
+    "title": "Valley Uprising",
+    "year": 2014
+   },
+   "id": "valley-uprising",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 294959,
+    "imdbId": "tt3784160",
+    "canonicalTitle": "Valley Uprising",
+    "year": 2014,
+    "people": [
+     "Nick Rosen",
+     "Josh Lowell",
+     "Peter Mortimer"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 294959,
+     "title": "Valley Uprising",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Meru (2015)",
+    "title": "Meru",
+    "year": 2015
+   },
+   "status": "existing-match",
+   "id": "meru"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Sherpa (2015)",
+    "title": "Sherpa",
+    "year": 2015
+   },
+   "status": "existing-match",
+   "id": "sherpa"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Dawn Wall (2017)",
+    "title": "The Dawn Wall",
+    "year": 2017
+   },
+   "status": "existing-match",
+   "id": "the-dawn-wall"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Mountain (2017)",
+    "title": "Mountain",
+    "year": 2017
+   },
+   "id": "mountain",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 462145,
+    "imdbId": "tt6203570",
+    "canonicalTitle": "Mountain",
+    "year": 2017,
+    "people": [
+     "Jennifer Peedom"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 462145,
+     "title": "Mountain",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Free Solo (2018)",
+    "title": "Free Solo",
+    "year": 2018
+   },
+   "status": "existing-match",
+   "id": "free-solo"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Last Breath (2019)",
+    "title": "Last Breath",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "last-breath"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- 14 Peaks: Nothing Is Impossible (2021)",
+    "title": "14 Peaks: Nothing Is Impossible",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "14-peaks-nothing-is-impossible"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Alpinist (2021)",
+    "title": "The Alpinist",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "the-alpinist"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Rescue (2021)",
+    "title": "The Rescue",
+    "year": 2021
+   },
+   "status": "existing-match",
+   "id": "the-rescue"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- Torn (2021)",
+    "title": "Torn",
+    "year": 2021
+   },
+   "id": "torn",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 730057,
+    "imdbId": "tt11876896",
+    "canonicalTitle": "Torn",
+    "year": 2021,
+    "people": [
+     "Max Lowe"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 730057,
+     "title": "Torn",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Deepest Breath (2023)",
+    "title": "The Deepest Breath",
+    "year": 2023
+   },
+   "status": "existing-match",
+   "id": "the-deepest-breath"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Survival and Extraordinary Feats",
+    "raw": "- The Endurance (2024)",
+    "title": "The Endurance",
+    "year": 2024
+   },
+   "id": "the-endurance",
+   "status": "resolved",
+   "reason": "evidence-pinned: 2024 Shackleton shipwreck documentary by Vasarhelyi, Chin & Hewit; TMDB title Endurance",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 947763,
+    "imdbId": "tt18556278",
+    "canonicalTitle": "Endurance",
+    "year": 2024,
+    "people": [
+     "Natalie Hewit",
+     "Elizabeth Chai Vasarhelyi",
+     "Jimmy Chin"
+    ]
+   }
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Cane Toads: An Unnatural History (1988)",
+    "title": "Cane Toads: An Unnatural History",
+    "year": 1988
+   },
+   "id": "cane-toads-an-unnatural-history",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 82284,
+    "imdbId": "tt0130529",
+    "canonicalTitle": "Cane Toads: An Unnatural History",
+    "year": 1988,
+    "people": [
+     "Mark Lewis"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 82284,
+     "title": "Cane Toads: An Unnatural History",
+     "year": 1988
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- For All Mankind (1989)",
+    "title": "For All Mankind",
+    "year": 1989
+   },
+   "id": "for-all-mankind",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 20423,
+    "imdbId": "tt0097372",
+    "canonicalTitle": "For All Mankind",
+    "year": 1989,
+    "people": [
+     "Al Reinert"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 20423,
+     "title": "For All Mankind",
+     "year": 1989
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Microcosmos (1996)",
+    "title": "Microcosmos",
+    "year": 1996
+   },
+   "id": "microcosmos",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 9305,
+    "imdbId": "tt0117040",
+    "canonicalTitle": "Microcosmos",
+    "year": 1996,
+    "people": [
+     "Claude Nuridsany",
+     "Marie Pérennou"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 9305,
+     "title": "Microcosmos",
+     "year": 1996
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Winged Migration (2001)",
+    "title": "Winged Migration",
+    "year": 2001
+   },
+   "id": "winged-migration",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 11516,
+    "imdbId": "tt0301727",
+    "canonicalTitle": "Winged Migration",
+    "year": 2001,
+    "people": [
+     "Jacques Perrin"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 11516,
+     "title": "Winged Migration",
+     "year": 2001
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- March of the Penguins (2005)",
+    "title": "March of the Penguins",
+    "year": 2005
+   },
+   "id": "march-of-the-penguins",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1667,
+    "imdbId": "tt0428803",
+    "canonicalTitle": "March of the Penguins",
+    "year": 2005,
+    "people": [
+     "Luc Jacquet"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1667,
+     "title": "March of the Penguins",
+     "year": 2005
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Encounters at the End of the World (2007)",
+    "title": "Encounters at the End of the World",
+    "year": 2007
+   },
+   "id": "encounters-at-the-end-of-the-world",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 12172,
+    "imdbId": "tt1093824",
+    "canonicalTitle": "Encounters at the End of the World",
+    "year": 2008,
+    "people": [
+     "Werner Herzog"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 12172,
+     "title": "Encounters at the End of the World",
+     "year": 2008
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- In the Shadow of the Moon (2007)",
+    "title": "In the Shadow of the Moon",
+    "year": 2007
+   },
+   "id": "in-the-shadow-of-the-moon",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 14284,
+    "imdbId": "tt0925248",
+    "canonicalTitle": "In the Shadow of the Moon",
+    "year": 2007,
+    "people": [
+     "David Sington"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 14284,
+     "title": "In the Shadow of the Moon",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- The Cove (2009)",
+    "title": "The Cove",
+    "year": 2009
+   },
+   "status": "existing-match",
+   "id": "the-cove"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Cave of Forgotten Dreams (2010)",
+    "title": "Cave of Forgotten Dreams",
+    "year": 2010
+   },
+   "status": "existing-match",
+   "id": "cave-of-forgotten-dreams"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Into Eternity (2010)",
+    "title": "Into Eternity",
+    "year": 2010
+   },
+   "status": "existing-match",
+   "id": "into-eternity"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Chasing Ice (2012)",
+    "title": "Chasing Ice",
+    "year": 2012
+   },
+   "status": "existing-match",
+   "id": "chasing-ice"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Blackfish (2013)",
+    "title": "Blackfish",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "blackfish"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Particle Fever (2013)",
+    "title": "Particle Fever",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "particle-fever"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Tim's Vermeer (2013)",
+    "title": "Tim's Vermeer",
+    "year": 2013
+   },
+   "status": "existing-match",
+   "id": "tim-s-vermeer"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Virunga (2014)",
+    "title": "Virunga",
+    "year": 2014
+   },
+   "id": "virunga",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 263614,
+    "imdbId": "tt3455224",
+    "canonicalTitle": "Virunga",
+    "year": 2014,
+    "people": [
+     "Orlando von Einsiedel"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 263614,
+     "title": "Virunga",
+     "year": 2014
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 415818,
+     "title": "Virunga: Gorillas in Peril",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Into the Inferno (2016)",
+    "title": "Into the Inferno",
+    "year": 2016
+   },
+   "status": "existing-match",
+   "id": "into-the-inferno"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- The Ivory Game (2016)",
+    "title": "The Ivory Game",
+    "year": 2016
+   },
+   "id": "the-ivory-game",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 411023,
+    "imdbId": "tt5952266",
+    "canonicalTitle": "The Ivory Game",
+    "year": 2016,
+    "people": [
+     "Richard Ladkani",
+     "Kief Davidson"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 411023,
+     "title": "The Ivory Game",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Planet Earth II (2016)",
+    "title": "Planet Earth II",
+    "year": 2016
+   },
+   "id": "planet-earth-ii",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 68595,
+    "imdbId": "tt5491994",
+    "canonicalTitle": "Planet Earth II",
+    "year": 2016,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 596683,
+     "title": "Planet Earth II: A World of Wonder",
+     "year": 2017
+    },
+    {
+     "mediaType": "tv",
+     "tmdbId": 68595,
+     "title": "Planet Earth II",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Chasing Coral (2017)",
+    "title": "Chasing Coral",
+    "year": 2017
+   },
+   "id": "chasing-coral",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 432615,
+    "imdbId": "tt6333054",
+    "canonicalTitle": "Chasing Coral",
+    "year": 2017,
+    "people": [
+     "Jeff Orlowski"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 432615,
+     "title": "Chasing Coral",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- The Farthest (2017)",
+    "title": "The Farthest",
+    "year": 2017
+   },
+   "id": "the-farthest",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 436305,
+    "imdbId": "tt6223974",
+    "canonicalTitle": "The Farthest",
+    "year": 2018,
+    "people": [
+     "Emer Reynolds"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 436305,
+     "title": "The Farthest",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Jane (2017)",
+    "title": "Jane",
+    "year": 2017
+   },
+   "id": "jane",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 470819,
+    "imdbId": "tt7207238",
+    "canonicalTitle": "Jane",
+    "year": 2017,
+    "people": [
+     "Brett Morgen"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 470819,
+     "title": "Jane",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Apollo 11 (2019)",
+    "title": "Apollo 11",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "apollo-11"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Fantastic Fungi (2019)",
+    "title": "Fantastic Fungi",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "fantastic-fungi"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Honeyland (2019)",
+    "title": "Honeyland",
+    "year": 2019
+   },
+   "status": "existing-match",
+   "id": "honeyland"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Sea of Shadows (2019)",
+    "title": "Sea of Shadows",
+    "year": 2019
+   },
+   "id": "sea-of-shadows",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 566219,
+    "imdbId": "tt9326056",
+    "canonicalTitle": "Sea of Shadows",
+    "year": 2019,
+    "people": [
+     "Richard Ladkani"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 566219,
+     "title": "Sea of Shadows",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- My Octopus Teacher (2020)",
+    "title": "My Octopus Teacher",
+    "year": 2020
+   },
+   "status": "existing-match",
+   "id": "my-octopus-teacher"
+  },
+  {
+   "input": {
+    "source": "attachment",
+    "section": "Nature and Science",
+    "raw": "- Fire of Love (2022)",
+    "title": "Fire of Love",
+    "year": 2022
+   },
+   "status": "existing-match",
+   "id": "fire-of-love"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Up series (1964–2019)",
+    "title": "Up series",
+    "year": 1964,
+    "yearEnd": 2019
+   },
+   "status": "duplicate-in-batch",
+   "id": "up-series"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Titicut Follies (1967)",
+    "title": "Titicut Follies",
+    "year": 1967
+   },
+   "status": "duplicate-in-batch",
+   "id": "titicut-follies"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Gimme Shelter (1970)",
+    "title": "Gimme Shelter",
+    "year": 1970
+   },
+   "status": "duplicate-in-batch",
+   "id": "gimme-shelter"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Marjoe (1972)",
+    "title": "Marjoe",
+    "year": 1972
+   },
+   "status": "duplicate-in-batch",
+   "id": "marjoe"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "The Atomic Cafe (1982)",
+    "title": "The Atomic Cafe",
+    "year": 1982
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-atomic-cafe"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Cane Toads: An Unnatural History (1988)",
+    "title": "Cane Toads: An Unnatural History",
+    "year": 1988
+   },
+   "status": "duplicate-in-batch",
+   "id": "cane-toads-an-unnatural-history"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Paris Is Burning (1990)",
+    "title": "Paris Is Burning",
+    "year": 1990
+   },
+   "status": "duplicate-in-batch",
+   "id": "paris-is-burning"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Quiet Rage: The Stanford Prison Study (1992)",
+    "title": "Quiet Rage: The Stanford Prison Study",
+    "year": 1992
+   },
+   "status": "duplicate-in-batch",
+   "id": "quiet-rage-the-stanford-prison-study"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Aileen Wuornos: The Selling of a Serial Killer (1992)",
+    "title": "Aileen Wuornos: The Selling of a Serial Killer",
+    "year": 1992
+   },
+   "status": "duplicate-in-batch",
+   "id": "aileen-wuornos-the-selling-of-a-serial-killer"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Theremin: An Electronic Odyssey (1993)",
+    "title": "Theremin: An Electronic Odyssey",
+    "year": 1993
+   },
+   "status": "duplicate-in-batch",
+   "id": "theremin-an-electronic-odyssey"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Hoop Dreams (1994)",
+    "title": "Hoop Dreams",
+    "year": 1994
+   },
+   "status": "duplicate-in-batch",
+   "id": "hoop-dreams"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Triumph of the Nerds (1996)",
+    "title": "Triumph of the Nerds",
+    "year": 1996
+   },
+   "status": "duplicate-in-batch",
+   "id": "triumph-of-the-nerds"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Fast, Cheap & Out of Control (1997)",
+    "title": "Fast, Cheap & Out of Control",
+    "year": 1997
+   },
+   "status": "duplicate-in-batch",
+   "id": "fast-cheap-out-of-control"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "Waco: The Rules of Engagement (1997)",
+    "title": "Waco: The Rules of Engagement",
+    "year": 1997
+   },
+   "status": "duplicate-in-batch",
+   "id": "waco-the-rules-of-engagement"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "One Day in September (1999)",
+    "title": "One Day in September",
+    "year": 1999
+   },
+   "status": "duplicate-in-batch",
+   "id": "one-day-in-september"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Pre-1980 / 1980s / 1990s explicitly requested",
+    "raw": "My Best Fiend (1999)",
+    "title": "My Best Fiend",
+    "year": 1999
+   },
+   "status": "duplicate-in-batch",
+   "id": "my-best-fiend"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "Holy Hell (2016)",
+    "title": "Holy Hell",
+    "year": 2016
+   },
+   "status": "duplicate-in-batch",
+   "id": "holy-hell"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "The Vow (2020)",
+    "title": "The Vow",
+    "year": 2020
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-vow"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "Heaven’s Gate: The Cult of Cults (2020)",
+    "title": "Heaven's Gate: The Cult of Cults",
+    "year": 2020
+   },
+   "status": "duplicate-in-batch",
+   "id": "heaven-s-gate-the-cult-of-cults"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "Love Has Won: The Cult of Mother God (2023)",
+    "title": "Love Has Won: The Cult of Mother God",
+    "year": 2023
+   },
+   "status": "duplicate-in-batch",
+   "id": "love-has-won-the-cult-of-mother-god"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "Stolen Youth: Inside the Cult at Sarah Lawrence (2023)",
+    "title": "Stolen Youth: Inside the Cult at Sarah Lawrence",
+    "year": 2023
+   },
+   "id": "stolen-youth-inside-the-cult-at-sarah-lawrence",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 216315,
+    "imdbId": "tt23330464",
+    "canonicalTitle": "Stolen Youth: Inside the Cult at Sarah Lawrence",
+    "year": 2023,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 216315,
+     "title": "Stolen Youth: Inside the Cult at Sarah Lawrence",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "Jesus Camp (2006)",
+    "title": "Jesus Camp",
+    "year": 2006
+   },
+   "status": "duplicate-in-batch",
+   "id": "jesus-camp"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "Going Clear: Scientology and the Prison of Belief (2015)",
+    "title": "Going Clear: Scientology and the Prison of Belief",
+    "year": 2015
+   },
+   "status": "duplicate-in-batch",
+   "id": "going-clear-scientology-and-the-prison-of-belief"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Cults, High-Control Groups & Manipulation",
+    "raw": "Wild Wild Country (2018)",
+    "title": "Wild Wild Country",
+    "year": 2018
+   },
+   "status": "duplicate-in-batch",
+   "id": "wild-wild-country"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Strange True Stories & Twists",
+    "raw": "The Imposter (2012)",
+    "title": "The Imposter",
+    "year": 2012
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-imposter"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Strange True Stories & Twists",
+    "raw": "Abducted in Plain Sight (2019)",
+    "title": "Abducted in Plain Sight",
+    "year": 2019
+   },
+   "status": "duplicate-in-batch",
+   "id": "abducted-in-plain-sight"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Strange True Stories & Twists",
+    "raw": "Finders Keepers (2015)",
+    "title": "Finders Keepers",
+    "year": 2015
+   },
+   "id": "finders-keepers",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 319152,
+    "imdbId": "tt3462002",
+    "canonicalTitle": "Finders Keepers",
+    "year": 2015,
+    "people": [
+     "Bryan Carberry",
+     "J. Clay Tweel"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 319152,
+     "title": "Finders Keepers",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Strange True Stories & Twists",
+    "raw": "Tickled (2016)",
+    "title": "Tickled",
+    "year": 2016
+   },
+   "status": "duplicate-in-batch",
+   "id": "tickled"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Strange True Stories & Twists",
+    "raw": "Three Identical Strangers (2018)",
+    "title": "Three Identical Strangers",
+    "year": 2018
+   },
+   "status": "duplicate-in-batch",
+   "id": "three-identical-strangers"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Strange True Stories & Twists",
+    "raw": "Dear Zachary (2008)",
+    "title": "Dear Zachary",
+    "year": 2008
+   },
+   "status": "duplicate-in-batch",
+   "id": "dear-zachary"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Crime, Investigations & Scams",
+    "raw": "The Act of Killing (2012)",
+    "title": "The Act of Killing",
+    "year": 2012
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-act-of-killing"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Crime, Investigations & Scams",
+    "raw": "The Look of Silence (2014)",
+    "title": "The Look of Silence",
+    "year": 2014
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-look-of-silence"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Crime, Investigations & Scams",
+    "raw": "The Jinx (2015)",
+    "title": "The Jinx",
+    "year": 2015
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-jinx"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Crime, Investigations & Scams",
+    "raw": "McMillions (2020)",
+    "title": "McMillions",
+    "year": 2020
+   },
+   "status": "duplicate-in-batch",
+   "id": "mcmillions"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Crime, Investigations & Scams",
+    "raw": "Enron: The Smartest Guys in the Room (2005)",
+    "title": "Enron: The Smartest Guys in the Room",
+    "year": 2005
+   },
+   "status": "duplicate-in-batch",
+   "id": "enron-the-smartest-guys-in-the-room"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Crime, Investigations & Scams",
+    "raw": "The Tinder Swindler (2022)",
+    "title": "The Tinder Swindler",
+    "year": 2022
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-tinder-swindler"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Crime, Investigations & Scams",
+    "raw": "Don’t F**k with Cats (2019)",
+    "title": "Don't F**k with Cats",
+    "year": 2019
+   },
+   "status": "duplicate-in-batch",
+   "id": "don-t-f-k-with-cats"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "O.J.: Made in America (2016)",
+    "title": "O.J.: Made in America",
+    "year": 2016
+   },
+   "id": "o-j-made-in-america",
+   "status": "pending-ambiguous",
+   "reason": "multiple verified documentary candidates",
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 377462,
+     "title": "O.J.: Made in America",
+     "year": 2016
+    },
+    {
+     "mediaType": "tv",
+     "tmdbId": 66738,
+     "title": "O.J.: Made in America",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "Citizenfour (2014)",
+    "title": "Citizenfour",
+    "year": 2014
+   },
+   "status": "duplicate-in-batch",
+   "id": "citizenfour"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "Inside Job (2010)",
+    "title": "Inside Job",
+    "year": 2010
+   },
+   "status": "duplicate-in-batch",
+   "id": "inside-job"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "HyperNormalisation (2016)",
+    "title": "HyperNormalisation",
+    "year": 2016
+   },
+   "status": "duplicate-in-batch",
+   "id": "hypernormalisation"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "The Century of the Self (2002)",
+    "title": "The Century of the Self",
+    "year": 2002
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-century-of-the-self"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "The Thin Blue Line (1988)",
+    "title": "The Thin Blue Line",
+    "year": 1988
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-thin-blue-line"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "13th (2016)",
+    "title": "13th",
+    "year": 2016
+   },
+   "status": "duplicate-in-batch",
+   "id": "13th"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "The Vietnam War (2017)",
+    "title": "The Vietnam War",
+    "year": 2017
+   },
+   "id": "the-vietnam-war",
+   "status": "resolved",
+   "reason": "only exact-title documentary among verified candidates",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 46434,
+    "imdbId": "tt1877514",
+    "canonicalTitle": "The Vietnam War",
+    "year": 2017,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 490118,
+     "title": "The Vietnam War: Personal Reflections",
+     "year": 2017
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 510207,
+     "title": "The Vietnam War: Hidden Traces",
+     "year": 2016
+    },
+    {
+     "mediaType": "tv",
+     "tmdbId": 46434,
+     "title": "The Vietnam War",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "The House I Live In (2012)",
+    "title": "The House I Live In",
+    "year": 2012
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-house-i-live-in"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Politics, History & Systemic Injustice",
+    "raw": "The Fog of War (2003)",
+    "title": "The Fog of War",
+    "year": 2003
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-fog-of-war"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Survival, Achievement & Human Extremes",
+    "raw": "Free Solo (2018)",
+    "title": "Free Solo",
+    "year": 2018
+   },
+   "status": "duplicate-in-batch",
+   "id": "free-solo"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Survival, Achievement & Human Extremes",
+    "raw": "Man on Wire (2008)",
+    "title": "Man on Wire",
+    "year": 2008
+   },
+   "status": "duplicate-in-batch",
+   "id": "man-on-wire"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Survival, Achievement & Human Extremes",
+    "raw": "Icarus (2017)",
+    "title": "Icarus",
+    "year": 2017
+   },
+   "status": "duplicate-in-batch",
+   "id": "icarus"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Survival, Achievement & Human Extremes",
+    "raw": "AlphaGo (2017)",
+    "title": "AlphaGo",
+    "year": 2017
+   },
+   "status": "duplicate-in-batch",
+   "id": "alphago"
+  },
+  {
+   "input": {
+    "source": "inline",
+    "section": "Other",
+    "raw": "The King of Kong: A Fistful of Quarters (2007)",
+    "title": "The King of Kong: A Fistful of Quarters",
+    "year": 2007
+   },
+   "status": "duplicate-in-batch",
+   "id": "the-king-of-kong-a-fistful-of-quarters"
+  }
+ ]
+}

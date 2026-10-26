@@ -454,3 +454,14 @@ export const CATEGORY_OVERRIDES: Record<string, Subject[]> = {
   'Quiet on Set: The Dark Side of Kids TV': ['psychology', 'crime'], 'Keep Sweet: Pray and Obey': ['psychology', 'crime'], "Prophet's Prey": ['psychology', 'crime'],
   'The Act of Killing': ['politics', 'crime'], 'The Look of Silence': ['politics', 'crime'], 'Fyre': ['scams', 'music'],
 };
+
+// Evidence-pinned identities (verified against TMDB details before use; never trusted blindly).
+// The Push (2018): Derren Brown's Netflix special, catalogued by TMDB as "Derren Brown: Pushed to the Edge" (2016 UK broadcast);
+// the unrelated 2018 "The Push" is Grant Korgan's adventure film. The Endurance (2024): National Geographic's Shackleton
+// shipwreck film, catalogued as "Endurance" (2024, Vasarhelyi/Chin/Hewit), not The Endurance (2000).
+export const BATCH2_PINS: Record<string, { media: 'movie' | 'tv'; id: number; evidence: RegExp; why: string }> = {
+  'The Push|2018': { media: 'movie', id: 377319, evidence: /Derren Brown/, why: 'Derren Brown psychology experiment (cults/manipulation section); TMDB title Derren Brown: Pushed to the Edge' },
+  'The Endurance|2024': { media: 'movie', id: 947763, evidence: /Shackleton/, why: '2024 Shackleton shipwreck documentary by Vasarhelyi, Chin & Hewit; TMDB title Endurance' },
+};
+// Collections represented as one entry; parts outside the submitted range are excluded from coverage.
+export const BATCH2_COLLECTIONS: Record<string, { id: number; name: RegExp }> = { 'Up series|1964': { id: 95051, name: /^The Up Collection$/ } };
