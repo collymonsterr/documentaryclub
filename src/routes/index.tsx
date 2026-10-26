@@ -176,7 +176,7 @@ function Index() {
   // Director links: open the gallery filtered to everything we have by that filmmaker.
   const searchDirector = (name: string) => { setQuery(name); navigate({ search: prev => ({ ...prev, film: '', q: name, list: '', cat: 'all', era: 'all' }) }); };
   const clearFilters = () => { setQuery(''); navigate({ search: prev => ({ ...prev, q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random' }), replace: true }); };
-  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', listFilter === 'watched', !hideWatched].filter(Boolean).length;
+  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', listFilter === 'watched'].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
