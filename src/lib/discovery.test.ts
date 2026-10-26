@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, filterYears, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardBadges, filterYears, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -65,4 +65,17 @@ describe('Spotlight keyboard guard', () => {
     const editable = document.createElement('div'); editable.setAttribute('contenteditable','true'); expect(canNavigate(editable,false)).toBe(false);
   });
   it('ignores open dialogs but permits normal browsing', () => { expect(canNavigate(document.body,true)).toBe(false); expect(canNavigate(document.body,false)).toBe(true); });
+});
+
+describe('gallery card badges', () => {
+  it('prefers sourced IMDb and Rotten Tomatoes over TMDB', () => {
+    expect(cardBadges({ tmdbRating: 7.5, omdb: { imdb: 8.12, rottenTomatoes: 95 } })).toEqual(['IMDb 8.1', 'RT 95%']);
+  });
+  it('falls back to TMDB when OMDb scores are missing', () => {
+    expect(cardBadges({ tmdbRating: 7.24 })).toEqual(['TMDB 7.2']);
+  });
+  it('stays empty when no ratings exist', () => {
+    expect(cardBadges({})).toEqual([]);
+    expect(cardBadges(undefined)).toEqual([]);
+  });
 });
