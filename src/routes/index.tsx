@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Bookmark, Check, Grid2X2, Maximize2, ExternalLink, Award } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Bookmark, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award } from 'lucide-react';
 import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
 import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { TrailerModal } from '@/components/trailer-modal';
 import { useTracking } from '@/hooks/use-tracking';
-import { canNavigate, filterYears, inEra, overviewSentences, TRACKING_KEYS, type Provider } from '@/lib/discovery';
+import { canNavigate, filterYears, inEra, orderFilms, shuffleIds, overviewSentences, TRACKING_KEYS, type Provider } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
@@ -51,18 +51,24 @@ function Providers({ label, items, subscription = false }: { label: string; item
   return <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs"><span className="text-muted-foreground">{label}</span>{items.map(p => <span key={p.id} className={subscription && p.highlighted ? 'font-semibold text-primary' : 'text-foreground'}>{p.name}</span>)}</div>;
 }
 function Index() {
-  const [view, setView] = useState<'spotlight' | 'gallery'>('spotlight');
+  const [view, setView] = useState<'spotlight' | 'gallery'>('gallery');
+  const [order, setOrder] = useState<string[] | null>(null);
+  useEffect(() => { setOrder(shuffleIds(CATALOGUE.map(f => f.id))); }, []);
+  const galleryScroll = useRef(0);
+  const openSpotlight = (id: string) => { galleryScroll.current = window.scrollY; setSelectedId(id); setView('spotlight'); };
+  const backToGallery = () => { setView('gallery'); requestAnimationFrame(() => window.scrollTo(0, galleryScroll.current)); };
+  const reshuffle = () => { setOrder(shuffleIds(CATALOGUE.map(f => f.id))); setSort('random'); setShown(PAGE); window.scrollTo(0, 0); };
   const [filter, setFilter] = useState<Filter>('all');
   const [selectedId, setSelectedId] = useState(CATALOGUE[0]?.id ?? '');
   const [query, setQuery] = useState(''); const [type, setType] = useState<'all' | 'movie' | 'tv'>('all'); const [shown, setShown] = useState(PAGE);
   const [shortlist, toggleShort] = useTracking(TRACKING_KEYS.shortlist);
   const [watched, toggleWatched] = useTracking(TRACKING_KEYS.watched);
   const [from, setFrom] = useState(''); const [to, setTo] = useState('');
-  const [decade, setDecade] = useState('all'); const [era, setEra] = useState<'all' | 'pre2000'>('all'); const [sort, setSort] = useState('curated');
+  const [decade, setDecade] = useState('all'); const [era, setEra] = useState<'all' | 'pre2000'>('all'); const [sort, setSort] = useState('random');
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [backdrop, setBackdrop] = useState<number | null>(null);
   const fetchProviders = useServerFn(getIrishProviders);
-  const list = useMemo(() => filterYears(searchCatalogue(CATALOGUE, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'shortlist' ? shortlist.has(f.id) : filter === 'watched' ? watched.has(f.id) : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter)), from ? Number(from) : undefined, to ? Number(to) : undefined, decade, sort), [filter, shortlist, watched, from, to, decade, sort, query, type, era]);
+  const list = useMemo(() => filterYears(searchCatalogue(sort === 'random' ? orderFilms(CATALOGUE, order) : CATALOGUE, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'shortlist' ? shortlist.has(f.id) : filter === 'watched' ? watched.has(f.id) : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter)), from ? Number(from) : undefined, to ? Number(to) : undefined, decade, sort), [filter, shortlist, watched, from, to, decade, sort, query, type, era, order]);
   useEffect(() => { setShown(PAGE); }, [filter, query, type, from, to, decade, sort, era]);
   const film = list.find(f => f.id === selectedId) ?? list[0];
   const idx = list.findIndex(f => f.id === film?.id);
@@ -95,7 +101,7 @@ function Index() {
     <header className="flex items-center justify-between gap-3 py-3"><h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
     <div className="grid grid-cols-2 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
       <Button size="sm" variant={view === 'spotlight' ? 'secondary' : 'ghost'} aria-pressed={view === 'spotlight'} onClick={() => setView('spotlight')}><Maximize2 />Spotlight</Button>
-      <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={() => setView('gallery')}><Grid2X2 />Gallery</Button>
+      <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={backToGallery}><Grid2X2 />Gallery</Button>
     </div>
     <div className="flex items-center gap-2 pt-2" role="group" aria-label="Era"><Button size="sm" variant={era === 'pre2000' ? 'default' : 'outline'} aria-pressed={era === 'pre2000'} onClick={() => setEra(era === 'pre2000' ? 'all' : 'pre2000')}>Before 2000</Button>{era !== 'all' && <Button size="sm" variant="ghost" onClick={() => setEra('all')}>All eras</Button>}</div>
     <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto py-2 no-scrollbar lg:flex-wrap lg:overflow-visible">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
@@ -105,11 +111,11 @@ function Index() {
       <label className="text-xs text-muted-foreground">From<Input aria-label="From year" type="number" min="1900" max="2100" placeholder="Any" value={from} onChange={e => setFrom(e.target.value)} className="mt-1 h-8 w-24" /></label>
       <label className="text-xs text-muted-foreground">To<Input aria-label="To year" type="number" min="1900" max="2100" placeholder="Any" value={to} onChange={e => setTo(e.target.value)} className="mt-1 h-8 w-24" /></label>
       <label className="text-xs text-muted-foreground">Decade<select aria-label="Decade" className="discovery-select" value={decade} onChange={e => setDecade(e.target.value)}><option value="all">All decades</option>{DECADES.map(d => <option key={d} value={d}>{d}s</option>)}</select></label>
-      <label className="text-xs text-muted-foreground">Order<select aria-label="Year sorting" className="discovery-select" value={sort} onChange={e => setSort(e.target.value)}><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
-      <span className="ml-auto self-end pb-2 text-xs text-muted-foreground">{list.length} titles</span>
+      <label className="text-xs text-muted-foreground">Order<select aria-label="Year sorting" className="discovery-select" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
+      <Button size="sm" variant="outline" className="self-end" onClick={reshuffle}><Shuffle />Shuffle</Button><span className="ml-auto self-end pb-2 text-xs text-muted-foreground">{list.length} titles</span>
     </div>
     {!film ? <div className="py-16 text-center"><p className="text-muted-foreground">No films in this selection.</p><Button variant="ghost" className="mt-3" onClick={() => { setFilter('all'); setFrom(''); setTo(''); setDecade('all'); setEra('all'); setQuery(''); setType('all'); }}>Clear filters</Button></div> : view === 'gallery' ?
-      <><section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">{list.slice(0, shown).map(f => <div key={f.id} className="min-w-0"><Button variant="ghost" aria-label={`Open ${f.title}`} className="h-auto w-full p-0" onClick={() => { setSelectedId(f.id); setView('spotlight'); }}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button><h2 className="mt-2 text-sm font-medium leading-snug">{f.title}</h2><p className="mt-1 text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.pending ? ' · Pending' : ''}{watched.has(f.id) ? ' · Watched' : shortlist.has(f.id) ? ' · Shortlisted' : ''}</p>{f.awards.length > 0 && <p className="mt-1 flex items-center gap-1 text-xs text-accent-foreground"><Award className="size-3" />Awards & nominations</p>}</div>)}</section>{shown < list.length && <div className="mt-6 text-center"><Button variant="outline" onClick={() => setShown(n => n + PAGE)}>Show more · {list.length - shown} left</Button></div>}</> : <>
+      <><section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">{list.slice(0, shown).map(f => <div key={f.id} className="min-w-0"><Button variant="ghost" aria-label={`Open ${f.title}`} className="h-auto w-full p-0" onClick={() => openSpotlight(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button><h2 className="mt-2 text-sm font-medium leading-snug">{f.title}</h2><p className="mt-1 text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.pending ? ' · Pending' : ''}{watched.has(f.id) ? ' · Watched' : shortlist.has(f.id) ? ' · Shortlisted' : ''}</p>{f.awards.length > 0 && <p className="mt-1 flex items-center gap-1 text-xs text-accent-foreground"><Award className="size-3" />Awards & nominations</p>}</div>)}</section>{shown < list.length && <div className="mt-6 text-center"><Button variant="outline" onClick={() => setShown(n => n + PAGE)}>Show more · {list.length - shown} left</Button></div>}</> : <>
       <section aria-label="Selected documentary" className="spotlight-grid" onTouchStart={e => { if (!canNavigate(e.target, trailerOpen)) return; const t = e.touches[0]; if (t) touch.current = { x: t.clientX, y: t.clientY }; }} onTouchEnd={e => { const t = e.changedTouches[0], start = touch.current; touch.current = null; if (t && start && !trailerOpen && Math.abs(t.clientX - start.x) > 60 && Math.abs(t.clientX - start.x) > Math.abs(t.clientY - start.y)) go(t.clientX < start.x ? 1 : -1); }}>
         <div className="spotlight-poster"><DocumentaryPoster film={film} src={extra?.poster} /></div>
         <div className="min-w-0">

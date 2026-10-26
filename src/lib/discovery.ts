@@ -92,7 +92,7 @@ export function filterYears(films: Film[], from: number | undefined, to: number 
   const start = decade === 'all' ? undefined : Number(decade);
   const list = films.filter(f => (from === undefined || f.year >= from) && (to === undefined || f.year <= to) &&
     (start === undefined || (f.year >= start && f.year < start + 10)));
-  return sort === 'curated' ? list : [...list].sort((a, b) => sort === 'oldest' ? a.year - b.year : b.year - a.year);
+  return sort === 'curated' || sort === 'random' ? list : [...list].sort((a, b) => sort === 'oldest' ? a.year - b.year : b.year - a.year);
 }
 
 export function canNavigate(target: EventTarget | null, dialogOpen: boolean) {
@@ -106,4 +106,15 @@ export function readTracking(storage: Pick<Storage, 'getItem'>, key: string): Se
 export function overviewSentences(text: string): string {
   const sentences = text.match(/[^.!?]+[.!?]+(?:[”"']|$)?|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [text];
   return sentences.slice(0, 4).join(' ');
+}
+// Fisher–Yates with injectable RNG: a new order per visit or explicit Shuffle, never per render/filter.
+export function shuffleIds(ids: string[], rng: () => number = Math.random): string[] {
+  const a = [...ids];
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1)); [a[i], a[j]] = [a[j]!, a[i]!]; }
+  return a;
+}
+export function orderFilms<T extends { id: string }>(films: T[], order: string[] | null): T[] {
+  if (!order) return films;
+  const rank = new Map(order.map((id, i) => [id, i]));
+  return [...films].sort((a, b) => (rank.get(a.id) ?? 1e9) - (rank.get(b.id) ?? 1e9));
 }
