@@ -38,7 +38,7 @@ function ListPage() {
           {films.map(f => <li key={f.id}>
             <div className="flex flex-wrap items-baseline gap-x-2">
               <Link to="/" search={{ film: f.id, q: '', list: '' }} className="font-medium text-foreground underline-offset-2 hover:underline">{f.title}</Link>
-              <span className="text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.director ? ` · ${f.director}` : ''}</span>
+              <span className="text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.director && <> · {f.director.split(', ').map((d, i, arr) => <span key={d}><Link to="/" search={{ film: '', q: d, list: '' }} className="underline-offset-2 hover:text-foreground hover:underline">{d}</Link>{i < arr.length - 1 ? ', ' : ''}</span>)}</>}</span>
             </div>
             <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{firstSentence(f.synopsis)}</p>
           </li>)}
