@@ -86,6 +86,14 @@ export function selectTrailer(videos?: { results?: { site: string; type: string;
   return video?.key;
 }
 
+// Import-time backfill for titles with no official trailer: any YouTube trailer, then official teaser, then any teaser.
+// Runtime playback still prefers selectTrailer; these tiers only widen what the snapshot may store.
+export function selectAnyTrailer(videos?: { results?: { site: string; type: string; official?: boolean; key: string }[] }) {
+  const yt = (videos?.results ?? []).filter(v => v.site === 'YouTube' && /^[\w-]{11}$/.test(v.key));
+  const pick = (type: string, official?: boolean) => yt.find(v => v.type === type && (official === undefined || v.official === official))?.key;
+  return pick('Trailer', true) ?? pick('Trailer') ?? pick('Teaser', true) ?? pick('Teaser');
+}
+
 // Era quick collection: 'pre2000' is release year < 2000 (1999 in, 2000 out). Series use first release year.
 export const inEra = (year: number, era: 'all' | 'pre2000') => era === 'all' || year < 2000;
 export function filterYears(films: Film[], from: number | undefined, to: number | undefined, decade: string, sort: string) {

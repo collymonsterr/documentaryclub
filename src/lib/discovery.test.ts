@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, cardBadges, filterYears, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardBadges, filterYears, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -77,5 +77,19 @@ describe('gallery card badges', () => {
   it('stays empty when no ratings exist', () => {
     expect(cardBadges({})).toEqual([]);
     expect(cardBadges(undefined)).toEqual([]);
+  });
+});
+
+describe('trailer backfill tiers', () => {
+  const yt = (type: string, official: boolean, key: string) => ({ site: 'YouTube', type, official, key });
+  it('still prefers an official trailer over everything else', () => {
+    expect(selectAnyTrailer({ results: [yt('Teaser', true, 'aaaaaaaaaaa'), yt('Trailer', false, 'bbbbbbbbbbb'), yt('Trailer', true, 'ccccccccccc')] })).toBe('ccccccccccc');
+  });
+  it('accepts a non-official trailer when no official one exists', () => {
+    expect(selectAnyTrailer({ results: [yt('Teaser', true, 'aaaaaaaaaaa'), yt('Trailer', false, 'bbbbbbbbbbb')] })).toBe('bbbbbbbbbbb');
+  });
+  it('falls back to teasers and rejects invalid keys', () => {
+    expect(selectAnyTrailer({ results: [yt('Teaser', false, 'ddddddddddd'), yt('Teaser', true, 'eeeeeeeeeee')] })).toBe('eeeeeeeeeee');
+    expect(selectAnyTrailer({ results: [yt('Trailer', true, 'bad'), { site: 'Vimeo', type: 'Trailer', official: true, key: 'fffffffffff' }] })).toBeUndefined();
   });
 });

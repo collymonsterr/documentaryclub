@@ -6,7 +6,7 @@ import { EXPECTED_PEOPLE, IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, SEARCH_ALIASES,
 import { getCatalogueEnrichment } from '../src/lib/tmdb.server';
 import { BATCH2_COLLECTIONS, BATCH2_PINS, BATCH2_RAW, reconcileBatch } from '../src/data/import-batch2';
 import { readFileSync } from 'node:fs';
-import { importTitleMatches, parseOmdb, selectTrailer, validImdbId, type OmdbResponse } from '../src/lib/discovery';
+import { importTitleMatches, parseOmdb, selectAnyTrailer, selectTrailer, validImdbId, type OmdbResponse } from '../src/lib/discovery';
 
 const token = process.env['TMDB_READ_ACCESS_TOKEN'], omdbKey = process.env['OMDB_API_KEY'];
 if (!token) throw new Error('TMDB credential missing');
@@ -83,6 +83,23 @@ async function resolve(title: string, year: number) {
 }
 
 if (process.argv.includes('--batch2')) { await batch2(); process.exit(0); }
+if (process.argv.includes('--trailers')) { await trailers(); process.exit(0); }
+// Trailer backfill: re-fetches videos ONLY for resolved entries lacking a trailer; all other snapshot data is untouched.
+async function trailers() {
+  const snap: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));
+  const missing = Object.entries(snap).filter(([, s]) => s.status === 'resolved' && !s.trailer && s.tmdbId && (s.mediaType === 'movie' || s.mediaType === 'tv'));
+  let filled = 0;
+  for (const [id, s] of missing) {
+    try {
+      const v = await tmdb<{ results?: any[] }>(`${s.mediaType}/${s.tmdbId}/videos`, { language: 'en-US' });
+      const key = selectAnyTrailer(v);
+      if (key) { s.trailer = key; filled++; }
+    } catch { /* unavailable stays unknown */ }
+    console.log(id, s.trailer ? 'trailer' : 'none');
+  }
+  writeFileSync('src/data/catalogue-snapshot.json', JSON.stringify(snap) + '\n');
+  console.log(`filled ${filled} of ${missing.length} missing trailers`);
+}
 // Delta import: only titles absent from the existing snapshot are resolved; prior data is preserved untouched.
 async function batch2() {
   const { CATALOGUE } = await import('../src/data/catalogue');
