@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { CATALOGUE, MANIFEST, SNAPSHOT, searchCatalogue } from './catalogue';
-import { FILMS } from './films';
+import { CATEGORIES, FILMS } from './films';
 import { IMPORT_LIST, MERGED_INTO } from './import-list';
 import { importTitleMatches } from '@/lib/discovery';
 
@@ -76,5 +76,12 @@ describe('live Irish providers', () => {
     const fetcher = vi.fn(); vi.stubGlobal('fetch', fetcher);
     const { getLiveProviders } = await import('@/lib/tmdb.server');
     expect((await getLiveProviders('movie', 5, {})).known).toBe(false); expect(fetcher).not.toHaveBeenCalled();
+  });
+});
+
+describe('list page category coverage', () => {
+  it('every title appears under at least one category and every category is non-empty', () => {
+    expect(CATALOGUE.every(f => f.categories.length >= 1)).toBe(true);
+    for (const c of CATEGORIES) expect(CATALOGUE.some(f => f.categories.includes(c.id))).toBe(true);
   });
 });

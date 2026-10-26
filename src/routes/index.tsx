@@ -1,4 +1,4 @@
-import { createFileRoute, stripSearchParams, useNavigate } from '@tanstack/react-router';
+import { createFileRoute, Link, stripSearchParams, useNavigate } from '@tanstack/react-router';
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
@@ -139,15 +139,11 @@ function Index() {
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
-    <header className="flex items-center justify-between gap-3 py-3">
-      <h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1>
-      <Button size="sm" variant={listFilter === 'shortlist' ? 'default' : 'outline'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}>
-        <Bookmark className={listFilter === 'shortlist' ? 'fill-current' : ''} />Shortlist<span className="text-xs opacity-70">{shortlist.size}</span>
-      </Button>
-    </header>
-    <div className="grid grid-cols-2 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
+    <header className="flex items-center justify-between gap-3 py-3"><h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
+    <div className="grid grid-cols-3 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
       <Button size="sm" variant={view === 'spotlight' ? 'secondary' : 'ghost'} aria-pressed={view === 'spotlight'} onClick={() => openSpotlight()}><Maximize2 />Spotlight</Button>
       <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={backToGallery}><Grid2X2 />Gallery</Button>
+      <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Bookmark className={listFilter === 'shortlist' ? 'fill-primary text-primary' : ''} />Shortlist<span className="text-xs opacity-70">{shortlist.size}</span></Button>
     </div>
     <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto py-2 no-scrollbar lg:flex-wrap lg:overflow-visible">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
     <div className="mb-4 flex flex-wrap items-end gap-2 border-b border-border pb-3">
@@ -205,6 +201,6 @@ function Index() {
       </section>
       <div ref={rail} aria-label="Film thumbnails" className="relative mt-4 flex gap-2 overflow-x-auto py-1 no-scrollbar">{list.map(f => <Button key={f.id} variant="ghost" aria-label={`Select ${f.title}`} aria-pressed={film.id === f.id} className={`h-auto w-12 shrink-0 p-0 sm:w-14 ${film.id === f.id ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'}`} onClick={() => setFilm(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button>)}</div>
     </>}
-    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
+    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><Link to="/list" className="underline">All titles by category</Link><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
   </main>;
 }
