@@ -1,5 +1,5 @@
 import { QueryClient } from "@tanstack/react-query";
-import { createRouter, renderRouteView, RouterProvider, rootRouteId } from "@tanstack/react-router";
+import { createRootRoute, createRoute, createRouter, render, RouterProvider, rootRouteId } from "@tanstack/react-router";
 import { describe, expect, it } from "vitest";
 import { screen } from "@testing-library/react";
 
@@ -19,13 +19,13 @@ describe("App routing", () => {
 
   // The wordmark in the header is the site's home affordance on every page.
   it("renders the logo as a link back to the homepage", () => {
-    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
-    renderRouteView({
-      router,
-      render: () => <SiteLogo />,
-    });
+    const root = createRootRoute();
+    const home = createRoute({ getParentRoute: () => root, path: "/", component: SiteLogo });
+    const router = createRouter({ routeTree: root.addChildren([home]) });
 
-    const home = screen.getByRole("link", { name: "Documentary Club home" });
-    expect(home.getAttribute("href")).toBe("/");
+    render(<RouterProvider router={router} />);
+
+    const link = screen.getByRole("link", { name: "Documentary Club home" });
+    expect(link.getAttribute("href")).toBe("/");
   });
 });
