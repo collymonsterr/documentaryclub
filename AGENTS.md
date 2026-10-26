@@ -18,3 +18,4 @@
 - Verified alternate director credits use film-scoped normalization shared by TMDB and OMDb; never broaden name matching globally because unrelated people can share names.
 - TMDB requests are deduplicated per worker with a bounded catalogue cache and three concurrent requests; no persistent database or login is needed for this private curated catalogue.
 - OMDb ratings are captured in the snapshot at import by verified IMDb ID with matching movie/series type, preserving the daily quota; omdb.server.ts remains the bounded cached helper for any future runtime refresh.
+- Later approved batches are delta imports (`bun scripts/resolve-catalogue.ts --batch2`): reconciled against the pre-batch catalogue by identity key, verified-TMDB collisions merge, resolved manifest entries are reused so reruns make no API calls; title-scoped evidence pins and collections live beside the batch source.

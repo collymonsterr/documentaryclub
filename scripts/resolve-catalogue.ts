@@ -4,6 +4,8 @@ import { writeFileSync } from 'node:fs';
 import { FILMS } from '../src/data/films';
 import { EXPECTED_PEOPLE, IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, SEARCH_ALIASES, importSlug } from '../src/data/import-list';
 import { getCatalogueEnrichment } from '../src/lib/tmdb.server';
+import { BATCH2_COLLECTIONS, BATCH2_PINS, BATCH2_RAW, reconcileBatch } from '../src/data/import-batch2';
+import { readFileSync } from 'node:fs';
 import { importTitleMatches, parseOmdb, selectTrailer, validImdbId, type OmdbResponse } from '../src/lib/discovery';
 
 const token = process.env['TMDB_READ_ACCESS_TOKEN'], omdbKey = process.env['OMDB_API_KEY'];
@@ -78,6 +80,59 @@ async function resolve(title: string, year: number) {
   const v = pick[0]!;
   const meta = summarize(v.c.media, v.d);
   return { status: 'resolved', reason, candidates, year: v.c.year, meta: { ...meta, omdb: await omdb(meta.imdbId, v.c.media) } };
+}
+
+if (process.argv.includes('--batch2')) { await batch2(); process.exit(0); }
+// Delta import: only titles absent from the existing snapshot are resolved; prior data is preserved untouched.
+async function batch2() {
+  const { CATALOGUE } = await import('../src/data/catalogue');
+  const prior: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));
+  const priorIds = new Map<string, string>();
+  for (const [id, s] of Object.entries(prior)) if (s.tmdbId && s.mediaType) priorIds.set(`${s.mediaType}:${s.tmdbId}`, id);
+  // Reconcile against the catalogue as it stood before this batch (originals + first import), never against batch-2 rows themselves.
+  const before = new Set([...FILMS.map(f => f.id), ...IMPORT_LIST.map(e => MERGED_INTO[`${e.title}|${e.year}`] ?? importSlug(e.title))]);
+  const rows = reconcileBatch(BATCH2_RAW, CATALOGUE.filter(f => before.has(f.id)));
+  let previous: any[] = []; try { previous = JSON.parse(readFileSync('src/data/import-manifest-2.json', 'utf8')).entries; } catch { /* first run */ }
+  const out: any[] = []; const claimed = new Map<string, string>();
+  for (const r of rows) {
+    const base = { input: { source: r.source, section: r.section, raw: r.raw, title: r.title, year: r.year, ...(r.yearEnd ? { yearEnd: r.yearEnd } : {}) } };
+    if (r.outcome !== 'new') { out.push({ ...base, status: r.outcome === 'existing' ? 'existing-match' : 'duplicate-in-batch', id: r.existingId ?? importSlug(r.firstTitle ?? r.title) }); continue; }
+    const id = importSlug(r.title), key = `${r.title}|${r.year}`;
+    const old = previous.find(e => e.input.raw === r.raw && e.input.source === r.source);
+    if (old?.status === 'resolved' && prior[id]?.status === 'resolved') { out.push(old); if (old.chosen) claimed.set(`${old.chosen.mediaType}:${old.chosen.tmdbId}`, id); continue; }
+    try {
+      const coll = BATCH2_COLLECTIONS[key];
+      if (coll) {
+        const c = await tmdb<Detail>(`collection/${coll.id}`, { language: 'en-US' });
+        if (!coll.name.test(c.name ?? '')) throw new Error('collection mismatch');
+        const parts = (c.parts ?? []).filter((p: any) => p.genre_ids?.includes(99)).map((p: any) => ({ title: p.title as string, tmdbId: p.id as number, year: Number(p.release_date?.slice(0, 4)) }));
+        const inRange = parts.filter((p: any) => !(p.year > (r.yearEnd ?? 9999)));
+        const art = await tmdb<Detail>(`collection/${coll.id}/images`, { include_image_language: 'en,null' }).catch(() => ({}) as Detail);
+        prior[id] = { status: 'resolved', mediaType: 'collection', tmdbId: coll.id, canonicalTitle: c.name, poster: img(c.poster_path, 'w500'), overview: c.overview?.trim() || undefined,
+          backdrops: [...new Set<string>((art.backdrops ?? []).map((b: any) => img(b.file_path, 'w1280')).filter(Boolean))].slice(0, 3), yearEnd: r.yearEnd, parts: inRange.map((p: any) => p.title) };
+        out.push({ ...base, id, status: 'resolved', reason: `TMDB collection ${c.name}: ${inRange.length} documentary parts within ${r.year}–${r.yearEnd}; ${parts.length - inRange.length} later part(s) excluded`, chosen: { mediaType: 'collection', tmdbId: coll.id, canonicalTitle: c.name, year: r.year, people: [] } });
+        continue;
+      }
+      let res: any;
+      const pin = BATCH2_PINS[key];
+      if (pin) {
+        const d = await details(pin.media, pin.id);
+        const ok = d.id === pin.id && (d.genres ?? []).some((g: any) => g.id === 99) && pin.evidence.test(`${d.title ?? d.name} ${d.overview}`);
+        const meta = summarize(pin.media, d);
+        res = ok ? { status: 'resolved', reason: `evidence-pinned: ${pin.why}`, year: Number((d.release_date ?? d.first_air_date)?.slice(0, 4)), meta: { ...meta, omdb: await omdb(meta.imdbId, pin.media) } } : { status: 'pending-ambiguous', reason: 'pinned identity failed verification' };
+      } else res = await resolve(r.title, r.year);
+      if (res.meta) {
+        const ident = `${res.meta.mediaType}:${res.meta.tmdbId}`, dup = priorIds.get(ident) ?? claimed.get(ident);
+        if (dup) { out.push({ ...base, id: dup, status: 'existing-match-verified', reason: `same TMDB identity ${ident}` }); continue; }
+        claimed.set(ident, id);
+      }
+      out.push({ ...base, id, status: res.status, reason: res.reason, chosen: res.meta ? { mediaType: res.meta.mediaType, tmdbId: res.meta.tmdbId, imdbId: res.meta.imdbId, canonicalTitle: res.meta.canonicalTitle, year: res.year, people: res.meta.people } : undefined, candidates: res.candidates });
+      prior[id] = res.meta ? { status: 'resolved', ...res.meta } : { status: 'pending' };
+    } catch { out.push({ ...base, id, status: 'pending-unavailable', reason: 'metadata service unavailable during import' }); prior[id] = { status: 'pending' }; }
+    console.log(out.length, out.at(-1).status, r.title);
+  }
+  writeFileSync('src/data/import-manifest-2.json', JSON.stringify({ generated: new Date().toISOString().slice(0, 10), rawInputs: BATCH2_RAW.length, entries: out }, null, 1) + '\n');
+  writeFileSync('src/data/catalogue-snapshot.json', JSON.stringify(prior) + '\n');
 }
 
 const manifest: any[] = [], snapshot: Record<string, any> = {};

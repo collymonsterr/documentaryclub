@@ -6,13 +6,13 @@ import { importTitleMatches } from '@/lib/discovery';
 
 const byId = (id: string) => CATALOGUE.find(f => f.id === id);
 describe('approved import reconciliation', () => {
-  it('reconciles 135 inputs: 4 merged, 131 new, 148 unique titles', () => {
+  it('reconciles 135 inputs: 4 merged, 131 new, 148 unique titles (before batch 2)', () => {
     expect(IMPORT_LIST).toHaveLength(135);
     expect(MANIFEST.entries).toHaveLength(135);
     expect(MANIFEST.entries.filter(e => e.status === 'merged-existing')).toHaveLength(4);
     expect(Object.values(MERGED_INTO).sort()).toEqual(['fire-of-love', 'ibelin', 'mariupol', 'perfect-neighbor']);
-    expect(CATALOGUE).toHaveLength(148);
-    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(148);
+    expect(CATALOGUE).toHaveLength(306);
+    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(306);
     expect(MANIFEST.entries.map(e => `${e.input.title}|${e.input.year}`)).toEqual(IMPORT_LIST.map(e => `${e.title}|${e.year}`));
   });
   it('keeps the original 17 first with unchanged IDs and awards', () => {

@@ -86,6 +86,8 @@ export function selectTrailer(videos?: { results?: { site: string; type: string;
   return video?.key;
 }
 
+// Era quick collection: 'pre2000' is release year < 2000 (1999 in, 2000 out). Series use first release year.
+export const inEra = (year: number, era: 'all' | 'pre2000') => era === 'all' || year < 2000;
 export function filterYears(films: Film[], from: number | undefined, to: number | undefined, decade: string, sort: string) {
   const start = decade === 'all' ? undefined : Number(decade);
   const list = films.filter(f => (from === undefined || f.year >= from) && (to === undefined || f.year <= to) &&
