@@ -14,4 +14,4 @@
 - TMDB identity requires exact normalized title, documentary genre and every director, allowing at most one year of premiere/distribution variance; verify all candidate details and reject ambiguity before caching an ID.
 - Discovery helpers own filtering, trailer validation, Irish provider parsing and tracking keys; test these rules independently from presentation.
 - TMDB requests are deduplicated per worker with a bounded catalogue cache and three concurrent requests; no persistent database or login is needed for this private curated catalogue.
-- OMDb enrichment uses verified TMDB external IMDb IDs first, otherwise exact title/year/documentary/director checks; cache successful DTOs seven days with bounded worker memory and a three-slot request pool to avoid duplicate traffic and credential leakage.
+- OMDb enrichment uses an independent optional query so ratings never delay photos, verified TMDB external IMDb IDs first, otherwise exact title/year/documentary/director checks; cache successful DTOs seven days with bounded worker memory and a three-slot request pool to avoid duplicate traffic and credential leakage.

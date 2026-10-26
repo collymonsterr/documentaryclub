@@ -5,7 +5,6 @@ export type Enrichment = {
   status: 'ready' | 'missing-secret' | 'not-found' | 'unavailable';
   tmdbId?: number | undefined;
   imdbId?: string | undefined;
-  omdb?: OmdbMetadata | undefined;
   poster?: string | undefined;
   overview?: string | undefined;
   runtime?: number | undefined;
