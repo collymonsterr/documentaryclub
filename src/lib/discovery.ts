@@ -20,6 +20,17 @@ export const fallbackEnrichment = (status: Enrichment['status']): Enrichment => 
 export function normalizeTitle(title: string) {
   return title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
+// Import identity: exact normalized title, or a canonical title that only adds/removes a ":" subtitle (Stranded → Stranded: I've Come…).
+export function importTitleMatches(submitted: string, candidates: (string | undefined)[], exactOnly = false) {
+  const head = (t: string) => normalizeTitle(t.split(':')[0] ?? t);
+  const s = normalizeTitle(submitted.replace(/\*\*/g, 'u')), raw = normalizeTitle(submitted);
+  return candidates.some(c => {
+    if (!c) return false;
+    const n = normalizeTitle(c.replace(/\*\*/g, 'u'));
+    if (n === s || normalizeTitle(c) === raw) return true;
+    return !exactOnly && (head(c) === s || head(submitted) === n || (submitted.includes(':') && c.includes(':') && head(c) === head(submitted) && n.startsWith(head(submitted))));
+  });
+}
 export function normalizeDirector(film: Film, name: string) {
   const normalized = normalizeTitle(name);
   // Film-specific credited-name equivalence verified against the filmmakers' credits:
