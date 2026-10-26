@@ -84,3 +84,16 @@ export async function getCatalogueEnrichment(auth: TmdbAuth): Promise<Record<str
   }));
   return result;
 }
+// Live Irish availability for one verified title (providers change; everything else comes from the import snapshot).
+const providerCache = new Map<string, { expires: number; value: Promise<Enrichment['providers']> }>();
+export async function getLiveProviders(mediaType: 'movie' | 'tv', tmdbId: number, auth: TmdbAuth): Promise<Enrichment['providers']> {
+  if ((!auth.token && !auth.apiKey) || !Number.isInteger(tmdbId) || tmdbId <= 0) return fallbackEnrichment('missing-secret').providers;
+  const key = `${mediaType}:${tmdbId}`, hit = providerCache.get(key);
+  if (hit && hit.expires > Date.now()) return hit.value;
+  const value = request<Parameters<typeof parseIrishProviders>[0]>(`${mediaType}/${tmdbId}/watch/providers`, auth).then(parseIrishProviders, () => fallbackEnrichment('unavailable').providers);
+  if (providerCache.size >= 200 && !providerCache.has(key)) { const oldest = providerCache.keys().next().value; if (oldest) providerCache.delete(oldest); }
+  const entry = { expires: Date.now() + 6 * 60 * 60_000, value };
+  providerCache.set(key, entry);
+  void value.then(p => { if (!p.known && providerCache.get(key) === entry) entry.expires = Date.now() + 10 * 60_000; });
+  return value;
+}
