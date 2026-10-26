@@ -47,8 +47,8 @@ describe('second batch reconciliation', () => {
     expect(pre.some(f => f.id === 'kon-tiki')).toBe(true);
     expect(pre.some(f => f.id === 'dark-days')).toBe(false);
   });
-  it('tags arts titles and counts collection as film in type filter', () => {
+  it('tags arts titles and counts collection as series in type filter', () => {
     expect(CATALOGUE.find(f => f.id === 'grey-gardens')?.categories[0]).toBe('arts');
-    expect(searchCatalogue(CATALOGUE, 'up series', 'movie').map(f => f.id)).toContain('up-series');
+    expect(searchCatalogue(CATALOGUE, 'up series', 'tv').map(f => f.id)).toContain('up-series');
   });
 });
