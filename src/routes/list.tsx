@@ -26,7 +26,7 @@ function ListPage() {
       <h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1>
       <Link to="/" search={{ film: '', q: '', list: '' }} className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Back to discovery</Link>
     </header>
-    <p className="border-b border-border pb-3 text-xs leading-relaxed text-muted-foreground">{CATALOGUE.length} curated documentary films and series, grouped by subject. Titles with more than one subject appear under each of their categories. Every title links to its full details, trailer and Irish streaming availability.</p>
+    <p className="border-b border-border pb-3 text-xs leading-relaxed text-muted-foreground">{CATALOGUE.length} curated documentary films and series, grouped by subject — every title has exactly one home category. Every title links to its full details, trailer and Irish streaming availability.</p>
     {CATEGORIES.map(c => {
       const films = CATALOGUE.filter(f => f.categories.includes(c.id)).sort((a, b) => a.title.localeCompare(b.title));
       return <section key={c.id} aria-label={c.label} className="mt-6">
