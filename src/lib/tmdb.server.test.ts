@@ -34,4 +34,25 @@ describe('TMDB graceful enrichment', () => {
     expect(fetcher).toHaveBeenCalledTimes(34);
     await getCatalogueEnrichment({token:'synthetic-test-fixture'}); expect(fetcher).toHaveBeenCalledTimes(34);
   });
+  it('accepts one-year distribution variance only with verified directors and rejects ambiguous verified identities', async () => {
+    vi.stubGlobal('fetch', vi.fn(async (input: URL) => {
+      const url = new URL(input);
+      const film = FILMS.find(f => f.title === url.searchParams.get('query')) ?? FILMS[0];
+      if (!film) return Response.json({});
+      if (url.pathname.endsWith('search/movie')) {
+        const count = film.id === 'mission' ? 2 : 1;
+        return Response.json({ results: Array.from({ length: count }, (_, i) => ({ id: FILMS.indexOf(film) * 10 + i + 1, title: film.title, release_date: `${film.year + 1}-01-01`, genre_ids: [99] })) });
+      }
+      const id = Number(url.pathname.split('/').at(-1));
+      const selected = FILMS[Math.floor((id - 1) / 10)];
+      if (!selected) return Response.json({});
+      return Response.json({ id, title: selected.title, release_date: `${selected.year + (selected.id === 'sugarcane' ? 2 : 1)}-01-01`, genres: [{ id: 99 }], credits: { crew: selected.director.split(', ').map(name => ({ job: 'Director', name })) }, external_ids: { imdb_id: 'tt1234567' } });
+    }));
+    const { getCatalogueEnrichment } = await import('./tmdb.server');
+    const result = await getCatalogueEnrichment({ token: 'synthetic-fixture' });
+    expect(result['beyond-utopia']?.status).toBe('ready');
+    expect(result['beyond-utopia']?.imdbId).toBe('tt1234567');
+    expect(result['mission']?.status).toBe('not-found');
+    expect(result['sugarcane']?.status).toBe('not-found');
+  });
 });

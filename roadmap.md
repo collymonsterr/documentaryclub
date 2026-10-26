@@ -1,5 +1,5 @@
-# Documentary Club update
-- [x] Preserve catalogue and local tracking; build compact Spotlight/Gallery with filters.
-- [x] Add secure cached TMDB enrichment, Irish providers, trailers and backdrops.
-- [x] Verify rules, interactions, and desktop/mobile layouts (19 tests and browser checks; build/typecheck clean).
-- [ ] Live TMDB verification waits for TMDB_READ_ACCESS_TOKEN or TMDB_API_KEY in Project Settings → Secrets; this session has no secure-form tool. Do not publish.
+# Documentary Club core completion
+- [x] Preserve all 17 films, compact browsing and local tracking; defer Reddit and publishing.
+- [x] Complete conservative TMDB matching and independent server-only OMDb ratings/awards with seven-day caching.
+- [x] Verify 27 relevant tests; live saved-list persistence, filters, Gallery selection, keyboard/modal guards and desktop/mobile layout. Automated build clean; no browser runtime errors.
+- [ ] Live metadata verification: blocked until TMDB_READ_ACCESS_TOKEN (or TMDB_API_KEY) and OMDB_API_KEY are saved in Project Settings → Secrets. No secure-entry tool is available.
