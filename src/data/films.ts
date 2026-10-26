@@ -1,5 +1,5 @@
 import type { ImportCategory } from "./import-list";
-export type Category = ImportCategory | "music";
+export type Category = ImportCategory | "music" | "arts";
 
 export const CATEGORIES: { id: Category; label: string }[] = [
   { id: "strange", label: "Strange but True" },
@@ -11,6 +11,7 @@ export const CATEGORIES: { id: Category; label: string }[] = [
   { id: "survival", label: "Survival & Adventure" },
   { id: "nature", label: "Nature & Science" },
   { id: "economics", label: "Economics & Inequality" },
+  { id: "arts", label: "Arts & Subcultures" },
   { id: "music", label: "Music" },
 ];
 
@@ -26,7 +27,9 @@ export type Film = {
   awards: string[];
   hue: number; // poster art tint
   trailerUrl?: string; // only set when a verified official URL exists
-  mediaType?: "movie" | "tv"; // defaults to movie
+  mediaType?: "movie" | "tv" | "collection"; // defaults to movie
+  yearEnd?: number; // collections/series spanning years
+  parts?: string[]; // verified collection installments
   aliases?: string[];
   tmdbId?: number;
   imdbId?: string;
