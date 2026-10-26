@@ -62,7 +62,7 @@ function Index() {
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [backdrop, setBackdrop] = useState<number | null>(null);
   const fetchProviders = useServerFn(getIrishProviders);
-  const list = useMemo(() => filterYears(searchCatalogue(CATALOGUE, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'shortlist' ? shortlist.has(f.id) : filter === 'watched' ? watched.has(f.id) : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter)), from ? Number(from) : undefined, to ? Number(to) : undefined, decade, sort), [filter, shortlist, watched, from, to, decade, sort, query, type]);
+  const list = useMemo(() => filterYears(searchCatalogue(CATALOGUE, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'shortlist' ? shortlist.has(f.id) : filter === 'watched' ? watched.has(f.id) : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter)), from ? Number(from) : undefined, to ? Number(to) : undefined, decade, sort), [filter, shortlist, watched, from, to, decade, sort, query, type, era]);
   useEffect(() => { setShown(PAGE); }, [filter, query, type, from, to, decade, sort, era]);
   const film = list.find(f => f.id === selectedId) ?? list[0];
   const idx = list.findIndex(f => f.id === film?.id);
