@@ -5,6 +5,7 @@ import { FILMS } from '../src/data/films';
 import { EXPECTED_PEOPLE, IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, SEARCH_ALIASES, importSlug } from '../src/data/import-list';
 import { getCatalogueEnrichment } from '../src/lib/tmdb.server';
 import { BATCH2_COLLECTIONS, BATCH2_PINS, BATCH2_RAW, reconcileBatch } from '../src/data/import-batch2';
+import { BATCH3_ALIASES, BATCH3_PINS, BATCH3_RAW } from '../src/data/import-batch3';
 import { readFileSync } from 'node:fs';
 import { importTitleMatches, parseOmdb, selectAnyTrailer, selectTrailer, selectYouTubeTrailer, validImdbId, type OmdbResponse, type YouTubeItem } from '../src/lib/discovery';
 
@@ -85,6 +86,48 @@ async function resolve(title: string, year: number) {
 if (process.argv.includes('--batch2')) { await batch2(); process.exit(0); }
 if (process.argv.includes('--trailers')) { await trailers(); process.exit(0); }
 if (process.argv.includes('--yt-trailers')) { await ytTrailers(); process.exit(0); }
+if (process.argv.includes('--batch3')) { await batch3(); process.exit(0); }
+// Batch 3 (Sex & Drugs): same delta rules as batch 2 — only new titles are resolved, prior data untouched.
+async function batch3() {
+  const { MANIFEST2 } = await import('../src/data/catalogue');
+  // Reconcile against the pre-batch catalogue only (originals + batch 1 + batch 2), so reruns never self-match.
+  const before = new Set([...FILMS.map(f => f.id), ...IMPORT_LIST.map(e => MERGED_INTO[`${e.title}|${e.year}`] ?? importSlug(e.title)), ...MANIFEST2.entries.map(e => e.id)]);
+  const prior: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));
+  const priorIds = new Map<string, string>();
+  for (const [id, s] of Object.entries(prior)) if (s.tmdbId && s.mediaType) priorIds.set(`${s.mediaType}:${s.tmdbId}`, id);
+  let previous: any[] = []; try { previous = JSON.parse(readFileSync('src/data/import-manifest-3.json', 'utf8')).entries; } catch { /* first run */ }
+  const out: any[] = []; const claimed = new Map<string, string>(); const seen = new Set<string>();
+  for (const r of BATCH3_RAW) {
+    const base = { input: { section: r.section, title: r.title, year: r.year } };
+    const id = importSlug(r.title);
+    if (seen.has(id)) { out.push({ ...base, id, status: 'duplicate-in-batch' }); continue; }
+    seen.add(id);
+    if (before.has(id)) { out.push({ ...base, id, status: 'existing-match' }); continue; }
+    const old = previous.find(e => e.input.title === r.title);
+    if (old?.status === 'resolved' && prior[id]?.status === 'resolved') { out.push(old); if (old.chosen) claimed.set(`${old.chosen.mediaType}:${old.chosen.tmdbId}`, id); continue; }
+    try {
+      let res: any;
+      const pin = BATCH3_PINS[`${r.title}|${r.year}`];
+      if (pin) {
+        const d = await details(pin.media, pin.id);
+        const ok = d.id === pin.id && (d.genres ?? []).some((g: any) => g.id === 99) && pin.evidence.test(`${d.title ?? d.name} ${d.overview}`);
+        const meta = summarize(pin.media, d);
+        res = ok ? { status: 'resolved', reason: `evidence-pinned: ${pin.why}`, year: Number((d.release_date ?? d.first_air_date)?.slice(0, 4)), meta: { ...meta, omdb: await omdb(meta.imdbId, pin.media) } } : { status: 'pending-ambiguous', reason: 'pinned identity failed verification' };
+      } else res = await resolve(BATCH3_ALIASES[`${r.title}|${r.year}`] ?? r.title, r.year);
+      if (res.meta) {
+        const ident = `${res.meta.mediaType}:${res.meta.tmdbId}`, dup = priorIds.get(ident) ?? claimed.get(ident);
+        // A match against our own earlier snapshot entry (same id) is a re-resolve, not a duplicate.
+        if (dup && dup !== id) { out.push({ ...base, id: dup, status: 'existing-match-verified', reason: `same TMDB identity ${ident}` }); continue; }
+        claimed.set(ident, id);
+      }
+      out.push({ ...base, id, status: res.status, reason: res.reason, chosen: res.meta ? { mediaType: res.meta.mediaType, tmdbId: res.meta.tmdbId, imdbId: res.meta.imdbId, canonicalTitle: res.meta.canonicalTitle, year: res.year, people: res.meta.people } : undefined, candidates: res.candidates });
+      prior[id] = res.meta ? { status: 'resolved', ...res.meta } : { status: 'pending' };
+    } catch { out.push({ ...base, id, status: 'pending-unavailable', reason: 'metadata service unavailable during import' }); prior[id] = { status: 'pending' }; }
+    console.log(out.length, out.at(-1).status, r.title);
+  }
+  writeFileSync('src/data/import-manifest-3.json', JSON.stringify({ generated: new Date().toISOString().slice(0, 10), rawInputs: BATCH3_RAW.length, entries: out }, null, 1) + '\n');
+  writeFileSync('src/data/catalogue-snapshot.json', JSON.stringify(prior) + '\n');
+}
 // YouTube backfill: for resolved entries still lacking a trailer, search YouTube and accept only
 // title-verified trailer/teaser uploads. Reads GOOGLE_API_KEY from env; never prints it or request URLs.
 async function ytTrailers() {

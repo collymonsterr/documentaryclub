@@ -1,5 +1,5 @@
 import type { ImportCategory } from "./import-list";
-export type Category = ImportCategory | "music" | "arts";
+export type Category = ImportCategory | "music" | "arts" | "sexdrugs";
 
 export const CATEGORIES: { id: Category; label: string }[] = [
   { id: "strange", label: "Strange but True" },
@@ -13,6 +13,7 @@ export const CATEGORIES: { id: Category; label: string }[] = [
   { id: "economics", label: "Economics & Inequality" },
   { id: "arts", label: "Arts & Subcultures" },
   { id: "music", label: "Music" },
+  { id: "sexdrugs", label: "Sex & Drugs" },
 ];
 
 export type Film = {
@@ -55,7 +56,7 @@ export const FILMS: Film[] = [
   { id: "mission", title: "The Mission", year: 2023, director: "Amanda McBaine, Jesse Moss", minutes: 103, genre: "Expedition", categories: ["survival"], synopsis: "Why young missionary John Allen Chau tried to reach North Sentinel Island — and what his zeal cost.", awards: [], hue: 180 },
   { id: "greatest-night", title: "The Greatest Night in Pop", year: 2024, director: "Bao Nguyen", minutes: 97, genre: "Music history", categories: ["music"], synopsis: "One night in 1985, pop's biggest stars crammed into a studio to record \u201cWe Are the World.\u201d", awards: [], hue: 280 },
   { id: "whakaari", title: "The Volcano: Rescue from Whakaari", year: 2022, director: "Rory Kennedy", minutes: 104, genre: "Disaster", categories: ["survival"], synopsis: "Tourists, guides and pilots recount the 2019 eruption on New Zealand's White Island and the rescue that followed.", awards: [], hue: 10 },
-  { id: "fantastic-fungi", title: "Fantastic Fungi", year: 2019, director: "Louie Schwartzberg", minutes: 81, genre: "Nature", categories: ["nature"], synopsis: "Time-lapse wonder into the hidden fungal networks beneath our feet. An older pick, included as an exception.", awards: [], hue: 90 },
+  { id: "fantastic-fungi", title: "Fantastic Fungi", year: 2019, director: "Louie Schwartzberg", minutes: 81, genre: "Nature", categories: ["sexdrugs"], synopsis: "Time-lapse wonder into the hidden fungal networks beneath our feet. An older pick, included as an exception.", awards: [], hue: 90 },
 ];
 
 export const trailerLink = (f: Film) =>

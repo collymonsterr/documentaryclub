@@ -11,8 +11,8 @@ describe('approved import reconciliation', () => {
     expect(MANIFEST.entries).toHaveLength(135);
     expect(MANIFEST.entries.filter(e => e.status === 'merged-existing')).toHaveLength(4);
     expect(Object.values(MERGED_INTO).sort()).toEqual(['fire-of-love', 'ibelin', 'mariupol', 'perfect-neighbor']);
-    expect(CATALOGUE).toHaveLength(306);
-    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(306);
+    expect(CATALOGUE).toHaveLength(361);
+    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(361);
     expect(MANIFEST.entries.map(e => `${e.input.title}|${e.input.year}`)).toEqual(IMPORT_LIST.map(e => `${e.title}|${e.year}`));
   });
   it('keeps the original 17 first with unchanged IDs and awards', () => {
