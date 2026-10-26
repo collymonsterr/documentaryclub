@@ -1,5 +1,7 @@
 // Approved brand mark: amber handheld camera (open top handle, dark side window and dot,
 // viewfinder wedge left, lens wedge right) + real text wordmark. Inline SVG, no banner image.
+import { Link } from '@tanstack/react-router';
+
 export function CameraMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 48" fill="none" aria-hidden="true" className={className}>
@@ -15,9 +17,10 @@ export function CameraMark({ className }: { className?: string }) {
 
 export function SiteLogo() {
   return (
-    <span className="flex min-w-0 items-center gap-2.5">
+    <Link to="/" search={{ film: '', q: '', list: '' }} aria-label="Documentary Club home"
+      className="flex min-w-0 items-center gap-2.5 rounded-sm outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
       <CameraMark className="h-7 w-auto shrink-0 text-primary sm:h-8" />
       <span className="truncate font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">Documentary <span className="text-primary">Club</span></span>
-    </span>
+    </Link>
   );
 }
