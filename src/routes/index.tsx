@@ -148,7 +148,7 @@ function Index() {
       <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={backToGallery}><Grid2X2 />Gallery</Button>
       <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Bookmark className={listFilter === 'shortlist' ? 'fill-primary text-primary' : ''} />Shortlist<span className="text-xs opacity-70">{shortlist.size}</span></Button>
     </div>
-    <nav aria-label="Documentary categories" className="flex flex-wrap gap-1 pt-2">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
+    <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto pt-2 no-scrollbar sm:flex-wrap sm:overflow-visible">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
     <div className="flex flex-wrap items-center gap-1 py-1" role="group" aria-label="Era">
       {ERAS.map(([id, label]) => <Button key={id} size="sm" variant={era === id ? 'default' : 'ghost'} aria-pressed={era === id} title={id === 'recent' ? 'Released in the last two years' : undefined} onClick={() => setEra(id)}>{label}</Button>)}
     </div>
