@@ -1,11 +1,16 @@
-export type Category = "survival" | "mind" | "rights" | "nature" | "oddities" | "music";
+import type { ImportCategory } from "./import-list";
+export type Category = ImportCategory | "music";
 
 export const CATEGORIES: { id: Category; label: string }[] = [
+  { id: "strange", label: "Strange but True" },
+  { id: "psychology", label: "Cults & Psychology" },
+  { id: "scams", label: "Scams & Grifts" },
+  { id: "tech", label: "Technology & Internet" },
+  { id: "crime", label: "Crime & Injustice" },
+  { id: "politics", label: "Politics & Geopolitics" },
   { id: "survival", label: "Survival & Adventure" },
-  { id: "mind", label: "Human Psychology" },
-  { id: "rights", label: "Human Rights" },
   { id: "nature", label: "Nature & Science" },
-  { id: "oddities", label: "Strange But True" },
+  { id: "economics", label: "Economics & Inequality" },
   { id: "music", label: "Music" },
 ];
 
@@ -21,27 +26,33 @@ export type Film = {
   awards: string[];
   hue: number; // poster art tint
   trailerUrl?: string; // only set when a verified official URL exists
+  mediaType?: "movie" | "tv"; // defaults to movie
+  aliases?: string[];
+  tmdbId?: number;
+  imdbId?: string;
+  episodes?: number;
+  pending?: boolean; // approved but identity unverified
 };
 
 // Awards listed only where confidently documented. Empty = none claimed.
 export const FILMS: Film[] = [
-  { id: "beyond-utopia", title: "Beyond Utopia", year: 2023, director: "Madeleine Gavin", minutes: 115, genre: "Escape thriller", categories: ["survival", "rights"], synopsis: "A family's desperate, covert flight out of North Korea through China and Southeast Asia, guided by a pastor's underground network.", awards: ["Sundance 2023 — Audience Award, U.S. Documentary"], hue: 20 },
+  { id: "beyond-utopia", title: "Beyond Utopia", year: 2023, director: "Madeleine Gavin", minutes: 115, genre: "Escape thriller", categories: ["survival", "politics"], synopsis: "A family's desperate, covert flight out of North Korea through China and Southeast Asia, guided by a pastor's underground network.", awards: ["Sundance 2023 — Audience Award, U.S. Documentary"], hue: 20 },
   { id: "fire-of-love", title: "Fire of Love", year: 2022, director: "Sara Dosa", minutes: 93, genre: "Science romance", categories: ["nature", "survival"], synopsis: "Volcanologists Katia and Maurice Krafft loved each other and volcanoes — and filmed both, right up to the edge.", awards: ["Oscar nominee — Best Documentary Feature", "Sundance 2022 — Jonathan Oppenheim Editing Award"], hue: 35 },
-  { id: "ibelin", title: "The Remarkable Life of Ibelin", year: 2024, director: "Benjamin Ree", minutes: 104, genre: "Hidden life", categories: ["mind"], synopsis: "After Mats Steen's death, his parents discover the vast, loving life he lived inside World of Warcraft.", awards: ["Sundance 2024 — World Cinema Documentary Directing Award", "Sundance 2024 — World Cinema Documentary Audience Award"], hue: 260 },
-  { id: "skywalkers", title: "Skywalkers: A Love Story", year: 2024, director: "Jeff Zimbalist", minutes: 100, genre: "Adventure", categories: ["survival", "mind"], synopsis: "Two Russian rooftoppers attempt an illegal climb to the summit of a Malaysian megatower — and a test of their relationship.", awards: [], hue: 210 },
-  { id: "mariupol", title: "20 Days in Mariupol", year: 2023, director: "Mstyslav Chernov", minutes: 95, genre: "War reportage", categories: ["rights", "survival"], synopsis: "AP journalists trapped in the besieged Ukrainian city document atrocities as the world's last reporters there.", awards: ["Oscar winner — Best Documentary Feature", "BAFTA winner — Best Documentary", "Sundance 2023 — World Cinema Documentary Audience Award"], hue: 0 },
-  { id: "eternal-memory", title: "The Eternal Memory", year: 2023, director: "Maite Alberdi", minutes: 85, genre: "Intimate portrait", categories: ["mind"], synopsis: "A Chilean couple face his Alzheimer's together, holding on to a shared past built through dictatorship and love.", awards: ["Oscar nominee — Best Documentary Feature", "Sundance 2023 — World Cinema Documentary Grand Jury Prize"], hue: 45 },
-  { id: "territory", title: "The Territory", year: 2022, director: "Alex Pritz", minutes: 86, genre: "Frontline", categories: ["rights", "nature"], synopsis: "The Uru-eu-wau-wau people defend their Amazon rainforest from settlers and farmers — filming the fight themselves.", awards: ["Sundance 2022 — World Cinema Documentary Audience Award", "Sundance 2022 — Special Jury Award for Documentary Craft"], hue: 130 },
-  { id: "daughters", title: "Daughters", year: 2024, director: "Angela Patton, Natalie Rae", minutes: 107, genre: "Family", categories: ["mind", "rights"], synopsis: "Four girls prepare for a daddy-daughter dance with their incarcerated fathers inside a Washington, D.C. jail.", awards: ["Sundance 2024 — U.S. Documentary Audience Award"], hue: 330 },
-  { id: "sugarcane", title: "Sugarcane", year: 2024, director: "Julian Brave NoiseCat, Emily Kassie", minutes: 107, genre: "Investigation", categories: ["rights"], synopsis: "An investigation into abuse and missing children at a Canadian Indian residential school ignites a reckoning.", awards: ["Oscar nominee — Best Documentary Feature", "Sundance 2024 — U.S. Documentary Directing Award"], hue: 25 },
-  { id: "four-daughters", title: "Four Daughters", year: 2023, director: "Kaouther Ben Hania", minutes: 107, genre: "Hybrid", categories: ["mind", "rights"], synopsis: "A Tunisian mother's two eldest daughters vanished; actors help her and her younger girls re-stage what happened.", awards: ["Oscar nominee — Best Documentary Feature", "Cannes 2023 — L'Œil d'or (shared)"], hue: 15 },
-  { id: "pez-outlaw", title: "The Pez Outlaw", year: 2022, director: "Amy Storkel, Bryan Storkel", minutes: 81, genre: "Caper", categories: ["oddities"], synopsis: "A Michigan man smuggles rare Pez dispensers from Eastern Europe and goes to war with the candy company.", awards: [], hue: 300 },
-  { id: "perfect-neighbor", title: "The Perfect Neighbor", year: 2025, director: "Geeta Gandbhir", minutes: 97, genre: "True crime", categories: ["mind", "rights"], synopsis: "Told through police bodycam footage, a Florida neighbourhood dispute escalates into a fatal shooting.", awards: ["Sundance 2025 — U.S. Documentary Directing Award"], hue: 220 },
-  { id: "contestant", title: "The Contestant", year: 2023, director: "Clair Titley", minutes: 90, genre: "Bizarre experiment", categories: ["oddities", "mind"], synopsis: "A Japanese comedian spends over a year naked and alone, living on sweepstakes prizes — unaware it's broadcast.", awards: [], hue: 50 },
-  { id: "mission", title: "The Mission", year: 2023, director: "Amanda McBaine, Jesse Moss", minutes: 103, genre: "Expedition", categories: ["survival", "mind"], synopsis: "Why young missionary John Allen Chau tried to reach North Sentinel Island — and what his zeal cost.", awards: [], hue: 180 },
+  { id: "ibelin", title: "The Remarkable Life of Ibelin", year: 2024, director: "Benjamin Ree", minutes: 104, genre: "Hidden life", categories: ["psychology", "tech"], synopsis: "After Mats Steen's death, his parents discover the vast, loving life he lived inside World of Warcraft.", awards: ["Sundance 2024 — World Cinema Documentary Directing Award", "Sundance 2024 — World Cinema Documentary Audience Award"], hue: 260 },
+  { id: "skywalkers", title: "Skywalkers: A Love Story", year: 2024, director: "Jeff Zimbalist", minutes: 100, genre: "Adventure", categories: ["survival", "psychology"], synopsis: "Two Russian rooftoppers attempt an illegal climb to the summit of a Malaysian megatower — and a test of their relationship.", awards: [], hue: 210 },
+  { id: "mariupol", title: "20 Days in Mariupol", year: 2023, director: "Mstyslav Chernov", minutes: 95, genre: "War reportage", categories: ["politics", "survival"], synopsis: "AP journalists trapped in the besieged Ukrainian city document atrocities as the world's last reporters there.", awards: ["Oscar winner — Best Documentary Feature", "BAFTA winner — Best Documentary", "Sundance 2023 — World Cinema Documentary Audience Award"], hue: 0 },
+  { id: "eternal-memory", title: "The Eternal Memory", year: 2023, director: "Maite Alberdi", minutes: 85, genre: "Intimate portrait", categories: ["psychology"], synopsis: "A Chilean couple face his Alzheimer's together, holding on to a shared past built through dictatorship and love.", awards: ["Oscar nominee — Best Documentary Feature", "Sundance 2023 — World Cinema Documentary Grand Jury Prize"], hue: 45 },
+  { id: "territory", title: "The Territory", year: 2022, director: "Alex Pritz", minutes: 86, genre: "Frontline", categories: ["politics", "nature"], synopsis: "The Uru-eu-wau-wau people defend their Amazon rainforest from settlers and farmers — filming the fight themselves.", awards: ["Sundance 2022 — World Cinema Documentary Audience Award", "Sundance 2022 — Special Jury Award for Documentary Craft"], hue: 130 },
+  { id: "daughters", title: "Daughters", year: 2024, director: "Angela Patton, Natalie Rae", minutes: 107, genre: "Family", categories: ["psychology", "crime"], synopsis: "Four girls prepare for a daddy-daughter dance with their incarcerated fathers inside a Washington, D.C. jail.", awards: ["Sundance 2024 — U.S. Documentary Audience Award"], hue: 330 },
+  { id: "sugarcane", title: "Sugarcane", year: 2024, director: "Julian Brave NoiseCat, Emily Kassie", minutes: 107, genre: "Investigation", categories: ["crime", "politics"], synopsis: "An investigation into abuse and missing children at a Canadian Indian residential school ignites a reckoning.", awards: ["Oscar nominee — Best Documentary Feature", "Sundance 2024 — U.S. Documentary Directing Award"], hue: 25 },
+  { id: "four-daughters", title: "Four Daughters", year: 2023, director: "Kaouther Ben Hania", minutes: 107, genre: "Hybrid", categories: ["psychology", "crime"], synopsis: "A Tunisian mother's two eldest daughters vanished; actors help her and her younger girls re-stage what happened.", awards: ["Oscar nominee — Best Documentary Feature", "Cannes 2023 — L'Œil d'or (shared)"], hue: 15 },
+  { id: "pez-outlaw", title: "The Pez Outlaw", year: 2022, director: "Amy Storkel, Bryan Storkel", minutes: 81, genre: "Caper", categories: ["strange", "scams"], synopsis: "A Michigan man smuggles rare Pez dispensers from Eastern Europe and goes to war with the candy company.", awards: [], hue: 300 },
+  { id: "perfect-neighbor", title: "The Perfect Neighbor", year: 2025, director: "Geeta Gandbhir", minutes: 97, genre: "True crime", categories: ["crime", "psychology"], synopsis: "Told through police bodycam footage, a Florida neighbourhood dispute escalates into a fatal shooting.", awards: ["Sundance 2025 — U.S. Documentary Directing Award"], hue: 220 },
+  { id: "contestant", title: "The Contestant", year: 2023, director: "Clair Titley", minutes: 90, genre: "Bizarre experiment", categories: ["strange", "psychology"], synopsis: "A Japanese comedian spends over a year naked and alone, living on sweepstakes prizes — unaware it's broadcast.", awards: [], hue: 50 },
+  { id: "mission", title: "The Mission", year: 2023, director: "Amanda McBaine, Jesse Moss", minutes: 103, genre: "Expedition", categories: ["survival", "psychology"], synopsis: "Why young missionary John Allen Chau tried to reach North Sentinel Island — and what his zeal cost.", awards: [], hue: 180 },
   { id: "greatest-night", title: "The Greatest Night in Pop", year: 2024, director: "Bao Nguyen", minutes: 97, genre: "Music history", categories: ["music"], synopsis: "One night in 1985, pop's biggest stars crammed into a studio to record \u201cWe Are the World.\u201d", awards: [], hue: 280 },
   { id: "whakaari", title: "The Volcano: Rescue from Whakaari", year: 2022, director: "Rory Kennedy", minutes: 104, genre: "Disaster", categories: ["survival", "nature"], synopsis: "Tourists, guides and pilots recount the 2019 eruption on New Zealand's White Island and the rescue that followed.", awards: [], hue: 10 },
-  { id: "fantastic-fungi", title: "Fantastic Fungi", year: 2019, director: "Louie Schwartzberg", minutes: 81, genre: "Nature", categories: ["nature", "oddities"], synopsis: "Time-lapse wonder into the hidden fungal networks beneath our feet. An older pick, included as an exception.", awards: [], hue: 90 },
+  { id: "fantastic-fungi", title: "Fantastic Fungi", year: 2019, director: "Louie Schwartzberg", minutes: 81, genre: "Nature", categories: ["nature", "strange"], synopsis: "Time-lapse wonder into the hidden fungal networks beneath our feet. An older pick, included as an exception.", awards: [], hue: 90 },
 ];
 
 export const trailerLink = (f: Film) =>
