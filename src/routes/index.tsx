@@ -3,19 +3,22 @@ import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Bookmark, Check, Grid2X2, Maximize2, ExternalLink, Award } from 'lucide-react';
-import { CATEGORIES, FILMS, justWatchLink, type Category } from '@/data/films';
+import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
+import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { TrailerModal } from '@/components/trailer-modal';
 import { useTracking } from '@/hooks/use-tracking';
 import { canNavigate, filterYears, overviewSentences, TRACKING_KEYS, type Provider } from '@/lib/discovery';
-import { getTmdbCatalogue, getOmdbCatalogue } from '@/lib/tmdb.functions';
+import { getIrishProviders } from '@/lib/tmdb.functions';
+const PAGE = 36;
+const DECADES = [...new Set(CATALOGUE.map(f => Math.floor(f.year / 10) * 10))].sort();
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
     { title: 'Documentary Club — Discover extraordinary true stories' },
-    { name: 'description', content: 'Explore 17 curated documentaries, documented festival awards, official trailers and streaming availability in Ireland.' },
+    { name: 'description', content: 'Explore 148 curated documentary films and series, documented festival awards, official trailers and streaming availability in Ireland.' },
     { property: 'og:title', content: 'Documentary Club — Extraordinary true stories' },
     { property: 'og:description', content: 'Discover curated documentaries in Spotlight or Gallery, save your favourites and find Irish streaming options.' },
     { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
@@ -48,22 +51,23 @@ function Providers({ label, items, subscription = false }: { label: string; item
 function Index() {
   const [view, setView] = useState<'spotlight' | 'gallery'>('spotlight');
   const [filter, setFilter] = useState<Filter>('all');
-  const [selectedId, setSelectedId] = useState(FILMS[0]?.id ?? '');
+  const [selectedId, setSelectedId] = useState(CATALOGUE[0]?.id ?? '');
+  const [query, setQuery] = useState(''); const [type, setType] = useState<'all' | 'movie' | 'tv'>('all'); const [shown, setShown] = useState(PAGE);
   const [shortlist, toggleShort] = useTracking(TRACKING_KEYS.shortlist);
   const [watched, toggleWatched] = useTracking(TRACKING_KEYS.watched);
   const [from, setFrom] = useState(''); const [to, setTo] = useState('');
   const [decade, setDecade] = useState('all'); const [sort, setSort] = useState('curated');
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [backdrop, setBackdrop] = useState<number | null>(null);
-  const fetchCatalogue = useServerFn(getTmdbCatalogue);
-  const fetchRatings = useServerFn(getOmdbCatalogue);
-  // Optional enrichment must never block the curated, zero-login first screen.
-  const enrichment = useQuery({ queryKey: ['tmdb-catalogue'], queryFn: () => fetchCatalogue(), staleTime: 6 * 60 * 60_000, retry: false });
-  const ratings = useQuery({ queryKey: ['omdb-catalogue'], queryFn: () => fetchRatings(), staleTime: 7 * 24 * 60 * 60_000, retry: false });
-  const list = useMemo(() => filterYears(FILMS.filter(f => filter === 'all' ? true : filter === 'shortlist' ? shortlist.has(f.id) : filter === 'watched' ? watched.has(f.id) : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter)), from ? Number(from) : undefined, to ? Number(to) : undefined, decade, sort), [filter, shortlist, watched, from, to, decade, sort]);
+  const fetchProviders = useServerFn(getIrishProviders);
+  const list = useMemo(() => filterYears(searchCatalogue(CATALOGUE, query, type).filter(f => filter === 'all' ? true : filter === 'shortlist' ? shortlist.has(f.id) : filter === 'watched' ? watched.has(f.id) : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter)), from ? Number(from) : undefined, to ? Number(to) : undefined, decade, sort), [filter, shortlist, watched, from, to, decade, sort, query, type]);
+  useEffect(() => { setShown(PAGE); }, [filter, query, type, from, to, decade, sort]);
   const film = list.find(f => f.id === selectedId) ?? list[0];
   const idx = list.findIndex(f => f.id === film?.id);
-  const extra = film ? { ...enrichment.data?.[film.id], omdb: ratings.data?.[film.id] } : undefined;
+  // Baseline metadata ships in the snapshot; only Irish availability is fetched live, for the selected title.
+  const providers = useQuery({ queryKey: ['ie-providers', film?.id], queryFn: () => fetchProviders({ data: { id: film?.id ?? '' } }), enabled: Boolean(film?.tmdbId), staleTime: 6 * 60 * 60_000, retry: false });
+  const snap = film ? SNAPSHOT[film.id] : undefined;
+  const extra = snap ? { ...snap, rating: snap.tmdbRating, providers: providers.data } : undefined;
   const backdropUrl = backdrop === null ? undefined : extra?.backdrops?.[backdrop];
   const go = useCallback((direction: number) => {
     if (!list.length) return;
@@ -83,7 +87,7 @@ function Index() {
     const container = rail.current; const active = container?.querySelector<HTMLElement>('[aria-pressed="true"]');
     if (container && active) container.scrollTo({ left: active.offsetLeft - container.offsetLeft - container.clientWidth / 2 + active.clientWidth / 2, behavior: 'smooth' });
   }, [film?.id, view]);
-  const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All films' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }, { id: 'shortlist', label: `Shortlist · ${shortlist.size}` }, { id: 'watched', label: `Watched · ${watched.size}` }];
+  const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }, { id: 'shortlist', label: `Shortlist · ${shortlist.size}` }, { id: 'watched', label: `Watched · ${watched.size}` }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
     <header className="flex items-center justify-between gap-3 py-3"><h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
@@ -93,31 +97,33 @@ function Index() {
     </div>
     <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto py-2 no-scrollbar">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
     <div className="mb-4 flex flex-wrap items-end gap-2 border-b border-border pb-3">
+      <label className="min-w-40 flex-1 text-xs text-muted-foreground">Search<Input aria-label="Search title, alias or director" type="search" placeholder="Title, alias or director" value={query} onChange={e => setQuery(e.target.value)} className="mt-1 h-8" /></label>
+      <label className="text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select" value={type} onChange={e => setType(e.target.value as 'all' | 'movie' | 'tv')}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
       <label className="text-xs text-muted-foreground">From<Input aria-label="From year" type="number" min="1900" max="2100" placeholder="Any" value={from} onChange={e => setFrom(e.target.value)} className="mt-1 h-8 w-24" /></label>
       <label className="text-xs text-muted-foreground">To<Input aria-label="To year" type="number" min="1900" max="2100" placeholder="Any" value={to} onChange={e => setTo(e.target.value)} className="mt-1 h-8 w-24" /></label>
-      <label className="text-xs text-muted-foreground">Decade<select aria-label="Decade" className="discovery-select" value={decade} onChange={e => setDecade(e.target.value)}><option value="all">All decades</option><option value="2010">2010s</option><option value="2020">2020s</option></select></label>
+      <label className="text-xs text-muted-foreground">Decade<select aria-label="Decade" className="discovery-select" value={decade} onChange={e => setDecade(e.target.value)}><option value="all">All decades</option>{DECADES.map(d => <option key={d} value={d}>{d}s</option>)}</select></label>
       <label className="text-xs text-muted-foreground">Order<select aria-label="Year sorting" className="discovery-select" value={sort} onChange={e => setSort(e.target.value)}><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
-      <span className="ml-auto self-end pb-2 text-xs text-muted-foreground">{list.length} films</span>
+      <span className="ml-auto self-end pb-2 text-xs text-muted-foreground">{list.length} titles</span>
     </div>
-    {!film ? <div className="py-16 text-center"><p className="text-muted-foreground">No films in this selection.</p><Button variant="ghost" className="mt-3" onClick={() => { setFilter('all'); setFrom(''); setTo(''); setDecade('all'); }}>Clear filters</Button></div> : view === 'gallery' ?
-      <section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">{list.map(f => <div key={f.id} className="min-w-0"><Button variant="ghost" aria-label={`Open ${f.title}`} className="h-auto w-full p-0" onClick={() => { setSelectedId(f.id); setView('spotlight'); }}><DocumentaryPoster film={f} src={enrichment.data?.[f.id]?.poster} small /></Button><h2 className="mt-2 text-sm font-medium leading-snug">{f.title}</h2><p className="mt-1 text-xs text-muted-foreground">{f.year}{watched.has(f.id) ? ' · Watched' : shortlist.has(f.id) ? ' · Shortlisted' : ''}</p>{f.awards.length > 0 && <p className="mt-1 flex items-center gap-1 text-xs text-accent-foreground"><Award className="size-3" />Awards & nominations</p>}</div>)}</section> : <>
+    {!film ? <div className="py-16 text-center"><p className="text-muted-foreground">No films in this selection.</p><Button variant="ghost" className="mt-3" onClick={() => { setFilter('all'); setFrom(''); setTo(''); setDecade('all'); setQuery(''); setType('all'); }}>Clear filters</Button></div> : view === 'gallery' ?
+      <><section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">{list.slice(0, shown).map(f => <div key={f.id} className="min-w-0"><Button variant="ghost" aria-label={`Open ${f.title}`} className="h-auto w-full p-0" onClick={() => { setSelectedId(f.id); setView('spotlight'); }}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button><h2 className="mt-2 text-sm font-medium leading-snug">{f.title}</h2><p className="mt-1 text-xs text-muted-foreground">{f.year} · {f.mediaType === 'tv' ? 'Series' : 'Film'}{f.pending ? ' · Pending' : ''}{watched.has(f.id) ? ' · Watched' : shortlist.has(f.id) ? ' · Shortlisted' : ''}</p>{f.awards.length > 0 && <p className="mt-1 flex items-center gap-1 text-xs text-accent-foreground"><Award className="size-3" />Awards & nominations</p>}</div>)}</section>{shown < list.length && <div className="mt-6 text-center"><Button variant="outline" onClick={() => setShown(n => n + PAGE)}>Show more · {list.length - shown} left</Button></div>}</> : <>
       <section aria-label="Selected documentary" className="spotlight-grid" onTouchStart={e => { if (!canNavigate(e.target, trailerOpen)) return; const t = e.touches[0]; if (t) touch.current = { x: t.clientX, y: t.clientY }; }} onTouchEnd={e => { const t = e.changedTouches[0], start = touch.current; touch.current = null; if (t && start && !trailerOpen && Math.abs(t.clientX - start.x) > 60 && Math.abs(t.clientX - start.x) > Math.abs(t.clientY - start.y)) go(t.clientX < start.x ? 1 : -1); }}>
         <div className="spotlight-poster"><DocumentaryPoster film={film} src={extra?.poster} /></div>
         <div className="min-w-0">
-          <div className="flex items-center justify-between gap-2"><p className="text-xs font-medium uppercase text-primary">{film.genre}</p><div className="flex items-center gap-2"><Button variant="ghost" size="icon" aria-label="Previous film" onClick={() => go(-1)}><ArrowLeft /></Button><span className="min-w-10 text-center text-xs text-muted-foreground">{idx + 1}/{list.length}</span><Button variant="ghost" size="icon" aria-label="Next film" onClick={() => go(1)}><ArrowRight /></Button></div></div>
+          <div className="flex items-center justify-between gap-2"><p className="flex items-center gap-2 text-xs font-medium uppercase text-primary"><span className="rounded-sm border border-primary/40 px-1.5 py-0.5">{film.mediaType === 'tv' ? 'Series' : 'Film'}</span>{film.genre}{film.pending && <span className="text-muted-foreground">· Identity pending</span>}</p><div className="flex items-center gap-2"><Button variant="ghost" size="icon" aria-label="Previous film" onClick={() => go(-1)}><ArrowLeft /></Button><span className="min-w-10 text-center text-xs text-muted-foreground">{idx + 1}/{list.length}</span><Button variant="ghost" size="icon" aria-label="Next film" onClick={() => go(1)}><ArrowRight /></Button></div></div>
           <h2 className="font-display text-3xl leading-tight sm:text-4xl">{film.title}</h2>
-          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{film.year} · {film.director}{(extra?.runtime ?? film.minutes) ? ` · ${extra?.runtime ?? film.minutes} min` : ''}</p>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{[film.year, film.director, film.episodes ? `${film.episodes} episodes` : '', (extra?.runtime ?? film.minutes) ? `${extra?.runtime ?? film.minutes} min${film.mediaType === 'tv' ? ' per episode' : ''}` : ''].filter(Boolean).join(' · ')}</p>{!!film.aliases?.length && <p className="mt-1 text-xs text-muted-foreground">Also known as {film.aliases.join(', ')}</p>}
           <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-accent-foreground">{extra?.rating !== undefined && <span>TMDB {extra.rating.toFixed(1)}/10 · {extra.votes?.toLocaleString()} votes</span>}{extra?.omdb?.imdb !== undefined && <span>IMDb {extra.omdb.imdb.toFixed(1)}/10</span>}{extra?.omdb?.rottenTomatoes !== undefined && <span>Rotten Tomatoes {extra.omdb.rottenTomatoes}%</span>}</div>
           <p className="mt-3 text-sm leading-relaxed text-foreground/90">{extra?.overview ? overviewSentences(`${extra.overview}${(extra.overview.match(/[.!?](?:\s|$)/g)?.length ?? 0) < 2 ? ` ${NOTES[film.id] ?? ''}` : ''}`) : `${film.synopsis} ${NOTES[film.id] ?? ''}`}</p>
           {!!film.awards.length && <ul className="mt-3 space-y-1">{film.awards.map(a => <li key={a} className="flex gap-2 text-xs leading-relaxed text-accent-foreground"><Award className="mt-0.5 size-3 shrink-0" />{a}</li>)}</ul>}
           {extra?.omdb?.awards && <p className="mt-2 text-xs leading-relaxed text-muted-foreground"><span className="font-medium">OMDb awards: </span>{extra.omdb.awards}</p>}
           <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Bookmark className={shortlist.has(film.id) ? 'fill-primary text-primary' : ''} />{shortlist.has(film.id) ? 'Shortlisted' : 'Shortlist'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button></div>
-          <div className="mt-4 border-t border-border pt-3"><h3 className="mb-2 text-xs font-semibold">Watch in Ireland</h3>{!extra?.providers?.known && <p className="mb-2 text-xs text-muted-foreground">Availability unknown — check JustWatch.</p>}<div className="space-y-1"><Providers label="Subscription" items={extra?.providers?.flatrate ?? []} subscription /><Providers label="Rent" items={extra?.providers?.rent ?? []} /><Providers label="Buy" items={extra?.providers?.buy ?? []} /></div><Button asChild variant="link" size="sm" className="mt-1 h-auto px-0"><a href={extra?.providers?.link ?? justWatchLink(film)} target="_blank" rel="noreferrer">{extra?.providers?.link ? 'Check Irish availability' : 'Search JustWatch Ireland'}<ExternalLink /></a></Button></div>
+          <div className="mt-4 border-t border-border pt-3"><h3 className="mb-2 text-xs font-semibold">Watch in Ireland</h3>{providers.isFetching ? <p className="mb-2 text-xs text-muted-foreground" role="status">Checking Irish availability…</p> : !extra?.providers?.known && <p className="mb-2 text-xs text-muted-foreground">Availability unknown — check JustWatch.</p>}<div className="space-y-1"><Providers label="Subscription" items={extra?.providers?.flatrate ?? []} subscription /><Providers label="Rent" items={extra?.providers?.rent ?? []} /><Providers label="Buy" items={extra?.providers?.buy ?? []} /></div><Button asChild variant="link" size="sm" className="mt-1 h-auto px-0"><a href={extra?.providers?.link ?? justWatchLink(film)} target="_blank" rel="noreferrer">{extra?.providers?.link ? 'Check Irish availability' : 'Search JustWatch Ireland'}<ExternalLink /></a></Button></div>
           {!!extra?.backdrops?.length && <div className="mt-3 flex items-center gap-2"><span className="text-xs text-muted-foreground">Scene</span><Button variant="ghost" size="sm" aria-pressed={backdrop === null} onClick={() => setBackdrop(null)}>None</Button>{extra.backdrops.map((url, i) => <Button variant="ghost" key={url} aria-label={`Backdrop ${i + 1}`} aria-pressed={backdrop === i} className={`h-8 w-14 overflow-hidden p-0 ${backdrop === i ? 'ring-2 ring-primary' : ''}`} onClick={() => setBackdrop(i)}><img src={url} alt="" className="h-full w-full object-cover" loading="lazy" /></Button>)}</div>}
         </div>
       </section>
-      <div ref={rail} aria-label="Film thumbnails" className="relative mt-4 flex gap-2 overflow-x-auto py-1 no-scrollbar">{list.map(f => <Button key={f.id} variant="ghost" aria-label={`Select ${f.title}`} aria-pressed={film.id === f.id} className={`h-auto w-12 shrink-0 p-0 sm:w-14 ${film.id === f.id ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'}`} onClick={() => setSelectedId(f.id)}><DocumentaryPoster film={f} src={enrichment.data?.[f.id]?.poster} small /></Button>)}</div>
+      <div ref={rail} aria-label="Film thumbnails" className="relative mt-4 flex gap-2 overflow-x-auto py-1 no-scrollbar">{list.map(f => <Button key={f.id} variant="ghost" aria-label={`Select ${f.title}`} aria-pressed={film.id === f.id} className={`h-auto w-12 shrink-0 p-0 sm:w-14 ${film.id === f.id ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'}`} onClick={() => setSelectedId(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button>)}</div>
     </>}
-    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>17 curated true stories.</span><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a>{Object.values(ratings.data ?? {}).some(Boolean) && <a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a>}<span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{enrichment.isFetching && <span role="status">Loading film details…</span>}{extra?.status === 'missing-secret' && <span>Live photos await configuration.</span>}{(enrichment.isError || extra?.status === 'unavailable') && <span>Live film data temporarily unavailable.</span>}</footer>
+    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
   </main>;
 }
