@@ -74,3 +74,12 @@ export const BATCH3_ALIASES: Record<string, string> = {
   'Louis Theroux: Dark States – Heroin Town|2017': 'Louis Theroux: Dark States',
   "Louis Theroux's Weird Weekends: Porn|1998": "Louis Theroux's Weird Weekends",
 };
+
+// Evidence-pinned identities for titles the search rules can't match by name alone. Each pin is
+// verified against full TMDB details (documentary genre + evidence in title/overview) before use.
+export const BATCH3_PINS: Record<string, { media: 'movie' | 'tv'; id: number; evidence: RegExp; why: string }> = {
+  "Cocaine Cowboys II: Hustlin' with the Godmother|2008": { media: 'movie', id: 26769, evidence: /Cocaine Cowboys 2|Godmother|Griselda/i, why: "TMDB lists the sequel as 'Cocaine Cowboys 2' (2008)" },
+  'Countdown to Death: Pablo Escobar|2017': { media: 'movie', id: 500552, evidence: /Pablo Escobar.*Countdown to Death/i, why: 'TMDB title reverses the submitted word order' },
+  'Dying to Know: Ram Dass & Timothy Leary|2014': { media: 'movie', id: 313705, evidence: /Ram Dass|Timothy Leary/i, why: 'festival premiere 2014, TMDB distribution year 2016' },
+  'Louis and the Brothel|2003': { media: 'movie', id: 143481, evidence: /Louis Theroux.*Brothel/i, why: "TMDB prefixes the special with 'Louis Theroux:'" },
+};

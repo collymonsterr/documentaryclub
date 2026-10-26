@@ -5,7 +5,7 @@ import { FILMS } from '../src/data/films';
 import { EXPECTED_PEOPLE, IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, SEARCH_ALIASES, importSlug } from '../src/data/import-list';
 import { getCatalogueEnrichment } from '../src/lib/tmdb.server';
 import { BATCH2_COLLECTIONS, BATCH2_PINS, BATCH2_RAW, reconcileBatch } from '../src/data/import-batch2';
-import { BATCH3_ALIASES, BATCH3_RAW } from '../src/data/import-batch3';
+import { BATCH3_ALIASES, BATCH3_PINS, BATCH3_RAW } from '../src/data/import-batch3';
 import { readFileSync } from 'node:fs';
 import { importTitleMatches, parseOmdb, selectAnyTrailer, selectTrailer, selectYouTubeTrailer, validImdbId, type OmdbResponse, type YouTubeItem } from '../src/lib/discovery';
 
@@ -104,7 +104,14 @@ async function batch3() {
     const old = previous.find(e => e.input.title === r.title);
     if (old?.status === 'resolved' && prior[id]?.status === 'resolved') { out.push(old); if (old.chosen) claimed.set(`${old.chosen.mediaType}:${old.chosen.tmdbId}`, id); continue; }
     try {
-      const res: any = await resolve(BATCH3_ALIASES[`${r.title}|${r.year}`] ?? r.title, r.year);
+      let res: any;
+      const pin = BATCH3_PINS[`${r.title}|${r.year}`];
+      if (pin) {
+        const d = await details(pin.media, pin.id);
+        const ok = d.id === pin.id && (d.genres ?? []).some((g: any) => g.id === 99) && pin.evidence.test(`${d.title ?? d.name} ${d.overview}`);
+        const meta = summarize(pin.media, d);
+        res = ok ? { status: 'resolved', reason: `evidence-pinned: ${pin.why}`, year: Number((d.release_date ?? d.first_air_date)?.slice(0, 4)), meta: { ...meta, omdb: await omdb(meta.imdbId, pin.media) } } : { status: 'pending-ambiguous', reason: 'pinned identity failed verification' };
+      } else res = await resolve(BATCH3_ALIASES[`${r.title}|${r.year}`] ?? r.title, r.year);
       if (res.meta) {
         const ident = `${res.meta.mediaType}:${res.meta.tmdbId}`, dup = priorIds.get(ident) ?? claimed.get(ident);
         if (dup) { out.push({ ...base, id: dup, status: 'existing-match-verified', reason: `same TMDB identity ${ident}` }); continue; }
