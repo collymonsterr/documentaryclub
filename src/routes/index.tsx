@@ -1,4 +1,4 @@
-import { createFileRoute, stripSearchParams, useNavigate } from '@tanstack/react-router';
+import { createFileRoute, Link, stripSearchParams, useNavigate } from '@tanstack/react-router';
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
@@ -201,6 +201,6 @@ function Index() {
       </section>
       <div ref={rail} aria-label="Film thumbnails" className="relative mt-4 flex gap-2 overflow-x-auto py-1 no-scrollbar">{list.map(f => <Button key={f.id} variant="ghost" aria-label={`Select ${f.title}`} aria-pressed={film.id === f.id} className={`h-auto w-12 shrink-0 p-0 sm:w-14 ${film.id === f.id ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'}`} onClick={() => setFilm(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button>)}</div>
     </>}
-    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
+    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><Link to="/list" className="underline">All titles by category</Link><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
   </main>;
 }
