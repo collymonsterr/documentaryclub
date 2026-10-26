@@ -17,7 +17,8 @@ describe('second batch reconciliation', () => {
     expect(CATALOGUE).toHaveLength(306);
   });
   it('merges alternate titles, escaped punctuation and differing years into existing IDs', () => {
-    expect(entry('McMillions', 'inline')?.id).toBe('mcmillion-s');
+    expect(entry('McMillions', 'inline')?.id).toBe('mcmillions');
+    expect(CATALOGUE.filter(f => f.id === 'mcmillions')).toHaveLength(1);
     expect(entry('Love Has Won: The Cult of Mother God', 'inline')?.id).toBe('love-has-won');
     expect(entry('Going Clear: Scientology and the Prison of Belief', 'inline')?.id).toBe('going-clear');
     expect(entry('The King of Kong: A Fistful of Quarters', 'inline')?.id).toBe('the-king-of-kong');
