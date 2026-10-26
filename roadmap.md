@@ -12,3 +12,4 @@
 - [x] /list page: one-sentence summaries, boxed category sections, sticky jump-link nav, AI-crawlable semantic HTML.
 - [x] Director links in Spotlight and /list open the gallery filtered to that filmmaker.
 - [x] YouTube trailer backfill via saved Google key: title-verified trailers only; 298/306 now have inline trailers (7 keep the search fallback).
+- [x] Batch 3 (Sex & Drugs, 56 inputs): 1 existing (Fantastic Fungi moved from Nature), 53 resolved, 2 pending (Guys and Dolls, Love Me — no TMDB record). Catalogue now 361; new sexdrugs category; 23 more trailers backfilled.
