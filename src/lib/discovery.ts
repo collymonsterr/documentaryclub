@@ -94,6 +94,21 @@ export function selectAnyTrailer(videos?: { results?: { site: string; type: stri
   return pick('Trailer', true) ?? pick('Trailer') ?? pick('Teaser', true) ?? pick('Teaser');
 }
 
+// YouTube backfill for titles with no TMDB trailer: accept only videos whose title names the film
+// (or a verified alias) and says trailer/teaser — never reviews, reactions, scenes or clips.
+export type YouTubeItem = { id?: { videoId?: string }; snippet?: { title?: string; channelTitle?: string } };
+export function selectYouTubeTrailer(title: string, aliases: string[], items: YouTubeItem[]): string | undefined {
+  const names = [title, ...aliases].map(n => n.toLowerCase()).filter(Boolean);
+  const bad = /review|reaction|explained|breakdown|scene|clip|interview|behind the scenes|soundtrack|episode/i;
+  for (const item of items) {
+    const videoId = item.id?.videoId;
+    const t = item.snippet?.title ?? '';
+    if (!videoId || !/^[\w-]{11}$/.test(videoId) || bad.test(t) || !/trailer|teaser/i.test(t)) continue;
+    if (names.some(name => t.toLowerCase().includes(name))) return videoId;
+  }
+  return undefined;
+}
+
 // Era facet: 'recent' = released within the last two years; decades are inclusive [start, start+10); 'pre2000' is year < 2000.
 export type Era = 'all' | 'recent' | '2020s' | '2010s' | '2000s' | 'pre2000';
 export function inEra(year: number, era: Era, now: number = new Date().getFullYear()) {

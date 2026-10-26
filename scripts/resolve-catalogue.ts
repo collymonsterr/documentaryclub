@@ -6,7 +6,7 @@ import { EXPECTED_PEOPLE, IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, SEARCH_ALIASES,
 import { getCatalogueEnrichment } from '../src/lib/tmdb.server';
 import { BATCH2_COLLECTIONS, BATCH2_PINS, BATCH2_RAW, reconcileBatch } from '../src/data/import-batch2';
 import { readFileSync } from 'node:fs';
-import { importTitleMatches, parseOmdb, selectAnyTrailer, selectTrailer, validImdbId, type OmdbResponse } from '../src/lib/discovery';
+import { importTitleMatches, parseOmdb, selectAnyTrailer, selectTrailer, selectYouTubeTrailer, validImdbId, type OmdbResponse, type YouTubeItem } from '../src/lib/discovery';
 
 const token = process.env['TMDB_READ_ACCESS_TOKEN'], omdbKey = process.env['OMDB_API_KEY'];
 if (!token) throw new Error('TMDB credential missing');
@@ -84,6 +84,33 @@ async function resolve(title: string, year: number) {
 
 if (process.argv.includes('--batch2')) { await batch2(); process.exit(0); }
 if (process.argv.includes('--trailers')) { await trailers(); process.exit(0); }
+if (process.argv.includes('--yt-trailers')) { await ytTrailers(); process.exit(0); }
+// YouTube backfill: for resolved entries still lacking a trailer, search YouTube and accept only
+// title-verified trailer/teaser uploads. Reads GOOGLE_API_KEY from env; never prints it or request URLs.
+async function ytTrailers() {
+  const key = process.env['GOOGLE_API_KEY'];
+  if (!key) throw new Error('YouTube credential missing');
+  const snap: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));
+  const { CATALOGUE } = await import('../src/data/catalogue');
+  const missing = CATALOGUE.filter(f => { const s = snap[f.id]; return s?.status === 'resolved' && !s.trailer && (s.mediaType === 'movie' || s.mediaType === 'tv'); });
+  let filled = 0;
+  for (const f of missing) {
+    const s = snap[f.id]!;
+    try {
+      const url = new URL('https://www.googleapis.com/youtube/v3/search');
+      url.searchParams.set('part', 'snippet'); url.searchParams.set('type', 'video'); url.searchParams.set('maxResults', '5');
+      url.searchParams.set('q', `${f.title} ${f.year} trailer`); url.searchParams.set('key', key);
+      const r = await fetch(url);
+      if (!r.ok) { console.log(f.id, 'search failed'); continue; }
+      const data = await r.json() as { items?: YouTubeItem[] };
+      const videoId = selectYouTubeTrailer(f.title, [s.canonicalTitle, ...(f.aliases ?? [])].filter(Boolean), data.items ?? []);
+      if (videoId) { s.trailer = videoId; filled++; }
+    } catch { /* unavailable stays unknown */ }
+    console.log(f.id, s.trailer ? 'trailer' : 'none');
+  }
+  writeFileSync('src/data/catalogue-snapshot.json', JSON.stringify(snap) + '\n');
+  console.log(`filled ${filled} of ${missing.length} missing trailers`);
+}
 // Trailer backfill: re-fetches videos ONLY for resolved entries lacking a trailer; all other snapshot data is untouched.
 async function trailers() {
   const snap: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));

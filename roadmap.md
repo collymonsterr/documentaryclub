@@ -10,3 +10,5 @@
 - [x] Taxonomy rework: strict 1-to-1 subject categories, always-wrapping category pills, era facet row (All/Recent/2020s/2010s/2000s/Pre-2000), Filters panel reduced to Type/Order/Watched/Shuffle, Top IMDb and Top RT sorts.
 - [ ] Accolades facet (Oscar/Sundance winners & nominees) — deferred per user.
 - [x] /list page: one-sentence summaries, boxed category sections, sticky jump-link nav, AI-crawlable semantic HTML.
+- [x] Director links in Spotlight and /list open the gallery filtered to that filmmaker.
+- [x] YouTube trailer backfill via saved Google key: title-verified trailers only; 298/306 now have inline trailers (7 keep the search fallback).
