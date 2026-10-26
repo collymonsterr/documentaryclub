@@ -9,7 +9,8 @@
     "year": 2006
    },
    "id": "cocaine-cowboys",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:14761"
   },
   {
    "input": {
@@ -18,7 +19,18 @@
     "year": 2008
    },
    "id": "cocaine-cowboys-ii-hustlin-with-the-godmother",
-   "status": "existing-match"
+   "status": "resolved",
+   "reason": "evidence-pinned: TMDB lists the sequel as 'Cocaine Cowboys 2' (2008)",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 26769,
+    "imdbId": "tt1176726",
+    "canonicalTitle": "Cocaine Cowboys 2",
+    "year": 2008,
+    "people": [
+     "Billy Corben"
+    ]
+   }
   },
   {
    "input": {
@@ -27,7 +39,8 @@
     "year": 2009
    },
    "id": "sins-of-my-father",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:46558"
   },
   {
    "input": {
@@ -36,7 +49,8 @@
     "year": 2010
    },
    "id": "the-two-escobars",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:53190"
   },
   {
    "input": {
@@ -45,7 +59,8 @@
     "year": 2010
    },
    "id": "pablo-s-hippos",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:440145"
   },
   {
    "input": {
@@ -54,7 +69,8 @@
     "year": 2013
    },
    "id": "narco-cultura",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:159012"
   },
   {
    "input": {
@@ -63,7 +79,8 @@
     "year": 2015
    },
    "id": "freeway-crack-in-the-system",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:298432"
   },
   {
    "input": {
@@ -72,7 +89,19 @@
     "year": 2017
    },
    "id": "countdown-to-death-pablo-escobar",
-   "status": "existing-match"
+   "status": "resolved",
+   "reason": "evidence-pinned: TMDB title reverses the submitted word order",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 500552,
+    "imdbId": "tt10864124",
+    "canonicalTitle": "Pablo Escobar: Countdown to Death",
+    "year": 2017,
+    "people": [
+     "Pablo Martin Farina",
+     "Santiago Diaz"
+    ]
+   }
   },
   {
    "input": {
@@ -81,7 +110,8 @@
     "year": 2020
    },
    "id": "the-last-narc",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:102831"
   },
   {
    "input": {
@@ -90,7 +120,8 @@
     "year": 2021
    },
    "id": "cocaine-cowboys-the-kings-of-miami",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:129206"
   },
   {
    "input": {
@@ -99,7 +130,8 @@
     "year": 2000
    },
    "id": "black-tar-heroin-the-dark-end-of-the-street",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:79515"
   },
   {
    "input": {
@@ -108,7 +140,8 @@
     "year": 2015
    },
    "id": "amy",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:331781"
   },
   {
    "input": {
@@ -117,7 +150,8 @@
     "year": 2017
    },
    "id": "heroin-e",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:475345"
   },
   {
    "input": {
@@ -126,7 +160,8 @@
     "year": 2018
    },
    "id": "take-your-pills",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:502166"
   },
   {
    "input": {
@@ -135,7 +170,8 @@
     "year": 2021
    },
    "id": "the-crime-of-the-century",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:119142"
   },
   {
    "input": {
@@ -144,7 +180,8 @@
     "year": 1999
    },
    "id": "grass",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:22010"
   },
   {
    "input": {
@@ -153,7 +190,8 @@
     "year": 2007
    },
    "id": "the-union-the-business-behind-getting-high",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:36443"
   },
   {
    "input": {
@@ -162,7 +200,8 @@
     "year": 2007
    },
    "id": "super-high-me",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:14236"
   },
   {
    "input": {
@@ -171,7 +210,8 @@
     "year": 2010
    },
    "id": "marijuana-a-chronic-history",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:53349"
   },
   {
    "input": {
@@ -180,7 +220,8 @@
     "year": 2014
    },
    "id": "the-culture-high",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:295538"
   },
   {
    "input": {
@@ -189,7 +230,8 @@
     "year": 2015
    },
    "id": "rolling-papers",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:324300"
   },
   {
    "input": {
@@ -198,7 +240,8 @@
     "year": 2019
    },
    "id": "grass-is-greener",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:589871"
   },
   {
    "input": {
@@ -207,7 +250,8 @@
     "year": 2010
    },
    "id": "dmt-the-spirit-molecule",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:53778"
   },
   {
    "input": {
@@ -216,7 +260,8 @@
     "year": 2013
    },
    "id": "neurons-to-nirvana",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:228813"
   },
   {
    "input": {
@@ -225,7 +270,18 @@
     "year": 2014
    },
    "id": "dying-to-know-ram-dass-timothy-leary",
-   "status": "existing-match"
+   "status": "resolved",
+   "reason": "evidence-pinned: festival premiere 2014, TMDB distribution year 2016",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 313705,
+    "imdbId": "tt2516424",
+    "canonicalTitle": "Dying to Know: Ram Dass & Timothy Leary",
+    "year": 2016,
+    "people": [
+     "Gay Dillingham"
+    ]
+   }
   },
   {
    "input": {
@@ -234,7 +290,8 @@
     "year": 2015
    },
    "id": "the-sunshine-makers",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:434336"
   },
   {
    "input": {
@@ -243,7 +300,8 @@
     "year": 2016
    },
    "id": "hamilton-s-pharmacopeia",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:68362"
   },
   {
    "input": {
@@ -252,7 +310,8 @@
     "year": 2016
    },
    "id": "orange-sunshine",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:381024"
   },
   {
    "input": {
@@ -261,7 +320,8 @@
     "year": 2016
    },
    "id": "the-last-shaman",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:451474"
   },
   {
    "input": {
@@ -270,7 +330,8 @@
     "year": 2018
    },
    "id": "magic-medicine",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:555696"
   },
   {
    "input": {
@@ -288,7 +349,8 @@
     "year": 2020
    },
    "id": "have-a-good-trip-adventures-in-psychedelics",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:673175"
   },
   {
    "input": {
@@ -297,7 +359,8 @@
     "year": 2022
    },
    "id": "how-to-change-your-mind",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:204304"
   },
   {
    "input": {
@@ -306,7 +369,8 @@
     "year": 1998
    },
    "id": "louis-theroux-s-weird-weekends-porn",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:4050"
   },
   {
    "input": {
@@ -315,7 +379,18 @@
     "year": 2003
    },
    "id": "louis-and-the-brothel",
-   "status": "existing-match"
+   "status": "resolved",
+   "reason": "evidence-pinned: TMDB prefixes the special with 'Louis Theroux:'",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 143481,
+    "imdbId": "tt0387361",
+    "canonicalTitle": "Louis Theroux: Louis and the Brothel",
+    "year": 2003,
+    "people": [
+     "Geoffrey O'Connor"
+    ]
+   }
   },
   {
    "input": {
@@ -324,7 +399,8 @@
     "year": 2012
    },
    "id": "louis-theroux-twilight-of-the-porn-stars",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:115189"
   },
   {
    "input": {
@@ -333,7 +409,8 @@
     "year": 2016
    },
    "id": "louis-theroux-drinking-to-oblivion",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:394528"
   },
   {
    "input": {
@@ -342,7 +419,8 @@
     "year": 2017
    },
    "id": "louis-theroux-dark-states-heroin-town",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:74461"
   },
   {
    "input": {
@@ -351,7 +429,8 @@
     "year": 2022
    },
    "id": "louis-theroux-s-forbidden-america",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:157576"
   },
   {
    "input": {
@@ -360,7 +439,8 @@
     "year": 2005
    },
    "id": "inside-deep-throat",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:12228"
   },
   {
    "input": {
@@ -369,7 +449,9 @@
     "year": 2007
    },
    "id": "guys-and-dolls",
-   "status": "existing-match"
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
   },
   {
    "input": {
@@ -378,7 +460,8 @@
     "year": 2011
    },
    "id": "whores-glory",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:85533"
   },
   {
    "input": {
@@ -387,7 +470,8 @@
     "year": 2012
    },
    "id": "after-porn-ends",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:109520"
   },
   {
    "input": {
@@ -396,7 +480,8 @@
     "year": 2013
    },
    "id": "kink",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:159100"
   },
   {
    "input": {
@@ -405,7 +490,9 @@
     "year": 2014
    },
    "id": "love-me",
-   "status": "existing-match"
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
   },
   {
    "input": {
@@ -414,7 +501,8 @@
     "year": 2015
    },
    "id": "hot-girls-wanted",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:318256"
   },
   {
    "input": {
@@ -423,7 +511,8 @@
     "year": 2016
    },
    "id": "rocco",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:416148"
   },
   {
    "input": {
@@ -432,7 +521,8 @@
     "year": 2017
    },
    "id": "scotty-and-the-secret-history-of-hollywood",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:469062"
   },
   {
    "input": {
@@ -441,7 +531,8 @@
     "year": 2018
    },
    "id": "silicone-soul",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:516961"
   },
   {
    "input": {
@@ -450,7 +541,8 @@
     "year": 2022
    },
    "id": "secrets-of-playboy",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:155892"
   },
   {
    "input": {
@@ -459,7 +551,8 @@
     "year": 2023
    },
    "id": "money-shot-the-pornhub-story",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:1087040"
   },
   {
    "input": {
@@ -468,7 +561,8 @@
     "year": 1998
    },
    "id": "party-monster-the-shockumentary",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:34424"
   },
   {
    "input": {
@@ -477,7 +571,8 @@
     "year": 2008
    },
    "id": "gonzo-the-life-and-work-of-dr-hunter-s-thompson",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:13003"
   },
   {
    "input": {
@@ -486,7 +581,8 @@
     "year": 2013
    },
    "id": "spark-a-burning-man-story",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:173488"
   },
   {
    "input": {
@@ -495,7 +591,8 @@
     "year": 2018
    },
    "id": "studio-54",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:493101"
   },
   {
    "input": {
@@ -504,7 +601,8 @@
     "year": 2022
    },
    "id": "trainwreck-woodstock-99",
-   "status": "existing-match"
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:206246"
   }
  ]
 }
