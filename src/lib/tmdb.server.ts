@@ -9,7 +9,7 @@ type Details = {
   images?: { backdrops?: { file_path: string }[] };
   'watch/providers'?: Parameters<typeof parseIrishProviders>[0];
 };
-export type TmdbAuth = { token?: string; apiKey?: string };
+export type TmdbAuth = { token?: string | undefined; apiKey?: string | undefined };
 type Entry = { expires: number; value: Promise<Enrichment> };
 const cache = new Map<string, Entry>();
 const verifiedIds = new Map<string, number>();

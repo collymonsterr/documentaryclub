@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Play, ExternalLink } from 'lucide-react';
 
-export function TrailerModal({ film, trailer, open, onOpenChange }: { film: Film; trailer?: string; open: boolean; onOpenChange: (open: boolean) => void }) {
+export function TrailerModal({ film, trailer, open, onOpenChange }: { film: Film; trailer?: string | undefined; open: boolean; onOpenChange: (open: boolean) => void }) {
   return <Dialog open={open} onOpenChange={onOpenChange}>
     <DialogTrigger asChild><Button><Play />Trailer</Button></DialogTrigger>
     <DialogContent className="w-[calc(100%-2rem)] max-w-3xl max-h-[90dvh] overflow-y-auto rounded-lg p-4 sm:p-6">

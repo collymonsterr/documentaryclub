@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Film } from '@/data/films';
 
-export function DocumentaryPoster({ film, src, small = false }: { film: Film; src?: string; small?: boolean }) {
+export function DocumentaryPoster({ film, src, small = false }: { film: Film; src?: string | undefined; small?: boolean }) {
   const [failed, setFailed] = useState<string>();
   return <div className="film-poster">
     {src && failed !== src ? <img src={src} alt={`${film.title} poster`} loading={small ? 'lazy' : 'eager'} onError={() => setFailed(src)} className="h-full w-full object-cover" /> :
