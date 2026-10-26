@@ -2,7 +2,7 @@
 // writes ONLY public normalized metadata. Never prints URLs, credentials or upstream bodies.
 import { writeFileSync } from 'node:fs';
 import { FILMS } from '../src/data/films';
-import { IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, importSlug } from '../src/data/import-list';
+import { EXPECTED_PEOPLE, IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, SEARCH_ALIASES, importSlug } from '../src/data/import-list';
 import { getCatalogueEnrichment } from '../src/lib/tmdb.server';
 import { importTitleMatches, parseOmdb, selectTrailer, validImdbId, type OmdbResponse } from '../src/lib/discovery';
 
@@ -51,13 +51,14 @@ function summarize(media: Media, d: Detail) {
 const details = (media: Media, id: number) => tmdb<Detail>(`${media}/${id}`, { append_to_response: 'credits,videos,images,external_ids', language: 'en-US', include_image_language: 'en,null' });
 
 async function resolve(title: string, year: number) {
-  const queries = [...new Set([title, title.split(':')[0]!.trim(), title.replace(/\*\*/g, 'u')])];
+  const key = `${title}|${year}`;
+  const queries = [...new Set([title, title.split(':')[0]!.trim(), ...(SEARCH_ALIASES[key] ?? [])])];
   const found = new Map<string, Cand>();
   for (const q of queries) for (const media of ['movie', 'tv'] as Media[]) {
     const res = await tmdb<{ results?: any[] }>(`search/${media}`, { query: q, include_adult: 'false' });
     for (const r of res.results ?? []) {
       const c: Cand = { id: r.id, media, title: media === 'movie' ? r.title : r.name, alt: media === 'movie' ? r.original_title : r.original_name, year: Number((media === 'movie' ? r.release_date : r.first_air_date)?.slice(0, 4)), genre_ids: r.genre_ids };
-      if (c.genre_ids?.includes(99) && Math.abs(c.year - year) <= 1 && importTitleMatches(title, [c.title, c.alt])) found.set(`${media}:${c.id}`, c);
+      if (c.genre_ids?.includes(99) && Math.abs(c.year - year) <= 1 && (importTitleMatches(title, [c.title, c.alt]) || (SEARCH_ALIASES[key] ?? []).some(a => importTitleMatches(a, [c.title, c.alt], true)))) found.set(`${media}:${c.id}`, c);
     }
   }
   const verified: { c: Cand; d: Detail; exact: boolean }[] = [];
@@ -66,10 +67,12 @@ async function resolve(title: string, year: number) {
     if (d.id === c.id && (d.genres ?? []).some((g: any) => g.id === 99)) verified.push({ c, d, exact: importTitleMatches(title, [c.title, c.alt], true) });
   }
   let pick = verified, reason = 'unique verified documentary match';
+  const person = EXPECTED_PEOPLE[key];
+  if (person) { pick = pick.filter(v => summarize(v.c.media, v.d).people.includes(person)); reason = `verified credited filmmaker ${person}`; }
+  const hint = MEDIA_HINTS[key];
+  if (pick.length > 1 && hint && pick.filter(v => v.c.media === hint).length === 1) { pick = pick.filter(v => v.c.media === hint); reason = `approved ${hint === 'tv' ? 'series' : 'film'} format among verified candidates`; }
   if (pick.length > 1 && pick.filter(v => v.exact).length === 1) { pick = pick.filter(v => v.exact); reason = 'only exact-title documentary among verified candidates'; }
   if (pick.length > 1 && pick.filter(v => v.c.year === year).length === 1) { pick = pick.filter(v => v.c.year === year); reason = 'only exact-year documentary among verified candidates'; }
-  const hint = MEDIA_HINTS[`${title}|${year}`];
-  if (pick.length > 1 && hint && pick.filter(v => v.c.media === hint).length === 1) { pick = pick.filter(v => v.c.media === hint); reason = `approved ${hint === 'tv' ? 'series' : 'film'} format among verified candidates`; }
   const candidates = verified.map(v => ({ mediaType: v.c.media, tmdbId: v.c.id, title: v.c.title, year: v.c.year }));
   if (pick.length !== 1) return { status: verified.length ? 'pending-ambiguous' : 'pending-not-found', reason: verified.length ? 'multiple verified documentary candidates' : 'no documentary candidate with matching title and year ±1', candidates };
   const v = pick[0]!;

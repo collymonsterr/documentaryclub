@@ -148,6 +148,13 @@ export const MERGED_INTO: Record<string, string> = {
 // Tie-break hints only (used when BOTH a verified film and a verified series exist); identity still comes from TMDB.
 export const MEDIA_HINTS: Record<string, 'movie' | 'tv'> = {
   'Catfish|2010': 'movie', 'The Staircase|2004': 'tv', 'The Family|2019': 'tv', 'Last Breath|2019': 'movie',
-  'Into the Deep|2020': 'movie', 'Stranded|2007': 'movie', 'Paradise Lost|1996': 'movie',
+  'Into the Deep|2020': 'movie', 'Stranded|2007': 'movie', 'Paradise Lost|1996': 'movie', 'Wormwood|2017': 'tv',
 };
+// Extra search phrasings for titles TMDB lists under their full canonical subtitle.
+export const SEARCH_ALIASES: Record<string, string[]> = {
+  'Stranded|2007': ["Stranded: I've Come from a Plane That Crashed on the Mountains"],
+  'Paradise Lost|1996': ['Paradise Lost: The Child Murders at Robin Hood Hills'],
+};
+// Credited filmmaker required where several same-title documentaries share a year (The Summit: 2008 K2 disaster film).
+export const EXPECTED_PEOPLE: Record<string, string> = { 'The Summit|2012': 'Nick Ryan' };
 export const importSlug = (title: string) => title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\$/g, 's').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');

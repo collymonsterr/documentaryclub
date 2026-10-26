@@ -713,8 +713,18 @@
     "category": "psychology"
    },
    "id": "wormwood",
-   "status": "pending-ambiguous",
-   "reason": "multiple verified documentary candidates",
+   "status": "resolved",
+   "reason": "approved series format among verified candidates",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 73581,
+    "imdbId": "tt7306056",
+    "canonicalTitle": "Wormwood",
+    "year": 2017,
+    "people": [
+     "Errol Morris"
+    ]
+   },
    "candidates": [
     {
      "mediaType": "movie",
@@ -1958,13 +1968,17 @@
    },
    "id": "paradise-lost",
    "status": "resolved",
-   "reason": "only exact-title documentary among verified candidates",
+   "reason": "approved film format among verified candidates",
    "chosen": {
-    "mediaType": "tv",
-    "tmdbId": 327768,
-    "canonicalTitle": "Paradise Lost",
+    "mediaType": "movie",
+    "tmdbId": 17204,
+    "imdbId": "tt0117293",
+    "canonicalTitle": "Paradise Lost: The Child Murders at Robin Hood Hills",
     "year": 1996,
-    "people": []
+    "people": [
+     "Bruce Sinofsky",
+     "Joe Berlinger"
+    ]
    },
    "candidates": [
     {
@@ -1977,6 +1991,12 @@
      "mediaType": "tv",
      "tmdbId": 300203,
      "title": "Paradise Lost: Asesinato en Robin Hood Hills",
+     "year": 1996
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 17204,
+     "title": "Paradise Lost: The Child Murders at Robin Hood Hills",
      "year": 1996
     }
    ]
@@ -2283,9 +2303,26 @@
     "category": "crime"
    },
    "id": "don-t-f-k-with-cats",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 96129,
+    "imdbId": "tt11318602",
+    "canonicalTitle": "Don't F**k with Cats: Hunting an Internet Killer",
+    "year": 2019,
+    "people": [
+     "Mark Lewis"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 96129,
+     "title": "Don't F**k with Cats: Hunting an Internet Killer",
+     "year": 2019
+    }
+   ]
   },
   {
    "input": {
@@ -2950,9 +2987,26 @@
     "category": "survival"
    },
    "id": "stranded",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 21508,
+    "imdbId": "tt1157720",
+    "canonicalTitle": "Stranded: I've Come from a Plane That Crashed on the Mountains",
+    "year": 2007,
+    "people": [
+     "Gonzalo Arijón"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 21508,
+     "title": "Stranded: I've Come from a Plane That Crashed on the Mountains",
+     "year": 2007
+    }
+   ]
   },
   {
    "input": {
@@ -3018,8 +3072,18 @@
     "category": "survival"
    },
    "id": "the-summit",
-   "status": "pending-ambiguous",
-   "reason": "multiple verified documentary candidates",
+   "status": "resolved",
+   "reason": "verified credited filmmaker Nick Ryan",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 133441,
+    "imdbId": "tt2363471",
+    "canonicalTitle": "The Summit",
+    "year": 2013,
+    "people": [
+     "Nick Ryan"
+    ]
+   },
    "candidates": [
     {
      "mediaType": "movie",
