@@ -18,10 +18,11 @@ describe("App routing", () => {
   });
 
   // The wordmark in the header is the site's home affordance on every page.
-  it("renders the logo as a link back to the homepage", () => {
+  it("renders the logo as a link back to the homepage", async () => {
     const root = createRootRoute();
     const home = createRoute({ getParentRoute: () => root, path: "/", component: SiteLogo });
     const router = createRouter({ routeTree: root.addChildren([home]) });
+    await router.load();
 
     render(<RouterProvider router={router} />);
 
