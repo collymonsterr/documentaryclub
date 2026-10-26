@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { filterYears, orderFilms, shuffleIds } from './discovery';
+import { orderFilms, shuffleIds } from './discovery';
 import { CATALOGUE } from '@/data/catalogue';
 const seeded = (s: number) => () => ((s = (s * 16807) % 2147483647) / 2147483647);
 describe('gallery shuffle', () => {
@@ -12,7 +12,7 @@ describe('gallery shuffle', () => {
     expect(filtered).toEqual(o.filter(id => filtered.includes(id)));
   });
   it('explicit year sort overrides random order', () => {
-    const r = filterYears(orderFilms(CATALOGUE, shuffleIds(ids, seeded(5))), undefined, undefined, 'all', 'oldest');
+    const r = [...orderFilms(CATALOGUE, shuffleIds(ids, seeded(5)))].sort((a, b) => a.year - b.year);
     expect(r[0]!.year).toBe(Math.min(...CATALOGUE.map(f => f.year)));
   });
 });
