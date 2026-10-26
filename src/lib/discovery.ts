@@ -20,6 +20,12 @@ export const fallbackEnrichment = (status: Enrichment['status']): Enrichment => 
 export function normalizeTitle(title: string) {
   return title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
+export function normalizeDirector(film: Film, name: string) {
+  const normalized = normalizeTitle(name);
+  // Film-specific credited-name equivalence verified against the filmmakers' credits:
+  // https://www.sidestilt.com/the-pez-outlaw (Amy Bandlien Storkel & Bryan Storkel).
+  return film.id === 'pez-outlaw' && normalized === 'amystorkel' ? 'amybandlienstorkel' : normalized;
+}
 export type MovieCandidate = { id: number; title?: string; original_title?: string; release_date?: string; genre_ids?: number[] };
 export function movieCandidates(film: Film, results: MovieCandidate[]): MovieCandidate[] {
   return [...new Map(results.filter(r => Number.isInteger(r.id) && r.id > 0 && Math.abs(Number(r.release_date?.slice(0, 4)) - film.year) <= 1 && r.genre_ids?.includes(99) &&
@@ -37,10 +43,10 @@ export function validImdbId(value: unknown): value is string { return typeof val
 export function matchesOmdb(film: Film, data: OmdbResponse, imdbId?: string) {
   if (data.Response !== 'True' || !validImdbId(data.imdbID) || data.Type !== 'movie') return false;
   if (imdbId) return data.imdbID === imdbId;
-  const directors = (data.Director ?? '').split(',').map(name => normalizeTitle(name.trim()));
+  const directors = (data.Director ?? '').split(',').map(name => normalizeDirector(film, name.trim()));
   return normalizeTitle(data.Title ?? '') === normalizeTitle(film.title) && data.Year === String(film.year) &&
     (data.Genre ?? '').split(',').some(genre => genre.trim().toLowerCase() === 'documentary') &&
-    film.director.split(', ').every(name => directors.includes(normalizeTitle(name)));
+    film.director.split(', ').every(name => directors.includes(normalizeDirector(film, name)));
 }
 export function parseOmdb(data: OmdbResponse): OmdbMetadata {
   const imdb = /^\d+(?:\.\d+)?$/.test(data.imdbRating ?? '') ? Number(data.imdbRating) : undefined;

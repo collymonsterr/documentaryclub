@@ -1,5 +1,5 @@
 import { FILMS, type Film } from '@/data/films';
-import { fallbackEnrichment, movieCandidates, normalizeTitle, parseIrishProviders, selectTrailer, validImdbId, type Enrichment, type MovieCandidate } from './discovery';
+import { fallbackEnrichment, movieCandidates, normalizeDirector, normalizeTitle, parseIrishProviders, selectTrailer, validImdbId, type Enrichment, type MovieCandidate } from './discovery';
 
 type Details = {
   id: number; title?: string; original_title?: string; release_date?: string;
@@ -28,11 +28,11 @@ async function request<T>(path: string, auth: TmdbAuth, query: Record<string, st
   return await response.json() as T;
 }
 function validDetails(film: Film, details: Details) {
-  const directors = details.credits?.crew?.filter(c => c.job === 'Director').map(c => normalizeTitle(c.name)) ?? [];
+  const directors = details.credits?.crew?.filter(c => c.job === 'Director').map(c => normalizeDirector(film, c.name)) ?? [];
   // Festival premieres and distribution releases can differ by one year; title, genre and every director must still match.
   return details.id > 0 && Math.abs(Number(details.release_date?.slice(0, 4)) - film.year) <= 1 && details.genres?.some(g => g.id === 99) &&
     [details.title, details.original_title].some(t => t && normalizeTitle(t) === normalizeTitle(film.title)) &&
-    film.director.split(', ').every(name => directors.includes(normalizeTitle(name)));
+    film.director.split(', ').every(name => directors.includes(normalizeDirector(film, name)));
 }
 async function enrich(film: Film, auth: TmdbAuth): Promise<Enrichment> {
   try {
