@@ -89,10 +89,9 @@ if (process.argv.includes('--yt-trailers')) { await ytTrailers(); process.exit(0
 if (process.argv.includes('--batch3')) { await batch3(); process.exit(0); }
 // Batch 3 (Sex & Drugs): same delta rules as batch 2 — only new titles are resolved, prior data untouched.
 async function batch3() {
-  const { CATALOGUE, MANIFEST3 } = await import('../src/data/catalogue');
-  // Reconcile against the pre-batch catalogue only: on reruns our own earlier entries must not self-match.
-  const ownIds = new Set(MANIFEST3.entries.map(e => e.id));
-  const before = CATALOGUE.filter(f => !ownIds.has(f.id));
+  const { MANIFEST2 } = await import('../src/data/catalogue');
+  // Reconcile against the pre-batch catalogue only (originals + batch 1 + batch 2), so reruns never self-match.
+  const before = new Set([...FILMS.map(f => f.id), ...IMPORT_LIST.map(e => MERGED_INTO[`${e.title}|${e.year}`] ?? importSlug(e.title)), ...MANIFEST2.entries.map(e => e.id)]);
   const prior: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));
   const priorIds = new Map<string, string>();
   for (const [id, s] of Object.entries(prior)) if (s.tmdbId && s.mediaType) priorIds.set(`${s.mediaType}:${s.tmdbId}`, id);
@@ -103,7 +102,7 @@ async function batch3() {
     const id = importSlug(r.title);
     if (seen.has(id)) { out.push({ ...base, id, status: 'duplicate-in-batch' }); continue; }
     seen.add(id);
-    if (before.some(f => f.id === id)) { out.push({ ...base, id, status: 'existing-match' }); continue; }
+    if (before.has(id)) { out.push({ ...base, id, status: 'existing-match' }); continue; }
     const old = previous.find(e => e.input.title === r.title);
     if (old?.status === 'resolved' && prior[id]?.status === 'resolved') { out.push(old); if (old.chosen) claimed.set(`${old.chosen.mediaType}:${old.chosen.tmdbId}`, id); continue; }
     try {
