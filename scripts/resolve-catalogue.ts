@@ -6,7 +6,7 @@ import { EXPECTED_PEOPLE, IMPORT_LIST, MERGED_INTO, MEDIA_HINTS, SEARCH_ALIASES,
 import { getCatalogueEnrichment } from '../src/lib/tmdb.server';
 import { BATCH2_COLLECTIONS, BATCH2_PINS, BATCH2_RAW, reconcileBatch } from '../src/data/import-batch2';
 import { readFileSync } from 'node:fs';
-import { importTitleMatches, parseOmdb, selectTrailer, validImdbId, type OmdbResponse } from '../src/lib/discovery';
+import { importTitleMatches, parseOmdb, selectAnyTrailer, selectTrailer, validImdbId, type OmdbResponse } from '../src/lib/discovery';
 
 const token = process.env['TMDB_READ_ACCESS_TOKEN'], omdbKey = process.env['OMDB_API_KEY'];
 if (!token) throw new Error('TMDB credential missing');
