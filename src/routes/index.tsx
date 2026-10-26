@@ -139,15 +139,11 @@ function Index() {
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
-    <header className="flex items-center justify-between gap-3 py-3">
-      <h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1>
-      <Button size="sm" variant={listFilter === 'shortlist' ? 'default' : 'outline'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}>
-        <Bookmark className={listFilter === 'shortlist' ? 'fill-current' : ''} />Shortlist<span className="text-xs opacity-70">{shortlist.size}</span>
-      </Button>
-    </header>
-    <div className="grid grid-cols-2 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
+    <header className="flex items-center justify-between gap-3 py-3"><h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
+    <div className="grid grid-cols-3 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
       <Button size="sm" variant={view === 'spotlight' ? 'secondary' : 'ghost'} aria-pressed={view === 'spotlight'} onClick={() => openSpotlight()}><Maximize2 />Spotlight</Button>
       <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={backToGallery}><Grid2X2 />Gallery</Button>
+      <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Bookmark className={listFilter === 'shortlist' ? 'fill-primary text-primary' : ''} />Shortlist<span className="text-xs opacity-70">{shortlist.size}</span></Button>
     </div>
     <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto py-2 no-scrollbar lg:flex-wrap lg:overflow-visible">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
     <div className="mb-4 flex flex-wrap items-end gap-2 border-b border-border pb-3">
