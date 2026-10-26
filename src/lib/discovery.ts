@@ -28,7 +28,7 @@ export function importTitleMatches(submitted: string, candidates: (string | unde
     if (!c) return false;
     const n = normalizeTitle(c.replace(/\*\*/g, 'u'));
     if (n === s || normalizeTitle(c) === raw) return true;
-    return !exactOnly && (head(c) === s || head(submitted) === n || (submitted.includes(':') && c.includes(':') && head(c) === head(submitted) && n.startsWith(head(submitted))));
+    return !exactOnly && (head(c) === s || head(submitted) === n);
   });
 }
 export function normalizeDirector(film: Film, name: string) {
