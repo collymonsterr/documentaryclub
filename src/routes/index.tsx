@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { DocumentaryPoster } from '@/components/documentary-poster';
+import { SiteLogo } from '@/components/site-logo';
 import { TrailerModal } from '@/components/trailer-modal';
 import { useTracking } from '@/hooks/use-tracking';
 import { canNavigate, cardBadges, inEra, orderFilms, shuffleIds, sortByRating, overviewSentences, TRACKING_KEYS, type Era, type Provider } from '@/lib/discovery';
@@ -144,7 +145,7 @@ function Index() {
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
-    <header className="flex items-center justify-between gap-3 py-3"><h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
+    <header className="flex items-center justify-between gap-3 py-3"><h1><SiteLogo /></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
     <div className="grid grid-cols-3 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
       <Button size="sm" variant={view === 'spotlight' ? 'secondary' : 'ghost'} aria-pressed={view === 'spotlight'} onClick={() => openSpotlight()}><Maximize2 />Spotlight</Button>
       <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={backToGallery}><Grid2X2 />Gallery</Button>

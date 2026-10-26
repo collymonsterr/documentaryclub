@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { CATEGORIES } from '@/data/films';
 import { CATALOGUE } from '@/data/catalogue';
 import { firstSentence } from '@/lib/discovery';
+import { SiteLogo } from '@/components/site-logo';
 
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
 const years = (f: { year: number; yearEnd?: number }) => f.yearEnd ? `${f.year}–${f.yearEnd}` : String(f.year);
@@ -23,7 +24,7 @@ export const Route = createFileRoute('/list')({
 function ListPage() {
   return <main className="mx-auto max-w-3xl px-4 pb-10 sm:px-6">
     <header className="flex items-center justify-between gap-3 py-3">
-      <h1 className="font-display text-2xl sm:text-3xl">Documentary <em className="text-primary">Club</em></h1>
+      <h1><SiteLogo /></h1>
       <Link to="/" search={{ film: '', q: '', list: '' }} className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Back to discovery</Link>
     </header>
     <p className="border-b border-border pb-3 text-xs leading-relaxed text-muted-foreground">{CATALOGUE.length} curated documentary films and series, grouped by subject — every title has exactly one home category. Every title links to its full details, trailer and Irish streaming availability.</p>

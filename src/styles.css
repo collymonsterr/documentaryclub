@@ -87,7 +87,7 @@
 }
 
 @theme inline {
-  --font-display: "Instrument Serif", Georgia, serif;
+  --font-display: "Lato", "DM Sans", system-ui, sans-serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
