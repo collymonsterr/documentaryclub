@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, filterYears, matchMovie, parseIrishProviders, readTracking, selectTrailer, TRACKING_KEYS } from './discovery';
+import { canNavigate, filterYears, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -24,6 +24,16 @@ describe('years', () => {
   });
 });
 describe('safe TMDB selection', () => {
+  it('recognizes the verified Pez Outlaw director credit without weakening other identities', () => {
+    const pez = FILMS.find(f => f.id === 'pez-outlaw');
+    const other = FILMS.find(f => f.id === 'mission');
+    if (!pez || !other) throw Error('Missing fixture');
+    expect(normalizeDirector(pez, 'Amy Storkel')).toBe(normalizeDirector(pez, 'Amy Bandlien Storkel'));
+    expect(normalizeDirector(other, 'Amy Storkel')).not.toBe(normalizeDirector(other, 'Amy Bandlien Storkel'));
+    const data = {Response:'True',imdbID:'tt17660740',Type:'movie',Title:pez.title,Year:'2022',Genre:'Documentary',Director:'Amy Bandlien Storkel, Bryan Storkel'};
+    expect(matchesOmdb(pez, data)).toBe(true);
+    expect(matchesOmdb(pez, {...data, Director:'Amy Bandlien Storkel, Wrong director'})).toBe(false);
+  });
   const film = FILMS.find(f => f.id === 'mission');
   it('requires exact title, year and documentary identity', () => {
     if (!film) throw Error('Missing fixture');

@@ -24,13 +24,14 @@ describe('TMDB graceful enrichment', () => {
       if (!film) return new Response('{}');
       const id = FILMS.indexOf(film) + 1;
       if (url.pathname.endsWith('search/movie')) return Response.json({results:[{id,title:film.title,release_date:`${film.year}-01-01`,genre_ids:[99]}]});
-      return Response.json({id,title:film.title,release_date:`${film.year}-01-01`,genres:[{id:99}],credits:{crew:film.director.split(', ').map(name => ({job:'Director',name:film.id === 'mission' ? 'Wrong director' : name}))},overview:'A verified overview. Another meaningful sentence.',runtime:90,vote_average:7.4,vote_count:20,poster_path:'/poster.jpg',images:{backdrops:[{file_path:'/scene.jpg'}]},'watch/providers':{results:{IE:{flatrate:[{provider_id:8,provider_name:'Netflix'}]}}}});
+      return Response.json({id,title:film.title,release_date:`${film.year}-01-01`,genres:[{id:99}],credits:{crew:film.director.split(', ').map(name => ({job:'Director',name:film.id === 'mission' ? 'Wrong director' : name === 'Amy Storkel' ? 'Amy Bandlien Storkel' : name}))},overview:'A verified overview. Another meaningful sentence.',runtime:90,vote_average:7.4,vote_count:20,poster_path:'/poster.jpg',images:{backdrops:[{file_path:'/scene.jpg'}]},'watch/providers':{results:{IE:{flatrate:[{provider_id:8,provider_name:'Netflix'}]}}}});
     });
     vi.stubGlobal('fetch',fetcher);
     const { getCatalogueEnrichment } = await import('./tmdb.server');
     const [a,b] = await Promise.all([getCatalogueEnrichment({token:'synthetic-test-fixture'}),getCatalogueEnrichment({token:'synthetic-test-fixture'})]);
     expect(a).toEqual(b); expect(a['beyond-utopia']?.status).toBe('ready'); expect(a['mission']?.status).toBe('not-found');
     expect(a['ibelin']?.providers.flatrate[0]?.name).toBe('Netflix');
+    expect(a['pez-outlaw']?.status).toBe('ready');
     expect(fetcher).toHaveBeenCalledTimes(34);
     await getCatalogueEnrichment({token:'synthetic-test-fixture'}); expect(fetcher).toHaveBeenCalledTimes(34);
   });
