@@ -9,10 +9,12 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Film catalogue is static curated data in src/data/films.ts; trailers fall back to YouTube search unless a verified URL is set (never invent video IDs).
+- Catalogue = original curated FILMS (src/data/films.ts) + approved import list (src/data/import-list.ts) merged in src/data/catalogue.ts; identities/public metadata are resolved once by scripts/resolve-catalogue.ts into catalogue-snapshot.json and an audit import-manifest.json, so page loads never search TMDB/OMDb. Ambiguous titles stay visible as pending; never invent IDs, awards or trailers.
+- Import matching supports movie and tv endpoints: documentary genre, title or ':'-subtitle alias, year ±1, uniqueness; tie-breaks only via explicit per-title hints (format, credited filmmaker, search alias).
+- Only Irish watch providers are fetched live, per selected catalogue ID through a server function that rejects non-catalogue IDs.
 - Optional enrichment uses a public server function reading runtime-injected process.env secrets inside its handler only; retain the immediate curated first screen so service failures never block discovery.
 - TMDB identity requires exact normalized title, documentary genre and every director, allowing at most one year of premiere/distribution variance; verify all candidate details and reject ambiguity before caching an ID.
 - Discovery helpers own filtering, trailer validation, Irish provider parsing and tracking keys; test these rules independently from presentation.
 - Verified alternate director credits use film-scoped normalization shared by TMDB and OMDb; never broaden name matching globally because unrelated people can share names.
 - TMDB requests are deduplicated per worker with a bounded catalogue cache and three concurrent requests; no persistent database or login is needed for this private curated catalogue.
-- OMDb enrichment uses an independent optional query so ratings never delay photos, verified TMDB external IMDb IDs first, otherwise exact title/year/documentary/director checks; cache successful DTOs seven days with bounded worker memory and a three-slot request pool to avoid duplicate traffic and credential leakage.
+- OMDb ratings are captured in the snapshot at import by verified IMDb ID with matching movie/series type, preserving the daily quota; omdb.server.ts remains the bounded cached helper for any future runtime refresh.
