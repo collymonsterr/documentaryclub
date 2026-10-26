@@ -12,7 +12,7 @@ describe('gallery shuffle', () => {
     expect(filtered).toEqual(o.filter(id => filtered.includes(id)));
   });
   it('explicit year sort overrides random order', () => {
-    const r = filterYears(orderFilms(CATALOGUE, shuffleIds(ids, seeded(5))), 'all', 'all', 'oldest' as never);
+    const r = filterYears(orderFilms(CATALOGUE, shuffleIds(ids, seeded(5))), undefined, undefined, 'all', 'oldest');
     expect(r[0]!.year).toBe(Math.min(...CATALOGUE.map(f => f.year)));
   });
 });
