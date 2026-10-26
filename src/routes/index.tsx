@@ -60,7 +60,7 @@ function Providers({ label, items, subscription = false }: { label: string; item
   return <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs"><span className="text-muted-foreground">{label}</span>{items.map(p => <span key={p.id} className={subscription && p.highlighted ? 'font-semibold text-primary' : 'text-foreground'}>{p.name}</span>)}</div>;
 }
 // IMDb / RT: a small popover with our stored score and a new-tab link (their pages block embedding).
-function RatingLink({ site, film, score }: { site: 'imdb' | 'rt'; film: { title: string; year: number; imdbId?: string }; score?: number }) {
+function RatingLink({ site, film, score }: { site: 'imdb' | 'rt'; film: { title: string; year: number; imdbId?: string | undefined }; score?: number | undefined }) {
   const imdb = site === 'imdb';
   if (imdb && !film.imdbId) return null;
   const href = imdb ? `https://www.imdb.com/title/${film.imdbId}/` : `https://www.rottentomatoes.com/search?search=${encodeURIComponent(film.title)}`;
