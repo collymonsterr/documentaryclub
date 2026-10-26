@@ -823,26 +823,7 @@
     "year": 2019
    },
    "id": "fantastic-fungi",
-   "status": "resolved",
-   "reason": "unique verified documentary match",
-   "chosen": {
-    "mediaType": "movie",
-    "tmdbId": 612654,
-    "imdbId": "tt8258074",
-    "canonicalTitle": "Fantastic Fungi",
-    "year": 2019,
-    "people": [
-     "Louie Schwartzberg"
-    ]
-   },
-   "candidates": [
-    {
-     "mediaType": "movie",
-     "tmdbId": 612654,
-     "title": "Fantastic Fungi",
-     "year": 2019
-    }
-   ]
+   "status": "existing-match"
   },
   {
    "input": {
