@@ -25,7 +25,7 @@ const imported: Film[] = [...IMPORT_LIST.filter(e => !MERGED_INTO[`${e.title}|${
   const categories = (CATEGORY_OVERRIDES[e.title] ?? [e.category]) as Film['categories'];
   const aliases = s?.canonicalTitle && s.canonicalTitle !== e.title ? [s.canonicalTitle] : [];
   return {
-    id, title: e.title, year: e.year, director: s?.people?.join(', ') ?? '', genre: s?.mediaType === 'collection' ? 'Film series' : label(categories[0]!), categories,
+    id, title: e.title, year: e.year, director: s?.people?.join(', ') ?? '', genre: label(categories[0]!), categories,
     synopsis: s?.overview ?? 'Approved title awaiting verified synopsis.', awards: [], hue: 0, aliases,
     mediaType: s?.mediaType ?? 'movie', pending: !resolved,
     ...(s?.runtime ? { minutes: s.runtime } : {}), ...(s?.tmdbId ? { tmdbId: s.tmdbId } : {}), ...(s?.imdbId ? { imdbId: s.imdbId } : {}), ...(s?.episodes ? { episodes: s.episodes } : {}),
