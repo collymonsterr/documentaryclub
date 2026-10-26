@@ -132,6 +132,24 @@ export const TRACKING_KEYS = { shortlist: 'dc-shortlist', watched: 'dc-watched' 
 export function readTracking(storage: Pick<Storage, 'getItem'>, key: string): Set<string> {
   try { const value: unknown = JSON.parse(storage.getItem(key) || '[]'); return new Set(Array.isArray(value) ? value.filter((id): id is string => typeof id === 'string') : []); } catch { return new Set(); }
 }
+// Backup file for Saved + Watched. Unknown IDs and junk are dropped silently.
+export type TrackingBackup = { saved: string[]; watched: string[] };
+export function parseBackup(raw: string, validIds: Set<string>): TrackingBackup | null {
+  try {
+    const data: unknown = JSON.parse(raw);
+    if (!data || typeof data !== 'object') return null;
+    const pick = (v: unknown) => Array.isArray(v) ? [...new Set(v.filter((id): id is string => typeof id === 'string' && validIds.has(id)))] : null;
+    const saved = pick((data as Record<string, unknown>)['saved']), watched = pick((data as Record<string, unknown>)['watched']);
+    if (!saved && !watched) return null;
+    return { saved: saved ?? [], watched: watched ?? [] };
+  } catch { return null; }
+}
+// Watched wins: anything watched is never also Saved.
+export function applyBackup(current: TrackingBackup, incoming: TrackingBackup, mode: 'merge' | 'replace'): TrackingBackup {
+  const watched = new Set(mode === 'replace' ? incoming.watched : [...current.watched, ...incoming.watched]);
+  const saved = (mode === 'replace' ? incoming.saved : [...new Set([...current.saved, ...incoming.saved])]).filter(id => !watched.has(id));
+  return { saved, watched: [...watched] };
+}
 export function overviewSentences(text: string): string {
   const sentences = text.match(/[^.!?]+[.!?]+(?:[”"']|$)?|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [text];
   return sentences.slice(0, 4).join(' ');
