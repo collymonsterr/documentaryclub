@@ -1,1 +1,1453 @@
-{ "rawInputs": 56, "entries": [] }
+{
+ "generated": "2026-10-26",
+ "rawInputs": 56,
+ "entries": [
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Cocaine Cowboys",
+    "year": 2006
+   },
+   "id": "cocaine-cowboys",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 14761,
+    "imdbId": "tt0380268",
+    "canonicalTitle": "Cocaine Cowboys",
+    "year": 2006,
+    "people": [
+     "Billy Corben"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 14761,
+     "title": "Cocaine Cowboys",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Cocaine Cowboys II: Hustlin' with the Godmother",
+    "year": 2008
+   },
+   "id": "cocaine-cowboys-ii-hustlin-with-the-godmother",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Sins of My Father",
+    "year": 2009
+   },
+   "id": "sins-of-my-father",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 46558,
+    "imdbId": "tt1523980",
+    "canonicalTitle": "Sins of My Father",
+    "year": 2009,
+    "people": [
+     "Nicolás Entel"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 46558,
+     "title": "Sins of My Father",
+     "year": 2009
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "The Two Escobars",
+    "year": 2010
+   },
+   "id": "the-two-escobars",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 53190,
+    "imdbId": "tt2700330",
+    "canonicalTitle": "The Two Escobars",
+    "year": 2010,
+    "people": [
+     "Michael Zimbalist",
+     "Jeff Zimbalist"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 53190,
+     "title": "The Two Escobars",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Pablo's Hippos",
+    "year": 2010
+   },
+   "id": "pablo-s-hippos",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 440145,
+    "imdbId": "tt1770721",
+    "canonicalTitle": "Pablo's Hippos",
+    "year": 2010,
+    "people": [
+     "Lawrence Elman",
+     "Antonio Von Hildebrand"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 440145,
+     "title": "Pablo's Hippos",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Narco Cultura",
+    "year": 2013
+   },
+   "id": "narco-cultura",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 159012,
+    "imdbId": "tt2504022",
+    "canonicalTitle": "Narco Cultura",
+    "year": 2013,
+    "people": [
+     "Shaul Schwarz"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 159012,
+     "title": "Narco Cultura",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Freeway: Crack in the System",
+    "year": 2015
+   },
+   "id": "freeway-crack-in-the-system",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 298432,
+    "imdbId": "tt3548962",
+    "canonicalTitle": "Freeway: Crack in the System",
+    "year": 2014,
+    "people": [
+     "Marc Levin"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 298432,
+     "title": "Freeway: Crack in the System",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Countdown to Death: Pablo Escobar",
+    "year": 2017
+   },
+   "id": "countdown-to-death-pablo-escobar",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "The Last Narc",
+    "year": 2020
+   },
+   "id": "the-last-narc",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 102831,
+    "imdbId": "tt12163674",
+    "canonicalTitle": "The Last Narc",
+    "year": 2020,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 102831,
+     "title": "The Last Narc",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Escobar and the Cocaine Trade",
+    "title": "Cocaine Cowboys: The Kings of Miami",
+    "year": 2021
+   },
+   "id": "cocaine-cowboys-the-kings-of-miami",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 129206,
+    "imdbId": "tt15049206",
+    "canonicalTitle": "Cocaine Cowboys: The Kings of Miami",
+    "year": 2021,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 129206,
+     "title": "Cocaine Cowboys: The Kings of Miami",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Addiction and Hard Drugs",
+    "title": "Black Tar Heroin: The Dark End of the Street",
+    "year": 2000
+   },
+   "id": "black-tar-heroin-the-dark-end-of-the-street",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 79515,
+    "imdbId": "tt0221023",
+    "canonicalTitle": "Black Tar Heroin: The Dark End of the Street",
+    "year": 2000,
+    "people": [
+     "Steven Okazaki"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 79515,
+     "title": "Black Tar Heroin: The Dark End of the Street",
+     "year": 2000
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Addiction and Hard Drugs",
+    "title": "Amy",
+    "year": 2015
+   },
+   "id": "amy",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 331781,
+    "imdbId": "tt2870648",
+    "canonicalTitle": "Amy",
+    "year": 2015,
+    "people": [
+     "Asif Kapadia"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 331781,
+     "title": "Amy",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Addiction and Hard Drugs",
+    "title": "Heroin(e)",
+    "year": 2017
+   },
+   "id": "heroin-e",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 475345,
+    "imdbId": "tt7389366",
+    "canonicalTitle": "Heroin(e)",
+    "year": 2017,
+    "people": [
+     "Elaine McMillion Sheldon"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 475345,
+     "title": "Heroin(e)",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Addiction and Hard Drugs",
+    "title": "Take Your Pills",
+    "year": 2018
+   },
+   "id": "take-your-pills",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 502166,
+    "imdbId": "tt7983844",
+    "canonicalTitle": "Take Your Pills",
+    "year": 2018,
+    "people": [
+     "Alison Klayman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 502166,
+     "title": "Take Your Pills",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Addiction and Hard Drugs",
+    "title": "The Crime of the Century",
+    "year": 2021
+   },
+   "id": "the-crime-of-the-century",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 119142,
+    "imdbId": "tt14055432",
+    "canonicalTitle": "The Crime of the Century",
+    "year": 2021,
+    "people": [
+     "Alex Gibney"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 119142,
+     "title": "The Crime of the Century",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Weed",
+    "title": "Grass",
+    "year": 1999
+   },
+   "id": "grass",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 22010,
+    "imdbId": "tt0214730",
+    "canonicalTitle": "Grass",
+    "year": 1999,
+    "people": [
+     "Ron Mann"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 22010,
+     "title": "Grass",
+     "year": 1999
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Weed",
+    "title": "The Union: The Business Behind Getting High",
+    "year": 2007
+   },
+   "id": "the-union-the-business-behind-getting-high",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 36443,
+    "imdbId": "tt1039647",
+    "canonicalTitle": "The Union: The Business Behind Getting High",
+    "year": 2007,
+    "people": [
+     "Brett Harvey"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 36443,
+     "title": "The Union: The Business Behind Getting High",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Weed",
+    "title": "Super High Me",
+    "year": 2007
+   },
+   "id": "super-high-me",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 14236,
+    "imdbId": "tt1111833",
+    "canonicalTitle": "Super High Me",
+    "year": 2007,
+    "people": [
+     "Michael Blieden"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 14236,
+     "title": "Super High Me",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Weed",
+    "title": "Marijuana: A Chronic History",
+    "year": 2010
+   },
+   "id": "marijuana-a-chronic-history",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 53349,
+    "imdbId": "tt1765903",
+    "canonicalTitle": "Marijuana: A Chronic History",
+    "year": 2010,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 53349,
+     "title": "Marijuana: A Chronic History",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Weed",
+    "title": "The Culture High",
+    "year": 2014
+   },
+   "id": "the-culture-high",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 295538,
+    "imdbId": "tt1778338",
+    "canonicalTitle": "The Culture High",
+    "year": 2014,
+    "people": [
+     "Brett Harvey"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 295538,
+     "title": "The Culture High",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Weed",
+    "title": "Rolling Papers",
+    "year": 2015
+   },
+   "id": "rolling-papers",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 324300,
+    "imdbId": "tt3621360",
+    "canonicalTitle": "Rolling Papers",
+    "year": 2015,
+    "people": [
+     "Mitch Dickman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 324300,
+     "title": "Rolling Papers",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Weed",
+    "title": "Grass Is Greener",
+    "year": 2019
+   },
+   "id": "grass-is-greener",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 589871,
+    "imdbId": "tt10050782",
+    "canonicalTitle": "Grass Is Greener",
+    "year": 2019,
+    "people": [
+     "Fab 5 Freddy"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 589871,
+     "title": "Grass Is Greener",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "DMT: The Spirit Molecule",
+    "year": 2010
+   },
+   "id": "dmt-the-spirit-molecule",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 53778,
+    "imdbId": "tt1340425",
+    "canonicalTitle": "DMT: The Spirit Molecule",
+    "year": 2010,
+    "people": [
+     "Mitch Schultz"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 53778,
+     "title": "DMT: The Spirit Molecule",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "Neurons to Nirvana",
+    "year": 2013
+   },
+   "id": "neurons-to-nirvana",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 228813,
+    "imdbId": "tt2195566",
+    "canonicalTitle": "Neurons to Nirvana",
+    "year": 2013,
+    "people": [
+     "Mikki Willis",
+     "Oliver Hockenhull"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 228813,
+     "title": "Neurons to Nirvana",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "Dying to Know: Ram Dass & Timothy Leary",
+    "year": 2014
+   },
+   "id": "dying-to-know-ram-dass-timothy-leary",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "The Sunshine Makers",
+    "year": 2015
+   },
+   "id": "the-sunshine-makers",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 434336,
+    "imdbId": "tt4456270",
+    "canonicalTitle": "The Sunshine Makers",
+    "year": 2015,
+    "people": [
+     "Cosmo Feilding-Mellen"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 434336,
+     "title": "The Sunshine Makers",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "Hamilton's Pharmacopeia",
+    "year": 2016
+   },
+   "id": "hamilton-s-pharmacopeia",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 68362,
+    "imdbId": "tt6090814",
+    "canonicalTitle": "Hamilton's Pharmacopeia",
+    "year": 2016,
+    "people": [
+     "Hamilton Morris"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 68362,
+     "title": "Hamilton's Pharmacopeia",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "Orange Sunshine",
+    "year": 2016
+   },
+   "id": "orange-sunshine",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 381024,
+    "imdbId": "tt5119260",
+    "canonicalTitle": "Orange Sunshine",
+    "year": 2016,
+    "people": [
+     "William A. Kirkley"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 381024,
+     "title": "Orange Sunshine",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "The Last Shaman",
+    "year": 2016
+   },
+   "id": "the-last-shaman",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 451474,
+    "imdbId": "tt3511124",
+    "canonicalTitle": "The Last Shaman",
+    "year": 2017,
+    "people": [
+     "Raz Degan"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 451474,
+     "title": "The Last Shaman",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "Magic Medicine",
+    "year": 2018
+   },
+   "id": "magic-medicine",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 555696,
+    "imdbId": "tt8661404",
+    "canonicalTitle": "Magic Medicine",
+    "year": 2018,
+    "people": [
+     "Monty Wates"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 555696,
+     "title": "Magic Medicine",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "Fantastic Fungi",
+    "year": 2019
+   },
+   "id": "fantastic-fungi",
+   "status": "existing-match"
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "Have a Good Trip: Adventures in Psychedelics",
+    "year": 2020
+   },
+   "id": "have-a-good-trip-adventures-in-psychedelics",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 673175,
+    "imdbId": "tt12133722",
+    "canonicalTitle": "Have a Good Trip: Adventures in Psychedelics",
+    "year": 2020,
+    "people": [
+     "Donick Cary"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 673175,
+     "title": "Have a Good Trip: Adventures in Psychedelics",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Psychedelics",
+    "title": "How to Change Your Mind",
+    "year": 2022
+   },
+   "id": "how-to-change-your-mind",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 204304,
+    "imdbId": "tt21062540",
+    "canonicalTitle": "How to Change Your Mind",
+    "year": 2022,
+    "people": [
+     "Michael Pollan"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 204304,
+     "title": "How to Change Your Mind",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Louis Theroux",
+    "title": "Louis Theroux's Weird Weekends: Porn",
+    "year": 1998
+   },
+   "id": "louis-theroux-s-weird-weekends-porn",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 4050,
+    "imdbId": "tt0217229",
+    "canonicalTitle": "Louis Theroux's Weird Weekends",
+    "year": 1998,
+    "people": [
+     "Louis Theroux"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 4050,
+     "title": "Louis Theroux's Weird Weekends",
+     "year": 1998
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Louis Theroux",
+    "title": "Louis and the Brothel",
+    "year": 2003
+   },
+   "id": "louis-and-the-brothel",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "section": "Louis Theroux",
+    "title": "Louis Theroux: Twilight of the Porn Stars",
+    "year": 2012
+   },
+   "id": "louis-theroux-twilight-of-the-porn-stars",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 115189,
+    "imdbId": "tt2207658",
+    "canonicalTitle": "Louis Theroux: Twilight of the Porn Stars",
+    "year": 2012,
+    "people": [
+     "Jason Massot"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 115189,
+     "title": "Louis Theroux: Twilight of the Porn Stars",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Louis Theroux",
+    "title": "Louis Theroux: Drinking to Oblivion",
+    "year": 2016
+   },
+   "id": "louis-theroux-drinking-to-oblivion",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 394528,
+    "imdbId": "tt5561592",
+    "canonicalTitle": "Louis Theroux: Drinking to Oblivion",
+    "year": 2016,
+    "people": [
+     "Tom Barrow"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 394528,
+     "title": "Louis Theroux: Drinking to Oblivion",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Louis Theroux",
+    "title": "Louis Theroux: Dark States – Heroin Town",
+    "year": 2017
+   },
+   "id": "louis-theroux-dark-states-heroin-town",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 74461,
+    "imdbId": "tt7492256",
+    "canonicalTitle": "Louis Theroux: Dark States",
+    "year": 2017,
+    "people": [
+     "Louis Theroux"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 74461,
+     "title": "Louis Theroux: Dark States",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Louis Theroux",
+    "title": "Louis Theroux's Forbidden America",
+    "year": 2022
+   },
+   "id": "louis-theroux-s-forbidden-america",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 157576,
+    "imdbId": "tt15590706",
+    "canonicalTitle": "Louis Theroux's Forbidden America",
+    "year": 2022,
+    "people": [
+     "Louis Theroux"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 157576,
+     "title": "Louis Theroux's Forbidden America",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Inside Deep Throat",
+    "year": 2005
+   },
+   "id": "inside-deep-throat",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 12228,
+    "imdbId": "tt0418753",
+    "canonicalTitle": "Inside Deep Throat",
+    "year": 2005,
+    "people": [
+     "Randy Barbato",
+     "Fenton Bailey"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 12228,
+     "title": "Inside Deep Throat",
+     "year": 2005
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Guys and Dolls",
+    "year": 2007
+   },
+   "id": "guys-and-dolls",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Whores' Glory",
+    "year": 2011
+   },
+   "id": "whores-glory",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 85533,
+    "imdbId": "tt1327628",
+    "canonicalTitle": "Whores' Glory",
+    "year": 2011,
+    "people": [
+     "Michael Glawogger"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 85533,
+     "title": "Whores' Glory",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "After Porn Ends",
+    "year": 2012
+   },
+   "id": "after-porn-ends",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 109520,
+    "imdbId": "tt1291547",
+    "canonicalTitle": "After Porn Ends",
+    "year": 2012,
+    "people": [
+     "Bryce Wagoner"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 109520,
+     "title": "After Porn Ends",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Kink",
+    "year": 2013
+   },
+   "id": "kink",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 159100,
+    "imdbId": "tt2017634",
+    "canonicalTitle": "Kink",
+    "year": 2013,
+    "people": [
+     "Christina Alexandra Voros"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 159100,
+     "title": "Kink",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Love Me",
+    "year": 2014
+   },
+   "id": "love-me",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Hot Girls Wanted",
+    "year": 2015
+   },
+   "id": "hot-girls-wanted",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 318256,
+    "imdbId": "tt4382552",
+    "canonicalTitle": "Hot Girls Wanted",
+    "year": 2015,
+    "people": [
+     "Ronna Gradus",
+     "Jill Bauer"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 318256,
+     "title": "Hot Girls Wanted",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Rocco",
+    "year": 2016
+   },
+   "id": "rocco",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 416148,
+    "imdbId": "tt5788462",
+    "canonicalTitle": "Rocco",
+    "year": 2016,
+    "people": [
+     "Thierry Demaizière",
+     "Alban Teurlai"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 416148,
+     "title": "Rocco",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Scotty and the Secret History of Hollywood",
+    "year": 2017
+   },
+   "id": "scotty-and-the-secret-history-of-hollywood",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 469062,
+    "imdbId": "tt2773246",
+    "canonicalTitle": "Scotty and the Secret History of Hollywood",
+    "year": 2018,
+    "people": [
+     "Matt Tyrnauer"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 469062,
+     "title": "Scotty and the Secret History of Hollywood",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Silicone Soul",
+    "year": 2018
+   },
+   "id": "silicone-soul",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 516961,
+    "imdbId": "tt7737398",
+    "canonicalTitle": "Silicone Soul",
+    "year": 2018,
+    "people": [
+     "Melody Gilbert"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 516961,
+     "title": "Silicone Soul",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Secrets of Playboy",
+    "year": 2022
+   },
+   "id": "secrets-of-playboy",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 155892,
+    "imdbId": "tt15250706",
+    "canonicalTitle": "Secrets of Playboy",
+    "year": 2022,
+    "people": [
+     "Alexandra Dean"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 155892,
+     "title": "Secrets of Playboy",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Sex Industry and Desire",
+    "title": "Money Shot: The Pornhub Story",
+    "year": 2023
+   },
+   "id": "money-shot-the-pornhub-story",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1087040,
+    "imdbId": "tt26739529",
+    "canonicalTitle": "Money Shot: The Pornhub Story",
+    "year": 2023,
+    "people": [
+     "Suzanne Hillinger"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1087040,
+     "title": "Money Shot: The Pornhub Story",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Excess and Hedonism",
+    "title": "Party Monster: The Shockumentary",
+    "year": 1998
+   },
+   "id": "party-monster-the-shockumentary",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 34424,
+    "imdbId": "tt0141716",
+    "canonicalTitle": "Party Monster: The Shockumentary",
+    "year": 1998,
+    "people": [
+     "Fenton Bailey",
+     "Randy Barbato"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 34424,
+     "title": "Party Monster: The Shockumentary",
+     "year": 1998
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Excess and Hedonism",
+    "title": "Gonzo: The Life and Work of Dr. Hunter S. Thompson",
+    "year": 2008
+   },
+   "id": "gonzo-the-life-and-work-of-dr-hunter-s-thompson",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 13003,
+    "imdbId": "tt0479468",
+    "canonicalTitle": "Gonzo: The Life and Work of Dr. Hunter S. Thompson",
+    "year": 2008,
+    "people": [
+     "Alex Gibney"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 13003,
+     "title": "Gonzo: The Life and Work of Dr. Hunter S. Thompson",
+     "year": 2008
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Excess and Hedonism",
+    "title": "Spark: A Burning Man Story",
+    "year": 2013
+   },
+   "id": "spark-a-burning-man-story",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 173488,
+    "imdbId": "tt2554648",
+    "canonicalTitle": "Spark: A Burning Man Story",
+    "year": 2013,
+    "people": [
+     "Steve Brown",
+     "Jessie Deeter"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 173488,
+     "title": "Spark: A Burning Man Story",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Excess and Hedonism",
+    "title": "Studio 54",
+    "year": 2018
+   },
+   "id": "studio-54",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 493101,
+    "imdbId": "tt5773986",
+    "canonicalTitle": "Studio 54",
+    "year": 2018,
+    "people": [
+     "Matt Tyrnauer"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 493101,
+     "title": "Studio 54",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "section": "Excess and Hedonism",
+    "title": "Trainwreck: Woodstock '99",
+    "year": 2022
+   },
+   "id": "trainwreck-woodstock-99",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 206246,
+    "imdbId": "tt21217912",
+    "canonicalTitle": "Trainwreck: Woodstock '99",
+    "year": 2022,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 206246,
+     "title": "Trainwreck: Woodstock '99",
+     "year": 2022
+    }
+   ]
+  }
+ ]
+}
