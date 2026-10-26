@@ -141,7 +141,7 @@ function Index() {
   // Director links: open the gallery filtered to everything we have by that filmmaker.
   const searchDirector = (name: string) => { setFilter('all'); setEra('all'); setQuery(name); navigate({ search: prev => ({ ...prev, film: '', q: name, list: '' }) }); };
   const clearFilters = () => { setFilter('all'); setEra('all'); setType('all'); setSort('random'); updateQuery(''); if (listFilter) navigate({ search: prev => ({ ...prev, list: '' }) }); };
-  const activeFilters = [type !== 'all', sort !== 'random', listFilter === 'watched'].filter(Boolean).length;
+  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', listFilter === 'watched'].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
     {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
@@ -152,9 +152,6 @@ function Index() {
       <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Heart className={listFilter === 'shortlist' ? 'fill-red-500 text-red-500' : ''} />Saved<span className="text-xs opacity-70">{shortlist.size}</span></Button>
     </div>
     <nav aria-label="Documentary categories" className="flex gap-1 overflow-x-auto pt-2 no-scrollbar sm:flex-wrap sm:overflow-visible">{filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)}</nav>
-    <div className="flex flex-wrap items-center gap-1 py-1" role="group" aria-label="Era">
-      {ERAS.map(([id, label]) => <Button key={id} size="sm" variant={era === id ? 'default' : 'ghost'} aria-pressed={era === id} title={id === 'recent' ? 'Released in the last two years' : undefined} onClick={() => setEra(id)}>{label}</Button>)}
-    </div>
     <div className="mb-4 flex flex-wrap items-end gap-2 border-b border-border pb-3">
       <label className="min-w-40 flex-1 text-xs text-muted-foreground">Search<Input aria-label="Search title, alias or director" type="search" placeholder="Title, alias or director" value={query} onChange={e => updateQuery(e.target.value)} className="mt-1 h-8" /></label>
       <Popover open={filtersOpen} onOpenChange={setFiltersOpen}>
@@ -163,6 +160,7 @@ function Index() {
           <div className="space-y-3">
             <label className="block text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select mt-1 w-full" value={type} onChange={e => setType(e.target.value as 'all' | 'movie' | 'tv')}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
             <label className="block text-xs text-muted-foreground">Order<select aria-label="Sort order" className="discovery-select mt-1 w-full" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="imdb">Top IMDb</option><option value="rt">Top Rotten Tomatoes</option></select></label>
+            <label className="block text-xs text-muted-foreground">Era<select aria-label="Era" className="discovery-select mt-1 w-full" value={era} onChange={e => setEra(e.target.value as Era)}>{ERAS.map(([id, label]) => <option key={id} value={id}>{id === 'recent' ? 'Recent (last 2 years)' : label}</option>)}</select></label>
             <div className="flex flex-wrap gap-1">
               <Button size="sm" variant={listFilter === 'watched' ? 'default' : 'outline'} aria-pressed={listFilter === 'watched'} onClick={() => toggleList('watched')}><Check />Watched · {watched.size}</Button>
               <Button size="sm" variant="outline" onClick={reshuffle}><Shuffle />Shuffle</Button>
