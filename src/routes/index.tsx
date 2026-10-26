@@ -83,29 +83,54 @@ function Index() {
       if (el && a) window.scrollBy(0, el.getBoundingClientRect().top - a.offset); else window.scrollTo(0, 0); };
     apply(); const r = requestAnimationFrame(apply); return () => cancelAnimationFrame(r);
   }, [view]);
+  // Filters live in the URL so refresh/bookmarks restore the same view.
+  const filterIds = new Set<string>(['all', 'awards', ...CATEGORIES.map(c => c.id)]);
+  const filter = (filterIds.has(search.cat) ? search.cat : 'all') as Filter;
+  const era = (ERAS.some(([id]) => id === search.era) ? search.era : 'all') as Era;
+  const type = (['movie', 'tv'].includes(search.type) ? search.type : 'all') as 'all' | 'movie' | 'tv';
+  const sort = SORTS.includes(search.sort) ? search.sort : 'random';
+  const setParam = (patch: Partial<typeof searchDefaults>) => navigate({ search: prev => ({ ...prev, ...patch }), replace: true });
+  const setFilter = (cat: Filter) => setParam({ cat });
+  const setEra = (e: Era) => setParam({ era: e });
+  const setType = (t: string) => setParam({ type: t });
+  const setSort = (s: string) => setParam({ sort: s });
   const reshuffle = () => { setOrder(shuffleIds(CATALOGUE.map(f => f.id))); setSort('random'); setShown(PAGE); window.scrollTo(0, 0); };
-  const [filter, setFilter] = useState<Filter>('all');
   const [query, setQuery] = useState(search.q);
   useEffect(() => { setQuery(search.q); }, [search.q]);
   const updateQuery = (value: string) => { setQuery(value); navigate({ search: prev => ({ ...prev, q: value }), replace: true }); };
-  const [type, setType] = useState<'all' | 'movie' | 'tv'>('all'); const [shown, setShown] = useState(PAGE);
-  const [shortlist, toggleShort] = useTracking(TRACKING_KEYS.shortlist);
-  const [watched, toggleWatched] = useTracking(TRACKING_KEYS.watched);
-  const [era, setEra] = useState<Era>('all'); const [sort, setSort] = useState('random');
+  const [shown, setShown] = useState(PAGE);
+  const [shortlist, toggleShort, shortOps] = useTracking(TRACKING_KEYS.shortlist);
+  const [watched, toggleWatchedRaw, watchedOps] = useTracking(TRACKING_KEYS.watched);
+  // Marking watched clears Saved (one direction only).
+  const toggleWatched = (id: string) => { if (!watched.has(id)) shortOps.remove(id); toggleWatchedRaw(id); };
+  const [hideWatched, setHideWatched] = usePreference('dc-hide-watched', true);
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [backdrop, setBackdrop] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const importRef = useRef<HTMLInputElement>(null);
   const fetchProviders = useServerFn(getIrishProviders);
   const list = useMemo(() => {
-    const base = listFilter === 'shortlist' ? CATALOGUE.filter(f => shortlist.has(f.id)) : listFilter === 'watched' ? CATALOGUE.filter(f => watched.has(f.id)) : CATALOGUE;
+    const base = listFilter === 'shortlist' ? CATALOGUE.filter(f => shortlist.has(f.id)) : listFilter === 'watched' ? CATALOGUE.filter(f => watched.has(f.id)) : hideWatched ? CATALOGUE.filter(f => !watched.has(f.id)) : CATALOGUE;
     const filtered = searchCatalogue(sort === 'random' ? orderFilms(base, order) : base, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter));
     if (sort === 'imdb' || sort === 'rt') return sortByRating(filtered, SNAPSHOT, sort === 'imdb' ? 'imdb' : 'rottenTomatoes');
     if (sort === 'newest') return [...filtered].sort((a, b) => b.year - a.year);
     if (sort === 'oldest') return [...filtered].sort((a, b) => a.year - b.year);
     return filtered;
-  }, [filter, listFilter, shortlist, watched, sort, query, type, era, order]);
-  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era]);
+  }, [filter, listFilter, shortlist, watched, hideWatched, sort, query, type, era, order]);
+  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era, hideWatched]);
+  const exportLists = () => {
+    const blob = new Blob([JSON.stringify({ app: 'documentary-club', exportedAt: new Date().toISOString(), saved: [...shortlist], watched: [...watched] }, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `documentary-club-lists-${new Date().toISOString().slice(0, 10)}.json`; a.click(); URL.revokeObjectURL(a.href);
+  };
+  const importLists = async (file?: File) => {
+    if (!file) return;
+    const incoming = parseBackup(await file.text(), new Set(CATALOGUE.map(f => f.id)));
+    if (!incoming) { window.alert('That file isn’t a Documentary Club backup.'); return; }
+    const mode = window.confirm(`Import ${incoming.saved.length} saved and ${incoming.watched.length} watched.\n\nOK = Replace your lists\nCancel = Merge with your lists`) ? 'replace' : 'merge';
+    const next = applyBackup({ saved: [...shortlist], watched: [...watched] }, incoming, mode);
+    shortOps.replace(next.saved); watchedOps.replace(next.watched);
+  };
   // A shared link may name a film outside the current filters; show it anyway.
   const film = list.find(f => f.id === search.film) ?? CATALOGUE.find(f => f.id === search.film) ?? list[0];
   const idx = list.findIndex(f => f.id === film?.id);
