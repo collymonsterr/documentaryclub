@@ -11,8 +11,16 @@
     "year": 1964,
     "yearEnd": 2019
    },
-   "status": "existing-match",
-   "id": "up-series"
+   "id": "up-series",
+   "status": "resolved",
+   "reason": "TMDB collection The Up Collection: 9 documentary parts within 1964–2019; 1 later part(s) excluded",
+   "chosen": {
+    "mediaType": "collection",
+    "tmdbId": 95051,
+    "canonicalTitle": "The Up Collection",
+    "year": 1964,
+    "people": []
+   }
   },
   {
    "input": {
@@ -22,8 +30,9 @@
     "title": "Gimme Shelter",
     "year": 1970
    },
-   "status": "existing-match",
-   "id": "gimme-shelter"
+   "id": "gimme-shelter",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:132"
   },
   {
    "input": {
@@ -33,8 +42,9 @@
     "title": "F for Fake",
     "year": 1973
    },
-   "status": "existing-match",
-   "id": "f-for-fake"
+   "id": "f-for-fake",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:43003"
   },
   {
    "input": {
@@ -44,8 +54,9 @@
     "title": "Grey Gardens",
     "year": 1975
    },
-   "status": "existing-match",
-   "id": "grey-gardens"
+   "id": "grey-gardens",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:17346"
   },
   {
    "input": {
@@ -55,8 +66,9 @@
     "title": "Gates of Heaven",
     "year": 1978
    },
-   "status": "existing-match",
-   "id": "gates-of-heaven"
+   "id": "gates-of-heaven",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:24998"
   },
   {
    "input": {
@@ -66,8 +78,9 @@
     "title": "Burden of Dreams",
     "year": 1982
    },
-   "status": "existing-match",
-   "id": "burden-of-dreams"
+   "id": "burden-of-dreams",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:42124"
   },
   {
    "input": {
@@ -77,8 +90,9 @@
     "title": "Paris Is Burning",
     "year": 1990
    },
-   "status": "existing-match",
-   "id": "paris-is-burning"
+   "id": "paris-is-burning",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:31225"
   },
   {
    "input": {
@@ -88,8 +102,9 @@
     "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
     "year": 1991
    },
-   "status": "existing-match",
-   "id": "hearts-of-darkness-a-filmmaker-s-apocalypse"
+   "id": "hearts-of-darkness-a-filmmaker-s-apocalypse",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:4539"
   },
   {
    "input": {
@@ -99,8 +114,9 @@
     "title": "Theremin: An Electronic Odyssey",
     "year": 1993
    },
-   "status": "existing-match",
-   "id": "theremin-an-electronic-odyssey"
+   "id": "theremin-an-electronic-odyssey",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:70042"
   },
   {
    "input": {
@@ -110,8 +126,9 @@
     "title": "Crumb",
     "year": 1994
    },
-   "status": "existing-match",
-   "id": "crumb"
+   "id": "crumb",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:26564"
   },
   {
    "input": {
@@ -121,8 +138,9 @@
     "title": "Hoop Dreams",
     "year": 1994
    },
-   "status": "existing-match",
-   "id": "hoop-dreams"
+   "id": "hoop-dreams",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:14275"
   },
   {
    "input": {
@@ -132,8 +150,9 @@
     "title": "Fast, Cheap & Out of Control",
     "year": 1997
    },
-   "status": "existing-match",
-   "id": "fast-cheap-out-of-control"
+   "id": "fast-cheap-out-of-control",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:25099"
   },
   {
    "input": {
@@ -143,8 +162,9 @@
     "title": "Hands on a Hardbody",
     "year": 1997
    },
-   "status": "existing-match",
-   "id": "hands-on-a-hardbody"
+   "id": "hands-on-a-hardbody",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:18603"
   },
   {
    "input": {
@@ -176,8 +196,9 @@
     "title": "My Best Fiend",
     "year": 1999
    },
-   "status": "existing-match",
-   "id": "my-best-fiend"
+   "id": "my-best-fiend",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:8672"
   },
   {
    "input": {
@@ -198,8 +219,9 @@
     "title": "Lost in La Mancha",
     "year": 2002
    },
-   "status": "existing-match",
-   "id": "lost-in-la-mancha"
+   "id": "lost-in-la-mancha",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:21189"
   },
   {
    "input": {
@@ -220,8 +242,9 @@
     "title": "My Kid Could Paint That",
     "year": 2007
    },
-   "status": "existing-match",
-   "id": "my-kid-could-paint-that"
+   "id": "my-kid-could-paint-that",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:14279"
   },
   {
    "input": {
@@ -231,8 +254,9 @@
     "title": "Best Worst Movie",
     "year": 2009
    },
-   "status": "existing-match",
-   "id": "best-worst-movie"
+   "id": "best-worst-movie",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:40819"
   },
   {
    "input": {
@@ -253,8 +277,9 @@
     "title": "Winnebago Man",
     "year": 2009
    },
-   "status": "existing-match",
-   "id": "winnebago-man"
+   "id": "winnebago-man",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:42918"
   },
   {
    "input": {
@@ -275,8 +300,9 @@
     "title": "Exit Through the Gift Shop",
     "year": 2010
    },
-   "status": "existing-match",
-   "id": "exit-through-the-gift-shop"
+   "id": "exit-through-the-gift-shop",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:39452"
   },
   {
    "input": {
@@ -286,8 +312,9 @@
     "title": "Marwencol",
     "year": 2010
    },
-   "status": "existing-match",
-   "id": "marwencol"
+   "id": "marwencol",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:52013"
   },
   {
    "input": {
@@ -319,8 +346,9 @@
     "title": "Searching for Sugar Man",
     "year": 2012
    },
-   "status": "existing-match",
-   "id": "searching-for-sugar-man"
+   "id": "searching-for-sugar-man",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:84334"
   },
   {
    "input": {
@@ -374,8 +402,9 @@
     "title": "The Wolfpack",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "the-wolfpack"
+   "id": "the-wolfpack",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:307931"
   },
   {
    "input": {
@@ -407,8 +436,9 @@
     "title": "Jim & Andy: The Great Beyond",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "jim-andy-the-great-beyond"
+   "id": "jim-andy-the-great-beyond",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:469019"
   },
   {
    "input": {
@@ -429,8 +459,9 @@
     "title": "Bisbee '17",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "bisbee-17"
+   "id": "bisbee-17",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:490758"
   },
   {
    "input": {
@@ -484,8 +515,9 @@
     "title": "Titicut Follies",
     "year": 1967
    },
-   "status": "existing-match",
-   "id": "titicut-follies"
+   "id": "titicut-follies",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:41212"
   },
   {
    "input": {
@@ -495,8 +527,9 @@
     "title": "Marjoe",
     "year": 1972
    },
-   "status": "existing-match",
-   "id": "marjoe"
+   "id": "marjoe",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:38616"
   },
   {
    "input": {
@@ -506,8 +539,9 @@
     "title": "Quiet Rage: The Stanford Prison Study",
     "year": 1992
    },
-   "status": "existing-match",
-   "id": "quiet-rage-the-stanford-prison-study"
+   "id": "quiet-rage-the-stanford-prison-study",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:226763"
   },
   {
    "input": {
@@ -539,8 +573,9 @@
     "title": "Children of God: Lost and Found",
     "year": 2007
    },
-   "status": "existing-match",
-   "id": "children-of-god-lost-and-found"
+   "id": "children-of-god-lost-and-found",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:307510"
   },
   {
    "input": {
@@ -572,8 +607,9 @@
     "title": "The Source Family",
     "year": 2012
    },
-   "status": "existing-match",
-   "id": "the-source-family"
+   "id": "the-source-family",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:98064"
   },
   {
    "input": {
@@ -594,8 +630,9 @@
     "title": "Prophet's Prey",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "prophet-s-prey"
+   "id": "prophet-s-prey",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:319079"
   },
   {
    "input": {
@@ -638,8 +675,9 @@
     "title": "Derren Brown: Sacrifice",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "derren-brown-sacrifice"
+   "id": "derren-brown-sacrifice",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:554175"
   },
   {
    "input": {
@@ -649,8 +687,9 @@
     "title": "The Push",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "the-push"
+   "id": "the-push",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:377319"
   },
   {
    "input": {
@@ -671,8 +710,9 @@
     "title": "Bikram: Yogi, Guru, Predator",
     "year": 2019
    },
-   "status": "existing-match",
-   "id": "bikram-yogi-guru-predator"
+   "id": "bikram-yogi-guru-predator",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:621753"
   },
   {
    "input": {
@@ -693,8 +733,9 @@
     "title": "Heaven's Gate: The Cult of Cults",
     "year": 2020
    },
-   "status": "existing-match",
-   "id": "heaven-s-gate-the-cult-of-cults"
+   "id": "heaven-s-gate-the-cult-of-cults",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:113678"
   },
   {
    "input": {
@@ -715,8 +756,9 @@
     "title": "Sons of Sam: A Descent into Darkness",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "sons-of-sam-a-descent-into-darkness"
+   "id": "sons-of-sam-a-descent-into-darkness",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:122672"
   },
   {
    "input": {
@@ -737,8 +779,9 @@
     "title": "Keep Sweet: Pray and Obey",
     "year": 2022
    },
-   "status": "existing-match",
-   "id": "keep-sweet-pray-and-obey"
+   "id": "keep-sweet-pray-and-obey",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:202880"
   },
   {
    "input": {
@@ -792,8 +835,9 @@
     "title": "Daughters of the Cult",
     "year": 2024
    },
-   "status": "existing-match",
-   "id": "daughters-of-the-cult"
+   "id": "daughters-of-the-cult",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:241758"
   },
   {
    "input": {
@@ -803,8 +847,9 @@
     "title": "Quiet on Set: The Dark Side of Kids TV",
     "year": 2024
    },
-   "status": "existing-match",
-   "id": "quiet-on-set-the-dark-side-of-kids-tv"
+   "id": "quiet-on-set-the-dark-side-of-kids-tv",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:245902"
   },
   {
    "input": {
@@ -814,8 +859,9 @@
     "title": "The Synanon Fix",
     "year": 2024
    },
-   "status": "existing-match",
-   "id": "the-synanon-fix"
+   "id": "the-synanon-fix",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:241230"
   },
   {
    "input": {
@@ -836,8 +882,9 @@
     "title": "Who the #$&% Is Jackson Pollock?",
     "year": 2006
    },
-   "status": "existing-match",
-   "id": "who-the-s-is-jackson-pollock"
+   "id": "who-the-s-is-jackson-pollock",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:45664"
   },
   {
    "input": {
@@ -858,8 +905,9 @@
     "title": "Betting on Zero",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "betting-on-zero"
+   "id": "betting-on-zero",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:385805"
   },
   {
    "input": {
@@ -891,8 +939,9 @@
     "title": "Dirty Money",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "dirty-money"
+   "id": "dirty-money",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:76307"
   },
   {
    "input": {
@@ -957,8 +1006,9 @@
     "title": "LuLaRich",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "lularich"
+   "id": "lularich",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:131295"
   },
   {
    "input": {
@@ -968,8 +1018,9 @@
     "title": "Operation Varsity Blues",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "operation-varsity-blues"
+   "id": "operation-varsity-blues",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:799555"
   },
   {
    "input": {
@@ -979,8 +1030,9 @@
     "title": "WeWork: or the Making and Breaking of a $47 Billion Unicorn",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "wework-or-the-making-and-breaking-of-a-s47-billion-unicorn"
+   "id": "wework-or-the-making-and-breaking-of-a-s47-billion-unicorn",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:795622"
   },
   {
    "input": {
@@ -1001,8 +1053,9 @@
     "title": "Skandal! Bringing Down Wirecard",
     "year": 2022
    },
-   "status": "existing-match",
-   "id": "skandal-bringing-down-wirecard"
+   "id": "skandal-bringing-down-wirecard",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:1014550"
   },
   {
    "input": {
@@ -1023,8 +1076,9 @@
     "title": "Trust No One: The Hunt for the Crypto King",
     "year": 2022
    },
-   "status": "existing-match",
-   "id": "trust-no-one-the-hunt-for-the-crypto-king"
+   "id": "trust-no-one-the-hunt-for-the-crypto-king",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:946327"
   },
   {
    "input": {
@@ -1034,8 +1088,9 @@
     "title": "Bad Surgeon: Love Under the Knife",
     "year": 2023
    },
-   "status": "existing-match",
-   "id": "bad-surgeon-love-under-the-knife"
+   "id": "bad-surgeon-love-under-the-knife",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:238959"
   },
   {
    "input": {
@@ -1045,8 +1100,9 @@
     "title": "Madoff: The Monster of Wall Street",
     "year": 2023
    },
-   "status": "existing-match",
-   "id": "madoff-the-monster-of-wall-street"
+   "id": "madoff-the-monster-of-wall-street",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:216005"
   },
   {
    "input": {
@@ -1056,8 +1112,9 @@
     "title": "The Puppet Master: Hunting the Ultimate Conman",
     "year": 2023
    },
-   "status": "existing-match",
-   "id": "the-puppet-master-hunting-the-ultimate-conman"
+   "id": "the-puppet-master-hunting-the-ultimate-conman",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:153574"
   },
   {
    "input": {
@@ -1078,8 +1135,9 @@
     "title": "Triumph of the Nerds",
     "year": 1996
    },
-   "status": "existing-match",
-   "id": "triumph-of-the-nerds"
+   "id": "triumph-of-the-nerds",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:15554"
   },
   {
    "input": {
@@ -1089,8 +1147,9 @@
     "title": "Revolution OS",
     "year": 2001
    },
-   "status": "existing-match",
-   "id": "revolution-os"
+   "id": "revolution-os",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:19433"
   },
   {
    "input": {
@@ -1100,8 +1159,9 @@
     "title": "Startup.com",
     "year": 2001
    },
-   "status": "existing-match",
-   "id": "startup-com"
+   "id": "startup-com",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:14268"
   },
   {
    "input": {
@@ -1155,8 +1215,9 @@
     "title": "Ecstasy of Order: The Tetris Masters",
     "year": 2011
    },
-   "status": "existing-match",
-   "id": "ecstasy-of-order-the-tetris-masters"
+   "id": "ecstasy-of-order-the-tetris-masters",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:91921"
   },
   {
    "input": {
@@ -1177,8 +1238,9 @@
     "title": "Downloaded",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "downloaded"
+   "id": "downloaded",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:173210"
   },
   {
    "input": {
@@ -1188,8 +1250,9 @@
     "title": "TPB AFK: The Pirate Bay Away from Keyboard",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "tpb-afk-the-pirate-bay-away-from-keyboard"
+   "id": "tpb-afk-the-pirate-bay-away-from-keyboard",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:50275"
   },
   {
    "input": {
@@ -1199,8 +1262,9 @@
     "title": "Web Junkie",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "web-junkie"
+   "id": "web-junkie",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:200487"
   },
   {
    "input": {
@@ -1210,8 +1274,9 @@
     "title": "Atari: Game Over",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "atari-game-over"
+   "id": "atari-game-over",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:284470"
   },
   {
    "input": {
@@ -1232,8 +1297,9 @@
     "title": "Free to Play",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "free-to-play"
+   "id": "free-to-play",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:256561"
   },
   {
    "input": {
@@ -1254,8 +1320,9 @@
     "title": "Print the Legend",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "print-the-legend"
+   "id": "print-the-legend",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:253266"
   },
   {
    "input": {
@@ -1276,8 +1343,9 @@
     "title": "Steve Jobs: The Man in the Machine",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "steve-jobs-the-man-in-the-machine"
+   "id": "steve-jobs-the-man-in-the-machine",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:324308"
   },
   {
    "input": {
@@ -1309,8 +1377,9 @@
     "title": "Silicon Cowboys",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "silicon-cowboys"
+   "id": "silicon-cowboys",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:381058"
   },
   {
    "input": {
@@ -1342,8 +1411,9 @@
     "title": "Kim Dotcom: Caught in the Web",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "kim-dotcom-caught-in-the-web"
+   "id": "kim-dotcom-caught-in-the-web",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:438471"
   },
   {
    "input": {
@@ -1353,8 +1423,9 @@
     "title": "The Cleaners",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "the-cleaners"
+   "id": "the-cleaners",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:492994"
   },
   {
    "input": {
@@ -1386,8 +1457,9 @@
     "title": "Coded Bias",
     "year": 2020
    },
-   "status": "existing-match",
-   "id": "coded-bias"
+   "id": "coded-bias",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:653734"
   },
   {
    "input": {
@@ -1408,8 +1480,9 @@
     "title": "The Speed Cubers",
     "year": 2020
    },
-   "status": "existing-match",
-   "id": "the-speed-cubers"
+   "id": "the-speed-cubers",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:720748"
   },
   {
    "input": {
@@ -1430,8 +1503,9 @@
     "title": "Fake Famous",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "fake-famous"
+   "id": "fake-famous",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:788610"
   },
   {
    "input": {
@@ -1441,8 +1515,9 @@
     "title": "A Glitch in the Matrix",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "a-glitch-in-the-matrix"
+   "id": "a-glitch-in-the-matrix",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:696109"
   },
   {
    "input": {
@@ -1540,8 +1615,9 @@
     "title": "Aileen Wuornos: The Selling of a Serial Killer",
     "year": 1992
    },
-   "status": "existing-match",
-   "id": "aileen-wuornos-the-selling-of-a-serial-killer"
+   "id": "aileen-wuornos-the-selling-of-a-serial-killer",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:97044"
   },
   {
    "input": {
@@ -1551,8 +1627,9 @@
     "title": "Brother's Keeper",
     "year": 1992
    },
-   "status": "existing-match",
-   "id": "brother-s-keeper"
+   "id": "brother-s-keeper",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:26755"
   },
   {
    "input": {
@@ -1573,8 +1650,9 @@
     "title": "Waco: The Rules of Engagement",
     "year": 1997
    },
-   "status": "existing-match",
-   "id": "waco-the-rules-of-engagement"
+   "id": "waco-the-rules-of-engagement",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:34044"
   },
   {
    "input": {
@@ -1584,8 +1662,9 @@
     "title": "One Day in September",
     "year": 1999
    },
-   "status": "existing-match",
-   "id": "one-day-in-september"
+   "id": "one-day-in-september",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:34045"
   },
   {
    "input": {
@@ -1595,8 +1674,9 @@
     "title": "Murder on a Sunday Morning",
     "year": 2001
    },
-   "status": "existing-match",
-   "id": "murder-on-a-sunday-morning"
+   "id": "murder-on-a-sunday-morning",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:51391"
   },
   {
    "input": {
@@ -1650,8 +1730,9 @@
     "title": "Into the Abyss",
     "year": 2011
    },
-   "status": "existing-match",
-   "id": "into-the-abyss"
+   "id": "into-the-abyss",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:77365"
   },
   {
    "input": {
@@ -1661,8 +1742,9 @@
     "title": "The Central Park Five",
     "year": 2012
    },
-   "status": "existing-match",
-   "id": "the-central-park-five"
+   "id": "the-central-park-five",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:124067"
   },
   {
    "input": {
@@ -1683,8 +1765,9 @@
     "title": "The Seven Five",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "the-seven-five"
+   "id": "the-seven-five",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:320882"
   },
   {
    "input": {
@@ -1694,8 +1777,9 @@
     "title": "Cartel Land",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "cartel-land"
+   "id": "cartel-land",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:317952"
   },
   {
    "input": {
@@ -1727,8 +1811,9 @@
     "title": "The Witness",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "the-witness"
+   "id": "the-witness",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:356332"
   },
   {
    "input": {
@@ -1749,8 +1834,9 @@
     "title": "Amanda Knox",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "amanda-knox"
+   "id": "amanda-knox",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:411009"
   },
   {
    "input": {
@@ -1760,8 +1846,9 @@
     "title": "Killing for Love",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "killing-for-love"
+   "id": "killing-for-love",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:402919"
   },
   {
    "input": {
@@ -1771,8 +1858,9 @@
     "title": "Southwest of Salem",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "southwest-of-salem"
+   "id": "southwest-of-salem",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:390766"
   },
   {
    "input": {
@@ -1793,8 +1881,9 @@
     "title": "Casting JonBenét",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "casting-jonbenet"
+   "id": "casting-jonbenet",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:430826"
   },
   {
    "input": {
@@ -1815,8 +1904,9 @@
     "title": "Mommy Dead and Dearest",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "mommy-dead-and-dearest"
+   "id": "mommy-dead-and-dearest",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:438446"
   },
   {
    "input": {
@@ -1826,8 +1916,9 @@
     "title": "Crime + Punishment",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "crime-punishment"
+   "id": "crime-punishment",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:489983"
   },
   {
    "input": {
@@ -1881,8 +1972,9 @@
     "title": "I'll Be Gone in the Dark",
     "year": 2020
    },
-   "status": "existing-match",
-   "id": "i-ll-be-gone-in-the-dark"
+   "id": "i-ll-be-gone-in-the-dark",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:103023"
   },
   {
    "input": {
@@ -1925,8 +2017,9 @@
     "title": "Time",
     "year": 2020
    },
-   "status": "existing-match",
-   "id": "time"
+   "id": "time",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:653729"
   },
   {
    "input": {
@@ -1936,8 +2029,9 @@
     "title": "Crime Scene: The Vanishing at the Cecil Hotel",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "crime-scene-the-vanishing-at-the-cecil-hotel"
+   "id": "crime-scene-the-vanishing-at-the-cecil-hotel",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:116989"
   },
   {
    "input": {
@@ -1958,8 +2052,9 @@
     "title": "Sophie: A Murder in West Cork",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "sophie-a-murder-in-west-cork"
+   "id": "sophie-a-murder-in-west-cork",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:126396"
   },
   {
    "input": {
@@ -1969,8 +2064,9 @@
     "title": "Girl in the Picture",
     "year": 2022
    },
-   "status": "existing-match",
-   "id": "girl-in-the-picture"
+   "id": "girl-in-the-picture",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:988046"
   },
   {
    "input": {
@@ -1980,8 +2076,9 @@
     "title": "Our Father",
     "year": 2022
    },
-   "status": "existing-match",
-   "id": "our-father"
+   "id": "our-father",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:962697"
   },
   {
    "input": {
@@ -2002,8 +2099,9 @@
     "title": "Hearts and Minds",
     "year": 1974
    },
-   "status": "existing-match",
-   "id": "hearts-and-minds"
+   "id": "hearts-and-minds",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:42449"
   },
   {
    "input": {
@@ -2013,8 +2111,9 @@
     "title": "Harlan County, USA",
     "year": 1976
    },
-   "status": "existing-match",
-   "id": "harlan-county-usa"
+   "id": "harlan-county-usa",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:33324"
   },
   {
    "input": {
@@ -2024,8 +2123,9 @@
     "title": "The Atomic Cafe",
     "year": 1982
    },
-   "status": "existing-match",
-   "id": "the-atomic-cafe"
+   "id": "the-atomic-cafe",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:26851"
   },
   {
    "input": {
@@ -2035,8 +2135,9 @@
     "title": "Manufacturing Consent: Noam Chomsky and the Media",
     "year": 1992
    },
-   "status": "existing-match",
-   "id": "manufacturing-consent-noam-chomsky-and-the-media"
+   "id": "manufacturing-consent-noam-chomsky-and-the-media",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:36947"
   },
   {
    "input": {
@@ -2046,8 +2147,9 @@
     "title": "The War Room",
     "year": 1993
    },
-   "status": "existing-match",
-   "id": "the-war-room"
+   "id": "the-war-room",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:26408"
   },
   {
    "input": {
@@ -2090,8 +2192,9 @@
     "title": "Our Brand Is Crisis",
     "year": 2005
    },
-   "status": "existing-match",
-   "id": "our-brand-is-crisis"
+   "id": "our-brand-is-crisis",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:43628"
   },
   {
    "input": {
@@ -2112,8 +2215,9 @@
     "title": "No End in Sight",
     "year": 2007
    },
-   "status": "existing-match",
-   "id": "no-end-in-sight"
+   "id": "no-end-in-sight",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:12901"
   },
   {
    "input": {
@@ -2134,8 +2238,9 @@
     "title": "Burma VJ",
     "year": 2008
    },
-   "status": "existing-match",
-   "id": "burma-vj"
+   "id": "burma-vj",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:26763"
   },
   {
    "input": {
@@ -2156,8 +2261,9 @@
     "title": "5 Broken Cameras",
     "year": 2011
    },
-   "status": "existing-match",
-   "id": "5-broken-cameras"
+   "id": "5-broken-cameras",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:84170"
   },
   {
    "input": {
@@ -2178,8 +2284,9 @@
     "title": "The Gatekeepers",
     "year": 2012
    },
-   "status": "existing-match",
-   "id": "the-gatekeepers"
+   "id": "the-gatekeepers",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:127918"
   },
   {
    "input": {
@@ -2200,8 +2307,9 @@
     "title": "The Square",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "the-square"
+   "id": "the-square",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:159037"
   },
   {
    "input": {
@@ -2222,8 +2330,9 @@
     "title": "The Look of Silence",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "the-look-of-silence"
+   "id": "the-look-of-silence",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:267480"
   },
   {
    "input": {
@@ -2244,8 +2353,9 @@
     "title": "Winter on Fire",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "winter-on-fire"
+   "id": "winter-on-fire",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:355020"
   },
   {
    "input": {
@@ -2255,8 +2365,9 @@
     "title": "Shadow World",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "shadow-world"
+   "id": "shadow-world",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:390410"
   },
   {
    "input": {
@@ -2266,8 +2377,9 @@
     "title": "Weiner",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "weiner"
+   "id": "weiner",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:376261"
   },
   {
    "input": {
@@ -2277,8 +2389,9 @@
     "title": "Get Me Roger Stone",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "get-me-roger-stone"
+   "id": "get-me-roger-stone",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:448448"
   },
   {
    "input": {
@@ -2299,8 +2412,9 @@
     "title": "Last Men in Aleppo",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "last-men-in-aleppo"
+   "id": "last-men-in-aleppo",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:433085"
   },
   {
    "input": {
@@ -2310,8 +2424,9 @@
     "title": "Bellingcat: Truth in a Post-Truth World",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "bellingcat-truth-in-a-post-truth-world"
+   "id": "bellingcat-truth-in-a-post-truth-world",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:558739"
   },
   {
    "input": {
@@ -2321,8 +2436,9 @@
     "title": "Citizen K",
     "year": 2019
    },
-   "status": "existing-match",
-   "id": "citizen-k"
+   "id": "citizen-k",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:618360"
   },
   {
    "input": {
@@ -2332,8 +2448,9 @@
     "title": "For Sama",
     "year": 2019
    },
-   "status": "existing-match",
-   "id": "for-sama"
+   "id": "for-sama",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:576017"
   },
   {
    "input": {
@@ -2343,8 +2460,9 @@
     "title": "The Dissident",
     "year": 2020
    },
-   "status": "existing-match",
-   "id": "the-dissident"
+   "id": "the-dissident",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:653746"
   },
   {
    "input": {
@@ -2387,8 +2505,9 @@
     "title": "Roger & Me",
     "year": 1989
    },
-   "status": "existing-match",
-   "id": "roger-me"
+   "id": "roger-me",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:1779"
   },
   {
    "input": {
@@ -2409,8 +2528,9 @@
     "title": "Darwin's Nightmare",
     "year": 2004
    },
-   "status": "existing-match",
-   "id": "darwin-s-nightmare"
+   "id": "darwin-s-nightmare",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:415253"
   },
   {
    "input": {
@@ -2420,8 +2540,9 @@
     "title": "Black Gold",
     "year": 2006
    },
-   "status": "existing-match",
-   "id": "black-gold"
+   "id": "black-gold",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:49952"
   },
   {
    "input": {
@@ -2431,8 +2552,9 @@
     "title": "Manufactured Landscapes",
     "year": 2006
    },
-   "status": "existing-match",
-   "id": "manufactured-landscapes"
+   "id": "manufactured-landscapes",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:24582"
   },
   {
    "input": {
@@ -2442,8 +2564,9 @@
     "title": "Food, Inc.",
     "year": 2008
    },
-   "status": "existing-match",
-   "id": "food-inc"
+   "id": "food-inc",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:18570"
   },
   {
    "input": {
@@ -2453,8 +2576,9 @@
     "title": "Capitalism: A Love Story",
     "year": 2009
    },
-   "status": "existing-match",
-   "id": "capitalism-a-love-story"
+   "id": "capitalism-a-love-story",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:22074"
   },
   {
    "input": {
@@ -2464,8 +2588,9 @@
     "title": "Big Men",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "big-men"
+   "id": "big-men",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:174349"
   },
   {
    "input": {
@@ -2475,8 +2600,9 @@
     "title": "Inequality for All",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "inequality-for-all"
+   "id": "inequality-for-all",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:159008"
   },
   {
    "input": {
@@ -2486,8 +2612,9 @@
     "title": "Money for Nothing: Inside the Federal Reserve",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "money-for-nothing-inside-the-federal-reserve"
+   "id": "money-for-nothing-inside-the-federal-reserve",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:221800"
   },
   {
    "input": {
@@ -2497,8 +2624,9 @@
     "title": "Requiem for the American Dream",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "requiem-for-the-american-dream"
+   "id": "requiem-for-the-american-dream",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:333377"
   },
   {
    "input": {
@@ -2508,8 +2636,9 @@
     "title": "The True Cost",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "the-true-cost"
+   "id": "the-true-cost",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:339065"
   },
   {
    "input": {
@@ -2519,8 +2648,9 @@
     "title": "China's Van Gogh",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "china-s-van-gogh"
+   "id": "china-s-van-gogh",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:426619"
   },
   {
    "input": {
@@ -2530,8 +2660,9 @@
     "title": "Plastic China",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "plastic-china"
+   "id": "plastic-china",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:428574"
   },
   {
    "input": {
@@ -2541,8 +2672,9 @@
     "title": "Generation Wealth",
     "year": 2018
    },
-   "status": "existing-match",
-   "id": "generation-wealth"
+   "id": "generation-wealth",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:493014"
   },
   {
    "input": {
@@ -2552,8 +2684,9 @@
     "title": "American Factory",
     "year": 2019
    },
-   "status": "existing-match",
-   "id": "american-factory"
+   "id": "american-factory",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:565716"
   },
   {
    "input": {
@@ -2574,8 +2707,9 @@
     "title": "Ascension",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "ascension"
+   "id": "ascension",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:822138"
   },
   {
    "input": {
@@ -2585,8 +2719,9 @@
     "title": "Downfall: The Case Against Boeing",
     "year": 2022
    },
-   "status": "existing-match",
-   "id": "downfall-the-case-against-boeing"
+   "id": "downfall-the-case-against-boeing",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:913862"
   },
   {
    "input": {
@@ -2596,8 +2731,9 @@
     "title": "Kon-Tiki",
     "year": 1950
    },
-   "status": "existing-match",
-   "id": "kon-tiki"
+   "id": "kon-tiki",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:20088"
   },
   {
    "input": {
@@ -2607,8 +2743,9 @@
     "title": "The Man Who Skied Down Everest",
     "year": 1975
    },
-   "status": "existing-match",
-   "id": "the-man-who-skied-down-everest"
+   "id": "the-man-who-skied-down-everest",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:37339"
   },
   {
    "input": {
@@ -2618,8 +2755,9 @@
     "title": "Little Dieter Needs to Fly",
     "year": 1997
    },
-   "status": "existing-match",
-   "id": "little-dieter-needs-to-fly"
+   "id": "little-dieter-needs-to-fly",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:57976"
   },
   {
    "input": {
@@ -2640,8 +2778,9 @@
     "title": "Riding Giants",
     "year": 2004
    },
-   "status": "existing-match",
-   "id": "riding-giants"
+   "id": "riding-giants",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:291"
   },
   {
    "input": {
@@ -2662,8 +2801,9 @@
     "title": "Deep Water",
     "year": 2006
    },
-   "status": "existing-match",
-   "id": "deep-water"
+   "id": "deep-water",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:15030"
   },
   {
    "input": {
@@ -2706,8 +2846,9 @@
     "title": "Senna",
     "year": 2010
    },
-   "status": "existing-match",
-   "id": "senna"
+   "id": "senna",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:58496"
   },
   {
    "input": {
@@ -2728,8 +2869,9 @@
     "title": "Beyond the Edge",
     "year": 2013
    },
-   "status": "existing-match",
-   "id": "beyond-the-edge"
+   "id": "beyond-the-edge",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:211088"
   },
   {
    "input": {
@@ -2750,8 +2892,9 @@
     "title": "The Barkley Marathons",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "the-barkley-marathons"
+   "id": "the-barkley-marathons",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:334495"
   },
   {
    "input": {
@@ -2761,8 +2904,9 @@
     "title": "Valley Uprising",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "valley-uprising"
+   "id": "valley-uprising",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:294959"
   },
   {
    "input": {
@@ -2805,8 +2949,9 @@
     "title": "Mountain",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "mountain"
+   "id": "mountain",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:462145"
   },
   {
    "input": {
@@ -2871,8 +3016,9 @@
     "title": "Torn",
     "year": 2021
    },
-   "status": "existing-match",
-   "id": "torn"
+   "id": "torn",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:730057"
   },
   {
    "input": {
@@ -2893,8 +3039,9 @@
     "title": "The Endurance",
     "year": 2024
    },
-   "status": "existing-match",
-   "id": "the-endurance"
+   "id": "the-endurance",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:947763"
   },
   {
    "input": {
@@ -2904,8 +3051,9 @@
     "title": "Cane Toads: An Unnatural History",
     "year": 1988
    },
-   "status": "existing-match",
-   "id": "cane-toads-an-unnatural-history"
+   "id": "cane-toads-an-unnatural-history",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:82284"
   },
   {
    "input": {
@@ -2915,8 +3063,9 @@
     "title": "For All Mankind",
     "year": 1989
    },
-   "status": "existing-match",
-   "id": "for-all-mankind"
+   "id": "for-all-mankind",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:20423"
   },
   {
    "input": {
@@ -2926,8 +3075,9 @@
     "title": "Microcosmos",
     "year": 1996
    },
-   "status": "existing-match",
-   "id": "microcosmos"
+   "id": "microcosmos",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:9305"
   },
   {
    "input": {
@@ -2937,8 +3087,9 @@
     "title": "Winged Migration",
     "year": 2001
    },
-   "status": "existing-match",
-   "id": "winged-migration"
+   "id": "winged-migration",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:11516"
   },
   {
    "input": {
@@ -2948,8 +3099,9 @@
     "title": "March of the Penguins",
     "year": 2005
    },
-   "status": "existing-match",
-   "id": "march-of-the-penguins"
+   "id": "march-of-the-penguins",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:1667"
   },
   {
    "input": {
@@ -2959,8 +3111,9 @@
     "title": "Encounters at the End of the World",
     "year": 2007
    },
-   "status": "existing-match",
-   "id": "encounters-at-the-end-of-the-world"
+   "id": "encounters-at-the-end-of-the-world",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:12172"
   },
   {
    "input": {
@@ -2970,8 +3123,9 @@
     "title": "In the Shadow of the Moon",
     "year": 2007
    },
-   "status": "existing-match",
-   "id": "in-the-shadow-of-the-moon"
+   "id": "in-the-shadow-of-the-moon",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:14284"
   },
   {
    "input": {
@@ -3058,8 +3212,9 @@
     "title": "Virunga",
     "year": 2014
    },
-   "status": "existing-match",
-   "id": "virunga"
+   "id": "virunga",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:263614"
   },
   {
    "input": {
@@ -3080,8 +3235,9 @@
     "title": "The Ivory Game",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "the-ivory-game"
+   "id": "the-ivory-game",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:411023"
   },
   {
    "input": {
@@ -3091,8 +3247,9 @@
     "title": "Planet Earth II",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "planet-earth-ii"
+   "id": "planet-earth-ii",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:68595"
   },
   {
    "input": {
@@ -3102,8 +3259,9 @@
     "title": "Chasing Coral",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "chasing-coral"
+   "id": "chasing-coral",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:432615"
   },
   {
    "input": {
@@ -3113,8 +3271,9 @@
     "title": "The Farthest",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "the-farthest"
+   "id": "the-farthest",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:436305"
   },
   {
    "input": {
@@ -3124,8 +3283,9 @@
     "title": "Jane",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "jane"
+   "id": "jane",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:470819"
   },
   {
    "input": {
@@ -3168,8 +3328,9 @@
     "title": "Sea of Shadows",
     "year": 2019
    },
-   "status": "existing-match",
-   "id": "sea-of-shadows"
+   "id": "sea-of-shadows",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:566219"
   },
   {
    "input": {
@@ -3422,8 +3583,9 @@
     "title": "Stolen Youth: Inside the Cult at Sarah Lawrence",
     "year": 2023
    },
-   "status": "existing-match",
-   "id": "stolen-youth-inside-the-cult-at-sarah-lawrence"
+   "id": "stolen-youth-inside-the-cult-at-sarah-lawrence",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:216315"
   },
   {
    "input": {
@@ -3488,8 +3650,9 @@
     "title": "Finders Keepers",
     "year": 2015
    },
-   "status": "existing-match",
-   "id": "finders-keepers"
+   "id": "finders-keepers",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:319152"
   },
   {
    "input": {
@@ -3609,8 +3772,9 @@
     "title": "O.J.: Made in America",
     "year": 2016
    },
-   "status": "existing-match",
-   "id": "o-j-made-in-america"
+   "id": "o-j-made-in-america",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity movie:377462"
   },
   {
    "input": {
@@ -3686,8 +3850,9 @@
     "title": "The Vietnam War",
     "year": 2017
    },
-   "status": "existing-match",
-   "id": "the-vietnam-war"
+   "id": "the-vietnam-war",
+   "status": "existing-match-verified",
+   "reason": "same TMDB identity tv:46434"
   },
   {
    "input": {

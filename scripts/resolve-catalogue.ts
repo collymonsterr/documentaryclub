@@ -89,7 +89,9 @@ async function batch2() {
   const prior: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));
   const priorIds = new Map<string, string>();
   for (const [id, s] of Object.entries(prior)) if (s.tmdbId && s.mediaType) priorIds.set(`${s.mediaType}:${s.tmdbId}`, id);
-  const rows = reconcileBatch(BATCH2_RAW, CATALOGUE);
+  // Reconcile against the catalogue as it stood before this batch (originals + first import), never against batch-2 rows themselves.
+  const before = new Set([...FILMS.map(f => f.id), ...IMPORT_LIST.map(e => MERGED_INTO[`${e.title}|${e.year}`] ?? importSlug(e.title))]);
+  const rows = reconcileBatch(BATCH2_RAW, CATALOGUE.filter(f => before.has(f.id)));
   let previous: any[] = []; try { previous = JSON.parse(readFileSync('src/data/import-manifest-2.json', 'utf8')).entries; } catch { /* first run */ }
   const out: any[] = []; const claimed = new Map<string, string>();
   for (const r of rows) {
