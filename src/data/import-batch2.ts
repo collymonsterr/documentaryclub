@@ -385,7 +385,7 @@ const SECTION_CATEGORY: Record<string, ImportCategory | undefined> = {
   'Politics, History & Systemic Injustice': 'politics', 'Survival, Achievement & Human Extremes': 'survival', Other: 'strange',
 };
 
-export type RawInput = { source: 'attachment' | 'inline'; section: string; raw: string; title: string; year: number; yearEnd?: number; category?: ImportCategory };
+export type RawInput = { source: 'attachment' | 'inline'; section: string; raw: string; title: string; year: number; yearEnd?: number | undefined; category?: ImportCategory | undefined };
 // Unescape markdown asterisks and normalise curly apostrophes; the raw line is preserved for audit.
 export const cleanTitle = (t: string) => t.replace(/\\\*/g, '*').replace(/[‘’]/g, "'").trim();
 export function parseList(text: string, source: RawInput['source']): RawInput[] {
@@ -418,16 +418,16 @@ export const identityKey = (title: string) => {
 const sameWorkYear = (key: string, a: number, b: number) => Math.abs(a - b) <= 1 || (YEAR_VARIANTS[key]?.includes(a) && YEAR_VARIANTS[key]?.includes(b));
 
 export type ExistingRef = { id: string; title: string; year: number; aliases?: string[] };
-export type Reconciled = RawInput & { key: string; outcome: 'duplicate-in-batch' | 'existing' | 'new'; existingId?: string };
+export type Reconciled = RawInput & { key: string; outcome: 'duplicate-in-batch' | 'existing' | 'new'; existingId?: string | undefined; firstTitle?: string };
 export function reconcileBatch(raw: RawInput[], existing: ExistingRef[]): Reconciled[] {
   const known = existing.flatMap(e => [e.title, ...(e.aliases ?? [])].map(t => ({ key: identityKey(t), year: e.year, id: e.id })));
-  const seen = new Map<string, number>();
+  const seen = new Map<string, { year: number; title: string; id?: string | undefined }>();
   return raw.map(r => {
     const key = identityKey(r.title);
     const prior = seen.get(key);
-    if (prior !== undefined && sameWorkYear(key, prior, r.year)) return { ...r, key, outcome: 'duplicate-in-batch' };
-    seen.set(key, r.year);
+    if (prior && sameWorkYear(key, prior.year, r.year)) return { ...r, key, outcome: 'duplicate-in-batch', existingId: prior.id, firstTitle: prior.title };
     const hit = known.find(k => k.key === key && sameWorkYear(key, k.year, r.year));
+    seen.set(key, { year: r.year, title: r.title, id: hit?.id });
     return hit ? { ...r, key, outcome: 'existing', existingId: hit.id } : { ...r, key, outcome: 'new' };
   });
 }

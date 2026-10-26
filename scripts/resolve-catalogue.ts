@@ -94,7 +94,7 @@ async function batch2() {
   const out: any[] = []; const claimed = new Map<string, string>();
   for (const r of rows) {
     const base = { input: { source: r.source, section: r.section, raw: r.raw, title: r.title, year: r.year, ...(r.yearEnd ? { yearEnd: r.yearEnd } : {}) } };
-    if (r.outcome !== 'new') { out.push({ ...base, status: r.outcome === 'existing' ? 'existing-match' : 'duplicate-in-batch', id: r.existingId ?? importSlug(r.title) }); continue; }
+    if (r.outcome !== 'new') { out.push({ ...base, status: r.outcome === 'existing' ? 'existing-match' : 'duplicate-in-batch', id: r.existingId ?? importSlug(r.firstTitle ?? r.title) }); continue; }
     const id = importSlug(r.title), key = `${r.title}|${r.year}`;
     const old = previous.find(e => e.input.raw === r.raw && e.input.source === r.source);
     if (old?.status === 'resolved' && prior[id]?.status === 'resolved') { out.push(old); if (old.chosen) claimed.set(`${old.chosen.mediaType}:${old.chosen.tmdbId}`, id); continue; }
