@@ -4,6 +4,8 @@ export type Provider = { id: number; name: string; highlighted: boolean };
 export type Enrichment = {
   status: 'ready' | 'missing-secret' | 'not-found' | 'unavailable';
   tmdbId?: number | undefined;
+  imdbId?: string | undefined;
+  omdb?: OmdbMetadata | undefined;
   poster?: string | undefined;
   overview?: string | undefined;
   runtime?: number | undefined;
@@ -20,10 +22,35 @@ export function normalizeTitle(title: string) {
   return title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 export type MovieCandidate = { id: number; title?: string; original_title?: string; release_date?: string; genre_ids?: number[] };
+export function movieCandidates(film: Film, results: MovieCandidate[]): MovieCandidate[] {
+  return [...new Map(results.filter(r => Number.isInteger(r.id) && r.id > 0 && Math.abs(Number(r.release_date?.slice(0, 4)) - film.year) <= 1 && r.genre_ids?.includes(99) &&
+    [r.title, r.original_title].some(title => title && normalizeTitle(title) === normalizeTitle(film.title))).map(r => [r.id, r])).values()];
+}
 export function matchMovie(film: Film, results: MovieCandidate[]): MovieCandidate | undefined {
   const matches = results.filter(r => Number(r.release_date?.slice(0, 4)) === film.year && r.genre_ids?.includes(99) &&
     [r.title, r.original_title].some(title => title && normalizeTitle(title) === normalizeTitle(film.title)));
   return matches.length === 1 ? matches[0] : undefined;
+}
+
+export type OmdbMetadata = { imdb?: number | undefined; rottenTomatoes?: number | undefined; awards?: string | undefined };
+export type OmdbResponse = { Response?: string; imdbID?: string; Title?: string; Year?: string; Type?: string; Genre?: string; Director?: string; imdbRating?: string; Ratings?: { Source?: string; Value?: string }[]; Awards?: string };
+export function validImdbId(value: unknown): value is string { return typeof value === 'string' && /^tt\d{7,10}$/.test(value); }
+export function matchesOmdb(film: Film, data: OmdbResponse, imdbId?: string) {
+  if (data.Response !== 'True' || !validImdbId(data.imdbID) || data.Type !== 'movie') return false;
+  if (imdbId) return data.imdbID === imdbId;
+  const directors = (data.Director ?? '').split(',').map(name => normalizeTitle(name.trim()));
+  return normalizeTitle(data.Title ?? '') === normalizeTitle(film.title) && data.Year === String(film.year) &&
+    (data.Genre ?? '').split(',').some(genre => genre.trim().toLowerCase() === 'documentary') &&
+    film.director.split(', ').every(name => directors.includes(normalizeTitle(name)));
+}
+export function parseOmdb(data: OmdbResponse): OmdbMetadata {
+  const imdb = /^\d+(?:\.\d+)?$/.test(data.imdbRating ?? '') ? Number(data.imdbRating) : undefined;
+  const rt = data.Ratings?.find(r => r.Source === 'Rotten Tomatoes')?.Value;
+  const rottenTomatoes = /^\d{1,3}%$/.test(rt ?? '') ? Number(rt?.slice(0, -1)) : undefined;
+  const awards = data.Awards?.trim();
+  return { imdb: imdb !== undefined && imdb >= 0 && imdb <= 10 ? imdb : undefined,
+    rottenTomatoes: rottenTomatoes !== undefined && rottenTomatoes <= 100 ? rottenTomatoes : undefined,
+    awards: awards && !/^(N\/A|none)$/i.test(awards) ? awards : undefined };
 }
 
 type RawProvider = { provider_id: number; provider_name: string };

@@ -1,5 +1,5 @@
 import { FILMS, type Film } from '@/data/films';
-import { fallbackEnrichment, matchMovie, normalizeTitle, parseIrishProviders, selectTrailer, type Enrichment, type MovieCandidate } from './discovery';
+import { fallbackEnrichment, movieCandidates, normalizeTitle, parseIrishProviders, selectTrailer, validImdbId, type Enrichment, type MovieCandidate } from './discovery';
 
 type Details = {
   id: number; title?: string; original_title?: string; release_date?: string;
@@ -8,6 +8,7 @@ type Details = {
   videos?: Parameters<typeof selectTrailer>[0];
   images?: { backdrops?: { file_path: string }[] };
   'watch/providers'?: Parameters<typeof parseIrishProviders>[0];
+  external_ids?: { imdb_id?: string };
 };
 export type TmdbAuth = { token?: string | undefined; apiKey?: string | undefined };
 type Entry = { expires: number; value: Promise<Enrichment> };
@@ -28,23 +29,33 @@ async function request<T>(path: string, auth: TmdbAuth, query: Record<string, st
 }
 function validDetails(film: Film, details: Details) {
   const directors = details.credits?.crew?.filter(c => c.job === 'Director').map(c => normalizeTitle(c.name)) ?? [];
-  return details.id > 0 && Number(details.release_date?.slice(0, 4)) === film.year && details.genres?.some(g => g.id === 99) &&
+  // Festival premieres and distribution releases can differ by one year; title, genre and every director must still match.
+  return details.id > 0 && Math.abs(Number(details.release_date?.slice(0, 4)) - film.year) <= 1 && details.genres?.some(g => g.id === 99) &&
     [details.title, details.original_title].some(t => t && normalizeTitle(t) === normalizeTitle(film.title)) &&
     film.director.split(', ').every(name => directors.includes(normalizeTitle(name)));
 }
 async function enrich(film: Film, auth: TmdbAuth): Promise<Enrichment> {
   try {
-    let id = verifiedIds.get(film.id);
-    if (!id) {
-      const search = await request<{ results: MovieCandidate[] }>('search/movie', auth, { query: film.title, primary_release_year: String(film.year), include_adult: 'false' });
-      id = matchMovie(film, Array.isArray(search.results) ? search.results : [])?.id;
+    const cachedId = verifiedIds.get(film.id);
+    const getDetails = (id: number) => request<Details>(`movie/${id}`, auth, { append_to_response: 'credits,videos,images,watch/providers,external_ids', language: 'en-US', include_image_language: 'en,null' });
+    let details: Details | undefined;
+    if (cachedId) { const candidate = await getDetails(cachedId); if (candidate.id === cachedId && validDetails(film, candidate)) details = candidate; }
+    else {
+      const search = await request<{ results: MovieCandidate[] }>('search/movie', auth, { query: film.title, include_adult: 'false' });
+      const candidates = movieCandidates(film, Array.isArray(search.results) ? search.results : []);
+      if (candidates.length > 4) return fallbackEnrichment('not-found');
+      const verified: Details[] = [];
+      for (const candidate of candidates) {
+        const found = await getDetails(candidate.id);
+        if (found.id === candidate.id && validDetails(film, found)) verified.push(found);
+      }
+      if (verified.length === 1) details = verified[0];
     }
-    if (!id) return fallbackEnrichment('not-found');
-    const details = await request<Details>(`movie/${id}`, auth, { append_to_response: 'credits,videos,images,watch/providers', language: 'en-US', include_image_language: 'en,null' });
-    if (!validDetails(film, details)) return fallbackEnrichment('not-found');
-    verifiedIds.set(film.id, id);
+    if (!details) { verifiedIds.delete(film.id); return fallbackEnrichment('not-found'); }
+    verifiedIds.set(film.id, details.id);
     return {
-      status: 'ready', tmdbId: id, poster: image(details.poster_path, 'w500'), overview: details.overview?.trim() || undefined,
+      status: 'ready', tmdbId: details.id, imdbId: validImdbId(details.external_ids?.imdb_id) ? details.external_ids.imdb_id : undefined,
+      poster: image(details.poster_path, 'w500'), overview: details.overview?.trim() || undefined,
       runtime: details.runtime && details.runtime > 0 ? details.runtime : undefined,
       rating: (details.vote_count ?? 0) > 0 && Number.isFinite(details.vote_average) ? details.vote_average : undefined, votes: details.vote_count,
       trailer: selectTrailer(details.videos),
