@@ -56,7 +56,7 @@ function Index() {
   useEffect(() => { setOrder(shuffleIds(CATALOGUE.map(f => f.id))); }, []);
   const galleryScroll = useRef(0);
   const openSpotlight = (id: string) => { galleryScroll.current = window.scrollY; setSelectedId(id); setView('spotlight'); };
-  const backToGallery = () => { setView('gallery'); requestAnimationFrame(() => window.scrollTo(0, galleryScroll.current)); };
+  const backToGallery = () => { setView('gallery'); setTimeout(() => window.scrollTo(0, galleryScroll.current), 60); };
   const reshuffle = () => { setOrder(shuffleIds(CATALOGUE.map(f => f.id))); setSort('random'); setShown(PAGE); window.scrollTo(0, 0); };
   const [filter, setFilter] = useState<Filter>('all');
   const [selectedId, setSelectedId] = useState(CATALOGUE[0]?.id ?? '');
