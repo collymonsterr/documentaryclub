@@ -1,6 +1,4 @@
 import { createFileRoute, stripSearchParams, useNavigate } from '@tanstack/react-router';
-import { zodValidator, fallback } from '@tanstack/zod-adapter';
-import { z } from 'zod';
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
@@ -21,15 +19,11 @@ const years = (f: { year: number; yearEnd?: number }) => f.yearEnd ? `${f.year}â
 const DECADES = [...new Set(CATALOGUE.map(f => Math.floor(f.year / 10) * 10))].sort();
 
 // Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched opens a saved list, ?q= is the search.
-const searchSchema = z.object({
-  film: fallback(z.string(), '').default(''),
-  q: fallback(z.string(), '').default(''),
-  list: fallback(z.string(), '').default(''),
-});
 const searchDefaults = { film: '', q: '', list: '' };
+const text = (value: unknown) => typeof value === 'string' ? value : '';
 
 export const Route = createFileRoute('/')({
-  validateSearch: zodValidator(searchSchema),
+  validateSearch: (search: Record<string, unknown>) => ({ film: text(search['film']), q: text(search['q']), list: text(search['list']) }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
   head: () => ({ meta: [
     { title: 'Documentary Club â€” Discover extraordinary true stories' },
