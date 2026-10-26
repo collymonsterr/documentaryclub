@@ -40,6 +40,6 @@ export const CATALOGUE: Film[] = [...originals, ...imported];
 
 export function searchCatalogue(films: Film[], query: string, type: 'all' | 'movie' | 'tv') {
   const words = query.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').split(/\s+/).filter(Boolean);
-  return films.filter(f => (type === 'all' || (f.mediaType === 'collection' ? 'movie' : f.mediaType ?? 'movie') === type) && words.every(w =>
+  return films.filter(f => (type === 'all' || (f.mediaType === 'collection' ? 'tv' : f.mediaType ?? 'movie') === type) && words.every(w =>
     [f.title, ...(f.aliases ?? []), f.director].join(' ').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').includes(w)));
 }

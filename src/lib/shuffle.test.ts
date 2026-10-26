@@ -16,3 +16,10 @@ describe('gallery shuffle', () => {
     expect(r[0]!.year).toBe(Math.min(...CATALOGUE.map(f => f.year)));
   });
 });
+import { searchCatalogue } from '@/data/catalogue';
+describe('collections', () => {
+  it('Up series appears under the Series filter and search', () => {
+    expect(searchCatalogue(CATALOGUE, 'up', 'tv').some(f => f.mediaType === 'collection')).toBe(true);
+    expect(searchCatalogue(CATALOGUE, '', 'movie').some(f => f.mediaType === 'collection')).toBe(false);
+  });
+});
