@@ -58,8 +58,8 @@ function Index() {
   const anchor = useRef<{ id: string; offset: number } | null>(null); const restore = useRef(false);
   const saveAnchor = (id?: string) => {
     const cards = [...document.querySelectorAll<HTMLElement>('[data-film-card]')];
-    const el = (id && cards.find(c => c.dataset.filmCard === id)) || cards.find(c => c.getBoundingClientRect().bottom > 0);
-    anchor.current = el ? { id: el.dataset.filmCard!, offset: el.getBoundingClientRect().top } : null;
+    const el = (id && cards.find(c => c.dataset['filmCard'] === id)) || cards.find(c => c.getBoundingClientRect().bottom > 0);
+    anchor.current = el ? { id: el.dataset['filmCard']!, offset: el.getBoundingClientRect().top } : null;
   };
   const openSpotlight = (id?: string) => { if (view === 'gallery') saveAnchor(id); if (id) setSelectedId(id); setView('spotlight'); };
   const backToGallery = () => { if (view === 'gallery') return; restore.current = true; setView('gallery'); };
