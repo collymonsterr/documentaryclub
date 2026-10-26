@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, cardBadges, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, sortByRating, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardBadges, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, selectYouTubeTrailer, sortByRating, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -29,6 +29,16 @@ describe('eras and rating sort', () => {
   it('firstSentence keeps only the opening sentence', () => {
     expect(firstSentence('One two. Three four. Five.')).toBe('One two.');
     expect(firstSentence('No terminator here')).toBe('No terminator here');
+  });
+  it('accepts only title-verified YouTube trailers', () => {
+    const items = [
+      { id: { videoId: 'abc12345678' }, snippet: { title: 'Time | Official Trailer | Prime Video' } },
+      { id: { videoId: 'zzz99999999' }, snippet: { title: 'Time review - is it worth watching?' } },
+      { id: { videoId: 'bad' }, snippet: { title: 'Time Official Trailer' } },
+    ];
+    expect(selectYouTubeTrailer('Time', [], items)).toBe('abc12345678');
+    expect(selectYouTubeTrailer('Time', [], items.slice(1))).toBeUndefined();
+    expect(selectYouTubeTrailer('Meru', [], items)).toBeUndefined();
   });
 });
 describe('safe TMDB selection', () => {
