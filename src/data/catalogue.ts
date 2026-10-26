@@ -3,6 +3,7 @@ import { IMPORT_LIST, MERGED_INTO, importSlug } from './import-list';
 import snapshotJson from './catalogue-snapshot.json';
 import manifestJson from './import-manifest.json';
 import manifest2Json from './import-manifest-2.json';
+import manifest3Json from './import-manifest-3.json';
 import { CATEGORY_OVERRIDES } from './import-batch2';
 
 // Public metadata resolved once at import (scripts/resolve-catalogue.ts). Contains no credentials.
@@ -16,11 +17,14 @@ export type ManifestEntry = { input: { title: string; year: number; category: st
 export const MANIFEST = manifestJson as { submitted: number; entries: ManifestEntry[] };
 export type Manifest2Entry = { input: { source: 'attachment' | 'inline'; section: string; raw: string; title: string; year: number; yearEnd?: number }; id: string; status: string; reason?: string; chosen?: ManifestEntry['chosen'] | { mediaType: 'collection'; tmdbId: number; canonicalTitle: string; year: number; people: string[] } };
 export const MANIFEST2 = manifest2Json as unknown as { rawInputs: number; entries: Manifest2Entry[] };
+export type Manifest3Entry = { input: { section: string; title: string; year: number }; id: string; status: string; reason?: string; chosen?: ManifestEntry['chosen'] };
+export const MANIFEST3 = manifest3Json as unknown as { rawInputs: number; entries: Manifest3Entry[] };
 const SECTION: Record<string, string> = { 'Strange but True': 'strange', 'Cults, Psychology and Manipulation': 'psychology', 'Scams and Grifts': 'scams', 'Technology, Internet and Ideas': 'tech', 'Crime, Investigations and Injustice': 'crime', 'Politics and Geopolitics': 'politics', 'Economics, Corporations and Inequality': 'economics', 'Survival and Extraordinary Feats': 'survival', 'Nature and Science': 'nature', 'Cults, High-Control Groups & Manipulation': 'psychology', 'Strange True Stories & Twists': 'strange', 'Politics, History & Systemic Injustice': 'politics' };
 
 const label = (id: string) => CATEGORIES.find(c => c.id === id)?.label ?? id;
 const batch2 = MANIFEST2.entries.filter(e => e.status === 'resolved' || e.status.startsWith('pending')).map(e => ({ title: e.input.title, year: e.input.year, yearEnd: e.input.yearEnd, category: SECTION[e.input.section] ?? 'strange' }));
-const imported: Film[] = [...IMPORT_LIST.filter(e => !MERGED_INTO[`${e.title}|${e.year}`]), ...batch2].map((e: { title: string; year: number; category: string; yearEnd?: number | undefined }) => {
+const batch3 = MANIFEST3.entries.filter(e => e.status === 'resolved' || e.status.startsWith('pending')).map(e => ({ title: e.input.title, year: e.input.year, category: 'sexdrugs' }));
+const imported: Film[] = [...IMPORT_LIST.filter(e => !MERGED_INTO[`${e.title}|${e.year}`]), ...batch2, ...batch3].map((e: { title: string; year: number; category: string; yearEnd?: number | undefined }) => {
   const id = importSlug(e.title), s = SNAPSHOT[id], resolved = s?.status === 'resolved';
   // Strict 1-to-1 subjects: every title has exactly one home category (primary override wins).
   const categories = [CATEGORY_OVERRIDES[e.title]?.[0] ?? e.category] as Film['categories'];
