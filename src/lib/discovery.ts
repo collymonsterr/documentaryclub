@@ -118,3 +118,12 @@ export function orderFilms<T extends { id: string }>(films: T[], order: string[]
   const rank = new Map(order.map((id, i) => [id, i]));
   return [...films].sort((a, b) => (rank.get(a.id) ?? 1e9) - (rank.get(b.id) ?? 1e9));
 }
+
+// Gallery hover badges: prefer sourced IMDb/Rotten Tomatoes, fall back to TMDB. Missing stays absent.
+export function cardBadges(snap?: { tmdbRating?: number | undefined; omdb?: { imdb?: number | undefined; rottenTomatoes?: number | undefined } | undefined }): string[] {
+  const badges: string[] = [];
+  if (snap?.omdb?.imdb !== undefined) badges.push(`IMDb ${snap.omdb.imdb.toFixed(1)}`);
+  if (snap?.omdb?.rottenTomatoes !== undefined) badges.push(`RT ${snap.omdb.rottenTomatoes}%`);
+  if (!badges.length && snap?.tmdbRating !== undefined) badges.push(`TMDB ${snap.tmdbRating.toFixed(1)}`);
+  return badges;
+}
