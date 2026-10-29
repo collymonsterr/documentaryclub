@@ -1,0 +1,2741 @@
+{
+ "generated": "2026-10-29",
+ "rawInputs": 97,
+ "entries": [
+  {
+   "input": {
+    "title": "Standard Operating Procedure",
+    "year": 2008,
+    "format": "Film",
+    "director": "Errol Morris"
+   },
+   "id": "standard-operating-procedure",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 8847,
+    "imdbId": "tt0896866",
+    "canonicalTitle": "Standard Operating Procedure",
+    "year": 2008,
+    "people": [
+     "Errol Morris"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 8847,
+     "title": "Standard Operating Procedure",
+     "year": 2008
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Pigeon Tunnel",
+    "year": 2023,
+    "format": "Film",
+    "director": "Errol Morris"
+   },
+   "id": "the-pigeon-tunnel",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1155770,
+    "imdbId": "tt28486633",
+    "canonicalTitle": "The Pigeon Tunnel",
+    "year": 2023,
+    "people": [
+     "Errol Morris"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1155770,
+     "title": "The Pigeon Tunnel",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "We Steal Secrets: The Story of WikiLeaks",
+    "year": 2013,
+    "format": "Film",
+    "director": "Alex Gibney"
+   },
+   "id": "we-steal-secrets-the-story-of-wikileaks",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 159154,
+    "imdbId": "tt1824254",
+    "canonicalTitle": "We Steal Secrets: The Story of WikiLeaks",
+    "year": 2013,
+    "people": [
+     "Alex Gibney"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 159154,
+     "title": "We Steal Secrets: The Story of WikiLeaks",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Diego Maradona",
+    "year": 2019,
+    "format": "Film",
+    "director": "Asif Kapadia"
+   },
+   "id": "diego-maradona",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 536841,
+    "imdbId": "tt5433114",
+    "canonicalTitle": "Diego Maradona",
+    "year": 2019,
+    "people": [
+     "Asif Kapadia"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 536841,
+     "title": "Diego Maradona",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Bowling for Columbine",
+    "year": 2002,
+    "format": "Film",
+    "director": "Michael Moore"
+   },
+   "id": "bowling-for-columbine",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1430,
+    "imdbId": "tt0310793",
+    "canonicalTitle": "Bowling for Columbine",
+    "year": 2002,
+    "people": [
+     "Michael Moore"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1430,
+     "title": "Bowling for Columbine",
+     "year": 2002
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Fahrenheit 9/11",
+    "year": 2004,
+    "format": "Film",
+    "director": "Michael Moore"
+   },
+   "id": "fahrenheit-9-11",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1777,
+    "imdbId": "tt0361596",
+    "canonicalTitle": "Fahrenheit 9/11",
+    "year": 2004,
+    "people": [
+     "Michael Moore"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1777,
+     "title": "Fahrenheit 9/11",
+     "year": 2004
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Sicko",
+    "year": 2007,
+    "format": "Film",
+    "director": "Michael Moore"
+   },
+   "id": "sicko",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 2359,
+    "imdbId": "tt0386032",
+    "canonicalTitle": "Sicko",
+    "year": 2007,
+    "people": [
+     "Michael Moore"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 2359,
+     "title": "Sicko",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Metallica: Some Kind of Monster",
+    "year": 2004,
+    "format": "Film",
+    "director": "Joe Berlinger, Bruce Sinofsky"
+   },
+   "id": "metallica-some-kind-of-monster",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 11401,
+    "imdbId": "tt0387412",
+    "canonicalTitle": "Metallica: Some Kind of Monster",
+    "year": 2004,
+    "people": [
+     "Joe Berlinger",
+     "Bruce Sinofsky"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 11401,
+     "title": "Metallica: Some Kind of Monster",
+     "year": 2004
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Crude",
+    "year": 2009,
+    "format": "Film",
+    "director": "Joe Berlinger"
+   },
+   "id": "crude",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 34214,
+    "imdbId": "tt1326204",
+    "canonicalTitle": "Crude",
+    "year": 2009,
+    "people": [
+     "Joe Berlinger"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 34214,
+     "title": "Crude",
+     "year": 2009
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Interrupters",
+    "year": 2011,
+    "format": "Film",
+    "director": "Steve James"
+   },
+   "id": "the-interrupters",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 72711,
+    "imdbId": "tt1319744",
+    "canonicalTitle": "The Interrupters",
+    "year": 2011,
+    "people": [
+     "Steve James"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 72711,
+     "title": "The Interrupters",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Life Itself",
+    "year": 2014,
+    "format": "Film",
+    "director": "Steve James"
+   },
+   "id": "life-itself",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 250766,
+    "imdbId": "tt2382298",
+    "canonicalTitle": "Life Itself",
+    "year": 2014,
+    "people": [
+     "Steve James"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 250766,
+     "title": "Life Itself",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Abacus: Small Enough to Jail",
+    "year": 2016,
+    "format": "Film",
+    "director": "Steve James"
+   },
+   "id": "abacus-small-enough-to-jail",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 411007,
+    "imdbId": "tt5952382",
+    "canonicalTitle": "Abacus: Small Enough to Jail",
+    "year": 2017,
+    "people": [
+     "Steve James"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 411007,
+     "title": "Abacus: Small Enough to Jail",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "All the Beauty and the Bloodshed",
+    "year": 2022,
+    "format": "Film",
+    "director": "Laura Poitras"
+   },
+   "id": "all-the-beauty-and-the-bloodshed",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1004663,
+    "imdbId": "tt21374850",
+    "canonicalTitle": "All the Beauty and the Bloodshed",
+    "year": 2022,
+    "people": [
+     "Laura Poitras"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1004663,
+     "title": "All the Beauty and the Bloodshed",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "20 Feet from Stardom",
+    "year": 2013,
+    "format": "Film",
+    "director": "Morgan Neville"
+   },
+   "id": "20-feet-from-stardom",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 159014,
+    "imdbId": "tt2396566",
+    "canonicalTitle": "20 Feet from Stardom",
+    "year": 2013,
+    "people": [
+     "Morgan Neville"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 159014,
+     "title": "20 Feet from Stardom",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Best of Enemies",
+    "year": 2015,
+    "format": "Film",
+    "director": "Morgan Neville, Robert Gordon"
+   },
+   "id": "best-of-enemies",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 319067,
+    "imdbId": "tt3518012",
+    "canonicalTitle": "Best of Enemies",
+    "year": 2015,
+    "people": [
+     "Robert Gordon",
+     "Morgan Neville"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 319067,
+     "title": "Best of Enemies",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Won't You Be My Neighbor?",
+    "year": 2018,
+    "format": "Film",
+    "director": "Morgan Neville"
+   },
+   "id": "won-t-you-be-my-neighbor",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 490003,
+    "imdbId": "tt7681902",
+    "canonicalTitle": "Won't You Be My Neighbor?",
+    "year": 2018,
+    "people": [
+     "Morgan Neville"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 490003,
+     "title": "Won't You Be My Neighbor?",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Roadrunner: A Film About Anthony Bourdain",
+    "year": 2021,
+    "format": "Film",
+    "director": "Morgan Neville"
+   },
+   "id": "roadrunner-a-film-about-anthony-bourdain",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 642732,
+    "imdbId": "tt14512538",
+    "canonicalTitle": "Roadrunner: A Film About Anthony Bourdain",
+    "year": 2021,
+    "people": [
+     "Morgan Neville"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 642732,
+     "title": "Roadrunner: A Film About Anthony Bourdain",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Kid Stays in the Picture",
+    "year": 2002,
+    "format": "Film",
+    "director": "Brett Morgen, Nanette Burstein"
+   },
+   "id": "the-kid-stays-in-the-picture",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 29047,
+    "imdbId": "tt0303353",
+    "canonicalTitle": "The Kid Stays in the Picture",
+    "year": 2002,
+    "people": [
+     "Nanette Burstein",
+     "Brett Morgen"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 29047,
+     "title": "The Kid Stays in the Picture",
+     "year": 2002
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Cobain: Montage of Heck",
+    "year": 2015,
+    "format": "Film",
+    "director": "Brett Morgen"
+   },
+   "id": "cobain-montage-of-heck",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 319075,
+    "imdbId": "tt4229236",
+    "canonicalTitle": "Cobain: Montage of Heck",
+    "year": 2015,
+    "people": [
+     "Brett Morgen"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 319075,
+     "title": "Cobain: Montage of Heck",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Moonage Daydream",
+    "year": 2022,
+    "format": "Film",
+    "director": "Brett Morgen"
+   },
+   "id": "moonage-daydream",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 957457,
+    "imdbId": "tt9883832",
+    "canonicalTitle": "Moonage Daydream",
+    "year": 2022,
+    "people": [
+     "Brett Morgen"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 957457,
+     "title": "Moonage Daydream",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "An Inconvenient Truth",
+    "year": 2006,
+    "format": "Film",
+    "director": "Davis Guggenheim"
+   },
+   "id": "an-inconvenient-truth",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1781,
+    "imdbId": "tt0497116",
+    "canonicalTitle": "An Inconvenient Truth",
+    "year": 2006,
+    "people": [
+     "Davis Guggenheim"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1781,
+     "title": "An Inconvenient Truth",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Still: A Michael J. Fox Movie",
+    "year": 2023,
+    "format": "Film",
+    "director": "Davis Guggenheim"
+   },
+   "id": "still-a-michael-j-fox-movie",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1058699,
+    "imdbId": "tt19853258",
+    "canonicalTitle": "STILL: A Michael J. Fox Movie",
+    "year": 2023,
+    "people": [
+     "Davis Guggenheim"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1058699,
+     "title": "STILL: A Michael J. Fox Movie",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "This Film Is Not Yet Rated",
+    "year": 2006,
+    "format": "Film",
+    "director": "Kirby Dick"
+   },
+   "id": "this-film-is-not-yet-rated",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 16070,
+    "imdbId": "tt0493459",
+    "canonicalTitle": "This Film Is Not Yet Rated",
+    "year": 2006,
+    "people": [
+     "Kirby Dick"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 16070,
+     "title": "This Film Is Not Yet Rated",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Invisible War",
+    "year": 2012,
+    "format": "Film",
+    "director": "Kirby Dick"
+   },
+   "id": "the-invisible-war",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 84288,
+    "imdbId": "tt2120152",
+    "canonicalTitle": "The Invisible War",
+    "year": 2012,
+    "people": [
+     "Kirby Dick"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 84288,
+     "title": "The Invisible War",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "On the Record",
+    "year": 2020,
+    "format": "Film",
+    "director": "Kirby Dick, Amy Ziering"
+   },
+   "id": "on-the-record",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 653612,
+    "imdbId": "tt11394650",
+    "canonicalTitle": "On the Record",
+    "year": 2020,
+    "people": [
+     "Kirby Dick",
+     "Amy Ziering"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 653612,
+     "title": "On the Record",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Social Dilemma",
+    "year": 2020,
+    "format": "Film",
+    "director": "Jeff Orlowski"
+   },
+   "id": "the-social-dilemma",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 656690,
+    "imdbId": "tt11464826",
+    "canonicalTitle": "The Social Dilemma",
+    "year": 2020,
+    "people": [
+     "Jeff Orlowski"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 656690,
+     "title": "The Social Dilemma",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "My Scientology Movie",
+    "year": 2015,
+    "format": "Film",
+    "director": "John Dower"
+   },
+   "id": "my-scientology-movie",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 359871,
+    "imdbId": "tt5111874",
+    "canonicalTitle": "My Scientology Movie",
+    "year": 2016,
+    "people": [
+     "John Dower"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 359871,
+     "title": "My Scientology Movie",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "America's Most Hated Family in Crisis",
+    "year": 2011,
+    "format": "Film"
+   },
+   "id": "america-s-most-hated-family-in-crisis",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "title": "Kurt & Courtney",
+    "year": 1998,
+    "format": "Film",
+    "director": "Nick Broomfield"
+   },
+   "id": "kurt-courtney",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 13907,
+    "imdbId": "tt0138563",
+    "canonicalTitle": "Kurt & Courtney",
+    "year": 1998,
+    "people": [
+     "Nick Broomfield"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 13907,
+     "title": "Kurt & Courtney",
+     "year": 1998
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Aileen: Life and Death of a Serial Killer",
+    "year": 2003,
+    "format": "Film",
+    "director": "Nick Broomfield, Joan Churchill"
+   },
+   "id": "aileen-life-and-death-of-a-serial-killer",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 37088,
+    "imdbId": "tt0364930",
+    "canonicalTitle": "Aileen: Life and Death of a Serial Killer",
+    "year": 2003,
+    "people": [
+     "Joan Churchill",
+     "Nick Broomfield"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 37088,
+     "title": "Aileen: Life and Death of a Serial Killer",
+     "year": 2003
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Marianne & Leonard: Words of Love",
+    "year": 2019,
+    "format": "Film",
+    "director": "Nick Broomfield"
+   },
+   "id": "marianne-leonard-words-of-love",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 566230,
+    "imdbId": "tt9358196",
+    "canonicalTitle": "Marianne & Leonard: Words of Love",
+    "year": 2019,
+    "people": [
+     "Nick Broomfield"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 566230,
+     "title": "Marianne & Leonard: Words of Love",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Pulling John",
+    "year": 2006,
+    "format": "Film"
+   },
+   "id": "pulling-john",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "title": "Word Wars",
+    "year": 2004,
+    "format": "Film",
+    "director": "Eric Chaikin, Julian Petrillo"
+   },
+   "id": "word-wars",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 28105,
+    "imdbId": "tt0390632",
+    "canonicalTitle": "Word Wars",
+    "year": 2004,
+    "people": [
+     "Julian Petrillo",
+     "Eric Chaikin"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 28105,
+     "title": "Word Wars",
+     "year": 2004
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Somm",
+    "year": 2012,
+    "format": "Film",
+    "director": "Jason Wise"
+   },
+   "id": "somm",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 184149,
+    "imdbId": "tt2204371",
+    "canonicalTitle": "Somm",
+    "year": 2013,
+    "people": [
+     "Jason Wise"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 184149,
+     "title": "Somm",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Jiro Dreams of Sushi",
+    "year": 2011,
+    "format": "Film",
+    "director": "David Gelb"
+   },
+   "id": "jiro-dreams-of-sushi",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 80767,
+    "imdbId": "tt1772925",
+    "canonicalTitle": "Jiro Dreams of Sushi",
+    "year": 2011,
+    "people": [
+     "David Gelb"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 80767,
+     "title": "Jiro Dreams of Sushi",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Golden Spurtle",
+    "year": 2025,
+    "format": "Film",
+    "director": "Constantine Costi"
+   },
+   "id": "the-golden-spurtle",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1425373,
+    "imdbId": "tt35932869",
+    "canonicalTitle": "The Golden Spurtle",
+    "year": 2025,
+    "people": [
+     "Constantine Costi"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1425373,
+     "title": "The Golden Spurtle",
+     "year": 2025
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Bobby Fischer Against the World",
+    "year": 2011,
+    "format": "Film",
+    "director": "Liz Garbus"
+   },
+   "id": "bobby-fischer-against-the-world",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 67885,
+    "imdbId": "tt1777551",
+    "canonicalTitle": "Bobby Fischer Against the World",
+    "year": 2011,
+    "people": [
+     "Liz Garbus"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 67885,
+     "title": "Bobby Fischer Against the World",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Ramen Heads",
+    "year": 2017,
+    "format": "Film",
+    "director": "Koki Shigeno"
+   },
+   "id": "ramen-heads",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 455146,
+    "imdbId": "tt6764122",
+    "canonicalTitle": "Ramen Heads",
+    "year": 2017,
+    "people": [
+     "Koki Shigeno"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 455146,
+     "title": "Ramen Heads",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "City of Gold",
+    "year": 2015,
+    "format": "Film",
+    "director": "Laura Gabbert"
+   },
+   "id": "city-of-gold",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 317954,
+    "imdbId": "tt2614776",
+    "canonicalTitle": "City of Gold",
+    "year": 2016,
+    "people": [
+     "Laura Gabbert"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 317954,
+     "title": "City of Gold",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Search for General Tso",
+    "year": 2014,
+    "format": "Film",
+    "director": "Ian Cheney"
+   },
+   "id": "the-search-for-general-tso",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 261041,
+    "imdbId": "tt3576038",
+    "canonicalTitle": "The Search for General Tso",
+    "year": 2014,
+    "people": [
+     "Ian Cheney"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 261041,
+     "title": "The Search for General Tso",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "TT3D: Closer to the Edge",
+    "year": 2011,
+    "format": "Film",
+    "director": "Richard De Aragues"
+   },
+   "id": "tt3d-closer-to-the-edge",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 79628,
+    "imdbId": "tt1698010",
+    "canonicalTitle": "TT3D: Closer to the Edge",
+    "year": 2011,
+    "people": [
+     "Richard De Aragues"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 79628,
+     "title": "TT3D: Closer to the Edge",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Road",
+    "year": 2014,
+    "format": "Film",
+    "director": "Michael Hewitt, Dermot Lavery"
+   },
+   "id": "road",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "title": "Faster",
+    "year": 2003,
+    "format": "Film",
+    "director": "Mark Neale"
+   },
+   "id": "faster",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 30129,
+    "imdbId": "tt0368721",
+    "canonicalTitle": "Faster",
+    "year": 2003,
+    "people": [
+     "Mark Neale"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 30129,
+     "title": "Faster",
+     "year": 2003
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Lost Leonardo",
+    "year": 2021,
+    "format": "Film",
+    "director": "Andreas Koefoed"
+   },
+   "id": "the-lost-leonardo",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 822099,
+    "imdbId": "tt11225756",
+    "canonicalTitle": "The Lost Leonardo",
+    "year": 2021,
+    "people": [
+     "Andreas Koefoed"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 822099,
+     "title": "The Lost Leonardo",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Beer Wars",
+    "year": 2009,
+    "format": "Film",
+    "director": "Anat Baron"
+   },
+   "id": "beer-wars",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 19837,
+    "imdbId": "tt1326194",
+    "canonicalTitle": "Beer Wars",
+    "year": 2009,
+    "people": [
+     "Anat Baron"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 19837,
+     "title": "Beer Wars",
+     "year": 2009
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "How Beer Saved the World",
+    "year": 2011,
+    "format": "Film"
+   },
+   "id": "how-beer-saved-the-world",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 81765,
+    "imdbId": "tt1832368",
+    "canonicalTitle": "How Beer Saved the World",
+    "year": 2011,
+    "people": []
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 81765,
+     "title": "How Beer Saved the World",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "An Open Secret",
+    "year": 2014,
+    "format": "Film",
+    "director": "Amy J. Berg"
+   },
+   "id": "an-open-secret",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 294368,
+    "imdbId": "tt3677412",
+    "canonicalTitle": "An Open Secret",
+    "year": 2014,
+    "people": [
+     "Amy J. Berg"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 294368,
+     "title": "An Open Secret",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Bottled Life",
+    "year": 2012,
+    "format": "Film",
+    "director": "Urs Schnell"
+   },
+   "id": "bottled-life",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 86063,
+    "imdbId": "tt2072910",
+    "canonicalTitle": "Bottled Life: Nestle's Business with Water",
+    "year": 2012,
+    "people": [
+     "Urs Schnell"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 86063,
+     "title": "Bottled Life: Nestle's Business with Water",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Scared Straight!",
+    "year": 1978,
+    "format": "Film",
+    "director": "Arnold Shapiro"
+   },
+   "id": "scared-straight",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 92215,
+    "imdbId": "tt0078205",
+    "canonicalTitle": "Scared Straight!",
+    "year": 1978,
+    "people": [
+     "Arnold Shapiro"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 92215,
+     "title": "Scared Straight!",
+     "year": 1978
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Times of Harvey Milk",
+    "year": 1984,
+    "format": "Film",
+    "director": "Rob Epstein"
+   },
+   "id": "the-times-of-harvey-milk",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 33138,
+    "imdbId": "tt0088275",
+    "canonicalTitle": "The Times of Harvey Milk",
+    "year": 1984,
+    "people": [
+     "Rob Epstein"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 33138,
+     "title": "The Times of Harvey Milk",
+     "year": 1984
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Streetwise",
+    "year": 1984,
+    "format": "Film",
+    "director": "Martin Bell"
+   },
+   "id": "streetwise",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 42098,
+    "imdbId": "tt0088196",
+    "canonicalTitle": "Streetwise",
+    "year": 1984,
+    "people": [
+     "Martin Bell"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 42098,
+     "title": "Streetwise",
+     "year": 1984
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Style Wars",
+    "year": 1983,
+    "format": "Film",
+    "director": "Tony Silver"
+   },
+   "id": "style-wars",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 29587,
+    "imdbId": "tt0177262",
+    "canonicalTitle": "Style Wars",
+    "year": 1984,
+    "people": [
+     "Tony Silver"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 29587,
+     "title": "Style Wars",
+     "year": 1984
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "A Brief History of Time",
+    "year": 1991,
+    "format": "Film",
+    "director": "Errol Morris"
+   },
+   "id": "a-brief-history-of-time",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1358,
+    "imdbId": "tt0103882",
+    "canonicalTitle": "A Brief History of Time",
+    "year": 1991,
+    "people": [
+     "Errol Morris"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1358,
+     "title": "A Brief History of Time",
+     "year": 1991
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "When We Were Kings",
+    "year": 1996,
+    "format": "Film",
+    "director": "Leon Gast"
+   },
+   "id": "when-we-were-kings",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 10548,
+    "imdbId": "tt0118147",
+    "canonicalTitle": "When We Were Kings",
+    "year": 1996,
+    "people": [
+     "Leon Gast"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 10548,
+     "title": "When We Were Kings",
+     "year": 1996
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Buena Vista Social Club",
+    "year": 1999,
+    "format": "Film",
+    "director": "Wim Wenders"
+   },
+   "id": "buena-vista-social-club",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 11779,
+    "imdbId": "tt0186508",
+    "canonicalTitle": "Buena Vista Social Club",
+    "year": 1999,
+    "people": [
+     "Wim Wenders"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 11779,
+     "title": "Buena Vista Social Club",
+     "year": 1999
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Dogtown and Z-Boys",
+    "year": 2001,
+    "format": "Film",
+    "director": "Stacy Peralta"
+   },
+   "id": "dogtown-and-z-boys",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1282,
+    "imdbId": "tt0275309",
+    "canonicalTitle": "Dogtown and Z-Boys",
+    "year": 2002,
+    "people": [
+     "Stacy Peralta"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1282,
+     "title": "Dogtown and Z-Boys",
+     "year": 2002
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Spellbound",
+    "year": 2002,
+    "format": "Film",
+    "director": "Jeffrey Blitz"
+   },
+   "id": "spellbound",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 16636,
+    "imdbId": "tt0334405",
+    "canonicalTitle": "Spellbound",
+    "year": 2002,
+    "people": [
+     "Jeffrey Blitz"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 16636,
+     "title": "Spellbound",
+     "year": 2002
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "My Architect",
+    "year": 2003,
+    "format": "Film",
+    "director": "Nathaniel Kahn"
+   },
+   "id": "my-architect",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 50314,
+    "imdbId": "tt0373175",
+    "canonicalTitle": "My Architect: A Son's Journey",
+    "year": 2003,
+    "people": [
+     "Nathaniel Kahn"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 50314,
+     "title": "My Architect: A Son's Journey",
+     "year": 2003
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Dig!",
+    "year": 2004,
+    "format": "Film",
+    "director": "Ondi Timoner"
+   },
+   "id": "dig",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1843,
+    "imdbId": "tt0388888",
+    "canonicalTitle": "Dig!",
+    "year": 2004,
+    "people": [
+     "Ondi Timoner"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1843,
+     "title": "Dig!",
+     "year": 2004
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Murderball",
+    "year": 2005,
+    "format": "Film",
+    "director": "Henry Alex Rubin, Dana Adam Shapiro"
+   },
+   "id": "murderball",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 14278,
+    "imdbId": "tt0436613",
+    "canonicalTitle": "Murderball",
+    "year": 2005,
+    "people": [
+     "Dana Adam Shapiro",
+     "Henry Alex Rubin"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 14278,
+     "title": "Murderball",
+     "year": 2005
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Deliver Us from Evil",
+    "year": 2006,
+    "format": "Film",
+    "director": "Amy J. Berg"
+   },
+   "id": "deliver-us-from-evil",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 13364,
+    "imdbId": "tt0814075",
+    "canonicalTitle": "Deliver Us from Evil",
+    "year": 2006,
+    "people": [
+     "Amy J. Berg"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 13364,
+     "title": "Deliver Us from Evil",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Most Dangerous Man in America",
+    "year": 2009,
+    "format": "Film",
+    "director": "Judith Ehrlich, Rick Goldsmith"
+   },
+   "id": "the-most-dangerous-man-in-america",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 34576,
+    "imdbId": "tt1319726",
+    "canonicalTitle": "The Most Dangerous Man in America",
+    "year": 2009,
+    "people": [
+     "Judith Ehrlich",
+     "Rick Goldsmith"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 34576,
+     "title": "The Most Dangerous Man in America",
+     "year": 2009
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Undefeated",
+    "year": 2011,
+    "format": "Film",
+    "director": "Daniel Lindsay, T.J. Martin"
+   },
+   "id": "undefeated",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 82620,
+    "imdbId": "tt1860355",
+    "canonicalTitle": "Undefeated",
+    "year": 2011,
+    "people": [
+     "T.J. Martin",
+     "Daniel Lindsay"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 82620,
+     "title": "Undefeated",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Paradise Lost 3: Purgatory",
+    "year": 2011,
+    "format": "Film",
+    "director": "Joe Berlinger, Bruce Sinofsky"
+   },
+   "id": "paradise-lost-3-purgatory",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 83660,
+    "imdbId": "tt2028530",
+    "canonicalTitle": "Paradise Lost 3: Purgatory",
+    "year": 2012,
+    "people": [
+     "Bruce Sinofsky",
+     "Joe Berlinger"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 83660,
+     "title": "Paradise Lost 3: Purgatory",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "How to Survive a Plague",
+    "year": 2012,
+    "format": "Film",
+    "director": "David France"
+   },
+   "id": "how-to-survive-a-plague",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 84286,
+    "imdbId": "tt2124803",
+    "canonicalTitle": "How to Survive a Plague",
+    "year": 2012,
+    "people": [
+     "David France"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 84286,
+     "title": "How to Survive a Plague",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Dirty Wars",
+    "year": 2013,
+    "format": "Film",
+    "director": "Rick Rowley"
+   },
+   "id": "dirty-wars",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 159004,
+    "imdbId": "tt2532528",
+    "canonicalTitle": "Dirty Wars",
+    "year": 2013,
+    "people": [
+     "Rick Rowley"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 159004,
+     "title": "Dirty Wars",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Green Prince",
+    "year": 2014,
+    "format": "Film",
+    "director": "Nadav Schirman"
+   },
+   "id": "the-green-prince",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 250798,
+    "imdbId": "tt2304915",
+    "canonicalTitle": "The Green Prince",
+    "year": 2014,
+    "people": [
+     "Nadav Schirman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 250798,
+     "title": "The Green Prince",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "What Happened, Miss Simone?",
+    "year": 2015,
+    "format": "Film",
+    "director": "Liz Garbus"
+   },
+   "id": "what-happened-miss-simone",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 318044,
+    "imdbId": "tt4284010",
+    "canonicalTitle": "What Happened, Miss Simone?",
+    "year": 2015,
+    "people": [
+     "Liz Garbus"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 318044,
+     "title": "What Happened, Miss Simone?",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Listen to Me Marlon",
+    "year": 2015,
+    "format": "Film",
+    "director": "Stevan Riley"
+   },
+   "id": "listen-to-me-marlon",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 319076,
+    "imdbId": "tt4145178",
+    "canonicalTitle": "Listen to Me Marlon",
+    "year": 2015,
+    "people": [
+     "Stevan Riley"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 319076,
+     "title": "Listen to Me Marlon",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Russian Woodpecker",
+    "year": 2015,
+    "format": "Film",
+    "director": "Chad Gracia"
+   },
+   "id": "the-russian-woodpecker",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 319092,
+    "imdbId": "tt4082596",
+    "canonicalTitle": "The Russian Woodpecker",
+    "year": 2015,
+    "people": [
+     "Chad Gracia"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 319092,
+     "title": "The Russian Woodpecker",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "I Am Not Your Negro",
+    "year": 2016,
+    "format": "Film",
+    "director": "Raoul Peck"
+   },
+   "id": "i-am-not-your-negro",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 411019,
+    "imdbId": "tt5804038",
+    "canonicalTitle": "I Am Not Your Negro",
+    "year": 2017,
+    "people": [
+     "Raoul Peck"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 411019,
+     "title": "I Am Not Your Negro",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "City of Ghosts",
+    "year": 2017,
+    "format": "Film",
+    "director": "Matthew Heineman"
+   },
+   "id": "city-of-ghosts",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 428501,
+    "imdbId": "tt6333056",
+    "canonicalTitle": "City of Ghosts",
+    "year": 2017,
+    "people": [
+     "Matthew Heineman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 428501,
+     "title": "City of Ghosts",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "They Shall Not Grow Old",
+    "year": 2018,
+    "format": "Film",
+    "director": "Peter Jackson"
+   },
+   "id": "they-shall-not-grow-old",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 543580,
+    "imdbId": "tt7905466",
+    "canonicalTitle": "They Shall Not Grow Old",
+    "year": 2018,
+    "people": [
+     "Peter Jackson"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 543580,
+     "title": "They Shall Not Grow Old",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "McQueen",
+    "year": 2018,
+    "format": "Film",
+    "director": "Ian Bonhôte, Peter Ettedgui"
+   },
+   "id": "mcqueen",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 508003,
+    "imdbId": "tt6510332",
+    "canonicalTitle": "McQueen",
+    "year": 2018,
+    "people": [
+     "Ian Bonhôte",
+     "Peter Ettedgui"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 508003,
+     "title": "McQueen",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Minding the Gap",
+    "year": 2018,
+    "format": "Film",
+    "director": "Bing Liu"
+   },
+   "id": "minding-the-gap",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 489985,
+    "imdbId": "tt7476236",
+    "canonicalTitle": "Minding the Gap",
+    "year": 2018,
+    "people": [
+     "Bing Liu"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 489985,
+     "title": "Minding the Gap",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Mole Agent",
+    "year": 2020,
+    "format": "Film",
+    "director": "Maite Alberdi"
+   },
+   "id": "the-mole-agent",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 653756,
+    "imdbId": "tt11394298",
+    "canonicalTitle": "The Mole Agent",
+    "year": 2020,
+    "people": [
+     "Maite Alberdi"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 653756,
+     "title": "The Mole Agent",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "David Attenborough: A Life on Our Planet",
+    "year": 2020,
+    "format": "Film",
+    "director": "Alastair Fothergill, Jonnie Hughes, Keith Scholey"
+   },
+   "id": "david-attenborough-a-life-on-our-planet",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 664280,
+    "imdbId": "tt11989890",
+    "canonicalTitle": "David Attenborough: A Life on Our Planet",
+    "year": 2020,
+    "people": [
+     "Alastair Fothergill",
+     "Keith Scholey",
+     "Jonathan Hughes"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 664280,
+     "title": "David Attenborough: A Life on Our Planet",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Summer of Soul",
+    "year": 2021,
+    "format": "Film",
+    "director": "Ahmir \"Questlove\" Thompson"
+   },
+   "id": "summer-of-soul",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "title": "Flee",
+    "year": 2021,
+    "format": "Film",
+    "director": "Jonas Poher Rasmussen"
+   },
+   "id": "flee",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 680813,
+    "imdbId": "tt8430054",
+    "canonicalTitle": "Flee",
+    "year": 2021,
+    "people": [
+     "Jonas Poher Rasmussen"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 680813,
+     "title": "Flee",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Attica",
+    "year": 2021,
+    "format": "Film",
+    "director": "Stanley Nelson, Traci Curry"
+   },
+   "id": "attica",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 858059,
+    "imdbId": "tt12482898",
+    "canonicalTitle": "Attica",
+    "year": 2021,
+    "people": [
+     "Traci A. Curry",
+     "Stanley Nelson"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 858059,
+     "title": "Attica",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "No Other Land",
+    "year": 2024,
+    "format": "Film",
+    "director": "Basel Adra, Yuval Abraham, Hamdan Ballal, Rachel Szor"
+   },
+   "id": "no-other-land",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1232493,
+    "imdbId": "tt30953759",
+    "canonicalTitle": "No Other Land",
+    "year": 2024,
+    "people": [
+     "Rachel Szor",
+     "Hamdan Ballal",
+     "Yuval Abraham",
+     "Basel Adra"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1232493,
+     "title": "No Other Land",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Black Box Diaries",
+    "year": 2024,
+    "format": "Film",
+    "director": "Shiori Itō"
+   },
+   "id": "black-box-diaries",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1214499,
+    "imdbId": "tt30227076",
+    "canonicalTitle": "Black Box Diaries",
+    "year": 2024,
+    "people": [
+     "Shiori Ito"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1214499,
+     "title": "Black Box Diaries",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Soundtrack to a Coup d'Etat",
+    "year": 2024,
+    "format": "Film",
+    "director": "Johan Grimonprez"
+   },
+   "id": "soundtrack-to-a-coup-d-etat",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1214539,
+    "imdbId": "tt14452174",
+    "canonicalTitle": "Soundtrack to a Coup d'Etat",
+    "year": 2024,
+    "people": [
+     "Johan Grimonprez"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1214539,
+     "title": "Soundtrack to a Coup d'Etat",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Super/Man: The Christopher Reeve Story",
+    "year": 2024,
+    "format": "Film",
+    "director": "Ian Bonhôte, Peter Ettedgui"
+   },
+   "id": "super-man-the-christopher-reeve-story",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1128559,
+    "imdbId": "tt27902121",
+    "canonicalTitle": "Super/Man: The Christopher Reeve Story",
+    "year": 2024,
+    "people": [
+     "Ian Bonhôte",
+     "Peter Ettedgui"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1128559,
+     "title": "Super/Man: The Christopher Reeve Story",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Mr Nobody Against Putin",
+    "year": 2025,
+    "format": "Film",
+    "director": "David Borenstein, Pavel Talankin"
+   },
+   "id": "mr-nobody-against-putin",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1393151,
+    "imdbId": "tt34965515",
+    "canonicalTitle": "Mr. Nobody Against Putin",
+    "year": 2025,
+    "people": [
+     "David Borenstein"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1393151,
+     "title": "Mr. Nobody Against Putin",
+     "year": 2025
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Alabama Solution",
+    "year": 2025,
+    "format": "Film",
+    "director": "Andrew Jarecki, Charlotte Kaufman"
+   },
+   "id": "the-alabama-solution",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1413805,
+    "imdbId": "tt35307139",
+    "canonicalTitle": "The Alabama Solution",
+    "year": 2025,
+    "people": [
+     "Andrew Jarecki",
+     "Charlotte Kaufman"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1413805,
+     "title": "The Alabama Solution",
+     "year": 2025
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "2000 Meters to Andriivka",
+    "year": 2025,
+    "format": "Film",
+    "director": "Mstyslav Chernov"
+   },
+   "id": "2000-meters-to-andriivka",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1400789,
+    "imdbId": "tt34964205",
+    "canonicalTitle": "2000 Meters to Andriivka",
+    "year": 2025,
+    "people": [
+     "Mstyslav Chernov"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1400789,
+     "title": "2000 Meters to Andriivka",
+     "year": 2025
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Cover-Up",
+    "year": 2025,
+    "format": "Film",
+    "director": "Laura Poitras, Mark Obenhaus"
+   },
+   "id": "cover-up",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1516391,
+    "imdbId": "tt37660887",
+    "canonicalTitle": "Cover-Up",
+    "year": 2025,
+    "people": [
+     "Laura Poitras",
+     "Mark Obenhaus"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1516391,
+     "title": "Cover-Up",
+     "year": 2025
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Tell Me Who I Am",
+    "year": 2019,
+    "format": "Film",
+    "director": "Ed Perkins"
+   },
+   "id": "tell-me-who-i-am",
+   "status": "resolved",
+   "reason": "verified credited filmmaker from sheet",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 627070,
+    "imdbId": "tt10915286",
+    "canonicalTitle": "Tell Me Who I Am",
+    "year": 2019,
+    "people": [
+     "Ed Perkins"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 627070,
+     "title": "Tell Me Who I Am",
+     "year": 2019
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 631431,
+     "title": "Tell me who I am",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Stutz",
+    "year": 2022,
+    "format": "Film",
+    "director": "Jonah Hill"
+   },
+   "id": "stutz",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 799375,
+    "imdbId": "tt21819228",
+    "canonicalTitle": "Stutz",
+    "year": 2022,
+    "people": [
+     "Jonah Hill"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 799375,
+     "title": "Stutz",
+     "year": 2022
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Crip Camp",
+    "year": 2020,
+    "format": "Film",
+    "director": "Nicole Newnham, James LeBrecht"
+   },
+   "id": "crip-camp",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 653725,
+    "imdbId": "tt8923484",
+    "canonicalTitle": "Crip Camp: A Disability Revolution",
+    "year": 2020,
+    "people": [
+     "Jim LeBrecht",
+     "Nicole Newnham"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 653725,
+     "title": "Crip Camp: A Disability Revolution",
+     "year": 2020
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Take Care of Maya",
+    "year": 2023,
+    "format": "Film",
+    "director": "Henry Roosevelt"
+   },
+   "id": "take-care-of-maya",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1114901,
+    "imdbId": "tt27542448",
+    "canonicalTitle": "Take Care of Maya",
+    "year": 2023,
+    "people": [
+     "Henry Roosevelt"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1114901,
+     "title": "Take Care of Maya",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Titan: The OceanGate Disaster",
+    "year": 2025,
+    "format": "Film",
+    "director": "Mark Monroe"
+   },
+   "id": "titan-the-oceangate-disaster",
+   "status": "pending-not-found",
+   "reason": "no documentary candidate with matching title and year ±1",
+   "candidates": []
+  },
+  {
+   "input": {
+    "title": "The Program: Cons, Cults, and Kidnapping",
+    "year": 2024,
+    "format": "Series",
+    "director": "Katherine Kubler"
+   },
+   "id": "the-program-cons-cults-and-kidnapping",
+   "status": "pending-ambiguous",
+   "reason": "credited people none do not match sheet director",
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 246698,
+     "title": "The Program: Cons, Cults, and Kidnapping",
+     "year": 2024
+    },
+    {
+     "mediaType": "movie",
+     "tmdbId": 1336414,
+     "title": "The Program",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Mountain Queen: The Summits of Lhakpa Sherpa",
+    "year": 2023,
+    "format": "Film",
+    "director": "Lucy Walker"
+   },
+   "id": "mountain-queen-the-summits-of-lhakpa-sherpa",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1156649,
+    "imdbId": "tt28448182",
+    "canonicalTitle": "Mountain Queen: The Summits of Lhakpa Sherpa",
+    "year": 2024,
+    "people": [
+     "Lucy Walker"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1156649,
+     "title": "Mountain Queen: The Summits of Lhakpa Sherpa",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "Louis Theroux: Inside the Manosphere",
+    "year": 2026,
+    "format": "Film"
+   },
+   "id": "louis-theroux-inside-the-manosphere",
+   "status": "resolved",
+   "reason": "unique verified documentary match",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1633264,
+    "imdbId": "tt39792948",
+    "canonicalTitle": "Louis Theroux: Inside the Manosphere",
+    "year": 2026,
+    "people": [
+     "Adrian Choa"
+    ]
+   },
+   "candidates": [
+    {
+     "mediaType": "movie",
+     "tmdbId": 1633264,
+     "title": "Louis Theroux: Inside the Manosphere",
+     "year": 2026
+    }
+   ]
+  },
+  {
+   "input": {
+    "title": "The Last Dance",
+    "year": 2020,
+    "format": "Series",
+    "director": "Jason Hehir"
+   },
+   "id": "the-last-dance",
+   "status": "pending-ambiguous",
+   "reason": "credited people Michael Tollin do not match sheet director",
+   "candidates": [
+    {
+     "mediaType": "tv",
+     "tmdbId": 79525,
+     "title": "The Last Dance",
+     "year": 2020
+    }
+   ]
+  }
+ ]
+}
