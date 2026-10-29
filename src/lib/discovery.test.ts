@@ -127,3 +127,16 @@ describe('saved/watched backup', () => {
     expect(applyBackup({ saved: ['a'], watched: ['b'] }, { saved: ['c'], watched: [] }, 'replace')).toEqual({ saved: ['c'], watched: [] });
   });
 });
+
+import { inLength } from './discovery';
+describe('inLength', () => {
+  it('buckets films by runtime and series by type', () => {
+    expect(inLength({ mediaType: 'movie' }, 89, 'short')).toBe(true);
+    expect(inLength({ mediaType: 'movie' }, 90, 'short')).toBe(false);
+    expect(inLength({ mediaType: 'movie' }, 120, 'standard')).toBe(true);
+    expect(inLength({ mediaType: 'movie' }, 121, 'long')).toBe(true);
+    expect(inLength({ mediaType: 'movie' }, undefined, 'short')).toBe(false);
+    expect(inLength({ mediaType: 'tv' }, 45, 'short')).toBe(false);
+    expect(inLength({ mediaType: 'collection' }, undefined, 'series')).toBe(true);
+  });
+});
