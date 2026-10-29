@@ -1,0 +1,5555 @@
+[
+{
+"id": "beyond-utopia",
+"title": "Beyond Utopia",
+"year": 2023,
+"format": "Film",
+"director": "Madeleine Gavin",
+"category": "Politics",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "fire-of-love",
+"title": "Fire of Love",
+"year": 2022,
+"format": "Film",
+"director": "Sara Dosa",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "ibelin",
+"title": "The Remarkable Life of Ibelin",
+"year": 2024,
+"format": "Film",
+"director": "Benjamin Ree",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "skywalkers",
+"title": "Skywalkers: A Love Story",
+"year": 2024,
+"format": "Film",
+"director": "Jeff Zimbalist",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "mariupol",
+"title": "20 Days in Mariupol",
+"year": 2023,
+"format": "Film",
+"director": "Mstyslav Chernov",
+"category": "War",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "eternal-memory",
+"title": "The Eternal Memory",
+"year": 2023,
+"format": "Film",
+"director": "Maite Alberdi",
+"category": "Life Stories",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "territory",
+"title": "The Territory",
+"year": 2022,
+"format": "Film",
+"director": "Alex Pritz",
+"category": "Politics",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "daughters",
+"title": "Daughters",
+"year": 2024,
+"format": "Film",
+"director": "Angela Patton, Natalie Rae",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "sugarcane",
+"title": "Sugarcane",
+"year": 2024,
+"format": "Film",
+"director": "Julian Brave NoiseCat, Emily Kassie",
+"category": "Crime",
+"moods": [
+"Harrowing",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "four-daughters",
+"title": "Four Daughters",
+"year": 2023,
+"format": "Film",
+"director": "Kaouther Ben Hania",
+"category": "Life Stories",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "pez-outlaw",
+"title": "The Pez Outlaw",
+"year": 2022,
+"format": "Film",
+"director": "Amy Storkel, Bryan Storkel",
+"category": "Scams",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "perfect-neighbor",
+"title": "The Perfect Neighbor",
+"year": 2025,
+"format": "Film",
+"director": "Geeta Gandbhir",
+"category": "Crime",
+"moods": [
+"Gripping",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "contestant",
+"title": "The Contestant",
+"year": 2023,
+"format": "Film",
+"director": "Clair Titley",
+"category": "Life Stories",
+"moods": [
+"Gloriously weird",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "mission",
+"title": "The Mission",
+"year": 2023,
+"format": "Film",
+"director": "Amanda McBaine, Jesse Moss",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "greatest-night",
+"title": "The Greatest Night in Pop",
+"year": 2024,
+"format": "Film",
+"director": "Bao Nguyen",
+"category": "Music",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "whakaari",
+"title": "The Volcano: Rescue from Whakaari",
+"year": 2022,
+"format": "Film",
+"director": "Rory Kennedy",
+"category": "Adventure",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "fantastic-fungi",
+"title": "Fantastic Fungi",
+"year": 2019,
+"format": "Film",
+"director": "Louie Schwartzberg",
+"category": "Nature",
+"moods": [
+"Feel-good",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "american-movie",
+"title": "American Movie",
+"year": 1999,
+"format": "Film",
+"director": "Chris Smith",
+"category": "Art",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "mr-death",
+"title": "Mr. Death",
+"year": 1999,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Life Stories",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "dark-days",
+"title": "Dark Days",
+"year": 2000,
+"format": "Film",
+"director": "Marc Singer",
+"category": "Life Stories",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-king-of-kong",
+"title": "The King of Kong",
+"year": 2007,
+"format": "Film",
+"director": "Seth Gordon",
+"category": "Sport",
+"moods": [
+"Funny",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-red-chapel",
+"title": "The Red Chapel",
+"year": 2009,
+"format": "Film",
+"director": "Mads Brügger",
+"category": "Politics",
+"moods": [
+"Gloriously weird",
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "catfish",
+"title": "Catfish",
+"year": 2010,
+"format": "Film",
+"director": "Ariel Schulman, Henry Joost",
+"category": "Tech",
+"moods": [
+"Gripping",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "tabloid",
+"title": "Tabloid",
+"year": 2010,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Life Stories",
+"moods": [
+"Gloriously weird",
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "room-237",
+"title": "Room 237",
+"year": 2012,
+"format": "Film",
+"director": "Rodney Ascher",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "the-imposter",
+"title": "The Imposter",
+"year": 2012,
+"format": "Film",
+"director": "Bart Layton",
+"category": "Crime",
+"moods": [
+"Mind-blowing",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "stories-we-tell",
+"title": "Stories We Tell",
+"year": 2012,
+"format": "Film",
+"director": "Sarah Polley",
+"category": "Life Stories",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "finding-vivian-maier",
+"title": "Finding Vivian Maier",
+"year": 2013,
+"format": "Film",
+"director": "Charlie Siskel, John Maloof",
+"category": "Art",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "jodorowsky-s-dune",
+"title": "Jodorowsky's Dune",
+"year": 2013,
+"format": "Film",
+"director": "Frank Pavich",
+"category": "Art",
+"moods": [
+"Mind-blowing",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "author-the-jt-leroy-story",
+"title": "Author: The JT LeRoy Story",
+"year": 2016,
+"format": "Film",
+"director": "Jeff Feuerzeig",
+"category": "Art",
+"moods": [
+"Mind-blowing",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "tickled",
+"title": "Tickled",
+"year": 2016,
+"format": "Film",
+"director": "David Farrier, Dylan Reeve",
+"category": "Scams",
+"moods": [
+"Gloriously weird",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "long-shot",
+"title": "Long Shot",
+"year": 2017,
+"format": "Film",
+"director": "Jacob LaMendola",
+"category": "Crime",
+"moods": [
+"Feel-good",
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "operation-odessa",
+"title": "Operation Odessa",
+"year": 2018,
+"format": "Film",
+"director": "Tiller Russell",
+"category": "Crime",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "shirkers",
+"title": "Shirkers",
+"year": 2018,
+"format": "Film",
+"director": "Sandi Tan",
+"category": "Art",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "three-identical-strangers",
+"title": "Three Identical Strangers",
+"year": 2018,
+"format": "Film",
+"director": "Tim Wardle",
+"category": "Science",
+"moods": [
+"Mind-blowing",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "cold-case-hammarskjold",
+"title": "Cold Case Hammarskjöld",
+"year": 2019,
+"format": "Film",
+"director": "Mads Brügger",
+"category": "Politics",
+"moods": [
+"Mind-blowing",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "jesus-camp",
+"title": "Jesus Camp",
+"year": 2006,
+"format": "Film",
+"director": "Rachel Grady, Heidi Ewing",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "jonestown-the-life-and-death-of-peoples-temple",
+"title": "Jonestown: The Life and Death of Peoples Temple",
+"year": 2006,
+"format": "Film",
+"director": "Stanley Nelson",
+"category": "Cults & Psychology",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "kumare",
+"title": "Kumaré",
+"year": 2011,
+"format": "Film",
+"director": "Vikram Gandhi",
+"category": "Cults & Psychology",
+"moods": [
+"Funny",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "project-nim",
+"title": "Project Nim",
+"year": 2011,
+"format": "Film",
+"director": "James Marsh",
+"category": "Science",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "going-clear",
+"title": "Going Clear",
+"year": 2015,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "holy-hell",
+"title": "Holy Hell",
+"year": 2016,
+"format": "Film",
+"director": "Will Allen",
+"category": "Cults & Psychology",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "wormwood",
+"title": "Wormwood",
+"year": 2017,
+"format": "Series",
+"director": "Errol Morris",
+"category": "Cults & Psychology",
+"moods": [
+"Mind-blowing",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "behind-the-curve",
+"title": "Behind the Curve",
+"year": 2018,
+"format": "Film",
+"director": "Daniel J. Clark",
+"category": "Cults & Psychology",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "wild-wild-country",
+"title": "Wild Wild Country",
+"year": 2018,
+"format": "Series",
+"director": "Maclain Way, Chapman Way",
+"category": "Cults & Psychology",
+"moods": [
+"Gripping",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "the-family",
+"title": "The Family",
+"year": 2019,
+"format": "Series",
+"director": "Jesse Moss",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-vow",
+"title": "The Vow",
+"year": 2020,
+"format": "Series",
+"director": "Jehane Noujaim, Karim Amer",
+"category": "Cults & Psychology",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-way-down",
+"title": "The Way Down",
+"year": 2021,
+"format": "Series",
+"director": "Marina Zenovich",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "escaping-twin-flames",
+"title": "Escaping Twin Flames",
+"year": 2023,
+"format": "Series",
+"director": "Cecilia Peck",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "love-has-won",
+"title": "Love Has Won",
+"year": 2023,
+"format": "Series",
+"director": "Hannah Olson",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "shiny-happy-people",
+"title": "Shiny Happy People",
+"year": 2023,
+"format": "Series",
+"director": "Julia Willoughby Nason, Olivia Crist",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "waco-american-apocalypse",
+"title": "Waco: American Apocalypse",
+"year": 2023,
+"format": "Series",
+"director": "Tiller Russell",
+"category": "Cults & Psychology",
+"moods": [
+"Harrowing",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "enron-the-smartest-guys-in-the-room",
+"title": "Enron: The Smartest Guys in the Room",
+"year": 2005,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Scams",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "inside-job",
+"title": "Inside Job",
+"year": 2010,
+"format": "Film",
+"director": "Charles Ferguson",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "sour-grapes",
+"title": "Sour Grapes",
+"year": 2016,
+"format": "Film",
+"director": "Reuben Atlas, Jerry Rothwell",
+"category": "Scams",
+"moods": [
+"Funny",
+"Gripping"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "Existing"
+},
+{
+"id": "fyre",
+"title": "Fyre",
+"year": 2019,
+"format": "Film",
+"director": "Chris Smith",
+"category": "Scams",
+"moods": [
+"Funny",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-inventor-out-for-blood-in-silicon-valley",
+"title": "The Inventor: Out for Blood in Silicon Valley",
+"year": 2019,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Scams",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "mcmillions",
+"title": "McMillion$",
+"year": 2020,
+"format": "Series",
+"director": "James Lee Hernandez, Brian Lazarte",
+"category": "Scams",
+"moods": [
+"Funny",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "made-you-look",
+"title": "Made You Look",
+"year": 2020,
+"format": "Film",
+"director": "Barry Avrich",
+"category": "Scams",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-lady-and-the-dale",
+"title": "The Lady and the Dale",
+"year": 2021,
+"format": "Series",
+"director": "Nick Cammilleri, Zackary Drucker",
+"category": "Scams",
+"moods": [
+"Gloriously weird",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "bad-vegan",
+"title": "Bad Vegan",
+"year": 2022,
+"format": "Series",
+"director": "Chris Smith",
+"category": "Scams",
+"moods": [
+"Gloriously weird",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-tinder-swindler",
+"title": "The Tinder Swindler",
+"year": 2022,
+"format": "Film",
+"director": "Felicity Morris",
+"category": "Scams",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "bitconned",
+"title": "Bitconned",
+"year": 2024,
+"format": "Film",
+"director": "Bryan Storkel",
+"category": "Scams",
+"moods": [
+"Funny",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-china-hustle",
+"title": "The China Hustle",
+"year": 2017,
+"format": "Film",
+"director": "Jed Rothstein",
+"category": "Scams",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-century-of-the-self",
+"title": "The Century of the Self",
+"year": 2002,
+"format": "Series",
+"director": "Adam Curtis",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "we-live-in-public",
+"title": "We Live in Public",
+"year": 2009,
+"format": "Film",
+"director": "Ondi Timoner",
+"category": "Tech",
+"moods": [
+"Gloriously weird",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "all-watched-over-by-machines-of-loving-grace",
+"title": "All Watched Over by Machines of Loving Grace",
+"year": 2011,
+"format": "Series",
+"director": "Adam Curtis",
+"category": "Tech",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "indie-game-the-movie",
+"title": "Indie Game: The Movie",
+"year": 2012,
+"format": "Film",
+"director": "James Swirsky, Lisanne Pajot",
+"category": "Tech",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "citizenfour",
+"title": "Citizenfour",
+"year": 2014,
+"format": "Film",
+"director": "Laura Poitras",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-internet-s-own-boy",
+"title": "The Internet's Own Boy",
+"year": 2014,
+"format": "Film",
+"director": "Brian Knappenberger",
+"category": "Tech",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "deep-web",
+"title": "Deep Web",
+"year": 2015,
+"format": "Film",
+"director": "Alex Winter",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "hypernormalisation",
+"title": "HyperNormalisation",
+"year": 2016,
+"format": "Film",
+"director": "Adam Curtis",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "lo-and-behold-reveries-of-the-connected-world",
+"title": "Lo and Behold, Reveries of the Connected World",
+"year": 2016,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Tech",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "zero-days",
+"title": "Zero Days",
+"year": 2016,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Tech",
+"moods": [
+"Gripping",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "alphago",
+"title": "AlphaGo",
+"year": 2017,
+"format": "Film",
+"director": "Greg Kohs",
+"category": "Tech",
+"moods": [
+"Mind-blowing",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "general-magic",
+"title": "General Magic",
+"year": 2018,
+"format": "Film",
+"director": "Sarah Kerruish, Matthew Maude",
+"category": "Tech",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-great-hack",
+"title": "The Great Hack",
+"year": 2019,
+"format": "Film",
+"director": "Karim Amer, Jehane Noujaim",
+"category": "Tech",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "feels-good-man",
+"title": "Feels Good Man",
+"year": 2020,
+"format": "Film",
+"director": "Arthur Jones",
+"category": "Tech",
+"moods": [
+"Gloriously weird",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "can-t-get-you-out-of-my-head",
+"title": "Can't Get You Out of My Head",
+"year": 2021,
+"format": "Series",
+"director": "Adam Curtis",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "q-into-the-storm",
+"title": "Q: Into the Storm",
+"year": 2021,
+"format": "Series",
+"director": "Cullen Hoback",
+"category": "Tech",
+"moods": [
+"Gloriously weird",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "eat-the-rich-the-gamestop-saga",
+"title": "Eat the Rich: The GameStop Saga",
+"year": 2022,
+"format": "Series",
+"director": "Theo Love",
+"category": "Economics",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "the-most-hated-man-on-the-internet",
+"title": "The Most Hated Man on the Internet",
+"year": 2022,
+"format": "Series",
+"director": "Rob Miller",
+"category": "Tech",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "grand-theft-hamlet",
+"title": "Grand Theft Hamlet",
+"year": 2024,
+"format": "Film",
+"director": "Pinny Grylls, Sam Crane",
+"category": "Tech",
+"moods": [
+"Feel-good",
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "money-electric-the-bitcoin-mystery",
+"title": "Money Electric: The Bitcoin Mystery",
+"year": 2024,
+"format": "Film",
+"director": "Cullen Hoback",
+"category": "Tech",
+"moods": [
+"Gripping",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "the-thinking-game",
+"title": "The Thinking Game",
+"year": 2024,
+"format": "Film",
+"director": "Greg Kohs",
+"category": "Tech",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-trap-what-happened-to-our-dream-of-freedom",
+"title": "The Trap: What Happened to Our Dream of Freedom",
+"year": 2007,
+"format": "Series",
+"director": "Adam Curtis",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-thin-blue-line",
+"title": "The Thin Blue Line",
+"year": 1988,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "paradise-lost",
+"title": "Paradise Lost",
+"year": 1996,
+"format": "Film",
+"director": "Bruce Sinofsky, Joe Berlinger",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "capturing-the-friedmans",
+"title": "Capturing the Friedmans",
+"year": 2003,
+"format": "Film",
+"director": "Andrew Jarecki",
+"category": "Crime",
+"moods": [
+"Harrowing",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-staircase",
+"title": "The Staircase",
+"year": 2004,
+"format": "Series",
+"director": "Jean-Xavier de Lestrade",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "dear-zachary",
+"title": "Dear Zachary",
+"year": 2008,
+"format": "Film",
+"director": "Kurt Kuenne",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "cropsey",
+"title": "Cropsey",
+"year": 2009,
+"format": "Film",
+"director": "Joshua Zeman, Barbara Brancaccio",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-jinx",
+"title": "The Jinx",
+"year": 2015,
+"format": "Series",
+"director": "Andrew Jarecki, Marc Smerling, Zachary Stuart-Pontier",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "making-a-murderer",
+"title": "Making a Murderer",
+"year": 2015,
+"format": "Series",
+"director": "Moira Demos, Laura Ricciardi",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "abducted-in-plain-sight",
+"title": "Abducted in Plain Sight",
+"year": 2017,
+"format": "Film",
+"director": "Skye Borgman",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-keepers",
+"title": "The Keepers",
+"year": 2017,
+"format": "Series",
+"director": "Ryan White",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "evil-genius",
+"title": "Evil Genius",
+"year": 2018,
+"format": "Series",
+"director": "Trey Borzillieri, Barbara Schroeder",
+"category": "Crime",
+"moods": [
+"Gripping",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "collective",
+"title": "Collective",
+"year": 2019,
+"format": "Film",
+"director": "Alexander Nanau",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "don-t-f-k-with-cats",
+"title": "Don't F**k with Cats",
+"year": 2019,
+"format": "Series",
+"director": "Mark Lewis",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "american-murder-the-family-next-door",
+"title": "American Murder: The Family Next Door",
+"year": 2020,
+"format": "Film",
+"director": "Jenny Popplewell",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "into-the-deep",
+"title": "Into the Deep",
+"year": 2020,
+"format": "Film",
+"director": "Emma Sullivan",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-pharmacist",
+"title": "The Pharmacist",
+"year": 2020,
+"format": "Series",
+"director": "Julia Willoughby Nason, Jenner Furst",
+"category": "Drugs",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "tiger-king",
+"title": "Tiger King",
+"year": 2020,
+"format": "Series",
+"director": "Eric Goode, Rebecca Chaiklin",
+"category": "Crime",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "murder-among-the-mormons",
+"title": "Murder Among the Mormons",
+"year": 2021,
+"format": "Series",
+"director": "Jared Hess, Tyler Measom",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-house-i-live-in",
+"title": "The House I Live In",
+"year": 2012,
+"format": "Film",
+"director": "Eugene Jarecki",
+"category": "Drugs",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "13th",
+"title": "13th",
+"year": 2016,
+"format": "Film",
+"director": "Ava DuVernay",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-fog-of-war",
+"title": "The Fog of War",
+"year": 2003,
+"format": "Film",
+"director": "Errol Morris",
+"category": "War",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-power-of-nightmares",
+"title": "The Power of Nightmares",
+"year": 2004,
+"format": "Series",
+"director": "Adam Curtis",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "taxi-to-the-dark-side",
+"title": "Taxi to the Dark Side",
+"year": 2007,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "War",
+"moods": [
+"Harrowing",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "restrepo",
+"title": "Restrepo",
+"year": 2010,
+"format": "Film",
+"director": "Tim Hetherington, Sebastian Junger",
+"category": "War",
+"moods": [
+"Harrowing",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-act-of-killing",
+"title": "The Act of Killing",
+"year": 2012,
+"format": "Film",
+"director": "Joshua Oppenheimer",
+"category": "War",
+"moods": [
+"Harrowing",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-armstrong-lie",
+"title": "The Armstrong Lie",
+"year": 2013,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Sport",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-unknown-known",
+"title": "The Unknown Known",
+"year": 2013,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Politics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "bitter-lake",
+"title": "Bitter Lake",
+"year": 2015,
+"format": "Film",
+"director": "Adam Curtis",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "icarus",
+"title": "Icarus",
+"year": 2017,
+"format": "Film",
+"director": "Bryan Fogel",
+"category": "Sport",
+"moods": [
+"Gripping",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-mole-undercover-in-north-korea",
+"title": "The Mole: Undercover in North Korea",
+"year": 2020,
+"format": "Film",
+"director": "Mads Brügger",
+"category": "Politics",
+"moods": [
+"Gripping",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "navalny",
+"title": "Navalny",
+"year": 2022,
+"format": "Film",
+"director": "Daniel Roher",
+"category": "Politics",
+"moods": [
+"Gripping",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-trials-of-henry-kissinger",
+"title": "The Trials of Henry Kissinger",
+"year": 2002,
+"format": "Film",
+"director": "Eugene Jarecki",
+"category": "Politics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "why-we-fight",
+"title": "Why We Fight",
+"year": 2005,
+"format": "Film",
+"director": "Eugene Jarecki",
+"category": "Politics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "touching-the-void",
+"title": "Touching the Void",
+"year": 2003,
+"format": "Film",
+"director": "Kevin Macdonald",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "grizzly-man",
+"title": "Grizzly Man",
+"year": 2005,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Adventure",
+"moods": [
+"Gloriously weird",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "stranded",
+"title": "Stranded",
+"year": 2007,
+"format": "Film",
+"director": "Gonzalo Arijón",
+"category": "Adventure",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "man-on-wire",
+"title": "Man on Wire",
+"year": 2008,
+"format": "Film",
+"director": "James Marsh",
+"category": "Adventure",
+"moods": [
+"Feel-good",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "happy-people-a-year-in-the-taiga",
+"title": "Happy People: A Year in the Taiga",
+"year": 2010,
+"format": "Film",
+"director": "Werner Herzog, Dmitry Vasyukov",
+"category": "Adventure",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "the-summit",
+"title": "The Summit",
+"year": 2012,
+"format": "Film",
+"director": "Nick Ryan",
+"category": "Adventure",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "maidentrip",
+"title": "Maidentrip",
+"year": 2013,
+"format": "Film",
+"director": "Jillian Schlesinger",
+"category": "Adventure",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "meru",
+"title": "Meru",
+"year": 2015,
+"format": "Film",
+"director": "Jimmy Chin, Elizabeth Chai Vasarhelyi",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "sherpa",
+"title": "Sherpa",
+"year": 2015,
+"format": "Film",
+"director": "Jennifer Peedom",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-dawn-wall",
+"title": "The Dawn Wall",
+"year": 2017,
+"format": "Film",
+"director": "Josh Lowell, Peter Mortimer",
+"category": "Adventure",
+"moods": [
+"Feel-good",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "free-solo",
+"title": "Free Solo",
+"year": 2018,
+"format": "Film",
+"director": "Jimmy Chin, Elizabeth Chai Vasarhelyi",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "last-breath",
+"title": "Last Breath",
+"year": 2019,
+"format": "Film",
+"director": "Alex Parkinson, Richard Da Costa",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "14-peaks-nothing-is-impossible",
+"title": "14 Peaks: Nothing Is Impossible",
+"year": 2021,
+"format": "Film",
+"director": "Torquil Jones",
+"category": "Adventure",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "the-alpinist",
+"title": "The Alpinist",
+"year": 2021,
+"format": "Film",
+"director": "Peter Mortimer, Nick Rosen",
+"category": "Adventure",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-rescue",
+"title": "The Rescue",
+"year": 2021,
+"format": "Film",
+"director": "Jimmy Chin, Elizabeth Chai Vasarhelyi",
+"category": "Adventure",
+"moods": [
+"Feel-good",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-deepest-breath",
+"title": "The Deepest Breath",
+"year": 2023,
+"format": "Film",
+"director": "Laura McGann",
+"category": "Adventure",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-cove",
+"title": "The Cove",
+"year": 2009,
+"format": "Film",
+"director": "Louie Psihoyos",
+"category": "Nature",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "cave-of-forgotten-dreams",
+"title": "Cave of Forgotten Dreams",
+"year": 2010,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "into-eternity",
+"title": "Into Eternity",
+"year": 2010,
+"format": "Film",
+"director": "Michael Madsen",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "chasing-ice",
+"title": "Chasing Ice",
+"year": 2012,
+"format": "Film",
+"director": "Jeff Orlowski",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "blackfish",
+"title": "Blackfish",
+"year": 2013,
+"format": "Film",
+"director": "Gabriela Cowperthwaite",
+"category": "Nature",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "particle-fever",
+"title": "Particle Fever",
+"year": 2013,
+"format": "Film",
+"director": "Mark Levinson",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "tim-s-vermeer",
+"title": "Tim's Vermeer",
+"year": 2013,
+"format": "Film",
+"director": "Teller",
+"category": "Art",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "into-the-inferno",
+"title": "Into the Inferno",
+"year": 2016,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "apollo-11",
+"title": "Apollo 11",
+"year": 2019,
+"format": "Film",
+"director": "Todd Douglas Miller",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "honeyland",
+"title": "Honeyland",
+"year": 2019,
+"format": "Film",
+"director": "Ljubomir Stefanov, Tamara Kotevska",
+"category": "Nature",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "my-octopus-teacher",
+"title": "My Octopus Teacher",
+"year": 2020,
+"format": "Film",
+"director": "James Reed, Pippa Ehrlich",
+"category": "Nature",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "the-corporation",
+"title": "The Corporation",
+"year": 2003,
+"format": "Film",
+"director": "Mark Achbar, Jennifer Abbott",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "capital-in-the-twenty-first-century",
+"title": "Capital in the Twenty-First Century",
+"year": 2019,
+"format": "Film",
+"director": "Justin Pemberton",
+"category": "Economics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "up-series",
+"title": "Up series",
+"year": 1964,
+"format": "Series",
+"director": "Michael Apted",
+"category": "Life Stories",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "gimme-shelter",
+"title": "Gimme Shelter",
+"year": 1970,
+"format": "Film",
+"director": "Charlotte Zwerin, David Maysles, Albert Maysles",
+"category": "Music",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "f-for-fake",
+"title": "F for Fake",
+"year": 1973,
+"format": "Film",
+"director": "Orson Welles, François Reichenbach",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "grey-gardens",
+"title": "Grey Gardens",
+"year": 1975,
+"format": "Film",
+"director": "Muffie Meyer, David Maysles, Ellen Hovde, Albert Maysles",
+"category": "Life Stories",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "gates-of-heaven",
+"title": "Gates of Heaven",
+"year": 1978,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Life Stories",
+"moods": [
+"Gloriously weird",
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "burden-of-dreams",
+"title": "Burden of Dreams",
+"year": 1982,
+"format": "Film",
+"director": "Les Blank",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "paris-is-burning",
+"title": "Paris Is Burning",
+"year": 1990,
+"format": "Film",
+"director": "Jennie Livingston",
+"category": "Art",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "hearts-of-darkness-a-filmmaker-s-apocalypse",
+"title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+"year": 1991,
+"format": "Film",
+"director": "George Hickenlooper, Fax Bahr, Eleanor Coppola",
+"category": "Art",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "theremin-an-electronic-odyssey",
+"title": "Theremin: An Electronic Odyssey",
+"year": 1993,
+"format": "Film",
+"director": "Steven M. Martin",
+"category": "Music",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "crumb",
+"title": "Crumb",
+"year": 1994,
+"format": "Film",
+"director": "Terry Zwigoff",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "hoop-dreams",
+"title": "Hoop Dreams",
+"year": 1994,
+"format": "Film",
+"director": "Steve James",
+"category": "Sport",
+"moods": [
+"Gripping",
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "fast-cheap-out-of-control",
+"title": "Fast, Cheap & Out of Control",
+"year": 1997,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Life Stories",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "hands-on-a-hardbody",
+"title": "Hands on a Hardbody",
+"year": 1997,
+"format": "Film",
+"director": "S.R. Bindler",
+"category": "Sport",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "my-best-fiend",
+"title": "My Best Fiend",
+"year": 1999,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "lost-in-la-mancha",
+"title": "Lost in La Mancha",
+"year": 2002,
+"format": "Film",
+"director": "Louis Pepe, Keith Fulton",
+"category": "Art",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "my-kid-could-paint-that",
+"title": "My Kid Could Paint That",
+"year": 2007,
+"format": "Film",
+"director": "Amir Bar-Lev",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "best-worst-movie",
+"title": "Best Worst Movie",
+"year": 2009,
+"format": "Film",
+"director": "Michael Stephenson",
+"category": "Art",
+"moods": [
+"Funny",
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "winnebago-man",
+"title": "Winnebago Man",
+"year": 2009,
+"format": "Film",
+"director": "Ben Steinbauer",
+"category": "Life Stories",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "exit-through-the-gift-shop",
+"title": "Exit Through the Gift Shop",
+"year": 2010,
+"format": "Film",
+"director": "Banksy",
+"category": "Art",
+"moods": [
+"Funny",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "marwencol",
+"title": "Marwencol",
+"year": 2010,
+"format": "Film",
+"director": "Jeff Malmberg",
+"category": "Art",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "searching-for-sugar-man",
+"title": "Searching for Sugar Man",
+"year": 2012,
+"format": "Film",
+"director": "Malik Bendjelloul",
+"category": "Music",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "the-wolfpack",
+"title": "The Wolfpack",
+"year": 2015,
+"format": "Film",
+"director": "Crystal Moselle",
+"category": "Life Stories",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "jim-andy-the-great-beyond",
+"title": "Jim & Andy: The Great Beyond",
+"year": 2017,
+"format": "Film",
+"director": "Chris Smith",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "bisbee-17",
+"title": "Bisbee '17",
+"year": 2018,
+"format": "Film",
+"director": "Robert Greene",
+"category": "Politics",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "titicut-follies",
+"title": "Titicut Follies",
+"year": 1967,
+"format": "Film",
+"director": "Frederick Wiseman",
+"category": "Cults & Psychology",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "marjoe",
+"title": "Marjoe",
+"year": 1972,
+"format": "Film",
+"director": "Howard Smith, Sarah Kernochan",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "quiet-rage-the-stanford-prison-study",
+"title": "Quiet Rage: The Stanford Prison Study",
+"year": 1992,
+"format": "Film",
+"director": "Ken Musen",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "children-of-god-lost-and-found",
+"title": "Children of God: Lost and Found",
+"year": 2007,
+"format": "Film",
+"director": "Noah Thomson",
+"category": "Cults & Psychology",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-source-family",
+"title": "The Source Family",
+"year": 2012,
+"format": "Film",
+"director": "Jodi Wille, Maria Demopoulos",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "prophet-s-prey",
+"title": "Prophet's Prey",
+"year": 2015,
+"format": "Film",
+"director": "Amy J. Berg",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "derren-brown-sacrifice",
+"title": "Derren Brown: Sacrifice",
+"year": 2018,
+"format": "Film",
+"director": "Derren Brown",
+"category": "Cults & Psychology",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-push",
+"title": "The Push",
+"year": 2018,
+"format": "Film",
+"director": "Jon Richards",
+"category": "Cults & Psychology",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "bikram-yogi-guru-predator",
+"title": "Bikram: Yogi, Guru, Predator",
+"year": 2019,
+"format": "Film",
+"director": "Eva Orner",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "heaven-s-gate-the-cult-of-cults",
+"title": "Heaven's Gate: The Cult of Cults",
+"year": 2020,
+"format": "Series",
+"director": "Clay Tweel",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "sons-of-sam-a-descent-into-darkness",
+"title": "Sons of Sam: A Descent into Darkness",
+"year": 2021,
+"format": "Series",
+"director": "Joshua Zeman",
+"category": "Cults & Psychology",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "keep-sweet-pray-and-obey",
+"title": "Keep Sweet: Pray and Obey",
+"year": 2022,
+"format": "Series",
+"director": "Rachel Dretzin",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "daughters-of-the-cult",
+"title": "Daughters of the Cult",
+"year": 2024,
+"format": "Series",
+"category": "Cults & Psychology",
+"moods": [
+"Harrowing"
+],
+"status": "Remove"
+},
+{
+"id": "quiet-on-set-the-dark-side-of-kids-tv",
+"title": "Quiet on Set: The Dark Side of Kids TV",
+"year": 2024,
+"format": "Series",
+"director": "Mary Robertson, Emma Schwartz",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-synanon-fix",
+"title": "The Synanon Fix",
+"year": 2024,
+"format": "Series",
+"director": "Mark Bailey, Rory Kennedy",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "who-the-s-is-jackson-pollock",
+"title": "Who the #$&% Is Jackson Pollock?",
+"year": 2006,
+"format": "Film",
+"director": "Harry Moses",
+"category": "Art",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "betting-on-zero",
+"title": "Betting on Zero",
+"year": 2016,
+"format": "Film",
+"director": "Ted Braun",
+"category": "Scams",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "dirty-money",
+"title": "Dirty Money",
+"year": 2018,
+"format": "Series",
+"category": "Scams",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "lularich",
+"title": "LuLaRich",
+"year": 2021,
+"format": "Series",
+"director": "Jenner Furst, Julia Willoughby Nason",
+"category": "Scams",
+"moods": [
+"Funny",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "operation-varsity-blues",
+"title": "Operation Varsity Blues",
+"year": 2021,
+"format": "Film",
+"director": "Chris Smith",
+"category": "Scams",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "wework-or-the-making-and-breaking-of-a-s47-billion-unicorn",
+"title": "WeWork: or the Making and Breaking of a $47 Billion Unicorn",
+"year": 2021,
+"format": "Film",
+"director": "Jed Rothstein",
+"category": "Scams",
+"moods": [
+"Infuriating",
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "skandal-bringing-down-wirecard",
+"title": "Skandal! Bringing Down Wirecard",
+"year": 2022,
+"format": "Film",
+"director": "James Erskine",
+"category": "Scams",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "trust-no-one-the-hunt-for-the-crypto-king",
+"title": "Trust No One: The Hunt for the Crypto King",
+"year": 2022,
+"format": "Film",
+"director": "Luke Sewell",
+"category": "Scams",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "bad-surgeon-love-under-the-knife",
+"title": "Bad Surgeon: Love Under the Knife",
+"year": 2023,
+"format": "Series",
+"category": "Scams",
+"moods": [
+"Infuriating"
+],
+"status": "Remove"
+},
+{
+"id": "madoff-the-monster-of-wall-street",
+"title": "Madoff: The Monster of Wall Street",
+"year": 2023,
+"format": "Series",
+"director": "Joe Berlinger",
+"category": "Scams",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-puppet-master-hunting-the-ultimate-conman",
+"title": "The Puppet Master: Hunting the Ultimate Conman",
+"year": 2023,
+"format": "Series",
+"category": "Scams",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "triumph-of-the-nerds",
+"title": "Triumph of the Nerds",
+"year": 1996,
+"format": "Film",
+"director": "Paul Sen",
+"category": "Tech",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "revolution-os",
+"title": "Revolution OS",
+"year": 2001,
+"format": "Film",
+"director": "J.T.S. Moore",
+"category": "Tech",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "startup-com",
+"title": "Startup.com",
+"year": 2001,
+"format": "Film",
+"director": "Chris Hegedus, Jehane Noujaim",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "ecstasy-of-order-the-tetris-masters",
+"title": "Ecstasy of Order: The Tetris Masters",
+"year": 2011,
+"format": "Film",
+"director": "Adam Cornelius",
+"category": "Sport",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "downloaded",
+"title": "Downloaded",
+"year": 2013,
+"format": "Film",
+"director": "Alex Winter",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "tpb-afk-the-pirate-bay-away-from-keyboard",
+"title": "TPB AFK: The Pirate Bay Away from Keyboard",
+"year": 2013,
+"format": "Film",
+"director": "Simon Klose",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "web-junkie",
+"title": "Web Junkie",
+"year": 2013,
+"format": "Film",
+"director": "Hilla Medalia, Shosh Shlam",
+"category": "Tech",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "atari-game-over",
+"title": "Atari: Game Over",
+"year": 2014,
+"format": "Film",
+"director": "Zak Penn",
+"category": "Tech",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "free-to-play",
+"title": "Free to Play",
+"year": 2014,
+"format": "Film",
+"category": "Sport",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "print-the-legend",
+"title": "Print the Legend",
+"year": 2014,
+"format": "Film",
+"director": "Luis Lopez, J. Clay Tweel",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "steve-jobs-the-man-in-the-machine",
+"title": "Steve Jobs: The Man in the Machine",
+"year": 2015,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "silicon-cowboys",
+"title": "Silicon Cowboys",
+"year": 2016,
+"format": "Film",
+"director": "Jason Cohen",
+"category": "Tech",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "kim-dotcom-caught-in-the-web",
+"title": "Kim Dotcom: Caught in the Web",
+"year": 2017,
+"format": "Film",
+"director": "Annie Goldson",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-cleaners",
+"title": "The Cleaners",
+"year": 2018,
+"format": "Film",
+"director": "Hans Block, Moritz Riesewick",
+"category": "Tech",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "coded-bias",
+"title": "Coded Bias",
+"year": 2020,
+"format": "Film",
+"director": "Shalini Kantayya",
+"category": "Tech",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-speed-cubers",
+"title": "The Speed Cubers",
+"year": 2020,
+"format": "Film",
+"director": "Sue Kim",
+"category": "Sport",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "fake-famous",
+"title": "Fake Famous",
+"year": 2021,
+"format": "Film",
+"director": "Nick Bilton",
+"category": "Tech",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "a-glitch-in-the-matrix",
+"title": "A Glitch in the Matrix",
+"year": 2021,
+"format": "Film",
+"director": "Rodney Ascher",
+"category": "Tech",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "aileen-wuornos-the-selling-of-a-serial-killer",
+"title": "Aileen Wuornos: The Selling of a Serial Killer",
+"year": 1992,
+"format": "Film",
+"director": "Nick Broomfield",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "brother-s-keeper",
+"title": "Brother's Keeper",
+"year": 1992,
+"format": "Film",
+"director": "Bruce Sinofsky, Joe Berlinger",
+"category": "Crime",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "waco-the-rules-of-engagement",
+"title": "Waco: The Rules of Engagement",
+"year": 1997,
+"format": "Film",
+"director": "William Gazecki",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "one-day-in-september",
+"title": "One Day in September",
+"year": 1999,
+"format": "Film",
+"director": "Kevin Macdonald",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "murder-on-a-sunday-morning",
+"title": "Murder on a Sunday Morning",
+"year": 2001,
+"format": "Film",
+"director": "Jean-Xavier de Lestrade",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "into-the-abyss",
+"title": "Into the Abyss",
+"year": 2011,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-central-park-five",
+"title": "The Central Park Five",
+"year": 2012,
+"format": "Film",
+"director": "Sarah Burns, Ken Burns, David McMahon",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-seven-five",
+"title": "The Seven Five",
+"year": 2014,
+"format": "Film",
+"director": "Tiller Russell",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "cartel-land",
+"title": "Cartel Land",
+"year": 2015,
+"format": "Film",
+"director": "Matthew Heineman",
+"category": "Drugs",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-witness",
+"title": "The Witness",
+"year": 2015,
+"format": "Film",
+"director": "James Solomon",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "amanda-knox",
+"title": "Amanda Knox",
+"year": 2016,
+"format": "Film",
+"director": "Rod Blackhurst, Brian McGinn",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "killing-for-love",
+"title": "Killing for Love",
+"year": 2016,
+"format": "Film",
+"director": "Marcus Vetter, Karin Steinberger",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "southwest-of-salem",
+"title": "Southwest of Salem",
+"year": 2016,
+"format": "Film",
+"director": "Deborah S. Esquenazi",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "casting-jonbenet",
+"title": "Casting JonBenét",
+"year": 2017,
+"format": "Film",
+"director": "Kitty Green",
+"category": "Crime",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "mommy-dead-and-dearest",
+"title": "Mommy Dead and Dearest",
+"year": 2017,
+"format": "Film",
+"director": "Erin Lee Carr",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "crime-punishment",
+"title": "Crime + Punishment",
+"year": 2018,
+"format": "Film",
+"director": "Stephen T. Maing",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "i-ll-be-gone-in-the-dark",
+"title": "I'll Be Gone in the Dark",
+"year": 2020,
+"format": "Series",
+"director": "Liz Garbus",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "time",
+"title": "Time",
+"year": 2020,
+"format": "Film",
+"director": "Garrett Bradley",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "crime-scene-the-vanishing-at-the-cecil-hotel",
+"title": "Crime Scene: The Vanishing at the Cecil Hotel",
+"year": 2021,
+"format": "Series",
+"director": "Joe Berlinger",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "sophie-a-murder-in-west-cork",
+"title": "Sophie: A Murder in West Cork",
+"year": 2021,
+"format": "Series",
+"director": "John Dower",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "girl-in-the-picture",
+"title": "Girl in the Picture",
+"year": 2022,
+"format": "Film",
+"director": "Skye Borgman",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "our-father",
+"title": "Our Father",
+"year": 2022,
+"format": "Film",
+"director": "Lucie Jourdan",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "hearts-and-minds",
+"title": "Hearts and Minds",
+"year": 1974,
+"format": "Film",
+"director": "Peter Davis",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "harlan-county-usa",
+"title": "Harlan County, USA",
+"year": 1976,
+"format": "Film",
+"director": "Barbara Kopple",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-atomic-cafe",
+"title": "The Atomic Cafe",
+"year": 1982,
+"format": "Film",
+"director": "Jayne Loader, Kevin Rafferty, Pierce Rafferty",
+"category": "Politics",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "manufacturing-consent-noam-chomsky-and-the-media",
+"title": "Manufacturing Consent: Noam Chomsky and the Media",
+"year": 1992,
+"format": "Film",
+"director": "Mark Achbar, Peter Wintonick",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-war-room",
+"title": "The War Room",
+"year": 1993,
+"format": "Film",
+"director": "Chris Hegedus, D. A. Pennebaker",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "our-brand-is-crisis",
+"title": "Our Brand Is Crisis",
+"year": 2005,
+"format": "Film",
+"director": "Rachel Boynton",
+"category": "Politics",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "no-end-in-sight",
+"title": "No End in Sight",
+"year": 2007,
+"format": "Film",
+"director": "Charles Ferguson",
+"category": "War",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "burma-vj",
+"title": "Burma VJ",
+"year": 2008,
+"format": "Film",
+"director": "Anders Østergaard",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "5-broken-cameras",
+"title": "5 Broken Cameras",
+"year": 2011,
+"format": "Film",
+"director": "Guy Davidi, Emad Burnat",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-gatekeepers",
+"title": "The Gatekeepers",
+"year": 2012,
+"format": "Film",
+"director": "Dror Moreh",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-square",
+"title": "The Square",
+"year": 2013,
+"format": "Film",
+"director": "Jehane Noujaim",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-look-of-silence",
+"title": "The Look of Silence",
+"year": 2014,
+"format": "Film",
+"director": "Joshua Oppenheimer",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "winter-on-fire",
+"title": "Winter on Fire",
+"year": 2015,
+"format": "Film",
+"director": "Evgeny Afineevsky",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "shadow-world",
+"title": "Shadow World",
+"year": 2016,
+"format": "Film",
+"director": "Johan Grimonprez",
+"category": "Politics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "weiner",
+"title": "Weiner",
+"year": 2016,
+"format": "Film",
+"director": "Josh Kriegman, Elyse Steinberg",
+"category": "Politics",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "get-me-roger-stone",
+"title": "Get Me Roger Stone",
+"year": 2017,
+"format": "Film",
+"director": "Daniel DiMauro, Dylan Bank, Morgan Pehme",
+"category": "Politics",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "last-men-in-aleppo",
+"title": "Last Men in Aleppo",
+"year": 2017,
+"format": "Film",
+"director": "Steen Johannessen, Feras Fayyad",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "bellingcat-truth-in-a-post-truth-world",
+"title": "Bellingcat: Truth in a Post-Truth World",
+"year": 2018,
+"format": "Film",
+"director": "Hans Pool",
+"category": "Politics",
+"moods": [
+"Gripping",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "citizen-k",
+"title": "Citizen K",
+"year": 2019,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "for-sama",
+"title": "For Sama",
+"year": 2019,
+"format": "Film",
+"director": "Waad al-Kateab, Edward Watts",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-dissident",
+"title": "The Dissident",
+"year": 2020,
+"format": "Film",
+"director": "Bryan Fogel",
+"category": "Politics",
+"moods": [
+"Infuriating",
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "roger-me",
+"title": "Roger & Me",
+"year": 1989,
+"format": "Film",
+"director": "Michael Moore",
+"category": "Economics",
+"moods": [
+"Funny",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "darwin-s-nightmare",
+"title": "Darwin's Nightmare",
+"year": 2004,
+"format": "Film",
+"director": "Hubert Sauper",
+"category": "Economics",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "black-gold",
+"title": "Black Gold",
+"year": 2006,
+"format": "Film",
+"director": "Marc J. Francis, Nick Francis",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "Existing"
+},
+{
+"id": "manufactured-landscapes",
+"title": "Manufactured Landscapes",
+"year": 2006,
+"format": "Film",
+"director": "Jennifer Baichwal",
+"category": "Economics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "food-inc",
+"title": "Food, Inc.",
+"year": 2008,
+"format": "Film",
+"director": "Robert Kenner",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "Existing"
+},
+{
+"id": "capitalism-a-love-story",
+"title": "Capitalism: A Love Story",
+"year": 2009,
+"format": "Film",
+"director": "Michael Moore",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "big-men",
+"title": "Big Men",
+"year": 2013,
+"format": "Film",
+"director": "Rachel Boynton",
+"category": "Economics",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "inequality-for-all",
+"title": "Inequality for All",
+"year": 2013,
+"format": "Film",
+"director": "Jacob Kornbluth",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "money-for-nothing-inside-the-federal-reserve",
+"title": "Money for Nothing: Inside the Federal Reserve",
+"year": 2013,
+"format": "Film",
+"director": "Jim Bruce",
+"category": "Economics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "requiem-for-the-american-dream",
+"title": "Requiem for the American Dream",
+"year": 2015,
+"format": "Film",
+"director": "Kelly Nyks, Jared P. Scott, Peter D. Hutchison",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "the-true-cost",
+"title": "The True Cost",
+"year": 2015,
+"format": "Film",
+"director": "Andrew Morgan",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "china-s-van-gogh",
+"title": "China's Van Gogh",
+"year": 2016,
+"format": "Film",
+"director": "Yu Haibo",
+"category": "Art",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "plastic-china",
+"title": "Plastic China",
+"year": 2016,
+"format": "Film",
+"director": "Jiuliang Wang",
+"category": "Economics",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "generation-wealth",
+"title": "Generation Wealth",
+"year": 2018,
+"format": "Film",
+"director": "Lauren Greenfield",
+"category": "Economics",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "american-factory",
+"title": "American Factory",
+"year": 2019,
+"format": "Film",
+"director": "Steven Bognar, Julia Reichert",
+"category": "Economics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "ascension",
+"title": "Ascension",
+"year": 2021,
+"format": "Film",
+"director": "Jessica Kingdon",
+"category": "Economics",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "downfall-the-case-against-boeing",
+"title": "Downfall: The Case Against Boeing",
+"year": 2022,
+"format": "Film",
+"director": "Rory Kennedy",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "kon-tiki",
+"title": "Kon-Tiki",
+"year": 1950,
+"format": "Film",
+"director": "Thor Heyerdahl",
+"category": "Adventure",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "the-man-who-skied-down-everest",
+"title": "The Man Who Skied Down Everest",
+"year": 1975,
+"format": "Film",
+"director": "Lawrence Schiller, Bruce Nyznik",
+"category": "Adventure",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "little-dieter-needs-to-fly",
+"title": "Little Dieter Needs to Fly",
+"year": 1997,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "riding-giants",
+"title": "Riding Giants",
+"year": 2004,
+"format": "Film",
+"director": "Stacy Peralta",
+"category": "Sport",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "deep-water",
+"title": "Deep Water",
+"year": 2006,
+"format": "Film",
+"director": "Jerry Rothwell, Louise Osmond",
+"category": "Adventure",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "senna",
+"title": "Senna",
+"year": 2010,
+"format": "Film",
+"director": "Asif Kapadia",
+"category": "Sport",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "beyond-the-edge",
+"title": "Beyond the Edge",
+"year": 2013,
+"format": "Film",
+"director": "Leanne Pooley",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-barkley-marathons",
+"title": "The Barkley Marathons",
+"year": 2014,
+"format": "Film",
+"director": "Annika Iltis, Timothy James Kane",
+"category": "Sport",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "valley-uprising",
+"title": "Valley Uprising",
+"year": 2014,
+"format": "Film",
+"director": "Nick Rosen, Josh Lowell, Peter Mortimer",
+"category": "Adventure",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "mountain",
+"title": "Mountain",
+"year": 2017,
+"format": "Film",
+"director": "Jennifer Peedom",
+"category": "Adventure",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "torn",
+"title": "Torn",
+"year": 2021,
+"format": "Film",
+"director": "Max Lowe",
+"category": "Adventure",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-endurance",
+"title": "The Endurance",
+"year": 2024,
+"format": "Film",
+"director": "Natalie Hewit, Elizabeth Chai Vasarhelyi, Jimmy Chin",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "cane-toads-an-unnatural-history",
+"title": "Cane Toads: An Unnatural History",
+"year": 1988,
+"format": "Film",
+"director": "Mark Lewis",
+"category": "Nature",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "for-all-mankind",
+"title": "For All Mankind",
+"year": 1989,
+"format": "Film",
+"director": "Al Reinert",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "microcosmos",
+"title": "Microcosmos",
+"year": 1996,
+"format": "Film",
+"director": "Claude Nuridsany, Marie Pérennou",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "winged-migration",
+"title": "Winged Migration",
+"year": 2001,
+"format": "Film",
+"director": "Jacques Perrin",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "march-of-the-penguins",
+"title": "March of the Penguins",
+"year": 2005,
+"format": "Film",
+"director": "Luc Jacquet",
+"category": "Nature",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "encounters-at-the-end-of-the-world",
+"title": "Encounters at the End of the World",
+"year": 2007,
+"format": "Film",
+"director": "Werner Herzog",
+"category": "Nature",
+"moods": [
+"Gloriously weird",
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "in-the-shadow-of-the-moon",
+"title": "In the Shadow of the Moon",
+"year": 2007,
+"format": "Film",
+"director": "David Sington",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "virunga",
+"title": "Virunga",
+"year": 2014,
+"format": "Film",
+"director": "Orlando von Einsiedel",
+"category": "Nature",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-ivory-game",
+"title": "The Ivory Game",
+"year": 2016,
+"format": "Film",
+"director": "Richard Ladkani, Kief Davidson",
+"category": "Nature",
+"moods": [
+"Gripping",
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "planet-earth-ii",
+"title": "Planet Earth II",
+"year": 2016,
+"format": "Series",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "chasing-coral",
+"title": "Chasing Coral",
+"year": 2017,
+"format": "Film",
+"director": "Jeff Orlowski",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-farthest",
+"title": "The Farthest",
+"year": 2017,
+"format": "Film",
+"director": "Emer Reynolds",
+"category": "Science",
+"moods": [
+"Mind-blowing",
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "jane",
+"title": "Jane",
+"year": 2017,
+"format": "Film",
+"director": "Brett Morgen",
+"category": "Nature",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "sea-of-shadows",
+"title": "Sea of Shadows",
+"year": 2019,
+"format": "Film",
+"director": "Richard Ladkani",
+"category": "Nature",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "stolen-youth-inside-the-cult-at-sarah-lawrence",
+"title": "Stolen Youth: Inside the Cult at Sarah Lawrence",
+"year": 2023,
+"format": "Series",
+"director": "Zach Heinzerling",
+"category": "Cults & Psychology",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "finders-keepers",
+"title": "Finders Keepers",
+"year": 2015,
+"format": "Film",
+"director": "Bryan Carberry, J. Clay Tweel",
+"category": "Life Stories",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "o-j-made-in-america",
+"title": "O.J.: Made in America",
+"year": 2016,
+"format": "Film",
+"director": "Ezra Edelman",
+"category": "Crime",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "the-vietnam-war",
+"title": "The Vietnam War",
+"year": 2017,
+"format": "Series",
+"director": "Ken Burns, Lynn Novick",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "cocaine-cowboys",
+"title": "Cocaine Cowboys",
+"year": 2006,
+"format": "Film",
+"director": "Billy Corben",
+"category": "Drugs",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "cocaine-cowboys-ii-hustlin-with-the-godmother",
+"title": "Cocaine Cowboys II: Hustlin' with the Godmother",
+"year": 2008,
+"format": "Film",
+"director": "Billy Corben",
+"category": "Drugs",
+"moods": [
+"Gripping"
+],
+"status": "Remove"
+},
+{
+"id": "sins-of-my-father",
+"title": "Sins of My Father",
+"year": 2009,
+"format": "Film",
+"director": "Nicolás Entel",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-two-escobars",
+"title": "The Two Escobars",
+"year": 2010,
+"format": "Film",
+"director": "Michael Zimbalist, Jeff Zimbalist",
+"category": "Drugs",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "pablo-s-hippos",
+"title": "Pablo's Hippos",
+"year": 2010,
+"format": "Film",
+"director": "Lawrence Elman, Antonio Von Hildebrand",
+"category": "Drugs",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "narco-cultura",
+"title": "Narco Cultura",
+"year": 2013,
+"format": "Film",
+"director": "Shaul Schwarz",
+"category": "Drugs",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "freeway-crack-in-the-system",
+"title": "Freeway: Crack in the System",
+"year": 2015,
+"format": "Film",
+"director": "Marc Levin",
+"category": "Drugs",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "countdown-to-death-pablo-escobar",
+"title": "Countdown to Death: Pablo Escobar",
+"year": 2017,
+"format": "Film",
+"director": "Pablo Martin Farina, Santiago Diaz",
+"category": "Drugs",
+"moods": [
+"Gripping"
+],
+"status": "Remove"
+},
+{
+"id": "the-last-narc",
+"title": "The Last Narc",
+"year": 2020,
+"format": "Series",
+"director": "Tiller Russell",
+"category": "Drugs",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "cocaine-cowboys-the-kings-of-miami",
+"title": "Cocaine Cowboys: The Kings of Miami",
+"year": 2021,
+"format": "Series",
+"director": "Billy Corben",
+"category": "Drugs",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "black-tar-heroin-the-dark-end-of-the-street",
+"title": "Black Tar Heroin: The Dark End of the Street",
+"year": 2000,
+"format": "Film",
+"director": "Steven Okazaki",
+"category": "Drugs",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "amy",
+"title": "Amy",
+"year": 2015,
+"format": "Film",
+"director": "Asif Kapadia",
+"category": "Music",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "heroin-e",
+"title": "Heroin(e)",
+"year": 2017,
+"format": "Film",
+"director": "Elaine McMillion Sheldon",
+"category": "Drugs",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "take-your-pills",
+"title": "Take Your Pills",
+"year": 2018,
+"format": "Film",
+"director": "Alison Klayman",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-crime-of-the-century",
+"title": "The Crime of the Century",
+"year": 2021,
+"format": "Series",
+"director": "Alex Gibney",
+"category": "Drugs",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "grass",
+"title": "Grass",
+"year": 1999,
+"format": "Film",
+"director": "Ron Mann",
+"category": "Drugs",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "the-union-the-business-behind-getting-high",
+"title": "The Union: The Business Behind Getting High",
+"year": 2007,
+"format": "Film",
+"director": "Brett Harvey",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "super-high-me",
+"title": "Super High Me",
+"year": 2007,
+"format": "Film",
+"director": "Michael Blieden",
+"category": "Drugs",
+"moods": [
+"Funny"
+],
+"status": "Remove"
+},
+{
+"id": "marijuana-a-chronic-history",
+"title": "Marijuana: A Chronic History",
+"year": 2010,
+"format": "Film",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Remove"
+},
+{
+"id": "the-culture-high",
+"title": "The Culture High",
+"year": 2014,
+"format": "Film",
+"director": "Brett Harvey",
+"category": "Drugs",
+"moods": [
+"Infuriating"
+],
+"status": "Remove"
+},
+{
+"id": "rolling-papers",
+"title": "Rolling Papers",
+"year": 2015,
+"format": "Film",
+"director": "Mitch Dickman",
+"category": "Drugs",
+"moods": [
+"Funny"
+],
+"status": "Remove"
+},
+{
+"id": "grass-is-greener",
+"title": "Grass Is Greener",
+"year": 2019,
+"format": "Film",
+"director": "Fab 5 Freddy",
+"category": "Drugs",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "dmt-the-spirit-molecule",
+"title": "DMT: The Spirit Molecule",
+"year": 2010,
+"format": "Film",
+"director": "Mitch Schultz",
+"category": "Drugs",
+"moods": [
+"Mind-blowing",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "neurons-to-nirvana",
+"title": "Neurons to Nirvana",
+"year": 2013,
+"format": "Film",
+"director": "Mikki Willis, Oliver Hockenhull",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "dying-to-know-ram-dass-timothy-leary",
+"title": "Dying to Know: Ram Dass & Timothy Leary",
+"year": 2014,
+"format": "Film",
+"director": "Gay Dillingham",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "the-sunshine-makers",
+"title": "The Sunshine Makers",
+"year": 2015,
+"format": "Film",
+"director": "Cosmo Feilding-Mellen",
+"category": "Drugs",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "hamilton-s-pharmacopeia",
+"title": "Hamilton's Pharmacopeia",
+"year": 2016,
+"format": "Series",
+"director": "Hamilton Morris",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "orange-sunshine",
+"title": "Orange Sunshine",
+"year": 2016,
+"format": "Film",
+"director": "William A. Kirkley",
+"category": "Drugs",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "the-last-shaman",
+"title": "The Last Shaman",
+"year": 2016,
+"format": "Film",
+"director": "Raz Degan",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "magic-medicine",
+"title": "Magic Medicine",
+"year": 2018,
+"format": "Film",
+"director": "Monty Wates",
+"category": "Drugs",
+"moods": [
+"Feel-good"
+],
+"status": "Existing"
+},
+{
+"id": "have-a-good-trip-adventures-in-psychedelics",
+"title": "Have a Good Trip: Adventures in Psychedelics",
+"year": 2020,
+"format": "Film",
+"director": "Donick Cary",
+"category": "Drugs",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "how-to-change-your-mind",
+"title": "How to Change Your Mind",
+"year": 2022,
+"format": "Series",
+"director": "Alison Ellwood, Lucy Walker",
+"category": "Drugs",
+"moods": [
+"Mind-blowing"
+],
+"status": "Existing"
+},
+{
+"id": "louis-theroux-s-weird-weekends-porn",
+"title": "Louis Theroux's Weird Weekends: Porn",
+"year": 1998,
+"format": "Series",
+"director": "Louis Theroux",
+"category": "Sex",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "louis-and-the-brothel",
+"title": "Louis and the Brothel",
+"year": 2003,
+"format": "Film",
+"director": "Geoffrey O'Connor",
+"category": "Sex",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "louis-theroux-twilight-of-the-porn-stars",
+"title": "Louis Theroux: Twilight of the Porn Stars",
+"year": 2012,
+"format": "Film",
+"director": "Jason Massot",
+"category": "Sex",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "louis-theroux-drinking-to-oblivion",
+"title": "Louis Theroux: Drinking to Oblivion",
+"year": 2016,
+"format": "Film",
+"director": "Tom Barrow",
+"category": "Drugs",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "louis-theroux-dark-states-heroin-town",
+"title": "Louis Theroux: Dark States – Heroin Town",
+"year": 2017,
+"format": "Series",
+"director": "Louis Theroux",
+"category": "Drugs",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "louis-theroux-s-forbidden-america",
+"title": "Louis Theroux's Forbidden America",
+"year": 2022,
+"format": "Series",
+"director": "Louis Theroux",
+"category": "Sex",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "inside-deep-throat",
+"title": "Inside Deep Throat",
+"year": 2005,
+"format": "Film",
+"director": "Randy Barbato, Fenton Bailey",
+"category": "Sex",
+"moods": [
+"Funny"
+],
+"status": "Existing"
+},
+{
+"id": "guys-and-dolls",
+"title": "Guys and Dolls",
+"year": 2007,
+"format": "Film",
+"director": "Nick Holt",
+"category": "Sex",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "whores-glory",
+"title": "Whores' Glory",
+"year": 2011,
+"format": "Film",
+"director": "Michael Glawogger",
+"category": "Sex",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "after-porn-ends",
+"title": "After Porn Ends",
+"year": 2012,
+"format": "Film",
+"director": "Bryce Wagoner",
+"category": "Sex",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "kink",
+"title": "Kink",
+"year": 2013,
+"format": "Film",
+"director": "Christina Alexandra Voros",
+"category": "Sex",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "love-me",
+"title": "Love Me",
+"year": 2014,
+"format": "Film",
+"director": "Jonathan Ker",
+"category": "Sex",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "hot-girls-wanted",
+"title": "Hot Girls Wanted",
+"year": 2015,
+"format": "Film",
+"director": "Ronna Gradus, Jill Bauer",
+"category": "Sex",
+"moods": [
+"Harrowing"
+],
+"status": "Existing"
+},
+{
+"id": "rocco",
+"title": "Rocco",
+"year": 2016,
+"format": "Film",
+"director": "Thierry Demaizière, Alban Teurlai",
+"category": "Sex",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "scotty-and-the-secret-history-of-hollywood",
+"title": "Scotty and the Secret History of Hollywood",
+"year": 2017,
+"format": "Film",
+"director": "Matt Tyrnauer",
+"category": "Sex",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "silicone-soul",
+"title": "Silicone Soul",
+"year": 2018,
+"format": "Film",
+"director": "Melody Gilbert",
+"category": "Sex",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "secrets-of-playboy",
+"title": "Secrets of Playboy",
+"year": 2022,
+"format": "Series",
+"director": "Alexandra Dean",
+"category": "Sex",
+"moods": [
+"Infuriating"
+],
+"status": "Existing"
+},
+{
+"id": "money-shot-the-pornhub-story",
+"title": "Money Shot: The Pornhub Story",
+"year": 2023,
+"format": "Film",
+"director": "Suzanne Hillinger",
+"category": "Sex",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "party-monster-the-shockumentary",
+"title": "Party Monster: The Shockumentary",
+"year": 1998,
+"format": "Film",
+"director": "Fenton Bailey, Randy Barbato",
+"category": "Drugs",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "gonzo-the-life-and-work-of-dr-hunter-s-thompson",
+"title": "Gonzo: The Life and Work of Dr. Hunter S. Thompson",
+"year": 2008,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "spark-a-burning-man-story",
+"title": "Spark: A Burning Man Story",
+"year": 2013,
+"format": "Film",
+"director": "Steve Brown, Jessie Deeter",
+"category": "Art",
+"moods": [
+"Gloriously weird"
+],
+"status": "Existing"
+},
+{
+"id": "studio-54",
+"title": "Studio 54",
+"year": 2018,
+"format": "Film",
+"director": "Matt Tyrnauer",
+"category": "Music",
+"moods": [
+"Gripping"
+],
+"status": "Existing"
+},
+{
+"id": "trainwreck-woodstock-99",
+"title": "Trainwreck: Woodstock '99",
+"year": 2022,
+"format": "Series",
+"director": "Jamie Crawford",
+"category": "Music",
+"moods": [
+"Infuriating",
+"Funny"
+],
+"status": "Existing"
+},
+{
+"title": "Standard Operating Procedure",
+"year": 2008,
+"format": "Film",
+"director": "Errol Morris",
+"category": "War",
+"moods": [
+"Harrowing",
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "The Pigeon Tunnel",
+"year": 2023,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Art",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "We Steal Secrets: The Story of WikiLeaks",
+"year": 2013,
+"format": "Film",
+"director": "Alex Gibney",
+"category": "Tech",
+"moods": [
+"Gripping"
+],
+"status": "New"
+},
+{
+"title": "Diego Maradona",
+"year": 2019,
+"format": "Film",
+"director": "Asif Kapadia",
+"category": "Sport",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Bowling for Columbine",
+"year": 2002,
+"format": "Film",
+"director": "Michael Moore",
+"category": "Politics",
+"moods": [
+"Infuriating",
+"Funny"
+],
+"status": "New"
+},
+{
+"title": "Fahrenheit 9/11",
+"year": 2004,
+"format": "Film",
+"director": "Michael Moore",
+"category": "Politics",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "Sicko",
+"year": 2007,
+"format": "Film",
+"director": "Michael Moore",
+"category": "Economics",
+"moods": [
+"Infuriating",
+"Funny"
+],
+"status": "New"
+},
+{
+"title": "Metallica: Some Kind of Monster",
+"year": 2004,
+"format": "Film",
+"director": "Joe Berlinger, Bruce Sinofsky",
+"category": "Music",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "Crude",
+"year": 2009,
+"format": "Film",
+"director": "Joe Berlinger",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "The Interrupters",
+"year": 2011,
+"format": "Film",
+"director": "Steve James",
+"category": "Crime",
+"moods": [
+"Gripping",
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Life Itself",
+"year": 2014,
+"format": "Film",
+"director": "Steve James",
+"category": "Art",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Abacus: Small Enough to Jail",
+"year": 2016,
+"format": "Film",
+"director": "Steve James",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "All the Beauty and the Bloodshed",
+"year": 2022,
+"format": "Film",
+"director": "Laura Poitras",
+"category": "Art",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "20 Feet from Stardom",
+"year": 2013,
+"format": "Film",
+"director": "Morgan Neville",
+"category": "Music",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Best of Enemies",
+"year": 2015,
+"format": "Film",
+"director": "Morgan Neville, Robert Gordon",
+"category": "Politics",
+"moods": [
+"Funny"
+],
+"status": "New"
+},
+{
+"title": "Won't You Be My Neighbor?",
+"year": 2018,
+"format": "Film",
+"director": "Morgan Neville",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Roadrunner: A Film About Anthony Bourdain",
+"year": 2021,
+"format": "Film",
+"director": "Morgan Neville",
+"category": "Life Stories",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "The Kid Stays in the Picture",
+"year": 2002,
+"format": "Film",
+"director": "Brett Morgen, Nanette Burstein",
+"category": "Art",
+"moods": [
+"Funny"
+],
+"status": "New"
+},
+{
+"title": "Cobain: Montage of Heck",
+"year": 2015,
+"format": "Film",
+"director": "Brett Morgen",
+"category": "Music",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Moonage Daydream",
+"year": 2022,
+"format": "Film",
+"director": "Brett Morgen",
+"category": "Music",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "An Inconvenient Truth",
+"year": 2006,
+"format": "Film",
+"director": "Davis Guggenheim",
+"category": "Nature",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "Still: A Michael J. Fox Movie",
+"year": 2023,
+"format": "Film",
+"director": "Davis Guggenheim",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "This Film Is Not Yet Rated",
+"year": 2006,
+"format": "Film",
+"director": "Kirby Dick",
+"category": "Art",
+"moods": [
+"Infuriating",
+"Funny"
+],
+"status": "New"
+},
+{
+"title": "The Invisible War",
+"year": 2012,
+"format": "Film",
+"director": "Kirby Dick",
+"category": "War",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "On the Record",
+"year": 2020,
+"format": "Film",
+"director": "Kirby Dick, Amy Ziering",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "The Social Dilemma",
+"year": 2020,
+"format": "Film",
+"director": "Jeff Orlowski",
+"category": "Tech",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "My Scientology Movie",
+"year": 2015,
+"format": "Film",
+"director": "John Dower",
+"category": "Cults & Psychology",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "America's Most Hated Family in Crisis",
+"year": 2011,
+"format": "Film",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "Kurt & Courtney",
+"year": 1998,
+"format": "Film",
+"director": "Nick Broomfield",
+"category": "Music",
+"moods": [
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "Aileen: Life and Death of a Serial Killer",
+"year": 2003,
+"format": "Film",
+"director": "Nick Broomfield, Joan Churchill",
+"category": "Crime",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Marianne & Leonard: Words of Love",
+"year": 2019,
+"format": "Film",
+"director": "Nick Broomfield",
+"category": "Music",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Pulling John",
+"year": 2006,
+"format": "Film",
+"category": "Sport",
+"moods": [
+"Funny",
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Word Wars",
+"year": 2004,
+"format": "Film",
+"director": "Eric Chaikin, Julian Petrillo",
+"category": "Sport",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "Somm",
+"year": 2012,
+"format": "Film",
+"director": "Jason Wise",
+"category": "Life Stories",
+"moods": [
+"Gripping"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "Jiro Dreams of Sushi",
+"year": 2011,
+"format": "Film",
+"director": "David Gelb",
+"category": "Life Stories",
+"moods": [
+"Mind-blowing",
+"Feel-good"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "The Golden Spurtle",
+"year": 2025,
+"format": "Film",
+"director": "Constantine Costi",
+"category": "Sport",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "Bobby Fischer Against the World",
+"year": 2011,
+"format": "Film",
+"director": "Liz Garbus",
+"category": "Sport",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Ramen Heads",
+"year": 2017,
+"format": "Film",
+"director": "Koki Shigeno",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "City of Gold",
+"year": 2015,
+"format": "Film",
+"director": "Laura Gabbert",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "The Search for General Tso",
+"year": 2014,
+"format": "Film",
+"director": "Ian Cheney",
+"category": "Life Stories",
+"moods": [
+"Funny"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "TT3D: Closer to the Edge",
+"year": 2011,
+"format": "Film",
+"director": "Richard De Aragues",
+"category": "Sport",
+"moods": [
+"Gripping"
+],
+"status": "New"
+},
+{
+"title": "Road",
+"year": 2014,
+"format": "Film",
+"director": "Michael Hewitt, Dermot Lavery",
+"category": "Sport",
+"moods": [
+"Gripping",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Faster",
+"year": 2003,
+"format": "Film",
+"director": "Mark Neale",
+"category": "Sport",
+"moods": [
+"Gripping"
+],
+"status": "New"
+},
+{
+"title": "The Lost Leonardo",
+"year": 2021,
+"format": "Film",
+"director": "Andreas Koefoed",
+"category": "Art",
+"moods": [
+"Gripping",
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "Beer Wars",
+"year": 2009,
+"format": "Film",
+"director": "Anat Baron",
+"category": "Economics",
+"moods": [
+"Infuriating",
+"Funny"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "How Beer Saved the World",
+"year": 2011,
+"format": "Film",
+"category": "Science",
+"moods": [
+"Funny"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "An Open Secret",
+"year": 2014,
+"format": "Film",
+"director": "Amy J. Berg",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Bottled Life",
+"year": 2012,
+"format": "Film",
+"director": "Urs Schnell",
+"category": "Economics",
+"moods": [
+"Infuriating"
+],
+"tags": [
+"food-and-drink"
+],
+"status": "New"
+},
+{
+"title": "Scared Straight!",
+"year": 1978,
+"format": "Film",
+"director": "Arnold Shapiro",
+"category": "Crime",
+"moods": [
+"Gripping",
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "The Times of Harvey Milk",
+"year": 1984,
+"format": "Film",
+"director": "Rob Epstein",
+"category": "Politics",
+"moods": [
+"Harrowing",
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "Streetwise",
+"year": 1984,
+"format": "Film",
+"director": "Martin Bell",
+"category": "Life Stories",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Style Wars",
+"year": 1983,
+"format": "Film",
+"director": "Tony Silver",
+"category": "Art",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "A Brief History of Time",
+"year": 1991,
+"format": "Film",
+"director": "Errol Morris",
+"category": "Science",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "When We Were Kings",
+"year": 1996,
+"format": "Film",
+"director": "Leon Gast",
+"category": "Sport",
+"moods": [
+"Gripping",
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Buena Vista Social Club",
+"year": 1999,
+"format": "Film",
+"director": "Wim Wenders",
+"category": "Music",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Dogtown and Z-Boys",
+"year": 2001,
+"format": "Film",
+"director": "Stacy Peralta",
+"category": "Sport",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Spellbound",
+"year": 2002,
+"format": "Film",
+"director": "Jeffrey Blitz",
+"category": "Sport",
+"moods": [
+"Funny",
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "My Architect",
+"year": 2003,
+"format": "Film",
+"director": "Nathaniel Kahn",
+"category": "Life Stories",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "Dig!",
+"year": 2004,
+"format": "Film",
+"director": "Ondi Timoner",
+"category": "Music",
+"moods": [
+"Funny",
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "Murderball",
+"year": 2005,
+"format": "Film",
+"director": "Henry Alex Rubin, Dana Adam Shapiro",
+"category": "Sport",
+"moods": [
+"Gripping",
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Deliver Us from Evil",
+"year": 2006,
+"format": "Film",
+"director": "Amy J. Berg",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "The Most Dangerous Man in America",
+"year": 2009,
+"format": "Film",
+"director": "Judith Ehrlich, Rick Goldsmith",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "New"
+},
+{
+"title": "Undefeated",
+"year": 2011,
+"format": "Film",
+"director": "Daniel Lindsay, T.J. Martin",
+"category": "Sport",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Paradise Lost 3: Purgatory",
+"year": 2011,
+"format": "Film",
+"director": "Joe Berlinger, Bruce Sinofsky",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "How to Survive a Plague",
+"year": 2012,
+"format": "Film",
+"director": "David France",
+"category": "Politics",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Dirty Wars",
+"year": 2013,
+"format": "Film",
+"director": "Rick Rowley",
+"category": "War",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "The Green Prince",
+"year": 2014,
+"format": "Film",
+"director": "Nadav Schirman",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "New"
+},
+{
+"title": "What Happened, Miss Simone?",
+"year": 2015,
+"format": "Film",
+"director": "Liz Garbus",
+"category": "Music",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Listen to Me Marlon",
+"year": 2015,
+"format": "Film",
+"director": "Stevan Riley",
+"category": "Art",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "The Russian Woodpecker",
+"year": 2015,
+"format": "Film",
+"director": "Chad Gracia",
+"category": "Politics",
+"moods": [
+"Gloriously weird"
+],
+"status": "New"
+},
+{
+"title": "I Am Not Your Negro",
+"year": 2016,
+"format": "Film",
+"director": "Raoul Peck",
+"category": "Politics",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "City of Ghosts",
+"year": 2017,
+"format": "Film",
+"director": "Matthew Heineman",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "They Shall Not Grow Old",
+"year": 2018,
+"format": "Film",
+"director": "Peter Jackson",
+"category": "War",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "McQueen",
+"year": 2018,
+"format": "Film",
+"director": "Ian Bonhôte, Peter Ettedgui",
+"category": "Art",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Minding the Gap",
+"year": 2018,
+"format": "Film",
+"director": "Bing Liu",
+"category": "Life Stories",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "The Mole Agent",
+"year": 2020,
+"format": "Film",
+"director": "Maite Alberdi",
+"category": "Life Stories",
+"moods": [
+"Funny",
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "David Attenborough: A Life on Our Planet",
+"year": 2020,
+"format": "Film",
+"director": "Alastair Fothergill, Jonnie Hughes, Keith Scholey",
+"category": "Nature",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "Summer of Soul",
+"year": 2021,
+"format": "Film",
+"director": "Ahmir \"Questlove\" Thompson",
+"category": "Music",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Flee",
+"year": 2021,
+"format": "Film",
+"director": "Jonas Poher Rasmussen",
+"category": "Life Stories",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Attica",
+"year": 2021,
+"format": "Film",
+"director": "Stanley Nelson, Traci Curry",
+"category": "Crime",
+"moods": [
+"Gripping",
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "No Other Land",
+"year": 2024,
+"format": "Film",
+"director": "Basel Adra, Yuval Abraham, Hamdan Ballal, Rachel Szor",
+"category": "War",
+"moods": [
+"Harrowing",
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "Black Box Diaries",
+"year": 2024,
+"format": "Film",
+"director": "Shiori Itō",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "Soundtrack to a Coup d'Etat",
+"year": 2024,
+"format": "Film",
+"director": "Johan Grimonprez",
+"category": "Politics",
+"moods": [
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "Super/Man: The Christopher Reeve Story",
+"year": 2024,
+"format": "Film",
+"director": "Ian Bonhôte, Peter Ettedgui",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Mr Nobody Against Putin",
+"year": 2025,
+"format": "Film",
+"director": "David Borenstein, Pavel Talankin",
+"category": "Politics",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "The Alabama Solution",
+"year": 2025,
+"format": "Film",
+"director": "Andrew Jarecki, Charlotte Kaufman",
+"category": "Crime",
+"moods": [
+"Infuriating",
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "2000 Meters to Andriivka",
+"year": 2025,
+"format": "Film",
+"director": "Mstyslav Chernov",
+"category": "War",
+"moods": [
+"Harrowing"
+],
+"status": "New"
+},
+{
+"title": "Cover-Up",
+"year": 2025,
+"format": "Film",
+"director": "Laura Poitras, Mark Obenhaus",
+"category": "Politics",
+"moods": [
+"Gripping"
+],
+"status": "New"
+},
+{
+"title": "Tell Me Who I Am",
+"year": 2019,
+"format": "Film",
+"director": "Ed Perkins",
+"category": "Life Stories",
+"moods": [
+"Harrowing",
+"Mind-blowing"
+],
+"status": "New"
+},
+{
+"title": "Stutz",
+"year": 2022,
+"format": "Film",
+"director": "Jonah Hill",
+"category": "Life Stories",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Crip Camp",
+"year": 2020,
+"format": "Film",
+"director": "Nicole Newnham, James LeBrecht",
+"category": "Politics",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Take Care of Maya",
+"year": 2023,
+"format": "Film",
+"director": "Henry Roosevelt",
+"category": "Crime",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "Titan: The OceanGate Disaster",
+"year": 2025,
+"format": "Film",
+"director": "Mark Monroe",
+"category": "Adventure",
+"moods": [
+"Gripping"
+],
+"status": "New"
+},
+{
+"title": "The Program: Cons, Cults, and Kidnapping",
+"year": 2024,
+"format": "Series",
+"director": "Katherine Kubler",
+"category": "Cults & Psychology",
+"moods": [
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "Mountain Queen: The Summits of Lhakpa Sherpa",
+"year": 2023,
+"format": "Film",
+"director": "Lucy Walker",
+"category": "Adventure",
+"moods": [
+"Feel-good"
+],
+"status": "New"
+},
+{
+"title": "Louis Theroux: Inside the Manosphere",
+"year": 2026,
+"format": "Film",
+"category": "Cults & Psychology",
+"moods": [
+"Gloriously weird",
+"Infuriating"
+],
+"status": "New"
+},
+{
+"title": "The Last Dance",
+"year": 2020,
+"format": "Series",
+"director": "Jason Hehir",
+"category": "Sport",
+"moods": [
+"Gripping"
+],
+"status": "New"
+}
+]
