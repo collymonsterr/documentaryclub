@@ -2,7 +2,7 @@ import { createFileRoute, Link, stripSearchParams, useNavigate } from '@tanstack
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff, Search } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff, Search, Dices } from 'lucide-react';
 import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
 import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
@@ -11,21 +11,23 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { SiteLogo } from '@/components/site-logo';
 import { TrailerModal } from '@/components/trailer-modal';
+import { PhotoLightbox } from '@/components/photo-lightbox';
 import { usePreference, useTracking } from '@/hooks/use-tracking';
-import { canNavigate, cardBadges, inEra, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Provider } from '@/lib/discovery';
+import { canNavigate, cardBadges, inEra, inLength, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Length, type Provider, type Enrichment } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
 const years = (f: { year: number; yearEnd?: number }) => f.yearEnd ? `${f.year}–${f.yearEnd}` : String(f.year);
 const ERAS: [Era, string][] = [['all', 'All eras'], ['recent', 'Recent'], ['2020s', '2020s'], ['2010s', '2010s'], ['2000s', '2000s'], ['pre2000', 'Pre-2000']];
+const LENGTHS: [Length, string][] = [['all', 'Any length'], ['short', 'Under 90 min'], ['standard', '90–120 min'], ['long', 'Over 2 hours'], ['series', 'Series & multi-part']];
 
-// Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched, ?q= search, plus cat/era/type/sort filters.
-const searchDefaults = { film: '', q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random' };
+// Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched, ?q= search, plus cat/era/len/type/sort filters.
+const searchDefaults = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random' };
 const text = (value: unknown, fallback = '') => typeof value === 'string' && value ? value : fallback;
 const SORTS = ['random', 'curated', 'newest', 'oldest', 'imdb', 'rt'];
 
 export const Route = createFileRoute('/')({
-  validateSearch: (search: Record<string, unknown>) => ({ film: text(search['film']), q: text(search['q']), list: text(search['list']), cat: text(search['cat'], 'all'), era: text(search['era'], 'all'), type: text(search['type'], 'all'), sort: text(search['sort'], 'random') }),
+  validateSearch: (search: Record<string, unknown>) => ({ film: text(search['film']), q: text(search['q']), list: text(search['list']), cat: text(search['cat'], 'all'), era: text(search['era'], 'all'), len: text(search['len'], 'all'), type: text(search['type'], 'all'), sort: text(search['sort'], 'random') }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
   head: () => ({ meta: [
     { title: 'Documentary Club — Discover extraordinary true stories' },
@@ -55,18 +57,27 @@ const NOTES: Record<string, string> = {
   whakaari: 'Survivor accounts place human choices at the centre of the disaster.',
   'fantastic-fungi': 'The film explores the relationship between fungi, forests and people.',
 };
-function Providers({ label, items, subscription = false }: { label: string; items: Provider[]; subscription?: boolean }) {
-  if (!items.length) return null;
-  return <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs"><span className="text-muted-foreground">{label}</span>{items.map(p => <span key={p.id} className={subscription && p.highlighted ? 'font-semibold text-primary' : 'text-foreground'}>{p.name}</span>)}</div>;
+// Watch in Ireland as one row: subscription first, else rent/buy, else a discreet JustWatch link. Missing data = unknown.
+function WatchStrip({ loading, providers, fallback }: { loading: boolean; providers?: Enrichment['providers'] | undefined; fallback: string }) {
+  const names = (items: Provider[]) => items.map(p => p.name).join(', ');
+  const rentBuy = [...new Map([...(providers?.rent ?? []), ...(providers?.buy ?? [])].map(p => [p.id, p])).values()];
+  const href = providers?.link ?? fallback;
+  return <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border pt-3 text-xs">
+    <span className="font-semibold">Ireland</span>
+    {loading ? <span className="text-muted-foreground" role="status">Checking…</span>
+      : providers?.flatrate.length ? <span className="rounded-full bg-primary/15 px-2.5 py-1 font-medium text-primary">▶ Stream on {names(providers.flatrate)}</span>
+      : rentBuy.length ? <span className="rounded-full border border-border px-2.5 py-1">Rent / buy: {names(rentBuy)}</span>
+      : <span className="text-muted-foreground">Availability unknown</span>}
+    <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">{providers?.link ? 'All options' : 'JustWatch IE'}<ExternalLink className="size-3" /></a>
+  </div>;
 }
-// IMDb / RT: a small popover with our stored score and a new-tab link (their pages block embedding).
-function RatingLink({ site, film, score }: { site: 'imdb' | 'rt'; film: { title: string; year: number; imdbId?: string | undefined }; score?: number | undefined }) {
+// IMDb / RT pills open the source directly in a new tab (their pages block embedding).
+function RatingPill({ site, film, score }: { site: 'imdb' | 'rt'; film: { title: string; imdbId?: string | undefined }; score?: number | undefined }) {
   const imdb = site === 'imdb';
-  if (imdb && !film.imdbId) return null;
+  if (score === undefined || (imdb && !film.imdbId)) return null;
   const href = imdb ? `https://www.imdb.com/title/${film.imdbId}/` : `https://www.rottentomatoes.com/search?search=${encodeURIComponent(film.title)}`;
-  const name = imdb ? 'IMDb' : 'Rotten Tomatoes';
-  return <Popover><PopoverTrigger asChild><Button variant="outline" aria-label={`${name} rating`} className="px-2.5 font-bold">{imdb ? <span className="rounded-sm bg-primary px-1 text-[11px] text-primary-foreground">IMDb</span> : <span className="text-[11px] text-destructive">RT</span>}{score !== undefined && <span className="text-xs font-medium">{imdb ? score.toFixed(1) : `${score}%`}</span>}</Button></PopoverTrigger>
-    <PopoverContent className="w-60 text-sm"><p className="text-xs text-muted-foreground">{name}</p><p className="mt-1 text-2xl font-semibold">{score === undefined ? 'No score' : imdb ? `${score.toFixed(1)}/10` : `${score}%`}</p>{!imdb && <p className="mt-1 text-xs text-muted-foreground">Tomatometer via OMDb.</p>}<Button asChild variant="link" size="sm" className="mt-2 h-auto px-0"><a href={href} target="_blank" rel="noreferrer">{imdb ? 'Open on IMDb' : 'Search on Rotten Tomatoes'}<ExternalLink /></a></Button></PopoverContent></Popover>;
+  return <a href={href} target="_blank" rel="noreferrer" aria-label={`${imdb ? 'IMDb' : 'Rotten Tomatoes'} ${imdb ? score.toFixed(1) : `${score}%`} — open in new tab`} className="inline-flex items-center gap-1 rounded-full border border-border px-2 py-0.5 text-xs font-medium hover:border-primary">
+    {imdb ? <span className="rounded-sm bg-primary px-1 text-[10px] font-bold text-primary-foreground">IMDb</span> : <span className="text-[10px] font-bold text-destructive">RT</span>}{imdb ? score.toFixed(1) : `${score}%`}<ExternalLink className="size-3 opacity-60" /></a>;
 }
 // Free, legal viewing searches only (no piracy sources).
 function FreeLegal({ film }: { film: { title: string; year: number } }) {
@@ -107,6 +118,7 @@ function Index() {
   const filterIds = new Set<string>(['all', 'awards', ...CATEGORIES.map(c => c.id)]);
   const filter = (filterIds.has(search.cat) ? search.cat : 'all') as Filter;
   const era = (ERAS.some(([id]) => id === search.era) ? search.era : 'all') as Era;
+  const len = (LENGTHS.some(([id]) => id === search.len) ? search.len : 'all') as Length;
   const type = (['movie', 'tv'].includes(search.type) ? search.type : 'all') as 'all' | 'movie' | 'tv';
   const sort = SORTS.includes(search.sort) ? search.sort : 'random';
   const setParam = (patch: Partial<typeof searchDefaults>) => navigate({ search: prev => ({ ...prev, ...patch }), replace: true });
@@ -125,20 +137,20 @@ function Index() {
   const toggleWatched = (id: string) => { if (!watched.has(id)) shortOps.remove(id); toggleWatchedRaw(id); };
   const [hideWatched, setHideWatched] = usePreference('dc-hide-watched', true);
   const [trailerOpen, setTrailerOpen] = useState(false);
-  const [backdrop, setBackdrop] = useState<number | null>(null);
+  const [photo, setPhoto] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
   const fetchProviders = useServerFn(getIrishProviders);
   const list = useMemo(() => {
     const base = listFilter === 'shortlist' ? CATALOGUE.filter(f => shortlist.has(f.id)) : listFilter === 'watched' ? CATALOGUE.filter(f => watched.has(f.id)) : hideWatched ? CATALOGUE.filter(f => !watched.has(f.id)) : CATALOGUE;
-    const filtered = searchCatalogue(sort === 'random' ? orderFilms(base, order) : base, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter));
+    const filtered = searchCatalogue(sort === 'random' ? orderFilms(base, order) : base, query, type).filter(f => inEra(f.year, era) && inLength(f, SNAPSHOT[f.id]?.runtime ?? f.minutes, len)).filter(f => filter === 'all' ? true : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter));
     if (sort === 'imdb' || sort === 'rt') return sortByRating(filtered, SNAPSHOT, sort === 'imdb' ? 'imdb' : 'rottenTomatoes');
     if (sort === 'newest') return [...filtered].sort((a, b) => b.year - a.year);
     if (sort === 'oldest') return [...filtered].sort((a, b) => a.year - b.year);
     return filtered;
-  }, [filter, listFilter, shortlist, watched, hideWatched, sort, query, type, era, order]);
-  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era, hideWatched]);
+  }, [filter, listFilter, shortlist, watched, hideWatched, sort, query, type, era, len, order]);
+  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era, len, hideWatched]);
   const exportLists = () => {
     const blob = new Blob([JSON.stringify({ app: 'documentary-club', exportedAt: new Date().toISOString(), saved: [...shortlist], watched: [...watched] }, null, 2)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `documentary-club-lists-${new Date().toISOString().slice(0, 10)}.json`; a.click(); URL.revokeObjectURL(a.href);
@@ -158,13 +170,12 @@ function Index() {
   const providers = useQuery({ queryKey: ['ie-providers', film?.id], queryFn: () => fetchProviders({ data: { id: film?.id ?? '' } }), enabled: Boolean(film?.tmdbId) && film?.mediaType !== 'collection', staleTime: 6 * 60 * 60_000, retry: false });
   const snap = film ? SNAPSHOT[film.id] : undefined;
   const extra = snap ? { ...snap, rating: snap.tmdbRating, providers: providers.data } : undefined;
-  const backdropUrl = backdrop === null ? undefined : extra?.backdrops?.[backdrop];
   const go = useCallback((direction: number) => {
     if (!list.length) return;
     const next = list[(Math.max(idx, 0) + direction + list.length) % list.length];
     if (next) setFilm(next.id);
   }, [list, idx]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { setBackdrop(null); setCopied(false); }, [film?.id]);
+  useEffect(() => { setPhoto(null); setCopied(false); }, [film?.id]);
   useEffect(() => {
     const handle = (e: KeyboardEvent) => {
       if (view !== 'spotlight' || !canNavigate(e.target, trailerOpen) || document.querySelector('[role="dialog"]')) return;
@@ -172,11 +183,7 @@ function Index() {
     };
     window.addEventListener('keydown', handle); return () => window.removeEventListener('keydown', handle);
   }, [go, view, trailerOpen]);
-  const rail = useRef<HTMLDivElement>(null); const touch = useRef<{ x: number; y: number } | null>(null);
-  useEffect(() => {
-    const container = rail.current; const active = container?.querySelector<HTMLElement>('[aria-pressed="true"]');
-    if (container && active) container.scrollTo({ left: active.offsetLeft - container.offsetLeft - container.clientWidth / 2 + active.clientWidth / 2, behavior: 'smooth' });
-  }, [film?.id, view]);
+  const touch = useRef<{ x: number; y: number } | null>(null);
   const share = async () => {
     if (!film) return;
     const url = `${window.location.origin}/?film=${film.id}`;
@@ -186,11 +193,12 @@ function Index() {
   const toggleList = (which: 'shortlist' | 'watched') => navigate({ search: prev => ({ ...prev, list: prev.list === which ? '' : which }) });
   // Director links: open the gallery filtered to everything we have by that filmmaker.
   const searchDirector = (name: string) => { setQuery(name); navigate({ search: prev => ({ ...prev, film: '', q: name, list: '', cat: 'all', era: 'all' }) }); };
-  const clearFilters = () => { setQuery(''); navigate({ search: prev => ({ ...prev, q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random' }), replace: true }); };
-  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', listFilter === 'watched'].filter(Boolean).length;
+  const clearFilters = () => { setQuery(''); navigate({ search: prev => ({ ...prev, q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random', len: 'all' }), replace: true }); };
+  // Surprise me: random title from the current selection (Saved, filters, search), never the one already open.
+  const surprise = () => { const pool = list.length > 1 ? list.filter(f => f.id !== search.film) : list; const pick = pool[Math.floor(Math.random() * pool.length)]; if (pick) openSpotlight(pick.id); };
+  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', len !== 'all', listFilter === 'watched'].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
-    {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
     <header className="flex items-center justify-between gap-3 py-3"><h1><SiteLogo /></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
     <div className="grid grid-cols-3 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
       <Button size="sm" variant={view === 'spotlight' ? 'secondary' : 'ghost'} aria-pressed={view === 'spotlight'} onClick={() => openSpotlight()}><Maximize2 />Spotlight</Button>
@@ -207,6 +215,7 @@ function Index() {
             <label className="block text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select mt-1 w-full" value={type} onChange={e => setType(e.target.value)}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
             <label className="block text-xs text-muted-foreground">Order<select aria-label="Sort order" className="discovery-select mt-1 w-full" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="imdb">Top IMDb</option><option value="rt">Top Rotten Tomatoes</option></select></label>
             <label className="block text-xs text-muted-foreground">Era<select aria-label="Era" className="discovery-select mt-1 w-full" value={era} onChange={e => setEra(e.target.value as Era)}>{ERAS.map(([id, label]) => <option key={id} value={id}>{id === 'recent' ? 'Recent (last 2 years)' : label}</option>)}</select></label>
+            <label className="block text-xs text-muted-foreground">Length<select aria-label="Length" className="discovery-select mt-1 w-full" value={len} onChange={e => setParam({ len: e.target.value })}>{LENGTHS.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
             <div className="flex flex-wrap gap-1">
               <Button size="sm" variant={listFilter === 'watched' ? 'default' : 'outline'} aria-pressed={listFilter === 'watched'} onClick={() => toggleList('watched')}><Check />Watched · {watched.size}</Button>
               <Button size="sm" variant="outline" onClick={reshuffle}><Shuffle />Shuffle</Button>
@@ -221,6 +230,7 @@ function Index() {
           </div>
         </PopoverContent>
       </Popover>
+      <Button size="sm" variant="outline" className="self-end" disabled={!list.length} onClick={surprise} title="Open a random title from this selection"><Dices />Surprise me</Button>
       <span className="ml-auto self-end pb-2 text-xs text-muted-foreground">{list.length} titles</span>
     </div>
     {listFilter && <p className="mb-3 flex items-center gap-2 text-xs text-muted-foreground"><span className="font-medium text-foreground">{listFilter === 'shortlist' ? 'Your saved films' : 'Watched'}</span><Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={() => toggleList(listFilter)}>Show everything</Button></p>}
@@ -232,25 +242,26 @@ function Index() {
             {badges.map(b => <span key={b} className="text-[10px] font-medium leading-tight text-foreground">{b}</span>)}
             {f.awards.length > 0 && <span className="flex items-center gap-1 text-[10px] leading-tight text-accent-foreground"><Award className="size-3" />Awards & nominations</span>}
           </div>}
+          {badges[0] && <span className="pointer-events-none absolute right-1 top-1 hidden rounded bg-background/85 px-1 py-0.5 text-[10px] font-semibold leading-none text-foreground pointer-coarse:block">{badges[0]}</span>}
         </div>
         <h2 className="mt-2 text-sm font-medium leading-snug">{f.title}</h2><p className="mt-1 text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.pending ? ' · Pending' : ''}{watched.has(f.id) ? ' · Watched' : shortlist.has(f.id) ? ' · Saved' : ''}</p>
       </div>; })}</section>{shown < list.length && <div className="mt-6 text-center"><Button variant="outline" onClick={() => setShown(n => n + PAGE)}>Show more · {list.length - shown} left</Button></div>}</> : <>
       <section id="spotlight-top" aria-label="Selected documentary" className="spotlight-grid" onTouchStart={e => { if (!canNavigate(e.target, trailerOpen)) return; const t = e.touches[0]; if (t) touch.current = { x: t.clientX, y: t.clientY }; }} onTouchEnd={e => { const t = e.changedTouches[0], start = touch.current; touch.current = null; if (t && start && !trailerOpen && Math.abs(t.clientX - start.x) > 60 && Math.abs(t.clientX - start.x) > Math.abs(t.clientY - start.y)) go(t.clientX < start.x ? 1 : -1); }}>
         <div className="spotlight-poster"><DocumentaryPoster film={film} src={extra?.poster} /></div>
         <div className="min-w-0">
-          <Button size="sm" variant="ghost" className="-ml-2 w-fit" onClick={backToGallery}><ArrowLeft />Back to Gallery</Button><div className="flex items-center justify-between gap-2"><p className="flex items-center gap-2 text-xs font-medium uppercase text-primary"><span className="rounded-sm border border-primary/40 px-1.5 py-0.5">{kind(film.mediaType)}</span>{film.genre}{film.pending && <span className="text-muted-foreground">· Identity pending</span>}</p><div className="flex items-center gap-2"><Button variant="ghost" size="icon" aria-label="Previous film" onClick={() => go(-1)}><ArrowLeft /></Button><span className="min-w-10 text-center text-xs text-muted-foreground">{idx >= 0 ? `${idx + 1}/${list.length}` : ''}</span><Button variant="ghost" size="icon" aria-label="Next film" onClick={() => go(1)}><ArrowRight /></Button></div></div>
+          <Button size="sm" variant="ghost" className="-ml-2 w-fit" onClick={backToGallery}><ArrowLeft />Back to Gallery</Button><div className="flex items-center justify-between gap-2"><p className="flex items-center gap-2 text-xs font-medium uppercase text-primary"><span className="rounded-sm border border-primary/40 px-1.5 py-0.5">{kind(film.mediaType)}</span>{film.genre}{film.pending && <span className="text-muted-foreground">· Identity pending</span>}</p><div className="flex items-center gap-2"><Button variant="ghost" size="icon" aria-label="Previous film" onClick={() => go(-1)}><ArrowLeft /></Button><span className="min-w-10 text-center text-xs text-muted-foreground">{idx >= 0 ? `${idx + 1} of ${list.length}${filter !== 'all' ? ` in ${filters.find(f => f.id === filter)?.label ?? ''}` : ''}` : ''}</span><Button variant="ghost" size="icon" aria-label="Next film" onClick={() => go(1)}><ArrowRight /></Button></div></div>
           <h2 className="font-display text-3xl leading-tight sm:text-4xl">{film.title}</h2>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{years(film)}{film.director && <> · {film.director.split(', ').map((d, i, arr) => <span key={d}><button type="button" title={`See all catalogue titles by ${d}`} className="underline-offset-2 hover:text-foreground hover:underline" onClick={() => searchDirector(d)}>{d}</button>{i < arr.length - 1 ? ', ' : ''}</span>)}</>}{film.episodes ? ` · ${film.episodes} episodes` : ''}{(extra?.runtime ?? film.minutes) ? ` · ${extra?.runtime ?? film.minutes} min${film.mediaType === 'tv' ? ' per episode' : ''}` : ''}</p>{!!film.aliases?.length && <p className="mt-1 text-xs text-muted-foreground">Also known as {film.aliases.join(', ')}</p>}{!!film.parts?.length && <p className="mt-1 text-xs text-muted-foreground">{film.parts.length} films: {film.parts.join(', ')}</p>}
-          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-accent-foreground">{extra?.rating !== undefined && <span>TMDB {extra.rating.toFixed(1)}/10 · {extra.votes?.toLocaleString()} votes</span>}{extra?.omdb?.imdb !== undefined && <span>IMDb {extra.omdb.imdb.toFixed(1)}/10</span>}{extra?.omdb?.rottenTomatoes !== undefined && <span>Rotten Tomatoes {extra.omdb.rottenTomatoes}%</span>}</div>
+          <div className="mt-2 flex flex-wrap items-center gap-1.5"><RatingPill site="imdb" film={film} score={extra?.omdb?.imdb} /><RatingPill site="rt" film={film} score={extra?.omdb?.rottenTomatoes} />{extra?.omdb?.imdb === undefined && extra?.rating !== undefined && <span className="text-xs text-accent-foreground">TMDB {extra.rating.toFixed(1)}</span>}</div>
           <p className="mt-3 text-sm leading-relaxed text-foreground/90">{extra?.overview ? overviewSentences(`${extra.overview}${(extra.overview.match(/[.!?](?:\s|$)/g)?.length ?? 0) < 2 ? ` ${NOTES[film.id] ?? ''}` : ''}`) : `${film.synopsis} ${NOTES[film.id] ?? ''}`}</p>
           {!!film.awards.length && <ul className="mt-3 space-y-1">{film.awards.map(a => <li key={a} className="flex gap-2 text-xs leading-relaxed text-accent-foreground"><Award className="mt-0.5 size-3 shrink-0" />{a}</li>)}</ul>}
-          {extra?.omdb?.awards && <p className="mt-2 text-xs leading-relaxed text-muted-foreground"><span className="font-medium">OMDb awards: </span>{extra.omdb.awards}</p>}
-          <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Heart className={shortlist.has(film.id) ? 'fill-red-500 text-red-500' : ''} />{shortlist.has(film.id) ? 'Saved' : 'Save'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button><RatingLink site="imdb" film={film} score={extra?.omdb?.imdb} /><RatingLink site="rt" film={film} score={extra?.omdb?.rottenTomatoes} /><FreeLegal film={film} /><Button variant="outline" onClick={share}><Link2 />{copied ? 'Link copied' : 'Share'}</Button></div>
-          <div className="mt-4 border-t border-border pt-3"><h3 className="mb-2 text-xs font-semibold">Watch in Ireland</h3>{providers.isFetching ? <p className="mb-2 text-xs text-muted-foreground" role="status">Checking Irish availability…</p> : !extra?.providers?.known && <p className="mb-2 text-xs text-muted-foreground">Availability unknown — check JustWatch.</p>}<div className="space-y-1"><Providers label="Subscription" items={extra?.providers?.flatrate ?? []} subscription /><Providers label="Rent" items={extra?.providers?.rent ?? []} /><Providers label="Buy" items={extra?.providers?.buy ?? []} /></div><Button asChild variant="link" size="sm" className="mt-1 h-auto px-0"><a href={extra?.providers?.link ?? justWatchLink(film)} target="_blank" rel="noreferrer">{extra?.providers?.link ? 'Check Irish availability' : 'Search JustWatch Ireland'}<ExternalLink /></a></Button></div>
-          {!!extra?.backdrops?.length && <div className="mt-3 flex items-center gap-2"><span className="text-xs text-muted-foreground">Scene</span><Button variant="ghost" size="sm" aria-pressed={backdrop === null} onClick={() => setBackdrop(null)}>None</Button>{extra.backdrops.map((url, i) => <Button variant="ghost" key={url} aria-label={`Backdrop ${i + 1}`} aria-pressed={backdrop === i} className={`h-8 w-14 overflow-hidden p-0 ${backdrop === i ? 'ring-2 ring-primary' : ''}`} onClick={() => setBackdrop(i)}><img src={url} alt="" className="h-full w-full object-cover" loading="lazy" /></Button>)}</div>}
+          {extra?.omdb?.awards && <details className="mt-2 text-xs text-muted-foreground"><summary className="cursor-pointer w-fit hover:text-foreground">More awards</summary><p className="mt-1 leading-relaxed">{extra.omdb.awards} <span className="opacity-70">(OMDb)</span></p></details>}
+          <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Heart className={shortlist.has(film.id) ? 'fill-red-500 text-red-500' : ''} />{shortlist.has(film.id) ? 'Saved' : 'Save'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button><FreeLegal film={film} /><Button variant="outline" onClick={share}><Link2 />{copied ? 'Link copied' : 'Share'}</Button></div>
+          <WatchStrip loading={providers.isFetching} providers={extra?.providers} fallback={justWatchLink(film)} />
+          {!!extra?.backdrops?.length && <div className="mt-3 flex flex-wrap items-center gap-2"><span className="text-xs text-muted-foreground">Stills</span>{extra.backdrops.map((url, i) => <Button variant="ghost" key={url} aria-label={`View still ${i + 1}`} className="h-10 w-16 overflow-hidden p-0 hover:ring-2 hover:ring-primary" onClick={() => setPhoto(i)}><img src={url} alt="" className="h-full w-full object-cover" loading="lazy" /></Button>)}</div>}
+          <PhotoLightbox title={film.title} photos={extra?.backdrops ?? []} index={photo} onIndex={setPhoto} />
         </div>
       </section>
-      <div ref={rail} aria-label="Film thumbnails" className="relative mt-4 flex gap-2 overflow-x-auto py-1 no-scrollbar">{list.map(f => <Button key={f.id} variant="ghost" aria-label={`Select ${f.title}`} aria-pressed={film.id === f.id} className={`h-auto w-12 shrink-0 p-0 sm:w-14 ${film.id === f.id ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'}`} onClick={() => setFilm(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button>)}</div>
     </>}
     <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><Link to="/list" className="underline">All titles by category</Link><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
   </main>;
