@@ -21,9 +21,9 @@ describe('third batch (Sex & Drugs) reconciliation', () => {
     expect(fungi).toHaveLength(1);
     expect(fungi[0]?.categories).toEqual(['nature']);
   });
-  it('every imported batch-3 title lives in Drugs or Sex', () => {
+  it('every imported batch-3 title lives in Drugs or Sex (Amy moves to Music)', () => {
     const ids = MANIFEST3.entries.filter(e => e.status === 'resolved' || e.status.startsWith('pending')).map(e => e.id);
-    for (const id of ids) expect(['drugs', 'sex']).toContain(CATALOGUE.find(f => f.id === id)?.categories[0]);
+    for (const id of ids) expect(['drugs', 'sex', 'music']).toContain(CATALOGUE.find(f => f.id === id)?.categories[0]);
   });
   it('resolves evidence-pinned identities and series formats', () => {
     expect(entry("Cocaine Cowboys II: Hustlin' with the Godmother")?.chosen).toMatchObject({ tmdbId: 26769, canonicalTitle: 'Cocaine Cowboys 2' });
