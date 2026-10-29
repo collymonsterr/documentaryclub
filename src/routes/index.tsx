@@ -25,7 +25,7 @@ const ERAS: [Era, string][] = [['all', 'All eras'], ['recent', 'Recent'], ['2020
 const LENGTHS: [Length, string][] = [['all', 'Any length'], ['short', 'Under 90 min'], ['standard', '90–120 min'], ['long', 'Over 2 hours'], ['series', 'Series & multi-part']];
 
 // Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched, ?q= search, plus cat/era/len/type/sort filters.
-const searchDefaults = { film: '', film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', browse: 'topics' };
+const searchDefaults = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', browse: 'topics' };
 const text = (value: unknown, fallback = '') => typeof value === 'string' && value ? value : fallback;
 const SORTS = ['random', 'curated', 'newest', 'oldest', 'imdb', 'rt'];
 
