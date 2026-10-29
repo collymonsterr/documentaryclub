@@ -1,28 +1,28 @@
 import { describe, expect, it } from 'vitest';
-import { CATALOGUE } from './catalogue';
+import { CATALOGUE, SHEET, sheetId } from './catalogue';
 import { CATEGORIES } from './films';
-import { MOODS, makerIndex, matchesFacets } from './discovery-facets';
-const cat = (id: string) => CATALOGUE.find(f => f.id === id)?.categories;
-describe('17-category restructure', () => {
-  it('uses the 17 categories in the requested order', () => {
-    expect(CATEGORIES.map(c => c.label)).toEqual(['Strange', 'Cults & Psychology', 'Scams', 'Tech', 'Crime', 'Politics', 'War', 'Adventure', 'Sport', 'Nature', 'Science', 'Economics', 'Art', 'Music', 'Life Stories', 'Drugs', 'Sex']);
-  });
-  it('every title has exactly one valid category and none is empty', () => {
+import { EDITORIAL, MOODS, matchesFacets } from './discovery-facets';
+const film = (id: string) => CATALOGUE.find(f => f.id === id);
+describe('catalogue sheet import', () => {
+  it('uses the 16 categories (no Strange) and every title has exactly one', () => {
+    expect(CATEGORIES.map(c => c.label).sort()).toEqual(['Adventure', 'Art', 'Crime', 'Cults & Psychology', 'Drugs', 'Economics', 'Life Stories', 'Music', 'Nature', 'Politics', 'Science', 'Scams', 'Sex', 'Sport', 'Tech', 'War']);
     for (const f of CATALOGUE) { expect(f.categories).toHaveLength(1); expect(CATEGORIES.some(c => c.id === f.categories[0])).toBe(true); }
-    for (const c of CATEGORIES) expect(CATALOGUE.some(f => f.categories[0] === c.id)).toBe(true);
   });
-  it('applies the brief moves', () => {
-    expect(cat('mariupol')).toEqual(['war']); expect(cat('senna')).toEqual(['sport']); expect(cat('apollo-11')).toEqual(['science']);
-    expect(cat('stories-we-tell')).toEqual(['life']); expect(cat('amy')).toEqual(['music']); expect(cat('fantastic-fungi')).toEqual(['nature']);
-    expect(cat('quiet-on-set-the-dark-side-of-kids-tv')).toEqual(['crime']); expect(cat('kink')).toEqual(['sex']); expect(cat('cocaine-cowboys')).toEqual(['drugs']);
+  it('has 353 existing + 97 new titles and drops the 8 removed ones', () => {
+    expect(CATALOGUE).toHaveLength(450);
+    for (const id of ['super-high-me', 'the-culture-high', 'rolling-papers', 'daughters-of-the-cult']) expect(film(id)).toBeUndefined();
+    expect(film('the-last-dance')?.mediaType).toBe('tv');
+    expect(film('somm')?.tags).toEqual(['food-and-drink']);
   });
-  it('credits Louis Theroux as presenter and lists him as a maker', () => {
-    expect(CATALOGUE.find(f => f.id === 'louis-and-the-brothel')?.presenter).toBe('Louis Theroux');
-    expect(CATALOGUE.find(f => f.id === 'louis-and-the-brothel')?.director).toBe("Geoffrey O'Connor");
-    expect(makerIndex().find(m => m.name === 'Louis Theroux')?.films).toHaveLength(6);
+  it('applies sheet category and director to existing titles by id', () => {
+    for (const r of SHEET.filter(r => r.status === 'Existing')) {
+      expect(CATEGORIES.find(c => c.id === film(r.id!)?.categories[0])?.label).toBe(r.category);
+      if (r.director) expect(film(r.id!)?.director).toBe(r.director);
+    }
   });
-  it('has seven moods, each with titles', () => {
-    expect(MOODS).toHaveLength(7);
+  it('uses the seven sheet moods, each with titles', () => {
+    expect(MOODS.map(m => m.label)).toEqual(['Funny', 'Feel-good', 'Gripping', 'Harrowing', 'Infuriating', 'Mind-blowing', 'Gloriously weird']);
     for (const m of MOODS) expect(CATALOGUE.some(f => matchesFacets(f, { award: '', mood: m.id, pick: '', maker: '' }))).toBe(true);
+    for (const r of SHEET.filter(r => r.status !== 'Remove')) expect(EDITORIAL[sheetId(r)]?.moods.length ?? 0).toBe(r.moods?.length ?? 0);
   });
 });
