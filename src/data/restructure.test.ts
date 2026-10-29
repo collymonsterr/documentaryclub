@@ -5,7 +5,7 @@ import { EDITORIAL, MOODS, matchesFacets } from './discovery-facets';
 const film = (id: string) => CATALOGUE.find(f => f.id === id);
 describe('catalogue sheet import', () => {
   it('uses the 16 categories (no Strange) and every title has exactly one', () => {
-    expect(CATEGORIES.map(c => c.label).sort()).toEqual(['Adventure', 'Art', 'Crime', 'Cults & Psychology', 'Drugs', 'Economics', 'Life Stories', 'Music', 'Nature', 'Politics', 'Science', 'Scams', 'Sex', 'Sport', 'Tech', 'War']);
+    expect(new Set(CATEGORIES.map(c => c.label))).toEqual(new Set(['Adventure', 'Art', 'Crime', 'Cults & Psychology', 'Drugs', 'Economics', 'Life Stories', 'Music', 'Nature', 'Politics', 'Science', 'Scams', 'Sex', 'Sport', 'Tech', 'War']));
     for (const f of CATALOGUE) { expect(f.categories).toHaveLength(1); expect(CATEGORIES.some(c => c.id === f.categories[0])).toBe(true); }
   });
   it('has 353 existing + 97 new titles and drops the 8 removed ones', () => {
