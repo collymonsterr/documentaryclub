@@ -1,19 +1,25 @@
-import type { ImportCategory } from "./import-list";
-export type Category = ImportCategory | "music" | "arts" | "sexdrugs";
+// One home category per title. IDs are stable URL keys (survival = Adventure, arts = Art, life = Life Stories).
+export type Category = "strange" | "psychology" | "scams" | "tech" | "crime" | "politics" | "war" | "survival" | "sport"
+  | "nature" | "science" | "economics" | "arts" | "music" | "life" | "drugs" | "sex";
 
 export const CATEGORIES: { id: Category; label: string }[] = [
-  { id: "strange", label: "Strange but True" },
+  { id: "strange", label: "Strange" },
   { id: "psychology", label: "Cults & Psychology" },
-  { id: "scams", label: "Scams & Grifts" },
-  { id: "tech", label: "Technology & Internet" },
-  { id: "crime", label: "Crime & Injustice" },
-  { id: "politics", label: "Politics & Geopolitics" },
-  { id: "survival", label: "Survival & Adventure" },
-  { id: "nature", label: "Nature & Science" },
-  { id: "economics", label: "Economics & Inequality" },
-  { id: "arts", label: "Arts & Subcultures" },
+  { id: "scams", label: "Scams" },
+  { id: "tech", label: "Tech" },
+  { id: "crime", label: "Crime" },
+  { id: "politics", label: "Politics" },
+  { id: "war", label: "War" },
+  { id: "survival", label: "Adventure" },
+  { id: "sport", label: "Sport" },
+  { id: "nature", label: "Nature" },
+  { id: "science", label: "Science" },
+  { id: "economics", label: "Economics" },
+  { id: "arts", label: "Art" },
   { id: "music", label: "Music" },
-  { id: "sexdrugs", label: "Sex & Drugs" },
+  { id: "life", label: "Life Stories" },
+  { id: "drugs", label: "Drugs" },
+  { id: "sex", label: "Sex" },
 ];
 
 export type Film = {
