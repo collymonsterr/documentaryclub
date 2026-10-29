@@ -41,7 +41,23 @@ const originals: Film[] = FILMS.map(f => {
   const s = SNAPSHOT[f.id];
   return { ...f, mediaType: 'movie', ...(s?.tmdbId ? { tmdbId: s.tmdbId } : {}), ...(s?.imdbId ? { imdbId: s.imdbId } : {}) };
 });
-export const CATALOGUE: Film[] = [...originals, ...imported];
+// 17-category restructure (user brief): explicit moves by stable ID; former Sex & Drugs titles default to Drugs.
+const ids = (s: string) => s.split(' ');
+export const RESTRUCTURE: Partial<Record<Film['categories'][number], string[]>> = {
+  war: ids('mariupol 5-broken-cameras for-sama hearts-and-minds last-men-in-aleppo no-end-in-sight restrepo taxi-to-the-dark-side the-act-of-killing the-look-of-silence the-fog-of-war the-vietnam-war'),
+  sport: ids('senna hoop-dreams icarus the-armstrong-lie the-king-of-kong ecstasy-of-order-the-tetris-masters free-to-play the-speed-cubers riding-giants the-barkley-marathons hands-on-a-hardbody'),
+  science: ids('apollo-11 for-all-mankind in-the-shadow-of-the-moon the-farthest particle-fever into-eternity cave-of-forgotten-dreams'),
+  life: ids('stories-we-tell eternal-memory daughters four-daughters up-series time'),
+  music: ['amy'], nature: ['fantastic-fungi'], crime: ['quiet-on-set-the-dark-side-of-kids-tv'],
+  sex: ids("after-porn-ends hot-girls-wanted inside-deep-throat kink louis-and-the-brothel louis-theroux-twilight-of-the-porn-stars louis-theroux-s-weird-weekends-porn money-shot-the-pornhub-story rocco scotty-and-the-secret-history-of-hollywood secrets-of-playboy silicone-soul guys-and-dolls love-me whores-glory louis-theroux-s-forbidden-america"),
+};
+const MOVED = new Map(Object.entries(RESTRUCTURE).flatMap(([cat, list]) => list.map(id => [id, cat] as const)));
+const PRESENTED_BY_THEROUX = new Set(['louis-and-the-brothel']); // Theroux title without his name in it
+export const CATALOGUE: Film[] = [...originals, ...imported].map(f => {
+  const cat = (MOVED.get(f.id) ?? (f.categories[0] === ('sexdrugs' as string) ? 'drugs' : f.categories[0])) as Film['categories'][number];
+  const presenter = /Louis Theroux/.test(f.title) || PRESENTED_BY_THEROUX.has(f.id) ? 'Louis Theroux' : undefined;
+  return { ...f, categories: [cat], ...(f.genre === label(f.categories[0]!) || f.genre === 'Sex & Drugs' ? { genre: label(cat) } : {}), ...(presenter ? { presenter } : {}) };
+});
 
 export function searchCatalogue(films: Film[], query: string, type: 'all' | 'movie' | 'tv') {
   const words = query.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').split(/\s+/).filter(Boolean);

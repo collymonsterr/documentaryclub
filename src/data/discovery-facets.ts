@@ -3,7 +3,9 @@ import type { Film } from './films';
 
 export const MOODS = [
   { id: 'funny', label: 'Funny' }, { id: 'uplifting', label: 'Uplifting' },
-  { id: 'weird', label: 'Gloriously weird' }, { id: 'gripping', label: 'Gripping' },
+  { id: 'wholesome', label: 'Wholesome' }, { id: 'gripping', label: 'Gripping' },
+  { id: 'harrowing', label: 'Harrowing' }, { id: 'mindblowing', label: 'Mind-blowing' },
+  { id: 'weird', label: 'Gloriously weird' },
 ] as const;
 export const PICKS = [{ id: 'hidden', label: 'Hidden gems' }, { id: 'makers', label: 'Great documentary makers' }] as const;
 export const AWARDS = [
@@ -30,6 +32,16 @@ export const EDITORIAL: Record<string, { moods: string[]; picks?: string[] }> = 
   'perfect-neighbor': { moods: ['gripping'] }, 'free-solo': { moods: ['gripping'] },
   meru: { moods: ['gripping'] }, 'the-last-narc': { moods: ['gripping'] },
 };
+// Added moods (editorial, reviewable): merged into EDITORIAL below.
+const MORE_MOODS: Record<string, string[]> = {
+  wholesome: ['ibelin', 'fantastic-fungi', 'my-octopus-teacher', 'the-speed-cubers', 'searching-for-sugar-man', 'daughters'],
+  harrowing: ['mariupol', 'for-sama', 'the-act-of-killing', 'the-look-of-silence', 'last-men-in-aleppo', 'restrepo', 'beyond-utopia', 'sugarcane'],
+  mindblowing: ['particle-fever', 'the-farthest', 'fantastic-fungi', 'apollo-11', 'the-imposter', 'cave-of-forgotten-dreams', 'tim-s-vermeer'],
+};
+for (const [mood, list] of Object.entries(MORE_MOODS)) for (const id of list) {
+  const e = (EDITORIAL[id] ??= { moods: [] }); if (!e.moods.includes(mood)) e.moods.push(mood);
+}
+export const credits = (film: Film) => [...film.director.split(', '), ...(film.presenter ? [film.presenter] : [])].map(n => n.trim()).filter(Boolean);
 
 export type Accolade = { facet: string; label: string; result: 'Won' | 'Nominated'; source: 'Curated' | 'OMDb' };
 export function accolades(film: Film, aggregate = SNAPSHOT[film.id]?.omdb?.awards): Accolade[] {
@@ -50,7 +62,7 @@ export function accolades(film: Film, aggregate = SNAPSHOT[film.id]?.omdb?.award
 
 export function makerIndex(films: Film[] = CATALOGUE) {
   const map = new Map<string, Film[]>();
-  for (const film of films) for (const name of film.director.split(', ').map(n => n.trim()).filter(Boolean)) {
+  for (const film of films) for (const name of credits(film)) {
     const previous = map.get(name) ?? [];
     if (!previous.some(f => f.id === film.id)) map.set(name, [...previous, film]);
   }
@@ -63,7 +75,7 @@ export function matchesFacets(film: Film, selection: FacetSelection) {
   return (!selection.award || accolades(film).some(a => a.facet === selection.award))
     && (!selection.mood || EDITORIAL[film.id]?.moods.includes(selection.mood) === true)
     && (!selection.pick || (selection.pick === 'makers' ? prolific.has(film.id) : EDITORIAL[film.id]?.picks?.includes(selection.pick) === true))
-    && (!selection.maker || film.director.split(', ').includes(selection.maker));
+    && (!selection.maker || credits(film).includes(selection.maker));
 }
 export function discoveryShelves(films: Film[]) {
   const definitions = [
@@ -75,6 +87,6 @@ export function discoveryShelves(films: Film[]) {
 }
 export function formatCommitment(film: Film, runtime = SNAPSHOT[film.id]?.runtime ?? film.minutes) {
   if (film.mediaType === 'collection') return film.parts?.length ? `${film.parts.length} films` : 'Film collection';
-  if (film.mediaType === 'tv') return film.episodes ? `${film.episodes} episodes${runtime ? ` · ${runtime} min / ep` : ''}` : 'Series';
+  if (film.mediaType === 'tv') return film.episodes ? `Series · ${film.episodes} episodes${runtime ? ` · ${runtime} min / ep` : ''}` : 'Series';
   return runtime ? `${Math.floor(runtime / 60) ? `${Math.floor(runtime / 60)}h ` : ''}${runtime % 60 ? `${runtime % 60}m` : ''}`.trim() : '';
 }

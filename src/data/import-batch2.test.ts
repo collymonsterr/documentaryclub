@@ -26,8 +26,8 @@ describe('second batch reconciliation', () => {
     expect(entry('Abducted in Plain Sight', 'inline')?.status).toMatch(/duplicate|existing/);
     expect(CATALOGUE.filter(f => /abducted in plain sight/i.test(f.title))).toHaveLength(1);
   });
-  it('keeps the original 17 first and unchanged', () => {
-    expect(CATALOGUE.slice(0, 17).map(f => [f.id, f.awards, f.categories])).toEqual(FILMS.map(f => [f.id, f.awards, f.categories]));
+  it('keeps the original 17 first with unchanged IDs and awards (categories follow the restructure)', () => {
+    expect(CATALOGUE.slice(0, 17).map(f => [f.id, f.awards])).toEqual(FILMS.map(f => [f.id, f.awards]));
   });
   it('represents Up as one British documentary collection, not Pixar Up', () => {
     const up = CATALOGUE.find(f => f.id === 'up-series');
