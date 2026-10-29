@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DirectorsRouteImport } from './routes/directors'
 import { Route as ListRouteImport } from './routes/list'
+import { Route as MakersRouteImport } from './routes/makers'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,44 @@ const ListRoute = ListRouteImport.update({
   path: '/list',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MakersRoute = MakersRouteImport.update({
+  id: '/makers',
+  path: '/makers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
+  '/makers': typeof MakersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
+  '/makers': typeof MakersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
+  '/makers': typeof MakersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/directors' | '/list'
+  fullPaths: '/' | '/directors' | '/list' | '/makers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/directors' | '/list'
-  id: '__root__' | '/' | '/directors' | '/list'
+  to: '/' | '/directors' | '/list' | '/makers'
+  id: '__root__' | '/' | '/directors' | '/list' | '/makers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DirectorsRoute: typeof DirectorsRoute
   ListRoute: typeof ListRoute
+  MakersRoute: typeof MakersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ListRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/makers': {
+      id: '/makers'
+      path: '/makers'
+      fullPath: '/makers'
+      preLoaderRoute: typeof MakersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DirectorsRoute: DirectorsRoute,
   ListRoute: ListRoute,
+  MakersRoute: MakersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
