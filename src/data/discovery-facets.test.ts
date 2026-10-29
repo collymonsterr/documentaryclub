@@ -32,7 +32,7 @@ describe('evidence-led discovery', () => {
   });
   it('shows film runtime and series commitment without treating collections as films', () => {
     expect(formatCommitment(film('free-solo'), 100)).toBe('1h 40m');
-    expect(formatCommitment({ ...film('free-solo'), mediaType: 'tv', episodes: 6 }, 45)).toBe('6 episodes · 45 min / ep');
+    expect(formatCommitment({ ...film('free-solo'), mediaType: 'tv', episodes: 6 }, 45)).toBe('Series · 6 episodes · 45 min / ep');
     expect(formatCommitment({ ...film('free-solo'), mediaType: 'collection', parts: ['One', 'Two', 'Three'] })).toBe('3 films');
   });
 });

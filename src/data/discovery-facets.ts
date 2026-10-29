@@ -36,7 +36,7 @@ export const EDITORIAL: Record<string, { moods: string[]; picks?: string[] }> = 
 const MORE_MOODS: Record<string, string[]> = {
   wholesome: ['ibelin', 'fantastic-fungi', 'my-octopus-teacher', 'the-speed-cubers', 'searching-for-sugar-man', 'daughters'],
   harrowing: ['mariupol', 'for-sama', 'the-act-of-killing', 'the-look-of-silence', 'last-men-in-aleppo', 'restrepo', 'beyond-utopia', 'sugarcane'],
-  mindblowing: ['particle-fever', 'the-farthest', 'fantastic-fungi', 'apollo-11', 'the-imposter', 'cave-of-forgotten-dreams', 'tims-vermeer'],
+  mindblowing: ['particle-fever', 'the-farthest', 'fantastic-fungi', 'apollo-11', 'the-imposter', 'cave-of-forgotten-dreams', 'tim-s-vermeer'],
 };
 for (const [mood, list] of Object.entries(MORE_MOODS)) for (const id of list) {
   const e = (EDITORIAL[id] ??= { moods: [] }); if (!e.moods.includes(mood)) e.moods.push(mood);
@@ -87,6 +87,6 @@ export function discoveryShelves(films: Film[]) {
 }
 export function formatCommitment(film: Film, runtime = SNAPSHOT[film.id]?.runtime ?? film.minutes) {
   if (film.mediaType === 'collection') return film.parts?.length ? `${film.parts.length} films` : 'Film collection';
-  if (film.mediaType === 'tv') return film.episodes ? `${film.episodes} episodes${runtime ? ` · ${runtime} min / ep` : ''}` : 'Series';
+  if (film.mediaType === 'tv') return film.episodes ? `Series · ${film.episodes} episodes${runtime ? ` · ${runtime} min / ep` : ''}` : 'Series';
   return runtime ? `${Math.floor(runtime / 60) ? `${Math.floor(runtime / 60)}h ` : ''}${runtime % 60 ? `${runtime % 60}m` : ''}`.trim() : '';
 }
