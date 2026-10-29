@@ -117,7 +117,7 @@ function Index() {
     apply(); const r = requestAnimationFrame(apply); return () => cancelAnimationFrame(r);
   }, [view]);
   // Filters live in the URL so refresh/bookmarks restore the same view.
-  const facet = { award: AWARDS.some(a => a.id === search.award) ? search.award : '', mood: MOODS.some(m => m.id === search.mood) ? search.mood : '', pick: PICKS.some(p => p.id === search.pick) ? search.pick : '', maker: makerIndex().some(m => m.name === search.maker) ? search.maker : '' };
+  const facet = { award: AWARDS.some(a => a.id === search.award) ? search.award : '', mood: MOODS.some(m => m.id === search.mood) ? search.mood : '', pick: '', maker: makerIndex().some(m => m.name === search.maker) ? search.maker : '' };
   const browse = ['topics', 'awards', 'directors', 'moods'].includes(search.browse) ? search.browse : 'topics';
   const filterIds = new Set<string>(['all', 'awards', ...CATEGORIES.map(c => c.id)]);
   const filter = (filterIds.has(search.cat) ? search.cat : 'all') as Filter;
