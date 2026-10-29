@@ -55,7 +55,7 @@ function DirectorsPage() {
       <ul className="mt-3 grid gap-x-4 gap-y-1.5 text-xs sm:grid-cols-2">
         {[...single].sort((a, b) => a.name.localeCompare(b.name)).map(d => <li key={d.name}>
           <Link to="/" search={{ ...base, q: d.name }} className="text-foreground underline-offset-2 hover:underline">{d.name}</Link>
-          <span className="text-muted-foreground"> — <Link to="/" search={{ ...base, film: d.films[0].id }} className="underline-offset-2 hover:text-foreground hover:underline">{d.films[0].title}</Link></span>
+          <span className="text-muted-foreground"> — <Link to="/" search={{ ...base, film: d.films[0]!.id }} className="underline-offset-2 hover:text-foreground hover:underline">{d.films[0]!.title}</Link></span>
         </li>)}
       </ul>
     </section>
