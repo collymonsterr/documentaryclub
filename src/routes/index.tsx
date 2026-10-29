@@ -2,7 +2,7 @@ import { createFileRoute, Link, stripSearchParams, useNavigate } from '@tanstack
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff, Search } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff, Search, Dices } from 'lucide-react';
 import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
 import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
@@ -11,21 +11,23 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { SiteLogo } from '@/components/site-logo';
 import { TrailerModal } from '@/components/trailer-modal';
+import { PhotoLightbox } from '@/components/photo-lightbox';
 import { usePreference, useTracking } from '@/hooks/use-tracking';
-import { canNavigate, cardBadges, inEra, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Provider } from '@/lib/discovery';
+import { canNavigate, cardBadges, inEra, inLength, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Length, type Provider, type Enrichment } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
 const years = (f: { year: number; yearEnd?: number }) => f.yearEnd ? `${f.year}–${f.yearEnd}` : String(f.year);
 const ERAS: [Era, string][] = [['all', 'All eras'], ['recent', 'Recent'], ['2020s', '2020s'], ['2010s', '2010s'], ['2000s', '2000s'], ['pre2000', 'Pre-2000']];
+const LENGTHS: [Length, string][] = [['all', 'Any length'], ['short', 'Under 90 min'], ['standard', '90–120 min'], ['long', 'Over 2 hours'], ['series', 'Series & multi-part']];
 
-// Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched, ?q= search, plus cat/era/type/sort filters.
-const searchDefaults = { film: '', q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random' };
+// Shareable state lives in the URL: ?film= opens Spotlight, ?list=shortlist|watched, ?q= search, plus cat/era/len/type/sort filters.
+const searchDefaults = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random' };
 const text = (value: unknown, fallback = '') => typeof value === 'string' && value ? value : fallback;
 const SORTS = ['random', 'curated', 'newest', 'oldest', 'imdb', 'rt'];
 
 export const Route = createFileRoute('/')({
-  validateSearch: (search: Record<string, unknown>) => ({ film: text(search['film']), q: text(search['q']), list: text(search['list']), cat: text(search['cat'], 'all'), era: text(search['era'], 'all'), type: text(search['type'], 'all'), sort: text(search['sort'], 'random') }),
+  validateSearch: (search: Record<string, unknown>) => ({ film: text(search['film']), q: text(search['q']), list: text(search['list']), cat: text(search['cat'], 'all'), era: text(search['era'], 'all'), len: text(search['len'], 'all'), type: text(search['type'], 'all'), sort: text(search['sort'], 'random') }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
   head: () => ({ meta: [
     { title: 'Documentary Club — Discover extraordinary true stories' },
@@ -55,18 +57,27 @@ const NOTES: Record<string, string> = {
   whakaari: 'Survivor accounts place human choices at the centre of the disaster.',
   'fantastic-fungi': 'The film explores the relationship between fungi, forests and people.',
 };
-function Providers({ label, items, subscription = false }: { label: string; items: Provider[]; subscription?: boolean }) {
-  if (!items.length) return null;
-  return <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs"><span className="text-muted-foreground">{label}</span>{items.map(p => <span key={p.id} className={subscription && p.highlighted ? 'font-semibold text-primary' : 'text-foreground'}>{p.name}</span>)}</div>;
+// Watch in Ireland as one row: subscription first, else rent/buy, else a discreet JustWatch link. Missing data = unknown.
+function WatchStrip({ loading, providers, fallback }: { loading: boolean; providers?: Enrichment['providers'] | undefined; fallback: string }) {
+  const names = (items: Provider[]) => items.map(p => p.name).join(', ');
+  const rentBuy = [...new Map([...(providers?.rent ?? []), ...(providers?.buy ?? [])].map(p => [p.id, p])).values()];
+  const href = providers?.link ?? fallback;
+  return <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border pt-3 text-xs">
+    <span className="font-semibold">Ireland</span>
+    {loading ? <span className="text-muted-foreground" role="status">Checking…</span>
+      : providers?.flatrate.length ? <span className="rounded-full bg-primary/15 px-2.5 py-1 font-medium text-primary">▶ Stream on {names(providers.flatrate)}</span>
+      : rentBuy.length ? <span className="rounded-full border border-border px-2.5 py-1">Rent / buy: {names(rentBuy)}</span>
+      : <span className="text-muted-foreground">Availability unknown</span>}
+    <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">{providers?.link ? 'All options' : 'JustWatch IE'}<ExternalLink className="size-3" /></a>
+  </div>;
 }
-// IMDb / RT: a small popover with our stored score and a new-tab link (their pages block embedding).
-function RatingLink({ site, film, score }: { site: 'imdb' | 'rt'; film: { title: string; year: number; imdbId?: string | undefined }; score?: number | undefined }) {
+// IMDb / RT pills open the source directly in a new tab (their pages block embedding).
+function RatingPill({ site, film, score }: { site: 'imdb' | 'rt'; film: { title: string; imdbId?: string | undefined }; score?: number | undefined }) {
   const imdb = site === 'imdb';
-  if (imdb && !film.imdbId) return null;
+  if (score === undefined || (imdb && !film.imdbId)) return null;
   const href = imdb ? `https://www.imdb.com/title/${film.imdbId}/` : `https://www.rottentomatoes.com/search?search=${encodeURIComponent(film.title)}`;
-  const name = imdb ? 'IMDb' : 'Rotten Tomatoes';
-  return <Popover><PopoverTrigger asChild><Button variant="outline" aria-label={`${name} rating`} className="px-2.5 font-bold">{imdb ? <span className="rounded-sm bg-primary px-1 text-[11px] text-primary-foreground">IMDb</span> : <span className="text-[11px] text-destructive">RT</span>}{score !== undefined && <span className="text-xs font-medium">{imdb ? score.toFixed(1) : `${score}%`}</span>}</Button></PopoverTrigger>
-    <PopoverContent className="w-60 text-sm"><p className="text-xs text-muted-foreground">{name}</p><p className="mt-1 text-2xl font-semibold">{score === undefined ? 'No score' : imdb ? `${score.toFixed(1)}/10` : `${score}%`}</p>{!imdb && <p className="mt-1 text-xs text-muted-foreground">Tomatometer via OMDb.</p>}<Button asChild variant="link" size="sm" className="mt-2 h-auto px-0"><a href={href} target="_blank" rel="noreferrer">{imdb ? 'Open on IMDb' : 'Search on Rotten Tomatoes'}<ExternalLink /></a></Button></PopoverContent></Popover>;
+  return <a href={href} target="_blank" rel="noreferrer" aria-label={`${imdb ? 'IMDb' : 'Rotten Tomatoes'} ${imdb ? score.toFixed(1) : `${score}%`} — open in new tab`} className="inline-flex items-center gap-1 rounded-full border border-border px-2 py-0.5 text-xs font-medium hover:border-primary">
+    {imdb ? <span className="rounded-sm bg-primary px-1 text-[10px] font-bold text-primary-foreground">IMDb</span> : <span className="text-[10px] font-bold text-destructive">RT</span>}{imdb ? score.toFixed(1) : `${score}%`}<ExternalLink className="size-3 opacity-60" /></a>;
 }
 // Free, legal viewing searches only (no piracy sources).
 function FreeLegal({ film }: { film: { title: string; year: number } }) {
@@ -107,6 +118,7 @@ function Index() {
   const filterIds = new Set<string>(['all', 'awards', ...CATEGORIES.map(c => c.id)]);
   const filter = (filterIds.has(search.cat) ? search.cat : 'all') as Filter;
   const era = (ERAS.some(([id]) => id === search.era) ? search.era : 'all') as Era;
+  const len = (LENGTHS.some(([id]) => id === search.len) ? search.len : 'all') as Length;
   const type = (['movie', 'tv'].includes(search.type) ? search.type : 'all') as 'all' | 'movie' | 'tv';
   const sort = SORTS.includes(search.sort) ? search.sort : 'random';
   const setParam = (patch: Partial<typeof searchDefaults>) => navigate({ search: prev => ({ ...prev, ...patch }), replace: true });
@@ -125,20 +137,20 @@ function Index() {
   const toggleWatched = (id: string) => { if (!watched.has(id)) shortOps.remove(id); toggleWatchedRaw(id); };
   const [hideWatched, setHideWatched] = usePreference('dc-hide-watched', true);
   const [trailerOpen, setTrailerOpen] = useState(false);
-  const [backdrop, setBackdrop] = useState<number | null>(null);
+  const [photo, setPhoto] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
   const fetchProviders = useServerFn(getIrishProviders);
   const list = useMemo(() => {
     const base = listFilter === 'shortlist' ? CATALOGUE.filter(f => shortlist.has(f.id)) : listFilter === 'watched' ? CATALOGUE.filter(f => watched.has(f.id)) : hideWatched ? CATALOGUE.filter(f => !watched.has(f.id)) : CATALOGUE;
-    const filtered = searchCatalogue(sort === 'random' ? orderFilms(base, order) : base, query, type).filter(f => inEra(f.year, era)).filter(f => filter === 'all' ? true : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter));
+    const filtered = searchCatalogue(sort === 'random' ? orderFilms(base, order) : base, query, type).filter(f => inEra(f.year, era) && inLength(f, SNAPSHOT[f.id]?.runtime ?? f.minutes, len)).filter(f => filter === 'all' ? true : filter === 'awards' ? f.awards.length > 0 : f.categories.includes(filter));
     if (sort === 'imdb' || sort === 'rt') return sortByRating(filtered, SNAPSHOT, sort === 'imdb' ? 'imdb' : 'rottenTomatoes');
     if (sort === 'newest') return [...filtered].sort((a, b) => b.year - a.year);
     if (sort === 'oldest') return [...filtered].sort((a, b) => a.year - b.year);
     return filtered;
-  }, [filter, listFilter, shortlist, watched, hideWatched, sort, query, type, era, order]);
-  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era, hideWatched]);
+  }, [filter, listFilter, shortlist, watched, hideWatched, sort, query, type, era, len, order]);
+  useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era, len, hideWatched]);
   const exportLists = () => {
     const blob = new Blob([JSON.stringify({ app: 'documentary-club', exportedAt: new Date().toISOString(), saved: [...shortlist], watched: [...watched] }, null, 2)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `documentary-club-lists-${new Date().toISOString().slice(0, 10)}.json`; a.click(); URL.revokeObjectURL(a.href);
@@ -158,13 +170,12 @@ function Index() {
   const providers = useQuery({ queryKey: ['ie-providers', film?.id], queryFn: () => fetchProviders({ data: { id: film?.id ?? '' } }), enabled: Boolean(film?.tmdbId) && film?.mediaType !== 'collection', staleTime: 6 * 60 * 60_000, retry: false });
   const snap = film ? SNAPSHOT[film.id] : undefined;
   const extra = snap ? { ...snap, rating: snap.tmdbRating, providers: providers.data } : undefined;
-  const backdropUrl = backdrop === null ? undefined : extra?.backdrops?.[backdrop];
   const go = useCallback((direction: number) => {
     if (!list.length) return;
     const next = list[(Math.max(idx, 0) + direction + list.length) % list.length];
     if (next) setFilm(next.id);
   }, [list, idx]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { setBackdrop(null); setCopied(false); }, [film?.id]);
+  useEffect(() => { setPhoto(null); setCopied(false); }, [film?.id]);
   useEffect(() => {
     const handle = (e: KeyboardEvent) => {
       if (view !== 'spotlight' || !canNavigate(e.target, trailerOpen) || document.querySelector('[role="dialog"]')) return;
@@ -172,11 +183,7 @@ function Index() {
     };
     window.addEventListener('keydown', handle); return () => window.removeEventListener('keydown', handle);
   }, [go, view, trailerOpen]);
-  const rail = useRef<HTMLDivElement>(null); const touch = useRef<{ x: number; y: number } | null>(null);
-  useEffect(() => {
-    const container = rail.current; const active = container?.querySelector<HTMLElement>('[aria-pressed="true"]');
-    if (container && active) container.scrollTo({ left: active.offsetLeft - container.offsetLeft - container.clientWidth / 2 + active.clientWidth / 2, behavior: 'smooth' });
-  }, [film?.id, view]);
+  const touch = useRef<{ x: number; y: number } | null>(null);
   const share = async () => {
     if (!film) return;
     const url = `${window.location.origin}/?film=${film.id}`;
@@ -186,11 +193,12 @@ function Index() {
   const toggleList = (which: 'shortlist' | 'watched') => navigate({ search: prev => ({ ...prev, list: prev.list === which ? '' : which }) });
   // Director links: open the gallery filtered to everything we have by that filmmaker.
   const searchDirector = (name: string) => { setQuery(name); navigate({ search: prev => ({ ...prev, film: '', q: name, list: '', cat: 'all', era: 'all' }) }); };
-  const clearFilters = () => { setQuery(''); navigate({ search: prev => ({ ...prev, q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random' }), replace: true }); };
-  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', listFilter === 'watched'].filter(Boolean).length;
+  const clearFilters = () => { setQuery(''); navigate({ search: prev => ({ ...prev, q: '', list: '', cat: 'all', era: 'all', type: 'all', sort: 'random', len: 'all' }), replace: true }); };
+  // Surprise me: random title from the current selection (Saved, filters, search), never the one already open.
+  const surprise = () => { const pool = list.length > 1 ? list.filter(f => f.id !== search.film) : list; const pick = pool[Math.floor(Math.random() * pool.length)]; if (pick) openSpotlight(pick.id); };
+  const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', len !== 'all', listFilter === 'watched'].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES, { id: 'awards', label: 'Awards & nominees' }];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
-    {backdropUrl && <div className="scene-background" aria-hidden="true"><img src={backdropUrl} alt="" onError={() => setBackdrop(null)} /></div>}
     <header className="flex items-center justify-between gap-3 py-3"><h1><SiteLogo /></h1><span className="hidden text-xs text-muted-foreground sm:block">Extraordinary true stories</span></header>
     <div className="grid grid-cols-3 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
       <Button size="sm" variant={view === 'spotlight' ? 'secondary' : 'ghost'} aria-pressed={view === 'spotlight'} onClick={() => openSpotlight()}><Maximize2 />Spotlight</Button>
