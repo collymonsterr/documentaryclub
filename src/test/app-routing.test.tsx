@@ -31,6 +31,6 @@ describe("App routing", () => {
     expect(target.pathname).toBe("/");
     // Opens the plain homepage: no film, saved list or search pinned (the live route
     // strips these empty values, so the browser lands on a bare "/").
-    expect(Object.fromEntries(target.searchParams)).toEqual({ film: "", q: "", list: "", cat: "all", era: "all", type: "all", sort: "random" });
+    expect(Object.fromEntries(target.searchParams)).toEqual({ film: "", q: "", list: "", cat: "all", era: "all", len: "all", type: "all", sort: "random" });
   });
 });
