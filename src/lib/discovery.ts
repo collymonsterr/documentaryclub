@@ -1,6 +1,10 @@
 import type { Film } from '@/data/films';
 
 export type Provider = { id: number; name: string; highlighted: boolean };
+// Discovery selections leave Spotlight while preserving every independent URL facet.
+export function gallerySelection<T extends { film: string }>(current: T, patch: Partial<T>): T {
+  return { ...current, ...patch, film: '' };
+}
 export type Enrichment = {
   status: 'ready' | 'missing-secret' | 'not-found' | 'unavailable';
   tmdbId?: number | undefined;
