@@ -16,7 +16,7 @@ import { SiteLogo } from '@/components/site-logo';
 import { TrailerModal } from '@/components/trailer-modal';
 import { PhotoLightbox } from '@/components/photo-lightbox';
 import { usePreference, useTracking } from '@/hooks/use-tracking';
-import { canNavigate, cardBadges, inEra, inLength, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Length, type Provider, type Enrichment } from '@/lib/discovery';
+import { gallerySelection, canNavigate, cardBadges, inEra, inLength, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Length, type Provider, type Enrichment } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
@@ -127,7 +127,7 @@ function Index() {
   const type = (['movie', 'tv'].includes(search.type) ? search.type : 'all') as 'all' | 'movie' | 'tv';
   const sort = SORTS.includes(search.sort) ? search.sort : 'random';
   const setParam = (patch: Partial<typeof searchDefaults>) => navigate({ search: prev => ({ ...prev, ...patch }), replace: true });
-  const setDiscovery = (patch: Partial<typeof searchDefaults>) => { restore.current = false; setParam({ ...patch, film: '' }); };
+  const setDiscovery = (patch: Partial<typeof searchDefaults>) => { restore.current = false; navigate({ search: prev => gallerySelection(prev, patch), replace: true }); };
   const setFilter = (cat: Filter) => setDiscovery({ cat });
   const setEra = (e: Era) => setParam({ era: e });
   const setType = (t: string) => setParam({ type: t });
@@ -278,6 +278,10 @@ function Index() {
         <div className="group relative">
           <Button variant="ghost" aria-label={`Open ${f.title}`} className="h-auto w-full p-0" onClick={() => openSpotlight(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button>
           <AwardLaurel film={f} />
+          <div className="card-hover-actions absolute right-2 top-2 gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+            <Button size="icon" variant="secondary" className="size-8" aria-label={`${shortlist.has(f.id) ? 'Unsave' : 'Save'} ${f.title}`} aria-pressed={shortlist.has(f.id)} onClick={() => toggleShort(f.id)}><Heart className={shortlist.has(f.id) ? 'fill-save text-save' : 'text-save'} /></Button>
+            <Button size="icon" variant="secondary" className="size-8" aria-label={`Mark ${f.title} ${watched.has(f.id) ? 'unwatched' : 'watched'}`} aria-pressed={watched.has(f.id)} onClick={() => toggleWatched(f.id)}><Check className={watched.has(f.id) ? 'text-success' : 'text-muted-foreground'} /></Button>
+          </div>
         </div>
         <h2 className="mt-2 line-clamp-2 min-h-10 text-sm font-medium leading-5">{f.title}</h2>
         <p className="mt-1 line-clamp-2 text-xs leading-4 text-muted-foreground">{years(f)}{formatCommitment(f) ? ` · ${formatCommitment(f)}` : ''}{f.pending ? ' · Pending' : ''}</p>

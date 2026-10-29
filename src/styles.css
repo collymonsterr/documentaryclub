@@ -148,6 +148,8 @@
 .discovery-chips { grid-column: 1 / -1; padding-block: 10px; }
 .discovery-chips button { flex-shrink: 0; border-radius: 999px; }
 .spotlight-grid { scroll-margin-top: 174px; }
+.card-hover-actions { display: flex; }
+@media (hover: none) { .card-hover-actions { display: none; } }
 @media (max-width: 1023px) {
   .discovery-navigation { grid-template-columns: minmax(0, 1fr) auto auto; gap: 0 4px; }
   .header-brand { grid-column: 1; grid-row: 1; }
