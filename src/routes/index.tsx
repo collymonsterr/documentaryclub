@@ -7,7 +7,7 @@ import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
 import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { AWARDS, MOODS, PICKS, EDITORIAL, accolades, discoveryShelves, matchesFacets, makerIndex, formatCommitment } from '@/data/discovery-facets';
+import { AWARDS, MOODS, EDITORIAL, accolades, matchesFacets, makerIndex, formatCommitment } from '@/data/discovery-facets';
 import { AwardBadges } from '@/components/award-badges';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { DocumentaryPoster } from '@/components/documentary-poster';
@@ -117,8 +117,8 @@ function Index() {
     apply(); const r = requestAnimationFrame(apply); return () => cancelAnimationFrame(r);
   }, [view]);
   // Filters live in the URL so refresh/bookmarks restore the same view.
-  const facet = { award: AWARDS.some(a => a.id === search.award) ? search.award : '', mood: MOODS.some(m => m.id === search.mood) ? search.mood : '', pick: PICKS.some(p => p.id === search.pick) ? search.pick : '', maker: makerIndex().some(m => m.name === search.maker) ? search.maker : '' };
-  const browse = ['topics', 'awards', 'moods', 'picks', 'discover'].includes(search.browse) ? search.browse : 'topics';
+  const facet = { award: AWARDS.some(a => a.id === search.award) ? search.award : '', mood: MOODS.some(m => m.id === search.mood) ? search.mood : '', pick: '', maker: makerIndex().some(m => m.name === search.maker) ? search.maker : '' };
+  const browse = ['topics', 'awards', 'directors', 'moods'].includes(search.browse) ? search.browse : 'topics';
   const filterIds = new Set<string>(['all', 'awards', ...CATEGORIES.map(c => c.id)]);
   const filter = (filterIds.has(search.cat) ? search.cat : 'all') as Filter;
   const era = (ERAS.some(([id]) => id === search.era) ? search.era : 'all') as Era;
@@ -168,7 +168,7 @@ function Index() {
     shortOps.replace(next.saved); watchedOps.replace(next.watched);
   };
   // A shared link may name a film outside the current filters; show it anyway.
-  const shelves = useMemo(() => discoveryShelves(list), [list]);
+  const topDirectors = useMemo(() => makerIndex().filter(m => m.films.length >= 3), []);
   const film = list.find(f => f.id === search.film) ?? CATALOGUE.find(f => f.id === search.film) ?? list[0];
   const idx = list.findIndex(f => f.id === film?.id);
   // Baseline metadata ships in the snapshot; only Irish availability is fetched live, for the selected title.
@@ -204,19 +204,24 @@ function Index() {
   const activeFilters = [type !== 'all', sort !== 'random', era !== 'all', len !== 'all', listFilter === 'watched', !!facet.award, !!facet.mood, !!facet.pick, !!facet.maker, filter !== 'all'].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: 'all', label: 'All' }, ...CATEGORIES];
   return <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
-    <header className="flex items-center justify-between gap-3 py-3"><h1><SiteLogo /></h1><Button asChild variant="ghost" size="sm"><Link to="/makers">Makers</Link></Button></header>
+    <header className="flex items-center justify-between gap-3 py-3"><h1><SiteLogo /></h1></header>
     <div className="grid grid-cols-3 gap-1 border-y border-border py-1" role="group" aria-label="Browsing view">
       <Button size="sm" variant={view === 'spotlight' ? 'secondary' : 'ghost'} aria-pressed={view === 'spotlight'} onClick={() => openSpotlight()}><Maximize2 />Spotlight</Button>
       <Button size="sm" variant={view === 'gallery' ? 'secondary' : 'ghost'} aria-pressed={view === 'gallery'} onClick={backToGallery}><Grid2X2 />Gallery</Button>
       <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Heart className={listFilter === 'shortlist' ? 'fill-save text-save' : 'text-save'} />Saved<span className="text-xs opacity-70">{shortlist.size}</span></Button>
     </div>
-    <nav aria-label="Browse by" className="mt-2 flex gap-1 overflow-x-auto border-b border-border no-scrollbar">{([['topics', 'Topics'], ['awards', 'Awards'], ['moods', 'Moods'], ['picks', 'Picks'], ['discover', 'Discover']] as const).map(([id, label]) => <Button key={id} size="sm" variant={browse === id ? 'secondary' : 'ghost'} aria-pressed={browse === id} onClick={() => setParam({ browse: id })}>{label}</Button>)}</nav>
-    {browse !== 'discover' && <nav aria-label="Discovery options" className="flex gap-1 overflow-x-auto pt-2 no-scrollbar sm:flex-wrap sm:overflow-visible">
-      {browse === 'topics' ? filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>) : <>
-        <Button size="sm" variant={!facet[browse === 'awards' ? 'award' : browse === 'moods' ? 'mood' : 'pick'] ? 'default' : 'ghost'} onClick={() => setParam({ [browse === 'awards' ? 'award' : browse === 'moods' ? 'mood' : 'pick']: '' })}>All</Button>
-        {(browse === 'awards' ? AWARDS : browse === 'moods' ? MOODS : PICKS).map(f => { const key = browse === 'awards' ? 'award' : browse === 'moods' ? 'mood' : 'pick'; return <Button key={f.id} size="sm" variant={facet[key] === f.id ? 'default' : 'ghost'} aria-pressed={facet[key] === f.id} onClick={() => setParam({ [key]: facet[key] === f.id ? '' : f.id })}>{f.label}</Button>; })}
+    <nav aria-label="Browse by" className="mt-2 flex gap-1 overflow-x-auto border-b border-border no-scrollbar">{([['topics', 'Categories'], ['awards', 'Awards'], ['directors', 'Directors'], ['moods', 'Moods']] as const).map(([id, label]) => <Button key={id} size="sm" variant={browse === id ? 'secondary' : 'ghost'} aria-pressed={browse === id} onClick={() => setParam({ browse: id })}>{label}</Button>)}</nav>
+    <nav aria-label="Discovery options" className="flex gap-1 overflow-x-auto pt-2 no-scrollbar sm:flex-wrap sm:overflow-visible">
+      {browse === 'topics' ? filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)
+      : browse === 'directors' ? <>
+        <Button size="sm" variant={!facet.maker ? 'default' : 'ghost'} onClick={() => setParam({ maker: '' })}>All</Button>
+        {topDirectors.map(m => <Button key={m.name} size="sm" variant={facet.maker === m.name ? 'default' : 'ghost'} aria-pressed={facet.maker === m.name} onClick={() => setParam({ maker: facet.maker === m.name ? '' : m.name, q: '' })}>{m.name} <span className="text-xs opacity-70">{m.films.length}</span></Button>)}
+        <Button asChild size="sm" variant="link"><Link to="/makers">All directors<ArrowRight /></Link></Button>
+      </> : <>
+        <Button size="sm" variant={!facet[browse === 'awards' ? 'award' : 'mood'] ? 'default' : 'ghost'} onClick={() => setParam({ [browse === 'awards' ? 'award' : 'mood']: '' })}>All</Button>
+        {(browse === 'awards' ? AWARDS : MOODS).map(f => { const key = browse === 'awards' ? 'award' : 'mood'; return <Button key={f.id} size="sm" variant={facet[key] === f.id ? 'default' : 'ghost'} aria-pressed={facet[key] === f.id} onClick={() => setParam({ [key]: facet[key] === f.id ? '' : f.id })}>{f.label}</Button>; })}
       </>}
-    </nav>}
+    </nav>
     <div className="mb-4 flex flex-wrap items-end gap-2 border-b border-border pb-3">
       <label className="min-w-40 flex-1 text-xs text-muted-foreground">Search<Input aria-label="Search title, alias or director" type="search" placeholder="Title, alias or director" value={query} onChange={e => updateQuery(e.target.value)} className="mt-1 h-8" /></label>
       <Popover open={filtersOpen} onOpenChange={setFiltersOpen}>
@@ -226,8 +231,7 @@ function Index() {
             <label className="block text-xs text-muted-foreground">Topic<select aria-label="Topic" className="discovery-select mt-1 w-full" value={filter} onChange={e => setFilter(e.target.value as Filter)}>{filters.map(f => <option key={f.id} value={f.id}>{f.label}</option>)}</select></label>
             <label className="block text-xs text-muted-foreground">Award<select aria-label="Award" className="discovery-select mt-1 w-full" value={facet.award} onChange={e => setParam({ award: e.target.value })}><option value="">Any award</option>{AWARDS.map(a => <option key={a.id} value={a.id}>{a.label}</option>)}</select></label>
             <label className="block text-xs text-muted-foreground">Mood<select aria-label="Mood" className="discovery-select mt-1 w-full" value={facet.mood} onChange={e => setParam({ mood: e.target.value })}><option value="">Any mood</option>{MOODS.map(m => <option key={m.id} value={m.id}>{m.label}</option>)}</select></label>
-            <label className="block text-xs text-muted-foreground">Pick<select aria-label="Pick" className="discovery-select mt-1 w-full" value={facet.pick} onChange={e => setParam({ pick: e.target.value })}><option value="">Any pick</option>{PICKS.map(p => <option key={p.id} value={p.id}>{p.label}</option>)}</select></label>
-            <label className="block text-xs text-muted-foreground">Maker<select aria-label="Maker" className="discovery-select mt-1 w-full" value={facet.maker} onChange={e => setParam({ maker: e.target.value, q: '' })}><option value="">Any maker</option>{makerIndex().map(m => <option key={m.name} value={m.name}>{m.name} ({m.films.length})</option>)}</select></label>
+            <label className="block text-xs text-muted-foreground">Director<select aria-label="Director" className="discovery-select mt-1 w-full" value={facet.maker} onChange={e => setParam({ maker: e.target.value, q: '' })}><option value="">Any director</option>{makerIndex().map(m => <option key={m.name} value={m.name}>{m.name} ({m.films.length})</option>)}</select></label>
             <label className="block text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select mt-1 w-full" value={type} onChange={e => setType(e.target.value)}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
             <label className="block text-xs text-muted-foreground">Order<select aria-label="Sort order" className="discovery-select mt-1 w-full" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="imdb">Top IMDb</option><option value="rt">Top Rotten Tomatoes</option></select></label>
             <label className="block text-xs text-muted-foreground">Era<select aria-label="Era" className="discovery-select mt-1 w-full" value={era} onChange={e => setEra(e.target.value as Era)}>{ERAS.map(([id, label]) => <option key={id} value={id}>{id === 'recent' ? 'Recent (last 2 years)' : label}</option>)}</select></label>
@@ -253,15 +257,11 @@ function Index() {
       ...(filter !== 'all' ? [{ key: 'cat', label: filters.find(f => f.id === filter)?.label ?? filter }] : []),
       ...(facet.award ? [{ key: 'award', label: AWARDS.find(a => a.id === facet.award)?.label }] : []),
       ...(facet.mood ? [{ key: 'mood', label: MOODS.find(m => m.id === facet.mood)?.label }] : []),
-      ...(facet.pick ? [{ key: 'pick', label: PICKS.find(p => p.id === facet.pick)?.label }] : []),
       ...(facet.maker ? [{ key: 'maker', label: facet.maker }] : []),
     ].map(f => <Button key={f.key} size="sm" variant="secondary" onClick={() => setParam({ [f.key]: f.key === 'cat' ? 'all' : '' })} aria-label={`Remove ${f.label} filter`}>{f.label} ×</Button>)}</div>}
     {listFilter && <p className="mb-3 flex items-center gap-2 text-xs text-muted-foreground"><span className="font-medium text-foreground">{listFilter === 'shortlist' ? 'Your saved films' : 'Watched'}</span><Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={() => toggleList(listFilter)}>Show everything</Button></p>}
     {!film ? <div className="py-16 text-center"><p className="text-muted-foreground">No films in this selection.</p><Button variant="ghost" className="mt-3" onClick={clearFilters}>Clear filters</Button></div> : view === 'gallery' ?
-      browse === 'discover' ? <div className="space-y-7">{shelves.length ? shelves.map(shelf => <section key={shelf.id} aria-label={shelf.label}>
-        <div className="mb-3 flex items-center justify-between gap-2"><h2 className="font-display text-xl font-semibold">{shelf.label}</h2><Button size="sm" variant="link" onClick={() => setParam({ ...shelf.selection, browse: shelf.selection.award ? 'awards' : shelf.selection.mood ? 'moods' : 'picks' })}>View all · {shelf.films.length}<ArrowRight /></Button></div>
-        <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">{shelf.films.slice(0, 12).map(f => <div key={f.id} data-film-card={`${shelf.id}:${f.id}`} className="w-36 shrink-0 sm:w-40"><Button variant="ghost" className="h-auto w-full p-0" aria-label={`Open ${f.title} from ${shelf.label}`} onClick={() => openSpotlight(f.id, `${shelf.id}:${f.id}`)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button><h3 className="mt-2 text-sm font-medium leading-snug">{f.title}</h3><p className="mt-1 text-xs text-muted-foreground">{f.year}{formatCommitment(f) ? ` · ${formatCommitment(f)}` : ''}</p></div>)}</div>
-      </section>) : <p className="py-10 text-center text-muted-foreground">No discovery shelves in this selection.</p>}</div> : <><section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">{list.slice(0, shown).map(f => { const badges = cardBadges(SNAPSHOT[f.id]); return <div key={f.id} data-film-card={f.id} className="min-w-0">
+      <><section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">{list.slice(0, shown).map(f => { const badges = cardBadges(SNAPSHOT[f.id]); return <div key={f.id} data-film-card={f.id} className="min-w-0">
         <div className="group relative">
           <Button variant="ghost" aria-label={`Open ${f.title}`} className="h-auto w-full p-0" onClick={() => openSpotlight(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button>
           {(badges.length > 0 || accolades(f).length > 0) && <div className="pointer-events-none absolute inset-0 flex flex-col justify-end gap-0.5 rounded-lg bg-gradient-to-t from-background/95 via-background/40 to-transparent p-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
@@ -285,7 +285,7 @@ function Index() {
           <div className="mt-2 flex flex-wrap items-center gap-1.5"><RatingPill site="imdb" film={film} score={extra?.omdb?.imdb} /><RatingPill site="rt" film={film} score={extra?.omdb?.rottenTomatoes} />{extra?.omdb?.imdb === undefined && extra?.rating !== undefined && <span className="text-xs text-accent-foreground">TMDB {extra.rating.toFixed(1)}</span>}</div>
           <p className="mt-3 text-sm leading-relaxed text-foreground/90">{extra?.overview ? overviewSentences(`${extra.overview}${(extra.overview.match(/[.!?](?:\s|$)/g)?.length ?? 0) < 2 ? ` ${NOTES[film.id] ?? ''}` : ''}`) : `${film.synopsis} ${NOTES[film.id] ?? ''}`}</p>
           <AwardBadges film={film} />
-          {!!EDITORIAL[film.id] && <div className="mt-3 flex flex-wrap gap-1" aria-label="Editorial moods and picks">{MOODS.filter(m => EDITORIAL[film.id]?.moods.includes(m.id)).map(m => <Button size="sm" variant="secondary" key={m.id} title="Editorial mood" onClick={() => { setParam({ mood: m.id, film: '', browse: 'moods' }); }}>{m.label}</Button>)}{PICKS.filter(p => EDITORIAL[film.id]?.picks?.includes(p.id)).map(p => <Button size="sm" variant="secondary" key={p.id} title="Editorial pick" onClick={() => setParam({ pick: p.id, film: '', browse: 'picks' })}>{p.label}</Button>)}</div>}
+          {!!EDITORIAL[film.id] && <div className="mt-3 flex flex-wrap gap-1" aria-label="Moods">{MOODS.filter(m => EDITORIAL[film.id]?.moods.includes(m.id)).map(m => <Button size="sm" variant="secondary" key={m.id} title="Editorial mood" onClick={() => { setParam({ mood: m.id, film: '', browse: 'moods' }); }}>{m.label}</Button>)}</div>}
           {extra?.omdb?.awards && <details className="mt-2 text-xs text-muted-foreground"><summary className="cursor-pointer w-fit hover:text-foreground">More awards</summary><p className="mt-1 leading-relaxed">{extra.omdb.awards} <span className="opacity-70">(OMDb)</span></p></details>}
           <div className="mt-4 flex flex-wrap gap-2"><TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} /><Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}><Heart className={shortlist.has(film.id) ? 'fill-save text-save' : 'text-save'} />{shortlist.has(film.id) ? 'Saved' : 'Save'}</Button><Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}><Check />{watched.has(film.id) ? 'Watched' : 'Mark watched'}</Button><FreeLegal film={film} /><Button variant="outline" onClick={share}><Link2 />{copied ? 'Link copied' : 'Share'}</Button></div>
           <WatchStrip loading={providers.isFetching} providers={extra?.providers} fallback={justWatchLink(film)} />
@@ -294,6 +294,6 @@ function Index() {
         </div>
       </section>
     </>}
-    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><Link to="/list" className="underline">All titles by category</Link><Link to="/makers" className="underline">Makers</Link><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
+    <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground"><span>{CATALOGUE.length} curated true stories.</span><Link to="/list" className="underline">All titles by category</Link><Link to="/makers" className="underline">Directors</Link><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">Film data & images: TMDB</a><a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">Availability: JustWatch</a><a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">IMDb & Rotten Tomatoes: OMDb</a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>{providers.isError && <span>Live availability temporarily unavailable.</span>}</footer>
   </main>;
 }
