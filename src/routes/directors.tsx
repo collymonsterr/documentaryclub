@@ -3,7 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { CATALOGUE } from '@/data/catalogue';
 import { SiteLogo } from '@/components/site-logo';
 
-const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random' } as const;
+const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', browse: 'topics' } as const;
 const slug = (s: string) => s.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 function directorIndex() {
@@ -33,7 +33,7 @@ function DirectorsPage() {
   return <main className="mx-auto max-w-3xl px-4 pb-10 sm:px-6">
     <header className="flex items-center justify-between gap-3 py-3">
       <h1><SiteLogo /></h1>
-      <Link to="/" search={base} className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Back to discovery</Link>
+      <Link to="/makers" className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Browse Makers</Link>
     </header>
     <p className="border-b border-border pb-3 text-xs text-muted-foreground">{all.length} directors · {multi.length} with two or more titles. Click a name to filter the gallery.</p>
     <section aria-label="Most featured directors" className="mt-4 rounded-lg border border-border bg-card/40 p-4">
