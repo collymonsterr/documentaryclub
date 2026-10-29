@@ -124,6 +124,18 @@ export function sortByRating<T extends { id: string }>(films: T[], snap: Record<
   return [...films].sort((a, b) => (score(b.id) ?? -1) - (score(a.id) ?? -1));
 }
 
+// Time-commitment facet: films by runtime (short <90, standard 90–120, long >120; unknown runtime excluded), series = tv or collection.
+export type Length = 'all' | 'short' | 'standard' | 'long' | 'series';
+export function inLength(film: { mediaType?: string | undefined }, runtime: number | undefined, length: Length) {
+  if (length === 'all') return true;
+  const series = film.mediaType === 'tv' || film.mediaType === 'collection';
+  if (length === 'series') return series;
+  if (series || runtime === undefined) return false;
+  if (length === 'short') return runtime < 90;
+  if (length === 'standard') return runtime >= 90 && runtime <= 120;
+  return runtime > 120;
+}
+
 export function canNavigate(target: EventTarget | null, dialogOpen: boolean) {
   return !dialogOpen && !(target instanceof Element && (target.closest('input, select, textarea, [role="dialog"], [role="combobox"]') || target.closest('[contenteditable]:not([contenteditable="false"])')));
 }
