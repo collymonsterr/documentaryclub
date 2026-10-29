@@ -5,6 +5,8 @@ import manifestJson from './import-manifest.json';
 import manifest2Json from './import-manifest-2.json';
 import manifest3Json from './import-manifest-3.json';
 import { CATEGORY_OVERRIDES } from './import-batch2';
+import manifest4Json from './import-manifest-4.json';
+import sheetJson from './catalogue-sheet.json';
 
 // Public metadata resolved once at import (scripts/resolve-catalogue.ts). Contains no credentials.
 export type Snapshot = {
@@ -53,10 +55,35 @@ export const RESTRUCTURE: Partial<Record<Film['categories'][number], string[]>> 
 };
 const MOVED = new Map(Object.entries(RESTRUCTURE).flatMap(([cat, list]) => list.map(id => [id, cat] as const)));
 const PRESENTED_BY_THEROUX = new Set(['louis-and-the-brothel']); // Theroux title without his name in it
-export const CATALOGUE: Film[] = [...originals, ...imported].map(f => {
+const restructured: Film[] = [...originals, ...imported].map(f => {
   const cat = (MOVED.get(f.id) ?? (f.categories[0] === ('sexdrugs' as string) ? 'drugs' : f.categories[0])) as Film['categories'][number];
   const presenter = /Louis Theroux/.test(f.title) || PRESENTED_BY_THEROUX.has(f.id) ? 'Louis Theroux' : undefined;
   return { ...f, categories: [cat], ...(f.genre === label(f.categories[0]!) || f.genre === 'Sex & Drugs' ? { genre: label(cat) } : {}), ...(presenter ? { presenter } : {}) };
+});
+
+// Google Sheet (final authority, matched by stable id): category, moods, tags, director, format. Remove rows are dropped.
+export type SheetRow = { id?: string; title: string; year: number; format: 'Film' | 'Series'; director?: string; category: string; moods?: string[]; tags?: string[]; status: 'Existing' | 'New' | 'Remove' };
+export const SHEET = sheetJson as SheetRow[];
+type Manifest4Entry = { input: { title: string; year: number }; id: string; status: string };
+export const MANIFEST4 = manifest4Json as unknown as { entries: Manifest4Entry[] };
+const catId = (l: string) => CATEGORIES.find(c => c.label === l)?.id;
+const newId = new Map(MANIFEST4.entries.map(e => [`${e.input.title}|${e.input.year}`, e.id]));
+export const sheetId = (r: SheetRow) => r.id ?? newId.get(`${r.title}|${r.year}`)!;
+const removed = new Set(SHEET.filter(r => r.status === 'Remove').map(sheetId));
+const created: Film[] = SHEET.filter(r => r.status === 'New').map(r => {
+  const id = sheetId(r), s = SNAPSHOT[id], resolved = s?.status === 'resolved';
+  return { id, title: r.title, year: r.year, director: '', genre: '', categories: ['strange'], synopsis: s?.overview ?? 'Approved title awaiting verified synopsis.', awards: [], hue: 0,
+    aliases: s?.canonicalTitle && s.canonicalTitle !== r.title ? [s.canonicalTitle] : [], mediaType: s?.mediaType ?? 'movie', pending: !resolved,
+    ...(s?.runtime ? { minutes: s.runtime } : {}), ...(s?.tmdbId ? { tmdbId: s.tmdbId } : {}), ...(s?.imdbId ? { imdbId: s.imdbId } : {}), ...(s?.episodes ? { episodes: s.episodes } : {}) };
+});
+const byId = new Map(SHEET.filter(r => r.status !== 'Remove').map(r => [sheetId(r), r]));
+export const CATALOGUE: Film[] = [...restructured, ...created].filter(f => !removed.has(f.id)).map(f => {
+  const r = byId.get(f.id); if (!r) return f;
+  const cat = (catId(r.category) ?? f.categories[0]) as Film['categories'][number];
+  const director = r.director ?? (f.director || SNAPSHOT[f.id]?.people?.join(', ') || '');
+  const mediaType = f.mediaType === 'collection' ? 'collection' : r.format === 'Series' ? 'tv' : 'movie';
+  const genre = !f.genre || f.genre === label(f.categories[0]!) ? label(cat) : f.genre;
+  return { ...f, categories: [cat], genre, director, mediaType, ...(r.tags?.length ? { tags: r.tags } : {}) };
 });
 
 export function searchCatalogue(films: Film[], query: string, type: 'all' | 'movie' | 'tv') {
