@@ -8,9 +8,9 @@
 - [x] Second approved batch: 342 raw inputs (290 attachment + 52 inline) → 48 in-batch duplicates, 136 existing matches, 158 new (306 total). Up as one verified collection, Arts & Subcultures, secondary tags, Before 2000 era filter.
 - [x] Discovery polish: Gallery default with per-visit shuffle, Shortlist in toggle row, Filters popover, hover rating badges, deep links (?film/?q/?list=), Share button, /list catalogue page, trailer backfill (283/306).
 - [x] Taxonomy rework: strict 1-to-1 subject categories, always-wrapping category pills, era facet row (All/Recent/2020s/2010s/2000s/Pre-2000), Filters panel reduced to Type/Order/Watched/Shuffle, Top IMDb and Top RT sorts.
-- [ ] Discovery update: evidence-led awards, editorial moods/picks, combined filters and shelves (minimum three titles).
-- [ ] Promote Makers with prolific filmmakers and filmographies, preserving /directors.
-- [ ] Verify discovery, Saved/Watched, Spotlight return and mobile layout; no publishing or backend changes.
+- [x] Discovery update: evidence-led awards, editorial moods/picks, combined filters and shelves (minimum three titles). No unverified Reddit claims or catalogue-wide streaming filters.
+- [x] Promote Makers with prolific filmmakers and filmographies, preserving /directors. Existing verified director credits only; no invented presenters or portraits.
+- [x] Verify discovery, Saved/Watched, Spotlight return and mobile layout; no publishing or backend changes.
 - [x] /list page: one-sentence summaries, boxed category sections, sticky jump-link nav, AI-crawlable semantic HTML.
 - [x] Director links in Spotlight and /list open the gallery filtered to that filmmaker.
 - [x] YouTube trailer backfill via saved Google key: title-verified trailers only; 298/306 now have inline trailers (7 keep the search fallback).

@@ -17,6 +17,12 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 
+  it("preserves the directors page and resolves the new makers page", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    expect(router.matchRoutes('/directors').at(-1)?.routeId).toBe('/directors');
+    expect(router.matchRoutes('/makers').at(-1)?.routeId).toBe('/makers');
+  });
+
   // The wordmark in the header is the site's home affordance on every page.
   it("renders the logo as a link back to the homepage", async () => {
     const root = createRootRoute();

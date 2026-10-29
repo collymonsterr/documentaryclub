@@ -107,7 +107,7 @@ function Index() {
     anchor.current = el ? { id: el.dataset['filmCard'] ?? '', offset: el.getBoundingClientRect().top } : null;
   };
   const setFilm = (id: string) => navigate({ search: prev => ({ ...prev, film: id }) });
-  const openSpotlight = (id?: string, anchorId?: string) => { if (view === 'gallery') saveAnchor(anchorId ?? id); const target = id ?? search.film; if (target) setFilm(target); };
+  const openSpotlight = (id?: string, anchorId?: string) => { if (view === 'gallery') saveAnchor(anchorId ?? id); const target = id ?? (search.film || list[0]?.id); if (target) setFilm(target); };
   const backToGallery = () => { if (view === 'gallery') return; restore.current = true; navigate({ search: prev => ({ ...prev, film: '' }) }); };
   useLayoutEffect(() => {
     if (view === 'spotlight') { document.getElementById('spotlight-top')?.scrollIntoView({ block: 'start' }); return; }
