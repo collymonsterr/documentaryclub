@@ -106,8 +106,13 @@ async function batch4() {
     if (prior[id] && !old) { out.push({ ...base, id, status: 'id-collision' }); continue; }
     const credited: string[] = r.director ? r.director.split(',').map((n: string) => n.trim()) : [];
     try {
-      let res: any = await resolve(r.title, r.year, credited);
-      if (res.meta && credited.length && !res.meta.people.some((n: string) => credited.map(norm).includes(norm(n)))) res = { status: 'pending-ambiguous', reason: `credited people ${res.meta.people.join(', ') || 'none'} do not match sheet director`, candidates: res.candidates };
+      // Hand-verified identities (title variant, year listing or missing creator credit on TMDB).
+      const PIN4: Record<string, [Media, number]> = { 'Summer of Soul': ['movie', 776527], 'Titan: The OceanGate Disaster': ['movie', 1426306], 'Pulling John': ['movie', 39785], "America's Most Hated Family in Crisis": ['movie', 206953], Road: ['movie', 276137], 'The Program: Cons, Cults, and Kidnapping': ['tv', 246698], 'The Last Dance': ['tv', 79525] };
+      const pin = PIN4[r.title];
+      let res: any;
+      if (pin) { const d = await details(pin[0], pin[1]); const meta = summarize(pin[0], d); res = d.id === pin[1] && (d.genres ?? []).some((g: any) => g.id === 99) ? { status: 'resolved', reason: 'hand-verified pin', year: Number((d.release_date ?? d.first_air_date)?.slice(0, 4)), meta: { ...meta, omdb: await omdb(meta.imdbId, pin[0]) } } : { status: 'pending-ambiguous', reason: 'pin failed verification' }; }
+      else res = await resolve(r.title, r.year, credited);
+      if (!pin && res.meta && credited.length && !res.meta.people.some((n: string) => credited.map(norm).includes(norm(n)))) res = { status: 'pending-ambiguous', reason: `credited people ${res.meta.people.join(', ') || 'none'} do not match sheet director`, candidates: res.candidates };
       if (res.meta) {
         const ident = `${res.meta.mediaType}:${res.meta.tmdbId}`, dup = priorIds.get(ident);
         if (dup && dup !== id) { out.push({ ...base, id: dup, status: 'existing-match-verified', reason: `same TMDB identity ${ident}` }); continue; }

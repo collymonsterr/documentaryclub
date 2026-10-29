@@ -796,9 +796,18 @@
     "format": "Film"
    },
    "id": "america-s-most-hated-family-in-crisis",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "hand-verified pin",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 206953,
+    "imdbId": "tt1883251",
+    "canonicalTitle": "Louis Theroux: America's Most Hated Family in Crisis",
+    "year": 2011,
+    "people": [
+     "Emma Cooper"
+    ]
+   }
   },
   {
    "input": {
@@ -895,9 +904,18 @@
     "format": "Film"
    },
    "id": "pulling-john",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "hand-verified pin",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 39785,
+    "imdbId": "tt1289451",
+    "canonicalTitle": "Pulling John",
+    "year": 2009,
+    "people": [
+     "Vassiliki Khonsari"
+    ]
+   }
   },
   {
    "input": {
@@ -1169,9 +1187,19 @@
     "director": "Michael Hewitt, Dermot Lavery"
    },
    "id": "road",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "hand-verified pin",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 276137,
+    "imdbId": "tt3546370",
+    "canonicalTitle": "Road",
+    "year": 2014,
+    "people": [
+     "Michael Hewitt",
+     "Dermot Lavery"
+    ]
+   }
   },
   {
    "input": {
@@ -2200,9 +2228,18 @@
     "director": "Ahmir \"Questlove\" Thompson"
    },
    "id": "summer-of-soul",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "hand-verified pin",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 776527,
+    "imdbId": "tt7378922",
+    "canonicalTitle": "Summer of Soul (...Or, When the Revolution Could Not Be Televised)",
+    "year": 2021,
+    "people": [
+     "Questlove"
+    ]
+   }
   },
   {
    "input": {
@@ -2632,9 +2669,18 @@
     "director": "Mark Monroe"
    },
    "id": "titan-the-oceangate-disaster",
-   "status": "pending-not-found",
-   "reason": "no documentary candidate with matching title and year ±1",
-   "candidates": []
+   "status": "resolved",
+   "reason": "hand-verified pin",
+   "chosen": {
+    "mediaType": "movie",
+    "tmdbId": 1426306,
+    "imdbId": "tt35628853",
+    "canonicalTitle": "Titan: The OceanGate Submersible Disaster",
+    "year": 2025,
+    "people": [
+     "Mark Monroe"
+    ]
+   }
   },
   {
    "input": {
@@ -2644,22 +2690,16 @@
     "director": "Katherine Kubler"
    },
    "id": "the-program-cons-cults-and-kidnapping",
-   "status": "pending-ambiguous",
-   "reason": "credited people none do not match sheet director",
-   "candidates": [
-    {
-     "mediaType": "tv",
-     "tmdbId": 246698,
-     "title": "The Program: Cons, Cults, and Kidnapping",
-     "year": 2024
-    },
-    {
-     "mediaType": "movie",
-     "tmdbId": 1336414,
-     "title": "The Program",
-     "year": 2024
-    }
-   ]
+   "status": "resolved",
+   "reason": "hand-verified pin",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 246698,
+    "imdbId": "tt31183637",
+    "canonicalTitle": "The Program: Cons, Cults, and Kidnapping",
+    "year": 2024,
+    "people": []
+   }
   },
   {
    "input": {
@@ -2726,16 +2766,18 @@
     "director": "Jason Hehir"
    },
    "id": "the-last-dance",
-   "status": "pending-ambiguous",
-   "reason": "credited people Michael Tollin do not match sheet director",
-   "candidates": [
-    {
-     "mediaType": "tv",
-     "tmdbId": 79525,
-     "title": "The Last Dance",
-     "year": 2020
-    }
-   ]
+   "status": "resolved",
+   "reason": "hand-verified pin",
+   "chosen": {
+    "mediaType": "tv",
+    "tmdbId": 79525,
+    "imdbId": "tt8420184",
+    "canonicalTitle": "The Last Dance",
+    "year": 2020,
+    "people": [
+     "Michael Tollin"
+    ]
+   }
   }
  ]
 }
