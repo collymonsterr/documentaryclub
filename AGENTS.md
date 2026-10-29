@@ -22,3 +22,4 @@
 - TMDB requests are deduplicated per worker with a bounded catalogue cache and three concurrent requests; no persistent database or login is needed for this private curated catalogue.
 - OMDb ratings are captured in the snapshot at import by verified IMDb ID with matching movie/series type, preserving the daily quota; omdb.server.ts remains the bounded cached helper for any future runtime refresh.
 - Later approved batches are delta imports (`bun scripts/resolve-catalogue.ts --batch2`): reconciled against the pre-batch catalogue by identity key, verified-TMDB collisions merge, resolved manifest entries are reused so reruns make no API calls; title-scoped evidence pins and collections live beside the batch source.
+- Category moves and presenter credits are applied by stable ID in the catalogue merge (RESTRUCTURE), never by editing import sources, so audit manifests and saved IDs stay intact.
