@@ -207,6 +207,7 @@ function Index() {
             <label className="block text-xs text-muted-foreground">Type<select aria-label="Film or series" className="discovery-select mt-1 w-full" value={type} onChange={e => setType(e.target.value)}><option value="all">Films & series</option><option value="movie">Films</option><option value="tv">Series</option></select></label>
             <label className="block text-xs text-muted-foreground">Order<select aria-label="Sort order" className="discovery-select mt-1 w-full" value={sort} onChange={e => setSort(e.target.value)}><option value="random">Shuffled</option><option value="curated">Curated</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="imdb">Top IMDb</option><option value="rt">Top Rotten Tomatoes</option></select></label>
             <label className="block text-xs text-muted-foreground">Era<select aria-label="Era" className="discovery-select mt-1 w-full" value={era} onChange={e => setEra(e.target.value as Era)}>{ERAS.map(([id, label]) => <option key={id} value={id}>{id === 'recent' ? 'Recent (last 2 years)' : label}</option>)}</select></label>
+            <label className="block text-xs text-muted-foreground">Length<select aria-label="Length" className="discovery-select mt-1 w-full" value={len} onChange={e => setParam({ len: e.target.value })}>{LENGTHS.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
             <div className="flex flex-wrap gap-1">
               <Button size="sm" variant={listFilter === 'watched' ? 'default' : 'outline'} aria-pressed={listFilter === 'watched'} onClick={() => toggleList('watched')}><Check />Watched · {watched.size}</Button>
               <Button size="sm" variant="outline" onClick={reshuffle}><Shuffle />Shuffle</Button>
@@ -221,6 +222,7 @@ function Index() {
           </div>
         </PopoverContent>
       </Popover>
+      <Button size="sm" variant="outline" className="self-end" disabled={!list.length} onClick={surprise} title="Open a random title from this selection"><Dices />Surprise me</Button>
       <span className="ml-auto self-end pb-2 text-xs text-muted-foreground">{list.length} titles</span>
     </div>
     {listFilter && <p className="mb-3 flex items-center gap-2 text-xs text-muted-foreground"><span className="font-medium text-foreground">{listFilter === 'shortlist' ? 'Your saved films' : 'Watched'}</span><Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={() => toggleList(listFilter)}>Show everything</Button></p>}
@@ -232,6 +234,7 @@ function Index() {
             {badges.map(b => <span key={b} className="text-[10px] font-medium leading-tight text-foreground">{b}</span>)}
             {f.awards.length > 0 && <span className="flex items-center gap-1 text-[10px] leading-tight text-accent-foreground"><Award className="size-3" />Awards & nominations</span>}
           </div>}
+          {badges[0] && <span className="pointer-events-none absolute right-1 top-1 hidden rounded bg-background/85 px-1 py-0.5 text-[10px] font-semibold leading-none text-foreground pointer-coarse:block">{badges[0]}</span>}
         </div>
         <h2 className="mt-2 text-sm font-medium leading-snug">{f.title}</h2><p className="mt-1 text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.pending ? ' · Pending' : ''}{watched.has(f.id) ? ' · Watched' : shortlist.has(f.id) ? ' · Saved' : ''}</p>
       </div>; })}</section>{shown < list.length && <div className="mt-6 text-center"><Button variant="outline" onClick={() => setShown(n => n + PAGE)}>Show more · {list.length - shown} left</Button></div>}</> : <>
