@@ -1,4 +1,6 @@
 # Documentary Club core completion
+- [ ] Consolidate the header, underline browse tabs and declutter Gallery cards; preserve existing controls.
+- [ ] Fix Spotlight category selection to open the matching Gallery and verify desktop/mobile navigation.
 - [x] Preserve all 17 films, compact browsing and local tracking; defer Reddit and publishing.
 - [x] Complete conservative TMDB matching and independent server-only OMDb ratings/awards with seven-day caching.
 - [x] Verify 27 relevant tests; live saved-list persistence, filters, Gallery selection, keyboard/modal guards and desktop/mobile layout. Automated build clean; no browser runtime errors.
