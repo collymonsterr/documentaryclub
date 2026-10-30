@@ -238,7 +238,7 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
     ["Internet Archive", `https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22movies%22`],
     ["Kanopy (library card)", `https://www.kanopy.com/en/search?query=${q}`],
     // Placeholder address — replace with the real Download site search URL.
-    ["Download", `https://thepiratebay.org/search.php?q=${q}`],
+    ["Download", `https://kickasstorrents.to/usearch/${q}`],
   ] as const;
   return (
     <Popover>
