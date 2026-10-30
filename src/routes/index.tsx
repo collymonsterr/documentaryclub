@@ -38,8 +38,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { DocumentaryPoster } from "@/components/documentary-poster";
 import { ScrollRow } from "@/components/scroll-row";
 import { SiteLogo } from "@/components/site-logo";
-import { TrailerModal } from "@/components/trailer-modal";
-import { PhotoLightbox } from "@/components/photo-lightbox";
+import { TrailerPlayer } from "@/components/trailer-player";
 import { usePreference, useTracking } from "@/hooks/use-tracking";
 import {
   gallerySelection,
@@ -357,7 +356,6 @@ function Index() {
   };
   const [hideWatched, setHideWatched] = usePreference("dc-hide-watched", true);
   const [trailerOpen, setTrailerOpen] = useState(false);
-  const [photo, setPhoto] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -425,7 +423,7 @@ function Index() {
     [list, idx],
   ); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
-    setPhoto(null);
+    setTrailerOpen(false);
     setCopied(false);
   }, [film?.id]);
   useEffect(() => {
@@ -1131,7 +1129,6 @@ function Index() {
               )}
 
               <div className="mt-4 flex flex-wrap gap-2">
-                <TrailerModal film={film} trailer={extra?.trailer} open={trailerOpen} onOpenChange={setTrailerOpen} />
                 <Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}>
                   <Heart className={shortlist.has(film.id) ? "fill-save text-save" : "text-save"} />
                   {shortlist.has(film.id) ? "Saved" : "Save"}
@@ -1147,26 +1144,11 @@ function Index() {
                 </Button>
               </div>
               <WatchStrip loading={providers.isFetching} providers={extra?.providers} fallback={justWatchLink(film)} />
-              {!!extra?.backdrops?.length && (
-                <div className="mt-3 flex flex-wrap items-center gap-2">
-                  <span className="text-xs text-muted-foreground">Stills</span>
-                  {extra.backdrops.map((url, i) => (
-                    <Button
-                      variant="ghost"
-                      key={url}
-                      aria-label={`View still ${i + 1}`}
-                      className="h-10 w-16 overflow-hidden p-0 hover:ring-2 hover:ring-primary"
-                      onClick={() => setPhoto(i)}
-                    >
-                      <img src={url} alt="" className="h-full w-full object-cover" loading="lazy" />
-                    </Button>
-                  ))}
-                </div>
-              )}
-              <PhotoLightbox title={film.title} photos={extra?.backdrops ?? []} index={photo} onIndex={setPhoto} />
             </div>
           </section>
+          <TrailerPlayer film={film} trailer={extra?.trailer} backdrop={extra?.backdrops?.[0]} playing={trailerOpen} onPlay={() => setTrailerOpen(true)} />
         </>
+
       )}
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
         <span>{CATALOGUE.length} curated true stories.</span>
