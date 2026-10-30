@@ -90,6 +90,8 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
     ['YouTube (full length)', `https://www.youtube.com/results?search_query=${encodeURIComponent(`${film.title} ${film.year} full documentary`)}`],
     ['Internet Archive', `https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22movies%22`],
     ['Kanopy (library card)', `https://www.kanopy.com/en/search?query=${q}`],
+    // Placeholder address — replace with the real Download site search URL.
+    ['Download', `https://example.com/search?q=${q}`],
   ] as const;
   return <Popover><PopoverTrigger asChild><Button variant="outline"><Search />Find it free</Button></PopoverTrigger>
     <PopoverContent className="w-64"><p className="mb-1 text-xs text-muted-foreground">Free, legal sources — results not verified.</p>{links.map(([label, href]) => <Button key={label} asChild variant="link" size="sm" className="h-auto w-full justify-start px-0 py-1"><a href={href} target="_blank" rel="noreferrer">{label}<ExternalLink /></a></Button>)}</PopoverContent></Popover>;
