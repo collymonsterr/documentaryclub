@@ -252,7 +252,7 @@ function Index() {
         </div>
         <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} className="header-saved" aria-label={`Saved · ${shortlist.size}`} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Heart className={listFilter === 'shortlist' ? 'fill-save text-save' : 'text-save'} /><span className="desktop-label">Saved</span><span className="text-xs text-muted-foreground">{shortlist.size}</span></Button>
       </header>
-    <nav aria-label="Browse by" className="browse-tabs flex gap-5 overflow-x-auto border-b border-border no-scrollbar">{([['topics', 'Categories'], ['awards', 'Awards'], ['directors', 'Directors'], ['moods', 'Moods']] as const).map(([id, label]) => <Button key={id} size="sm" variant="ghost" className="browse-tab" aria-pressed={browse === id} onClick={() => setParam({ browse: id })}>{label}</Button>)}</nav>
+    <nav aria-label="Browse by" className="browse-tabs flex gap-5 overflow-x-auto border-b border-border no-scrollbar">{([['topics', 'Categories'], ['moods', 'Moods'], ['directors', 'Directors'], ['awards', 'Awards']] as const).map(([id, label]) => <Button key={id} size="sm" variant="ghost" className="browse-tab" aria-pressed={browse === id} onClick={() => setParam({ browse: id })}>{label}</Button>)}</nav>
     <nav aria-label="Discovery options" className="discovery-chips flex gap-1 overflow-x-auto no-scrollbar">
       {browse === 'topics' ? filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)
       : browse === 'directors' ? <>
@@ -274,7 +274,7 @@ function Index() {
     ].map(f => <Button key={f.key} size="sm" variant="secondary" onClick={() => setParam({ [f.key]: f.key === 'cat' ? 'all' : '' })} aria-label={`Remove ${f.label} filter`}>{f.label} ×</Button>)}</div>}
     {listFilter && <p className="mb-3 flex items-center gap-2 text-xs text-muted-foreground"><span className="font-medium text-foreground">{listFilter === 'shortlist' ? 'Your saved films' : 'Watched'}</span><Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={() => toggleList(listFilter)}>Show everything</Button></p>}
     {!film ? <div className="py-16 text-center"><p className="text-muted-foreground">No films in this selection.</p><Button variant="ghost" className="mt-3" onClick={clearFilters}>Clear filters</Button></div> : view === 'gallery' ?
-      <><section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">{list.slice(0, shown).map(f => { const badges = cardBadges(SNAPSHOT[f.id]); return <div key={f.id} data-film-card={f.id} className="film-card min-w-0">
+      <><section aria-label="Film gallery" className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">{list.slice(0, shown).map(f => { const badges = cardBadges(SNAPSHOT[f.id]); return <div key={f.id} data-film-card={f.id} className="film-card min-w-0">
         <div className="group relative">
           <Button variant="ghost" aria-label={`Open ${f.title}`} className="h-auto w-full p-0" onClick={() => openSpotlight(f.id)}><DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small /></Button>
           <AwardLaurel film={f} />
