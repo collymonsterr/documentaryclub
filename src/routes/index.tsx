@@ -2,7 +2,7 @@ import { createFileRoute, Link, stripSearchParams, useNavigate } from '@tanstack
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, Download, Upload, EyeOff, Search, Dices, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Heart, Check, Grid2X2, Maximize2, ExternalLink, Shuffle, Award, SlidersHorizontal, Link2, EyeOff, Search, Dices, X } from 'lucide-react';
 import { CATEGORIES, justWatchLink, type Category } from '@/data/films';
 import { CATALOGUE, SNAPSHOT, searchCatalogue } from '@/data/catalogue';
 import { Button } from '@/components/ui/button';
@@ -16,7 +16,7 @@ import { SiteLogo } from '@/components/site-logo';
 import { TrailerModal } from '@/components/trailer-modal';
 import { PhotoLightbox } from '@/components/photo-lightbox';
 import { usePreference, useTracking } from '@/hooks/use-tracking';
-import { gallerySelection, canNavigate, cardBadges, inEra, inLength, orderFilms, shuffleIds, sortByRating, overviewSentences, parseBackup, applyBackup, TRACKING_KEYS, type Era, type Length, type Provider, type Enrichment } from '@/lib/discovery';
+import { gallerySelection, canNavigate, cardBadges, inEra, inLength, orderFilms, shuffleIds, sortByRating, overviewSentences, TRACKING_KEYS, type Era, type Length, type Provider, type Enrichment } from '@/lib/discovery';
 import { getIrishProviders } from '@/lib/tmdb.functions';
 const PAGE = 36;
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
@@ -147,7 +147,6 @@ function Index() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const importRef = useRef<HTMLInputElement>(null);
   const fetchProviders = useServerFn(getIrishProviders);
   const list = useMemo(() => {
     const base = listFilter === 'shortlist' ? CATALOGUE.filter(f => shortlist.has(f.id)) : listFilter === 'watched' ? CATALOGUE.filter(f => watched.has(f.id)) : hideWatched ? CATALOGUE.filter(f => !watched.has(f.id)) : CATALOGUE;
@@ -158,18 +157,6 @@ function Index() {
     return filtered;
   }, [filter, listFilter, shortlist, watched, hideWatched, sort, query, type, era, len, order, facet.award, facet.mood, facet.pick, facet.maker]);
   useEffect(() => { setShown(PAGE); }, [filter, listFilter, query, type, sort, era, len, hideWatched, facet.award, facet.mood, facet.pick, facet.maker]);
-  const exportLists = () => {
-    const blob = new Blob([JSON.stringify({ app: 'documentary-club', exportedAt: new Date().toISOString(), saved: [...shortlist], watched: [...watched] }, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `documentary-club-lists-${new Date().toISOString().slice(0, 10)}.json`; a.click(); URL.revokeObjectURL(a.href);
-  };
-  const importLists = async (file?: File) => {
-    if (!file) return;
-    const incoming = parseBackup(await file.text(), new Set(CATALOGUE.map(f => f.id)));
-    if (!incoming) { window.alert('That file isn’t a Documentary Club backup.'); return; }
-    const mode = window.confirm(`Import ${incoming.saved.length} saved and ${incoming.watched.length} watched.\n\nOK = Replace your lists\nCancel = Merge with your lists`) ? 'replace' : 'merge';
-    const next = applyBackup({ saved: [...shortlist], watched: [...watched] }, incoming, mode);
-    shortOps.replace(next.saved); watchedOps.replace(next.watched);
-  };
   // A shared link may name a film outside the current filters; show it anyway.
   const topDirectors = useMemo(() => makerIndex().filter(m => m.films.length >= 3), []);
   const film = list.find(f => f.id === search.film) ?? CATALOGUE.find(f => f.id === search.film) ?? list[0];
@@ -222,11 +209,6 @@ function Index() {
               <Button size="sm" variant={listFilter === 'watched' ? 'default' : 'outline'} aria-pressed={listFilter === 'watched'} onClick={() => toggleList('watched')}><Check />Watched · {watched.size}</Button>
               <Button size="sm" variant="outline" onClick={reshuffle}><Shuffle />Shuffle</Button>
               <Button size="sm" variant={hideWatched ? 'default' : 'outline'} aria-pressed={hideWatched} onClick={() => setHideWatched(!hideWatched)}><EyeOff />Hide watched</Button>
-            </div>
-            <div className="flex flex-wrap items-center gap-1 border-t border-border pt-3"><span className="mr-auto text-xs text-muted-foreground">Backup lists</span>
-              <Button size="sm" variant="ghost" onClick={exportLists}><Download />Export</Button>
-              <Button size="sm" variant="ghost" onClick={() => importRef.current?.click()}><Upload />Import</Button>
-              <input ref={importRef} type="file" accept="application/json,.json" className="hidden" aria-label="Import lists file" onChange={e => { void importLists(e.target.files?.[0]); e.target.value = ''; }} />
             </div>
             {activeFilters > 0 && <Button size="sm" variant="ghost" className="w-full" onClick={clearFilters}>Clear filters</Button>}
           </div>
