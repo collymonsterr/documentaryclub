@@ -238,6 +238,8 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
     ["Kanopy (library card)", `https://www.kanopy.com/en/search?query=${q}`],
     // Placeholder address — replace with the real Download site search URL.
     ["Download", `https://kickasstorrents.to/usearch/${q}`],
+    // Placeholder address — replace with the real site search URL.
+    ["Download 2", `https://qqqq.com/search/${q}`],
   ] as const;
   return (
     <Popover>
