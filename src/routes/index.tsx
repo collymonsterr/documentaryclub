@@ -12,6 +12,7 @@ import { AwardLaurel } from '@/components/award-laurel';
 import { AwardBadges } from '@/components/award-badges';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { DocumentaryPoster } from '@/components/documentary-poster';
+import { ScrollRow } from '@/components/scroll-row';
 import { SiteLogo } from '@/components/site-logo';
 import { TrailerModal } from '@/components/trailer-modal';
 import { PhotoLightbox } from '@/components/photo-lightbox';
@@ -235,7 +236,7 @@ function Index() {
         <Button size="sm" variant={listFilter === 'shortlist' ? 'secondary' : 'ghost'} className="header-saved" aria-label={`Saved · ${shortlist.size}`} aria-pressed={listFilter === 'shortlist'} onClick={() => toggleList('shortlist')}><Heart className={listFilter === 'shortlist' ? 'fill-save text-save' : 'text-save'} /><span className="desktop-label">Saved</span><span className="text-xs text-muted-foreground">{shortlist.size}</span></Button>
       </header>
     <nav aria-label="Browse by" className="browse-tabs flex gap-5 overflow-x-auto border-b border-border no-scrollbar">{([['topics', 'Categories'], ['moods', 'Moods'], ['directors', 'Directors'], ['awards', 'Awards']] as const).map(([id, label]) => <Button key={id} size="sm" variant="ghost" className="browse-tab" aria-pressed={browse === id} onClick={() => setParam({ browse: id })}>{label}</Button>)}</nav>
-    <nav aria-label="Discovery options" className="discovery-chips flex gap-1 overflow-x-auto no-scrollbar">
+    <ScrollRow label="Discovery options" className="discovery-chips">
       {browse === 'topics' ? filters.map(f => <Button key={f.id} size="sm" variant={filter === f.id ? 'default' : 'ghost'} aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>{f.label}</Button>)
       : browse === 'directors' ? <>
         <Button size="sm" variant={!facet.maker ? 'default' : 'ghost'} onClick={() => setDiscovery({ maker: '' })}>All</Button>
@@ -245,7 +246,7 @@ function Index() {
         <Button size="sm" variant={!facet[browse === 'awards' ? 'award' : 'mood'] ? 'default' : 'ghost'} onClick={() => setDiscovery({ [browse === 'awards' ? 'award' : 'mood']: '' })}>All</Button>
         {(browse === 'awards' ? AWARDS : MOODS).map(f => { const key = browse === 'awards' ? 'award' : 'mood'; return <Button key={f.id} size="sm" variant={facet[key] === f.id ? 'default' : 'ghost'} aria-pressed={facet[key] === f.id} onClick={() => setDiscovery({ [key]: facet[key] === f.id ? '' : f.id })}>{f.label}</Button>; })}
       </>}
-    </nav>
+    </ScrollRow>
     </div>
     {(query || activeFilters > 0 || listFilter) && <div className="mb-3 flex items-center gap-2 text-xs text-muted-foreground"><span>{list.length} titles</span><span>·</span><Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={clearFilters}>Clear</Button></div>}
     {(facet.award || facet.mood || facet.pick || facet.maker || filter !== 'all') && <div className="mb-3 flex flex-wrap gap-1" aria-label="Active discovery filters">{[
