@@ -239,7 +239,7 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
     // Placeholder address — replace with the real Download site search URL.
     ["Download", `https://kickasstorrents.to/usearch/${q}`],
     // Placeholder address — replace with the real site search URL.
-    ["Download 2", `https://qqqq.com/search/${q}`],
+    ["Download 2", `https://yts.gg/browse-movies/${q}/all/all/0/latest/0/all`],
   ] as const;
   return (
     <Popover>
@@ -1148,9 +1148,14 @@ function Index() {
               <WatchStrip loading={providers.isFetching} providers={extra?.providers} fallback={justWatchLink(film)} />
             </div>
           </section>
-          <TrailerPlayer film={film} trailer={extra?.trailer} backdrop={extra?.backdrops?.[0]} playing={trailerOpen} onPlay={() => setTrailerOpen(true)} />
+          <TrailerPlayer
+            film={film}
+            trailer={extra?.trailer}
+            backdrop={extra?.backdrops?.[0]}
+            playing={trailerOpen}
+            onPlay={() => setTrailerOpen(true)}
+          />
         </>
-
       )}
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
         <span>{CATALOGUE.length} curated true stories.</span>
