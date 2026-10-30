@@ -198,3 +198,13 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+.scroll-row { position: relative; }
+.scroll-row::before, .scroll-row::after { content: ''; position: absolute; top: 0; bottom: 0; width: 48px; pointer-events: none; opacity: 0; transition: opacity .2s; }
+.scroll-row::before { left: 0; background: linear-gradient(to right, var(--background), transparent); }
+.scroll-row::after { right: 0; background: linear-gradient(to left, var(--background), transparent); }
+.scroll-row[data-left="true"]::before, .scroll-row[data-right="true"]::after { opacity: 1; }
+.scroll-row-arrow { position: absolute; top: 50%; z-index: 2; transform: translateY(-50%); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 999px; border: 1px solid var(--input); background: var(--card); color: var(--foreground); }
+.scroll-row-arrow:hover { background: var(--secondary); }
+.scroll-row-arrow.is-left { left: 2px; } .scroll-row-arrow.is-right { right: 2px; }
+@media (hover: none) { .scroll-row-arrow { display: none; } }
+@media (max-width: 1023px) { .scroll-row.discovery-chips::before { left: 96px; } .scroll-row-arrow.is-left { left: 98px; } }
