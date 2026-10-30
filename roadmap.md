@@ -17,3 +17,5 @@
 - [x] Director links in Spotlight and /list open the gallery filtered to that filmmaker.
 - [x] YouTube trailer backfill via saved Google key: title-verified trailers only; 298/306 now have inline trailers (7 keep the search fallback).
 - [x] Batch 3 (Sex & Drugs, 56 inputs): 1 existing (Fantastic Fungi moved from Nature), 53 resolved, 2 pending (Guys and Dolls, Love Me — no TMDB record). Catalogue now 361; new sexdrugs category; 23 more trailers backfilled.
+- [x] Batch 4 (catalogue sheet, 458 rows): 353 existing updated (category/moods/tags/director/format), 97 new resolved, 8 removed; 16 categories, 7 moods, tags stored but not displayed.
+- [x] Filters panel cleanup: removed the Backup lists (Export/Import) row; subtle thin dark scrollbar on panels that still scroll.
