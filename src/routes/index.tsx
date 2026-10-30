@@ -138,7 +138,7 @@ function Index() {
   const updateQuery = (value: string) => { setQuery(value); navigate({ search: prev => ({ ...prev, q: value, film: '' }), replace: true }); };
   const [shown, setShown] = useState(PAGE);
   const [shortlist, toggleShort, shortOps] = useTracking(TRACKING_KEYS.shortlist);
-  const [watched, toggleWatchedRaw, watchedOps] = useTracking(TRACKING_KEYS.watched);
+  const [watched, toggleWatchedRaw] = useTracking(TRACKING_KEYS.watched);
   // Marking watched clears Saved (one direction only).
   const toggleWatched = (id: string) => { if (!watched.has(id)) shortOps.remove(id); toggleWatchedRaw(id); };
   const [hideWatched, setHideWatched] = usePreference('dc-hide-watched', true);
