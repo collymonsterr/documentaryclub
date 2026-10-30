@@ -196,7 +196,7 @@ function Index() {
   const filtersControl = (<Popover open={filtersOpen} onOpenChange={setFiltersOpen}>
         <PopoverTrigger asChild><Button size="sm" variant="outline" className="filter-trigger" aria-label="More filters"><SlidersHorizontal /><span className="desktop-label">Filters</span>{activeFilters > 0 && <span className="rounded-full bg-primary px-1.5 text-[10px] font-semibold text-primary-foreground">{activeFilters}</span>}</Button></PopoverTrigger>
         <PopoverContent align="end" className="w-72">
-          <div className="max-h-[70vh] space-y-3 overflow-y-auto">
+          <div className="filters-scroll max-h-[70vh] space-y-3 overflow-y-auto">
             <label className="block text-xs text-muted-foreground">Category<select aria-label="Category" className="discovery-select mt-1 w-full" value={filter} onChange={e => setFilter(e.target.value as Filter)}>{filters.map(f => <option key={f.id} value={f.id}>{f.label}</option>)}</select></label>
             <label className="block text-xs text-muted-foreground">Award<select aria-label="Award" className="discovery-select mt-1 w-full" value={facet.award} onChange={e => setParam({ award: e.target.value })}><option value="">Any award</option>{AWARDS.map(a => <option key={a.id} value={a.id}>{a.label}</option>)}</select></label>
             <label className="block text-xs text-muted-foreground">Mood<select aria-label="Mood" className="discovery-select mt-1 w-full" value={facet.mood} onChange={e => setParam({ mood: e.target.value })}><option value="">Any mood</option>{MOODS.map(m => <option key={m.id} value={m.id}>{m.label}</option>)}</select></label>

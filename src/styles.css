@@ -96,6 +96,12 @@
 }
 
 @utility no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+/* Subtle scrollbars for the panels that do need to scroll (Filters, trailer). */
+.filters-scroll { scrollbar-width: thin; scrollbar-color: oklch(1 0 0 / 18%) transparent; }
+.filters-scroll::-webkit-scrollbar { width: 6px; }
+.filters-scroll::-webkit-scrollbar-track { background: transparent; }
+.filters-scroll::-webkit-scrollbar-thumb { border-radius: 999px; background: oklch(1 0 0 / 16%); }
+.filters-scroll::-webkit-scrollbar-thumb:hover { background: oklch(1 0 0 / 28%); }
 @utility poster {
   position: relative; height: 100%; width: 100%; overflow: hidden; border-radius: var(--radius);
   background:
