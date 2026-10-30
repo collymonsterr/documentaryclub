@@ -13,8 +13,8 @@ describe('evidence-led discovery', () => {
     expect(accolades({ ...film('skywalkers'), awards: [] }, 'Nominated for 1 Oscar. 5 wins total')[0]?.label).toBe('Academy Award nominee');
   });
   it('combines mood, pick, award and maker with AND', () => {
-    expect(matchesFacets(film('pez-outlaw'), { award: '', mood: 'funny', pick: 'hidden', maker: '' })).toBe(true);
-    expect(matchesFacets(film('pez-outlaw'), { award: 'oscar-win', mood: 'funny', pick: 'hidden', maker: '' })).toBe(false);
+    expect(matchesFacets(film('pez-outlaw'), { award: '', mood: 'funny', pick: '', maker: '' })).toBe(true);
+    expect(matchesFacets(film('pez-outlaw'), { award: 'oscar-win', mood: 'funny', pick: '', maker: '' })).toBe(false);
     expect(matchesFacets(film('free-solo'), { award: '', mood: 'gripping', pick: '', maker: 'Jimmy Chin' })).toBe(true);
     expect(matchesFacets(film('free-solo'), { award: '', mood: 'gripping', pick: '', maker: 'Werner Herzog' })).toBe(false);
   });

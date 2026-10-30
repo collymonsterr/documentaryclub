@@ -53,7 +53,7 @@ function summarize(media: Media, d: Detail) {
 }
 const details = (media: Media, id: number) => tmdb<Detail>(`${media}/${id}`, { append_to_response: 'credits,videos,images,external_ids', language: 'en-US', include_image_language: 'en,null' });
 
-async function resolve(title: string, year: number) {
+async function resolve(title: string, year: number, credited: string[] = []) {
   const key = `${title}|${year}`;
   const queries = [...new Set([title, title.split(':')[0]!.trim(), ...(SEARCH_ALIASES[key] ?? [])])];
   const found = new Map<string, Cand>();
@@ -72,6 +72,8 @@ async function resolve(title: string, year: number) {
   let pick = verified, reason = 'unique verified documentary match';
   const person = EXPECTED_PEOPLE[key];
   if (person) { pick = pick.filter(v => summarize(v.c.media, v.d).people.includes(person)); reason = `verified credited filmmaker ${person}`; }
+  const norm = (n: string) => n.toLowerCase().normalize('NFKD').replace(/[^a-z]/g, '');
+  if (credited.length && pick.length > 1) { const p2 = pick.filter(v => summarize(v.c.media, v.d).people.some(n => credited.map(norm).includes(norm(n)))); if (p2.length) { pick = p2; reason = 'verified credited filmmaker from sheet'; } }
   const hint = MEDIA_HINTS[key];
   if (pick.length > 1 && hint && pick.filter(v => v.c.media === hint).length === 1) { pick = pick.filter(v => v.c.media === hint); reason = `approved ${hint === 'tv' ? 'series' : 'film'} format among verified candidates`; }
   if (pick.length > 1 && pick.filter(v => v.exact).length === 1) { pick = pick.filter(v => v.exact); reason = 'only exact-title documentary among verified candidates'; }
@@ -86,7 +88,44 @@ async function resolve(title: string, year: number) {
 if (process.argv.includes('--batch2')) { await batch2(); process.exit(0); }
 if (process.argv.includes('--trailers')) { await trailers(); process.exit(0); }
 if (process.argv.includes('--yt-trailers')) { await ytTrailers(); process.exit(0); }
+if (process.argv.includes('--batch4')) { await batch4(); process.exit(0); }
 if (process.argv.includes('--batch3')) { await batch3(); process.exit(0); }
+// Batch 4 (Google Sheet): resolve only status=New rows; existing snapshot entries untouched; reruns reuse resolved entries.
+async function batch4() {
+  const sheet: any[] = JSON.parse(readFileSync('src/data/catalogue-sheet.json', 'utf8'));
+  const prior: Record<string, any> = JSON.parse(readFileSync('src/data/catalogue-snapshot.json', 'utf8'));
+  const priorIds = new Map<string, string>();
+  for (const [id, s] of Object.entries(prior)) if (s.tmdbId && s.mediaType) priorIds.set(`${s.mediaType}:${s.tmdbId}`, id);
+  let previous: any[] = []; try { previous = JSON.parse(readFileSync('src/data/import-manifest-4.json', 'utf8')).entries; } catch { /* first run */ }
+  const out: any[] = [];
+  const norm = (n: string) => n.toLowerCase().normalize('NFKD').replace(/[^a-z]/g, '');
+  for (const r of sheet.filter(r => r.status === 'New')) {
+    const id = importSlug(r.title), base = { input: { title: r.title, year: r.year, format: r.format, director: r.director } };
+    const old = previous.find(e => e.input.title === r.title);
+    if (old?.status === 'resolved' && prior[id]?.status === 'resolved') { out.push(old); continue; }
+    if (prior[id] && !old) { out.push({ ...base, id, status: 'id-collision' }); continue; }
+    const credited: string[] = r.director ? r.director.split(',').map((n: string) => n.trim()) : [];
+    try {
+      // Hand-verified identities (title variant, year listing or missing creator credit on TMDB).
+      const PIN4: Record<string, [Media, number]> = { 'Summer of Soul': ['movie', 776527], 'Titan: The OceanGate Disaster': ['movie', 1426306], 'Pulling John': ['movie', 39785], "America's Most Hated Family in Crisis": ['movie', 206953], Road: ['movie', 276137], 'The Program: Cons, Cults, and Kidnapping': ['tv', 246698], 'The Last Dance': ['tv', 79525] };
+      const pin = PIN4[r.title];
+      let res: any;
+      if (pin) { const d = await details(pin[0], pin[1]); const meta = summarize(pin[0], d); res = d.id === pin[1] && (d.genres ?? []).some((g: any) => g.id === 99) ? { status: 'resolved', reason: 'hand-verified pin', year: Number((d.release_date ?? d.first_air_date)?.slice(0, 4)), meta: { ...meta, omdb: await omdb(meta.imdbId, pin[0]) } } : { status: 'pending-ambiguous', reason: 'pin failed verification' }; }
+      else res = await resolve(r.title, r.year, credited);
+      if (!pin && res.meta && credited.length && !res.meta.people.some((n: string) => credited.map(norm).includes(norm(n)))) res = { status: 'pending-ambiguous', reason: `credited people ${res.meta.people.join(', ') || 'none'} do not match sheet director`, candidates: res.candidates };
+      if (res.meta) {
+        const ident = `${res.meta.mediaType}:${res.meta.tmdbId}`, dup = priorIds.get(ident);
+        if (dup && dup !== id) { out.push({ ...base, id: dup, status: 'existing-match-verified', reason: `same TMDB identity ${ident}` }); continue; }
+        priorIds.set(ident, id);
+      }
+      out.push({ ...base, id, status: res.status, reason: res.reason, chosen: res.meta ? { mediaType: res.meta.mediaType, tmdbId: res.meta.tmdbId, imdbId: res.meta.imdbId, canonicalTitle: res.meta.canonicalTitle, year: res.year, people: res.meta.people } : undefined, candidates: res.candidates });
+      prior[id] = res.meta ? { status: 'resolved', ...res.meta } : { status: 'pending' };
+    } catch { out.push({ ...base, id, status: 'pending-unavailable', reason: 'metadata service unavailable during import' }); prior[id] = { status: 'pending' }; }
+    console.log(out.length, out.at(-1).status, r.title, out.at(-1).reason ?? '');
+  }
+  writeFileSync('src/data/import-manifest-4.json', JSON.stringify({ generated: new Date().toISOString().slice(0, 10), rawInputs: out.length, entries: out }, null, 1) + '\n');
+  writeFileSync('src/data/catalogue-snapshot.json', JSON.stringify(prior) + '\n');
+}
 // Batch 3 (Sex & Drugs): same delta rules as batch 2 — only new titles are resolved, prior data untouched.
 async function batch3() {
   const { MANIFEST2 } = await import('../src/data/catalogue');

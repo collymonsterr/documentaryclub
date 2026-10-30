@@ -1,9 +1,9 @@
+// "strange" is legacy (pre-sheet sources only); the sheet assigns every title one of CATEGORIES.
 // One home category per title. IDs are stable URL keys (survival = Adventure, arts = Art, life = Life Stories).
 export type Category = "strange" | "psychology" | "scams" | "tech" | "crime" | "politics" | "war" | "survival" | "sport"
   | "nature" | "science" | "economics" | "arts" | "music" | "life" | "drugs" | "sex";
 
 export const CATEGORIES: { id: Category; label: string }[] = [
-  { id: "strange", label: "Strange" },
   { id: "psychology", label: "Cults & Psychology" },
   { id: "scams", label: "Scams" },
   { id: "tech", label: "Tech" },
@@ -42,6 +42,7 @@ export type Film = {
   imdbId?: string;
   episodes?: number;
   pending?: boolean; // approved but identity unverified
+  tags?: string[]; // free-text sheet tags, e.g. food-and-drink
   presenter?: string; // on-screen presenter, alongside (never replacing) verified directors
 };
 

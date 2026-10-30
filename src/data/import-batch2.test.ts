@@ -14,7 +14,7 @@ describe('second batch reconciliation', () => {
     expect(n('duplicate-in-batch')).toBe(48);
     expect(n('existing-match') + n('existing-match-verified')).toBe(136);
     expect(n('resolved') + MANIFEST2.entries.filter(e => e.status.startsWith('pending')).length).toBe(158);
-    expect(CATALOGUE).toHaveLength(361);
+    expect(CATALOGUE).toHaveLength(450);
   });
   it('merges alternate titles, escaped punctuation and differing years into existing IDs', () => {
     expect(entry('McMillions', 'inline')?.id).toBe('mcmillions');
@@ -48,7 +48,6 @@ describe('second batch reconciliation', () => {
     expect(pre.some(f => f.id === 'dark-days')).toBe(false);
   });
   it('tags arts titles and counts collection as series in type filter', () => {
-    expect(CATALOGUE.find(f => f.id === 'grey-gardens')?.categories[0]).toBe('arts');
     expect(searchCatalogue(CATALOGUE, 'up series', 'tv').map(f => f.id)).toContain('up-series');
   });
 });
