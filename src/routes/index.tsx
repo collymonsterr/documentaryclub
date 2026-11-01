@@ -973,7 +973,7 @@ function Index() {
       )}
       {view === "spotlight" && <div className="phone-tools mb-3">{toolControls}</div>}
       {view === "gallery" && heading && (
-        <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3 md:flex-nowrap">
           {facet.maker ? (
             <DirectorHeader name={facet.maker} count={list.length} />
           ) : (
@@ -983,7 +983,7 @@ function Index() {
               <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
             </div>
           )}
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <div className="phone-tools">{toolControls}</div>
             <SortMenu value={sort} onChange={setSort} defaultLabel={facet.award ? "Winners first" : "Shuffled"} />
             <CopyLink />

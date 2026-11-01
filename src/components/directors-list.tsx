@@ -31,7 +31,7 @@ function ProfileLinks({ name, children }: { name: string; children?: ReactNode }
 }
 // The top of a director's own page, /directors/x.
 export function DirectorHeader({ name, count }: { name: string; count: number }) {
-  return <div className="flex items-start gap-4">
+  return <div className="flex min-w-0 items-start gap-4">
     <Portrait name={name} />
     <div className="min-w-0">
       <h2 className="font-display text-2xl font-semibold">{name}</h2>
