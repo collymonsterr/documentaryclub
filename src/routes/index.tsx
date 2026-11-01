@@ -42,6 +42,7 @@ import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/cou
 import { documentaryCount, listHeading, pageHead, slugify } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
+import { AboutContent } from "@/components/about-content";
 import { AwardsList } from "@/components/awards-list";
 import type { AwardBody } from "@/data/award-bodies";
 import { AwardBadges } from "@/components/award-badges";
@@ -386,7 +387,7 @@ function Index() {
     maker: makerIndex().some((m) => m.name === search.maker) ? search.maker : "",
     tag: TAGS.some((t) => t.id === search.tag) ? search.tag : "",
   };
-  const browse = ["topics", "awards", "directors", "moods", "tags"].includes(search.browse) ? search.browse : "topics";
+  const browse = ["topics", "awards", "directors", "moods", "tags", "about"].includes(search.browse) ? search.browse : "topics";
   const filterIds = new Set<string>(["all", "awards", ...CATEGORIES.map((c) => c.id)]);
   const filter = (filterIds.has(search.cat) ? search.cat : "all") as Filter;
   const era = (ERAS.some(([id]) => id === search.era) ? search.era : "all") as Era;
@@ -595,6 +596,7 @@ function Index() {
     directors: {},
     awards: {},
     tags: { tag: TAGS[0].id },
+    about: {},
   };
   const filtersControl = (
     <Popover open={filtersOpen} onOpenChange={setFiltersOpen}>
@@ -882,6 +884,7 @@ function Index() {
               ["directors", "Directors"],
               ["awards", "Awards"],
               ["tags", "Tags"],
+              ["about", "About"],
             ] as const
           ).map(([id, label]) => (
             <Button
@@ -890,14 +893,11 @@ function Index() {
               variant="ghost"
               className="browse-tab"
               aria-pressed={browse === id}
-              onClick={() => (browse === id && id !== "directors" && id !== "awards" ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
+              onClick={() => (browse === id && id !== "directors" && id !== "awards" && id !== "about" ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
             >
               {label}
             </Button>
           ))}
-          <Button asChild size="sm" variant="ghost" className="browse-tab">
-            <Link to="/about">About</Link>
-          </Button>
         </nav>
         {browse === "directors" ? (
           <div className="discovery-chips">
@@ -913,7 +913,7 @@ function Index() {
               className="h-9 w-full sm:w-64"
             />
           </div>
-        ) : (
+        ) : browse === "tags" || browse === "about" ? null : (
         <ScrollRow label="Discovery options" className="discovery-chips">
           {browse === "topics" ? (
             filters.map((f) => (
@@ -925,18 +925,6 @@ function Index() {
                 onClick={() => setBrowse({ cat: f.id })}
               >
                 {f.label}
-              </Button>
-            ))
-          ) : browse === "tags" ? (
-            TAGS.map((t) => (
-              <Button
-                key={t.id}
-                size="sm"
-                variant={facet.tag === t.id ? "default" : "ghost"}
-                aria-pressed={facet.tag === t.id}
-                onClick={() => setBrowse({ tag: t.id })}
-              >
-                {t.label}
               </Button>
             ))
           ) : browse === "awards" ? (
@@ -969,6 +957,21 @@ function Index() {
         </ScrollRow>
         )}
       </div>
+      {browse === "tags" && (
+        <nav aria-label="Tags" className="discovery-tags">
+          {TAGS.map((t) => (
+            <Button
+              key={t.id}
+              size="sm"
+              variant={facet.tag === t.id ? "default" : "ghost"}
+              aria-pressed={facet.tag === t.id}
+              onClick={() => setBrowse({ tag: t.id })}
+            >
+              {t.label}
+            </Button>
+          ))}
+        </nav>
+      )}
       {(query || activeFilters > 0 || listFilter) && (
         <div className="mb-3 flex items-center gap-2 text-xs text-muted-foreground">
           <span>{list.length} titles</span>
@@ -991,7 +994,7 @@ function Index() {
           </div>
         </div>
       )}
-      {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && (
+      {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && browse !== "about" && (
         <div className="mb-3 flex justify-end">
           <SortMenu value={sort} onChange={setSort} />
         </div>
@@ -1027,7 +1030,9 @@ function Index() {
           </Button>
         </p>
       )}
-      {browse === "directors" && !facet.maker && view === "gallery" ? (
+      {browse === "about" && view === "gallery" && !query ? (
+        <AboutContent />
+      ) : browse === "directors" && !facet.maker && view === "gallery" ? (
         <DirectorsList query={directorQuery} />
       ) : browse === "awards" && !facet.award && view === "gallery" ? (
         <AwardsList films={list} onSeeAll={(award) => setBrowse({ award })} />
@@ -1317,7 +1322,7 @@ function Index() {
         <Link to="/" search={{ ...searchDefaults, browse: "directors" }} className="underline">
           Directors
         </Link>
-        <Link to="/about" className="underline">
+        <Link to="/" search={{ ...searchDefaults, browse: "about" }} className="underline">
           About
         </Link>
         <Link to="/suggest" className="underline">

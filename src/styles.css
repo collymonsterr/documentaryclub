@@ -153,6 +153,8 @@
 .browse-tab[aria-pressed="true"] { border-bottom-color: var(--primary); color: var(--foreground); background: transparent; }
 .discovery-chips { grid-column: 1 / -1; padding-block: 10px; }
 .discovery-chips button { flex-shrink: 0; border-radius: 999px; }
+.discovery-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 20px; }
+.discovery-tags button { border-radius: 999px; }
 .spotlight-grid { scroll-margin-top: 174px; }
 .card-hover-actions { display: flex; }
 @media (hover: none) { .card-hover-actions { display: none; } }

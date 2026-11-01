@@ -26,7 +26,7 @@ type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; m
 export function pagePath(search: PageSearch) {
   const { tag, maker, award } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '';
   if (search.film) return filmIds.has(search.film) ? `/film/${search.film}` : null;
-  if ([tag, cat, maker, award].filter(Boolean).length !== 1) return [tag, cat, maker, award].some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : '/';
+  if ([tag, cat, maker, award].filter(Boolean).length !== 1) return [tag, cat, maker, award].some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : search.browse === 'about' ? '/about' : '/';
   if (award) { const slug = AWARDS.find(a => a.id === award)?.slug; return slug ? `/awards/${slug}` : null; }
   if (tag) return tagIds.has(tag) ? `/tags/${tag}` : null;
   if (cat) return categorySlug.has(cat) ? `/categories/${categorySlug.get(cat)}` : null;
@@ -45,6 +45,7 @@ export const urlRewrite = {
     if (!section || extra !== undefined) return undefined;
     if (section === 'tags' && !slug) { url.pathname = '/'; url.searchParams.set('tag', TAGS[0].id); url.searchParams.set('browse', 'tags'); return url; }
     if (!slug && (section === 'directors' || section === 'makers')) { url.pathname = '/'; url.searchParams.set('browse', 'directors'); return url; }
+    if (!slug && section === 'about') { url.pathname = '/'; url.searchParams.set('browse', 'about'); return url; }
     if (!slug && section === 'awards') { url.pathname = '/'; url.searchParams.set('browse', 'awards'); return url; }
     if (!slug) return undefined;
     if (section === 'awards' && AWARDS.some(a => a.slug === slug)) { url.searchParams.set('award', AWARDS.find(a => a.slug === slug)!.id); url.searchParams.set('browse', 'awards'); }
@@ -94,6 +95,7 @@ function previewFor(search: PageSearch) {
     return { title: `${film.title} (${film.year})`, description: firstSentences(snap?.overview ?? film.synopsis), image: snap?.backdrops?.[0] ?? snap?.poster };
   }
   if (search.browse === 'directors' && !search.maker) return { title: 'Directors', description: 'The documentary filmmakers in the collection, with every title linked.', image: undefined };
+  if (search.browse === 'about') return { title: 'About', description: 'A personal collection of documentaries worth your time, built in Ireland.', image: undefined };
   if (search.browse === 'awards' && !search.award) return { title: 'Awards', description: 'Oscar, BAFTA, Emmy, Sundance, Tribeca, IDA and Cannes winners in the collection.', image: undefined };
   const heading = listHeading(search);
   if (heading?.image) return heading;
