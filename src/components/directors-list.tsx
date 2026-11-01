@@ -41,7 +41,7 @@ export function DirectorsList({ query }: { query: string }) {
           </div>
         </div>
         <ScrollRow label={`Documentaries by ${m.name}`} className="mt-4">
-          {m.films.map(f => <Link key={f.id} to="/" search={{ ...base, film: f.id }} className="group w-28 shrink-0 sm:w-36">
+          {m.films.map(f => <Link key={f.id} to="/" search={{ ...base, film: f.id }} className="group w-[min(34vw,9rem)] shrink-0 sm:w-36">
             <DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small />
             <span className="mt-1.5 block line-clamp-2 text-xs font-medium group-hover:text-primary">{f.title}</span>
             <span className="block text-xs text-muted-foreground">{f.year}</span>

@@ -763,6 +763,23 @@ function Index() {
       </PopoverContent>
     </Popover>
   );
+  const toolControls = (
+    <>
+      {filtersControl}
+      <Button
+        size="sm"
+        variant="outline"
+        className="surprise-trigger"
+        aria-label="Surprise me"
+        disabled={!list.length}
+        onClick={surprise}
+        title="Open a random title from this selection"
+      >
+        <Dices />
+        <span className="desktop-label">Surprise me</span>
+      </Button>
+    </>
+  );
   return (
     <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
       <div className="discovery-navigation">
@@ -790,21 +807,7 @@ function Index() {
               <X />
             </Button>
           </div>
-          <div className="header-tools">
-            {filtersControl}
-            <Button
-              size="sm"
-              variant="outline"
-              className="surprise-trigger"
-              aria-label="Surprise me"
-              disabled={!list.length}
-              onClick={surprise}
-              title="Open a random title from this selection"
-            >
-              <Dices />
-              <span className="desktop-label">Surprise me</span>
-            </Button>
-          </div>
+          <div className="header-tools">{toolControls}</div>
           <div className="header-views" role="group" aria-label="Browsing view">
             <Button
               size="icon"
@@ -969,6 +972,7 @@ function Index() {
           </Button>
         </div>
       )}
+      {view === "spotlight" && <div className="phone-tools mb-3">{toolControls}</div>}
       {view === "gallery" && heading && (
         <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
           <div className="min-w-0">
@@ -977,14 +981,16 @@ function Index() {
             <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
           </div>
           <div className="flex items-center gap-2">
+            <div className="phone-tools">{toolControls}</div>
             <SortMenu value={sort} onChange={setSort} defaultLabel={facet.award ? "Winners first" : "Shuffled"} />
             <CopyLink />
           </div>
         </div>
       )}
       {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && browse !== "about" && (
-        <div className="mb-3 flex justify-end">
-          <SortMenu value={sort} onChange={setSort} />
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <div className="phone-tools">{toolControls}</div>
+          <div className="ml-auto"><SortMenu value={sort} onChange={setSort} /></div>
         </div>
       )}
       {selections > 1 && (

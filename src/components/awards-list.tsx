@@ -28,7 +28,7 @@ export function AwardsList({ films, onSeeAll }: { films: Film[]; onSeeAll: (awar
         <Button variant="link" size="sm" className="h-auto shrink-0 p-0" onClick={() => onSeeAll(r.id)}>See all</Button>
       </div>
       <ScrollRow label={`${r.label} documentaries`} className="mt-4">
-        {r.films.slice(0, ROW).map(f => <Link key={f.id} to="/" search={{ ...base, film: f.id }} className="group w-28 shrink-0 sm:w-36">
+        {r.films.slice(0, ROW).map(f => <Link key={f.id} to="/" search={{ ...base, film: f.id }} className="group w-[min(34vw,9rem)] shrink-0 sm:w-36">
           <DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small />
           <span className="mt-1.5 block line-clamp-2 text-xs font-medium group-hover:text-primary">{f.title}</span>
           <AwardCaption film={f} body={r.id as AwardBody} />

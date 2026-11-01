@@ -207,5 +207,13 @@
 .scroll-row-arrow { position: absolute; top: 50%; z-index: 2; transform: translateY(-50%); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 999px; border: 1px solid var(--input); background: var(--card); color: var(--foreground); }
 .scroll-row-arrow:hover { background: var(--secondary); }
 .scroll-row-arrow.is-left { left: 2px; } .scroll-row-arrow.is-right { right: 2px; }
-@media (hover: none) { .scroll-row-arrow { display: none; } }
-@media (max-width: 1023px) { .scroll-row.discovery-chips::before { left: 96px; } .scroll-row-arrow.is-left { left: 98px; } }
+@media (min-width: 768px) and (max-width: 1023px) { .scroll-row.discovery-chips::before { left: 96px; } .scroll-row.discovery-chips .scroll-row-arrow.is-left { left: 98px; } }
+/* Phones: categories get the full row; Filters and Surprise sit beside Sort, below the sticky header. */
+.phone-tools { display: none; }
+.phone-tools button { width: 40px; height: 40px; padding: 0; position: relative; }
+@media (max-width: 767px) {
+  .phone-tools { display: flex; align-items: center; gap: 4px; }
+  .header-tools { display: none; }
+  .discovery-chips { padding-left: 0; }
+  .spotlight-grid { scroll-margin-top: 232px; }
+}
