@@ -38,6 +38,6 @@ export function AwardCaption({ film, body }: { film: Film; body: AwardBody }) {
   if (!award) return null;
   return <p className="mt-1.5 flex items-start gap-1.5 text-xs leading-4 text-muted-foreground">
     <span className={`flex size-5 shrink-0 items-center justify-center rounded-full border ${award.result === 'Won' ? 'border-[#f4c430]' : 'border-dashed border-[#c0c0c0]'}`}><AwardIcon body={body} className="size-3" /></span>
-    <span className="min-w-0 line-clamp-2" title={award.label}>{award.label.replace(' – Best Documentary Feature', '')}</span>
+    <span className="min-w-0 line-clamp-2">{award.label}</span>
   </p>;
 }

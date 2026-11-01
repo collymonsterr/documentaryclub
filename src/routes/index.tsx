@@ -131,7 +131,7 @@ export const Route = createFileRoute("/")({
 });
 type Filter = "all" | Category | "awards";
 const AWARDED = CATALOGUE.filter((f) => accolades(f).length > 0);
-const AWARD_PILLS = AWARDS.map((a) => ({ ...a, count: AWARDED.filter((f) => accolades(f).some((x) => x.body === a.id)).length })).filter((a) => a.count > 0);
+const AWARD_PILLS = AWARDS.map((a) => ({ ...a, count: AWARDED.filter((f) => accolades(f).some((x) => x.body === a.id)).length })).filter((a) => a.count >= 3);
 const NOTES: Record<string, string> = {
   "beyond-utopia":
     "The escape unfolds through an underground network, with the family’s safety at stake at every border.",
