@@ -3,6 +3,7 @@ import { AWARD_COPY, CATEGORY_COPY, MOOD_COPY } from '@/data/category-copy';
 import { CATALOGUE, SNAPSHOT } from '@/data/catalogue';
 import { AWARDS, makerIndex } from '@/data/discovery-facets';
 import { TAGS } from '@/data/tags';
+import profiles from '@/data/director-profiles.json';
 
 // Change this one value when the custom domain goes live: previews and canonical links use it.
 export const SITE_ORIGIN = 'https://documentaryclub.lovable.app';
@@ -81,7 +82,7 @@ export function listHeading(search: PageSearch) {
   if (search.mood || search.award) return copied ? { ...copied, image: undefined } : null;
   const tag = TAGS.find(t => t.id === search.tag);
   if (tag) return { title: tag.title, description: tag.description, image: `/og/tags-${tag.id}.jpg` };
-  if (search.maker) return makerSlugs().byName.has(search.maker) ? { title: `Documentaries by ${search.maker}`, description: `The ${search.maker} documentaries in the collection.`, image: undefined } : null;
+  if (search.maker) return makerSlugs().byName.has(search.maker) ? { title: `Documentaries by ${search.maker}`, description: (profiles as Record<string, { blurb?: string }>)[search.maker]?.blurb ?? `The ${search.maker} documentaries in the collection.`, image: undefined } : null;
   const copy = CATEGORY_COPY[cat as keyof typeof CATEGORY_COPY];
   return copy ? { ...copy, image: `/og/categories-${categorySlug.get(cat)}.jpg` } : null;
 }

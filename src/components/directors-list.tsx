@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { Link, useLocation } from '@tanstack/react-router';
 import { ExternalLink, UserRound } from 'lucide-react';
 import { SNAPSHOT } from '@/data/catalogue';
@@ -15,6 +15,33 @@ const titles = (n: number) => `${n} ${n === 1 ? 'documentary' : 'documentaries'}
 const ProfileLink = ({ href, label }: { href: string; label: string }) =>
   <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">{label}<ExternalLink className="size-3" /></a>;
 
+function Portrait({ name }: { name: string }) {
+  const photo = PROFILES[name]?.photo;
+  return photo ? <img src={photo} alt={name} loading="lazy" className="size-16 shrink-0 rounded-full object-cover sm:size-20" /> :
+    <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-secondary text-muted-foreground sm:size-20"><UserRound className="size-7" /></span>;
+}
+function ProfileLinks({ name, children }: { name: string; children?: ReactNode }) {
+  const p = PROFILES[name];
+  if (!children && !p?.imdbId && !p?.wikipedia) return null;
+  return <div className="mt-1.5 flex items-center gap-3">
+    {children}
+    {p?.imdbId && <ProfileLink href={`https://www.imdb.com/name/${p.imdbId}/`} label="IMDb" />}
+    {p?.wikipedia && <ProfileLink href={p.wikipedia} label="Wikipedia" />}
+  </div>;
+}
+// The top of a director's own page, /directors/x.
+export function DirectorHeader({ name, count }: { name: string; count: number }) {
+  return <div className="flex items-start gap-4">
+    <Portrait name={name} />
+    <div className="min-w-0">
+      <h2 className="font-display text-2xl font-semibold">{name}</h2>
+      <p className="text-sm text-muted-foreground">{titles(count)}</p>
+      {PROFILES[name]?.blurb && <p className="mt-1 max-w-2xl text-sm">{PROFILES[name].blurb}</p>}
+      <ProfileLinks name={name} />
+    </div>
+  </div>;
+}
+
 // Featured directors get a full section; everyone else stays in the compact list.
 export function DirectorsList({ query }: { query: string }) {
   const hash = useLocation({ select: l => l.hash });
@@ -28,16 +55,14 @@ export function DirectorsList({ query }: { query: string }) {
       const p = PROFILES[m.name];
       return <section key={m.name} id={slugify(m.name)} aria-label={m.name} className="scroll-mt-44 border-b border-border py-6">
         <div className="flex items-start gap-4">
-          {p?.photo ? <img src={p.photo} alt={m.name} loading="lazy" className="size-16 shrink-0 rounded-full object-cover sm:size-20" /> :
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-secondary text-muted-foreground sm:size-20"><UserRound className="size-7" /></span>}
+          <Portrait name={m.name} />
           <div className="min-w-0">
-            <h3 className="font-display text-xl font-semibold">{m.name}</h3>
+            <h3 className="font-display text-xl font-semibold"><Link to="/" search={{ ...base, maker: m.name, browse: 'directors' }} className="hover:text-primary">{m.name}</Link></h3>
             <p className="text-sm text-muted-foreground">{titles(m.films.length)}</p>
             {p?.blurb && <p className="mt-1 max-w-2xl text-sm">{p.blurb}</p>}
-            {(p?.imdbId || p?.wikipedia) && <div className="mt-1.5 flex gap-3">
-              {p.imdbId && <ProfileLink href={`https://www.imdb.com/name/${p.imdbId}/`} label="IMDb" />}
-              {p.wikipedia && <ProfileLink href={p.wikipedia} label="Wikipedia" />}
-            </div>}
+            <ProfileLinks name={m.name}>
+              <Link to="/" search={{ ...base, maker: m.name, browse: 'directors' }} className="text-xs text-primary underline-offset-2 hover:underline">See all</Link>
+            </ProfileLinks>
           </div>
         </div>
         <ScrollRow label={`Documentaries by ${m.name}`} className="mt-4">

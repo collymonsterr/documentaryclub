@@ -40,14 +40,14 @@ import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
 import { extrasOn } from "@/components/site-logo";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
-import { documentaryCount, listHeading, pageHead, slugify } from "@/lib/site-urls";
+import { documentaryCount, listHeading, pageHead } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
 import { AboutContent } from "@/components/about-content";
 import { AwardsList } from "@/components/awards-list";
 import type { AwardBody } from "@/data/award-bodies";
 import { AwardBadges } from "@/components/award-badges";
-import { DirectorsList } from "@/components/directors-list";
+import { DirectorHeader, DirectorsList } from "@/components/directors-list";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { DocumentaryPoster } from "@/components/documentary-poster";
 import { ScrollRow } from "@/components/scroll-row";
@@ -530,9 +530,8 @@ function Index() {
   const browseFrom = (patch: Partial<typeof searchDefaults>) => navigate({ search: { ...searchDefaults, sort: search.sort, ...patch } });
   const toggleList = (which: "shortlist" | "watched") =>
     navigate({ search: (prev) => ({ ...prev, film: "", list: prev.list === which ? "" : which }) });
-  // Director links: jump to that filmmaker on the Directors page.
-  const searchDirector = (name: string) =>
-    navigate({ search: { ...searchDefaults, browse: "directors" }, hash: slugify(name) });
+  // Director links: open that filmmaker's own page.
+  const searchDirector = (name: string) => navigate({ search: { ...searchDefaults, maker: name, browse: "directors" } });
   const clearFilters = () => {
     setQuery("");
     navigate({
@@ -975,11 +974,15 @@ function Index() {
       {view === "spotlight" && <div className="phone-tools mb-3">{toolControls}</div>}
       {view === "gallery" && heading && (
         <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-          <div className="min-w-0">
-            <h2 className="font-display text-2xl font-semibold">{heading.title}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{documentaryCount(list.length)}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
-          </div>
+          {facet.maker ? (
+            <DirectorHeader name={facet.maker} count={list.length} />
+          ) : (
+            <div className="min-w-0">
+              <h2 className="font-display text-2xl font-semibold">{heading.title}</h2>
+              <p className="mt-1 text-sm text-muted-foreground">{documentaryCount(list.length)}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
+            </div>
+          )}
           <div className="flex items-center gap-2">
             <div className="phone-tools">{toolControls}</div>
             <SortMenu value={sort} onChange={setSort} defaultLabel={facet.award ? "Winners first" : "Shuffled"} />
