@@ -72,5 +72,5 @@ export const trailerLink = (f: Film) =>
   f.trailerUrl ??
   `https://www.youtube.com/results?search_query=${encodeURIComponent(`${f.title} ${f.year} official trailer`)}`;
 
-export const justWatchLink = (f: Film) =>
-  `https://www.justwatch.com/ie/search?q=${encodeURIComponent(f.title)}`;
+export const justWatchLink = (f: Film, country: string) =>
+  `https://www.justwatch.com/${country === 'GB' ? 'uk' : country.toLowerCase()}/search?q=${encodeURIComponent(f.title)}`;

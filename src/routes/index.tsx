@@ -14,7 +14,6 @@ import {
   Shuffle,
   Award,
   SlidersHorizontal,
-  Link2,
   EyeOff,
   Search,
   Dices,
@@ -34,6 +33,9 @@ import {
   cardCommitment,
   formatCommitment,
 } from "@/data/discovery-facets";
+import { CopyLink } from "@/components/copy-link";
+import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
+import { documentaryCount, listHeading, pageHead } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardLaurel } from "@/components/award-laurel";
 import { AwardBadges } from "@/components/award-badges";
@@ -59,7 +61,7 @@ import {
   type Provider,
   type Enrichment,
 } from "@/lib/discovery";
-import { getIrishProviders } from "@/lib/tmdb.functions";
+import { getProviders, getVisitorCountry } from "@/lib/tmdb.functions";
 const PAGE = 36;
 const kind = (m?: string) => (m === "tv" ? "Series" : m === "collection" ? "Film series" : "Film");
 const years = (f: { year: number; yearEnd?: number }) => (f.yearEnd ? `${f.year}–${f.yearEnd}` : String(f.year));
@@ -117,23 +119,7 @@ export const Route = createFileRoute("/")({
     browse: text(search["browse"], "topics"),
   }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
-  head: () => ({
-    meta: [
-      { title: "Documentary Club — Discover extraordinary true stories" },
-      {
-        name: "description",
-        content: `Explore ${CATALOGUE.length} curated documentary films and series, documented festival awards, official trailers and streaming availability in Ireland.`,
-      },
-      { property: "og:title", content: "Documentary Club — Extraordinary true stories" },
-      {
-        property: "og:description",
-        content:
-          "Discover curated documentaries in Spotlight or Gallery, save your favourites and find Irish streaming options.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: ({ match }) => pageHead(match.search),
   component: Index,
 });
 type Filter = "all" | Category | "awards";
@@ -162,27 +148,47 @@ function WatchStrip({
   loading,
   providers,
   fallback,
+  country,
+  onCountry,
 }: {
   loading: boolean;
   providers?: Enrichment["providers"] | undefined;
   fallback: string;
+  country: string;
+  onCountry: (country: string) => void;
 }) {
-  const names = (items: Provider[]) => items.map((p) => p.name).join(", ");
+  const logos = (items: Provider[]) =>
+    items.map((p) =>
+      p.logo ? (
+        <img key={p.id} src={p.logo} alt={p.name} title={p.name} className="size-7 rounded-md" />
+      ) : (
+        <span key={p.id}>{p.name}</span>
+      ),
+    );
   const rentBuy = [...new Map([...(providers?.rent ?? []), ...(providers?.buy ?? [])].map((p) => [p.id, p])).values()];
   const href = providers?.link ?? fallback;
   return (
     <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border pt-3 text-xs">
-      <span className="font-semibold">Ireland</span>
+      <select
+        aria-label="Streaming country"
+        className="discovery-select w-auto max-w-40 font-semibold"
+        value={country}
+        onChange={(e) => onCountry(e.target.value)}
+      >
+        {COUNTRIES.map(([code, name]) => (
+          <option key={code} value={code}>
+            {name}
+          </option>
+        ))}
+      </select>
       {loading ? (
         <span className="text-muted-foreground" role="status">
           Checking…
         </span>
       ) : providers?.flatrate.length ? (
-        <span className="rounded-full bg-primary/15 px-2.5 py-1 font-medium text-primary">
-          ▶ Stream on {names(providers.flatrate)}
-        </span>
+        <span className="inline-flex flex-wrap items-center gap-1.5 font-medium">Stream on {logos(providers.flatrate)}</span>
       ) : rentBuy.length ? (
-        <span className="rounded-full border border-border px-2.5 py-1">Rent / buy: {names(rentBuy)}</span>
+        <span className="inline-flex flex-wrap items-center gap-1.5">Rent or buy {logos(rentBuy)}</span>
       ) : (
         <span className="text-muted-foreground">Availability unknown</span>
       )}
@@ -192,7 +198,7 @@ function WatchStrip({
         rel="noreferrer"
         className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
       >
-        {providers?.link ? "All options" : "JustWatch IE"}
+        {providers?.link ? "All options" : "JustWatch"}
         <ExternalLink className="size-3" />
       </a>
     </div>
@@ -252,6 +258,15 @@ function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: stri
 // Free, legal viewing searches only (no piracy sources).
 function FreeLegal({ film }: { film: { title: string; year: number } }) {
   const q = encodeURIComponent(film.title);
+  // Personal extras: only shown in a browser switched on with #extras-on (#extras-off undoes it).
+  const [extras, setExtras] = useState(false);
+  useEffect(() => {
+    try {
+      setExtras(localStorage.getItem("dc-extras") === "1");
+    } catch {
+      setExtras(false);
+    }
+  }, []);
   const links = [
     [
       "YouTube (full length)",
@@ -259,10 +274,12 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
     ],
     ["Internet Archive", `https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22movies%22`],
     ["Kanopy (library card)", `https://www.kanopy.com/en/search?query=${q}`],
-    // Placeholder address — replace with the real Download site search URL.
-    ["Download", `https://kickasstorrents.to/usearch/${q}`],
-    // Placeholder address — replace with the real site search URL.
-    ["Download 2", `https://yts.gg/browse-movies/${q}/all/all/0/latest/0/all`],
+    ...(extras
+      ? ([
+          ["Download", `https://kickasstorrents.to/usearch/${q}`],
+          ["Download 2", `https://yts.gg/browse-movies/${q}/all/all/0/latest/0/all`],
+        ] as const)
+      : []),
   ] as const;
   return (
     <Popover>
@@ -273,7 +290,7 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-64">
-        <p className="mb-1 text-xs text-muted-foreground">Free, legal sources — results not verified.</p>
+        <p className="mb-1 text-xs text-muted-foreground">Free sources — results not verified.</p>
         {links.map(([label, href]) => (
           <Button key={label} asChild variant="link" size="sm" className="h-auto w-full justify-start px-0 py-1">
             <a href={href} target="_blank" rel="noreferrer">
@@ -292,6 +309,15 @@ function Index() {
   const view = search.film ? "spotlight" : "gallery";
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
+  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker });
+  useEffect(() => {
+    try {
+      if (window.location.hash === "#extras-on") localStorage.setItem("dc-extras", "1");
+      if (window.location.hash === "#extras-off") localStorage.removeItem("dc-extras");
+    } catch {
+      // Without storage the extras simply stay hidden.
+    }
+  }, []);
   useEffect(() => {
     setOrder(shuffleIds(CATALOGUE.map((f) => f.id)));
   }, []);
@@ -384,8 +410,30 @@ function Index() {
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const fetchProviders = useServerFn(getIrishProviders);
+  const fetchProviders = useServerFn(getProviders);
+  const fetchCountry = useServerFn(getVisitorCountry);
+  const [country, setCountry] = useState(DEFAULT_COUNTRY);
+  // A saved choice wins, then the visitor's location, then their browser's language region.
+  useEffect(() => {
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem("dc-country");
+    } catch {
+      saved = null;
+    }
+    if (isCountry(saved)) return setCountry(saved);
+    const fromBrowser = browserCountry();
+    if (fromBrowser) setCountry(fromBrowser);
+    void fetchCountry().then((found) => found && setCountry(found), () => undefined);
+  }, [fetchCountry]);
+  const chooseCountry = (code: string) => {
+    setCountry(code);
+    try {
+      localStorage.setItem("dc-country", code);
+    } catch {
+      // The choice still applies for this visit.
+    }
+  };
   const list = useMemo(() => {
     const base =
       listFilter === "shortlist"
@@ -433,8 +481,8 @@ function Index() {
   const idx = list.findIndex((f) => f.id === film?.id);
   // Baseline metadata ships in the snapshot; only Irish availability is fetched live, for the selected title.
   const providers = useQuery({
-    queryKey: ["ie-providers", film?.id],
-    queryFn: () => fetchProviders({ data: { id: film?.id ?? "" } }),
+    queryKey: ["providers", film?.id, country],
+    queryFn: () => fetchProviders({ data: { id: film?.id ?? "", country } }),
     enabled: view === "spotlight" && Boolean(film?.tmdbId) && film?.mediaType !== "collection",
     staleTime: 6 * 60 * 60_000,
     retry: false,
@@ -451,7 +499,6 @@ function Index() {
   ); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     setTrailerOpen(false);
-    setCopied(false);
   }, [film?.id]);
   useEffect(() => {
     const handle = (e: KeyboardEvent) => {
@@ -466,17 +513,6 @@ function Index() {
     return () => window.removeEventListener("keydown", handle);
   }, [go, view, trailerOpen]);
   const touch = useRef<{ x: number; y: number } | null>(null);
-  const share = async () => {
-    if (!film) return;
-    const url = `${window.location.origin}/?film=${film.id}`;
-    try {
-      await navigator.clipboard.writeText(url);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      window.prompt("Copy this link", url);
-    }
-  };
   const toggleList = (which: "shortlist" | "watched") =>
     navigate({ search: (prev) => ({ ...prev, film: "", list: prev.list === which ? "" : which }) });
   // Director links: open the gallery filtered to everything we have by that filmmaker.
@@ -857,6 +893,9 @@ function Index() {
               {label}
             </Button>
           ))}
+          <Button asChild size="sm" variant="ghost" className="browse-tab">
+            <Link to="/about">About</Link>
+          </Button>
         </nav>
         <ScrollRow label="Discovery options" className="discovery-chips">
           {browse === "topics" ? (
@@ -963,6 +1002,16 @@ function Index() {
           </Button>
         </div>
       )}
+      {view === "gallery" && heading && (
+        <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+          <div className="min-w-0">
+            <h2 className="font-display text-2xl font-semibold">{heading.title}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{documentaryCount(list.length)}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
+          </div>
+          <CopyLink />
+        </div>
+      )}
       {(facet.award || facet.mood || facet.pick || facet.maker || facet.tag || filter !== "all") && (
         <div className="mb-3 flex flex-wrap gap-1" aria-label="Active discovery filters">
           {[
@@ -1066,6 +1115,14 @@ function Index() {
                 Show more · {list.length - shown} left
               </Button>
             </div>
+          )}
+          {heading && (
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              Know one that belongs here?{" "}
+              <Link to="/suggest" className="underline">
+                Suggest a documentary
+              </Link>
+            </p>
           )}
         </>
       ) : (
@@ -1238,12 +1295,15 @@ function Index() {
                   {watched.has(film.id) ? "Watched" : "Mark watched"}
                 </Button>
                 <FreeLegal film={film} />
-                <Button variant="outline" onClick={share}>
-                  <Link2 />
-                  {copied ? "Link copied" : "Share"}
-                </Button>
+                <CopyLink path={`/film/${film.id}`} className="h-9" />
               </div>
-              <WatchStrip loading={providers.isFetching} providers={extra?.providers} fallback={justWatchLink(film)} />
+              <WatchStrip
+                loading={providers.isFetching}
+                providers={extra?.providers}
+                fallback={justWatchLink(film, country)}
+                country={country}
+                onCountry={chooseCountry}
+              />
             </div>
           </section>
           <TrailerPlayer
@@ -1263,10 +1323,16 @@ function Index() {
         <Link to="/makers" className="underline">
           Directors
         </Link>
+        <Link to="/about" className="underline">
+          About
+        </Link>
+        <Link to="/suggest" className="underline">
+          Suggest a documentary
+        </Link>
         <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="underline">
           Film data & images: TMDB
         </a>
-        <a href="https://www.justwatch.com/ie" target="_blank" rel="noreferrer" className="underline">
+        <a href="https://www.justwatch.com/" target="_blank" rel="noreferrer" className="underline">
           Availability: JustWatch
         </a>
         <a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer" className="underline">

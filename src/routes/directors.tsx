@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { ArrowLeft } from 'lucide-react';
 import { CATALOGUE } from '@/data/catalogue';
+import { CopyLink } from '@/components/copy-link';
 import { SiteLogo } from '@/components/site-logo';
+import { staticPageHead } from '@/lib/site-urls';
 
 const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' } as const;
 const slug = (s: string) => s.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -16,13 +18,7 @@ function directorIndex() {
 }
 
 export const Route = createFileRoute('/directors')({
-  head: () => ({ meta: [
-    { title: 'Directors — Documentary Club' },
-    { name: 'description', content: 'Every director in the Documentary Club catalogue, ranked by how many of their documentaries are in the collection.' },
-    { property: 'og:title', content: 'Documentary Club — directors' },
-    { property: 'og:description', content: 'The filmmakers behind the catalogue, most prolific first.' },
-    { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary' },
-  ] }),
+  head: () => staticPageHead('Directors', 'The documentary filmmakers in the collection, with every title linked.', '/directors'),
   component: DirectorsPage,
 });
 
@@ -31,8 +27,9 @@ function DirectorsPage() {
   const multi = all.filter(d => d.films.length > 1);
   const single = all.filter(d => d.films.length === 1);
   return <main className="mx-auto max-w-3xl px-4 pb-10 sm:px-6">
-    <header className="flex items-center justify-between gap-3 py-3">
+    <header className="flex flex-wrap items-center justify-between gap-3 py-3">
       <h1><SiteLogo /></h1>
+      <CopyLink className="ml-auto" />
       <Link to="/makers" className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Browse Makers</Link>
     </header>
     <p className="border-b border-border pb-3 text-xs text-muted-foreground">{all.length} directors · {multi.length} with two or more titles. Click a name to filter the gallery.</p>

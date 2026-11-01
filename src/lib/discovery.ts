@@ -1,6 +1,6 @@
 import type { Film } from '@/data/films';
 
-export type Provider = { id: number; name: string; highlighted: boolean };
+export type Provider = { id: number; name: string; highlighted: boolean; logo?: string | undefined };
 // Discovery selections leave Spotlight while preserving every independent URL facet.
 export function gallerySelection<T extends { film: string }>(current: T, patch: Partial<T>): T {
   return { ...current, ...patch, film: '' };
@@ -73,13 +73,14 @@ export function parseOmdb(data: OmdbResponse): OmdbMetadata {
     awards: awards && !/^(N\/A|none)$/i.test(awards) ? awards : undefined };
 }
 
-type RawProvider = { provider_id: number; provider_name: string };
+type RawProvider = { provider_id: number; provider_name: string; logo_path?: string };
 type Region = { link?: string; flatrate?: RawProvider[]; rent?: RawProvider[]; buy?: RawProvider[] };
-export function parseIrishProviders(data?: { results?: Record<string, Region> }): Enrichment['providers'] {
-  const region = data?.results?.['IE'];
+export function parseProviders(data?: { results?: Record<string, Region> }, country = 'IE'): Enrichment['providers'] {
+  const region = data?.results?.[country];
   if (!region) return unknownProviders();
   const parse = (items?: RawProvider[]): Provider[] => [...new Map((items ?? []).filter(p => Number.isFinite(p.provider_id) && typeof p.provider_name === 'string').map(p => [p.provider_id, {
     id: p.provider_id, name: p.provider_name, highlighted: p.provider_id === 8 || p.provider_id === 9,
+    logo: p.logo_path && /^\/[a-zA-Z0-9._-]+$/.test(p.logo_path) ? `https://image.tmdb.org/t/p/w92${p.logo_path}` : undefined,
   }])).values()];
   const flatrate = parse(region.flatrate), rent = parse(region.rent), buy = parse(region.buy);
   return { known: flatrate.length + rent.length + buy.length > 0, link: region.link?.startsWith('https://www.themoviedb.org/') ? region.link : undefined, flatrate, rent, buy };

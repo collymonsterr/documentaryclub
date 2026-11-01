@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "sync-catalogue": "npx --yes bun scripts/sync-catalogue.ts"
+    "sync-catalogue": "npx --yes bun scripts/sync-catalogue.ts",
+    "og-images": "npx --yes bun scripts/og-images.ts"
   },
   "overrides": {
     "rolldown": "1.2.1"
@@ -89,6 +90,7 @@
     "jsdom": "^20.0.3",
     "nitro": "3.0.260603-beta",
     "prettier": "^3.7.3",
+    "sharp": "^0.35.5",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "8.1.5",

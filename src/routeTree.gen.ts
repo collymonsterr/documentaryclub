@@ -10,13 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as DirectorsRouteImport } from './routes/directors'
 import { Route as ListRouteImport } from './routes/list'
 import { Route as MakersRouteImport } from './routes/makers'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SuggestRouteImport } from './routes/suggest'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DirectorsRoute = DirectorsRouteImport.update({
@@ -34,39 +42,83 @@ const MakersRoute = MakersRouteImport.update({
   path: '/makers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuggestRoute = SuggestRouteImport.update({
+  id: '/suggest',
+  path: '/suggest',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
   '/makers': typeof MakersRoute
+  '/privacy': typeof PrivacyRoute
+  '/suggest': typeof SuggestRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
   '/makers': typeof MakersRoute
+  '/privacy': typeof PrivacyRoute
+  '/suggest': typeof SuggestRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
   '/makers': typeof MakersRoute
+  '/privacy': typeof PrivacyRoute
+  '/suggest': typeof SuggestRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/directors' | '/list' | '/makers'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/directors'
+    | '/list'
+    | '/makers'
+    | '/privacy'
+    | '/suggest'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/directors' | '/list' | '/makers'
-  id: '__root__' | '/' | '/directors' | '/list' | '/makers'
+  to:
+    | '/'
+    | '/about'
+    | '/directors'
+    | '/list'
+    | '/makers'
+    | '/privacy'
+    | '/suggest'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/directors'
+    | '/list'
+    | '/makers'
+    | '/privacy'
+    | '/suggest'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   DirectorsRoute: typeof DirectorsRoute
   ListRoute: typeof ListRoute
   MakersRoute: typeof MakersRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SuggestRoute: typeof SuggestRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -76,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/directors': {
@@ -99,14 +158,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MakersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/suggest': {
+      id: '/suggest'
+      path: '/suggest'
+      fullPath: '/suggest'
+      preLoaderRoute: typeof SuggestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   DirectorsRoute: DirectorsRoute,
   ListRoute: ListRoute,
   MakersRoute: MakersRoute,
+  PrivacyRoute: PrivacyRoute,
+  SuggestRoute: SuggestRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,5 +1,5 @@
 import { FILMS, type Film } from '@/data/films';
-import { fallbackEnrichment, movieCandidates, normalizeDirector, normalizeTitle, parseIrishProviders, selectTrailer, validImdbId, type Enrichment, type MovieCandidate } from './discovery';
+import { fallbackEnrichment, movieCandidates, normalizeDirector, normalizeTitle, parseProviders, selectTrailer, validImdbId, type Enrichment, type MovieCandidate } from './discovery';
 
 type Details = {
   id: number; title?: string; original_title?: string; release_date?: string;
@@ -7,7 +7,7 @@ type Details = {
   credits?: { crew?: { job: string; name: string }[] };
   videos?: Parameters<typeof selectTrailer>[0];
   images?: { backdrops?: { file_path: string }[] };
-  'watch/providers'?: Parameters<typeof parseIrishProviders>[0];
+  'watch/providers'?: Parameters<typeof parseProviders>[0];
   external_ids?: { imdb_id?: string };
 };
 export type TmdbAuth = { token?: string | undefined; apiKey?: string | undefined };
@@ -60,7 +60,7 @@ async function enrich(film: Film, auth: TmdbAuth): Promise<Enrichment> {
       rating: (details.vote_count ?? 0) > 0 && Number.isFinite(details.vote_average) ? details.vote_average : undefined, votes: details.vote_count,
       trailer: selectTrailer(details.videos),
       backdrops: [...new Set((details.images?.backdrops ?? []).map(b => image(b.file_path, 'w1280')).filter((p): p is string => Boolean(p)))].slice(0, 4),
-      providers: parseIrishProviders(details['watch/providers']),
+      providers: parseProviders(details['watch/providers']),
     };
   } catch { return fallbackEnrichment('unavailable'); }
 }
@@ -85,15 +85,17 @@ export async function getCatalogueEnrichment(auth: TmdbAuth): Promise<Record<str
   return result;
 }
 // Live Irish availability for one verified title (providers change; everything else comes from the import snapshot).
-const providerCache = new Map<string, { expires: number; value: Promise<Enrichment['providers']> }>();
-export async function getLiveProviders(mediaType: 'movie' | 'tv', tmdbId: number, auth: TmdbAuth): Promise<Enrichment['providers']> {
+const providerCache = new Map<string, { expires: number; value: Promise<ProviderData | undefined> }>();
+type ProviderData = Parameters<typeof parseProviders>[0];
+export async function getLiveProviders(mediaType: 'movie' | 'tv', tmdbId: number, auth: TmdbAuth, country = 'IE'): Promise<Enrichment['providers']> {
   if ((!auth.token && !auth.apiKey) || !Number.isInteger(tmdbId) || tmdbId <= 0) return fallbackEnrichment('missing-secret').providers;
+  // TMDB returns every country in one response, so one cached call serves all visitors.
   const key = `${mediaType}:${tmdbId}`, hit = providerCache.get(key);
-  if (hit && hit.expires > Date.now()) return hit.value;
-  const value = request<Parameters<typeof parseIrishProviders>[0]>(`${mediaType}/${tmdbId}/watch/providers`, auth).then(parseIrishProviders, () => fallbackEnrichment('unavailable').providers);
+  if (hit && hit.expires > Date.now()) return parseProviders(await hit.value, country);
+  const value = request<ProviderData>(`${mediaType}/${tmdbId}/watch/providers`, auth).catch(() => undefined);
   if (providerCache.size >= 200 && !providerCache.has(key)) { const oldest = providerCache.keys().next().value; if (oldest) providerCache.delete(oldest); }
   const entry = { expires: Date.now() + 6 * 60 * 60_000, value };
   providerCache.set(key, entry);
-  void value.then(p => { if (!p.known && providerCache.get(key) === entry) entry.expires = Date.now() + 10 * 60_000; });
-  return value;
+  void value.then(data => { if (!data && providerCache.get(key) === entry) entry.expires = Date.now() + 10 * 60_000; });
+  return parseProviders(await value, country);
 }

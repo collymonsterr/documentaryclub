@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, cardRatings, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseIrishProviders, readTracking, selectTrailer, selectYouTubeTrailer, sortByRating, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardRatings, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseProviders, readTracking, selectTrailer, selectYouTubeTrailer, sortByRating, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -67,15 +67,16 @@ describe('safe TMDB selection', () => {
     expect(selectTrailer({results:[{site:'YouTube',type:'Trailer',official:true,key:'bad'}]})).toBeUndefined();
   });
 });
-describe('Irish provider rules', () => {
-  it('never uses US availability as Irish availability', () => { expect(parseIrishProviders({results:{US:{flatrate:[{provider_id:8,provider_name:'Netflix'}]}}}).known).toBe(false); });
+describe('provider rules', () => {
+  it('never uses US availability as Irish availability', () => { expect(parseProviders({results:{US:{flatrate:[{provider_id:8,provider_name:'Netflix'}]}}}).known).toBe(false); });
   it('distinguishes subscriptions from rental/purchase and highlights subscription brands', () => {
-    const parsed = parseIrishProviders({results:{IE:{flatrate:[{provider_id:8,provider_name:'Netflix'},{provider_id:9,provider_name:'Amazon Prime Video'}],rent:[{provider_id:10,provider_name:'Amazon Video'}],buy:[{provider_id:2,provider_name:'Apple TV'}]}}});
+    const parsed = parseProviders({results:{IE:{flatrate:[{provider_id:8,provider_name:'Netflix'},{provider_id:9,provider_name:'Amazon Prime Video'}],rent:[{provider_id:10,provider_name:'Amazon Video'}],buy:[{provider_id:2,provider_name:'Apple TV'}]}}});
     expect(parsed.flatrate.map(p => [p.name,p.highlighted])).toEqual([['Netflix',true],['Amazon Prime Video',true]]);
     expect(parsed.rent.map(p => p.name)).toEqual(['Amazon Video']);
     expect(parsed.buy.map(p => p.name)).toEqual(['Apple TV']);
   });
-  it('treats empty provider data as unknown, not unavailable', () => { expect(parseIrishProviders({results:{IE:{}}}).known).toBe(false); });
+  it('reads the requested country and its logos', () => { const p = parseProviders({results:{US:{flatrate:[{provider_id:8,provider_name:'Netflix',logo_path:'/n.jpg'}]}}}, 'US'); expect(p.flatrate[0]?.logo).toBe('https://image.tmdb.org/t/p/w92/n.jpg'); });
+  it('treats empty provider data as unknown, not unavailable', () => { expect(parseProviders({results:{IE:{}}}).known).toBe(false); });
 });
 describe('Spotlight keyboard guard', () => {
   it('ignores fields and contenteditable', () => {

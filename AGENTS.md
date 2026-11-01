@@ -11,7 +11,7 @@
 
 - Catalogue = original curated FILMS (src/data/films.ts) + approved import list (src/data/import-list.ts) merged in src/data/catalogue.ts; identities/public metadata are resolved once by scripts/resolve-catalogue.ts into catalogue-snapshot.json and an audit import-manifest.json, so page loads never search TMDB/OMDb. Ambiguous titles stay visible as pending; never invent IDs, awards or trailers.
 - Import matching supports movie and tv endpoints: documentary genre, title or ':'-subtitle alias, year ±1, uniqueness; tie-breaks only via explicit per-title hints (format, credited filmmaker, search alias).
-- Only Irish watch providers are fetched live, per selected catalogue ID through a server function that rejects non-catalogue IDs.
+- Watch providers are fetched live per selected catalogue ID through a server function that rejects non-catalogue IDs.
 - Optional enrichment uses a public server function reading runtime-injected process.env secrets inside its handler only; retain the immediate curated first screen so service failures never block discovery.
 - TMDB identity requires exact normalized title, documentary genre and every director, allowing at most one year of premiere/distribution variance; verify all candidate details and reject ambiguity before caching an ID.
 - Discovery helpers own filtering, trailer validation, Irish provider parsing and tracking keys; test these rules independently from presentation.
@@ -25,3 +25,6 @@
 - data/catalogue-master.csv is the single source of truth for title, year, type, category, tags, mood, director and TMDB/IMDb IDs. src/data/catalogue-sheet.json is generated from it by `npm run sync-catalogue`: never edit that JSON by hand. Titles absent from the CSV are dropped; status=new rows are matched on TMDB and set live, and uncertain matches stay new and are listed. Enrichment stays in catalogue-snapshot.json, keyed by id.
 - Tags are limited to the approved slugs in src/data/tags.ts; the sync rejects anything else.
 - Discovery navigation uses one sticky grid for header, tabs and chips; category and browse-chip selections clear the Spotlight film so filtering always opens Gallery.
+- Clean URLs (/tags/x, /categories/x, /directors/x, /film/x) are router rewrites onto the home route's search params in src/lib/site-urls.ts; keep filtering on the one route. Link previews come from pageHead and are server-rendered. SITE_ORIGIN there must match the live domain; rerun `npm run og-images` after adding a tag or category.
+- Providers come from TMDB for one visitor-selected country; one cached response serves every country.
+- Google Analytics loads only after consent (src/lib/analytics.ts). Messages and suggestions go to a private Google Sheet via the FEEDBACK_WEBHOOK_URL secret (docs/feedback-sheet.gs).
