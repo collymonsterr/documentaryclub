@@ -513,6 +513,8 @@ function Index() {
     return () => window.removeEventListener("keydown", handle);
   }, [go, view, trailerOpen]);
   const touch = useRef<{ x: number; y: number } | null>(null);
+  // Spotlight labels start a fresh browse rather than narrowing whatever filters led here.
+  const browseFrom = (patch: Partial<typeof searchDefaults>) => navigate({ search: { ...searchDefaults, sort: search.sort, ...patch } });
   const toggleList = (which: "shortlist" | "watched") =>
     navigate({ search: (prev) => ({ ...prev, film: "", list: prev.list === which ? "" : which }) });
   // Director links: open the gallery filtered to everything we have by that filmmaker.
@@ -1160,8 +1162,26 @@ function Index() {
               </Button>
               <div className="flex items-center justify-between gap-2">
                 <p className="flex items-center gap-2 text-xs font-medium uppercase text-primary">
-                  <span className="rounded-sm border border-primary/40 px-1.5 py-0.5">{kind(film.mediaType)}</span>
-                  {film.genre}
+                  {film.mediaType === "collection" ? (
+                    <span className="rounded-sm border border-primary/40 px-1.5 py-0.5">{kind(film.mediaType)}</span>
+                  ) : (
+                    <button
+                      type="button"
+                      title={`Browse all ${film.mediaType === "tv" ? "series" : "films"}`}
+                      className="rounded-sm border border-primary/40 px-1.5 py-0.5 uppercase hover:border-primary hover:underline"
+                      onClick={() => browseFrom({ type: film.mediaType === "tv" ? "tv" : "movie" })}
+                    >
+                      {kind(film.mediaType)}
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    title={`Browse ${film.genre}`}
+                    className="uppercase hover:underline"
+                    onClick={() => browseFrom({ cat: film.categories[0] ?? "all", browse: "topics" })}
+                  >
+                    {film.genre}
+                  </button>
                   {film.pending && <span className="text-muted-foreground">· Identity pending</span>}
                 </p>
                 <div className="flex items-center gap-2">
