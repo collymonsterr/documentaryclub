@@ -1,7 +1,7 @@
 import { CATEGORIES } from '@/data/films';
 import { AWARD_COPY, CATEGORY_COPY, MOOD_COPY } from '@/data/category-copy';
 import { CATALOGUE, SNAPSHOT } from '@/data/catalogue';
-import { makerIndex } from '@/data/discovery-facets';
+import { AWARDS, makerIndex } from '@/data/discovery-facets';
 import { TAGS } from '@/data/tags';
 
 // Change this one value when the custom domain goes live: previews and canonical links use it.
@@ -24,9 +24,10 @@ const makerSlugs = () => {
 type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; browse?: string };
 // The one clean path for a page, or null when it is a filter combination that stays on query parameters.
 export function pagePath(search: PageSearch) {
-  const { tag, maker } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '';
+  const { tag, maker, award } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '';
   if (search.film) return filmIds.has(search.film) ? `/film/${search.film}` : null;
-  if ([tag, cat, maker].filter(Boolean).length !== 1) return [tag, cat, maker].some(Boolean) ? null : search.browse === 'directors' ? '/directors' : '/';
+  if ([tag, cat, maker, award].filter(Boolean).length !== 1) return [tag, cat, maker, award].some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : '/';
+  if (award) { const slug = AWARDS.find(a => a.id === award)?.slug; return slug ? `/awards/${slug}` : null; }
   if (tag) return tagIds.has(tag) ? `/tags/${tag}` : null;
   if (cat) return categorySlug.has(cat) ? `/categories/${categorySlug.get(cat)}` : null;
   const slug = maker ? makerSlugs().byName.get(maker) : undefined;
@@ -44,8 +45,10 @@ export const urlRewrite = {
     if (!section || extra !== undefined) return undefined;
     if (section === 'tags' && !slug) { url.pathname = '/'; url.searchParams.set('tag', TAGS[0].id); url.searchParams.set('browse', 'tags'); return url; }
     if (!slug && (section === 'directors' || section === 'makers')) { url.pathname = '/'; url.searchParams.set('browse', 'directors'); return url; }
+    if (!slug && section === 'awards') { url.pathname = '/'; url.searchParams.set('browse', 'awards'); return url; }
     if (!slug) return undefined;
-    if (section === 'tags' && tagIds.has(slug)) { url.searchParams.set('tag', slug); url.searchParams.set('browse', 'tags'); }
+    if (section === 'awards' && AWARDS.some(a => a.slug === slug)) { url.searchParams.set('award', AWARDS.find(a => a.slug === slug)!.id); url.searchParams.set('browse', 'awards'); }
+    else if (section === 'tags' && tagIds.has(slug)) { url.searchParams.set('tag', slug); url.searchParams.set('browse', 'tags'); }
     else if (section === 'categories' && categoryBySlug.has(slug)) url.searchParams.set('cat', categoryBySlug.get(slug)!.id);
     else if (section === 'film' && filmIds.has(slug)) url.searchParams.set('film', searchValue(slug));
     else if (section === 'directors' && makerSlugs().bySlug.has(slug)) { url.searchParams.set('maker', makerSlugs().bySlug.get(slug)!); url.searchParams.set('browse', 'directors'); }
@@ -56,12 +59,12 @@ export const urlRewrite = {
   output: ({ url }: { url: URL }) => {
     if (url.pathname !== '/') return undefined;
     const get = (key: string) => readValue(url.searchParams.get(key) ?? '');
-    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), browse: get('browse') };
+    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), award: get('award'), browse: get('browse') };
     const path = pagePath(search);
     if (!path || path === '/') return undefined;
     if (search.film) url.searchParams.delete('film');
     else {
-      ['tag', 'cat', 'maker', 'browse'].forEach(key => url.searchParams.delete(key));
+      ['tag', 'cat', 'maker', 'award', 'browse'].forEach(key => url.searchParams.delete(key));
       if (get('q') === search.maker) url.searchParams.delete('q');
     }
     url.pathname = path;
@@ -91,6 +94,7 @@ function previewFor(search: PageSearch) {
     return { title: `${film.title} (${film.year})`, description: firstSentences(snap?.overview ?? film.synopsis), image: snap?.backdrops?.[0] ?? snap?.poster };
   }
   if (search.browse === 'directors' && !search.maker) return { title: 'Directors', description: 'The documentary filmmakers in the collection, with every title linked.', image: undefined };
+  if (search.browse === 'awards' && !search.award) return { title: 'Awards', description: 'Oscar, BAFTA, Emmy, Sundance, Tribeca, IDA and Cannes winners in the collection.', image: undefined };
   const heading = listHeading(search);
   if (heading?.image) return heading;
   if (heading) {

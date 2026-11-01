@@ -4,19 +4,21 @@ import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesF
 const film = (id: string) => { const f = CATALOGUE.find(f => f.id === id); if (!f) throw new Error(id); return f; };
 describe('evidence-led discovery', () => {
   it('distinguishes Academy wins from nominations', () => {
-    expect(accolades(film('mariupol')).some(a => a.facet === 'oscar-win')).toBe(true);
-    expect(accolades(film('fire-of-love')).some(a => a.facet === 'oscar-nominee')).toBe(true);
-    expect(accolades(film('fire-of-love')).some(a => a.facet === 'oscar-win')).toBe(false);
+    expect(accolades(film('mariupol')).some(a => a.body === 'oscar' && a.result === 'Won')).toBe(true);
+    expect(accolades(film('fire-of-love')).some(a => a.body === 'oscar' && a.result === 'Nominated')).toBe(true);
+    expect(accolades(film('fire-of-love')).some(a => a.body === 'oscar' && a.result === 'Won')).toBe(false);
   });
   it('orders wins by prestige, then nominations, and caps cards at three bodies', () => {
     const f = { ...film('skywalkers'), awards: ['Oscar Nominee – Best Documentary Feature 2020', 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', "Cannes L'Œil d'or 2019", 'BAFTA Winner – Best Documentary 2020', 'Some Regional Prize 2019'] };
     expect(accolades(f, '').map(a => a.label)).toEqual(['BAFTA Winner – Best Documentary 2020', "Cannes L'Œil d'or 2019", 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', 'Some Regional Prize 2019', 'Oscar Nominee – Best Documentary Feature 2020']);
     expect(topAwards(f).map(a => a.body)).toEqual(['bafta', 'cannes', 'sundance']);
   });
-  it('uses named OMDb Emmy and BAFTA evidence only as a generic fallback', () => {
+  it('uses named OMDb Emmy and BAFTA wins only as a generic fallback', () => {
     const blank = { ...film('skywalkers'), awards: [] };
-    expect(accolades(blank, 'Won 3 Primetime Emmys. 5 wins total')[0]).toMatchObject({ label: 'Emmy Winner', body: 'emmy', facet: 'other-win' });
-    expect(accolades(blank, 'Nominated for 1 BAFTA Award. 2 wins')[0]).toMatchObject({ label: 'BAFTA Nominee', body: 'bafta', facet: 'other-nominee' });
+    expect(accolades(blank, 'Won 3 Primetime Emmys. 5 wins total')[0]).toMatchObject({ label: 'Emmy Winner', body: 'emmy' });
+    expect(accolades(blank, 'Won 1 BAFTA Award. 2 wins')[0]).toMatchObject({ label: 'BAFTA Winner', body: 'bafta' });
+    expect(accolades(blank, 'Nominated for 1 BAFTA Award. 2 wins')).toEqual([]);
+    expect(accolades(blank, 'Nominated for 1 Primetime Emmy. 2 wins')).toEqual([]);
     expect(accolades({ ...blank, awards: ['BAFTA Winner – Best Documentary 2020'] }, 'Nominated for 1 BAFTA Award')).toHaveLength(1);
   });
   it('never turns unnamed aggregate counts into festival awards', () => {
@@ -25,7 +27,7 @@ describe('evidence-led discovery', () => {
   });
   it('combines mood, pick, award and maker with AND', () => {
     expect(matchesFacets(film('pez-outlaw'), { award: '', mood: 'funny', pick: '', maker: '' })).toBe(true);
-    expect(matchesFacets(film('pez-outlaw'), { award: 'oscar-win', mood: 'funny', pick: '', maker: '' })).toBe(false);
+    expect(matchesFacets(film('pez-outlaw'), { award: 'oscar', mood: 'funny', pick: '', maker: '' })).toBe(false);
     expect(matchesFacets(film('free-solo'), { award: '', mood: 'gripping', pick: '', maker: 'Jimmy Chin' })).toBe(true);
     expect(matchesFacets(film('free-solo'), { award: '', mood: 'gripping', pick: '', maker: 'Werner Herzog' })).toBe(false);
   });

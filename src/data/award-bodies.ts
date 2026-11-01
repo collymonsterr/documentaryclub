@@ -4,13 +4,9 @@ export const AWARD_BODIES = [
   { id: 'bafta', name: 'BAFTA', color: '#f2f0e6', match: /^BAFTA\b/ },
   { id: 'emmy', name: 'Emmy', color: '#b794f6', match: /\bEmmy\b/ },
   { id: 'cannes', name: 'Cannes', color: '#4ade80', match: /^Cannes\b/ },
-  { id: 'berlin', name: 'Berlin', color: '#f87171', match: /^Berlin/ },
   { id: 'sundance', name: 'Sundance', color: '#fb923c', match: /^Sundance\b/ },
-  { id: 'tiff', name: 'TIFF', color: '#38bdf8', match: /^(TIFF|Toronto)\b/ },
+  { id: 'tribeca', name: 'Tribeca', color: '#38bdf8', match: /^Tribeca\b/ },
   { id: 'ida', name: 'IDA', color: '#2dd4bf', match: /^IDA\b/ },
-  { id: 'critics', name: "Critics' Choice", color: '#f472b6', match: /^Critics. Choice\b/ },
-  { id: 'peabody', name: 'Peabody', color: '#818cf8', match: /^Peabody\b/ },
-  { id: 'dga', name: 'DGA', color: '#a3e635', match: /^DGA\b/ },
   { id: 'other', name: 'Award', color: '#a8a29e', match: /$^/ },
 ] as const;
 export type AwardBody = (typeof AWARD_BODIES)[number]['id'];

@@ -26,6 +26,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   AWARDS,
+  OLD_AWARD_IDS,
+  byAward,
   MOODS,
   EDITORIAL,
   accolades,
@@ -39,7 +41,9 @@ import { SORTS, SortMenu } from "@/components/sort-menu";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
 import { documentaryCount, listHeading, pageHead, slugify } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
-import { AwardIcons } from "@/components/award-icons";
+import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
+import { AwardsList } from "@/components/awards-list";
+import type { AwardBody } from "@/data/award-bodies";
 import { AwardBadges } from "@/components/award-badges";
 import { DirectorsList } from "@/components/directors-list";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -126,6 +130,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 type Filter = "all" | Category | "awards";
+const AWARDED = CATALOGUE.filter((f) => accolades(f).length > 0);
+const AWARD_PILLS = AWARDS.map((a) => ({ ...a, count: AWARDED.filter((f) => accolades(f).some((x) => x.body === a.id)).length })).filter((a) => a.count > 0);
 const NOTES: Record<string, string> = {
   "beyond-utopia":
     "The escape unfolds through an underground network, with the family’s safety at stake at every border.",
@@ -322,7 +328,7 @@ function Index() {
   const view = search.film ? "spotlight" : "gallery";
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
-  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: search.award });
+  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award });
   useEffect(() => {
     try {
       if (window.location.hash === "#extras-on") localStorage.setItem("dc-extras", "1");
@@ -374,7 +380,7 @@ function Index() {
   }, [view]);
   // Filters live in the URL so refresh/bookmarks restore the same view.
   const facet = {
-    award: AWARDS.some((a) => a.id === search.award) ? search.award : "",
+    award: AWARDS.find((a) => a.id === (OLD_AWARD_IDS[search.award] ?? search.award))?.id ?? "",
     mood: MOODS.some((m) => m.id === search.mood) ? search.mood : "",
     pick: "",
     maker: makerIndex().some((m) => m.name === search.maker) ? search.maker : "",
@@ -467,6 +473,7 @@ function Index() {
         filter === "all" ? true : filter === "awards" ? accolades(f).length > 0 : f.categories.includes(filter),
       )
       .filter((f) => matchesFacets(f, facet));
+    if (sort === "random" && facet.award) return byAward(filtered, facet.award);
     if (sort === "score") return sortByScore(filtered, SNAPSHOT);
     if (sort === "newest") return [...filtered].sort((a, b) => b.year - a.year);
     if (sort === "oldest") return [...filtered].sort((a, b) => a.year - b.year);
@@ -586,7 +593,7 @@ function Index() {
     topics: {},
     moods: { mood: MOODS[0].id },
     directors: {},
-    awards: { award: AWARDS[0].id },
+    awards: {},
     tags: { tag: TAGS[0].id },
   };
   const filtersControl = (
@@ -883,7 +890,7 @@ function Index() {
               variant="ghost"
               className="browse-tab"
               aria-pressed={browse === id}
-              onClick={() => (browse === id && id !== "directors" ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
+              onClick={() => (browse === id && id !== "directors" && id !== "awards" ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
             >
               {label}
             </Button>
@@ -932,21 +939,32 @@ function Index() {
                 {t.label}
               </Button>
             ))
+          ) : browse === "awards" ? (
+            [{ id: "", label: "All", count: AWARDED.length }, ...AWARD_PILLS].map((a) => (
+              <Button
+                key={a.id}
+                size="sm"
+                variant={facet.award === a.id ? "default" : "ghost"}
+                aria-pressed={facet.award === a.id}
+                onClick={() => setBrowse({ award: a.id })}
+              >
+                {a.id && <AwardIcon body={a.id as AwardBody} />}
+                {a.label}
+                <span className="opacity-70">{a.count}</span>
+              </Button>
+            ))
           ) : (
-            (browse === "awards" ? AWARDS : MOODS).map((f) => {
-              const key = browse === "awards" ? "award" : "mood";
-              return (
-                <Button
-                  key={f.id}
-                  size="sm"
-                  variant={facet[key] === f.id ? "default" : "ghost"}
-                  aria-pressed={facet[key] === f.id}
-                  onClick={() => setBrowse({ [key]: f.id })}
-                >
-                  {f.label}
-                </Button>
-              );
-            })
+            MOODS.map((m) => (
+              <Button
+                key={m.id}
+                size="sm"
+                variant={facet.mood === m.id ? "default" : "ghost"}
+                aria-pressed={facet.mood === m.id}
+                onClick={() => setBrowse({ mood: m.id })}
+              >
+                {m.label}
+              </Button>
+            ))
           )}
         </ScrollRow>
         )}
@@ -968,12 +986,12 @@ function Index() {
             <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
           </div>
           <div className="flex items-center gap-2">
-            <SortMenu value={sort} onChange={setSort} />
+            <SortMenu value={sort} onChange={setSort} defaultLabel={facet.award ? "Winners first" : "Shuffled"} />
             <CopyLink />
           </div>
         </div>
       )}
-      {view === "gallery" && !heading && browse !== "directors" && (
+      {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && (
         <div className="mb-3 flex justify-end">
           <SortMenu value={sort} onChange={setSort} />
         </div>
@@ -1011,6 +1029,8 @@ function Index() {
       )}
       {browse === "directors" && !facet.maker && view === "gallery" ? (
         <DirectorsList query={directorQuery} />
+      ) : browse === "awards" && !facet.award && view === "gallery" ? (
+        <AwardsList films={list} onSeeAll={(award) => setBrowse({ award })} />
       ) : !film ? (
         <div className="py-16 text-center">
           <p className="text-muted-foreground">No films in this selection.</p>
@@ -1060,6 +1080,7 @@ function Index() {
                     </div>
                   </div>
                   <h2 className="mt-2 line-clamp-2 min-h-10 text-sm font-medium leading-5">{f.title}</h2>
+                  {facet.award && <AwardCaption film={f} body={facet.award as AwardBody} />}
                   <div className="mt-1 flex items-center justify-between gap-2 text-xs leading-4 text-muted-foreground">
                     <p className="min-w-0 truncate">
                       {years(f)}

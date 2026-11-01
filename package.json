@@ -14,7 +14,8 @@
     "test:watch": "vitest",
     "sync-catalogue": "npx --yes bun scripts/sync-catalogue.ts",
     "og-images": "npx --yes bun scripts/og-images.ts",
-    "resolve-directors": "npx --yes bun scripts/resolve-directors.ts"
+    "resolve-directors": "npx --yes bun scripts/resolve-directors.ts",
+    "refresh-netflix": "npx --yes bun scripts/refresh-netflix.ts"
   },
   "overrides": {
     "rolldown": "1.2.1"

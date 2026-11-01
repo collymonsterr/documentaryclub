@@ -1,6 +1,7 @@
 // The only tags the site shows; the sync rejects anything else in the CSV. Add a tag with one line here.
 export const TAGS = [
   { id: 'editors-choice', label: "Editor's Choice", group: 'picks', title: "Editor's Choice", description: 'My personal favourites from the whole collection.' },
+  { id: 'on-netflix', label: 'On Netflix', group: 'topics', title: 'Documentaries on Netflix', description: 'On Netflix in at least one country, so check the film page for yours.' },
   { id: 'essential', label: 'Essential', group: 'picks', title: 'Essential Documentaries', description: 'A starting point: the documentaries most worth seeing first.' },
   { id: 'presenter-led', label: 'Presenter-led', group: 'picks', title: 'Presenter-led Documentaries', description: 'Films where the person asking the questions is part of the story.' },
   { id: 'go-in-blind', label: 'Go in blind', group: 'picks', title: 'Documentaries to Go in Blind', description: 'Best watched knowing as little as possible, so avoid the trailers.' },

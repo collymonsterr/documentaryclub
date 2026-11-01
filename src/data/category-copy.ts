@@ -30,8 +30,11 @@ export const MOOD_COPY: Record<string, { title: string; description: string }> =
   weird: { title: 'Gloriously Weird Documentaries', description: 'Strange people, stranger stories, and all of it true.' },
 };
 export const AWARD_COPY: Record<string, { title: string; description: string }> = {
-  'oscar-win': { title: 'Academy Award Winners', description: 'Documentaries that took home an Oscar.' },
-  'oscar-nominee': { title: 'Academy Award Nominees', description: 'Documentaries nominated for an Oscar.' },
-  'sundance-win': { title: 'Sundance Winners', description: 'Prize winners from the Sundance Film Festival.' },
-  'other-win': { title: 'Other Award Winners', description: 'Winners at BAFTA, the Emmys, Cannes, Berlin and other major awards.' },
+  oscar: { title: 'Oscar Documentaries', description: 'Academy Award winners and nominees.' },
+  bafta: { title: 'BAFTA Winners', description: 'Documentaries that won a BAFTA.' },
+  emmy: { title: 'Emmy Winners', description: 'Documentaries that won a Primetime Emmy.' },
+  sundance: { title: 'Sundance Winners', description: 'Grand Jury, Audience and Directing award winners from Sundance.' },
+  tribeca: { title: 'Tribeca Winners', description: 'Top documentary prize winners from the Tribeca Festival.' },
+  ida: { title: 'IDA Winners', description: 'Best Feature and Best Series winners at the IDA Documentary Awards.' },
+  cannes: { title: 'Cannes Winners', description: "Palme d'Or and L'Œil d'or winners from the Cannes Film Festival." },
 };

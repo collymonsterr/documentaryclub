@@ -10,26 +10,27 @@ export const MOODS = [
 ] as const;
 export const PICKS = [{ id: 'makers', label: 'Great documentary makers' }] as const;
 export const AWARDS = [
-  { id: 'oscar-win', label: 'Academy Award winners' }, { id: 'oscar-nominee', label: 'Academy Award nominees' },
-  { id: 'sundance-win', label: 'Sundance winners' }, { id: 'other-win', label: 'Other award winners' },
+  { id: 'oscar', label: 'Oscars', slug: 'oscars' }, { id: 'bafta', label: 'BAFTA', slug: 'bafta' }, { id: 'emmy', label: 'Emmys', slug: 'emmys' },
+  { id: 'sundance', label: 'Sundance', slug: 'sundance' }, { id: 'tribeca', label: 'Tribeca', slug: 'tribeca' }, { id: 'ida', label: 'IDA', slug: 'ida' }, { id: 'cannes', label: 'Cannes', slug: 'cannes' },
 ] as const;
+// Links from before Awards was grouped by body.
+export const OLD_AWARD_IDS: Record<string, string> = { 'oscar-win': 'oscar', 'oscar-nominee': 'oscar', 'sundance-win': 'sundance' };
 
 // Editorial moods come from the catalogue sheet (reviewable judgments, not sourced accolades).
 export const EDITORIAL: Record<string, { moods: string[]; picks?: string[] }> = Object.fromEntries(SHEET.filter(r => r.moods?.length)
   .map(r => [r.id, { moods: r.moods!.map(l => MOODS.find(m => m.label === l)?.id).filter((m): m is (typeof MOODS)[number]['id'] => !!m) }]));
 export const credits = (film: Film) => [...film.director.split(', '), ...(film.presenter ? [film.presenter] : [])].map(n => n.trim()).filter(Boolean);
 
-export type Accolade = { facet: string; label: string; result: 'Won' | 'Nominated'; source: 'Curated' | 'OMDb'; body: AwardBody };
+export type Accolade = { label: string; result: 'Won' | 'Nominated'; source: 'Curated' | 'OMDb'; body: AwardBody };
 const accolade = (label: string, source: Accolade['source']): Accolade => {
   const nominated = /nominee|nominated/i.test(label), body = awardBody(label);
-  const facet = nominated ? body === 'oscar' ? 'oscar-nominee' : 'other-nominee' : body === 'oscar' ? 'oscar-win' : body === 'sundance' ? 'sundance-win' : 'other-win';
-  return { facet, label, result: nominated ? 'Nominated' : 'Won', source, body };
+  return { label, result: nominated ? 'Nominated' : 'Won', source, body };
 };
 export function accolades(film: Film, aggregate = SNAPSHOT[film.id]?.omdb?.awards): Accolade[] {
   const records = film.awards.map(label => accolade(label, 'Curated'));
-  // Named Oscar, BAFTA and Primetime Emmy evidence only. Never infer category/year or other prizes from aggregate counts.
+  // Named Oscar wins and nominations, BAFTA and Primetime Emmy wins only. Never infer category/year or other prizes from aggregate counts.
   const named = aggregate?.match(/\b(Won|Nominated for) \d+ (Oscar|BAFTA|Primetime Emmy)/i);
-  if (named) {
+  if (named && (/^won/i.test(named[1]!) || /oscar/i.test(named[2]!))) {
     const won = /^won/i.test(named[1]!), label = `${named[2]!.replace('Primetime ', '')} ${won ? 'Winner' : 'Nominee'}`, body = awardBody(label);
     if (!records.some(a => a.body === body && (!won || a.result === 'Won'))) records.push(accolade(label, 'OMDb'));
   }
@@ -38,6 +39,11 @@ export function accolades(film: Film, aggregate = SNAPSHOT[film.id]?.omdb?.award
 }
 // A card shows one icon per awarding body, best first.
 export const topAwards = (film: Film, limit = 3) => accolades(film).filter((a, i, all) => all.findIndex(b => b.body === a.body) === i).slice(0, limit);
+
+// The film's best award from one body, and a list led by winners, newest first.
+export const awardFor = (film: Film, body: string) => accolades(film).find(a => a.body === body);
+export const byAward = (films: Film[], body: string) => [...films].sort((a, b) =>
+  (awardFor(a, body)?.result === 'Won' ? 0 : 1) - (awardFor(b, body)?.result === 'Won' ? 0 : 1) || b.year - a.year);
 
 export function makerIndex(films: Film[] = CATALOGUE) {
   const map = new Map<string, Film[]>();
@@ -54,7 +60,7 @@ export const isFeatured = (maker: { name: string; films: Film[] }) => maker.film
 const prolific = new Set(makerIndex().filter(isFeatured).flatMap(m => m.films.map(f => f.id)));
 export type FacetSelection = { award: string; mood: string; pick: string; maker: string; tag?: string };
 export function matchesFacets(film: Film, selection: FacetSelection) {
-  return (!selection.award || accolades(film).some(a => a.facet === selection.award))
+  return (!selection.award || accolades(film).some(a => a.body === selection.award))
     && (!selection.mood || EDITORIAL[film.id]?.moods.includes(selection.mood) === true)
     && (!selection.pick || (selection.pick === 'makers' ? prolific.has(film.id) : EDITORIAL[film.id]?.picks?.includes(selection.pick) === true))
     && (!selection.maker || credits(film).includes(selection.maker))
