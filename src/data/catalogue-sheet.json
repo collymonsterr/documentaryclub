@@ -530,5 +530,9 @@
 {"id":"the-beaches-of-agnes","title":"The Beaches of Agnès","year":2008,"format":"Film","category":"Life Stories","director":"Agnès Varda","tmdbId":38879,"imdbId":"tt1129435"},
 {"id":"faces-places","title":"Faces Places","year":2017,"format":"Film","category":"Art","director":"Agnès Varda, JR","tmdbId":451995,"imdbId":"tt5598102"},
 {"id":"the-oath","title":"The Oath","year":2010,"format":"Film","category":"War","director":"Laura Poitras","tmdbId":52918,"imdbId":"tt1522857"},
-{"id":"my-country-my-country","title":"My Country, My Country","year":2006,"format":"Film","category":"War","director":"Laura Poitras","tmdbId":50100,"imdbId":"tt4425258"}
+{"id":"my-country-my-country","title":"My Country, My Country","year":2006,"format":"Film","category":"War","director":"Laura Poitras","tmdbId":50100,"imdbId":"tt4425258"},
+{"id":"four-hours-at-the-capitol","title":"Four Hours at the Capitol","year":2021,"format":"Film","category":"Politics","director":"Jamie Roberts","tmdbId":879535,"imdbId":"tt15520020"},
+{"id":"where-s-my-roy-cohn","title":"Where's My Roy Cohn?","year":2019,"format":"Film","category":"Politics","director":"Matt Tyrnauer","tmdbId":565531,"imdbId":"tt7193362"},
+{"id":"you-ve-been-trumped","title":"You've Been Trumped","year":2011,"format":"Film","category":"Politics","director":"Anthony Baxter","tmdbId":118769,"imdbId":"tt1943873"},
+{"id":"stopping-the-steal","title":"Stopping the Steal","year":2024,"format":"Film","category":"Politics","director":"Dan Reed","tmdbId":1352173,"imdbId":"tt33336815"}
 ]

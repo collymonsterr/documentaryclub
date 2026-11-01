@@ -14,7 +14,7 @@ describe('second batch reconciliation', () => {
     expect(n('duplicate-in-batch')).toBe(48);
     expect(n('existing-match') + n('existing-match-verified')).toBe(136);
     expect(n('resolved') + MANIFEST2.entries.filter(e => e.status.startsWith('pending')).length).toBe(158);
-    expect(CATALOGUE).toHaveLength(532);
+    expect(CATALOGUE).toHaveLength(536);
   });
   it('merges alternate titles, escaped punctuation and differing years into existing IDs', () => {
     expect(entry('McMillions', 'inline')?.id).toBe('mcmillions');
