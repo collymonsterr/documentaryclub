@@ -32,7 +32,7 @@ import {
   makerIndex,
   formatCommitment,
 } from "@/data/discovery-facets";
-import { TAGS, cardTags, orderedTags, tagLabel } from "@/data/tags";
+import { PICK_TAGS, TAGS, TOPIC_TAGS, cardTags, orderedTags, tagLabel } from "@/data/tags";
 import { AwardLaurel } from "@/components/award-laurel";
 import { AwardBadges } from "@/components/award-badges";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -593,10 +593,17 @@ function Index() {
               onChange={(e) => setParam({ tag: e.target.value })}
             >
               <option value="">Any tag</option>
-              {TAGS.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.label}
-                </option>
+              {[
+                { label: "Picks", tags: PICK_TAGS },
+                { label: "Topics", tags: TOPIC_TAGS },
+              ].map((group) => (
+                <optgroup key={group.label} label={group.label}>
+                  {group.tags.map((t) => (
+                    <option key={t.id} value={t.id}>
+                      {t.label}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </select>
           </label>
@@ -849,7 +856,19 @@ function Index() {
               <Button size="sm" variant={!facet.tag ? "default" : "ghost"} onClick={() => setDiscovery({ tag: "" })}>
                 All
               </Button>
-              {TAGS.map((t) => (
+              {PICK_TAGS.map((t) => (
+                <Button
+                  key={t.id}
+                  size="sm"
+                  variant={facet.tag === t.id ? "default" : "outline"}
+                  aria-pressed={facet.tag === t.id}
+                  onClick={() => setDiscovery({ tag: facet.tag === t.id ? "" : t.id })}
+                >
+                  {t.label}
+                </Button>
+              ))}
+              <span aria-hidden className="mx-1 h-5 w-px shrink-0 self-center bg-border" />
+              {TOPIC_TAGS.map((t) => (
                 <Button
                   key={t.id}
                   size="sm"

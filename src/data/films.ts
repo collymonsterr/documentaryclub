@@ -1,7 +1,7 @@
 // "strange" is legacy (pre-sheet sources only); the sheet assigns every title one of CATEGORIES.
 // One home category per title. IDs are stable URL keys (survival = Adventure, arts = Art, life = Life Stories).
 export type Category = "strange" | "psychology" | "scams" | "tech" | "crime" | "politics" | "war" | "survival" | "sport"
-  | "nature" | "science" | "economics" | "arts" | "music" | "life" | "drugs" | "sex";
+  | "nature" | "science" | "economics" | "arts" | "music" | "life" | "drugs" | "sex" | "food";
 
 export const CATEGORIES: { id: Category; label: string }[] = [
   { id: "psychology", label: "Cults & Psychology" },
@@ -13,6 +13,7 @@ export const CATEGORIES: { id: Category; label: string }[] = [
   { id: "survival", label: "Adventure" },
   { id: "sport", label: "Sport" },
   { id: "nature", label: "Nature" },
+  { id: "food", label: "Food" },
   { id: "science", label: "Science" },
   { id: "economics", label: "Economics" },
   { id: "arts", label: "Art" },

@@ -4,15 +4,15 @@ import { CATEGORIES } from './films';
 import { EDITORIAL, MOODS, matchesFacets } from './discovery-facets';
 const film = (id: string) => CATALOGUE.find(f => f.id === id);
 describe('catalogue sheet import', () => {
-  it('uses the 16 categories (no Strange) and every title has exactly one', () => {
-    expect(new Set(CATEGORIES.map(c => c.label))).toEqual(new Set(['Adventure', 'Art', 'Crime', 'Cults & Psychology', 'Drugs', 'Economics', 'Life Stories', 'Music', 'Nature', 'Politics', 'Science', 'Scams', 'Sex', 'Sport', 'Tech', 'War']));
+  it('uses the 17 categories (no Strange) and every title has exactly one', () => {
+    expect(new Set(CATEGORIES.map(c => c.label))).toEqual(new Set(['Adventure', 'Art', 'Crime', 'Cults & Psychology', 'Drugs', 'Economics', 'Food', 'Life Stories', 'Music', 'Nature', 'Politics', 'Science', 'Scams', 'Sex', 'Sport', 'Tech', 'War']));
     for (const f of CATALOGUE) { expect(f.categories).toHaveLength(1); expect(CATEGORIES.some(c => c.id === f.categories[0])).toBe(true); }
   });
   it('shows exactly the live master rows and drops the 8 removed ones', () => {
     expect(CATALOGUE.map(f => f.id).sort()).toEqual(SHEET.map(r => r.id).sort());
     for (const id of ['super-high-me', 'the-culture-high', 'rolling-papers', 'daughters-of-the-cult']) expect(film(id)).toBeUndefined();
     expect(film('the-last-dance')?.mediaType).toBe('tv');
-    expect(film('somm')?.tags).toEqual(['food-and-drink', 'wine']);
+    expect(film('somm')?.tags).toEqual(['wine', 'essential']);
   });
   it('applies sheet category and director to existing titles by id', () => {
     for (const r of SHEET) {
