@@ -5,7 +5,6 @@ import manifestJson from './import-manifest.json';
 import manifest2Json from './import-manifest-2.json';
 import manifest3Json from './import-manifest-3.json';
 import { CATEGORY_OVERRIDES } from './import-batch2';
-import manifest4Json from './import-manifest-4.json';
 import sheetJson from './catalogue-sheet.json';
 
 // Public metadata resolved once at import (scripts/resolve-catalogue.ts). Contains no credentials.
@@ -61,29 +60,27 @@ const restructured: Film[] = [...originals, ...imported].map(f => {
   return { ...f, categories: [cat], ...(f.genre === label(f.categories[0]!) || f.genre === 'Sex & Drugs' ? { genre: label(cat) } : {}), ...(presenter ? { presenter } : {}) };
 });
 
-// Google Sheet (final authority, matched by stable id): category, moods, tags, director, format. Remove rows are dropped.
-export type SheetRow = { id?: string; title: string; year: number; format: 'Film' | 'Series'; director?: string; category: string; moods?: string[]; tags?: string[]; status: 'Existing' | 'New' | 'Remove' };
+// data/catalogue-master.csv (final authority, matched by stable id) generates catalogue-sheet.json via `npm run sync-catalogue`.
+// Titles not in the sheet are dropped; sheet titles with no curated source are built from the enrichment snapshot.
+export type SheetRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string };
 export const SHEET = sheetJson as SheetRow[];
-type Manifest4Entry = { input: { title: string; year: number }; id: string; status: string };
-export const MANIFEST4 = manifest4Json as unknown as { entries: Manifest4Entry[] };
 const catId = (l: string) => CATEGORIES.find(c => c.label === l)?.id;
-const newId = new Map(MANIFEST4.entries.map(e => [`${e.input.title}|${e.input.year}`, e.id]));
-export const sheetId = (r: SheetRow) => r.id ?? newId.get(`${r.title}|${r.year}`)!;
-const removed = new Set(SHEET.filter(r => r.status === 'Remove').map(sheetId));
-const created: Film[] = SHEET.filter(r => r.status === 'New').map(r => {
-  const id = sheetId(r), s = SNAPSHOT[id], resolved = s?.status === 'resolved';
-  return { id, title: r.title, year: r.year, director: '', genre: '', categories: ['strange'], synopsis: s?.overview ?? 'Approved title awaiting verified synopsis.', awards: [], hue: 0,
+const known = new Set(restructured.map(f => f.id));
+const created: Film[] = SHEET.filter(r => !known.has(r.id)).map(r => {
+  const s = SNAPSHOT[r.id], resolved = s?.status === 'resolved';
+  return { id: r.id, title: r.title, year: r.year, director: '', genre: '', categories: ['strange'], synopsis: s?.overview ?? 'Approved title awaiting verified synopsis.', awards: [], hue: 0,
     aliases: s?.canonicalTitle && s.canonicalTitle !== r.title ? [s.canonicalTitle] : [], mediaType: s?.mediaType ?? 'movie', pending: !resolved,
-    ...(s?.runtime ? { minutes: s.runtime } : {}), ...(s?.tmdbId ? { tmdbId: s.tmdbId } : {}), ...(s?.imdbId ? { imdbId: s.imdbId } : {}), ...(s?.episodes ? { episodes: s.episodes } : {}) };
+    ...(s?.runtime ? { minutes: s.runtime } : {}), ...(s?.episodes ? { episodes: s.episodes } : {}) };
 });
-const byId = new Map(SHEET.filter(r => r.status !== 'Remove').map(r => [sheetId(r), r]));
-export const CATALOGUE: Film[] = [...restructured, ...created].filter(f => !removed.has(f.id)).map(f => {
-  const r = byId.get(f.id); if (!r) return f;
+const byId = new Map(SHEET.map(r => [r.id, r]));
+const MEDIA = { Film: 'movie', Series: 'tv', Collection: 'collection' } as const;
+export const CATALOGUE: Film[] = [...restructured, ...created].flatMap(f => {
+  const r = byId.get(f.id); if (!r) return [];
   const cat = (catId(r.category) ?? f.categories[0]) as Film['categories'][number];
   const director = r.director ?? (f.director || SNAPSHOT[f.id]?.people?.join(', ') || '');
-  const mediaType = f.mediaType === 'collection' ? 'collection' : r.format === 'Series' ? 'tv' : 'movie';
   const genre = !f.genre || f.genre === label(f.categories[0]!) ? label(cat) : f.genre;
-  return { ...f, categories: [cat], genre, director, mediaType, ...(r.tags?.length ? { tags: r.tags } : {}) };
+  const { tmdbId, imdbId, ...rest } = f;
+  return [{ ...rest, title: r.title, year: r.year, categories: [cat], genre, director, mediaType: MEDIA[r.format], ...(r.tmdbId ? { tmdbId: r.tmdbId } : {}), ...(r.imdbId ? { imdbId: r.imdbId } : {}), ...(r.tags?.length ? { tags: r.tags } : {}) }];
 });
 
 export function searchCatalogue(films: Film[], query: string, type: 'all' | 'movie' | 'tv') {

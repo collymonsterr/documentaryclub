@@ -8,7 +8,7 @@ import { SiteLogo } from '@/components/site-logo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', browse: 'topics' } as const;
+const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' } as const;
 export const Route = createFileRoute('/makers')({
   head: () => ({ meta: [
     { title: 'Directors — Documentary Club' },

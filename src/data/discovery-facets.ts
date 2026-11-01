@@ -1,4 +1,4 @@
-import { CATALOGUE, SHEET, SNAPSHOT, sheetId } from './catalogue';
+import { CATALOGUE, SHEET, SNAPSHOT } from './catalogue';
 import type { Film } from './films';
 
 export const MOODS = [
@@ -14,8 +14,8 @@ export const AWARDS = [
 ] as const;
 
 // Editorial moods come from the catalogue sheet (reviewable judgments, not sourced accolades).
-export const EDITORIAL: Record<string, { moods: string[]; picks?: string[] }> = Object.fromEntries(SHEET.filter(r => r.status !== 'Remove' && r.moods?.length)
-  .map(r => [sheetId(r), { moods: r.moods!.map(l => MOODS.find(m => m.label === l)?.id).filter((m): m is (typeof MOODS)[number]['id'] => !!m) }]));
+export const EDITORIAL: Record<string, { moods: string[]; picks?: string[] }> = Object.fromEntries(SHEET.filter(r => r.moods?.length)
+  .map(r => [r.id, { moods: r.moods!.map(l => MOODS.find(m => m.label === l)?.id).filter((m): m is (typeof MOODS)[number]['id'] => !!m) }]));
 export const credits = (film: Film) => [...film.director.split(', '), ...(film.presenter ? [film.presenter] : [])].map(n => n.trim()).filter(Boolean);
 
 export type Accolade = { facet: string; label: string; result: 'Won' | 'Nominated'; source: 'Curated' | 'OMDb' };
@@ -45,12 +45,13 @@ export function makerIndex(films: Film[] = CATALOGUE) {
     .sort((a, b) => b.films.length - a.films.length || a.name.localeCompare(b.name));
 }
 const prolific = new Set(makerIndex().filter(m => m.films.length >= 3).flatMap(m => m.films.map(f => f.id)));
-export type FacetSelection = { award: string; mood: string; pick: string; maker: string };
+export type FacetSelection = { award: string; mood: string; pick: string; maker: string; tag?: string };
 export function matchesFacets(film: Film, selection: FacetSelection) {
   return (!selection.award || accolades(film).some(a => a.facet === selection.award))
     && (!selection.mood || EDITORIAL[film.id]?.moods.includes(selection.mood) === true)
     && (!selection.pick || (selection.pick === 'makers' ? prolific.has(film.id) : EDITORIAL[film.id]?.picks?.includes(selection.pick) === true))
-    && (!selection.maker || credits(film).includes(selection.maker));
+    && (!selection.maker || credits(film).includes(selection.maker))
+    && (!selection.tag || film.tags?.includes(selection.tag) === true);
 }
 export function discoveryShelves(films: Film[]) {
   const definitions = [

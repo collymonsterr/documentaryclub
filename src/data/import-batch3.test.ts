@@ -12,8 +12,8 @@ describe('third batch (Sex & Drugs) reconciliation', () => {
     expect(n('existing-match')).toBe(1);
     expect(n('resolved')).toBe(53);
     expect(n('pending-not-found')).toBe(2);
-    expect(CATALOGUE).toHaveLength(450);
-    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(450);
+    expect(CATALOGUE).toHaveLength(476);
+    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(476);
   });
   it('keeps a single Fantastic Fungi, now in Nature', () => {
     expect(entry('Fantastic Fungi')?.status).toBe('existing-match');

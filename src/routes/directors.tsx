@@ -3,7 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { CATALOGUE } from '@/data/catalogue';
 import { SiteLogo } from '@/components/site-logo';
 
-const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', browse: 'topics' } as const;
+const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' } as const;
 const slug = (s: string) => s.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 function directorIndex() {

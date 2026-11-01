@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { CATALOGUE, MANIFEST, SNAPSHOT, searchCatalogue } from './catalogue';
+import { CATALOGUE, MANIFEST, SHEET, SNAPSHOT, searchCatalogue } from './catalogue';
 import { CATEGORIES, FILMS } from './films';
 import { IMPORT_LIST, MERGED_INTO } from './import-list';
 import { importTitleMatches } from '@/lib/discovery';
@@ -11,8 +11,8 @@ describe('approved import reconciliation', () => {
     expect(MANIFEST.entries).toHaveLength(135);
     expect(MANIFEST.entries.filter(e => e.status === 'merged-existing')).toHaveLength(4);
     expect(Object.values(MERGED_INTO).sort()).toEqual(['fire-of-love', 'ibelin', 'mariupol', 'perfect-neighbor']);
-    expect(CATALOGUE).toHaveLength(450);
-    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(450);
+    expect(CATALOGUE).toHaveLength(SHEET.length);
+    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(SHEET.length);
     expect(MANIFEST.entries.map(e => `${e.input.title}|${e.input.year}`)).toEqual(IMPORT_LIST.map(e => `${e.title}|${e.year}`));
   });
   it('keeps the original 17 first with unchanged IDs and awards', () => {
@@ -21,7 +21,8 @@ describe('approved import reconciliation', () => {
   });
   it('never invents awards for imported titles and keeps unresolved titles visible', () => {
     expect(CATALOGUE.slice(17).every(f => f.awards.length === 0)).toBe(true);
-    for (const e of MANIFEST.entries) expect(byId(e.id)).toBeDefined();
+    const removed = new Set(['the-culture-high', 'super-high-me', 'rolling-papers', 'daughters-of-the-cult', 'bad-surgeon-love-under-the-knife', 'cocaine-cowboys-ii-hustlin-with-the-godmother', 'countdown-to-death-pablo-escobar', 'marijuana-a-chronic-history']);
+    for (const e of MANIFEST.entries) if (!removed.has(e.id)) expect(byId(e.id)).toBeDefined();
   });
 });
 describe('verified identities', () => {

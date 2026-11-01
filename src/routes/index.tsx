@@ -32,6 +32,7 @@ import {
   makerIndex,
   formatCommitment,
 } from "@/data/discovery-facets";
+import { TAGS, cardTags, orderedTags, tagLabel } from "@/data/tags";
 import { AwardLaurel } from "@/components/award-laurel";
 import { AwardBadges } from "@/components/award-badges";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -90,6 +91,7 @@ const searchDefaults = {
   mood: "",
   pick: "",
   maker: "",
+  tag: "",
   browse: "topics",
 };
 const text = (value: unknown, fallback = "") => (typeof value === "string" && value ? value : fallback);
@@ -109,6 +111,7 @@ export const Route = createFileRoute("/")({
     mood: text(search["mood"]),
     pick: text(search["pick"]),
     maker: text(search["maker"]),
+    tag: text(search["tag"]),
     browse: text(search["browse"], "topics"),
   }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
@@ -316,8 +319,9 @@ function Index() {
     mood: MOODS.some((m) => m.id === search.mood) ? search.mood : "",
     pick: "",
     maker: makerIndex().some((m) => m.name === search.maker) ? search.maker : "",
+    tag: TAGS.some((t) => t.id === search.tag) ? search.tag : "",
   };
-  const browse = ["topics", "awards", "directors", "moods"].includes(search.browse) ? search.browse : "topics";
+  const browse = ["topics", "awards", "directors", "moods", "tags"].includes(search.browse) ? search.browse : "topics";
   const filterIds = new Set<string>(["all", "awards", ...CATEGORIES.map((c) => c.id)]);
   const filter = (filterIds.has(search.cat) ? search.cat : "all") as Filter;
   const era = (ERAS.some(([id]) => id === search.era) ? search.era : "all") as Era;
@@ -398,10 +402,11 @@ function Index() {
     facet.mood,
     facet.pick,
     facet.maker,
+    facet.tag,
   ]);
   useEffect(() => {
     setShown(PAGE);
-  }, [filter, listFilter, query, type, sort, era, len, hideWatched, facet.award, facet.mood, facet.pick, facet.maker]);
+  }, [filter, listFilter, query, type, sort, era, len, hideWatched, facet.award, facet.mood, facet.pick, facet.maker, facet.tag]);
   // A shared link may name a film outside the current filters; show it anyway.
   const topDirectors = useMemo(() => makerIndex().filter((m) => m.films.length >= 3), []);
   const film = list.find((f) => f.id === search.film) ?? CATALOGUE.find((f) => f.id === search.film) ?? list[0];
@@ -471,6 +476,7 @@ function Index() {
         mood: "",
         pick: "",
         maker: name,
+        tag: "",
       }),
     });
   };
@@ -491,6 +497,7 @@ function Index() {
         mood: "",
         pick: "",
         maker: "",
+        tag: "",
       }),
       replace: true,
     });
@@ -511,6 +518,7 @@ function Index() {
     !!facet.mood,
     !!facet.pick,
     !!facet.maker,
+    !!facet.tag,
     filter !== "all",
   ].filter(Boolean).length;
   const filters: { id: Filter; label: string }[] = [{ id: "all", label: "All" }, ...CATEGORIES];
@@ -572,6 +580,22 @@ function Index() {
               {MOODS.map((m) => (
                 <option key={m.id} value={m.id}>
                   {m.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-xs text-muted-foreground">
+            Tag
+            <select
+              aria-label="Tag"
+              className="discovery-select mt-1 w-full"
+              value={facet.tag}
+              onChange={(e) => setParam({ tag: e.target.value })}
+            >
+              <option value="">Any tag</option>
+              {TAGS.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.label}
                 </option>
               ))}
             </select>
@@ -792,6 +816,7 @@ function Index() {
               ["moods", "Moods"],
               ["directors", "Directors"],
               ["awards", "Awards"],
+              ["tags", "Tags"],
             ] as const
           ).map(([id, label]) => (
             <Button
@@ -819,6 +844,23 @@ function Index() {
                 {f.label}
               </Button>
             ))
+          ) : browse === "tags" ? (
+            <>
+              <Button size="sm" variant={!facet.tag ? "default" : "ghost"} onClick={() => setDiscovery({ tag: "" })}>
+                All
+              </Button>
+              {TAGS.map((t) => (
+                <Button
+                  key={t.id}
+                  size="sm"
+                  variant={facet.tag === t.id ? "default" : "ghost"}
+                  aria-pressed={facet.tag === t.id}
+                  onClick={() => setDiscovery({ tag: facet.tag === t.id ? "" : t.id })}
+                >
+                  {t.label}
+                </Button>
+              ))}
+            </>
           ) : browse === "directors" ? (
             <>
               <Button
@@ -882,13 +924,14 @@ function Index() {
           </Button>
         </div>
       )}
-      {(facet.award || facet.mood || facet.pick || facet.maker || filter !== "all") && (
+      {(facet.award || facet.mood || facet.pick || facet.maker || facet.tag || filter !== "all") && (
         <div className="mb-3 flex flex-wrap gap-1" aria-label="Active discovery filters">
           {[
             ...(filter !== "all" ? [{ key: "cat", label: filters.find((f) => f.id === filter)?.label ?? filter }] : []),
             ...(facet.award ? [{ key: "award", label: AWARDS.find((a) => a.id === facet.award)?.label }] : []),
             ...(facet.mood ? [{ key: "mood", label: MOODS.find((m) => m.id === facet.mood)?.label }] : []),
             ...(facet.maker ? [{ key: "maker", label: facet.maker }] : []),
+            ...(facet.tag ? [{ key: "tag", label: tagLabel(facet.tag) }] : []),
           ].map((f) => (
             <Button
               key={f.key}
@@ -968,6 +1011,15 @@ function Index() {
                     {formatCommitment(f) ? ` · ${formatCommitment(f)}` : ""}
                     {f.pending ? " · Pending" : ""}
                   </p>
+                  {cardTags(f.tags).length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-1" aria-label={`${f.title} tags`}>
+                      {cardTags(f.tags).map((t) => (
+                        <span key={t} className="rounded-full border border-border px-2 py-0.5 text-[10px] leading-3">
+                          {tagLabel(t)}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   <div className="mt-1 flex min-h-7 items-start justify-between gap-1">
                     <p className="min-w-0 text-[11px] leading-5 text-muted-foreground">{badges.join(" · ")}</p>
                     <div className="flex shrink-0 items-center gap-1" aria-label={`${f.title} status`}>
@@ -1125,6 +1177,23 @@ function Index() {
                       }}
                     >
                       {m.label}
+                    </Button>
+                  ))}
+                </div>
+              )}
+              {orderedTags(film.tags).length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-1" aria-label="Tags">
+                  {orderedTags(film.tags).map((t) => (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      key={t}
+                      title="Tag"
+                      onClick={() => {
+                        setParam({ tag: t, film: "", browse: "tags" });
+                      }}
+                    >
+                      {tagLabel(t)}
                     </Button>
                   ))}
                 </div>
