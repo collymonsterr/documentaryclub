@@ -525,5 +525,10 @@
 {"id":"dont-look-back","title":"Dont Look Back","year":1967,"format":"Film","category":"Music","director":"D. A. Pennebaker","tmdbId":135,"imdbId":"tt0061589"},
 {"id":"marley","title":"Marley","year":2012,"format":"Film","category":"Music","director":"Kevin Macdonald","tmdbId":90125,"imdbId":"tt1183919"},
 {"id":"waiting-for-superman","title":"Waiting for \"Superman\"","year":2010,"format":"Film","category":"Politics","director":"Davis Guggenheim","tmdbId":39440,"imdbId":"tt1566648","awards":["Sundance Audience Award 2010"]},
-{"id":"freedom-riders","title":"Freedom Riders","year":2010,"format":"Film","category":"Politics","director":"Stanley Nelson","tmdbId":113377,"imdbId":"tt1558952"}
+{"id":"freedom-riders","title":"Freedom Riders","year":2010,"format":"Film","category":"Politics","director":"Stanley Nelson","tmdbId":113377,"imdbId":"tt1558952"},
+{"id":"the-gleaners-and-i","title":"The Gleaners and I","year":2000,"format":"Film","category":"Art","director":"Agnès Varda","tmdbId":44379,"imdbId":"tt0247380"},
+{"id":"the-beaches-of-agnes","title":"The Beaches of Agnès","year":2008,"format":"Film","category":"Life Stories","director":"Agnès Varda","tmdbId":38879,"imdbId":"tt1129435"},
+{"id":"faces-places","title":"Faces Places","year":2017,"format":"Film","category":"Art","director":"Agnès Varda, JR","tmdbId":451995,"imdbId":"tt5598102"},
+{"id":"the-oath","title":"The Oath","year":2010,"format":"Film","category":"War","director":"Laura Poitras","tmdbId":52918,"imdbId":"tt1522857"},
+{"id":"my-country-my-country","title":"My Country, My Country","year":2006,"format":"Film","category":"War","director":"Laura Poitras","tmdbId":50100,"imdbId":"tt4425258"}
 ]

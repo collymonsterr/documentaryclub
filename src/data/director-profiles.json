@@ -48,6 +48,13 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Chris_Smith_(filmmaker)",
     "blurb": "American director of American Movie and Fyre."
   },
+  "Laura Poitras": {
+    "tmdbPersonId": 220691,
+    "photo": "https://image.tmdb.org/t/p/w185/gRCQMBVyEy7FlA6MAUJ0ESVobLp.jpg",
+    "imdbId": "nm0688636",
+    "wikipedia": "https://en.wikipedia.org/wiki/Laura_Poitras",
+    "blurb": "American director who won an Oscar for Citizenfour."
+  },
   "Michael Moore": {
     "tmdbPersonId": 17087,
     "photo": "https://image.tmdb.org/t/p/w185/m5YViuBUXfKAHNEUObGpzhzQPgE.jpg",
@@ -110,6 +117,13 @@
     "imdbId": "nm0416945",
     "wikipedia": "https://en.wikipedia.org/wiki/Steve_James_(film_producer)",
     "blurb": "American director best known for Hoop Dreams."
+  },
+  "Agnès Varda": {
+    "tmdbPersonId": 6817,
+    "photo": "https://image.tmdb.org/t/p/w185/aXnFLmz9EaRCt93uEXns8WVPmSG.jpg",
+    "imdbId": "nm0889513",
+    "wikipedia": "https://en.wikipedia.org/wiki/Agn%C3%A8s_Varda",
+    "blurb": "French New Wave pioneer whose playful, personal essay films turn the camera on ordinary people, and on herself."
   },
   "Albert Maysles": {
     "tmdbPersonId": 1418,
@@ -201,13 +215,6 @@
     "imdbId": "nm0225269",
     "wikipedia": "https://en.wikipedia.org/wiki/Kirby_Dick",
     "blurb": "American director who investigates institutions, from the US military to the film ratings board."
-  },
-  "Laura Poitras": {
-    "tmdbPersonId": 220691,
-    "photo": "https://image.tmdb.org/t/p/w185/gRCQMBVyEy7FlA6MAUJ0ESVobLp.jpg",
-    "imdbId": "nm0688636",
-    "wikipedia": "https://en.wikipedia.org/wiki/Laura_Poitras",
-    "blurb": "American director who won an Oscar for Citizenfour."
   },
   "Liz Garbus": {
     "tmdbPersonId": 96199,
