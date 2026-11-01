@@ -35,22 +35,22 @@ operation-odessa,Operation Odessa,2018,Film,Crime,,"Funny, Gloriously weird",Til
 shirkers,Shirkers,2018,Film,Art,"go-in-blind, filmmaking, on-netflix",Mind-blowing,Sandi Tan,489994,tt7472352,live,,Sundance Directing Award 2018
 three-identical-strangers,Three Identical Strangers,2018,Film,Science,"essential, go-in-blind","Mind-blowing, Harrowing",Tim Wardle,489988,tt7664504,live,,
 cold-case-hammarskjold,Cold Case Hammarskjöld,2019,Film,Politics,,"Mind-blowing, Gloriously weird",Mads Brügger,566061,tt9352780,live,,Sundance Directing Award 2019
-jesus-camp,Jesus Camp,2006,Film,Cults & Psychology,editors-choice,"Gloriously weird, Infuriating","Rachel Grady, Heidi Ewing",1776,tt0486358,live,,Oscar Nominee 2007
-jonestown-the-life-and-death-of-peoples-temple,Jonestown: The Life and Death of Peoples Temple,2006,Film,Cults & Psychology,,Harrowing,Stanley Nelson,36676,tt0762111,live,,
-kumare,Kumaré,2011,Film,Cults & Psychology,go-in-blind,"Funny, Mind-blowing",Vikram Gandhi,98886,tt1865425,live,,
+jesus-camp,Jesus Camp,2006,Film,Cults & Psychology,"editors-choice, religion","Gloriously weird, Infuriating","Rachel Grady, Heidi Ewing",1776,tt0486358,live,,Oscar Nominee 2007
+jonestown-the-life-and-death-of-peoples-temple,Jonestown: The Life and Death of Peoples Temple,2006,Film,Cults & Psychology,religion,Harrowing,Stanley Nelson,36676,tt0762111,live,,
+kumare,Kumaré,2011,Film,Cults & Psychology,"go-in-blind, religion","Funny, Mind-blowing",Vikram Gandhi,98886,tt1865425,live,,
 project-nim,Project Nim,2011,Film,Science,,Harrowing,James Marsh,63579,tt1814836,live,,Sundance Directing Award 2011
-going-clear,Going Clear,2015,Film,Cults & Psychology,essential,"Infuriating, Gripping",Alex Gibney,318224,tt4257858,live,,Emmy Winner 2015
-holy-hell,Holy Hell,2016,Film,Cults & Psychology,,Gripping,Will Allen,373472,tt5278464,live,,
+going-clear,Going Clear,2015,Film,Cults & Psychology,"essential, religion","Infuriating, Gripping",Alex Gibney,318224,tt4257858,live,,Emmy Winner 2015
+holy-hell,Holy Hell,2016,Film,Cults & Psychology,religion,Gripping,Will Allen,373472,tt5278464,live,,
 wormwood,Wormwood,2017,Series,Cults & Psychology,on-netflix,"Mind-blowing, Gripping",Errol Morris,73581,tt7306056,live,,
 behind-the-curve,Behind the Curve,2018,Film,Cults & Psychology,,"Funny, Gloriously weird",Daniel J. Clark,520777,tt8132700,live,,
-wild-wild-country,Wild Wild Country,2018,Series,Cults & Psychology,"essential, on-netflix","Gripping, Gloriously weird","Maclain Way, Chapman Way",77601,tt7768848,live,,Emmy Winner 2018
-the-family,The Family,2019,Series,Cults & Psychology,on-netflix,Infuriating,Jesse Moss,91505,tt10715148,live,,
+wild-wild-country,Wild Wild Country,2018,Series,Cults & Psychology,"essential, on-netflix, religion","Gripping, Gloriously weird","Maclain Way, Chapman Way",77601,tt7768848,live,,Emmy Winner 2018
+the-family,The Family,2019,Series,Cults & Psychology,"on-netflix, religion",Infuriating,Jesse Moss,91505,tt10715148,live,,
 the-vow,The Vow,2020,Series,Cults & Psychology,,Gripping,"Jehane Noujaim, Karim Amer",49920,tt10222764,live,,
-the-way-down,The Way Down,2021,Series,Cults & Psychology,,"Gloriously weird, Infuriating",Marina Zenovich,131561,tt15286764,live,,
+the-way-down,The Way Down,2021,Series,Cults & Psychology,religion,"Gloriously weird, Infuriating",Marina Zenovich,131561,tt15286764,live,,
 escaping-twin-flames,Escaping Twin Flames,2023,Series,Cults & Psychology,on-netflix,Infuriating,Cecilia Peck,236406,tt29388212,live,,
 love-has-won,Love Has Won,2023,Series,Cults & Psychology,,"Gloriously weird, Harrowing",Hannah Olson,238179,tt14832124,live,,
-shiny-happy-people,Shiny Happy People,2023,Series,Cults & Psychology,,"Infuriating, Harrowing","Julia Willoughby Nason, Olivia Crist",226751,tt27715627,live,,
-waco-american-apocalypse,Waco: American Apocalypse,2023,Series,Cults & Psychology,on-netflix,"Harrowing, Gripping",Tiller Russell,220229,tt26687196,live,,
+shiny-happy-people,Shiny Happy People,2023,Series,Cults & Psychology,religion,"Infuriating, Harrowing","Julia Willoughby Nason, Olivia Crist",226751,tt27715627,live,,
+waco-american-apocalypse,Waco: American Apocalypse,2023,Series,Cults & Psychology,"on-netflix, religion","Harrowing, Gripping",Tiller Russell,220229,tt26687196,live,,
 enron-the-smartest-guys-in-the-room,Enron: The Smartest Guys in the Room,2005,Film,Scams,essential,"Infuriating, Gripping",Alex Gibney,13020,tt1016268,live,,Oscar Nominee 2006
 inside-job,Inside Job,2010,Film,Economics,"essential, on-netflix",Infuriating,Charles Ferguson,44639,tt1645089,live,,Oscar Winner 2011
 sour-grapes,Sour Grapes,2016,Film,Scams,"wine, editors-choice","Funny, Gripping","Reuben Atlas, Jerry Rothwell",396232,tt5728684,live,,
@@ -102,7 +102,7 @@ american-murder-the-family-next-door,American Murder: The Family Next Door,2020,
 into-the-deep,Into the Deep,2020,Film,Crime,on-netflix,Harrowing,Emma Sullivan,653588,tt11394296,live,,
 the-pharmacist,The Pharmacist,2020,Series,Drugs,on-netflix,Infuriating,"Julia Willoughby Nason, Jenner Furst",98735,tt11600174,live,,
 tiger-king,Tiger King,2020,Series,Crime,on-netflix,Gloriously weird,"Eric Goode, Rebecca Chaiklin",100698,tt11823076,live,,
-murder-among-the-mormons,Murder Among the Mormons,2021,Series,Crime,on-netflix,Gripping,"Jared Hess, Tyler Measom",119337,tt13987620,live,,
+murder-among-the-mormons,Murder Among the Mormons,2021,Series,Crime,"on-netflix, religion",Gripping,"Jared Hess, Tyler Measom",119337,tt13987620,live,,
 the-house-i-live-in,The House I Live In,2012,Film,Drugs,editors-choice,Infuriating,Eugene Jarecki,84284,tt2125653,live,,Sundance Grand Jury Prize 2012
 13th,13th,2016,Film,Crime,"essential, on-netflix",Infuriating,Ava DuVernay,407806,tt5895028,live,,BAFTA Winner 2017; Oscar Nominee 2017; Emmy Winner 2017
 the-fog-of-war,The Fog of War,2003,Film,War,"editors-choice, essential",Mind-blowing,Errol Morris,12698,tt0317910,live,,Oscar Winner 2004
@@ -172,17 +172,17 @@ the-wolfpack,The Wolfpack,2015,Film,Life Stories,go-in-blind,Gloriously weird,Cr
 jim-andy-the-great-beyond,Jim & Andy: The Great Beyond,2017,Film,Art,"filmmaking, on-netflix",Gloriously weird,Chris Smith,469019,tt7214762,live,,
 bisbee-17,Bisbee '17,2018,Film,Politics,,Gloriously weird,Robert Greene,490758,tt7520286,live,,
 titicut-follies,Titicut Follies,1967,Film,Cults & Psychology,,Harrowing,Frederick Wiseman,41212,tt0062374,live,,
-marjoe,Marjoe,1972,Film,Cults & Psychology,,Gloriously weird,"Howard Smith, Sarah Kernochan",38616,tt0068924,live,,Oscar Winner 1973
+marjoe,Marjoe,1972,Film,Cults & Psychology,religion,Gloriously weird,"Howard Smith, Sarah Kernochan",38616,tt0068924,live,,Oscar Winner 1973
 quiet-rage-the-stanford-prison-study,Quiet Rage: The Stanford Prison Study,1992,Film,Science,,Mind-blowing,Ken Musen,226763,tt3754572,live,,
-children-of-god-lost-and-found,Children of God: Lost and Found,2007,Film,Cults & Psychology,,Harrowing,Noah Thomson,307510,tt0806136,live,,
+children-of-god-lost-and-found,Children of God: Lost and Found,2007,Film,Cults & Psychology,religion,Harrowing,Noah Thomson,307510,tt0806136,live,,
 the-source-family,The Source Family,2012,Film,Cults & Psychology,,Gloriously weird,"Jodi Wille, Maria Demopoulos",98064,tt2245223,live,,
-prophet-s-prey,Prophet's Prey,2015,Film,Cults & Psychology,,"Infuriating, Harrowing",Amy J. Berg,319079,tt4188202,live,,
+prophet-s-prey,Prophet's Prey,2015,Film,Cults & Psychology,religion,"Infuriating, Harrowing",Amy J. Berg,319079,tt4188202,live,,
 derren-brown-sacrifice,Derren Brown: Sacrifice,2018,Film,Cults & Psychology,"presenter-led, on-netflix",Mind-blowing,Derren Brown,554175,tt9077188,live,,
 the-push,The Push,2018,Film,Cults & Psychology,"presenter-led, go-in-blind",Mind-blowing,Jon Richards,377319,tt5340856,live,,
 bikram-yogi-guru-predator,"Bikram: Yogi, Guru, Predator",2019,Film,Cults & Psychology,on-netflix,Infuriating,Eva Orner,621753,tt10883004,live,,
 heaven-s-gate-the-cult-of-cults,Heaven's Gate: The Cult of Cults,2020,Series,Cults & Psychology,,"Gloriously weird, Harrowing",Clay Tweel,113678,tt11210146,live,,
 sons-of-sam-a-descent-into-darkness,Sons of Sam: A Descent into Darkness,2021,Series,Cults & Psychology,on-netflix,Gripping,Joshua Zeman,122672,tt13156316,live,,
-keep-sweet-pray-and-obey,Keep Sweet: Pray and Obey,2022,Series,Cults & Psychology,on-netflix,"Infuriating, Harrowing",Rachel Dretzin,202880,tt20560404,live,,
+keep-sweet-pray-and-obey,Keep Sweet: Pray and Obey,2022,Series,Cults & Psychology,"on-netflix, religion","Infuriating, Harrowing",Rachel Dretzin,202880,tt20560404,live,,
 quiet-on-set-the-dark-side-of-kids-tv,Quiet on Set: The Dark Side of Kids TV,2024,Series,Crime,,"Infuriating, Harrowing","Mary Robertson, Emma Schwartz",245902,tt31193442,live,,
 the-synanon-fix,The Synanon Fix,2024,Series,Cults & Psychology,,Gloriously weird,"Mark Bailey, Rory Kennedy",241230,tt21822256,live,,
 who-the-s-is-jackson-pollock,Who the #$&% Is Jackson Pollock?,2006,Film,Art,,Funny,Harry Moses,45664,tt0487092,live,,
@@ -215,7 +215,7 @@ fake-famous,Fake Famous,2021,Film,Tech,internet-culture,Funny,Nick Bilton,788610
 a-glitch-in-the-matrix,A Glitch in the Matrix,2021,Film,Tech,,Gloriously weird,Rodney Ascher,696109,tt9847360,live,,
 aileen-wuornos-the-selling-of-a-serial-killer,Aileen Wuornos: The Selling of a Serial Killer,1992,Film,Crime,presenter-led,Harrowing,Nick Broomfield,97044,tt0103634,live,,
 brother-s-keeper,Brother's Keeper,1992,Film,Crime,wrongful-conviction,Gloriously weird,"Bruce Sinofsky, Joe Berlinger",26755,tt0103888,live,,Sundance Audience Award 1992
-waco-the-rules-of-engagement,Waco: The Rules of Engagement,1997,Film,Cults & Psychology,,Infuriating,William Gazecki,34044,tt0120472,live,,Oscar Nominee 1998
+waco-the-rules-of-engagement,Waco: The Rules of Engagement,1997,Film,Cults & Psychology,religion,Infuriating,William Gazecki,34044,tt0120472,live,,Oscar Nominee 1998
 one-day-in-september,One Day in September,1999,Film,Crime,,Harrowing,Kevin Macdonald,34045,tt0230591,live,,Oscar Winner 2000
 murder-on-a-sunday-morning,Murder on a Sunday Morning,2001,Film,Crime,wrongful-conviction,Infuriating,Jean-Xavier de Lestrade,51391,tt0307197,live,,Oscar Winner 2002
 into-the-abyss,Into the Abyss,2011,Film,Crime,,Harrowing,Werner Herzog,77365,tt1972663,live,,
@@ -378,8 +378,8 @@ this-film-is-not-yet-rated,This Film Is Not Yet Rated,2006,Film,Art,filmmaking,"
 the-invisible-war,The Invisible War,2012,Film,War,,"Infuriating, Harrowing",Kirby Dick,84288,tt2120152,live,,Sundance Audience Award 2012; Oscar Nominee 2013
 on-the-record,On the Record,2020,Film,Crime,,"Infuriating, Harrowing","Kirby Dick, Amy Ziering",653612,tt11394650,live,,
 the-social-dilemma,The Social Dilemma,2020,Film,Tech,"internet-culture, on-netflix",Infuriating,Jeff Orlowski,656690,tt11464826,live,,
-my-scientology-movie,My Scientology Movie,2015,Film,Cults & Psychology,presenter-led,"Funny, Gloriously weird",John Dower,359871,tt5111874,live,,
-america-s-most-hated-family-in-crisis,America's Most Hated Family in Crisis,2011,Film,Cults & Psychology,presenter-led,Gloriously weird,Emma Cooper,206953,tt1883251,live,,
+my-scientology-movie,My Scientology Movie,2015,Film,Cults & Psychology,"presenter-led, religion","Funny, Gloriously weird",John Dower,359871,tt5111874,live,,
+america-s-most-hated-family-in-crisis,America's Most Hated Family in Crisis,2011,Film,Cults & Psychology,"presenter-led, religion",Gloriously weird,Emma Cooper,206953,tt1883251,live,,
 kurt-courtney,Kurt & Courtney,1998,Film,Music,presenter-led,Gloriously weird,Nick Broomfield,13907,tt0138563,live,,
 aileen-life-and-death-of-a-serial-killer,Aileen: Life and Death of a Serial Killer,2003,Film,Crime,presenter-led,Harrowing,"Nick Broomfield, Joan Churchill",37088,tt0364930,live,,
 marianne-leonard-words-of-love,Marianne & Leonard: Words of Love,2019,Film,Music,,Harrowing,Nick Broomfield,566230,tt9358196,live,,
@@ -412,7 +412,7 @@ spellbound,Spellbound,2002,Film,Sport,,"Funny, Feel-good",Jeffrey Blitz,16636,tt
 my-architect,My Architect,2003,Film,Life Stories,,Mind-blowing,Nathaniel Kahn,50314,tt0373175,live,,Oscar Nominee 2004
 dig,Dig!,2004,Film,Music,,"Funny, Gloriously weird",Ondi Timoner,1843,tt0388888,live,,Sundance Grand Jury Prize 2004
 murderball,Murderball,2005,Film,Sport,,"Gripping, Feel-good","Henry Alex Rubin, Dana Adam Shapiro",14278,tt0436613,live,,Sundance Audience Award 2005; Oscar Nominee 2006
-deliver-us-from-evil,Deliver Us from Evil,2006,Film,Crime,,"Infuriating, Harrowing",Amy J. Berg,13364,tt0814075,live,,Oscar Nominee 2007
+deliver-us-from-evil,Deliver Us from Evil,2006,Film,Crime,religion,"Infuriating, Harrowing",Amy J. Berg,13364,tt0814075,live,,Oscar Nominee 2007
 the-most-dangerous-man-in-america,The Most Dangerous Man in America,2009,Film,Politics,hackers-and-leaks,Gripping,"Judith Ehrlich, Rick Goldsmith",34576,tt1319726,live,,Oscar Nominee 2010
 undefeated,Undefeated,2011,Film,Sport,,Feel-good,"Daniel Lindsay, T.J. Martin",82620,tt1860355,live,,Oscar Winner 2012
 paradise-lost-3-purgatory,Paradise Lost 3: Purgatory,2011,Film,Crime,wrongful-conviction,Infuriating,"Joe Berlinger, Bruce Sinofsky",83660,tt2028530,live,,Oscar Nominee 2012
@@ -537,3 +537,8 @@ four-hours-at-the-capitol,Four Hours at the Capitol,2021,Film,Politics,,,Jamie R
 where-s-my-roy-cohn,Where's My Roy Cohn?,2019,Film,Politics,,,Matt Tyrnauer,565531,tt7193362,live,,
 you-ve-been-trumped,You've Been Trumped,2011,Film,Politics,,,Anthony Baxter,118769,tt1943873,live,,
 stopping-the-steal,Stopping the Steal,2024,Film,Politics,,,Dan Reed,1352173,tt33336815,live,,
+mea-maxima-culpa-silence-in-the-house-of-god,Mea Maxima Culpa: Silence in the House of God,2012,Film,Crime,religion,,Alex Gibney,124074,tt2111478,live,,Emmy Winner 2013
+one-of-us,One of Us,2017,Film,Cults & Psychology,"religion, on-netflix",,"Heidi Ewing, Rachel Grady",474569,tt7214842,live,,
+the-most-hated-family-in-america,The Most Hated Family in America,2007,Film,Cults & Psychology,religion,,Geoffrey O'Connor,63581,tt1000764,live,,
+hail-satan,Hail Satan?,2019,Film,Politics,religion,,Penny Lane,565719,tt9358044,live,,
+hell-house,Hell House,2001,Film,Cults & Psychology,religion,,George Ratliff,33068,tt0301235,live,,

@@ -5,6 +5,7 @@ export const TAGS = [
   { id: 'essential', label: 'Essential', group: 'picks', title: 'Essential Documentaries', description: 'A starting point: the documentaries most worth seeing first.' },
   { id: 'presenter-led', label: 'Presenter-led', group: 'picks', title: 'Presenter-led Documentaries', description: 'Films where the person asking the questions is part of the story.' },
   { id: 'go-in-blind', label: 'Go in blind', group: 'picks', title: 'Documentaries to Go in Blind', description: 'Best watched knowing as little as possible, so avoid the trailers.' },
+  { id: 'religion', label: 'Religion', group: 'topics', title: 'Documentaries About Religion', description: 'Faith, cults and the people who lead, follow and leave them.' },
   { id: 'wrongful-conviction', label: 'Wrongful conviction', group: 'topics', title: 'Wrongful Conviction Documentaries', description: 'Disputed verdicts, flawed investigations and the fight to overturn them.' },
   { id: 'mountains', label: 'Mountains', group: 'topics', title: 'Mountain Documentaries', description: 'Climbers, summits and what it takes to come back down.' },
   { id: 'ocean', label: 'Ocean', group: 'topics', title: 'Ocean Documentaries', description: 'Life at sea, under it and on the edge of it.' },
