@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, cardRatings, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseProviders, readTracking, streamingLogos, selectTrailer, selectYouTubeTrailer, sortByRating, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardRatings, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseProviders, readTracking, streamingLogos, selectTrailer, selectYouTubeTrailer, sortByScore, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -22,9 +22,9 @@ describe('eras and rating sort', () => {
     expect(inEra(2010, '2010s')).toBe(true); expect(inEra(2019, '2010s')).toBe(true); expect(inEra(2020, '2010s')).toBe(false);
     expect(inEra(1999, '2000s')).toBe(false); expect(inEra(2019, 'all')).toBe(true);
   });
-  it('sorts by rating with unrated titles last', () => {
-    const snap = { a: { omdb: { imdb: 7.1 } }, b: { omdb: { imdb: 8.4 } }, c: {} };
-    expect(sortByRating([{ id: 'a' }, { id: 'b' }, { id: 'c' }], snap, 'imdb').map(f => f.id)).toEqual(['b', 'a', 'c']);
+  it('sorts by the better of IMDb and Rotten Tomatoes with unrated titles last', () => {
+    const snap = { a: { omdb: { imdb: 7.1 } }, b: { omdb: { imdb: 8.4 } }, c: {}, d: { omdb: { imdb: 6, rottenTomatoes: 96 } } };
+    expect(sortByScore([{ id: 'a' }, { id: 'b' }, { id: 'c' }, { id: 'd' }], snap).map(f => f.id)).toEqual(['d', 'b', 'a', 'c']);
   });
   it('firstSentence keeps only the opening sentence', () => {
     expect(firstSentence('One two. Three four. Five.')).toBe('One two.');

@@ -35,6 +35,7 @@ import {
   formatCommitment,
 } from "@/data/discovery-facets";
 import { CopyLink } from "@/components/copy-link";
+import { SORTS, SortMenu } from "@/components/sort-menu";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
 import { documentaryCount, listHeading, pageHead, slugify } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
@@ -57,7 +58,7 @@ import {
   inLength,
   orderFilms,
   shuffleIds,
-  sortByRating,
+  sortByScore,
   overviewSentences,
   TRACKING_KEYS,
   type Era,
@@ -102,7 +103,6 @@ const searchDefaults = {
   browse: "topics",
 };
 const text = (value: unknown, fallback = "") => (typeof value === "string" && value ? value : fallback);
-const SORTS = ["random", "curated", "newest", "oldest", "imdb", "rt"];
 
 export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>) => ({
@@ -467,8 +467,7 @@ function Index() {
         filter === "all" ? true : filter === "awards" ? accolades(f).length > 0 : f.categories.includes(filter),
       )
       .filter((f) => matchesFacets(f, facet));
-    if (sort === "imdb" || sort === "rt")
-      return sortByRating(filtered, SNAPSHOT, sort === "imdb" ? "imdb" : "rottenTomatoes");
+    if (sort === "score") return sortByScore(filtered, SNAPSHOT);
     if (sort === "newest") return [...filtered].sort((a, b) => b.year - a.year);
     if (sort === "oldest") return [...filtered].sort((a, b) => a.year - b.year);
     return filtered;
@@ -571,7 +570,6 @@ function Index() {
   // The tab's own selection is not a dropdown filter, so it doesn't count here.
   const activeFilters = [
     type !== "all",
-    sort !== "random",
     era !== "all",
     len !== "all",
     listFilter === "watched",
@@ -703,22 +701,6 @@ function Index() {
               <option value="all">Films & series</option>
               <option value="movie">Films</option>
               <option value="tv">Series</option>
-            </select>
-          </label>
-          <label className="block text-xs text-muted-foreground">
-            Order
-            <select
-              aria-label="Sort order"
-              className="discovery-select mt-1 w-full"
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-            >
-              <option value="random">Shuffled</option>
-              <option value="curated">Curated</option>
-              <option value="newest">Newest first</option>
-              <option value="oldest">Oldest first</option>
-              <option value="imdb">Top IMDb</option>
-              <option value="rt">Top Rotten Tomatoes</option>
             </select>
           </label>
           <label className="block text-xs text-muted-foreground">
@@ -985,7 +967,15 @@ function Index() {
             <p className="mt-1 text-sm text-muted-foreground">{documentaryCount(list.length)}</p>
             <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
           </div>
-          <CopyLink />
+          <div className="flex items-center gap-2">
+            <SortMenu value={sort} onChange={setSort} />
+            <CopyLink />
+          </div>
+        </div>
+      )}
+      {view === "gallery" && !heading && browse !== "directors" && (
+        <div className="mb-3 flex justify-end">
+          <SortMenu value={sort} onChange={setSort} />
         </div>
       )}
       {selections > 1 && (

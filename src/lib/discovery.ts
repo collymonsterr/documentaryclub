@@ -134,10 +134,10 @@ export function inEra(year: number, era: Era, now: number = new Date().getFullYe
   const start = Number(era.slice(0, 4));
   return year >= start && year < start + 10;
 }
-// Rating sort: highest first, titles without that rating last (stable otherwise).
-export function sortByRating<T extends { id: string }>(films: T[], snap: Record<string, { omdb?: { imdb?: number | undefined; rottenTomatoes?: number | undefined } | undefined } | undefined>, key: 'imdb' | 'rottenTomatoes'): T[] {
-  const score = (id: string) => snap[id]?.omdb?.[key];
-  return [...films].sort((a, b) => (score(b.id) ?? -1) - (score(a.id) ?? -1));
+// Score is the better of IMDb and Rotten Tomatoes on a 0-100 scale; ties go to the higher IMDb, and titles with neither go last.
+export function sortByScore<T extends { id: string }>(films: T[], snap: Record<string, { omdb?: { imdb?: number | undefined; rottenTomatoes?: number | undefined } | undefined } | undefined>): T[] {
+  const score = (id: string) => { const o = snap[id]?.omdb; return Math.max((o?.imdb ?? -1) * 10, o?.rottenTomatoes ?? -1); };
+  return [...films].sort((a, b) => score(b.id) - score(a.id) || (snap[b.id]?.omdb?.imdb ?? -1) - (snap[a.id]?.omdb?.imdb ?? -1));
 }
 
 // Time-commitment facet: films by runtime (short <90, standard 90–120, long >120; unknown runtime excluded), series = tv or collection.

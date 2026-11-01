@@ -2,10 +2,13 @@ import { Check, Link2 } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
+// The visitor's sort order is theirs, so shared links leave it out.
+const shareable = () => { const url = new URL(window.location.href); url.searchParams.delete('sort'); return url.href; };
+
 export function CopyLink({ path, className }: { path?: string | undefined; className?: string }) {
   const [copied, setCopied] = useState(false);
   const copy = async () => {
-    const url = path ? `${window.location.origin}${path}` : window.location.href;
+    const url = path ? `${window.location.origin}${path}` : shareable();
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
