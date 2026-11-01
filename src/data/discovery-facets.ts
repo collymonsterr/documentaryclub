@@ -1,5 +1,6 @@
 import { CATALOGUE, SHEET, SNAPSHOT } from './catalogue';
 import type { Film } from './films';
+import { awardBody, awardRank, type AwardBody } from './award-bodies';
 
 export const MOODS = [
   { id: 'funny', label: 'Funny' }, { id: 'feelgood', label: 'Feel-good' },
@@ -18,22 +19,22 @@ export const EDITORIAL: Record<string, { moods: string[]; picks?: string[] }> = 
   .map(r => [r.id, { moods: r.moods!.map(l => MOODS.find(m => m.label === l)?.id).filter((m): m is (typeof MOODS)[number]['id'] => !!m) }]));
 export const credits = (film: Film) => [...film.director.split(', '), ...(film.presenter ? [film.presenter] : [])].map(n => n.trim()).filter(Boolean);
 
-export type Accolade = { facet: string; label: string; result: 'Won' | 'Nominated'; source: 'Curated' | 'OMDb' };
+export type Accolade = { facet: string; label: string; result: 'Won' | 'Nominated'; source: 'Curated' | 'OMDb'; body: AwardBody };
+const accolade = (label: string, source: Accolade['source']): Accolade => {
+  const nominated = /nominee|nominated/i.test(label), body = awardBody(label);
+  const facet = nominated ? body === 'oscar' ? 'oscar-nominee' : 'other-nominee' : body === 'oscar' ? 'oscar-win' : body === 'sundance' ? 'sundance-win' : 'other-win';
+  return { facet, label, result: nominated ? 'Nominated' : 'Won', source, body };
+};
 export function accolades(film: Film, aggregate = SNAPSHOT[film.id]?.omdb?.awards): Accolade[] {
-  const records: Accolade[] = film.awards.map(label => {
-    const nominated = /nominee|nominated/i.test(label);
-    const facet = /Oscar/i.test(label) ? nominated ? 'oscar-nominee' : 'oscar-win'
-      : /Sundance/i.test(label) ? 'sundance-win' : 'other-win';
-    return { facet, label, result: nominated ? 'Nominated' : 'Won', source: 'Curated' };
-  });
+  const records = film.awards.map(label => accolade(label, 'Curated'));
   // Named Oscar evidence only. Never infer category/year or other prizes from aggregate counts.
-  const facet = /\bWon \d+ Oscars?\b/i.test(aggregate ?? '') ? 'oscar-win'
-    : /\bNominated for \d+ Oscars?\b/i.test(aggregate ?? '') ? 'oscar-nominee' : undefined;
-  if (facet && !records.some(a => a.facet === facet)) records.push({ facet,
-    label: facet === 'oscar-win' ? 'Academy Award winner' : 'Academy Award nominee',
-    result: facet === 'oscar-win' ? 'Won' : 'Nominated', source: 'OMDb' });
-  return records;
+  const oscar = /\bWon \d+ Oscars?\b/i.test(aggregate ?? '') ? 'Oscar Winner' : /\bNominated for \d+ Oscars?\b/i.test(aggregate ?? '') ? 'Oscar Nominee' : undefined;
+  if (oscar && !records.some(a => oscar === 'Oscar Winner' ? a.facet === 'oscar-win' : a.body === 'oscar')) records.push(accolade(oscar, 'OMDb'));
+  // Wins by prestige, then nominations by the same order.
+  return records.map((a, i) => [a, i] as const).sort(([a, i], [b, j]) => (a.result === 'Won' ? 0 : 1) - (b.result === 'Won' ? 0 : 1) || awardRank(a.body) - awardRank(b.body) || i - j).map(([a]) => a);
 }
+// A card shows one icon per awarding body, best first.
+export const topAwards = (film: Film, limit = 3) => accolades(film).filter((a, i, all) => all.findIndex(b => b.body === a.body) === i).slice(0, limit);
 
 export function makerIndex(films: Film[] = CATALOGUE) {
   const map = new Map<string, Film[]>();

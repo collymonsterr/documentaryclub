@@ -28,3 +28,4 @@
 - Clean URLs (/tags/x, /categories/x, /directors/x, /film/x) are router rewrites onto the home route's search params in src/lib/site-urls.ts; keep filtering on the one route. Link previews come from pageHead and are server-rendered. SITE_ORIGIN there must match the live domain; rerun `npm run og-images` after adding a tag or category.
 - Providers come from TMDB for one visitor-selected country; one cached response serves every country.
 - Google Analytics loads only after consent (src/lib/analytics.ts). Messages and suggestions go to a private Google Sheet via the FEEDBACK_WEBHOOK_URL secret (docs/feedback-sheet.gs).
+- Each film's awards are one `awards` CSV column (labels split on ";"), sourced from Wikidata against an approved list plus existing curated entries; award-bodies.ts maps labels to icon, colour and prestige order. Unnamed OMDb Oscar counts stay as a generic fallback.

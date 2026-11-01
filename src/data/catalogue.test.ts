@@ -15,12 +15,11 @@ describe('approved import reconciliation', () => {
     expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(SHEET.length);
     expect(MANIFEST.entries.map(e => `${e.input.title}|${e.input.year}`)).toEqual(IMPORT_LIST.map(e => `${e.title}|${e.year}`));
   });
-  it('keeps the original 17 first with unchanged IDs and awards', () => {
+  it('keeps the original 17 first with unchanged IDs', () => {
     expect(CATALOGUE.slice(0, 17).map(f => f.id)).toEqual(FILMS.map(f => f.id));
-    expect(CATALOGUE.slice(0, 17).map(f => f.awards)).toEqual(FILMS.map(f => f.awards));
   });
-  it('never invents awards for imported titles and keeps unresolved titles visible', () => {
-    expect(CATALOGUE.slice(17).every(f => f.awards.length === 0)).toBe(true);
+  it('takes awards only from the sheet and keeps unresolved titles visible', () => {
+    expect(CATALOGUE.every(f => f.awards.join() === (SHEET.find(r => r.id === f.id)?.awards ?? []).join())).toBe(true);
     const removed = new Set(['the-culture-high', 'super-high-me', 'rolling-papers', 'daughters-of-the-cult', 'bad-surgeon-love-under-the-knife', 'cocaine-cowboys-ii-hustlin-with-the-godmother', 'countdown-to-death-pablo-escobar', 'marijuana-a-chronic-history']);
     for (const e of MANIFEST.entries) if (!removed.has(e.id)) expect(byId(e.id)).toBeDefined();
   });

@@ -1,7 +1,7 @@
 // data/catalogue-master.csv is the single source of truth for editorial fields; src/data/catalogue-sheet.json is generated from it.
-export const COLUMNS = ['id', 'title', 'year', 'type', 'category', 'tags', 'mood', 'director', 'tmdb_id', 'imdb_id', 'status', 'notes'] as const;
+export const COLUMNS = ['id', 'title', 'year', 'type', 'category', 'tags', 'mood', 'director', 'tmdb_id', 'imdb_id', 'status', 'notes', 'awards'] as const;
 export type CsvRow = Record<(typeof COLUMNS)[number], string>;
-export type SheetJsonRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string };
+export type SheetJsonRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string; awards?: string[] };
 
 export function parseCsv(text: string): CsvRow[] {
   const rows: string[][] = []; let row: string[] = [], cell = '', quoted = false;
@@ -33,6 +33,7 @@ export const sheetRows = (rows: CsvRow[]): SheetJsonRow[] => rows.filter(r => r.
   id: r.id, title: r.title, year: Number(r.year), format: r.type as SheetJsonRow['format'], category: r.category,
   ...(r.director ? { director: r.director } : {}), ...(r.mood ? { moods: list(r.mood) } : {}), ...(r.tags ? { tags: list(r.tags) } : {}),
   ...(r.tmdb_id ? { tmdbId: Number(r.tmdb_id) } : {}), ...(r.imdb_id ? { imdbId: r.imdb_id } : {}),
+  ...(r.awards ? { awards: r.awards.split(';').map(s => s.trim()).filter(Boolean) } : {}),
 }));
 export const sheetJson = (rows: CsvRow[]) => `[\n${sheetRows(rows).map(r => JSON.stringify(r)).join(',\n')}\n]\n`;
 

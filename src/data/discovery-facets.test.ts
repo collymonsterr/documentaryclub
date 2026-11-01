@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CATALOGUE } from './catalogue';
-import { EDITORIAL, accolades, discoveryShelves, makerIndex, matchesFacets, formatCommitment } from './discovery-facets';
+import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment } from './discovery-facets';
 const film = (id: string) => { const f = CATALOGUE.find(f => f.id === id); if (!f) throw new Error(id); return f; };
 describe('evidence-led discovery', () => {
   it('distinguishes Academy wins from nominations', () => {
@@ -8,9 +8,14 @@ describe('evidence-led discovery', () => {
     expect(accolades(film('fire-of-love')).some(a => a.facet === 'oscar-nominee')).toBe(true);
     expect(accolades(film('fire-of-love')).some(a => a.facet === 'oscar-win')).toBe(false);
   });
+  it('orders wins by prestige, then nominations, and caps cards at three bodies', () => {
+    const f = { ...film('skywalkers'), awards: ['Oscar Nominee – Best Documentary Feature 2020', 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', "Cannes L'Œil d'or 2019", 'BAFTA Winner – Best Documentary 2020', 'Some Regional Prize 2019'] };
+    expect(accolades(f, '').map(a => a.label)).toEqual(['BAFTA Winner – Best Documentary 2020', "Cannes L'Œil d'or 2019", 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', 'Some Regional Prize 2019', 'Oscar Nominee – Best Documentary Feature 2020']);
+    expect(topAwards(f).map(a => a.body)).toEqual(['bafta', 'cannes', 'sundance']);
+  });
   it('never turns unnamed aggregate counts into festival awards', () => {
     expect(accolades({ ...film('skywalkers'), awards: [] }, '1 win & 3 nominations')).toEqual([]);
-    expect(accolades({ ...film('skywalkers'), awards: [] }, 'Nominated for 1 Oscar. 5 wins total')[0]?.label).toBe('Academy Award nominee');
+    expect(accolades({ ...film('skywalkers'), awards: [] }, 'Nominated for 1 Oscar. 5 wins total')[0]?.label).toBe('Oscar Nominee');
   });
   it('combines mood, pick, award and maker with AND', () => {
     expect(matchesFacets(film('pez-outlaw'), { award: '', mood: 'funny', pick: '', maker: '' })).toBe(true);

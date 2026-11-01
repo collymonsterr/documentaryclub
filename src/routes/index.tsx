@@ -38,7 +38,7 @@ import { CopyLink } from "@/components/copy-link";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
 import { documentaryCount, listHeading, pageHead } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
-import { AwardLaurel } from "@/components/award-laurel";
+import { AwardIcons } from "@/components/award-icons";
 import { AwardBadges } from "@/components/award-badges";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { DocumentaryPoster } from "@/components/documentary-poster";
@@ -1080,7 +1080,7 @@ function Index() {
                     >
                       <DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small />
                     </Button>
-                    <AwardLaurel film={f} />
+                    <AwardIcons film={f} />
                     <div className="card-hover-actions absolute right-2 top-2 gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
                       <Button
                         size="icon"
@@ -1262,11 +1262,6 @@ function Index() {
                 </p>
               )}
               <AwardBadges film={film} />
-              {extra?.omdb?.awards && (
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                  {extra.omdb.awards} <span className="opacity-70">(OMDb)</span>
-                </p>
-              )}
               <div className="mt-2 flex flex-wrap items-center gap-1.5">
                 <RatingPill site="imdb" film={film} score={extra?.omdb?.imdb} />
                 <RatingPill site="rt" film={film} score={extra?.omdb?.rottenTomatoes} />
