@@ -12,8 +12,8 @@ describe('third batch (Sex & Drugs) reconciliation', () => {
     expect(n('existing-match')).toBe(1);
     expect(n('resolved')).toBe(53);
     expect(n('pending-not-found')).toBe(2);
-    expect(CATALOGUE).toHaveLength(542);
-    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(542);
+    expect(CATALOGUE).toHaveLength(540);
+    expect(new Set(CATALOGUE.map(f => f.id)).size).toBe(540);
   });
   it('keeps a single Fantastic Fungi, now in Nature', () => {
     expect(entry('Fantastic Fungi')?.status).toBe('existing-match');
@@ -28,10 +28,10 @@ describe('third batch (Sex & Drugs) reconciliation', () => {
     expect(entry('How to Change Your Mind')?.chosen?.mediaType).toBe('tv');
     expect(entry("Hamilton's Pharmacopeia")?.chosen?.mediaType).toBe('tv');
   });
-  it('keeps titles with no database record visible as pending', () => {
+  it('leaves titles with no database record off the site', () => {
     expect(entry('Guys and Dolls')?.status).toBe('pending-not-found');
     expect(entry('Love Me')?.status).toBe('pending-not-found');
-    expect(CATALOGUE.find(f => f.id === 'guys-and-dolls')?.pending).toBe(true);
-    expect(CATALOGUE.find(f => f.id === 'love-me')?.pending).toBe(true);
+    expect(CATALOGUE.some(f => f.id === 'guys-and-dolls')).toBe(false);
+    expect(CATALOGUE.some(f => f.id === 'love-me')).toBe(false);
   });
 });

@@ -36,11 +36,11 @@ function allowed(ip: string) {
   recent.set(ip, [...hits, now]);
   return true;
 }
-type Feedback = { kind: 'suggestion' | 'message'; name: string; note: string; title: string; year: string; tmdbId: string; mediaType: string; website: string };
-// Entries go to a private Google Sheet through FEEDBACK_WEBHOOK_URL (see docs/feedback-sheet.gs).
+type Feedback = { kind: 'suggestion' | 'message'; name: string; email: string; note: string; title: string; year: string; tmdbId: string; mediaType: string; website: string };
+// Entries are emailed to the owner through FEEDBACK_WEBHOOK_URL (see docs/feedback-email.gs).
 export const sendFeedback = createServerFn({ method: 'POST' })
   .inputValidator((data: Feedback): Feedback => ({
-    kind: data?.kind === 'message' ? 'message' : 'suggestion', name: clean(data?.name, 80), note: clean(data?.note, 2000), title: clean(data?.title, 200),
+    kind: data?.kind === 'message' ? 'message' : 'suggestion', name: clean(data?.name, 80), email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data?.email?.trim() ?? '') ? clean(data.email, 200) : '', note: clean(data?.note, 2000), title: clean(data?.title, 200),
     year: clean(data?.year, 4), tmdbId: clean(data?.tmdbId, 12), mediaType: clean(data?.mediaType, 5), website: clean(data?.website, 100),
   }))
   .handler(async ({ data }) => {

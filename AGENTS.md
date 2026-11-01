@@ -9,7 +9,7 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Catalogue = original curated FILMS (src/data/films.ts) + approved import list (src/data/import-list.ts) merged in src/data/catalogue.ts; identities/public metadata are resolved once by scripts/resolve-catalogue.ts into catalogue-snapshot.json and an audit import-manifest.json, so page loads never search TMDB/OMDb. Ambiguous titles stay visible as pending; never invent IDs, awards or trailers.
+- Catalogue = original curated FILMS (src/data/films.ts) + approved import list (src/data/import-list.ts) merged in src/data/catalogue.ts; identities/public metadata are resolved once by scripts/resolve-catalogue.ts into catalogue-snapshot.json and an audit import-manifest.json, so page loads never search TMDB/OMDb. Titles that can't be confirmed stay off the site; never invent IDs, awards or trailers.
 - Import matching supports movie and tv endpoints: documentary genre, title or ':'-subtitle alias, year ±1, uniqueness; tie-breaks only via explicit per-title hints (format, credited filmmaker, search alias).
 - Watch providers are fetched live per selected catalogue ID through a server function that rejects non-catalogue IDs.
 - Optional enrichment uses a public server function reading runtime-injected process.env secrets inside its handler only; retain the immediate curated first screen so service failures never block discovery.
@@ -23,11 +23,12 @@
 - OMDb ratings are captured in the snapshot at import by verified IMDb ID with matching movie/series type, preserving the daily quota; omdb.server.ts remains the bounded cached helper for any future runtime refresh.
 - Later approved batches are delta imports (`bun scripts/resolve-catalogue.ts --batch2`): reconciled against the pre-batch catalogue by identity key, verified-TMDB collisions merge, resolved manifest entries are reused so reruns make no API calls; title-scoped evidence pins and collections live beside the batch source.
 - data/catalogue-master.csv is the single source of truth for title, year, type, category, tags, mood, director and TMDB/IMDb IDs. src/data/catalogue-sheet.json is generated from it by `npm run sync-catalogue`: never edit that JSON by hand. Titles absent from the CSV are dropped; status=new rows are matched on TMDB and set live, and uncertain matches stay new and are listed. Enrichment stays in catalogue-snapshot.json, keyed by id.
+- `npm run sync-catalogue` also rewrites public/sitemap.xml and the robots.txt pointer from SITE_ORIGIN; rerun it after changing the domain.
 - Tags are limited to the approved slugs in src/data/tags.ts; the sync rejects anything else.
 - Discovery navigation uses one sticky grid for header, tabs and chips; category and browse-chip selections clear the Spotlight film so filtering always opens Gallery.
 - Clean URLs (/tags/x, /categories/x, /directors/x, /film/x) are router rewrites onto the home route's search params in src/lib/site-urls.ts; keep filtering on the one route. Link previews come from pageHead and are server-rendered. SITE_ORIGIN there must match the live domain; rerun `npm run og-images` after adding a tag or category.
 - Providers come from TMDB for one visitor-selected country; one cached response serves every country.
-- Google Analytics loads only after consent (src/lib/analytics.ts). Messages and suggestions go to a private Google Sheet via the FEEDBACK_WEBHOOK_URL secret (docs/feedback-sheet.gs).
+- Google Analytics loads only after consent (src/lib/analytics.ts). Messages and suggestions are emailed to the owner via an Apps Script webhook in the FEEDBACK_WEBHOOK_URL secret (docs/feedback-email.gs).
 - Each film's awards are one `awards` CSV column (labels split on ";"), from an approved list only: Oscars (wins and nominations), BAFTA and Primetime Emmy (wins), Sundance Grand Jury/Audience/Directing, Tribeca, IDA, and Cannes Palme d'Or/L'Œil d'or. Wikidata has no Tribeca, IDA or Primetime Emmy data, so those need other sources. award-bodies.ts maps labels to icon, colour and prestige order. The Awards tab (/awards, /awards/x) groups by body and opens on an overview, like Directors.
 - The on-netflix tag is generated: `npm run refresh-netflix` then `npm run sync-catalogue`. It means Netflix in at least one country; don't edit it by hand.
 - About is a browse tab on the home route (/about rewrites to it) so it keeps the shared header. Tags wrap below the sticky nav so they don't fill a phone screen.

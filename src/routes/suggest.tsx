@@ -17,7 +17,7 @@ function SuggestPage() {
   const [kind, setKind] = useState<'suggestion' | 'message'>('suggestion');
   const [query, setQuery] = useState(''), [results, setResults] = useState<SearchResult[]>([]), [searching, setSearching] = useState(false);
   const [picked, setPicked] = useState<SearchResult | null>(null);
-  const [name, setName] = useState(''), [note, setNote] = useState(''), [website, setWebsite] = useState('');
+  const [name, setName] = useState(''), [email, setEmail] = useState(''), [note, setNote] = useState(''), [website, setWebsite] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'failed'>('idle');
   useEffect(() => {
     if (picked || query.trim().length < 2) { setResults([]); return; }
@@ -31,7 +31,7 @@ function SuggestPage() {
   const submit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    const result = await send({ data: { kind, name, note, website, title: picked?.title ?? '', year: picked?.year ?? '', tmdbId: picked ? String(picked.tmdbId) : '', mediaType: picked?.mediaType ?? '' } }).catch(() => ({ ok: false }));
+    const result = await send({ data: { kind, name, email, note, website, title: picked?.title ?? '', year: picked?.year ?? '', tmdbId: picked ? String(picked.tmdbId) : '', mediaType: picked?.mediaType ?? '' } }).catch(() => ({ ok: false }));
     setStatus(result.ok ? 'sent' : 'failed');
   };
   if (status === 'sent') return <SimplePage title="Thank you"><p className="mt-4 text-muted-foreground">Got it. Thanks for getting in touch.</p></SimplePage>;
@@ -58,6 +58,7 @@ function SuggestPage() {
       </label>)}
       <label className="block text-sm">{kind === 'suggestion' ? 'Why this one? (optional)' : 'Your message'}<textarea className={field} rows={4} maxLength={2000} value={note} onChange={e => setNote(e.target.value)} /></label>
       <label className="block text-sm">Your name (optional)<Input className="mt-1" maxLength={80} autoComplete="name" value={name} onChange={e => setName(e.target.value)} /></label>
+      <label className="block text-sm">Your email (optional, if you'd like a reply)<Input className="mt-1" type="email" maxLength={200} autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} /></label>
       <label className="absolute -left-[9999px]" aria-hidden>Website<input tabIndex={-1} autoComplete="off" value={website} onChange={e => setWebsite(e.target.value)} /></label>
       {status === 'failed' && <p className="text-sm text-destructive" role="alert">That didn't send. Please try again later.</p>}
       <Button type="submit" disabled={!ready || status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send'}</Button>
