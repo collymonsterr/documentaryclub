@@ -24,6 +24,7 @@ export const CATEGORIES: { id: Category; label: string }[] = [
 ];
 
 export type Film = {
+  youtubeId?: string;
   id: string;
   title: string;
   year: number;

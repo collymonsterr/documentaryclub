@@ -277,15 +277,17 @@ function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: stri
   );
 }
 // Free, legal viewing searches only (no piracy sources).
-function FreeLegal({ film }: { film: { title: string; year: number } }) {
+function FreeLegal({ film }: { film: { title: string; year: number; youtubeId?: string } }) {
   const q = encodeURIComponent(film.title);
   // Personal extras: only shown in a browser switched on by triple-clicking the logo.
   const [extras, setExtras] = useState(false);
   const links = [
-    [
-      "YouTube (full length)",
-      `https://www.youtube.com/results?search_query=${encodeURIComponent(`${film.title} ${film.year} full documentary`)}`,
-    ],
+    film.youtubeId
+      ? ["Watch the film on YouTube", `https://www.youtube.com/watch?v=${film.youtubeId}`]
+      : [
+          "YouTube (full length)",
+          `https://www.youtube.com/results?search_query=${encodeURIComponent(`${film.title} ${film.year} full documentary`)}`,
+        ],
     ["Internet Archive", `https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22movies%22`],
     ["Kanopy (library card)", `https://www.kanopy.com/en/search?query=${q}`],
     ...(extras
