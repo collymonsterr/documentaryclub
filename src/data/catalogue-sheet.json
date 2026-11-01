@@ -539,5 +539,6 @@
 {"id":"one-of-us","title":"One of Us","year":2017,"format":"Film","category":"Cults & Psychology","director":"Heidi Ewing, Rachel Grady","tags":["religion","on-netflix"],"tmdbId":474569,"imdbId":"tt7214842"},
 {"id":"the-most-hated-family-in-america","title":"The Most Hated Family in America","year":2007,"format":"Film","category":"Cults & Psychology","director":"Geoffrey O'Connor","tags":["religion"],"tmdbId":63581,"imdbId":"tt1000764"},
 {"id":"hail-satan","title":"Hail Satan?","year":2019,"format":"Film","category":"Politics","director":"Penny Lane","tags":["religion"],"tmdbId":565719,"imdbId":"tt9358044"},
-{"id":"hell-house","title":"Hell House","year":2001,"format":"Film","category":"Cults & Psychology","director":"George Ratliff","tags":["religion"],"tmdbId":33068,"imdbId":"tt0301235"}
+{"id":"hell-house","title":"Hell House","year":2001,"format":"Film","category":"Cults & Psychology","director":"George Ratliff","tags":["religion"],"tmdbId":33068,"imdbId":"tt0301235"},
+{"id":"religulous","title":"Religulous","year":2008,"format":"Film","category":"Politics","director":"Larry Charles","tags":["religion"],"tmdbId":13007,"imdbId":"tt0815241"}
 ]
