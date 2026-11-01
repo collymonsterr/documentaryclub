@@ -48,7 +48,10 @@ export function makerIndex(films: Film[] = CATALOGUE) {
   return [...map].map(([name, titles]) => ({ name, films: titles.sort((a, b) => b.year - a.year) }))
     .sort((a, b) => b.films.length - a.films.length || a.name.localeCompare(b.name));
 }
-const prolific = new Set(makerIndex().filter(m => m.films.length >= 3).flatMap(m => m.films.map(f => f.id)));
+// Featured means three titles in the catalogue, minus credits that don't make someone one of the documentary world's best directors.
+const NOT_FEATURED = new Set(['David Alexanian', 'Russ Malkin', 'Adam Carolla', 'Nate Adams', 'Mark Neale', 'Jason Wise', 'Peter Mortimer', 'Tiller Russell', 'Julia Willoughby Nason']);
+export const isFeatured = (maker: { name: string; films: Film[] }) => maker.films.length >= 3 && !NOT_FEATURED.has(maker.name);
+const prolific = new Set(makerIndex().filter(isFeatured).flatMap(m => m.films.map(f => f.id)));
 export type FacetSelection = { award: string; mood: string; pick: string; maker: string; tag?: string };
 export function matchesFacets(film: Film, selection: FacetSelection) {
   return (!selection.award || accolades(film).some(a => a.facet === selection.award))

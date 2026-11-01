@@ -90,13 +90,6 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Jimmy_Chin",
     "blurb": "American climber, photographer and co-director of the Oscar-winning Free Solo."
   },
-  "Mark Neale": {
-    "tmdbPersonId": 639925,
-    "photo": "https://image.tmdb.org/t/p/w185/alrEBXeti1rG4TbsutevNBc2yqL.jpg",
-    "imdbId": "nm0623715",
-    "wikipedia": "https://en.wikipedia.org/wiki/Mark_Neale",
-    "blurb": "Director of the Faster films about MotoGP motorcycle racing."
-  },
   "Morgan Neville": {
     "tmdbPersonId": 228643,
     "photo": "https://image.tmdb.org/t/p/w185/gi8kgpBsyEh7AFboSoL1AI5dOhE.jpg",
@@ -118,17 +111,12 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Steve_James_(film_producer)",
     "blurb": "American director best known for Hoop Dreams."
   },
-  "Tiller Russell": {
-    "tmdbPersonId": 1035379,
-    "imdbId": "nm1183164",
-    "blurb": "Director of true-crime films including The Seven Five and The Last Narc."
-  },
-  "Adam Carolla": {
-    "tmdbPersonId": 76245,
-    "photo": "https://image.tmdb.org/t/p/w185/47k9w6HRLnGeU0gVtMeTPJs3ief.jpg",
-    "imdbId": "nm0004805",
-    "wikipedia": "https://en.wikipedia.org/wiki/Adam_Carolla",
-    "blurb": "American comedian and broadcaster who makes films about motor racing."
+  "Albert Maysles": {
+    "tmdbPersonId": 1418,
+    "photo": "https://image.tmdb.org/t/p/w185/dlel1CxK3lhhZt3inUjOpMQo8A.jpg",
+    "imdbId": "nm0563099",
+    "wikipedia": "https://en.wikipedia.org/wiki/Albert_Maysles",
+    "blurb": "American pioneer of direct cinema, who made Salesman, Gimme Shelter and Grey Gardens with brother David."
   },
   "Amy J. Berg": {
     "tmdbPersonId": 74060,
@@ -151,13 +139,6 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Asif_Kapadia",
     "blurb": "British director of archive-led portraits, including Senna and the Oscar-winning Amy."
   },
-  "Charley Boorman": {
-    "tmdbPersonId": 69751,
-    "photo": "https://image.tmdb.org/t/p/w185/7aUStN1A5RcQMYS1PZyL2Vlcbfj.jpg",
-    "imdbId": "nm0095564",
-    "wikipedia": "https://en.wikipedia.org/wiki/Charley_Boorman",
-    "blurb": "British motorcycle traveller and co-star of the Long Way series with Ewan McGregor."
-  },
   "Chris Hegedus": {
     "tmdbPersonId": 115891,
     "photo": "https://image.tmdb.org/t/p/w185/qaI1Q9uD49zH2b0If3VYqvuLkyh.jpg",
@@ -165,12 +146,26 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Chris_Hegedus",
     "blurb": "American filmmaker who made The War Room with D. A. Pennebaker."
   },
-  "David Alexanian": {
-    "tmdbPersonId": 126180,
-    "photo": "https://image.tmdb.org/t/p/w185/3Lawo1DbwQeznVgq7sLqhOvXgtR.jpg",
-    "imdbId": "nm1256362",
-    "wikipedia": "https://en.wikipedia.org/wiki/David_Alexanian",
-    "blurb": "Producer and director behind the Long Way motorcycle series."
+  "D. A. Pennebaker": {
+    "tmdbPersonId": 21113,
+    "photo": "https://image.tmdb.org/t/p/w185/bLonM1nzO87XvyrPYyS6L2q9yV.jpg",
+    "imdbId": "nm0672060",
+    "wikipedia": "https://en.wikipedia.org/wiki/D._A._Pennebaker",
+    "blurb": "American pioneer of direct cinema, known for Dont Look Back and The War Room."
+  },
+  "David Maysles": {
+    "tmdbPersonId": 139002,
+    "photo": "https://image.tmdb.org/t/p/w185/7IDRKcdjutXI7VjuAKo5iWvrSZC.jpg",
+    "imdbId": "nm0563100",
+    "wikipedia": "https://en.wikipedia.org/wiki/David_Maysles",
+    "blurb": "American pioneer of direct cinema, who made Salesman, Gimme Shelter and Grey Gardens with brother Albert."
+  },
+  "Davis Guggenheim": {
+    "tmdbPersonId": 19012,
+    "photo": "https://image.tmdb.org/t/p/w185/v0uvixJWNvXjur5kXoPDlAkTsEL.jpg",
+    "imdbId": "nm0346550",
+    "wikipedia": "https://en.wikipedia.org/wiki/Davis_Guggenheim",
+    "blurb": "American director who won an Oscar for An Inconvenient Truth."
   },
   "Eugene Jarecki": {
     "tmdbPersonId": 84369,
@@ -179,20 +174,6 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Eugene_Jarecki",
     "blurb": "American director of Why We Fight and The House I Live In."
   },
-  "Ewan McGregor": {
-    "tmdbPersonId": 3061,
-    "photo": "https://image.tmdb.org/t/p/w185/q2UDxfwWnmXTB7khOUF3J9puBVP.jpg",
-    "imdbId": "nm0000191",
-    "wikipedia": "https://en.wikipedia.org/wiki/Ewan_McGregor",
-    "blurb": "Scottish actor and co-star of the Long Way motorcycle journeys."
-  },
-  "Jason Wise": {
-    "tmdbPersonId": 1184624,
-    "photo": "https://image.tmdb.org/t/p/w185/dq8p4x5QodXT8p9B6iD6x26jEEY.jpg",
-    "imdbId": "nm1852117",
-    "wikipedia": "https://en.wikipedia.org/wiki/Jason_Wise_(director)",
-    "blurb": "American director of the Somm films about the world of wine."
-  },
   "Jeff Orlowski": {
     "tmdbPersonId": 1074666,
     "photo": "https://image.tmdb.org/t/p/w185/h8SVOLPPjc8zXx2TTBbFgZKzBol.jpg",
@@ -200,12 +181,19 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Jeff_Orlowski",
     "blurb": "American director of Chasing Ice, Chasing Coral and The Social Dilemma."
   },
-  "Julia Willoughby Nason": {
-    "tmdbPersonId": 1001797,
-    "photo": "https://image.tmdb.org/t/p/w185/zHkgwx4s8GE3FHKHXFN2f0lHWYX.jpg",
-    "imdbId": "nm3749397",
-    "wikipedia": "https://en.wikipedia.org/wiki/Julia_Willoughby_Nason",
-    "blurb": "American director of The Pharmacist, LuLaRich and Shiny Happy People."
+  "Ken Burns": {
+    "tmdbPersonId": 204484,
+    "photo": "https://image.tmdb.org/t/p/w185/rFGB5AOkjcPFSXiBq1PAnbsCxBW.jpg",
+    "imdbId": "nm0122741",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ken_Burns",
+    "blurb": "American filmmaker known for long historical series, including The Civil War and The Vietnam War."
+  },
+  "Kevin Macdonald": {
+    "tmdbPersonId": 17350,
+    "photo": "https://image.tmdb.org/t/p/w185/40P6puNsdMx2ov6bQnZUZ867O3j.jpg",
+    "imdbId": "nm0531817",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kevin_Macdonald_(director)",
+    "blurb": "Scottish director of the Oscar-winning One Day in September and Touching the Void."
   },
   "Kirby Dick": {
     "tmdbPersonId": 112588,
@@ -235,18 +223,6 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Mads_Br%C3%BCgger",
     "blurb": "Danish journalist and filmmaker known for deadpan undercover stunts."
   },
-  "Nate Adams": {
-    "tmdbPersonId": 1341689,
-    "imdbId": "nm1969889",
-    "blurb": "Director who has made motor-racing films with Adam Carolla."
-  },
-  "Peter Mortimer": {
-    "tmdbPersonId": 68094,
-    "photo": "https://image.tmdb.org/t/p/w185/xZLu9SZxCEVcRwJWK22cIDuYXid.jpg",
-    "imdbId": "nm2050348",
-    "wikipedia": "https://en.wikipedia.org/wiki/Peter_Mortimer_(filmmaker)",
-    "blurb": "American climbing filmmaker behind The Dawn Wall and The Alpinist."
-  },
   "Rory Kennedy": {
     "tmdbPersonId": 1037308,
     "photo": "https://image.tmdb.org/t/p/w185/e7Sy1VCnQq5dFEozkTbSXO8U3uU.jpg",
@@ -254,11 +230,11 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Rory_Kennedy",
     "blurb": "American director of Downfall: The Case Against Boeing and The Synanon Fix."
   },
-  "Russ Malkin": {
-    "tmdbPersonId": 1203461,
-    "photo": "https://image.tmdb.org/t/p/w185/dqBgAOG7EAtXP6Im4asjSrzgY7a.jpg",
-    "imdbId": "nm1748959",
-    "wikipedia": "https://en.wikipedia.org/wiki/Russ_Malkin",
-    "blurb": "Producer and director behind the Long Way motorcycle series."
+  "Stanley Nelson": {
+    "tmdbPersonId": 115893,
+    "photo": "https://image.tmdb.org/t/p/w185/lRYyHCFY0U2RlMVJ7OpPYmkHMvA.jpg",
+    "imdbId": "nm0625747",
+    "wikipedia": "https://en.wikipedia.org/wiki/Stanley_Nelson_Jr.",
+    "blurb": "American director known for films on Black American history, including Freedom Riders and Attica."
   }
 }

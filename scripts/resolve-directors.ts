@@ -1,7 +1,7 @@
-// `npm run resolve-directors`: fills src/data/director-profiles.json for directors with three or more titles.
+// `npm run resolve-directors`: fills src/data/director-profiles.json for featured directors.
 // People come from TMDB credits on catalogue films, never a name search; the Wikipedia link must match their IMDb ID. Blurbs are hand-written and kept.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { makerIndex } from '../src/data/discovery-facets';
+import { isFeatured, makerIndex } from '../src/data/discovery-facets';
 import { details, img, tmdb, type Media } from './tmdb-pipeline';
 
 const FILE = 'src/data/director-profiles.json';
@@ -18,7 +18,7 @@ async function wikipedia(imdbId: string) {
 }
 
 const out: Record<string, Profile> = {}, unresolved: string[] = [];
-for (const maker of makerIndex().filter(m => m.films.length >= 3)) {
+for (const maker of makerIndex().filter(isFeatured)) {
   const votes = new Map<number, number>();
   for (const film of maker.films.filter(f => f.tmdbId && f.mediaType !== 'collection')) {
     const d = await details((film.mediaType === 'tv' ? 'tv' : 'movie') as Media, film.tmdbId!).catch(() => undefined);

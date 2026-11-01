@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from '@tanstack/react-router';
 import { ExternalLink, UserRound } from 'lucide-react';
 import { SNAPSHOT } from '@/data/catalogue';
-import { makerIndex } from '@/data/discovery-facets';
+import { isFeatured, makerIndex } from '@/data/discovery-facets';
 import profiles from '@/data/director-profiles.json';
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { ScrollRow } from '@/components/scroll-row';
@@ -15,12 +15,12 @@ const titles = (n: number) => `${n} ${n === 1 ? 'documentary' : 'documentaries'}
 const ProfileLink = ({ href, label }: { href: string; label: string }) =>
   <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">{label}<ExternalLink className="size-3" /></a>;
 
-// Directors with three or more titles get a full section; everyone else stays in the compact list.
+// Featured directors get a full section; everyone else stays in the compact list.
 export function DirectorsList({ query }: { query: string }) {
   const hash = useLocation({ select: l => l.hash });
   useEffect(() => { if (hash) document.getElementById(hash)?.scrollIntoView(); }, [hash]);
   const every = makerIndex(), all = every.filter(m => m.name.toLowerCase().includes(query.toLowerCase()));
-  const featured = all.filter(m => m.films.length >= 3), others = all.filter(m => m.films.length < 3).sort((a, b) => a.name.localeCompare(b.name));
+  const featured = all.filter(isFeatured), others = all.filter(m => !isFeatured(m)).sort((a, b) => a.name.localeCompare(b.name));
   return <div>
     <h2 className="font-display text-2xl font-semibold">Directors</h2>
     <p className="mt-1 text-sm text-muted-foreground">{every.length} filmmakers, most featured first.</p>
