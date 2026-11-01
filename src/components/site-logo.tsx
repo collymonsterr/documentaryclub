@@ -1,6 +1,8 @@
 // Approved brand mark: amber handheld camera (open top handle, dark side window and dot,
 // viewfinder wedge left, lens wedge right) + real text wordmark. Inline SVG, no banner image.
+import { useRef } from 'react';
 import { Link } from '@tanstack/react-router';
+import { toast } from 'sonner';
 
 export function CameraMark({ className }: { className?: string }) {
   return (
@@ -15,9 +17,29 @@ export function CameraMark({ className }: { className?: string }) {
   );
 }
 
+const EXTRAS_KEY = 'dc-extras';
+export function extrasOn() {
+  try { return localStorage.getItem(EXTRAS_KEY) === '1'; } catch { return false; }
+}
+function toggleExtras() {
+  try {
+    if (extrasOn()) localStorage.removeItem(EXTRAS_KEY); else localStorage.setItem(EXTRAS_KEY, '1');
+    toast(extrasOn() ? 'Extras on' : 'Extras off');
+  } catch {
+    // Without storage the extras simply stay hidden.
+  }
+}
+
 export function SiteLogo() {
+  const clicks = useRef<number[]>([]);
+  // Counted by hand because phones don't report triple clicks reliably.
+  const countClick = () => {
+    const now = Date.now();
+    clicks.current = [...clicks.current.filter(t => now - t < 800), now];
+    if (clicks.current.length === 3) { clicks.current = []; toggleExtras(); }
+  };
   return (
-    <Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' }} aria-label="Documentary Club home"
+    <Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' }} onClick={countClick} aria-label="Documentary Club home"
       className="flex min-w-0 items-center gap-2.5 rounded-sm outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
       <CameraMark className="h-7 w-auto shrink-0 text-primary sm:h-8" />
       <span className="truncate font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">Documentary <span className="text-primary">Club</span></span>

@@ -38,6 +38,7 @@ import {
 } from "@/data/discovery-facets";
 import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
+import { extrasOn } from "@/components/site-logo";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
 import { documentaryCount, listHeading, pageHead, slugify } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
@@ -278,15 +279,8 @@ function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: stri
 // Free, legal viewing searches only (no piracy sources).
 function FreeLegal({ film }: { film: { title: string; year: number } }) {
   const q = encodeURIComponent(film.title);
-  // Personal extras: only shown in a browser switched on with #extras-on (#extras-off undoes it).
+  // Personal extras: only shown in a browser switched on by triple-clicking the logo.
   const [extras, setExtras] = useState(false);
-  useEffect(() => {
-    try {
-      setExtras(localStorage.getItem("dc-extras") === "1");
-    } catch {
-      setExtras(false);
-    }
-  }, []);
   const links = [
     [
       "YouTube (full length)",
@@ -302,7 +296,7 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
       : []),
   ] as const;
   return (
-    <Popover>
+    <Popover onOpenChange={(open) => open && setExtras(extrasOn())}>
       <PopoverTrigger asChild>
         <Button variant="outline">
           <Search />
@@ -330,14 +324,6 @@ function Index() {
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
   const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award });
-  useEffect(() => {
-    try {
-      if (window.location.hash === "#extras-on") localStorage.setItem("dc-extras", "1");
-      if (window.location.hash === "#extras-off") localStorage.removeItem("dc-extras");
-    } catch {
-      // Without storage the extras simply stay hidden.
-    }
-  }, []);
   useEffect(() => {
     setOrder(shuffleIds(CATALOGUE.map((f) => f.id)));
   }, []);
