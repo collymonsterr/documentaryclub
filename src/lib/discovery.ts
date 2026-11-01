@@ -74,7 +74,7 @@ export function parseOmdb(data: OmdbResponse): OmdbMetadata {
 }
 
 type RawProvider = { provider_id: number; provider_name: string; logo_path?: string };
-type Region = { link?: string; flatrate?: RawProvider[]; rent?: RawProvider[]; buy?: RawProvider[] };
+type Region = { link?: string; flatrate?: RawProvider[]; free?: RawProvider[]; ads?: RawProvider[]; rent?: RawProvider[]; buy?: RawProvider[] };
 export function parseProviders(data?: { results?: Record<string, Region> }, country = 'IE'): Enrichment['providers'] {
   const region = data?.results?.[country];
   if (!region) return unknownProviders();
@@ -82,9 +82,15 @@ export function parseProviders(data?: { results?: Record<string, Region> }, coun
     id: p.provider_id, name: p.provider_name, highlighted: p.provider_id === 8 || p.provider_id === 9,
     logo: p.logo_path && /^\/[a-zA-Z0-9._-]+$/.test(p.logo_path) ? `https://image.tmdb.org/t/p/w92${p.logo_path}` : undefined,
   }])).values()];
-  const flatrate = parse(region.flatrate), rent = parse(region.rent), buy = parse(region.buy);
+  const flatrate = parse([...(region.flatrate ?? []), ...(region.free ?? []), ...(region.ads ?? [])]), rent = parse(region.rent), buy = parse(region.buy);
   return { known: flatrate.length + rent.length + buy.length > 0, link: region.link?.startsWith('https://www.themoviedb.org/') ? region.link : undefined, flatrate, rent, buy };
 }
+
+// What a visitor can watch with what they already have: Netflix and Prime first, no paid add-on channels or ad-tier duplicates.
+const STREAMING_LIMIT = 3;
+const streamingRank = (name: string) => (/^netflix/i.test(name) ? 0 : /prime video/i.test(name) ? 1 : 2);
+export const streamingLogos = (providers: Provider[] = []) =>
+  providers.filter(p => !/channel|with ads/i.test(p.name)).sort((a, b) => streamingRank(a.name) - streamingRank(b.name)).slice(0, STREAMING_LIMIT);
 
 export function selectTrailer(videos?: { results?: { site: string; type: string; official?: boolean; key: string }[] }) {
   const video = videos?.results?.find(v => v.site === 'YouTube' && v.type === 'Trailer' && v.official === true && /^[\w-]{11}$/.test(v.key));

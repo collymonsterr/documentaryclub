@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FILMS } from '@/data/films';
-import { canNavigate, cardRatings, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseProviders, readTracking, selectTrailer, selectYouTubeTrailer, sortByRating, TRACKING_KEYS } from './discovery';
+import { canNavigate, cardRatings, firstSentence, inEra, selectAnyTrailer, matchMovie, matchesOmdb, normalizeDirector, parseProviders, readTracking, streamingLogos, selectTrailer, selectYouTubeTrailer, sortByRating, TRACKING_KEYS } from './discovery';
 
 describe('curated catalogue and tracking', () => {
   it('preserves all 17 stable IDs', () => {
@@ -76,6 +76,8 @@ describe('provider rules', () => {
     expect(parsed.buy.map(p => p.name)).toEqual(['Apple TV']);
   });
   it('reads the requested country and its logos', () => { const p = parseProviders({results:{US:{flatrate:[{provider_id:8,provider_name:'Netflix',logo_path:'/n.jpg'}]}}}, 'US'); expect(p.flatrate[0]?.logo).toBe('https://image.tmdb.org/t/p/w92/n.jpg'); });
+  it('counts free and ad-supported services as streaming, but not rentals', () => { const p = parseProviders({results:{IE:{free:[{provider_id:1,provider_name:'RTE Player'}],ads:[{provider_id:2,provider_name:'Tubi'}],rent:[{provider_id:3,provider_name:'Apple TV Store'}]}}}); expect(p.flatrate.map(x => x.name)).toEqual(['RTE Player', 'Tubi']); });
+  it('shows three services at most, Netflix and Prime first, without add-ons', () => { const made = ['MUBI', 'HBO Max Amazon Channel', 'Amazon Prime Video', 'Amazon Prime Video with Ads', 'Apple TV', 'Netflix'].map((name, id) => ({ id, name, highlighted: false })); expect(streamingLogos(made).map(p => p.name)).toEqual(['Netflix', 'Amazon Prime Video', 'MUBI']); });
   it('treats empty provider data as unknown, not unavailable', () => { expect(parseProviders({results:{IE:{}}}).known).toBe(false); });
 });
 describe('Spotlight keyboard guard', () => {

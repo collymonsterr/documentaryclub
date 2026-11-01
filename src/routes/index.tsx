@@ -5,6 +5,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import {
   ArrowLeft,
   ArrowRight,
+  ChevronDown,
   Heart,
   Star,
   Check,
@@ -49,6 +50,7 @@ import {
   gallerySelection,
   canNavigate,
   cardRatings,
+  streamingLogos,
   inEra,
   inLength,
   orderFilms,
@@ -58,7 +60,6 @@ import {
   TRACKING_KEYS,
   type Era,
   type Length,
-  type Provider,
   type Enrichment,
 } from "@/lib/discovery";
 import { getProviders, getVisitorCountry } from "@/lib/tmdb.functions";
@@ -157,50 +158,60 @@ function WatchStrip({
   country: string;
   onCountry: (country: string) => void;
 }) {
-  const logos = (items: Provider[]) =>
-    items.map((p) =>
-      p.logo ? (
-        <img key={p.id} src={p.logo} alt={p.name} title={p.name} className="size-7 rounded-md" />
-      ) : (
-        <span key={p.id}>{p.name}</span>
-      ),
-    );
-  const rentBuy = [...new Map([...(providers?.rent ?? []), ...(providers?.buy ?? [])].map((p) => [p.id, p])).values()];
-  const href = providers?.link ?? fallback;
+  const streaming = streamingLogos(providers?.flatrate);
+  const countryName = COUNTRIES.find(([code]) => code === country)?.[1] ?? country;
   return (
-    <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border pt-3 text-xs">
-      <select
-        aria-label="Streaming country"
-        className="discovery-select w-auto max-w-40 font-semibold"
-        value={country}
-        onChange={(e) => onCountry(e.target.value)}
-      >
-        {COUNTRIES.map(([code, name]) => (
-          <option key={code} value={code}>
-            {name}
-          </option>
-        ))}
-      </select>
+    <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-border pt-3 text-xs">
       {loading ? (
         <span className="text-muted-foreground" role="status">
           Checking…
         </span>
-      ) : providers?.flatrate.length ? (
-        <span className="inline-flex flex-wrap items-center gap-1.5 font-medium">Stream on {logos(providers.flatrate)}</span>
-      ) : rentBuy.length ? (
-        <span className="inline-flex flex-wrap items-center gap-1.5">Rent or buy {logos(rentBuy)}</span>
+      ) : streaming.length ? (
+        <span className="inline-flex items-center gap-1.5 font-medium">
+          Stream on
+          {streaming.map((p) =>
+            p.logo ? (
+              <img key={p.id} src={p.logo} alt={p.name} title={p.name} className="size-7 rounded-md" />
+            ) : (
+              <span key={p.id}>{p.name}</span>
+            ),
+          )}
+        </span>
       ) : (
-        <span className="text-muted-foreground">Availability unknown</span>
+        <span className="text-muted-foreground">No streaming found in {countryName}</span>
       )}
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
-      >
-        {providers?.link ? "All options" : "JustWatch"}
-        <ExternalLink className="size-3" />
-      </a>
+      <Popover>
+        <PopoverTrigger className="inline-flex min-h-7 items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">
+          All options
+          <ChevronDown className="size-3" />
+        </PopoverTrigger>
+        <PopoverContent className="w-64 space-y-3" align="start">
+          <label className="block text-xs text-muted-foreground">
+            Country
+            <select
+              aria-label="Streaming country"
+              className="discovery-select mt-1 w-full"
+              value={country}
+              onChange={(e) => onCountry(e.target.value)}
+            >
+              {COUNTRIES.map(([code, name]) => (
+                <option key={code} value={code}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <a
+            href={providers?.link ?? fallback}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-sm underline-offset-2 hover:underline"
+          >
+            See all ways to watch
+            <ExternalLink className="size-3" />
+          </a>
+        </PopoverContent>
+      </Popover>
     </div>
   );
 }
@@ -1270,40 +1281,32 @@ function Index() {
                     )
                   : `${film.synopsis} ${NOTES[film.id] ?? ""}`}
               </p>
-              {!!EDITORIAL[film.id] && (
-                <div className="mt-3 flex flex-wrap gap-1" aria-label="Moods">
-                  {MOODS.filter((m) => EDITORIAL[film.id]?.moods.includes(m.id)).map((m) => (
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      key={m.id}
-                      title="Editorial mood"
-                      onClick={() => {
-                        setParam({ mood: m.id, film: "", browse: "moods" });
-                      }}
-                    >
-                      {m.label}
-                    </Button>
-                  ))}
-                </div>
-              )}
-              {orderedTags(film.tags).length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1" aria-label="Tags">
-                  {orderedTags(film.tags).map((t) => (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      key={t}
-                      title="Tag"
-                      onClick={() => {
-                        setParam({ tag: t, film: "", browse: "tags" });
-                      }}
-                    >
-                      {tagLabel(t)}
-                    </Button>
-                  ))}
-                </div>
-              )}
+              <div className="mt-3 flex flex-wrap gap-1" aria-label="Moods and tags">
+                {MOODS.filter((m) => EDITORIAL[film.id]?.moods.includes(m.id)).map((m) => (
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    key={m.id}
+                    onClick={() => {
+                      setParam({ mood: m.id, film: "", browse: "moods" });
+                    }}
+                  >
+                    {m.label}
+                  </Button>
+                ))}
+                {orderedTags(film.tags).map((t) => (
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    key={t}
+                    onClick={() => {
+                      setParam({ tag: t, film: "", browse: "tags" });
+                    }}
+                  >
+                    {tagLabel(t)}
+                  </Button>
+                ))}
+              </div>
 
               <div className="mt-4 flex flex-wrap gap-2">
                 <Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}>
