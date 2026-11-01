@@ -6,7 +6,7 @@ export const MOODS = [
   { id: 'funny', label: 'Funny' }, { id: 'feelgood', label: 'Feel-good' },
   { id: 'gripping', label: 'Gripping' }, { id: 'harrowing', label: 'Harrowing' },
   { id: 'infuriating', label: 'Infuriating' }, { id: 'mindblowing', label: 'Mind-blowing' },
-  { id: 'weird', label: 'Gloriously weird' },
+  { id: 'breathtaking', label: 'Breathtaking' }, { id: 'weird', label: 'Gloriously weird' },
 ] as const;
 export const PICKS = [{ id: 'makers', label: 'Great documentary makers' }] as const;
 export const AWARDS = [

@@ -20,8 +20,8 @@ describe('catalogue sheet import', () => {
       if (r.director) expect(film(r.id)?.director).toBe(r.director);
     }
   });
-  it('uses the seven sheet moods, each with titles', () => {
-    expect(MOODS.map(m => m.label)).toEqual(['Funny', 'Feel-good', 'Gripping', 'Harrowing', 'Infuriating', 'Mind-blowing', 'Gloriously weird']);
+  it('uses the eight sheet moods, each with titles', () => {
+    expect(MOODS.map(m => m.label)).toEqual(['Funny', 'Feel-good', 'Gripping', 'Harrowing', 'Infuriating', 'Mind-blowing', 'Breathtaking', 'Gloriously weird']);
     for (const m of MOODS) expect(CATALOGUE.some(f => matchesFacets(f, { award: '', mood: m.id, pick: '', maker: '' }))).toBe(true);
     for (const r of SHEET) expect(EDITORIAL[r.id]?.moods.length ?? 0).toBe(r.moods?.length ?? 0);
   });

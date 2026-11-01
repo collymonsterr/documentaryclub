@@ -27,6 +27,7 @@ export const MOOD_COPY: Record<string, { title: string; description: string }> =
   harrowing: { title: 'Harrowing Documentaries', description: 'Hard to watch and hard to forget, so pick your moment.' },
   infuriating: { title: 'Infuriating Documentaries', description: 'Injustice, greed and failure that will make your blood boil.' },
   mindblowing: { title: 'Mind-blowing Documentaries', description: 'Films that change how you see the world.' },
+  breathtaking: { title: 'Breathtaking Documentaries', description: 'Made to be looked at, so pick the biggest screen you have.' },
   weird: { title: 'Gloriously Weird Documentaries', description: 'Strange people, stranger stories, and all of it true.' },
 };
 export const AWARD_COPY: Record<string, { title: string; description: string }> = {
