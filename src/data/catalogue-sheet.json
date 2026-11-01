@@ -474,5 +474,6 @@
 {"id":"long-way-round","title":"Long Way Round","year":2004,"format":"Series","category":"Adventure","director":"Ewan McGregor, Charley Boorman, David Alexanian, Russ Malkin","moods":["Feel-good"],"tags":["automotive"],"tmdbId":2899,"imdbId":"tt0403778"},
 {"id":"long-way-down","title":"Long Way Down","year":2007,"format":"Series","category":"Adventure","director":"Ewan McGregor, Charley Boorman, David Alexanian, Russ Malkin","moods":["Feel-good"],"tags":["automotive"],"tmdbId":1240,"imdbId":"tt0959858"},
 {"id":"long-way-up","title":"Long Way Up","year":2020,"format":"Series","category":"Adventure","director":"David Alexanian, Charley Boorman, Russ Malkin, Ewan McGregor","moods":["Feel-good"],"tags":["automotive"],"tmdbId":106871,"imdbId":"tt12824922"},
+{"id":"valentino-rossi-the-doctor-series","title":"Valentino Rossi: The Doctor Series","year":2016,"format":"Series","category":"Sport","moods":["Gripping"],"tags":["automotive","free-on-youtube"],"tmdbId":66595},
 {"id":"le-mans-racing-is-everything","title":"Le Mans: Racing Is Everything","year":2017,"format":"Series","category":"Sport","moods":["Gripping"],"tags":["automotive"],"tmdbId":71985,"imdbId":"tt6628364"}
 ]
