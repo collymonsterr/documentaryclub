@@ -61,6 +61,8 @@ export function discoveryShelves(films: Film[]) {
   ];
   return definitions.map(d => ({ ...d, films: films.filter(f => matchesFacets(f, d.selection)) })).filter(s => s.films.length >= 3);
 }
+// Short enough to share a gallery card line with the ratings.
+export const cardCommitment = (film: Film) => film.mediaType === 'tv' ? (film.episodes ? `${film.episodes} eps` : 'Series') : formatCommitment(film);
 export function formatCommitment(film: Film, runtime = SNAPSHOT[film.id]?.runtime ?? film.minutes) {
   if (film.mediaType === 'collection') return film.parts?.length ? `${film.parts.length} films` : 'Film collection';
   if (film.mediaType === 'tv') return film.episodes ? `Series · ${film.episodes} episodes${runtime ? ` · ${runtime} min / ep` : ''}` : 'Series';

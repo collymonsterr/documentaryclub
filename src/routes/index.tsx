@@ -6,6 +6,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Heart,
+  Star,
   Check,
   Grid2X2,
   Maximize2,
@@ -30,9 +31,10 @@ import {
   accolades,
   matchesFacets,
   makerIndex,
+  cardCommitment,
   formatCommitment,
 } from "@/data/discovery-facets";
-import { PICK_TAGS, TAGS, TOPIC_TAGS, cardTags, orderedTags, tagLabel } from "@/data/tags";
+import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardLaurel } from "@/components/award-laurel";
 import { AwardBadges } from "@/components/award-badges";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -44,7 +46,7 @@ import { usePreference, useTracking } from "@/hooks/use-tracking";
 import {
   gallerySelection,
   canNavigate,
-  cardBadges,
+  cardRatings,
   inEra,
   inLength,
   orderFilms,
@@ -227,6 +229,24 @@ function RatingPill({
       {imdb ? score.toFixed(1) : `${score}%`}
       <ExternalLink className="size-3 opacity-60" />
     </a>
+  );
+}
+const RATING_NAMES = { imdb: "IMDb", rt: "Rotten Tomatoes", tmdb: "TMDB" };
+// Generic icons rather than the sites' logos; the name is in the label and tooltip.
+function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: string }) {
+  const name = `${RATING_NAMES[site]} ${value}`;
+  return (
+    <span role="img" aria-label={name} title={name} className="inline-flex items-center gap-0.5">
+      {site === "rt" ? (
+        <svg viewBox="0 0 12 12" className="size-3" aria-hidden>
+          <path d="M3.4 3.2 2.6 1.9l1.9.5L6 1l1.5 1.4 1.9-.5-.8 1.3z" fill="#4ade80" />
+          <circle cx="6" cy="7.2" r="4.3" fill="#ef4444" />
+        </svg>
+      ) : (
+        <Star className="size-3 fill-amber-400 text-amber-400" aria-hidden />
+      )}
+      {value}
+    </span>
   );
 }
 // Free, legal viewing searches only (no piracy sources).
@@ -987,9 +1007,7 @@ function Index() {
             aria-label="Film gallery"
             className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
           >
-            {list.slice(0, shown).map((f) => {
-              const badges = cardBadges(SNAPSHOT[f.id]);
-              return (
+            {list.slice(0, shown).map((f) => (
                 <div key={f.id} data-film-card={f.id} className="film-card min-w-0">
                   <div className="group relative">
                     <Button
@@ -1025,30 +1043,22 @@ function Index() {
                     </div>
                   </div>
                   <h2 className="mt-2 line-clamp-2 min-h-10 text-sm font-medium leading-5">{f.title}</h2>
-                  <p className="mt-1 line-clamp-2 text-xs leading-4 text-muted-foreground">
-                    {years(f)}
-                    {formatCommitment(f) ? ` · ${formatCommitment(f)}` : ""}
-                    {f.pending ? " · Pending" : ""}
-                  </p>
-                  {cardTags(f.tags).length > 0 && (
-                    <div className="mt-1 flex flex-wrap gap-1" aria-label={`${f.title} tags`}>
-                      {cardTags(f.tags).map((t) => (
-                        <span key={t} className="rounded-full border border-border px-2 py-0.5 text-[10px] leading-3">
-                          {tagLabel(t)}
-                        </span>
+                  <div className="mt-1 flex items-center justify-between gap-2 text-xs leading-4 text-muted-foreground">
+                    <p className="min-w-0 truncate">
+                      {years(f)}
+                      {cardCommitment(f) ? ` · ${cardCommitment(f)}` : ""}
+                      {f.pending ? " · Pending" : ""}
+                    </p>
+                    <div className="flex shrink-0 items-center gap-2 tabular-nums">
+                      {cardRatings(SNAPSHOT[f.id]).map((r) => (
+                        <CardRating key={r.site} {...r} />
                       ))}
-                    </div>
-                  )}
-                  <div className="mt-1 flex min-h-7 items-start justify-between gap-1">
-                    <p className="min-w-0 text-[11px] leading-5 text-muted-foreground">{badges.join(" · ")}</p>
-                    <div className="flex shrink-0 items-center gap-1" aria-label={`${f.title} status`}>
                       {shortlist.has(f.id) && <Heart className="size-3 fill-save text-save" aria-label="Saved" />}
                       {watched.has(f.id) && <Check className="size-3 text-success" aria-label="Watched" />}
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              ))}
           </section>
           {shown < list.length && (
             <div className="mt-6 text-center">

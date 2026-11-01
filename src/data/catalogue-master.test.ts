@@ -4,7 +4,7 @@ import { noteHints, parseCsv, serializeCsv, sheetJson, validate } from '../../sc
 import { CATALOGUE } from './catalogue';
 import { CATEGORIES } from './films';
 import { MOODS, matchesFacets } from './discovery-facets';
-import { TAGS, cardTags, orderedTags, tagLabel } from './tags';
+import { TAGS, orderedTags, tagLabel } from './tags';
 
 const text = readFileSync('data/catalogue-master.csv', 'utf8'), rows = parseCsv(text);
 const facets = { award: '', mood: '', pick: '', maker: '' };
@@ -38,7 +38,7 @@ describe('tags', () => {
     expect(matchesFacets(CATALOGUE[0]!, { ...facets, tag: '' })).toBe(true);
   });
   it("puts Editor's Choice first and limits cards to two", () => {
-    expect(cardTags(['ocean', 'essential', 'wine', 'editors-choice'])).toEqual(['editors-choice', 'essential']);
+    expect(orderedTags(['ocean', 'essential', 'wine', 'editors-choice']).slice(0, 2)).toEqual(['editors-choice', 'essential']);
     expect(orderedTags(['ocean', 'wine', 'editors-choice'])).toHaveLength(3);
   });
   it('ignores tags outside the approved list', () => {
