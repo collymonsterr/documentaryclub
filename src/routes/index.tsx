@@ -278,15 +278,6 @@ function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: stri
 // Free, legal viewing searches only (no piracy sources).
 function FreeLegal({ film }: { film: { title: string; year: number } }) {
   const q = encodeURIComponent(film.title);
-  // Personal extras: only shown in a browser switched on with #extras-on (#extras-off undoes it).
-  const [extras, setExtras] = useState(false);
-  useEffect(() => {
-    try {
-      setExtras(localStorage.getItem("dc-extras") === "1");
-    } catch {
-      setExtras(false);
-    }
-  }, []);
   const links = [
     [
       "YouTube (full length)",
@@ -294,12 +285,6 @@ function FreeLegal({ film }: { film: { title: string; year: number } }) {
     ],
     ["Internet Archive", `https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22movies%22`],
     ["Kanopy (library card)", `https://www.kanopy.com/en/search?query=${q}`],
-    ...(extras
-      ? ([
-          ["Download", `https://kickasstorrents.to/usearch/${q}`],
-          ["Download 2", `https://yts.gg/browse-movies/${q}/all/all/0/latest/0/all`],
-        ] as const)
-      : []),
   ] as const;
   return (
     <Popover>
@@ -330,14 +315,6 @@ function Index() {
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
   const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award });
-  useEffect(() => {
-    try {
-      if (window.location.hash === "#extras-on") localStorage.setItem("dc-extras", "1");
-      if (window.location.hash === "#extras-off") localStorage.removeItem("dc-extras");
-    } catch {
-      // Without storage the extras simply stay hidden.
-    }
-  }, []);
   useEffect(() => {
     setOrder(shuffleIds(CATALOGUE.map((f) => f.id)));
   }, []);
