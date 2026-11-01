@@ -1,5 +1,5 @@
 // `npm run og-images`: builds the 1200×630 link-preview images in public/og. Rerun after adding a tag or category.
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import sharp from 'sharp';
 import { CATEGORY_COPY } from '../src/data/category-copy';
 import { CATALOGUE, SNAPSHOT } from '../src/data/catalogue';
@@ -12,7 +12,7 @@ const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const rank = (f: Film) => SNAPSHOT[f.id]?.omdb?.imdb ?? 0;
 const posterCache = new Map<string, Promise<Buffer>>();
 const poster = (url: string) => {
-  if (!posterCache.has(url)) posterCache.set(url, fetch(url).then(r => r.arrayBuffer()).then(b => sharp(Buffer.from(b)).resize(POSTER_W, POSTER_H, { fit: 'cover' }).toBuffer()));
+  if (!posterCache.has(url)) posterCache.set(url, (url.startsWith('/') ? Promise.resolve(readFileSync(`public${url}`)) : fetch(url).then(r => r.arrayBuffer())).then(b => sharp(Buffer.from(b)).resize(POSTER_W, POSTER_H, { fit: 'cover' }).toBuffer()));
   return posterCache.get(url)!;
 };
 async function build(file: string, title: string, films: Film[]) {
