@@ -2,7 +2,7 @@
 export const TAGS = [
   { id: 'automotive', label: 'Automotive' }, { id: 'wine', label: 'Wine' }, { id: 'food-and-drink', label: 'Food & Drink' },
   { id: 'gaming', label: 'Gaming' }, { id: 'climbing', label: 'Climbing' }, { id: 'ocean', label: 'Ocean' },
-  { id: 'free-on-youtube', label: 'Free on YouTube' }, { id: 'editors-choice', label: "Editor's Choice" },
+  { id: 'electronic-music', label: 'Electronic Music' }, { id: 'free-on-youtube', label: 'Free on YouTube' }, { id: 'editors-choice', label: "Editor's Choice" },
 ] as const;
 const CARD_LIMIT = 2;
 export const tagLabel = (id: string) => TAGS.find(t => t.id === id)?.label;

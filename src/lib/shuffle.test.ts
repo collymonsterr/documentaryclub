@@ -4,7 +4,7 @@ import { CATALOGUE } from '@/data/catalogue';
 const seeded = (s: number) => () => ((s = (s * 16807) % 2147483647) / 2147483647);
 describe('gallery shuffle', () => {
   const ids = CATALOGUE.map(f => f.id);
-  it('keeps every catalogue ID exactly once', () => { const o = shuffleIds(ids, seeded(7)); expect(o).toHaveLength(487); expect(new Set(o).size).toBe(487); });
+  it('keeps every catalogue ID exactly once', () => { const o = shuffleIds(ids, seeded(7)); expect(o).toHaveLength(512); expect(new Set(o).size).toBe(512); });
   it('is deterministic for an injected RNG and differs between seeds', () => { expect(shuffleIds(ids, seeded(3))).toEqual(shuffleIds(ids, seeded(3))); expect(shuffleIds(ids, seeded(3))).not.toEqual(shuffleIds(ids, seeded(4))); });
   it('filtering preserves the shuffled relative order (stable prev/next)', () => {
     const o = shuffleIds(ids, seeded(9)); const ordered = orderFilms(CATALOGUE, o);
