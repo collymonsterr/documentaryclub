@@ -11,9 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as DirectorsRouteImport } from './routes/directors'
 import { Route as ListRouteImport } from './routes/list'
-import { Route as MakersRouteImport } from './routes/makers'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SuggestRouteImport } from './routes/suggest'
 
@@ -27,19 +25,9 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DirectorsRoute = DirectorsRouteImport.update({
-  id: '/directors',
-  path: '/directors',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ListRoute = ListRouteImport.update({
   id: '/list',
   path: '/list',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MakersRoute = MakersRouteImport.update({
-  id: '/makers',
-  path: '/makers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -56,18 +44,14 @@ const SuggestRoute = SuggestRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
-  '/makers': typeof MakersRoute
   '/privacy': typeof PrivacyRoute
   '/suggest': typeof SuggestRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
-  '/makers': typeof MakersRoute
   '/privacy': typeof PrivacyRoute
   '/suggest': typeof SuggestRoute
 }
@@ -75,48 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/directors': typeof DirectorsRoute
   '/list': typeof ListRoute
-  '/makers': typeof MakersRoute
   '/privacy': typeof PrivacyRoute
   '/suggest': typeof SuggestRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/directors'
-    | '/list'
-    | '/makers'
-    | '/privacy'
-    | '/suggest'
+  fullPaths: '/' | '/about' | '/list' | '/privacy' | '/suggest'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/directors'
-    | '/list'
-    | '/makers'
-    | '/privacy'
-    | '/suggest'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/directors'
-    | '/list'
-    | '/makers'
-    | '/privacy'
-    | '/suggest'
+  to: '/' | '/about' | '/list' | '/privacy' | '/suggest'
+  id: '__root__' | '/' | '/about' | '/list' | '/privacy' | '/suggest'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  DirectorsRoute: typeof DirectorsRoute
   ListRoute: typeof ListRoute
-  MakersRoute: typeof MakersRoute
   PrivacyRoute: typeof PrivacyRoute
   SuggestRoute: typeof SuggestRoute
 }
@@ -137,25 +95,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/directors': {
-      id: '/directors'
-      path: '/directors'
-      fullPath: '/directors'
-      preLoaderRoute: typeof DirectorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/list': {
       id: '/list'
       path: '/list'
       fullPath: '/list'
       preLoaderRoute: typeof ListRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/makers': {
-      id: '/makers'
-      path: '/makers'
-      fullPath: '/makers'
-      preLoaderRoute: typeof MakersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -178,9 +122,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  DirectorsRoute: DirectorsRoute,
   ListRoute: ListRoute,
-  MakersRoute: MakersRoute,
   PrivacyRoute: PrivacyRoute,
   SuggestRoute: SuggestRoute,
 }

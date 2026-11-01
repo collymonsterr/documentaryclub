@@ -17,6 +17,11 @@ describe('clean URLs', () => {
     expect(input('/directors/errol-morris')?.searchParams.get('maker')).toBe('Errol Morris');
     expect(input('/film/1')?.searchParams.get('film')).toBe('"1"');
   });
+  it('serves the Directors page from the home route', () => {
+    expect(input('/directors')?.search).toBe('?browse=directors');
+    expect(input('/makers')?.search).toBe('?browse=directors');
+    expect(output('/?browse=directors')?.pathname).toBe('/directors');
+  });
   it('leaves unknown paths alone so they 404', () => {
     for (const path of ['/tags/nope', '/categories/nope', '/directors/nope', '/film/nope', '/tags/wine/extra', '/nope', '/list']) expect(input(path)).toBeUndefined();
   });

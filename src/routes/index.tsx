@@ -36,10 +36,11 @@ import {
 } from "@/data/discovery-facets";
 import { CopyLink } from "@/components/copy-link";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
-import { documentaryCount, listHeading, pageHead } from "@/lib/site-urls";
+import { documentaryCount, listHeading, pageHead, slugify } from "@/lib/site-urls";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardIcons } from "@/components/award-icons";
 import { AwardBadges } from "@/components/award-badges";
+import { DirectorsList } from "@/components/directors-list";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { DocumentaryPoster } from "@/components/documentary-poster";
 import { ScrollRow } from "@/components/scroll-row";
@@ -493,7 +494,7 @@ function Index() {
     setShown(PAGE);
   }, [filter, listFilter, query, type, sort, era, len, hideWatched, facet.award, facet.mood, facet.pick, facet.maker, facet.tag]);
   // A shared link may name a film outside the current filters; show it anyway.
-  const topDirectors = useMemo(() => makerIndex().filter((m) => m.films.length >= 3), []);
+  const [directorQuery, setDirectorQuery] = useState("");
   const film = list.find((f) => f.id === search.film) ?? CATALOGUE.find((f) => f.id === search.film) ?? list[0];
   const idx = list.findIndex((f) => f.id === film?.id);
   // Baseline metadata ships in the snapshot; only Irish availability is fetched live, for the selected title.
@@ -534,28 +535,9 @@ function Index() {
   const browseFrom = (patch: Partial<typeof searchDefaults>) => navigate({ search: { ...searchDefaults, sort: search.sort, ...patch } });
   const toggleList = (which: "shortlist" | "watched") =>
     navigate({ search: (prev) => ({ ...prev, film: "", list: prev.list === which ? "" : which }) });
-  // Director links: open the gallery filtered to everything we have by that filmmaker.
-  const searchDirector = (name: string) => {
-    setQuery(name);
-    navigate({
-      search: (prev) => ({
-        ...prev,
-        film: "",
-        q: name,
-        list: "",
-        cat: "all",
-        era: "all",
-        len: "all",
-        type: "all",
-        award: "",
-        mood: "",
-        pick: "",
-        maker: name,
-        tag: "",
-        browse: "directors",
-      }),
-    });
-  };
+  // Director links: jump to that filmmaker on the Directors page.
+  const searchDirector = (name: string) =>
+    navigate({ search: { ...searchDefaults, browse: "directors" }, hash: slugify(name) });
   const clearFilters = () => {
     setQuery("");
     navigate({
@@ -605,7 +587,7 @@ function Index() {
   const tabDefaults = {
     topics: {},
     moods: { mood: MOODS[0].id },
-    directors: { maker: topDirectors[0]?.name ?? "" },
+    directors: {},
     awards: { award: AWARDS[0].id },
     tags: { tag: TAGS[0].id },
   };
@@ -919,7 +901,7 @@ function Index() {
               variant="ghost"
               className="browse-tab"
               aria-pressed={browse === id}
-              onClick={() => (browse === id ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
+              onClick={() => (browse === id && id !== "directors" ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
             >
               {label}
             </Button>
@@ -928,6 +910,21 @@ function Index() {
             <Link to="/about">About</Link>
           </Button>
         </nav>
+        {browse === "directors" ? (
+          <div className="discovery-chips">
+            <Input
+              type="search"
+              aria-label="Find a director"
+              placeholder="Find a director"
+              value={directorQuery}
+              onChange={(e) => {
+                setDirectorQuery(e.target.value);
+                if (facet.maker) setBrowse({ browse: "directors" });
+              }}
+              className="h-9 w-full sm:w-64"
+            />
+          </div>
+        ) : (
         <ScrollRow label="Discovery options" className="discovery-chips">
           {browse === "topics" ? (
             filters.map((f) => (
@@ -953,26 +950,6 @@ function Index() {
                 {t.label}
               </Button>
             ))
-          ) : browse === "directors" ? (
-            <>
-              {topDirectors.map((m) => (
-                <Button
-                  key={m.name}
-                  size="sm"
-                  variant={facet.maker === m.name ? "default" : "ghost"}
-                  aria-pressed={facet.maker === m.name}
-                  onClick={() => setBrowse({ maker: m.name })}
-                >
-                  {m.name} <span className="text-xs opacity-70">{m.films.length}</span>
-                </Button>
-              ))}
-              <Button asChild size="sm" variant="link">
-                <Link to="/makers">
-                  All directors
-                  <ArrowRight />
-                </Link>
-              </Button>
-            </>
           ) : (
             (browse === "awards" ? AWARDS : MOODS).map((f) => {
               const key = browse === "awards" ? "award" : "mood";
@@ -990,6 +967,7 @@ function Index() {
             })
           )}
         </ScrollRow>
+        )}
       </div>
       {(query || activeFilters > 0 || listFilter) && (
         <div className="mb-3 flex items-center gap-2 text-xs text-muted-foreground">
@@ -1041,7 +1019,9 @@ function Index() {
           </Button>
         </p>
       )}
-      {!film ? (
+      {browse === "directors" && !facet.maker && view === "gallery" ? (
+        <DirectorsList query={directorQuery} />
+      ) : !film ? (
         <div className="py-16 text-center">
           <p className="text-muted-foreground">No films in this selection.</p>
           <Button variant="ghost" className="mt-3" onClick={clearFilters}>
@@ -1323,7 +1303,7 @@ function Index() {
         <Link to="/list" className="underline">
           All titles by category
         </Link>
-        <Link to="/makers" className="underline">
+        <Link to="/" search={{ ...searchDefaults, browse: "directors" }} className="underline">
           Directors
         </Link>
         <Link to="/about" className="underline">

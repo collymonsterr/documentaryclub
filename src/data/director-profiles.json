@@ -1,0 +1,264 @@
+{
+  "Alex Gibney": {
+    "tmdbPersonId": 71797,
+    "photo": "https://image.tmdb.org/t/p/w185/i66xSiaYwo9lgjIZwglrc2bYUG7.jpg",
+    "imdbId": "nm0316795",
+    "wikipedia": "https://en.wikipedia.org/wiki/Alex_Gibney",
+    "blurb": "American filmmaker behind the Oscar-winning Taxi to the Dark Side and a long run of investigations into power and fraud."
+  },
+  "Errol Morris": {
+    "tmdbPersonId": 18533,
+    "photo": "https://image.tmdb.org/t/p/w185/p0OVTOHWNOaEfK8eUjvey6uEbRp.jpg",
+    "imdbId": "nm0001554",
+    "wikipedia": "https://en.wikipedia.org/wiki/Errol_Morris",
+    "blurb": "American director known for The Thin Blue Line and the Oscar-winning The Fog of War."
+  },
+  "Werner Herzog": {
+    "tmdbPersonId": 6818,
+    "photo": "https://image.tmdb.org/t/p/w185/qKlz1oM482Xf0jTPfLiR6qXlLYK.jpg",
+    "imdbId": "nm0001348",
+    "wikipedia": "https://en.wikipedia.org/wiki/Werner_Herzog",
+    "blurb": "German filmmaker drawn to people at the extremes, known for narrating his own films."
+  },
+  "Adam Curtis": {
+    "tmdbPersonId": 142618,
+    "photo": "https://image.tmdb.org/t/p/w185/p3uepYRgLKb0wgdoUBqH9AcVZJI.jpg",
+    "imdbId": "nm0193231",
+    "wikipedia": "https://en.wikipedia.org/wiki/Adam_Curtis",
+    "blurb": "British filmmaker who builds sweeping essay films from BBC archive footage."
+  },
+  "Joe Berlinger": {
+    "tmdbPersonId": 69237,
+    "photo": "https://image.tmdb.org/t/p/w185/yvCTSlShNLmaq9NNlFKpFOLrVeJ.jpg",
+    "imdbId": "nm0075666",
+    "wikipedia": "https://en.wikipedia.org/wiki/Joe_Berlinger",
+    "blurb": "American director of the Paradise Lost trilogy and many true-crime films."
+  },
+  "Louis Theroux": {
+    "tmdbPersonId": 219396,
+    "photo": "https://image.tmdb.org/t/p/w185/bd1aUigEuidrND9C1vumCN3pC0o.jpg",
+    "imdbId": "nm0857621",
+    "wikipedia": "https://en.wikipedia.org/wiki/Louis_Theroux",
+    "blurb": "British broadcaster known for gently disarming encounters with unusual people."
+  },
+  "Chris Smith": {
+    "tmdbPersonId": 31654,
+    "photo": "https://image.tmdb.org/t/p/w185/w7YxLmX6901brkneH06nxPBSmji.jpg",
+    "imdbId": "nm0807687",
+    "wikipedia": "https://en.wikipedia.org/wiki/Chris_Smith_(filmmaker)",
+    "blurb": "American director of American Movie and Fyre."
+  },
+  "Michael Moore": {
+    "tmdbPersonId": 17087,
+    "photo": "https://image.tmdb.org/t/p/w185/m5YViuBUXfKAHNEUObGpzhzQPgE.jpg",
+    "imdbId": "nm0601619",
+    "wikipedia": "https://en.wikipedia.org/wiki/Michael_Moore",
+    "blurb": "American filmmaker and provocateur, an Oscar winner for Bowling for Columbine."
+  },
+  "Brett Morgen": {
+    "tmdbPersonId": 102109,
+    "photo": "https://image.tmdb.org/t/p/w185/r1vaHshdJYlzJBmI2RG6yuiqYOd.jpg",
+    "imdbId": "nm0605137",
+    "wikipedia": "https://en.wikipedia.org/wiki/Brett_Morgen",
+    "blurb": "American director of immersive portraits of artists, from Kurt Cobain to David Bowie."
+  },
+  "Bruce Sinofsky": {
+    "tmdbPersonId": 69238,
+    "photo": "https://image.tmdb.org/t/p/w185/1q3XNj3QSLgthnmZKX8lXIhyxIB.jpg",
+    "imdbId": "nm0802501",
+    "wikipedia": "https://en.wikipedia.org/wiki/Bruce_Sinofsky",
+    "blurb": "American director who made Brother's Keeper and the Paradise Lost films with Joe Berlinger."
+  },
+  "Elizabeth Chai Vasarhelyi": {
+    "tmdbPersonId": 1027910,
+    "photo": "https://image.tmdb.org/t/p/w185/hljaKxLMqS9JGYFuEIee0xi4fQg.jpg",
+    "imdbId": "nm1888091",
+    "wikipedia": "https://en.wikipedia.org/wiki/Elizabeth_Chai_Vasarhelyi",
+    "blurb": "American director who won an Oscar for Free Solo with Jimmy Chin."
+  },
+  "Jehane Noujaim": {
+    "tmdbPersonId": 115892,
+    "photo": "https://image.tmdb.org/t/p/w185/vhpzW9NXce0uAq8hbq79gM0A5Xn.jpg",
+    "imdbId": "nm0636675",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jehane_Noujaim",
+    "blurb": "Egyptian-American director of Startup.com and The Square."
+  },
+  "Jimmy Chin": {
+    "tmdbPersonId": 1403129,
+    "photo": "https://image.tmdb.org/t/p/w185/3ay242p85A9QzR785SuBv4xASAp.jpg",
+    "imdbId": "nm3011011",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jimmy_Chin",
+    "blurb": "American climber, photographer and co-director of the Oscar-winning Free Solo."
+  },
+  "Mark Neale": {
+    "tmdbPersonId": 639925,
+    "photo": "https://image.tmdb.org/t/p/w185/alrEBXeti1rG4TbsutevNBc2yqL.jpg",
+    "imdbId": "nm0623715",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mark_Neale",
+    "blurb": "Director of the Faster films about MotoGP motorcycle racing."
+  },
+  "Morgan Neville": {
+    "tmdbPersonId": 228643,
+    "photo": "https://image.tmdb.org/t/p/w185/gi8kgpBsyEh7AFboSoL1AI5dOhE.jpg",
+    "imdbId": "nm1365879",
+    "wikipedia": "https://en.wikipedia.org/wiki/Morgan_Neville",
+    "blurb": "American director who won an Oscar for 20 Feet from Stardom."
+  },
+  "Nick Broomfield": {
+    "tmdbPersonId": 92561,
+    "photo": "https://image.tmdb.org/t/p/w185/fEuA7S6ud5uCUBGVDrjt1zKC8V1.jpg",
+    "imdbId": "nm0112374",
+    "wikipedia": "https://en.wikipedia.org/wiki/Nick_Broomfield",
+    "blurb": "British filmmaker known for putting his pursuit of the story on screen."
+  },
+  "Steve James": {
+    "tmdbPersonId": 122449,
+    "photo": "https://image.tmdb.org/t/p/w185/1n01wuRSyi7ZOdzo4KGoDUZt8HB.jpg",
+    "imdbId": "nm0416945",
+    "wikipedia": "https://en.wikipedia.org/wiki/Steve_James_(film_producer)",
+    "blurb": "American director best known for Hoop Dreams."
+  },
+  "Tiller Russell": {
+    "tmdbPersonId": 1035379,
+    "imdbId": "nm1183164",
+    "blurb": "Director of true-crime films including The Seven Five and The Last Narc."
+  },
+  "Adam Carolla": {
+    "tmdbPersonId": 76245,
+    "photo": "https://image.tmdb.org/t/p/w185/47k9w6HRLnGeU0gVtMeTPJs3ief.jpg",
+    "imdbId": "nm0004805",
+    "wikipedia": "https://en.wikipedia.org/wiki/Adam_Carolla",
+    "blurb": "American comedian and broadcaster who makes films about motor racing."
+  },
+  "Amy J. Berg": {
+    "tmdbPersonId": 74060,
+    "photo": "https://image.tmdb.org/t/p/w185/u24rr2YAYTs5jzrU3d23wPB9ZK4.jpg",
+    "imdbId": "nm1332844",
+    "wikipedia": "https://en.wikipedia.org/wiki/Amy_J._Berg",
+    "blurb": "American director of Deliver Us from Evil and An Open Secret."
+  },
+  "Andrew Jarecki": {
+    "tmdbPersonId": 23287,
+    "photo": "https://image.tmdb.org/t/p/w185/8XpWHXSR8CCkWakCuEEnJKTdTJE.jpg",
+    "imdbId": "nm1285613",
+    "wikipedia": "https://en.wikipedia.org/wiki/Andrew_Jarecki",
+    "blurb": "American director of Capturing the Friedmans and The Jinx."
+  },
+  "Asif Kapadia": {
+    "tmdbPersonId": 55251,
+    "photo": "https://image.tmdb.org/t/p/w185/5FuAWpePS3R5UcIysUrmeNZEGFe.jpg",
+    "imdbId": "nm0438090",
+    "wikipedia": "https://en.wikipedia.org/wiki/Asif_Kapadia",
+    "blurb": "British director of archive-led portraits, including Senna and the Oscar-winning Amy."
+  },
+  "Charley Boorman": {
+    "tmdbPersonId": 69751,
+    "photo": "https://image.tmdb.org/t/p/w185/7aUStN1A5RcQMYS1PZyL2Vlcbfj.jpg",
+    "imdbId": "nm0095564",
+    "wikipedia": "https://en.wikipedia.org/wiki/Charley_Boorman",
+    "blurb": "British motorcycle traveller and co-star of the Long Way series with Ewan McGregor."
+  },
+  "Chris Hegedus": {
+    "tmdbPersonId": 115891,
+    "photo": "https://image.tmdb.org/t/p/w185/qaI1Q9uD49zH2b0If3VYqvuLkyh.jpg",
+    "imdbId": "nm0373698",
+    "wikipedia": "https://en.wikipedia.org/wiki/Chris_Hegedus",
+    "blurb": "American filmmaker who made The War Room with D. A. Pennebaker."
+  },
+  "David Alexanian": {
+    "tmdbPersonId": 126180,
+    "photo": "https://image.tmdb.org/t/p/w185/3Lawo1DbwQeznVgq7sLqhOvXgtR.jpg",
+    "imdbId": "nm1256362",
+    "wikipedia": "https://en.wikipedia.org/wiki/David_Alexanian",
+    "blurb": "Producer and director behind the Long Way motorcycle series."
+  },
+  "Eugene Jarecki": {
+    "tmdbPersonId": 84369,
+    "photo": "https://image.tmdb.org/t/p/w185/9unEGLnp4tGxsPBIFgXDHI4FbjV.jpg",
+    "imdbId": "nm0418659",
+    "wikipedia": "https://en.wikipedia.org/wiki/Eugene_Jarecki",
+    "blurb": "American director of Why We Fight and The House I Live In."
+  },
+  "Ewan McGregor": {
+    "tmdbPersonId": 3061,
+    "photo": "https://image.tmdb.org/t/p/w185/q2UDxfwWnmXTB7khOUF3J9puBVP.jpg",
+    "imdbId": "nm0000191",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ewan_McGregor",
+    "blurb": "Scottish actor and co-star of the Long Way motorcycle journeys."
+  },
+  "Jason Wise": {
+    "tmdbPersonId": 1184624,
+    "photo": "https://image.tmdb.org/t/p/w185/dq8p4x5QodXT8p9B6iD6x26jEEY.jpg",
+    "imdbId": "nm1852117",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jason_Wise_(director)",
+    "blurb": "American director of the Somm films about the world of wine."
+  },
+  "Jeff Orlowski": {
+    "tmdbPersonId": 1074666,
+    "photo": "https://image.tmdb.org/t/p/w185/h8SVOLPPjc8zXx2TTBbFgZKzBol.jpg",
+    "imdbId": "nm2341611",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jeff_Orlowski",
+    "blurb": "American director of Chasing Ice, Chasing Coral and The Social Dilemma."
+  },
+  "Julia Willoughby Nason": {
+    "tmdbPersonId": 1001797,
+    "photo": "https://image.tmdb.org/t/p/w185/zHkgwx4s8GE3FHKHXFN2f0lHWYX.jpg",
+    "imdbId": "nm3749397",
+    "wikipedia": "https://en.wikipedia.org/wiki/Julia_Willoughby_Nason",
+    "blurb": "American director of The Pharmacist, LuLaRich and Shiny Happy People."
+  },
+  "Kirby Dick": {
+    "tmdbPersonId": 112588,
+    "photo": "https://image.tmdb.org/t/p/w185/p9Ar5C5RvZexaqNGqUggQPW4LUp.jpg",
+    "imdbId": "nm0225269",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kirby_Dick",
+    "blurb": "American director who investigates institutions, from the US military to the film ratings board."
+  },
+  "Laura Poitras": {
+    "tmdbPersonId": 220691,
+    "photo": "https://image.tmdb.org/t/p/w185/gRCQMBVyEy7FlA6MAUJ0ESVobLp.jpg",
+    "imdbId": "nm0688636",
+    "wikipedia": "https://en.wikipedia.org/wiki/Laura_Poitras",
+    "blurb": "American director who won an Oscar for Citizenfour."
+  },
+  "Liz Garbus": {
+    "tmdbPersonId": 96199,
+    "photo": "https://image.tmdb.org/t/p/w185/8iMNA3Wqx3wbDwojoYJknXAwLk8.jpg",
+    "imdbId": "nm0305017",
+    "wikipedia": "https://en.wikipedia.org/wiki/Liz_Garbus",
+    "blurb": "American director of What Happened, Miss Simone? and I'll Be Gone in the Dark."
+  },
+  "Mads Brügger": {
+    "tmdbPersonId": 585182,
+    "photo": "https://image.tmdb.org/t/p/w185/eEUBv4ZBqc7DKWi1dkLjJImRHUu.jpg",
+    "imdbId": "nm1366561",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mads_Br%C3%BCgger",
+    "blurb": "Danish journalist and filmmaker known for deadpan undercover stunts."
+  },
+  "Nate Adams": {
+    "tmdbPersonId": 1341689,
+    "imdbId": "nm1969889",
+    "blurb": "Director who has made motor-racing films with Adam Carolla."
+  },
+  "Peter Mortimer": {
+    "tmdbPersonId": 68094,
+    "photo": "https://image.tmdb.org/t/p/w185/xZLu9SZxCEVcRwJWK22cIDuYXid.jpg",
+    "imdbId": "nm2050348",
+    "wikipedia": "https://en.wikipedia.org/wiki/Peter_Mortimer_(filmmaker)",
+    "blurb": "American climbing filmmaker behind The Dawn Wall and The Alpinist."
+  },
+  "Rory Kennedy": {
+    "tmdbPersonId": 1037308,
+    "photo": "https://image.tmdb.org/t/p/w185/e7Sy1VCnQq5dFEozkTbSXO8U3uU.jpg",
+    "imdbId": "nm0448311",
+    "wikipedia": "https://en.wikipedia.org/wiki/Rory_Kennedy",
+    "blurb": "American director of Downfall: The Case Against Boeing and The Synanon Fix."
+  },
+  "Russ Malkin": {
+    "tmdbPersonId": 1203461,
+    "photo": "https://image.tmdb.org/t/p/w185/dqBgAOG7EAtXP6Im4asjSrzgY7a.jpg",
+    "imdbId": "nm1748959",
+    "wikipedia": "https://en.wikipedia.org/wiki/Russ_Malkin",
+    "blurb": "Producer and director behind the Long Way motorcycle series."
+  }
+}

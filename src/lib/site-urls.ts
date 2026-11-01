@@ -21,12 +21,12 @@ const makerSlugs = () => {
   return makers;
 };
 
-type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string };
+type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; browse?: string };
 // The one clean path for a page, or null when it is a filter combination that stays on query parameters.
 export function pagePath(search: PageSearch) {
   const { tag, maker } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '';
   if (search.film) return filmIds.has(search.film) ? `/film/${search.film}` : null;
-  if ([tag, cat, maker].filter(Boolean).length !== 1) return [tag, cat, maker].some(Boolean) ? null : '/';
+  if ([tag, cat, maker].filter(Boolean).length !== 1) return [tag, cat, maker].some(Boolean) ? null : search.browse === 'directors' ? '/directors' : '/';
   if (tag) return tagIds.has(tag) ? `/tags/${tag}` : null;
   if (cat) return categorySlug.has(cat) ? `/categories/${categorySlug.get(cat)}` : null;
   const slug = maker ? makerSlugs().byName.get(maker) : undefined;
@@ -43,6 +43,7 @@ export const urlRewrite = {
     const [, section, slug, extra] = url.pathname.replace(/\/$/, '').split('/');
     if (!section || extra !== undefined) return undefined;
     if (section === 'tags' && !slug) { url.pathname = '/'; url.searchParams.set('tag', TAGS[0].id); url.searchParams.set('browse', 'tags'); return url; }
+    if (!slug && (section === 'directors' || section === 'makers')) { url.pathname = '/'; url.searchParams.set('browse', 'directors'); return url; }
     if (!slug) return undefined;
     if (section === 'tags' && tagIds.has(slug)) { url.searchParams.set('tag', slug); url.searchParams.set('browse', 'tags'); }
     else if (section === 'categories' && categoryBySlug.has(slug)) url.searchParams.set('cat', categoryBySlug.get(slug)!.id);
@@ -55,7 +56,7 @@ export const urlRewrite = {
   output: ({ url }: { url: URL }) => {
     if (url.pathname !== '/') return undefined;
     const get = (key: string) => readValue(url.searchParams.get(key) ?? '');
-    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker') };
+    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), browse: get('browse') };
     const path = pagePath(search);
     if (!path || path === '/') return undefined;
     if (search.film) url.searchParams.delete('film');
@@ -89,6 +90,7 @@ function previewFor(search: PageSearch) {
     const snap = SNAPSHOT[film.id];
     return { title: `${film.title} (${film.year})`, description: firstSentences(snap?.overview ?? film.synopsis), image: snap?.backdrops?.[0] ?? snap?.poster };
   }
+  if (search.browse === 'directors' && !search.maker) return { title: 'Directors', description: 'The documentary filmmakers in the collection, with every title linked.', image: undefined };
   const heading = listHeading(search);
   if (heading?.image) return heading;
   if (heading) {
