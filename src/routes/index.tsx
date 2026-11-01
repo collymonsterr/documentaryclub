@@ -47,6 +47,7 @@ import { SiteLogo } from "@/components/site-logo";
 import { TrailerPlayer } from "@/components/trailer-player";
 import { usePreference, useTracking } from "@/hooks/use-tracking";
 import {
+  browseSelection,
   gallerySelection,
   canNavigate,
   cardRatings,
@@ -320,7 +321,7 @@ function Index() {
   const view = search.film ? "spotlight" : "gallery";
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
-  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker });
+  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: search.award });
   useEffect(() => {
     try {
       if (window.location.hash === "#extras-on") localStorage.setItem("dc-extras", "1");
@@ -392,6 +393,11 @@ function Index() {
     navigate({ search: (prev) => gallerySelection(prev, patch), replace: true });
   };
   const setFilter = (cat: Filter) => setDiscovery({ cat });
+  const setBrowse = (patch: Partial<typeof searchDefaults>) => {
+    restore.current = false;
+    setQuery("");
+    navigate({ search: (prev) => browseSelection(prev, patch), replace: true });
+  };
   const setEra = (e: Era) => setParam({ era: e });
   const setType = (t: string) => setParam({ type: t });
   const setSort = (s: string) => setParam({ sort: s });
@@ -546,6 +552,7 @@ function Index() {
         pick: "",
         maker: name,
         tag: "",
+        browse: "directors",
       }),
     });
   };
@@ -567,6 +574,7 @@ function Index() {
         pick: "",
         maker: "",
         tag: "",
+        browse: "topics",
       }),
       replace: true,
     });
@@ -577,6 +585,8 @@ function Index() {
     const pick = pool[Math.floor(Math.random() * pool.length)];
     if (pick) openSpotlight(pick.id);
   };
+  const selections = [facet.award, facet.mood, facet.maker, facet.tag, filter === "all" ? "" : filter].filter(Boolean).length;
+  // The tab's own selection is not a dropdown filter, so it doesn't count here.
   const activeFilters = [
     type !== "all",
     sort !== "random",
@@ -589,8 +599,16 @@ function Index() {
     !!facet.maker,
     !!facet.tag,
     filter !== "all",
-  ].filter(Boolean).length;
+  ].filter(Boolean).length - Math.min(selections, 1);
   const filters: { id: Filter; label: string }[] = [{ id: "all", label: "All" }, ...CATEGORIES];
+  // Every tab opens on something: its first entry, or the whole collection for Categories.
+  const tabDefaults = {
+    topics: {},
+    moods: { mood: MOODS[0].id },
+    directors: { maker: topDirectors[0]?.name ?? "" },
+    awards: { award: AWARDS[0].id },
+    tags: { tag: TAGS[0].id },
+  };
   const filtersControl = (
     <Popover open={filtersOpen} onOpenChange={setFiltersOpen}>
       <PopoverTrigger asChild>
@@ -901,7 +919,7 @@ function Index() {
               variant="ghost"
               className="browse-tab"
               aria-pressed={browse === id}
-              onClick={() => setParam({ browse: id })}
+              onClick={() => (browse === id ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
             >
               {label}
             </Button>
@@ -918,56 +936,32 @@ function Index() {
                 size="sm"
                 variant={filter === f.id ? "default" : "ghost"}
                 aria-pressed={filter === f.id}
-                onClick={() => setFilter(f.id)}
+                onClick={() => setBrowse({ cat: f.id })}
               >
                 {f.label}
               </Button>
             ))
           ) : browse === "tags" ? (
-            <>
-              <Button size="sm" variant={!facet.tag ? "default" : "ghost"} onClick={() => setDiscovery({ tag: "" })}>
-                All
+            TAGS.map((t) => (
+              <Button
+                key={t.id}
+                size="sm"
+                variant={facet.tag === t.id ? "default" : "ghost"}
+                aria-pressed={facet.tag === t.id}
+                onClick={() => setBrowse({ tag: t.id })}
+              >
+                {t.label}
               </Button>
-              {PICK_TAGS.map((t) => (
-                <Button
-                  key={t.id}
-                  size="sm"
-                  variant={facet.tag === t.id ? "default" : "outline"}
-                  aria-pressed={facet.tag === t.id}
-                  onClick={() => setDiscovery({ tag: facet.tag === t.id ? "" : t.id })}
-                >
-                  {t.label}
-                </Button>
-              ))}
-              <span aria-hidden className="mx-1 h-5 w-px shrink-0 self-center bg-border" />
-              {TOPIC_TAGS.map((t) => (
-                <Button
-                  key={t.id}
-                  size="sm"
-                  variant={facet.tag === t.id ? "default" : "ghost"}
-                  aria-pressed={facet.tag === t.id}
-                  onClick={() => setDiscovery({ tag: facet.tag === t.id ? "" : t.id })}
-                >
-                  {t.label}
-                </Button>
-              ))}
-            </>
+            ))
           ) : browse === "directors" ? (
             <>
-              <Button
-                size="sm"
-                variant={!facet.maker ? "default" : "ghost"}
-                onClick={() => setDiscovery({ maker: "" })}
-              >
-                All
-              </Button>
               {topDirectors.map((m) => (
                 <Button
                   key={m.name}
                   size="sm"
                   variant={facet.maker === m.name ? "default" : "ghost"}
                   aria-pressed={facet.maker === m.name}
-                  onClick={() => setDiscovery({ maker: facet.maker === m.name ? "" : m.name, q: "" })}
+                  onClick={() => setBrowse({ maker: m.name })}
                 >
                   {m.name} <span className="text-xs opacity-70">{m.films.length}</span>
                 </Button>
@@ -980,29 +974,20 @@ function Index() {
               </Button>
             </>
           ) : (
-            <>
-              <Button
-                size="sm"
-                variant={!facet[browse === "awards" ? "award" : "mood"] ? "default" : "ghost"}
-                onClick={() => setDiscovery({ [browse === "awards" ? "award" : "mood"]: "" })}
-              >
-                All
-              </Button>
-              {(browse === "awards" ? AWARDS : MOODS).map((f) => {
-                const key = browse === "awards" ? "award" : "mood";
-                return (
-                  <Button
-                    key={f.id}
-                    size="sm"
-                    variant={facet[key] === f.id ? "default" : "ghost"}
-                    aria-pressed={facet[key] === f.id}
-                    onClick={() => setDiscovery({ [key]: facet[key] === f.id ? "" : f.id })}
-                  >
-                    {f.label}
-                  </Button>
-                );
-              })}
-            </>
+            (browse === "awards" ? AWARDS : MOODS).map((f) => {
+              const key = browse === "awards" ? "award" : "mood";
+              return (
+                <Button
+                  key={f.id}
+                  size="sm"
+                  variant={facet[key] === f.id ? "default" : "ghost"}
+                  aria-pressed={facet[key] === f.id}
+                  onClick={() => setBrowse({ [key]: f.id })}
+                >
+                  {f.label}
+                </Button>
+              );
+            })
           )}
         </ScrollRow>
       </div>
@@ -1025,7 +1010,7 @@ function Index() {
           <CopyLink />
         </div>
       )}
-      {(facet.award || facet.mood || facet.pick || facet.maker || facet.tag || filter !== "all") && (
+      {selections > 1 && (
         <div className="mb-3 flex flex-wrap gap-1" aria-label="Active discovery filters">
           {[
             ...(filter !== "all" ? [{ key: "cat", label: filters.find((f) => f.id === filter)?.label ?? filter }] : []),
@@ -1283,7 +1268,7 @@ function Index() {
                     variant="secondary"
                     key={m.id}
                     onClick={() => {
-                      setParam({ mood: m.id, film: "", browse: "moods" });
+                      browseFrom({ mood: m.id, browse: "moods" });
                     }}
                   >
                     {m.label}
@@ -1295,7 +1280,7 @@ function Index() {
                     variant="secondary"
                     key={t}
                     onClick={() => {
-                      setParam({ tag: t, film: "", browse: "tags" });
+                      browseFrom({ tag: t, browse: "tags" });
                     }}
                   >
                     {tagLabel(t)}

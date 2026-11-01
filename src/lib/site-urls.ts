@@ -1,5 +1,5 @@
 import { CATEGORIES } from '@/data/films';
-import { CATEGORY_COPY } from '@/data/category-copy';
+import { AWARD_COPY, CATEGORY_COPY, MOOD_COPY } from '@/data/category-copy';
 import { CATALOGUE, SNAPSHOT } from '@/data/catalogue';
 import { makerIndex } from '@/data/discovery-facets';
 import { TAGS } from '@/data/tags';
@@ -21,7 +21,7 @@ const makerSlugs = () => {
   return makers;
 };
 
-type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string };
+type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string };
 // The one clean path for a page, or null when it is a filter combination that stays on query parameters.
 export function pagePath(search: PageSearch) {
   const { tag, maker } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '';
@@ -42,7 +42,7 @@ export const urlRewrite = {
   input: ({ url }: { url: URL }) => {
     const [, section, slug, extra] = url.pathname.replace(/\/$/, '').split('/');
     if (!section || extra !== undefined) return undefined;
-    if (section === 'tags' && !slug) { url.pathname = '/'; url.searchParams.set('browse', 'tags'); return url; }
+    if (section === 'tags' && !slug) { url.pathname = '/'; url.searchParams.set('tag', TAGS[0].id); url.searchParams.set('browse', 'tags'); return url; }
     if (!slug) return undefined;
     if (section === 'tags' && tagIds.has(slug)) { url.searchParams.set('tag', slug); url.searchParams.set('browse', 'tags'); }
     else if (section === 'categories' && categoryBySlug.has(slug)) url.searchParams.set('cat', categoryBySlug.get(slug)!.id);
@@ -71,7 +71,9 @@ export const urlRewrite = {
 const firstSentences = (text: string, max = 180) => (text.length <= max ? text : `${text.slice(0, max).replace(/\s+\S*$/, '')}…`);
 export function listHeading(search: PageSearch) {
   const cat = search.cat && search.cat !== 'all' ? search.cat : '';
-  if ([search.tag, cat, search.maker].filter(Boolean).length !== 1) return null;
+  if ([search.tag, cat, search.maker, search.mood, search.award].filter(Boolean).length !== 1) return null;
+  const copied = search.mood ? MOOD_COPY[search.mood] : search.award ? AWARD_COPY[search.award] : undefined;
+  if (search.mood || search.award) return copied ? { ...copied, image: undefined } : null;
   const tag = TAGS.find(t => t.id === search.tag);
   if (tag) return { title: tag.title, description: tag.description, image: `/og/tags-${tag.id}.jpg` };
   if (search.maker) return makerSlugs().byName.has(search.maker) ? { title: `Documentaries by ${search.maker}`, description: `The ${search.maker} documentaries in the collection.`, image: undefined } : null;
@@ -90,7 +92,7 @@ function previewFor(search: PageSearch) {
   const heading = listHeading(search);
   if (heading?.image) return heading;
   if (heading) {
-    const top = CATALOGUE.filter(f => f.director.split(', ').includes(search.maker ?? '')).find(f => SNAPSHOT[f.id]?.backdrops?.length);
+    const top = !search.maker ? undefined : CATALOGUE.filter(f => f.director.split(', ').includes(search.maker!)).find(f => SNAPSHOT[f.id]?.backdrops?.length);
     return { ...heading, image: top ? SNAPSHOT[top.id]?.backdrops?.[0] : undefined };
   }
   return { title: 'A personal collection of documentaries', description: `${CATALOGUE.length} documentaries worth your time, with trailers, ratings and where to watch them.`, image: undefined };

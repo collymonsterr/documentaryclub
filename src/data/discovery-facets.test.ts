@@ -13,6 +13,12 @@ describe('evidence-led discovery', () => {
     expect(accolades(f, '').map(a => a.label)).toEqual(['BAFTA Winner – Best Documentary 2020', "Cannes L'Œil d'or 2019", 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', 'Some Regional Prize 2019', 'Oscar Nominee – Best Documentary Feature 2020']);
     expect(topAwards(f).map(a => a.body)).toEqual(['bafta', 'cannes', 'sundance']);
   });
+  it('uses named OMDb Emmy and BAFTA evidence only as a generic fallback', () => {
+    const blank = { ...film('skywalkers'), awards: [] };
+    expect(accolades(blank, 'Won 3 Primetime Emmys. 5 wins total')[0]).toMatchObject({ label: 'Emmy Winner', body: 'emmy', facet: 'other-win' });
+    expect(accolades(blank, 'Nominated for 1 BAFTA Award. 2 wins')[0]).toMatchObject({ label: 'BAFTA Nominee', body: 'bafta', facet: 'other-nominee' });
+    expect(accolades({ ...blank, awards: ['BAFTA Winner – Best Documentary 2020'] }, 'Nominated for 1 BAFTA Award')).toHaveLength(1);
+  });
   it('never turns unnamed aggregate counts into festival awards', () => {
     expect(accolades({ ...film('skywalkers'), awards: [] }, '1 win & 3 nominations')).toEqual([]);
     expect(accolades({ ...film('skywalkers'), awards: [] }, 'Nominated for 1 Oscar. 5 wins total')[0]?.label).toBe('Oscar Nominee');

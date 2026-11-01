@@ -19,3 +19,19 @@ export const CATEGORY_COPY: Partial<Record<Category, { title: string; descriptio
   drugs: { title: 'Drug Documentaries', description: 'Addiction, policy and the trade that keeps it all going.' },
   sex: { title: 'Sex Documentaries', description: 'Sex, the industry around it and how society deals with both.' },
 };
+// Same treatment for the Moods and Awards tabs.
+export const MOOD_COPY: Record<string, { title: string; description: string }> = {
+  funny: { title: 'Funny Documentaries', description: 'True stories that will make you laugh out loud.' },
+  feelgood: { title: 'Feel-good Documentaries', description: 'Real people and stories that leave you feeling better than you started.' },
+  gripping: { title: 'Gripping Documentaries', description: "Once these start, you won't want to stop." },
+  harrowing: { title: 'Harrowing Documentaries', description: 'Hard to watch and hard to forget, so pick your moment.' },
+  infuriating: { title: 'Infuriating Documentaries', description: 'Injustice, greed and failure that will make your blood boil.' },
+  mindblowing: { title: 'Mind-blowing Documentaries', description: 'Films that change how you see the world.' },
+  weird: { title: 'Gloriously Weird Documentaries', description: 'Strange people, stranger stories, and all of it true.' },
+};
+export const AWARD_COPY: Record<string, { title: string; description: string }> = {
+  'oscar-win': { title: 'Academy Award Winners', description: 'Documentaries that took home an Oscar.' },
+  'oscar-nominee': { title: 'Academy Award Nominees', description: 'Documentaries nominated for an Oscar.' },
+  'sundance-win': { title: 'Sundance Winners', description: 'Prize winners from the Sundance Film Festival.' },
+  'other-win': { title: 'Other Award Winners', description: 'Winners at BAFTA, the Emmys, Cannes, Berlin and other major awards.' },
+};

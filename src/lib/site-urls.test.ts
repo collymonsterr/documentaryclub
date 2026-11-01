@@ -1,8 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { pagePath, slugify, urlRewrite } from './site-urls';
+import { listHeading, pagePath, slugify, urlRewrite } from './site-urls';
 
 const input = (path: string) => urlRewrite.input({ url: new URL(`https://x.test${path}`) });
 const output = (path: string) => urlRewrite.output({ url: new URL(`https://x.test${path}`) });
+describe('browse headings', () => {
+  it('heads every single selection and steps aside for combinations', () => {
+    expect(listHeading({ mood: 'funny', cat: 'all' })?.title).toBe('Funny Documentaries');
+    expect(listHeading({ award: 'oscar-win' })?.title).toBe('Academy Award Winners');
+    expect(listHeading({ mood: 'funny', cat: 'scams' })).toBeNull();
+  });
+});
 describe('clean URLs', () => {
   it('maps public paths onto home filters', () => {
     expect(input('/tags/wine')?.search).toBe('?tag=wine&browse=tags');

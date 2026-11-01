@@ -5,6 +5,11 @@ export type Provider = { id: number; name: string; highlighted: boolean; logo?: 
 export function gallerySelection<T extends { film: string }>(current: T, patch: Partial<T>): T {
   return { ...current, ...patch, film: '' };
 }
+// Tabs and chips hold one selection: a new one replaces the last. Dropdown filters (era, length, type, sort) stay.
+const NO_SELECTION = { q: '', list: '', cat: 'all', award: '', mood: '', pick: '', maker: '', tag: '' };
+export function browseSelection<T extends { film: string }>(current: T, patch: Partial<T>): T {
+  return { ...current, ...NO_SELECTION, ...patch, film: '' };
+}
 export type Enrichment = {
   status: 'ready' | 'missing-secret' | 'not-found' | 'unavailable';
   tmdbId?: number | undefined;
