@@ -14,6 +14,7 @@
     "test:watch": "vitest",
     "sync-catalogue": "npx --yes bun scripts/sync-catalogue.ts && npx --yes bun scripts/sitemap.ts",
     "og-images": "npx --yes bun scripts/og-images.ts",
+    "indexnow": "npx --yes bun scripts/indexnow.ts",
     "resolve-directors": "npx --yes bun scripts/resolve-directors.ts",
     "youtube": "npx --yes bun scripts/youtube.ts"
   },
