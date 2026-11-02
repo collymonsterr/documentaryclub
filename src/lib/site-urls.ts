@@ -6,7 +6,7 @@ import { TAGS } from '@/data/tags';
 import profiles from '@/data/director-profiles.json';
 
 // Change this one value when the custom domain goes live: previews and canonical links use it.
-export const SITE_ORIGIN = 'https://documentaryclub.lovable.app';
+export const SITE_ORIGIN = 'https://documentaryclub.fyi';
 export const SITE_NAME = 'Documentary Club';
 
 export const slugify = (text: string) => text.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
