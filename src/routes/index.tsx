@@ -1,7 +1,7 @@
 import { createFileRoute, Link, stripSearchParams, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Fragment, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -45,7 +45,7 @@ import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
 import { extrasOn } from "@/components/site-logo";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
-import { TOP, documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
+import { documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
 import { softClick } from "@/lib/utils";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
@@ -1123,20 +1123,15 @@ function Index() {
             aria-label="Film gallery"
             className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
           >
-            {list.slice(0, shown).map((f, i) => (
-              <Fragment key={f.id}>
-                {/* Past the numbered top 25, the rest of a long list sits under its own heading. */}
-                {ranks && heading?.best && i > 0 && (ranks.get(list[i - 1]!.id) ?? 0) <= TOP && (ranks.get(f.id) ?? 0) > TOP && (
-                  <h2 className="col-span-full -mb-2 font-display text-xl font-semibold">More {heading.title.replace(/^The \d+ Best /, "").toLowerCase()}</h2>
-                )}
-                <div data-film-card={f.id} className="film-card min-w-0">
+            {list.slice(0, shown).map((f) => (
+                <div key={f.id} data-film-card={f.id} className="film-card min-w-0">
                   <div className="group relative">
                     <Button asChild variant="ghost" className="h-auto w-full p-0">
                       <a href={`/film/${f.id}`} aria-label={`Open ${f.title}`} onClick={softClick(() => openSpotlight(f.id))}>
                         <DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small />
                       </a>
                     </Button>
-                    {ranks?.has(f.id) && (heading?.best ? ranks.get(f.id)! <= TOP : true) && (
+                    {ranks?.has(f.id) && (
                       <span className="pointer-events-none absolute left-2 top-2 flex size-7 items-center justify-center rounded-full bg-background/90 text-xs font-semibold tabular-nums">
                         {ranks.get(f.id)}
                       </span>
@@ -1186,7 +1181,6 @@ function Index() {
                     </div>
                   </div>
                 </div>
-              </Fragment>
               ))}
           </section>
           {shown < list.length && (

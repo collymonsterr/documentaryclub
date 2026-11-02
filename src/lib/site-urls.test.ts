@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { TOP, filmDescription, listGroups, listHeading, pagePath, selectionFilms, slugify, urlRewrite } from './site-urls';
+import { filmDescription, listGroups, listHeading, pagePath, selectionFilms, slugify, urlRewrite } from './site-urls';
 import { CATALOGUE } from '@/data/catalogue';
 
 const input = (path: string) => urlRewrite.input({ url: new URL(`https://x.test${path}`) });
 const output = (path: string) => urlRewrite.output({ url: new URL(`https://x.test${path}`) });
 describe('browse headings', () => {
   it('heads every single selection and steps aside for combinations', () => {
-    expect(listHeading({ mood: 'funny', cat: 'all' })?.title).toBe(`The ${TOP} Best Funny Documentaries`);
+    expect(listHeading({ mood: 'funny', cat: 'all' })?.title).toBe(`The ${listHeading({ mood: 'funny' })!.count} Best Funny Documentaries`);
     expect(listHeading({ award: 'oscar' })?.title).toBe('Oscar Documentaries');
     expect(pagePath({ award: 'sundance' })).toBe('/awards/sundance');
     expect(pagePath({ browse: 'awards' })).toBe('/awards');

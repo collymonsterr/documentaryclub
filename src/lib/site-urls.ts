@@ -84,8 +84,8 @@ export const urlRewrite = {
 };
 
 const firstSentences = (text: string, max = 180) => (text.length <= max ? text : `${text.slice(0, max).replace(/\s+\S*$/, '')}…`);
-// "Best" lists number their top 25; a page under eight titles is too thin to index.
-export const TOP = 25, MIN_LIST = 8;
+// A page under eight titles is too thin to index.
+export const MIN_LIST = 8;
 const pickTags = new Set<string>(PICK_TAGS.map(t => t.id));
 // The titles one single-selection page lists, in the page's own order: winners first for awards, ranked for everything else.
 export function selectionFilms(search: PageSearch): Film[] {
@@ -108,7 +108,7 @@ export function listHeading(search: PageSearch) {
   const featured = !!search.maker && isFeatured({ name: search.maker, films: selectionFilms(search) });
   return {
     ...base, key, count, ranked, best,
-    title: best ? `The ${Math.min(count, TOP)} Best ${base.title}` : base.title,
+    title: best ? `The ${count} Best ${base.title}` : base.title,
     seoTitle: search.maker ? `${search.maker} Documentaries, Ranked` : undefined,
     intro: LIST_INTROS[key],
     indexable: search.maker ? featured : count >= MIN_LIST,
@@ -164,7 +164,7 @@ function previewFor(search: PageSearch): Preview {
       // The top three by name make each list's description its own.
       description: `${heading.description} ${heading.ranked ? 'Top picks' : 'Including'}: ${names(films.slice(0, 3).map(f => f.title))}.`,
       image: heading.image ?? (top ? SNAPSHOT[top.id]?.backdrops?.[0] : undefined),
-      jsonLd: [itemList(heading.seoTitle ?? heading.title, heading.best ? films.slice(0, TOP) : films), breadcrumbs([['Home', '/'], ...parent, [heading.seoTitle ?? heading.title, path]])],
+      jsonLd: [itemList(heading.seoTitle ?? heading.title, films), breadcrumbs([['Home', '/'], ...parent, [heading.seoTitle ?? heading.title, path]])],
     };
   }
   return { title: 'Extraordinary true stories', seoTitle: 'Extraordinary True Stories: The Best Documentaries to Watch', description: `${CATALOGUE.length} documentaries worth your time, with trailers, ratings and where to watch them.`, image: undefined, jsonLd: siteSchema() };
