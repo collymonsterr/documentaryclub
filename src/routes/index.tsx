@@ -1,7 +1,7 @@
 import { createFileRoute, Link, stripSearchParams, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Fragment, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -38,12 +38,15 @@ import {
   formatCommitment,
   moreFromDirector,
   moreLikeThis,
+  rankFilms,
+  seededRandom,
 } from "@/data/discovery-facets";
 import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
 import { extrasOn } from "@/components/site-logo";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
-import { documentaryCount, listHeading, pageHead } from "@/lib/site-urls";
+import { TOP, documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
+import { softClick } from "@/lib/utils";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
 import { AboutContent } from "@/components/about-content";
@@ -55,6 +58,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { DocumentaryPoster } from "@/components/documentary-poster";
 import { ScrollRow } from "@/components/scroll-row";
 import { SiteLogo } from "@/components/site-logo";
+import { SiteIndex } from "@/components/site-index";
 import { TrailerPlayer } from "@/components/trailer-player";
 import { usePreference, useTracking } from "@/hooks/use-tracking";
 import {
@@ -363,14 +367,13 @@ function RelatedRow({ title, films }: { title: ReactNode; films: CatalogueFilm[]
     </section>
   );
 }
-// Below the trailer: the director's other titles, then a fresh random pick of similar ones on every visit.
+// Below the trailer: the director's other titles, then similar ones. The picks are seeded by the film, so they're server-rendered links.
 function RelatedRows({ film, onDirector }: { film: CatalogueFilm; onDirector: (name: string) => void }) {
   const director = useMemo(() => moreFromDirector(film), [film]);
-  // Random picks are client-only, so the server render and hydration agree.
-  const [like, setLike] = useState<CatalogueFilm[]>([]);
-  useEffect(() => {
-    setLike(moreLikeThis(film, new Set(director?.films.map((f) => f.id))));
-  }, [film, director]);
+  const like = useMemo(
+    () => moreLikeThis(film, new Set(director?.films.map((f) => f.id)), seededRandom(film.id)),
+    [film, director],
+  );
   return (
     <>
       {director && (
@@ -378,9 +381,13 @@ function RelatedRows({ film, onDirector }: { film: CatalogueFilm; onDirector: (n
           title={
             <>
               More from{" "}
-              <button type="button" className="hover:text-primary hover:underline" onClick={() => onDirector(director.name)}>
+              <a
+                href={pagePath({ maker: director.name }) ?? "/directors"}
+                className="hover:text-primary hover:underline"
+                onClick={softClick(() => onDirector(director.name))}
+              >
                 {director.name}
-              </button>
+              </a>
             </>
           }
           films={director.films}
@@ -470,7 +477,7 @@ function Index() {
   const setSort = (s: string) => setParam({ sort: s });
   const reshuffle = () => {
     setOrder(shuffleIds(CATALOGUE.map((f) => f.id)));
-    setSort("random");
+    setSort(heading?.ranked ? "shuffle" : "random");
     setShown(PAGE);
     window.scrollTo(0, 0);
   };
@@ -534,7 +541,9 @@ function Index() {
       )
       .filter((f) => matchesFacets(f, facet));
     if (sort === "random" && facet.award) return byAward(filtered, facet.award);
+    if (sort === "random" && heading?.ranked) return rankFilms(filtered);
     if (sort === "score") return sortByScore(filtered, SNAPSHOT);
+    if (sort === "shuffle") return orderFilms(filtered, order);
     if (sort === "newest") return [...filtered].sort((a, b) => b.year - a.year);
     if (sort === "oldest") return [...filtered].sort((a, b) => a.year - b.year);
     return filtered;
@@ -555,6 +564,7 @@ function Index() {
     facet.pick,
     facet.maker,
     facet.tag,
+    heading?.ranked,
   ]);
   useEffect(() => {
     setShown(PAGE);
@@ -647,6 +657,14 @@ function Index() {
     filter !== "all",
   ].filter(Boolean).length - Math.min(selections, 1);
   const filters: { id: Filter; label: string }[] = [{ id: "all", label: "All" }, ...CATEGORIES];
+  // Rank badges follow the page's whole ranked list, so they only show while nothing else reorders or narrows it.
+  const ranks = useMemo(
+    () =>
+      view === "gallery" && heading?.ranked && sort === "random" && !query && activeFilters === 0 && !listFilter
+        ? new Map(selectionFilms({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood }).map((f, i) => [f.id, i + 1]))
+        : undefined,
+    [view, heading?.ranked, sort, query, activeFilters, listFilter, search.tag, search.cat, search.maker, search.mood],
+  );
   // Every tab opens on something: its first entry, or the whole collection for Categories.
   const tabDefaults = {
     topics: {},
@@ -854,9 +872,9 @@ function Index() {
     <main className="discovery-shell mx-auto max-w-6xl px-4 pb-5 sm:px-6">
       <div className="discovery-navigation">
         <header className="contents">
-          <h1 className="header-brand min-w-0">
+          <div className="header-brand min-w-0">
             <SiteLogo />
-          </h1>
+          </div>
           <div className={`header-search ${searchOpen ? "is-open" : ""}`}>
             <Search className="size-4 shrink-0 text-muted-foreground" />
             <Input
@@ -948,15 +966,17 @@ function Index() {
               ["about", "About"],
             ] as const
           ).map(([id, label]) => (
-            <Button
-              key={id}
-              size="sm"
-              variant="ghost"
-              className="browse-tab"
-              aria-pressed={browse === id}
-              onClick={() => (browse === id && id !== "directors" && id !== "awards" && id !== "about" ? setDiscovery({}) : setBrowse({ browse: id, ...tabDefaults[id] }))}
-            >
-              {label}
+            <Button key={id} asChild size="sm" variant="ghost" className="browse-tab" aria-pressed={browse === id}>
+              <a
+                href={pagePath({ browse: id, ...tabDefaults[id] }) ?? "/"}
+                onClick={softClick(() =>
+                  browse === id && id !== "directors" && id !== "awards" && id !== "about"
+                    ? setDiscovery({})
+                    : setBrowse({ browse: id, ...tabDefaults[id] }),
+                )}
+              >
+                {label}
+              </a>
             </Button>
           ))}
         </nav>
@@ -978,40 +998,28 @@ function Index() {
         <ScrollRow label="Discovery options" className="discovery-chips">
           {browse === "topics" ? (
             filters.map((f) => (
-              <Button
-                key={f.id}
-                size="sm"
-                variant={filter === f.id ? "default" : "ghost"}
-                aria-pressed={filter === f.id}
-                onClick={() => setBrowse({ cat: f.id })}
-              >
-                {f.label}
+              <Button key={f.id} asChild size="sm" variant={filter === f.id ? "default" : "ghost"} aria-pressed={filter === f.id}>
+                <a href={pagePath({ cat: f.id }) ?? "/"} onClick={softClick(() => setBrowse({ cat: f.id }))}>
+                  {f.label}
+                </a>
               </Button>
             ))
           ) : browse === "awards" ? (
             [{ id: "", label: "All", count: AWARDED.length }, ...AWARD_PILLS].map((a) => (
-              <Button
-                key={a.id}
-                size="sm"
-                variant={facet.award === a.id ? "default" : "ghost"}
-                aria-pressed={facet.award === a.id}
-                onClick={() => setBrowse({ award: a.id })}
-              >
-                {a.id && <AwardIcon body={a.id as AwardBody} />}
-                {a.label}
-                <span className="opacity-70">{a.count}</span>
+              <Button key={a.id} asChild size="sm" variant={facet.award === a.id ? "default" : "ghost"} aria-pressed={facet.award === a.id}>
+                <a href={pagePath({ award: a.id, browse: "awards" }) ?? "/awards"} onClick={softClick(() => setBrowse({ award: a.id }))}>
+                  {a.id && <AwardIcon body={a.id as AwardBody} />}
+                  {a.label}
+                  <span className="opacity-70">{a.count}</span>
+                </a>
               </Button>
             ))
           ) : (
             MOODS.map((m) => (
-              <Button
-                key={m.id}
-                size="sm"
-                variant={facet.mood === m.id ? "default" : "ghost"}
-                aria-pressed={facet.mood === m.id}
-                onClick={() => setBrowse({ mood: m.id })}
-              >
-                {m.label}
+              <Button key={m.id} asChild size="sm" variant={facet.mood === m.id ? "default" : "ghost"} aria-pressed={facet.mood === m.id}>
+                <a href={pagePath({ mood: m.id }) ?? "/"} onClick={softClick(() => setBrowse({ mood: m.id }))}>
+                  {m.label}
+                </a>
               </Button>
             ))
           )}
@@ -1021,14 +1029,10 @@ function Index() {
       {browse === "tags" && (
         <nav aria-label="Tags" className="discovery-tags">
           {TAGS.map((t) => (
-            <Button
-              key={t.id}
-              size="sm"
-              variant={facet.tag === t.id ? "default" : "ghost"}
-              aria-pressed={facet.tag === t.id}
-              onClick={() => setBrowse({ tag: t.id })}
-            >
-              {t.label}
+            <Button key={t.id} asChild size="sm" variant={facet.tag === t.id ? "default" : "ghost"} aria-pressed={facet.tag === t.id}>
+              <a href={pagePath({ tag: t.id }) ?? "/"} onClick={softClick(() => setBrowse({ tag: t.id }))}>
+                {t.label}
+              </a>
             </Button>
           ))}
         </nav>
@@ -1049,20 +1053,22 @@ function Index() {
             <DirectorHeader name={facet.maker} count={list.length} />
           ) : (
             <div className="min-w-0">
-              <h2 className="font-display text-2xl font-semibold">{heading.title}</h2>
+              <h1 className="font-display text-2xl font-semibold">{heading.title}</h1>
               <p className="mt-1 text-sm text-muted-foreground">{documentaryCount(list.length)}</p>
               <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
+              {heading.intro && <p className="mt-2 max-w-2xl text-sm leading-relaxed">{heading.intro}</p>}
             </div>
           )}
           <div className="flex shrink-0 items-center gap-2">
             <div className="phone-tools">{toolControls}</div>
-            <SortMenu value={sort} onChange={setSort} defaultLabel={facet.award ? "Winners first" : "Shuffled"} />
+            <SortMenu value={sort} onChange={setSort} defaultLabel={facet.award ? "Winners first" : heading.ranked ? "Best first" : "Shuffled"} />
             <CopyLink />
           </div>
         </div>
       )}
       {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && browse !== "about" && (
         <div className="mb-3 flex items-center justify-between gap-2">
+          <h1 className="sr-only">Extraordinary true stories: {CATALOGUE.length} of the best documentaries to watch</h1>
           <div className="phone-tools">{toolControls}</div>
           <div className="ml-auto"><SortMenu value={sort} onChange={setSort} /></div>
         </div>
@@ -1117,17 +1123,24 @@ function Index() {
             aria-label="Film gallery"
             className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
           >
-            {list.slice(0, shown).map((f) => (
-                <div key={f.id} data-film-card={f.id} className="film-card min-w-0">
+            {list.slice(0, shown).map((f, i) => (
+              <Fragment key={f.id}>
+                {/* Past the numbered top 25, the rest of a long list sits under its own heading. */}
+                {ranks && heading?.best && i > 0 && (ranks.get(list[i - 1]!.id) ?? 0) <= TOP && (ranks.get(f.id) ?? 0) > TOP && (
+                  <h2 className="col-span-full -mb-2 font-display text-xl font-semibold">More {heading.title.replace(/^The \d+ Best /, "").toLowerCase()}</h2>
+                )}
+                <div data-film-card={f.id} className="film-card min-w-0">
                   <div className="group relative">
-                    <Button
-                      variant="ghost"
-                      aria-label={`Open ${f.title}`}
-                      className="h-auto w-full p-0"
-                      onClick={() => openSpotlight(f.id)}
-                    >
-                      <DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small />
+                    <Button asChild variant="ghost" className="h-auto w-full p-0">
+                      <a href={`/film/${f.id}`} aria-label={`Open ${f.title}`} onClick={softClick(() => openSpotlight(f.id))}>
+                        <DocumentaryPoster film={f} src={SNAPSHOT[f.id]?.poster} small />
+                      </a>
                     </Button>
+                    {ranks?.has(f.id) && (heading?.best ? ranks.get(f.id)! <= TOP : true) && (
+                      <span className="pointer-events-none absolute left-2 top-2 flex size-7 items-center justify-center rounded-full bg-background/90 text-xs font-semibold tabular-nums">
+                        {ranks.get(f.id)}
+                      </span>
+                    )}
                     <AwardIcons film={f} />
                     <div className="card-hover-actions absolute right-2 top-2 gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
                       <Button
@@ -1152,7 +1165,11 @@ function Index() {
                       </Button>
                     </div>
                   </div>
-                  <h2 className="mt-2 line-clamp-2 min-h-10 text-sm font-medium leading-5">{f.title}</h2>
+                  <h2 className="mt-2 line-clamp-2 min-h-10 text-sm font-medium leading-5">
+                    <a href={`/film/${f.id}`} className="hover:text-primary" onClick={softClick(() => openSpotlight(f.id))}>
+                      {f.title}
+                    </a>
+                  </h2>
                   {facet.award && <AwardCaption film={f} body={facet.award as AwardBody} />}
                   <div className="mt-1 flex items-center justify-between gap-2 text-xs leading-4 text-muted-foreground">
                     <p className="min-w-0 truncate">
@@ -1169,6 +1186,7 @@ function Index() {
                     </div>
                   </div>
                 </div>
+              </Fragment>
               ))}
           </section>
           {shown < list.length && (
@@ -1234,14 +1252,14 @@ function Index() {
                       {kind(film.mediaType)}
                     </button>
                   )}
-                  <button
-                    type="button"
+                  <a
+                    href={pagePath({ cat: film.categories[0] ?? "all" }) ?? "/"}
                     title={`Browse ${film.genre}`}
                     className="uppercase hover:underline"
-                    onClick={() => browseFrom({ cat: film.categories[0] ?? "all", browse: "topics" })}
+                    onClick={softClick(() => browseFrom({ cat: film.categories[0] ?? "all", browse: "topics" }))}
                   >
                     {film.genre}
-                  </button>
+                  </a>
                   {film.pending && <span className="text-muted-foreground">· Identity pending</span>}
                 </p>
                 <div className="flex items-center gap-2">
@@ -1258,7 +1276,7 @@ function Index() {
                   </Button>
                 </div>
               </div>
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">{film.title}</h2>
+              <h1 className="font-display text-3xl leading-tight sm:text-4xl">{film.title}</h1>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                 {years(film)}
                 {film.director && (
@@ -1268,13 +1286,15 @@ function Index() {
                     {film.director.split(", ").map((d, i, arr) => (
                       <span key={d}>
                         <Button
+                          asChild
                           variant="link"
                           size="sm"
                           title={`See all catalogue titles by ${d}`}
                           className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
-                          onClick={() => searchDirector(d)}
                         >
-                          {d}
+                          <a href={pagePath({ maker: d }) ?? "/directors"} onClick={softClick(() => searchDirector(d))}>
+                            {d}
+                          </a>
                         </Button>
                         {i < arr.length - 1 ? ", " : ""}
                       </span>
@@ -1327,27 +1347,17 @@ function Index() {
               </p>
               <div className="mt-3 flex flex-wrap gap-1" aria-label="Moods and tags">
                 {MOODS.filter((m) => EDITORIAL[film.id]?.moods.includes(m.id)).map((m) => (
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    key={m.id}
-                    onClick={() => {
-                      browseFrom({ mood: m.id, browse: "moods" });
-                    }}
-                  >
-                    {m.label}
+                  <Button asChild size="sm" variant="secondary" key={m.id}>
+                    <a href={pagePath({ mood: m.id }) ?? "/"} onClick={softClick(() => browseFrom({ mood: m.id, browse: "moods" }))}>
+                      {m.label}
+                    </a>
                   </Button>
                 ))}
                 {orderedTags(film.tags).map((t) => (
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    key={t}
-                    onClick={() => {
-                      browseFrom({ tag: t, browse: "tags" });
-                    }}
-                  >
-                    {tagLabel(t)}
+                  <Button asChild size="sm" variant="secondary" key={t}>
+                    <a href={pagePath({ tag: t }) ?? "/"} onClick={softClick(() => browseFrom({ tag: t, browse: "tags" }))}>
+                      {tagLabel(t)}
+                    </a>
                   </Button>
                 ))}
               </div>
@@ -1392,8 +1402,12 @@ function Index() {
           <RelatedRows film={film} onDirector={searchDirector} />
         </>
       )}
+      <SiteIndex />
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
         <span>{CATALOGUE.length} curated true stories.</span>
+        <Link to="/best" className="underline">
+          Best documentary lists
+        </Link>
         <Link to="/list" className="underline">
           All titles by category
         </Link>

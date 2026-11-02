@@ -96,6 +96,24 @@ export function moreLikeThis(film: Film, exclude: Set<string>, rng: () => number
     .map(f => ({ f, tier: tier(f), r: rng() })).filter(x => x.tier < 3)
     .sort((a, b) => a.tier - b.tier || a.r - b.r).slice(0, limit).map(x => x.f);
 }
+// The same "random" sequence for the same film, so server and browser render one list and crawlers see stable links.
+export function seededRandom(seed: string) {
+  let h = 2166136261;
+  for (const ch of seed) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  return () => {
+    h = Math.imul(h ^ (h >>> 15), 2246822507);
+    h = Math.imul(h ^ (h >>> 13), 3266489909);
+    return ((h ^= h >>> 16) >>> 0) / 4294967296;
+  };
+}
+// "Best" lists: Editor's Choice, then Essential, then a blend of IMDb and RT; titles without either rank last.
+export function rankScore(film: Film, snap = SNAPSHOT[film.id]) {
+  const o = snap?.omdb, imdb = o?.imdb !== undefined ? o.imdb * 10 : undefined, rt = o?.rottenTomatoes;
+  const quality = imdb !== undefined && rt !== undefined ? 0.6 * imdb + 0.4 * rt : imdb ?? rt ?? (snap?.tmdbRating ?? 5) * 10 - 10;
+  return quality + (film.tags?.includes('editors-choice') ? 8 : 0) + (film.tags?.includes('essential') ? 5 : 0);
+}
+export const rankFilms = <T extends Film>(films: T[]) =>
+  films.map(f => ({ f, s: rankScore(f) })).sort((a, b) => b.s - a.s || b.f.year - a.f.year || a.f.id.localeCompare(b.f.id)).map(x => x.f);
 // Short enough to share a gallery card line with the ratings.
 export const cardCommitment = (film: Film) => film.mediaType === 'tv' ? (film.episodes ? `${film.episodes} eps` : 'Series') : formatCommitment(film);
 export function formatCommitment(film: Film, runtime = SNAPSHOT[film.id]?.runtime ?? film.minutes) {

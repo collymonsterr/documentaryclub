@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CATALOGUE } from './catalogue';
-import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment, moreFromDirector, moreLikeThis } from './discovery-facets';
+import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment, moreFromDirector, moreLikeThis, rankFilms, seededRandom } from './discovery-facets';
 const film = (id: string) => { const f = CATALOGUE.find(f => f.id === id); if (!f) throw new Error(id); return f; };
 describe('evidence-led discovery', () => {
   it('distinguishes Academy wins from nominations', () => {
@@ -59,5 +59,17 @@ describe('evidence-led discovery', () => {
     const sharesTopic = (f: typeof grizzly) => f.categories.some(c => grizzly.categories.includes(c)) || (f.tags ?? []).some(t => grizzly.tags?.includes(t));
     expect(like.every(sharesTopic)).toBe(true);
     expect(moreFromDirector({ ...grizzly, director: 'Nobody Else' })).toBeUndefined();
+  });
+});
+
+describe('ranked lists and stable related titles', () => {
+  it('puts Editor\'s Choice ahead of an unrated title and is repeatable', () => {
+    const pick = CATALOGUE.find(f => f.tags?.includes('editors-choice'))!, plain = CATALOGUE.find(f => !f.tags?.length && f.id !== pick.id)!;
+    expect(rankFilms([plain, pick])[0]).toBe(pick);
+    expect(rankFilms(CATALOGUE).map(f => f.id)).toEqual(rankFilms([...CATALOGUE].reverse()).map(f => f.id));
+  });
+  it('gives the same "More like this" for the same film on every render', () => {
+    const f = film('grizzly-man');
+    expect(moreLikeThis(f, new Set(), seededRandom(f.id)).map(x => x.id)).toEqual(moreLikeThis(f, new Set(), seededRandom(f.id)).map(x => x.id));
   });
 });

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://documentaryclub.fyi/</loc></url>
+  <url><loc>https://documentaryclub.fyi/best</loc></url>
   <url><loc>https://documentaryclub.fyi/directors</loc></url>
   <url><loc>https://documentaryclub.fyi/awards</loc></url>
   <url><loc>https://documentaryclub.fyi/about</loc></url>
@@ -24,14 +25,17 @@
   <url><loc>https://documentaryclub.fyi/categories/life-stories</loc></url>
   <url><loc>https://documentaryclub.fyi/categories/drugs</loc></url>
   <url><loc>https://documentaryclub.fyi/categories/sex</loc></url>
-  <url><loc>https://documentaryclub.fyi/tags/editors-choice</loc></url>
-  <url><loc>https://documentaryclub.fyi/tags/free-on-youtube</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/funny</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/feel-good</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/gripping</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/harrowing</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/infuriating</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/mind-blowing</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/breathtaking</loc></url>
+  <url><loc>https://documentaryclub.fyi/moods/gloriously-weird</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/netflix-original</loc></url>
-  <url><loc>https://documentaryclub.fyi/tags/presenter-led</loc></url>
-  <url><loc>https://documentaryclub.fyi/tags/go-in-blind</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/automotive</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/wine</loc></url>
-  <url><loc>https://documentaryclub.fyi/tags/essential</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/wrongful-conviction</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/mountains</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/ocean</loc></url>
@@ -42,16 +46,13 @@
   <url><loc>https://documentaryclub.fyi/tags/hackers-and-leaks</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/startups</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/internet-culture</loc></url>
-  <url><loc>https://documentaryclub.fyi/tags/gaming</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/all-archive-footage</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/electronic-music</loc></url>
   <url><loc>https://documentaryclub.fyi/tags/religion</loc></url>
-  <url><loc>https://documentaryclub.fyi/awards/oscars</loc></url>
-  <url><loc>https://documentaryclub.fyi/awards/bafta</loc></url>
-  <url><loc>https://documentaryclub.fyi/awards/emmys</loc></url>
-  <url><loc>https://documentaryclub.fyi/awards/sundance</loc></url>
-  <url><loc>https://documentaryclub.fyi/awards/ida</loc></url>
-  <url><loc>https://documentaryclub.fyi/awards/cannes</loc></url>
+  <url><loc>https://documentaryclub.fyi/tags/editors-choice</loc></url>
+  <url><loc>https://documentaryclub.fyi/tags/presenter-led</loc></url>
+  <url><loc>https://documentaryclub.fyi/tags/go-in-blind</loc></url>
+  <url><loc>https://documentaryclub.fyi/tags/essential</loc></url>
   <url><loc>https://documentaryclub.fyi/directors/alex-gibney</loc></url>
   <url><loc>https://documentaryclub.fyi/directors/errol-morris</loc></url>
   <url><loc>https://documentaryclub.fyi/directors/werner-herzog</loc></url>
@@ -88,6 +89,10 @@
   <url><loc>https://documentaryclub.fyi/directors/rory-kennedy</loc></url>
   <url><loc>https://documentaryclub.fyi/directors/stanley-nelson</loc></url>
   <url><loc>https://documentaryclub.fyi/directors/wim-wenders</loc></url>
+  <url><loc>https://documentaryclub.fyi/awards/oscars</loc></url>
+  <url><loc>https://documentaryclub.fyi/awards/bafta</loc></url>
+  <url><loc>https://documentaryclub.fyi/awards/emmys</loc></url>
+  <url><loc>https://documentaryclub.fyi/awards/sundance</loc></url>
   <url><loc>https://documentaryclub.fyi/film/beyond-utopia</loc></url>
   <url><loc>https://documentaryclub.fyi/film/fire-of-love</loc></url>
   <url><loc>https://documentaryclub.fyi/film/ibelin</loc></url>

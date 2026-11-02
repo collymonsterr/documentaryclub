@@ -20,11 +20,12 @@ export const Route = createFileRoute('/list')({
 function ListPage() {
   return <main className="mx-auto max-w-3xl px-4 pb-10 sm:px-6">
     <header className="flex flex-wrap items-center justify-between gap-3 py-3">
-      <h1><SiteLogo /></h1>
+      <div><SiteLogo /></div>
       <CopyLink className="ml-auto" />
       <Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' }} className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Back to discovery</Link>
     </header>
-    <p className="border-b border-border pb-3 text-xs leading-relaxed text-muted-foreground">{CATALOGUE.length} curated documentary films and series, grouped by subject — every title has exactly one home category. Every title links to its full details, trailer and streaming availability.</p>
+    <h1 className="font-display text-2xl font-semibold">All {CATALOGUE.length} documentaries by category</h1>
+    <p className="mt-1 border-b border-border pb-3 text-xs leading-relaxed text-muted-foreground">{CATALOGUE.length} curated documentary films and series, grouped by subject — every title has exactly one home category. Every title links to its full details, trailer and streaming availability.</p>
     <nav aria-label="Jump to category" className="sticky top-0 z-10 -mx-4 flex flex-wrap gap-x-3 gap-y-1 border-b border-border bg-background px-4 py-2 text-xs sm:-mx-6 sm:px-6">
       {CATEGORIES.map(c => <a key={c.id} href={`#${c.id}`} className="text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">{c.label}</a>)}
     </nav>
@@ -36,7 +37,7 @@ function ListPage() {
           {films.map(f => <li key={f.id}>
             <div className="flex flex-wrap items-baseline gap-x-2">
               <Link to="/" search={{ film: f.id, q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' }} className="font-medium text-foreground underline-offset-2 hover:underline">{f.title}</Link>
-              <span className="text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.director && <> · {f.director.split(', ').map((d, i, arr) => <span key={d}><Link to="/" search={{ film: '', q: d, list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' }} className="underline-offset-2 hover:text-foreground hover:underline">{d}</Link>{i < arr.length - 1 ? ', ' : ''}</span>)}</>}</span>
+              <span className="text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.director && <> · {f.director.split(', ').map((d, i, arr) => <span key={d}><Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: d, tag: '', browse: 'directors' }} className="underline-offset-2 hover:text-foreground hover:underline">{d}</Link>{i < arr.length - 1 ? ', ' : ''}</span>)}</>}</span>
             </div>
             <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{firstSentence(f.synopsis)}</p>
           </li>)}

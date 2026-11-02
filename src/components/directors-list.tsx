@@ -34,7 +34,7 @@ export function DirectorHeader({ name, count }: { name: string; count: number })
   return <div className="flex min-w-0 items-start gap-4">
     <Portrait name={name} />
     <div className="min-w-0">
-      <h2 className="font-display text-2xl font-semibold">{name}</h2>
+      <h1 className="font-display text-2xl font-semibold">{name}</h1>
       <p className="text-sm text-muted-foreground">{titles(count)}</p>
       {PROFILES[name]?.blurb && <p className="mt-1 max-w-2xl text-sm">{PROFILES[name].blurb}</p>}
       <ProfileLinks name={name} />
@@ -49,7 +49,7 @@ export function DirectorsList({ query }: { query: string }) {
   const every = makerIndex(), all = every.filter(m => m.name.toLowerCase().includes(query.toLowerCase()));
   const featured = all.filter(isFeatured), others = all.filter(m => !isFeatured(m)).sort((a, b) => a.name.localeCompare(b.name));
   return <div>
-    <h2 className="font-display text-2xl font-semibold">Directors</h2>
+    <h1 className="font-display text-2xl font-semibold">Directors</h1>
     <p className="mt-1 text-sm text-muted-foreground">{every.length} filmmakers, most featured first.</p>
     {featured.map(m => {
       const p = PROFILES[m.name];
