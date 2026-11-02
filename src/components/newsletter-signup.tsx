@@ -21,8 +21,9 @@ export function NewsletterSignup({ source, title, body, compact = false, classNa
     e.preventDefault();
     setState('sending');
     const result = await send({ data: { email, source, path: window.location.pathname, website } }).catch(() => ({ ok: false }));
-    setState(result.ok ? 'done' : 'error');
-    if (result.ok) trackEvent('newsletter_signup', { source });
+    const ok = result?.ok === true;
+    setState(ok ? 'done' : 'error');
+    if (ok) trackEvent('newsletter_signup', { source });
   };
   return <section aria-label="Weekly email" className={cn('rounded-lg border border-border bg-card/40', compact ? 'p-3' : 'p-4 sm:p-5', className)}>
     <h2 className={cn('font-display font-semibold', compact ? 'text-base' : 'text-lg')}>{title ?? copy.title}</h2>
