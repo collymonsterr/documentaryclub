@@ -8,7 +8,7 @@
 // Then `npm run sync-catalogue`. Progress lives in data/youtube-scan.json, so every step can stop and resume.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseCsv, serializeCsv, type CsvRow } from './catalogue-csv';
-import { judge, namesFilm, parseDuration, playable, type Film, type Verdict, type Video } from './youtube-match';
+import { REGIONS, judge, namesFilm, parseDuration, playable, playsIn, type Film, type Verdict, type Video } from './youtube-match';
 
 const CSV = 'data/catalogue-master.csv', SCAN = 'data/youtube-scan.json', RESULTS = 'data/youtube-results.md', TAG = 'free-on-youtube';
 const API = 'https://www.googleapis.com/youtube/v3', DAILY_UNITS = 9_500, SEARCH_COST = 101;
@@ -117,6 +117,8 @@ function report() {
   writeFileSync(RESULTS, `# YouTube results\n\n${scan.scannedChannels.length} of ${CHANNELS.length} channels scanned, ${scan.searched.length} of ${films.length} films searched.\n\n## Confirmed: ${yes.length}\n\n${head}\n${yes.join('\n')}\n\n## Check by hand: ${maybe.length}\n\n${head}\n${maybe.join('\n')}\n\n## Tagged now, not confirmed: ${dropped.length}\n\n${dropped.join('\n')}\n`);
   console.log(`${yes.length} confirmed, ${maybe.length} to check, ${dropped.length} tagged but unconfirmed. See ${RESULTS}.`);
 }
+// Blank when it plays in all of IE, UK and US, so the film page only adds a note for the exceptions.
+const regionsOf = (v: Video) => { const where = playsIn(v); return where.length === REGIONS.length ? '' : where.join(', '); };
 function approve(ids: string[]) {
   for (const id of ids) { const m = scan.matches[id]?.[0]; if (m) scan.approved[id] = m.id; else console.log(`No match for ${id}`); }
   save();
@@ -128,6 +130,7 @@ function apply(prune: boolean) {
     if (link) {
       if (r.youtube_id !== link.id) added++;
       r.youtube_id = link.id;
+      r.youtube_regions = regionsOf(link);
       if (!tags.includes(TAG)) r.tags = [...tags, TAG].join(', ');
     } else if (prune && r.type === 'Film' && scan.searched.includes(r.id) && tags.includes(TAG)) {
       r.tags = tags.filter(t => t !== TAG).join(', ');
@@ -144,9 +147,10 @@ async function check() {
   for (const r of live) {
     const v = good.get(r.youtube_id);
     // A stored link was already accepted, by rule or by hand; it only goes when the video is removed or plays in no main region.
-    if (v && playable(v)) continue;
+    if (v && playable(v)) { r.youtube_regions = regionsOf(v); continue; }
     console.log(`Gone: ${r.title}`);
     r.youtube_id = '';
+    r.youtube_regions = '';
     r.tags = r.tags.split(',').map(t => t.trim()).filter(t => t && t !== TAG).join(', ');
     delete scan.approved[r.id];
     delete scan.matches[r.id];

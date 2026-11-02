@@ -25,6 +25,7 @@ export const CATEGORIES: { id: Category; label: string }[] = [
 
 export type Film = {
   youtubeId?: string;
+  youtubeRegions?: string[]; // where the YouTube link plays, of IE, GB and US; absent means all three
   netflixId?: string; // from Wikidata P1874, checked against Netflix's own title page
   id: string;
   title: string;

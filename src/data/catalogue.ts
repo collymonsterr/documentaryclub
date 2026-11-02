@@ -62,7 +62,7 @@ const restructured: Film[] = [...originals, ...imported].map(f => {
 
 // data/catalogue-master.csv (final authority, matched by stable id) generates catalogue-sheet.json via `npm run sync-catalogue`.
 // Titles not in the sheet are dropped; sheet titles with no curated source are built from the enrichment snapshot.
-export type SheetRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string; awards?: string[]; youtubeId?: string; netflixId?: string };
+export type SheetRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string; awards?: string[]; youtubeId?: string; youtubeRegions?: string[]; netflixId?: string };
 export const SHEET = sheetJson as SheetRow[];
 const catId = (l: string) => CATEGORIES.find(c => c.label === l)?.id;
 const known = new Set(restructured.map(f => f.id));
@@ -80,7 +80,7 @@ export const CATALOGUE: Film[] = [...restructured, ...created].flatMap(f => {
   const director = r.director ?? (f.director || SNAPSHOT[f.id]?.people?.join(', ') || '');
   const genre = !f.genre || f.genre === label(f.categories[0]!) ? label(cat) : f.genre;
   const { tmdbId, imdbId, ...rest } = f;
-  return [{ ...rest, title: r.title, year: r.year, awards: r.awards ?? [], categories: [cat], genre, director, mediaType: MEDIA[r.format], ...(r.tmdbId ? { tmdbId: r.tmdbId } : {}), ...(r.imdbId ? { imdbId: r.imdbId } : {}), ...(r.tags?.length ? { tags: r.tags } : {}), ...(r.youtubeId ? { youtubeId: r.youtubeId } : {}), ...(r.netflixId ? { netflixId: r.netflixId } : {}) }];
+  return [{ ...rest, title: r.title, year: r.year, awards: r.awards ?? [], categories: [cat], genre, director, mediaType: MEDIA[r.format], ...(r.tmdbId ? { tmdbId: r.tmdbId } : {}), ...(r.imdbId ? { imdbId: r.imdbId } : {}), ...(r.tags?.length ? { tags: r.tags } : {}), ...(r.youtubeId ? { youtubeId: r.youtubeId } : {}), ...(r.youtubeRegions?.length ? { youtubeRegions: r.youtubeRegions } : {}), ...(r.netflixId ? { netflixId: r.netflixId } : {}) }];
 });
 
 export function searchCatalogue(films: Film[], query: string, type: 'all' | 'movie' | 'tv') {

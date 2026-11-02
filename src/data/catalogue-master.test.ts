@@ -14,7 +14,7 @@ describe('master CSV', () => {
   });
   it('round-trips byte for byte, including quoted commas', () => {
     expect(serializeCsv(rows)).toBe(text);
-    expect(parseCsv('id,title,year,type,category,tags,mood,director,tmdb_id,imdb_id,status,notes,awards,youtube_id,netflix_id\nx,"A, ""B""",2000,Film,Crime,"a, b",,,,,new,,,,\n')[0]).toMatchObject({ title: 'A, "B"', tags: 'a, b' });
+    expect(parseCsv('id,title,year,type,category,tags,mood,director,tmdb_id,imdb_id,status,notes,awards,youtube_id,netflix_id,youtube_regions\nx,"A, ""B""",2000,Film,Crime,"a, b",,,,,new,,,,,\n')[0]).toMatchObject({ title: 'A, "B"', tags: 'a, b' });
   });
   it('only uses approved tags, moods and categories', () => {
     expect(validate(rows, { tags: TAGS.map(t => t.id), moods: MOODS.map(m => m.label), categories: CATEGORIES.map(c => c.label) })).toEqual([]);

@@ -292,18 +292,36 @@ function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: stri
     </span>
   );
 }
+// The full film, free on YouTube. A link that only plays in some of Ireland, the UK and the US says where, but only to visitors elsewhere.
+const REGION_NAMES: Record<string, string> = { IE: "Ireland", GB: "UK", US: "US" };
+function WatchOnYouTube({ film, country }: { film: { youtubeId?: string; youtubeRegions?: string[] }; country: string }) {
+  if (!film.youtubeId) return null;
+  const only = film.youtubeRegions?.length && !film.youtubeRegions.includes(country) ? film.youtubeRegions.map((c) => REGION_NAMES[c] ?? c).join(" & ") : "";
+  return (
+    <Button asChild variant="outline">
+      <a href={`https://www.youtube.com/watch?v=${film.youtubeId}`} target="_blank" rel="noreferrer">
+        <Play className="fill-[#FF0000] text-[#FF0000]" />
+        Watch free on YouTube
+        {only && <span className="text-xs font-normal text-muted-foreground">{only} only</span>}
+      </a>
+    </Button>
+  );
+}
 // Free, legal viewing searches only (no piracy sources).
 function FreeLegal({ film }: { film: { title: string; year: number; youtubeId?: string } }) {
   const q = encodeURIComponent(film.title);
   // Personal extras: only shown in a browser switched on by triple-clicking the logo.
   const [extras, setExtras] = useState(false);
+  // A known YouTube link has its own button, so the search is only offered without one.
   const links = [
-    film.youtubeId
-      ? ["Watch the film on YouTube", `https://www.youtube.com/watch?v=${film.youtubeId}`]
-      : [
-          "YouTube (full length)",
-          `https://www.youtube.com/results?search_query=${encodeURIComponent(`${film.title} ${film.year} full documentary`)}`,
-        ],
+    ...(film.youtubeId
+      ? []
+      : ([
+          [
+            "YouTube (full length)",
+            `https://www.youtube.com/results?search_query=${encodeURIComponent(`${film.title} ${film.year} full documentary`)}`,
+          ],
+        ] as const)),
     ["Internet Archive", `https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22movies%22`],
     ["Kanopy (library card)", `https://www.kanopy.com/en/search?query=${q}`],
     ...(extras
@@ -1422,6 +1440,7 @@ function Index() {
                     </a>
                   </Button>
                 )}
+                <WatchOnYouTube film={film} country={country} />
                 <FreeLegal film={film} />
                 <CopyLink path={`/film/${film.id}`} className="h-9" />
               </div>
