@@ -41,6 +41,8 @@ import {
   documentariesLike,
   rankFilms,
   seededRandom,
+  wonAward,
+  youtubePlaysIn,
 } from "@/data/discovery-facets";
 import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
@@ -294,6 +296,30 @@ function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: stri
 }
 // The full film, free on YouTube. A link that only plays in some of Ireland, the UK and the US says where, but only to visitors elsewhere.
 const REGION_NAMES: Record<string, string> = { IE: "Ireland", GB: "UK", US: "US" };
+const REGION_PLACES: Record<string, string> = { IE: "Ireland", GB: "the UK", US: "the US" };
+function YouTubeListControls({ awards, onAwards, blocked, allRegions, onAllRegions, country }: { awards: boolean; onAwards: (on: boolean) => void; blocked: number; allRegions: boolean; onAllRegions: (on: boolean) => void; country: string }) {
+  const place = REGION_PLACES[country] ?? country;
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+      <div className="flex gap-1">
+        <Button size="sm" variant={awards ? "ghost" : "default"} aria-pressed={!awards} onClick={() => onAwards(false)}>
+          All
+        </Button>
+        <Button size="sm" variant={awards ? "default" : "ghost"} aria-pressed={awards} onClick={() => onAwards(true)}>
+          Award winners
+        </Button>
+      </div>
+      {blocked > 0 && (
+        <p className="text-xs text-muted-foreground">
+          {allRegions ? `Including ${blocked} that don't play in ${place}.` : `Showing the ones that play in ${place}.`}{" "}
+          <Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={() => onAllRegions(!allRegions)}>
+            {allRegions ? `Only ${place}` : "Show all regions"}
+          </Button>
+        </p>
+      )}
+    </div>
+  );
+}
 function WatchOnYouTube({ film, country }: { film: { youtubeId?: string; youtubeRegions?: string[] }; country: string }) {
   if (!film.youtubeId) return null;
   const only = film.youtubeRegions?.length && !film.youtubeRegions.includes(country) ? film.youtubeRegions.map((c) => REGION_NAMES[c] ?? c).join(" & ") : "";
@@ -551,6 +577,13 @@ function Index() {
   const fetchProviders = useServerFn(getProviders);
   const fetchCountry = useServerFn(getVisitorCountry);
   const [country, setCountry] = useState(DEFAULT_COUNTRY);
+  // Free on YouTube: show what plays for this visitor and, optionally, only award winners. The server renders the whole list.
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
+  const [ytAllRegions, setYtAllRegions] = useState(false);
+  const [ytAwards, setYtAwards] = useState(false);
+  const ytPage = facet.tag === "free-on-youtube";
+  const ytRegionOnly = ytPage && hydrated && !ytAllRegions;
   // A saved choice wins, then the visitor's location, then their browser's language region.
   useEffect(() => {
     let saved: string | null = null;
@@ -587,7 +620,8 @@ function Index() {
         filter === "all" ? true : filter === "awards" ? accolades(f).length > 0 : f.categories.includes(filter),
       )
       .filter((f) => matchesFacets(f, facet))
-      .filter((f) => !likeIds || likeIds.includes(f.id));
+      .filter((f) => !likeIds || likeIds.includes(f.id))
+      .filter((f) => !ytPage || ((!ytRegionOnly || youtubePlaysIn(f, country)) && (!ytAwards || wonAward(f))));
     if (sort === "random" && likeIds) return [...filtered].sort((a, b) => likeIds.indexOf(a.id) - likeIds.indexOf(b.id));
     if (sort === "random" && facet.award) return byAward(filtered, facet.award);
     if (sort === "random" && heading?.ranked) return rankFilms(filtered);
@@ -615,7 +649,13 @@ function Index() {
     facet.tag,
     heading?.ranked,
     likeIds,
+    ytPage,
+    ytRegionOnly,
+    ytAwards,
+    country,
   ]);
+  const ytBlocked = ytPage && hydrated ? selectionFilms({ tag: "free-on-youtube" }).filter((f) => !youtubePlaysIn(f, country) && (!ytAwards || wonAward(f))).length : 0;
+  const ytNarrowed = ytAwards || (ytRegionOnly && ytBlocked > 0);
   useEffect(() => {
     setShown(PAGE);
   }, [filter, listFilter, query, type, sort, era, len, hideWatched, facet.award, facet.mood, facet.pick, facet.maker, facet.tag]);
@@ -718,10 +758,10 @@ function Index() {
   // Rank badges follow the page's whole ranked list, so they only show while nothing else reorders or narrows it.
   const ranks = useMemo(
     () =>
-      view === "gallery" && heading?.ranked && sort === "random" && !query && activeFilters === 0 && !listFilter
+      view === "gallery" && heading?.ranked && sort === "random" && !query && activeFilters === 0 && !listFilter && !ytNarrowed
         ? new Map(selectionFilms({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, like: search.like, era: search.era, pick: search.pick }).map((f, i) => [f.id, i + 1]))
         : undefined,
-    [view, heading?.ranked, sort, query, activeFilters, listFilter, search.tag, search.cat, search.maker, search.mood, search.like, search.era, search.pick],
+    [view, heading?.ranked, sort, query, activeFilters, listFilter, ytNarrowed, search.tag, search.cat, search.maker, search.mood, search.like, search.era, search.pick],
   );
   // Every tab opens on something: its first entry, or the whole collection for Categories.
   const tabDefaults = {
@@ -1115,6 +1155,16 @@ function Index() {
               <p className="mt-1 text-sm text-muted-foreground">{documentaryCount(list.length)}</p>
               <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
               {heading.intro && <p className="mt-2 max-w-2xl text-sm leading-relaxed">{heading.intro}</p>}
+              {ytPage && (
+                <YouTubeListControls
+                  awards={ytAwards}
+                  onAwards={setYtAwards}
+                  blocked={ytBlocked}
+                  allRegions={ytAllRegions}
+                  onAllRegions={setYtAllRegions}
+                  country={country}
+                />
+              )}
             </div>
           )}
           <div className="flex shrink-0 items-center gap-2">

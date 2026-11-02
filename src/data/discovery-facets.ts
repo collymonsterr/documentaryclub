@@ -3,7 +3,7 @@ import type { Film } from './films';
 import { awardBody, awardRank, type AwardBody } from './award-bodies';
 import { TOPIC_TAGS } from './tags';
 import { LIKE_PAGES } from './like-pages';
-import { service, streamsOn } from './streaming';
+import { STREAMING_COUNTRIES, service, streamsOn } from './streaming';
 
 export const MOODS = [
   { id: 'funny', label: 'Funny' }, { id: 'feelgood', label: 'Feel-good' },
@@ -41,6 +41,10 @@ export function accolades(film: Film, aggregate = SNAPSHOT[film.id]?.omdb?.award
   return records.map((a, i) => [a, i] as const).sort(([a, i], [b, j]) => (a.result === 'Won' ? 0 : 1) - (b.result === 'Won' ? 0 : 1) || awardRank(a.body) - awardRank(b.body) || i - j).map(([a]) => a);
 }
 // A card shows one icon per awarding body, best first.
+export const wonAward = (film: Film) => accolades(film).some(a => a.result === 'Won');
+// YouTube links are only checked in Ireland, the UK and the US; anywhere else we can't tell, so nothing counts as blocked.
+export const youtubePlaysIn = (film: Pick<Film, 'youtubeRegions'>, country: string) =>
+  !(STREAMING_COUNTRIES as readonly string[]).includes(country) || !film.youtubeRegions?.length || film.youtubeRegions.includes(country);
 export const topAwards = (film: Film, limit = 3) => accolades(film).filter((a, i, all) => all.findIndex(b => b.body === a.body) === i).slice(0, limit);
 
 // The film's best award from one body, and a list led by winners, newest first.

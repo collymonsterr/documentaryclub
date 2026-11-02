@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CATALOGUE } from './catalogue';
-import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment, moreFromDirector, moreLikeThis, rankFilms, seededRandom } from './discovery-facets';
+import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment, moreFromDirector, moreLikeThis, rankFilms, seededRandom, wonAward, youtubePlaysIn } from './discovery-facets';
 const film = (id: string) => { const f = CATALOGUE.find(f => f.id === id); if (!f) throw new Error(id); return f; };
 describe('evidence-led discovery', () => {
   it('distinguishes Academy wins from nominations', () => {
@@ -71,5 +71,18 @@ describe('ranked lists and stable related titles', () => {
   it('gives the same "More like this" for the same film on every render', () => {
     const f = film('grizzly-man');
     expect(moreLikeThis(f, new Set(), seededRandom(f.id)).map(x => x.id)).toEqual(moreLikeThis(f, new Set(), seededRandom(f.id)).map(x => x.id));
+  });
+});
+
+describe('Free on YouTube page', () => {
+  it('hides a link only where we know it is blocked', () => {
+    expect(youtubePlaysIn({ youtubeRegions: ['US'] }, 'IE')).toBe(false);
+    expect(youtubePlaysIn({ youtubeRegions: ['US'] }, 'US')).toBe(true);
+    expect(youtubePlaysIn({}, 'GB')).toBe(true);
+    expect(youtubePlaysIn({ youtubeRegions: ['US'] }, 'DE')).toBe(true);
+  });
+  it('counts wins, not nominations, as award winners', () => {
+    expect(CATALOGUE.filter(wonAward).every(f => accolades(f).some(a => a.result === 'Won'))).toBe(true);
+    expect(CATALOGUE.some(f => accolades(f).length > 0 && !wonAward(f))).toBe(true);
   });
 });
