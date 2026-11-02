@@ -67,7 +67,10 @@ describe('decade and Netflix pages', () => {
     expect(output('/?pick=netflix')?.pathname).toBe('/netflix');
     const h = listHeading({ pick: 'netflix' })!;
     expect(h.title).toMatch(/^The \d+ Best Documentaries on Netflix$/);
-    expect(h.key).toBe('netflix');
+    expect(h.key).toBe('streaming:netflix');
+    expect(input('/prime-video')?.search).toBe('?pick=prime-video');
+    expect(output('/?pick=bbc-iplayer')?.pathname).toBe('/bbc-iplayer');
+    expect(listHeading({ pick: 'bbc-iplayer' })!.title).toMatch(/^The \d+ Best Documentaries on BBC iPlayer$/);
     expect(listGroups().map(g => g.label)).toEqual(expect.arrayContaining(['Streaming', 'By decade']));
   });
 });

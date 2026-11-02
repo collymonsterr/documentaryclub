@@ -83,6 +83,30 @@ export const LIKE_PAGES: Record<string, { intro: string; add?: string[]; drop?: 
   'inside-job': {
     intro: "Inside Job explains the 2008 crash better than anything else. These are the documentaries about money, power and who pays for it. Roger & Me is the one to watch next.",
   },
+  'the-staircase': {
+    intro: "The Staircase follows one case for more than 15 years, and you'll change your mind about Michael Peterson more than once. These are the true crime documentaries that make you the jury. Making a Murderer and The Jinx are the obvious next ones.",
+    add: ['making-a-murderer', 'the-jinx', 'the-thin-blue-line', 'amanda-knox'],
+  },
+  'abducted-in-plain-sight': {
+    intro: "Abducted in Plain Sight is the story of a family who trusted their neighbour far too much, and it gets harder to believe with every episode. These are the true stories with the same feeling that nobody saw it coming. Girl in the Picture is the closest.",
+    add: ['girl-in-the-picture', 'the-imposter', 'three-identical-strangers', 'capturing-the-friedmans', 'dear-zachary', 'the-jinx'],
+    drop: ['the-alabama-solution', 'sugarcane'],
+  },
+  'bad-vegan': {
+    intro: "Bad Vegan is the one where a celebrity chef hands over her fortune to a man who promised to make her dog immortal. These are the scams where you can't believe anyone fell for it, until you see how. Tickled and The Tinder Swindler are the two to watch next.",
+  },
+  'the-vow': {
+    intro: "The Vow is NXIVM from the inside: a self-help group that ended with members being branded. These are the best documentaries about cults and the people who got out. Going Clear and Wild Wild Country are the obvious next watches.",
+    add: ['going-clear', 'wild-wild-country', 'holy-hell', 'escaping-twin-flames', 'stolen-youth-inside-the-cult-at-sarah-lawrence', 'heaven-s-gate-the-cult-of-cults', 'love-has-won', 'bikram-yogi-guru-predator', 'keep-sweet-pray-and-obey', 'children-of-god-lost-and-found', 'the-source-family', 'jonestown-the-life-and-death-of-peoples-temple'],
+  },
+  'the-alpinist': {
+    intro: "The Alpinist is about a climber so far off the grid that the film crew kept losing him. These are the climbing documentaries that come closest. Free Solo is the obvious next watch, and Meru is the one people miss.",
+    add: ['free-solo', 'meru', 'the-dawn-wall', 'touching-the-void'],
+  },
+  'chef-s-table': {
+    intro: "Chef's Table comes from David Gelb, who made Jiro Dreams of Sushi, and it shows. These are the food documentaries with the same obsession. Start with Jiro, then Kings of Pastry.",
+    add: ['jiro-dreams-of-sushi', 'kings-of-pastry', 'noma-my-perfect-storm', 'el-bulli-cooking-in-progress', 'city-of-gold', 'the-search-for-general-tso', 'somm'],
+  },
   'senna': {
     intro: "Senna is one of the best sport documentaries ever made, and it's told entirely through archive footage. These are the motorsport documentaries to watch next. TT3D: Closer to the Edge is the most intense.",
   },

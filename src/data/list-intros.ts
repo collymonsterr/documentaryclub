@@ -1,4 +1,4 @@
-// Hand-written intros for the ranked list pages, keyed cat:<id>, tag:<id>, mood:<id>, decade:<era>, netflix or maker:<name>. Plain text, two to four sentences.
+// Hand-written intros for the ranked list pages, keyed cat:<id>, tag:<id>, mood:<id>, decade:<era>, streaming:<service> or maker:<name>. Plain text, two to four sentences.
 export const LIST_INTROS: Record<string, string> = {
   // Subjects
   'cat:psychology': "Cults are never as obvious from the inside. Going Clear on Scientology and Wild Wild Country on the Rajneesh commune in Oregon are the two to start with. Watch them back to back and you'll spot the same playbook every time.",
@@ -52,8 +52,12 @@ export const LIST_INTROS: Record<string, string> = {
   'decade:1990s': "Hoop Dreams follows two kids for five years and is still the sport documentary everything else is measured against. When We Were Kings is Ali and Foreman in Zaire, and Ken Burns's The Civil War is the series that made archive photos feel alive. American Movie is the funniest of the lot.",
   'decade:1980s': "The Thin Blue Line helped free an innocent man and changed how documentaries are made. The Times of Harvey Milk won an Oscar, and Roger & Me is Michael Moore before anyone knew who he was. Koyaanisqatsi has no words at all, just pictures and Philip Glass.",
   'decade:1970s': "Where a lot of modern documentary started. Harlan County, USA puts you on the picket line with Kentucky miners, and Hearts and Minds is the Vietnam film that won an Oscar while the war was still being argued about. Gimme Shelter is the Rolling Stones at Altamont, and it goes very wrong.",
-  // Netflix (availability changes, so this intro names no titles)
-  'netflix': "Netflix has hundreds of documentaries and most of them aren't worth your evening. These are the ones that are, ranked best first. Almost all of them stream in Ireland, the UK and the US alike, and the film page shows where to watch in your country today.",
+  // Streaming (availability changes, so these intros name no titles)
+  'streaming:netflix': "Netflix has hundreds of documentaries and most of them aren't worth your evening. These are the ones that are, ranked best first. Almost all of them stream in Ireland, the UK and the US alike, and the film page shows where to watch in your country today.",
+  'streaming:prime-video': "Prime Video's documentaries are buried under everything else Amazon sells, so they're easy to miss. These are the ones worth finding, ranked best first. What's included changes a lot between Ireland, the UK and the US, so check the film page for your country.",
+  'streaming:disney-plus': "Disney+ isn't where most people go for documentaries, but National Geographic lives there, and it shows. These are the best of them, ranked. The film page shows where each one streams in your country today.",
+  'streaming:bbc-iplayer': "The BBC makes some of the best documentaries in the world, and plenty of them are free on iPlayer if you're in the UK. These are the ones worth your licence fee, ranked best first. Titles come and go, so check the film page before you settle in.",
+  'streaming:hbo-max': "HBO has been making serious documentaries for decades, long before streaming made them cool. These are the best of them on HBO Max, ranked. The US gets far more than Ireland and the UK, so check the film page for your country.",
   // Picks
   'tag:editors-choice': "My personal favourites from the whole collection. If you only watch a handful of documentaries this year, make it these. Start with Dear Zachary and know nothing going in.",
   'tag:essential': "Where to start if you're new to documentaries, or want to fill the gaps. These are the films everything else gets compared to. The Thin Blue Line, The Fog of War and Free Solo are a good first weekend.",

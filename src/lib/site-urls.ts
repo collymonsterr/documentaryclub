@@ -4,7 +4,7 @@ import { CATALOGUE, SNAPSHOT } from '@/data/catalogue';
 import { AWARDS, EDITORIAL, MOODS, accolades, byAward, credits, documentariesLike, isFeatured, makerIndex, rankFilms, topAwards } from '@/data/discovery-facets';
 import { LIKE_PAGES } from '@/data/like-pages';
 import { LIST_INTROS } from '@/data/list-intros';
-import { NETFLIX_CHECKED, NETFLIX_PICK, OLD_NETFLIX_SLUGS, onNetflix } from '@/data/netflix';
+import { OLD_NETFLIX_SLUGS, SERVICES, STREAMING_CHECKED, service, streamsOn } from '@/data/streaming';
 import { PICK_TAGS, TAGS } from '@/data/tags';
 import { DECADES, inEra, isDecade } from '@/lib/discovery';
 import { breadcrumbs, filmSchema, itemList, siteSchema } from '@/lib/structured-data';
@@ -34,14 +34,14 @@ const makerSlugs = () => {
 type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; like?: string; browse?: string; era?: string; pick?: string };
 // A decade is a page only on its own; with a tab selection it stays a dropdown filter on that page's URL.
 const decadeOnly = (search: PageSearch) => isDecade(search.era) && !selected(search).some(Boolean) && !search.browse?.match(/^(directors|awards|about)$/);
-const selected = (search: PageSearch) => [search.tag, search.cat && search.cat !== 'all' ? search.cat : '', search.maker, search.award, search.mood, search.like, search.pick === NETFLIX_PICK ? search.pick : ''];
+const selected = (search: PageSearch) => [search.tag, search.cat && search.cat !== 'all' ? search.cat : '', search.maker, search.award, search.mood, search.like, service(search.pick) ? search.pick : ''];
 // The one clean path for a page, or null when it is a filter combination that stays on query parameters.
 export function pagePath(search: PageSearch) {
-  const { tag, maker, award, mood, like } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '', netflix = search.pick === NETFLIX_PICK;
+  const { tag, maker, award, mood, like } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '', streaming = service(search.pick);
   if (search.film) return filmIds.has(search.film) ? `/film/${search.film}` : null;
   if (decadeOnly(search)) return `/decades/${search.era}`;
   if (selected(search).filter(Boolean).length !== 1) return selected(search).some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : search.browse === 'about' ? '/about' : '/';
-  if (netflix) return '/netflix';
+  if (streaming) return `/${streaming.id}`;
   if (mood) return moodSlug(mood) ? `/moods/${moodSlug(mood)}` : null;
   if (like) return LIKE_PAGES[like] ? `/documentaries-like/${like}` : null;
   if (award) { const slug = AWARDS.find(a => a.id === award)?.slug; return slug ? `/awards/${slug}` : null; }
@@ -65,12 +65,12 @@ export const urlRewrite = {
     if (!slug && section === 'about') { url.pathname = '/'; url.searchParams.set('browse', 'about'); return url; }
     if (!slug && section === 'awards') { url.pathname = '/'; url.searchParams.set('browse', 'awards'); return url; }
     if (!slug && section === 'moods') { url.pathname = '/'; url.searchParams.set('mood', MOODS[0].id); url.searchParams.set('browse', 'moods'); return url; }
-    if (!slug && section === 'netflix') { url.pathname = '/'; url.searchParams.set('pick', NETFLIX_PICK); return url; }
+    if (!slug && service(section)) { url.pathname = '/'; url.searchParams.set('pick', section); return url; }
     if (!slug) return undefined;
     if (section === 'awards' && AWARDS.some(a => a.slug === slug)) { url.searchParams.set('award', AWARDS.find(a => a.slug === slug)!.id); url.searchParams.set('browse', 'awards'); }
     else if (section === 'documentaries-like' && LIKE_PAGES[slug]) url.searchParams.set('like', slug);
     else if (section === 'decades' && isDecade(slug)) url.searchParams.set('era', slug);
-    else if (section === 'netflix' && OLD_NETFLIX_SLUGS.includes(slug)) url.searchParams.set('pick', NETFLIX_PICK);
+    else if (section === 'netflix' && OLD_NETFLIX_SLUGS.includes(slug)) url.searchParams.set('pick', 'netflix');
     else if (section === 'moods' && moodBySlug.has(slug)) { url.searchParams.set('mood', moodBySlug.get(slug)!); url.searchParams.set('browse', 'moods'); }
     else if (section === 'tags' && (tagIds.has(slug) || OLD_TAGS[slug])) { url.searchParams.set('tag', OLD_TAGS[slug] ?? slug); url.searchParams.set('browse', 'tags'); }
     else if (section === 'categories' && categoryBySlug.has(slug)) url.searchParams.set('cat', categoryBySlug.get(slug)!.id);
@@ -88,7 +88,7 @@ export const urlRewrite = {
     if (!path || path === '/') return undefined;
     if (search.film) url.searchParams.delete('film');
     else {
-      ['tag', 'cat', 'maker', 'award', 'mood', 'like', 'browse', ...(path.startsWith('/decades/') ? ['era'] : []), ...(path === '/netflix' ? ['pick'] : [])].forEach(key => url.searchParams.delete(key));
+      ['tag', 'cat', 'maker', 'award', 'mood', 'like', 'browse', ...(path.startsWith('/decades/') ? ['era'] : []), ...(service(path.slice(1)) ? ['pick'] : [])].forEach(key => url.searchParams.delete(key));
       if (get('q') === search.maker) url.searchParams.delete('q');
     }
     url.pathname = path;
@@ -105,7 +105,8 @@ export function selectionFilms(search: PageSearch): Film[] {
   const cat = search.cat && search.cat !== 'all' ? search.cat : '';
   const liked = search.like && LIKE_PAGES[search.like] ? CATALOGUE.find(f => f.id === search.like) : undefined;
   if (liked) return documentariesLike(liked);
-  if (search.pick === NETFLIX_PICK) return rankFilms(CATALOGUE.filter(f => onNetflix(f.id)));
+  const streaming = service(search.pick);
+  if (streaming) return rankFilms(CATALOGUE.filter(f => streamsOn(streaming.id, f.id)));
   if (decadeOnly(search)) return rankFilms(CATALOGUE.filter(f => inEra(f.year, search.era as (typeof DECADES)[number])));
   if (search.award) return byAward(CATALOGUE.filter(f => accolades(f).some(a => a.body === search.award)), search.award);
   if (cat) return rankFilms(CATALOGUE.filter(f => f.categories.includes(cat as Category)));
@@ -114,12 +115,12 @@ export function selectionFilms(search: PageSearch): Film[] {
   return rankFilms(CATALOGUE.filter(f => !!search.mood && EDITORIAL[f.id]?.moods.includes(search.mood) === true));
 }
 export function listHeading(search: PageSearch) {
-  const cat = search.cat && search.cat !== 'all' ? search.cat : '', netflix = search.pick === NETFLIX_PICK, decade = decadeOnly(search);
+  const cat = search.cat && search.cat !== 'all' ? search.cat : '', streaming = service(search.pick), decade = decadeOnly(search);
   if (!decade && selected(search).filter(Boolean).length !== 1) return null;
   if (search.like) return likeHeading(search.like);
   const base = baseHeading(search, cat);
   if (!base) return null;
-  const key = netflix ? 'netflix' : decade ? `decade:${search.era}` : search.tag ? `tag:${search.tag}` : cat ? `cat:${cat}` : search.mood ? `mood:${search.mood}` : search.maker ? `maker:${search.maker}` : `award:${search.award}`;
+  const key = streaming ? `streaming:${streaming.id}` : decade ? `decade:${search.era}` : search.tag ? `tag:${search.tag}` : cat ? `cat:${cat}` : search.mood ? `mood:${search.mood}` : search.maker ? `maker:${search.maker}` : `award:${search.award}`;
   const count = selectionFilms(search).length, ranked = !search.award;
   // Numbered "The 22 Best …" titles for subjects and moods; picks, directors and awards keep their own names.
   const best = ranked && !search.maker && !pickTags.has(search.tag ?? '') && count >= MIN_LIST;
@@ -127,8 +128,8 @@ export function listHeading(search: PageSearch) {
   return {
     ...base, key, count, ranked, best,
     title: best ? `The ${count} Best ${base.title}` : base.title,
-    // Netflix lists carry the month they were checked: searchers want a current list, and it says when it was true.
-    seoTitle: search.maker ? `${search.maker} Documentaries, Ranked` : netflix && best && NETFLIX_CHECKED ? `The ${count} Best ${base.title} (${checkedMonth()})` : undefined,
+    // Streaming lists carry the month they were checked: searchers want a current list, and it says when it was true.
+    seoTitle: search.maker ? `${search.maker} Documentaries, Ranked` : streaming && best && STREAMING_CHECKED ? `The ${count} Best ${base.title} (${checkedMonth()})` : undefined,
     intro: LIST_INTROS[key],
     indexable: search.maker ? featured : count >= MIN_LIST,
   };
@@ -144,9 +145,10 @@ function likeHeading(id: string) {
     key: `like:${id}`, count, ranked: true, best: false, intro: page.intro, indexable: count >= MIN_LIST, film,
   };
 }
-export const checkedMonth = () => new Date(`${NETFLIX_CHECKED}T12:00:00Z`).toLocaleDateString('en-IE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+export const checkedMonth = () => new Date(`${STREAMING_CHECKED}T12:00:00Z`).toLocaleDateString('en-IE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 function baseHeading(search: PageSearch, cat: string) {
-  if (search.pick === NETFLIX_PICK) return { title: 'Documentaries on Netflix', description: `Hand-picked documentaries streaming on Netflix in Ireland, the UK or the US${NETFLIX_CHECKED ? `, checked ${checkedMonth()}` : ''}. The film page shows where to watch in your country today.`, image: undefined };
+  const streaming = service(search.pick);
+  if (streaming) return { title: `Documentaries on ${streaming.name}`, description: `Hand-picked documentaries streaming on ${streaming.name} ${streaming.where}${STREAMING_CHECKED ? `, checked ${checkedMonth()}` : ''}. The film page shows where to watch in your country today.`, image: undefined };
   if (decadeOnly(search)) return { title: `Documentaries of the ${search.era}`, description: `The documentaries from the ${search.era} worth your time, ranked.`, image: undefined };
   const copied = search.mood ? MOOD_COPY[search.mood] : search.award ? AWARD_COPY[search.award] : undefined;
   if (search.mood || search.award) return copied ? { ...copied, image: undefined } : null;
@@ -190,7 +192,7 @@ function previewFor(search: PageSearch): Preview {
   const heading = listHeading(search);
   if (heading) {
     const path = pagePath(search) ?? '/', films = selectionFilms(search);
-    const top = heading.image || !(search.maker || /^(netflix|decade:)/.test(heading.key)) ? undefined : films.find(f => SNAPSHOT[f.id]?.backdrops?.length);
+    const top = heading.image || !(search.maker || /^(streaming|decade):/.test(heading.key)) ? undefined : films.find(f => SNAPSHOT[f.id]?.backdrops?.length);
     const liked = 'film' in heading ? heading.film : undefined;
     const parent: [string, string][] = search.maker ? [['Directors', '/directors']] : search.award ? [['Awards', '/awards']] : liked ? [[liked.title, `/film/${liked.id}`]] : [];
     return {
@@ -236,7 +238,7 @@ export function listGroups() {
   return [
     group('By subject', CATEGORIES.map(c => ({ search: { cat: c.id }, label: c.label }))),
     group('By mood', MOODS.map(m => ({ search: { mood: m.id }, label: m.label }))),
-    group('Streaming', [{ search: { pick: NETFLIX_PICK }, label: 'Netflix' }]),
+    group('Streaming', SERVICES.map(s => ({ search: { pick: s.id }, label: s.name }))),
     group('By decade', DECADES.map(d => ({ search: { era: d }, label: d }))),
     group('Topics', TAGS.filter(t => t.group === 'topics').map(t => ({ search: { tag: t.id }, label: t.label }))),
     group('Picks', PICK_TAGS.map(t => ({ search: { tag: t.id }, label: t.label }))),
