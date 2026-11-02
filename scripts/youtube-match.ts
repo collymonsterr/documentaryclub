@@ -16,7 +16,9 @@ export const parseDuration = (iso: string) => {
 // Long videos that talk about a film rather than being it.
 const ABOUT_THE_FILM = /\b(podcast|commentary|review|reaction|interview|discussion|case study|episode|ep \d+|breakdown|explained|analysis|facts|in conversation|deep dive)\b/;
 const opensWith = (videoTitle: string, film: Film) => [film.title, ...(film.aliases ?? [])].some(t => ` ${normalize(videoTitle)} `.startsWith(` ${normalize(t)} `));
-const playable = (v: Video) => v.public && !REGIONS.some(r => v.blocked.includes(r)) && (!v.allowed || REGIONS.every(r => v.allowed!.includes(r)));
+// A film free on YouTube in any one main region is worth linking: people want to watch there, even if it's blocked elsewhere.
+export const playsIn = (v: Pick<Video, 'blocked' | 'allowed'>) => REGIONS.filter(r => !v.blocked.includes(r) && (!v.allowed || v.allowed.includes(r)));
+export const playable = (v: Video) => v.public && playsIn(v).length > 0;
 const distinctive = (title: string) => normalize(title).split(' ').length >= 2;
 
 // Official channels are tagged; anything else needs the owner's yes, and only once it has stayed up for months.

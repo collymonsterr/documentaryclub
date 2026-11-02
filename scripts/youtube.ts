@@ -8,7 +8,7 @@
 // Then `npm run sync-catalogue`. Progress lives in data/youtube-scan.json, so every step can stop and resume.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseCsv, serializeCsv, type CsvRow } from './catalogue-csv';
-import { judge, namesFilm, parseDuration, type Film, type Verdict, type Video } from './youtube-match';
+import { judge, namesFilm, parseDuration, playable, type Film, type Verdict, type Video } from './youtube-match';
 
 const CSV = 'data/catalogue-master.csv', SCAN = 'data/youtube-scan.json', RESULTS = 'data/youtube-results.md', TAG = 'free-on-youtube';
 const API = 'https://www.googleapis.com/youtube/v3', DAILY_UNITS = 9_500, SEARCH_COST = 101;
@@ -17,6 +17,10 @@ const CHANNELS: [handle: string, name: string][] = [
   ['frontline', 'FRONTLINE'], ['DWDocumentary', 'DW Documentary'], ['aljazeeraenglish', 'Al Jazeera'], ['VICE', 'VICE'], ['VICENews', 'VICE News'],
   ['PBS', 'PBS'], ['independentlens', 'Independent Lens'], ['Netflix', 'Netflix'], ['redbull', 'Red Bull'], ['nfb', 'NFB'],
   ['FreeDocumentary', 'Free Documentary'], ['Moconomy', 'Moconomy'], ['RealStories', 'Real Stories'], ['wocomoDOCS', 'wocomoDOCS'], ['GravitasDocumentaries', 'Gravitas Documentaries'],
+  // Found by hand (Hark, November 2026): distributors and brands that post their own films.
+  ['kinolorber', 'Kino Lorber'], ['drafthousefilms', 'Drafthouse Films'], ['shoutstudios', 'Shout! Studios'], ['freemoviesbycineverse', 'Free Movies By Cineverse'],
+  ['ilovedocs', 'I Love Docs'], ['endevrdocs', 'ENDEVR'], ['papercutvideos', 'Papercut Films'], ['wocomomotors', 'wocomoMOTORS'],
+  ['porsche', 'Porsche'], ['fiaformulae', 'Formula E'], ['monsterenergy', 'Monster Energy'],
 ];
 type Match = Video & { verdict: Verdict };
 type Scan = { channels: Record<string, string>; scannedChannels: string[]; searched: string[]; matches: Record<string, Match[]>; approved: Record<string, string> };
@@ -139,7 +143,8 @@ async function check() {
   let gone = 0;
   for (const r of live) {
     const v = good.get(r.youtube_id);
-    if (v && judge({ ...filmOf(r), minutes: undefined }, { ...v, title: r.title }, trusted()) !== null || v?.public && r.type === 'Series') continue;
+    // A stored link was already accepted, by rule or by hand; it only goes when the video is removed or plays in no main region.
+    if (v && playable(v)) continue;
     console.log(`Gone: ${r.title}`);
     r.youtube_id = '';
     r.tags = r.tags.split(',').map(t => t.trim()).filter(t => t && t !== TAG).join(', ');
