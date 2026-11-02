@@ -106,7 +106,7 @@ function previewFor(search: PageSearch) {
     const top = !search.maker ? undefined : CATALOGUE.filter(f => f.director.split(', ').includes(search.maker!)).find(f => SNAPSHOT[f.id]?.backdrops?.length);
     return { ...heading, image: top ? SNAPSHOT[top.id]?.backdrops?.[0] : undefined };
   }
-  return { title: 'A personal collection of documentaries', description: `${CATALOGUE.length} documentaries worth your time, with trailers, ratings and where to watch them.`, image: undefined };
+  return { title: 'Extraordinary true stories', description: `${CATALOGUE.length} documentaries worth your time, with trailers, ratings and where to watch them.`, image: undefined };
 }
 const absolute = (path: string) => (path.startsWith('http') ? path : `${SITE_ORIGIN}${path}`);
 // Absolute, server-rendered tags: WhatsApp, LinkedIn and Reddit read these without running any JavaScript.
