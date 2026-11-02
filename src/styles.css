@@ -42,6 +42,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-save: var(--save);
+  --color-netflix: #e50914;
   --color-success: var(--success);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);

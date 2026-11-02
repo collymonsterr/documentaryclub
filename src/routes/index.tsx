@@ -18,6 +18,7 @@ import {
   EyeOff,
   Search,
   Dices,
+  Play,
   X,
 } from "lucide-react";
 import { CATEGORIES, justWatchLink, type Category } from "@/data/films";
@@ -1360,6 +1361,15 @@ function Index() {
                   <Check />
                   {watched.has(film.id) ? "Watched" : "Mark watched"}
                 </Button>
+                {film.netflixId && extra?.providers?.flatrate.some((p) => /^Netflix/.test(p.name)) && (
+                  // A plain https link: phones with the Netflix app open it there, everyone else gets the web page.
+                  <Button asChild className="border-transparent bg-netflix text-white hover:bg-netflix/85">
+                    <a href={`https://www.netflix.com/title/${film.netflixId}`} target="_blank" rel="noreferrer">
+                      <Play className="fill-current" />
+                      Watch on Netflix
+                    </a>
+                  </Button>
+                )}
                 <FreeLegal film={film} />
                 <CopyLink path={`/film/${film.id}`} className="h-9" />
               </div>
