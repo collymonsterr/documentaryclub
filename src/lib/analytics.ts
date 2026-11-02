@@ -43,3 +43,5 @@ export function startAnalytics() {
   document.head.appendChild(script);
 }
 export const trackPageView = () => (window as GtagWindow).gtag?.('event', 'page_view', { page_location: window.location.href, page_title: document.title });
+// Only reaches Google once the visitor has accepted analytics; otherwise gtag doesn't exist and nothing is sent.
+export const trackEvent = (name: string, params: Record<string, string>) => (window as GtagWindow).gtag?.('event', name, params);

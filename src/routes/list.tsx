@@ -5,6 +5,7 @@ import { CATALOGUE } from '@/data/catalogue';
 import { firstSentence } from '@/lib/discovery';
 import { CopyLink } from '@/components/copy-link';
 import { SiteLogo } from '@/components/site-logo';
+import { NewsletterSignup } from '@/components/newsletter-signup';
 import { staticPageHead } from '@/lib/site-urls';
 
 const kind = (m?: string) => m === 'tv' ? 'Series' : m === 'collection' ? 'Film series' : 'Film';
@@ -44,5 +45,6 @@ function ListPage() {
         </ul>
       </section>;
     })}
+    <NewsletterSignup source="list" className="mt-10" />
   </main>;
 }

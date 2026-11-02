@@ -59,6 +59,7 @@ import { DocumentaryPoster } from "@/components/documentary-poster";
 import { ScrollRow } from "@/components/scroll-row";
 import { SiteLogo } from "@/components/site-logo";
 import { SiteIndex } from "@/components/site-index";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { TrailerPlayer } from "@/components/trailer-player";
 import { usePreference, useTracking } from "@/hooks/use-tracking";
 import {
@@ -637,10 +638,15 @@ function Index() {
     });
   };
   // Surprise me: random title from the current selection (Saved, filters, search), never the one already open.
+  // The film Surprise me last opened, so its page can offer the weekly email in place of the usual one.
+  const [surprised, setSurprised] = useState("");
   const surprise = () => {
     const pool = list.length > 1 ? list.filter((f) => f.id !== search.film) : list;
     const pick = pool[Math.floor(Math.random() * pool.length)];
-    if (pick) openSpotlight(pick.id);
+    if (pick) {
+      setSurprised(pick.id);
+      openSpotlight(pick.id);
+    }
   };
   const selections = [facet.award, facet.mood, facet.maker, facet.tag, filter === "all" ? "" : filter].filter(Boolean).length;
   // The tab's own selection is not a dropdown filter, so it doesn't count here.
@@ -1104,6 +1110,14 @@ function Index() {
           </Button>
         </p>
       )}
+      {listFilter === "shortlist" && view === "gallery" && (
+        <NewsletterSignup
+          source="saved"
+          title="Never run out of things to watch"
+          body="Your saved list lives in this browser. Get one new pick every week by email, plus the best new releases."
+          className="mb-5"
+        />
+      )}
       {browse === "about" && view === "gallery" && !query ? (
         <AboutContent />
       ) : browse === "directors" && !facet.maker && view === "gallery" ? (
@@ -1384,6 +1398,9 @@ function Index() {
                 country={country}
                 onCountry={chooseCountry}
               />
+              {surprised === film.id && (
+                <NewsletterSignup compact source="surprise" title="Liked the surprise? Get one every week" className="mt-4" />
+              )}
             </div>
           </section>
           <TrailerPlayer
@@ -1394,8 +1411,10 @@ function Index() {
             onPlay={() => setTrailerOpen(true)}
           />
           <RelatedRows film={film} onDirector={searchDirector} />
+          {surprised !== film.id && <NewsletterSignup source="film" className="mt-10" />}
         </>
       )}
+      {view === "gallery" && listFilter !== "shortlist" && <NewsletterSignup source="footer" className="mt-10" />}
       <SiteIndex />
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
         <span>{CATALOGUE.length} curated true stories.</span>
