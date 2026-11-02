@@ -1,6 +1,6 @@
 # YouTube results
 
-15 of 15 channels scanned, 94 of 470 films searched.
+15 of 15 channels scanned, 188 of 475 films searched.
 
 ## Confirmed: 7
 
@@ -14,7 +14,7 @@
 | the-most-dangerous-man-in-america | The Most Dangerous Man in America (2009) | [The Most Dangerous Man in America: Daniel Ellsberg and the Pentagon Files (Full Documentary)](https://www.youtube.com/watch?v=qt1V5aBJI8w) | wocomoDOCS | 92 / 92 | 2026-03 | 88,420 |
 | crip-camp | Crip Camp (2020) | [CRIP CAMP: A DISABILITY REVOLUTION / Full Feature / Netflix](https://www.youtube.com/watch?v=OFS8SpwioZ4) | Netflix | 107 / 107 | 2020-07 | 1,201,295 |
 
-## Check by hand: 53
+## Check by hand: 94
 
 | id | Film | Video | Channel | Min (video / film) | Uploaded | Views |
 |---|---|---|---|---|---|---|
@@ -64,7 +64,48 @@
 | the-trials-of-henry-kissinger | The Trials of Henry Kissinger (2002) | [The Trials of Henry Kissinger Documentary](https://www.youtube.com/watch?v=0oc2zrbjQXI) | the raven king | 80 / 80 | 2021-01 | 387 |
 | why-we-fight | Why We Fight (2005) | [Why we fight ( American documentry - 2005)](https://www.youtube.com/watch?v=8KH6FWs99Aw) | Exclusive Cinema | 99 / 98 | 2018-07 | 47,600 |
 | touching-the-void | Touching the Void (2003) | [Touching The Void 2003 BDRip Rus, Eng](https://www.youtube.com/watch?v=A0nsuuOfSHE) | Igor Gan'kov | 106 / 106 | 2020-06 | 30,594 |
+| happy-people-a-year-in-the-taiga | Happy People: A Year in the Taiga (2010) | [Happy People A Year In The Taiga 2010 1080p BluRay x264 AAC YTS MX](https://www.youtube.com/watch?v=Q7rjNK77kAQ) | Документальное кино | 94 / 94 | 2024-07 | 30,543 |
 | meru | Meru (2015) | [The Courageous Girls of Meru, Kenya (Uplifting Documentary) / Real Stories](https://www.youtube.com/watch?v=-w3NoxlIw8w) | Real Stories | 88 / 89 | 2023-08 | 20,364 |
+| the-dawn-wall | The Dawn Wall (2017) | [The Dawn Wall..El Capitan in Yosemite National Park(Tommy Caldwell and Kevin Jorgeson's)](https://www.youtube.com/watch?v=5VJvMXPm4pQ) | 저스트원스JustOnce | 100 / 101 | 2025-05 | 148,630 |
+| free-solo | Free Solo (2018) | [The Soul of Free Solo Climbing: Alex Honnold](https://www.youtube.com/watch?v=nCf-KJOxKAU) | Rich Roll | 102 / 100 | 2018-03 | 523,688 |
+| the-cove | The Cove (2009) | [The Cove FILM "FULL"](https://www.youtube.com/watch?v=eURsF_3Rmis) | Juwita_Evan Lara | 82 / 92 | 2023-02 | 26,216 |
+| into-eternity | Into Eternity (2010) | [Into Eternity VOST hdtv 720p](https://www.youtube.com/watch?v=vpRBfTHQg3k) | Walk.across.the.Universe | 75 / 75 | 2015-04 | 6,736 |
+| chasing-ice | Chasing Ice (2012) | [Глобальное потепление реально - Chasing Ice 2012 1080p BDRip](https://www.youtube.com/watch?v=bQgL6zedUe8) | Ирина Мандро | 75 / 74 | 2016-10 | 784 |
+| blackfish | Blackfish (2013) | [Blackfish Movie ... 10 Years Later, Much Has Changed ... More to Go](https://www.youtube.com/watch?v=Ms_KMeuxJ2U) | Whale Sanctuary Project | 91 / 83 | 2023-07 | 130,482 |
+| particle-fever | Particle Fever (2013) | [Particle Fever / The Quest](https://www.youtube.com/watch?v=7ILsk4RZ0i8) | helixcenter | 103 / 99 | 2015-02 | 23,579 |
+| tim-s-vermeer | Tim's Vermeer (2013) | [The Eye as an Instrument: TIM'S VERMEER](https://www.youtube.com/watch?v=uqcG39xhbq4) | Science On Screen | 76 / 80 | 2017-04 | 3,945 |
+| apollo-11 | Apollo 11 (2019) | [Apollo 11: How Did NASA Land A Man On The Moon? / To The Moon / Progress](https://www.youtube.com/watch?v=Gk-0V53HoQI) | Progress - Science Documentaries | 84 / 93 | 2023-05 | 773,278 |
+| honeyland | Honeyland (2019) | [HONEYLAND película MACEDONIA con SUBTÍTULOS integrados EN ESPAÑOL - 2019](https://www.youtube.com/watch?v=AFfd64Q5bEw) | MirandaEditor | 88 / 89 | 2025-05 | 44,508 |
+| the-corporation | The Corporation (2003) | [The Corporation / in HD  / Feature Documentary](https://www.youtube.com/watch?v=6v8e7dUwq_Q) | Cool World | 144 / 145 | 2023-09 | 615,991 |
+| f-for-fake | F for Fake (1973) | [F for Fake Orson Welles 1973](https://www.youtube.com/watch?v=4C2nt72h0cQ) | Le Sauveur | 89 / 89 | 2023-11 | 86,063 |
+| grey-gardens | Grey Gardens (1975) | [Grey Gardens (HD documentary, 1975)](https://www.youtube.com/watch?v=y9sCdPdoKLk) | Mdriver1981 | 95 / 95 | 2020-07 | 1,354,199 |
+| gates-of-heaven | Gates of Heaven (1978) | [Gates of Heaven (Errol Morris 1978 Documentary)](https://www.youtube.com/watch?v=jJ0rh0Uzf_s) | Thomas Manning | 82 / 83 | 2020-04 | 90,445 |
+| paris-is-burning | Paris Is Burning (1990) | [Paris Is Burning (1990)](https://www.youtube.com/watch?v=aZrJCw9FIkI) | also in a dream; | 77 / 78 | 2023-08 | 112,053 |
+| lost-in-la-mancha | Lost in La Mancha (2002) | [Lost in La Mancha 2002 (Sub español)](https://www.youtube.com/watch?v=-GxK5Jjyp74) | Sarko87 | 89 / 93 | 2018-05 | 18,083 |
+| my-kid-could-paint-that | My Kid Could Paint That (2007) | [A Child Art Prodigy?! The Real Events Behind My Kid Could Paint That](https://www.youtube.com/watch?v=lEs7NmuLN4s) | Mysteries with Maja | 81 / 82 | 2021-12 | 5,211 |
+| exit-through-the-gift-shop | Exit Through the Gift Shop (2010) | [Exit Through The Gift Shop / World's Hottest Goss](https://www.youtube.com/watch?v=5pZSH15yrdw) | the bored castle | 93 / 86 | 2020-11 | 24 |
+| marwencol | Marwencol (2010) | [Virtual Insights: The Imagined Worlds of Marwencol with Jon Ronson and Mark Hogancamp](https://www.youtube.com/watch?v=G8tuHa5C7gk) | American Folk Art Museum | 76 / 83 | 2021-05 | 6,452 |
+| searching-for-sugar-man | Searching for Sugar Man (2012) | [Searching for sugar man.Full movie](https://www.youtube.com/watch?v=2WGF4C3b62Y) | movie's | 91 / 85 | 2025-11 | 4,861 |
+| the-wolfpack | The Wolfpack (2015) | [The Wolfpack    2015](https://www.youtube.com/watch?v=hLqeQYkl4dg) | Aloisio Jacobman | 90 / 89 | 2017-07 | 15,786 |
+| jim-andy-the-great-beyond | Jim & Andy: The Great Beyond (2017) | [Jim and Andy  The Great Beyond  ᖴυℓℓ ᗰᴏv𝔦𝔢 Jim Carrey ᗰᴏv𝔦𝔢𝔰](https://www.youtube.com/watch?v=Qir6XvC-r_I) | goodingdivina T345 | 99 / 93 | 2023-03 | 4,921 |
+| quiet-rage-the-stanford-prison-study | Quiet Rage: The Stanford Prison Study (1992) | [Quiet Rage: The Stanford Prison Experiment - documentary](https://www.youtube.com/watch?v=i4o9p04XJ-Q) | Mourinho335 | 50 / 50 | 2023-01 | 68,656 |
+| betting-on-zero | Betting on Zero (2016) | [Betting on zero (2016) / full documentary](https://www.youtube.com/watch?v=4DTqMszUZTw) | Wall Street Bro | 104 / 104 | 2022-01 | 112,180 |
+| operation-varsity-blues | Operation Varsity Blues (2021) | [Operation Varsity Blues: The College Admissions Scandal (2021) FULL [  Documentary, Crime ] MOVIE](https://www.youtube.com/watch?v=zm_h2ZDgRuM) | Pohon Bringin | 100 / 100 | 2021-03 | 1,250 |
+| revolution-os | Revolution OS (2001) | [Revolution OS (правильный перевод)](https://www.youtube.com/watch?v=n1F_MfLRlX0) | Дмитрий Бачило | 92 / 85 | 2016-11 | 533,348 |
+| startup-com | Startup.com (2001) | [Startup.com (2001)](https://www.youtube.com/watch?v=oWE2koXZiSc) | DarthKanden | 103 / 107 | 2023-04 | 48,791 |
+| tpb-afk-the-pirate-bay-away-from-keyboard | TPB AFK: The Pirate Bay Away from Keyboard (2013) | [TPB AFK: The Pirate Bay Away From Keyboard (2013) / Subtitled](https://www.youtube.com/watch?v=ui-w6ZUCzj8) | TMC - The Movies Channel | 82 / 82 | 2021-09 | 26,715 |
+| atari-game-over | Atari: Game Over (2014) | [Atari:  Game Over](https://www.youtube.com/watch?v=03oC6-zPZHQ) | William McKeown | 66 / 66 | 2017-10 | 25,625 |
+| free-to-play | Free to Play (2014) | [Free to Play: The Movie (Russian)](https://www.youtube.com/watch?v=fkz5Vok3528) | Valve | 76 / 75 | 2014-03 | 669,515 |
+| coded-bias | Coded Bias (2020) | [Coded Bias: Timnit Gebru, Meredith Broussard, & director Shalini Kantayya](https://www.youtube.com/watch?v=PkoZNICUsSc) | All Tech Is Human | 76 / 86 | 2020-11 | 20,792 |
+| the-speed-cubers | The Speed Cubers (2020) | [The Speed Cubers: A Q&A with Sue Kim and Chris Romano, moderated by Kevin Smith and Marc Bernardin](https://www.youtube.com/watch?v=g1RlIDqdnhg) | The Speed Cubers | 43 / 40 | 2021-01 | 1,054 |
+| fake-famous | Fake Famous (2021) | [What does it mean to be "Fake Famous"?](https://www.youtube.com/watch?v=KEeQYz1XhNI) | Pandora's Quack | 78 / 86 | 2021-06 | 19 |
+| a-glitch-in-the-matrix | A Glitch in the Matrix (2021) | [Uma Falha na Matrix - A Glitch in the Matrix 2021](https://www.youtube.com/watch?v=LBYXfKwuLK4) | Críticas de Cinema by Ariel | 109 / 108 | 2024-08 | 4,670 |
+| waco-the-rules-of-engagement | Waco: The Rules of Engagement (1997) | [Waco: The Rules of Engagement (1997) [FULL DOCUMENTARY]](https://www.youtube.com/watch?v=5iT5Gx6eaRA) | Blake Stone | 136 / 136 | 2018-04 | 272,116 |
+| one-day-in-september | One Day in September (1999) | [One Day in September (1999) Kevin McDonald (Subtitulado)](https://www.youtube.com/watch?v=p8VHxcb8kFA) | thevpi zzz | 91 / 94 | 2015-01 | 127,011 |
+| the-seven-five | The Seven Five (2014) | [From Kingpin to Creator: Adam Diaz of The Seven Five on Life, Redemption & Lessons from the Streets](https://www.youtube.com/watch?v=7Rh7LKXiA_E) | The Natanya Experience | 114 / 104 | 2026-03 | 11,412 |
+| cartel-land | Cartel Land (2015) | [Cartel Land 2015 Türkçe Dublaj izle](https://www.youtube.com/watch?v=8dPWuECCUc0) | OĞUZ POYRAZOĞLU | 101 / 101 | 2020-05 | 16,209 |
+| the-witness | The Witness (2015) | [The True Story of Kitty Genovese / The Witness / FULL MOVIE / True Crime Documentary (2017)](https://www.youtube.com/watch?v=kepwlL44Neo) | FilmRise True Crime | 90 / 86 | 2023-02 | 322,354 |
+| amanda-knox | Amanda Knox (2016) | [Meredith Kercher & Amanda Knox / A Murder, a Villa, and a Storm to Come (Part 1)](https://www.youtube.com/watch?v=V1ow75YmqTQ) | Crime Weekly | 83 / 92 | 2026-01 | 258,716 |
 | time | Time (2020) | [Love in the Time of Fentanyl](https://www.youtube.com/watch?v=vU3Pcc2SmJQ) | VICE | 75 / 81 | 2026-03 | 277,228 |
 | burma-vj | Burma VJ (2008) | [Military censorship in Myanmar - Reporting from a closed country / "Burma VJ" (Documentary)](https://www.youtube.com/watch?v=MF-fPaBdRmk) | wocomoDOCS | 85 / 84 | 2021-07 | 537,249 |
 | the-true-cost | The True Cost (2015) | [$800 Billion Wasted: What Is The TRUE Cost Of Healthcare? (Health Documentary)](https://www.youtube.com/watch?v=rGraxnEKEts) | Real Stories | 84 / 92 | 2024-06 | 20,163 |

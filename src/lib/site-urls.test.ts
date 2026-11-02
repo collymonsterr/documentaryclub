@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { filmDescription, listGroups, listHeading, pagePath, selectionFilms, slugify, urlRewrite } from './site-urls';
+import { MIN_LIST, filmDescription, listGroups, listHeading, pagePath, selectionFilms, slugify, urlRewrite } from './site-urls';
+import { TAGS } from '@/data/tags';
 import { CATALOGUE } from '@/data/catalogue';
 import { LIKE_PAGES } from '@/data/like-pages';
 
@@ -23,10 +24,14 @@ describe('ranked list pages', () => {
     expect(listHeading({ award: 'oscar' })?.ranked).toBe(false);
   });
   it('keeps thin lists out of the index and the hubs', () => {
-    expect(listHeading({ tag: 'free-on-youtube' })?.indexable).toBe(false);
+    // Tag counts move as the catalogue grows, so check the rule for every tag rather than one that happens to be thin today.
     const paths = listGroups().flatMap(g => g.items.map(i => i.path));
+    for (const t of TAGS) {
+      const h = listHeading({ tag: t.id })!;
+      expect(h.indexable).toBe(h.count >= MIN_LIST);
+      expect(paths.includes(`/tags/${t.id}`)).toBe(h.indexable);
+    }
     expect(paths).toContain('/moods/funny');
-    expect(paths).not.toContain('/tags/free-on-youtube');
     expect(selectionFilms({ mood: 'funny' }).length).toBe(listHeading({ mood: 'funny' })?.count);
   });
   it('leads film descriptions with our own facts', () => {
