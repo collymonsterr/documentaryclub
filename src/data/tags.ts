@@ -21,7 +21,7 @@ export const TAGS = [
   { id: 'gaming', label: 'Gaming', group: 'topics', title: 'Gaming Documentaries', description: 'The players, makers and rivalries behind video games.' },
   { id: 'all-archive-footage', label: 'All archive footage', group: 'topics', title: 'All-Archive Documentaries', description: 'Told entirely through existing footage, with no new interviews on screen.' },
   { id: 'electronic-music', label: 'Electronic Music', group: 'topics', title: 'Electronic Music Documentaries', description: 'The machines, scenes and people behind house, techno and rave.' },
-  { id: 'family', label: 'Family', group: 'topics', title: 'Family Documentaries', description: 'Rated G or U: documentaries to watch with the kids.' },
+  { id: 'family', label: 'Family', group: 'topics', title: 'Family Documentaries', description: 'Documentaries to put on with the kids: nature, space and kids winning at things.' },
   { id: 'religion', label: 'Religion', group: 'topics', title: 'Documentaries About Religion', description: 'Faith, cults and the people who lead, follow and leave them.' },
 ] as const;
 export const PICK_TAGS = TAGS.filter(t => t.group === 'picks');
