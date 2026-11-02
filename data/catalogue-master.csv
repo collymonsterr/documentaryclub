@@ -73,7 +73,7 @@ deep-web,Deep Web,2015,Film,Tech,hackers-and-leaks,Gripping,Alex Winter,321769,t
 hypernormalisation,HyperNormalisation,2016,Film,Politics,all-archive-footage,Mind-blowing,Adam Curtis,419546,tt6156350,live,,,,
 lo-and-behold-reveries-of-the-connected-world,"Lo and Behold, Reveries of the Connected World",2016,Film,Tech,,Mind-blowing,Werner Herzog,360030,tt5275828,live,,,,80097363
 zero-days,Zero Days,2016,Film,Tech,hackers-and-leaks,"Gripping, Mind-blowing",Alex Gibney,380808,tt5446858,live,,,,80099972
-alphago,AlphaGo,2017,Film,Tech,editors-choice,"Mind-blowing, Gripping",Greg Kohs,455008,tt6700846,live,,,,80190844
+alphago,AlphaGo,2017,Film,Tech,"editors-choice, family","Mind-blowing, Gripping",Greg Kohs,455008,tt6700846,live,,,,80190844
 general-magic,General Magic,2018,Film,Tech,startups,Mind-blowing,"Sarah Kerruish, Matthew Maude",514734,tt6849786,live,,,,
 the-great-hack,The Great Hack,2019,Film,Tech,"internet-culture, netflix-original",Infuriating,"Karim Amer, Jehane Noujaim",566222,tt4736550,live,,,,80117542
 feels-good-man,Feels Good Man,2020,Film,Tech,internet-culture,"Gloriously weird, Infuriating",Arthur Jones,653578,tt11394182,live,,,,
@@ -142,7 +142,7 @@ blackfish,Blackfish,2013,Film,Nature,ocean,Infuriating,Gabriela Cowperthwaite,15
 particle-fever,Particle Fever,2013,Film,Science,,Mind-blowing,Mark Levinson,202141,tt1385956,live,,,,70296323
 tim-s-vermeer,Tim's Vermeer,2013,Film,Art,,Mind-blowing,Teller,212063,tt3089388,live,,,,
 into-the-inferno,Into the Inferno,2016,Film,Nature,netflix-original,Mind-blowing,Werner Herzog,360029,tt4846318,live,,,,80066073
-apollo-11,Apollo 11,2019,Film,Science,"essential, space, all-archive-footage","Mind-blowing, Breathtaking",Todd Douglas Miller,549559,tt8760684,live,,,,
+apollo-11,Apollo 11,2019,Film,Science,"essential, space, all-archive-footage, family","Mind-blowing, Breathtaking",Todd Douglas Miller,549559,tt8760684,live,,,,
 honeyland,Honeyland,2019,Film,Nature,,Harrowing,"Ljubomir Stefanov, Tamara Kotevska",566213,tt8991268,live,,Sundance Grand Jury Prize 2019; Oscar Nominee 2020,,
 my-octopus-teacher,My Octopus Teacher,2020,Film,Nature,"ocean, netflix-original",Feel-good,"James Reed, Pippa Ehrlich",682110,tt12888462,live,,Oscar Winner 2021; BAFTA Winner 2021,,81045007
 the-corporation,The Corporation,2003,Film,Economics,,Infuriating,"Mark Achbar, Jennifer Abbott",11420,tt0379225,live,,Sundance Audience Award 2004,,60034810
@@ -198,7 +198,7 @@ the-puppet-master-hunting-the-ultimate-conman,The Puppet Master: Hunting the Ult
 triumph-of-the-nerds,Triumph of the Nerds,1996,Film,Tech,startups,Feel-good,Paul Sen,15554,tt0115398,live,,,,70014652
 revolution-os,Revolution OS,2001,Film,Tech,,Mind-blowing,J.T.S. Moore,19433,tt0308808,live,,,,60025132
 startup-com,Startup.com,2001,Film,Tech,startups,Gripping,"Chris Hegedus, Jehane Noujaim",14268,tt0256408,live,,,,70003079
-ecstasy-of-order-the-tetris-masters,Ecstasy of Order: The Tetris Masters,2011,Film,Sport,gaming,Gripping,Adam Cornelius,91921,tt1836974,live,,,,
+ecstasy-of-order-the-tetris-masters,Ecstasy of Order: The Tetris Masters,2011,Film,Sport,"gaming, family",Gripping,Adam Cornelius,91921,tt1836974,live,,,,
 downloaded,Downloaded,2013,Film,Tech,hackers-and-leaks,Gripping,Alex Winter,173210,tt2033981,live,,,,
 tpb-afk-the-pirate-bay-away-from-keyboard,TPB AFK: The Pirate Bay Away from Keyboard,2013,Film,Tech,hackers-and-leaks,Gripping,Simon Klose,50275,tt2608732,live,,,,
 web-junkie,Web Junkie,2013,Film,Tech,,Harrowing,"Hilla Medalia, Shosh Shlam",200487,tt2064745,live,,,,70299802
@@ -286,15 +286,15 @@ mountain,Mountain,2017,Film,Adventure,mountains,"Mind-blowing, Breathtaking",Jen
 torn,Torn,2021,Film,Adventure,mountains,Harrowing,Max Lowe,730057,tt11876896,live,,,,
 the-endurance,The Endurance,2024,Film,Adventure,ocean,Gripping,"Natalie Hewit, Elizabeth Chai Vasarhelyi, Jimmy Chin",947763,tt18556278,live,,,,
 cane-toads-an-unnatural-history,Cane Toads: An Unnatural History,1988,Film,Nature,,"Funny, Gloriously weird",Mark Lewis,82284,tt0130529,live,,,,
-for-all-mankind,For All Mankind,1989,Film,Science,space,"Mind-blowing, Breathtaking",Al Reinert,20423,tt0097372,live,,Sundance Grand Jury Prize 1989; Sundance Audience Award 1989; Oscar Nominee 1990,,
-microcosmos,Microcosmos,1996,Film,Nature,,"Mind-blowing, Breathtaking","Claude Nuridsany, Marie Pérennou",9305,tt0117040,live,,,,60033451
-winged-migration,Winged Migration,2001,Film,Nature,,"Mind-blowing, Breathtaking",Jacques Perrin,11516,tt0301727,live,,Oscar Nominee 2003,,60027148
-march-of-the-penguins,March of the Penguins,2005,Film,Nature,,"Feel-good, Breathtaking",Luc Jacquet,1667,tt0428803,live,,Oscar Winner 2006,,70024092
+for-all-mankind,For All Mankind,1989,Film,Science,"space, family","Mind-blowing, Breathtaking",Al Reinert,20423,tt0097372,live,,Sundance Grand Jury Prize 1989; Sundance Audience Award 1989; Oscar Nominee 1990,,
+microcosmos,Microcosmos,1996,Film,Nature,family,"Mind-blowing, Breathtaking","Claude Nuridsany, Marie Pérennou",9305,tt0117040,live,,,,60033451
+winged-migration,Winged Migration,2001,Film,Nature,family,"Mind-blowing, Breathtaking",Jacques Perrin,11516,tt0301727,live,,Oscar Nominee 2003,,60027148
+march-of-the-penguins,March of the Penguins,2005,Film,Nature,family,"Feel-good, Breathtaking",Luc Jacquet,1667,tt0428803,live,,Oscar Winner 2006,,70024092
 encounters-at-the-end-of-the-world,Encounters at the End of the World,2007,Film,Nature,,"Gloriously weird, Mind-blowing, Breathtaking",Werner Herzog,12172,tt1093824,live,,Oscar Nominee 2009,,70081088
 in-the-shadow-of-the-moon,In the Shadow of the Moon,2007,Film,Science,space,Mind-blowing,David Sington,14284,tt0925248,live,,Sundance Audience Award 2007,,70059639
 virunga,Virunga,2014,Film,Nature,netflix-original,Gripping,Orlando von Einsiedel,263614,tt3455224,live,,Oscar Nominee 2015,,80009431
 the-ivory-game,The Ivory Game,2016,Film,Nature,netflix-original,"Gripping, Infuriating","Richard Ladkani, Kief Davidson",411023,tt5952266,live,,,,80117533
-planet-earth-ii,Planet Earth II,2016,Series,Nature,,"Mind-blowing, Breathtaking",,68595,tt5491994,live,,IDA Best Episodic Series 2017; Emmy Winner 2017,,80195377
+planet-earth-ii,Planet Earth II,2016,Series,Nature,family,"Mind-blowing, Breathtaking",,68595,tt5491994,live,,IDA Best Episodic Series 2017; Emmy Winner 2017,,80195377
 chasing-coral,Chasing Coral,2017,Film,Nature,"ocean, netflix-original",Mind-blowing,Jeff Orlowski,432615,tt6333054,live,,Sundance Audience Award 2017,,80168188
 the-farthest,The Farthest,2017,Film,Science,space,"Mind-blowing, Feel-good",Emer Reynolds,436305,tt6223974,live,,,,
 jane,Jane,2017,Film,Nature,,Feel-good,Brett Morgen,470819,tt7207238,live,,,,80216161
@@ -380,7 +380,7 @@ america-s-most-hated-family-in-crisis,America's Most Hated Family in Crisis,2011
 kurt-courtney,Kurt & Courtney,1998,Film,Music,presenter-led,Gloriously weird,Nick Broomfield,13907,tt0138563,live,,,,1193180
 aileen-life-and-death-of-a-serial-killer,Aileen: Life and Death of a Serial Killer,2003,Film,Crime,presenter-led,Harrowing,"Nick Broomfield, Joan Churchill",37088,tt0364930,live,,,,60033282
 marianne-leonard-words-of-love,Marianne & Leonard: Words of Love,2019,Film,Music,,Harrowing,Nick Broomfield,566230,tt9358196,live,,,,
-pulling-john,Pulling John,2006,Film,Sport,editors-choice,"Funny, Feel-good",Vassiliki Khonsari,39785,tt1289451,live,,,,
+pulling-john,Pulling John,2006,Film,Sport,"editors-choice, family","Funny, Feel-good",Vassiliki Khonsari,39785,tt1289451,live,,,,
 word-wars,Word Wars,2004,Film,Sport,editors-choice,"Funny, Gloriously weird","Eric Chaikin, Julian Petrillo",28105,tt0390632,live,,,,
 somm,Somm,2012,Film,Food,"wine, essential",Gripping,Jason Wise,184149,tt2204371,live,,,,70273636
 jiro-dreams-of-sushi,Jiro Dreams of Sushi,2011,Film,Food,essential,"Mind-blowing, Feel-good",David Gelb,80767,tt1772925,live,,,,70181716
@@ -447,7 +447,7 @@ mountain-queen-the-summits-of-lhakpa-sherpa,Mountain Queen: The Summits of Lhakp
 louis-theroux-inside-the-manosphere,Louis Theroux: Inside the Manosphere,2026,Film,Cults & Psychology,"presenter-led, netflix-original","Gloriously weird, Infuriating",Adrian Choa,1633264,tt39792948,live,,,,81920687
 the-last-dance,The Last Dance,2020,Series,Sport,,Gripping,Jason Hehir,79525,tt8420184,live,,Emmy Winner 2020,,80203144
 fastest,Fastest,2011,Film,Sport,automotive,Gripping,Mark Neale,82914,tt1721677,live,,,,70235813
-on-any-sunday,On Any Sunday,1971,Film,Sport,automotive,Feel-good,Bruce Brown,29251,tt0067527,live,Oscar-nominated,Oscar Nominee 1972,,
+on-any-sunday,On Any Sunday,1971,Film,Sport,"automotive, family",Feel-good,Bruce Brown,29251,tt0067527,live,Oscar-nominated,Oscar Nominee 1972,,
 schumacher,Schumacher,2021,Film,Sport,"automotive, netflix-original",Gripping,"Hanns-Bruno Kammertöns, Vanessa Nöcker, Michael Wech",855823,tt10322274,live,,,,81399204
 1,1,2013,Film,Sport,automotive,"Gripping, Harrowing",Paul Crowder,217316,tt2518788,live,"Also titled ""1: Life on the Limit""",,,
 mclaren,McLaren,2016,Film,Sport,automotive,Gripping,Roger Donaldson,419192,tt5031332,live,,,,
@@ -508,10 +508,10 @@ who-killed-the-klf,Who Killed the KLF?,2023,Film,Music,electronic-music,Glorious
 sisters-with-transistors,Sisters with Transistors,2021,Film,Music,electronic-music,Mind-blowing,Lisa Rovner,682757,tt6744250,live,,,,
 avicii-i-m-tim,Avicii – I'm Tim,2024,Film,Music,"electronic-music, netflix-original",Harrowing,Henrik Burman,1275945,tt32138523,live,,,,81915373
 desire-the-carl-craig-story,Desire: The Carl Craig Story,2025,Film,Music,electronic-music,Feel-good,Jean-Cosme Delaloye,1278719,tt28633306,live,,,,
-good-night-oppy,Good Night Oppy,2022,Film,Science,space,"Feel-good, Mind-blowing",Ryan White,972545,tt14179942,live,,,,
+good-night-oppy,Good Night Oppy,2022,Film,Science,"space, family","Feel-good, Mind-blowing",Ryan White,972545,tt14179942,live,,,,
 challenger-the-final-flight,Challenger: The Final Flight,2020,Series,Science,"space, netflix-original","Harrowing, Gripping","Steven Leckart, Glen Zipper",108298,tt12930534,live,,,,81012137
 human-nature,Human Nature,2019,Film,Science,,Mind-blowing,Adam Bolt,576692,tt9612680,live,,,,
-cosmos-a-spacetime-odyssey,Cosmos: A Spacetime Odyssey,2014,Series,Science,space,Mind-blowing,"Ann Druyan, Steven Soter",58474,tt2395695,live,,,,80004448
+cosmos-a-spacetime-odyssey,Cosmos: A Spacetime Odyssey,2014,Series,Science,"space, family",Mind-blowing,"Ann Druyan, Steven Soter",58474,tt2395695,live,,,,80004448
 anvil-the-story-of-anvil,Anvil! The Story of Anvil,2008,Film,Music,,"Funny, Feel-good",Sacha Gervasi,18094,tt1157605,live,,,,70084229
 dick-johnson-is-dead,Dick Johnson Is Dead,2020,Film,Life Stories,netflix-original,"Funny, Feel-good",Kirsten Johnson,653574,tt11394180,live,,,,80234465
 the-biggest-little-farm,The Biggest Little Farm,2019,Film,Nature,,Feel-good,John Chester,543084,tt8969332,live,,,,
@@ -545,5 +545,5 @@ the-salt-of-the-earth,The Salt of the Earth,2014,Film,Art,,Breathtaking,"Wim Wen
 pina,Pina,2011,Film,Art,,Breathtaking,Wim Wenders,57276,tt1440266,live,,Oscar Nominee 2012,,70209134
 anthropocene-the-human-epoch,Anthropocene: The Human Epoch,2018,Film,Nature,,Breathtaking,"Jennifer Baichwal, Edward Burtynsky, Nicholas de Pencier",539757,tt8399690,live,,,,
 planet-earth,Planet Earth,2006,Series,Nature,,Breathtaking,,1044,tt0795176,live,,,,70219642
-blue-planet-ii,Blue Planet II,2017,Series,Nature,,Breathtaking,,74313,tt6769208,live,,,,
+blue-planet-ii,Blue Planet II,2017,Series,Nature,family,Breathtaking,,74313,tt6769208,live,,,,
 our-planet,Our Planet,2019,Series,Nature,netflix-original,Breathtaking,,83880,tt9253866,live,,,,80049832

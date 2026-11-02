@@ -84,8 +84,8 @@ export function moreFromDirector(film: Film, films: Film[] = CATALOGUE) {
   }
   return undefined;
 }
-// Topic tags say what a film is about; availability and style tags (Presenter-led, Go in blind) don't.
-const SIMILAR_TAGS = new Set<string>(TOPIC_TAGS.map(t => t.id).filter(t => !['free-on-youtube', 'netflix-original'].includes(t)));
+// Topic tags say what a film is about; availability, audience and style tags (Family, Presenter-led, Go in blind) don't.
+const SIMILAR_TAGS = new Set<string>(TOPIC_TAGS.map(t => t.id).filter(t => !['free-on-youtube', 'netflix-original', 'family'].includes(t)));
 // "More like this": two or more shared topic tags, then one, then the same category; random within each tier.
 export function moreLikeThis(film: Film, exclude: Set<string>, rng: () => number = Math.random, limit = 8, films: Film[] = CATALOGUE) {
   const tags = new Set((film.tags ?? []).filter(t => SIMILAR_TAGS.has(t)));
