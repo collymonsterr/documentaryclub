@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { softClick } from '@/lib/utils';
 import { documentaryCount } from '@/lib/site-urls';
 
-const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' } as const;
+const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', browse: 'topics' } as const;
 const ROW = 12;
 
 // One row per award, led by winners; rows under three titles stay behind their pill.

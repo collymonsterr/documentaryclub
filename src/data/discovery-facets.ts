@@ -2,6 +2,7 @@ import { CATALOGUE, SHEET, SNAPSHOT } from './catalogue';
 import type { Film } from './films';
 import { awardBody, awardRank, type AwardBody } from './award-bodies';
 import { TOPIC_TAGS } from './tags';
+import { LIKE_PAGES } from './like-pages';
 
 export const MOODS = [
   { id: 'funny', label: 'Funny' }, { id: 'feelgood', label: 'Feel-good' },
@@ -114,6 +115,19 @@ export function rankScore(film: Film, snap = SNAPSHOT[film.id]) {
 }
 export const rankFilms = <T extends Film>(films: T[]) =>
   films.map(f => ({ f, s: rankScore(f) })).sort((a, b) => b.s - a.s || b.f.year - a.f.year || a.f.id.localeCompare(b.f.id)).map(x => x.f);
+// "Documentaries like X" pages: hand-picked titles first, then by shared topic tags, category, Go in blind and moods, best ranked first.
+export const LIKE_SIZE = 12;
+export function documentariesLike(film: Film, films: Film[] = CATALOGUE) {
+  const page = LIKE_PAGES[film.id], drop = new Set([film.id, ...(page?.drop ?? [])]);
+  const tags = (film.tags ?? []).filter(t => SIMILAR_TAGS.has(t) || t === 'go-in-blind'), moods = EDITORIAL[film.id]?.moods ?? [];
+  const score = (f: Film) => 3 * (f.tags ?? []).filter(t => tags.includes(t)).length + (f.categories.some(c => film.categories.includes(c)) ? 3 : 0)
+    + (EDITORIAL[f.id]?.moods ?? []).filter(m => moods.includes(m)).length;
+  const picked = (page?.add ?? []).map(id => films.find(f => f.id === id)).filter((f): f is Film => !!f && !drop.has(f.id));
+  const chosen = new Set(picked.map(f => f.id));
+  const matched = films.filter(f => !drop.has(f.id) && !chosen.has(f.id)).map(f => ({ f, s: score(f) })).filter(x => x.s >= 4)
+    .sort((a, b) => b.s - a.s || rankScore(b.f) - rankScore(a.f) || a.f.id.localeCompare(b.f.id)).map(x => x.f);
+  return [...picked, ...matched].slice(0, LIKE_SIZE);
+}
 // Short enough to share a gallery card line with the ratings.
 export const cardCommitment = (film: Film) => film.mediaType === 'tv' ? (film.episodes ? `${film.episodes} eps` : 'Series') : formatCommitment(film);
 export function formatCommitment(film: Film, runtime = SNAPSHOT[film.id]?.runtime ?? film.minutes) {

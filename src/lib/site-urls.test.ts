@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { filmDescription, listGroups, listHeading, pagePath, selectionFilms, slugify, urlRewrite } from './site-urls';
 import { CATALOGUE } from '@/data/catalogue';
+import { LIKE_PAGES } from '@/data/like-pages';
 
 const input = (path: string) => urlRewrite.input({ url: new URL(`https://x.test${path}`) });
 const output = (path: string) => urlRewrite.output({ url: new URL(`https://x.test${path}`) });
@@ -31,6 +32,20 @@ describe('ranked list pages', () => {
   it('leads film descriptions with our own facts', () => {
     const senna = CATALOGUE.find(f => f.id === 'senna')!;
     expect(filmDescription(senna)).toMatch(/^Asif Kapadia's 2010 documentary\. BAFTA Winner.* · IMDb \d\.\d, RT \d+%\. /);
+  });
+});
+describe('documentaries like X', () => {
+  it('routes, titles and lists each page from its own picks', () => {
+    expect(input('/documentaries-like/tiger-king')?.search).toBe('?like=tiger-king');
+    expect(output('/?like=tiger-king')?.pathname).toBe('/documentaries-like/tiger-king');
+    expect(input('/documentaries-like/senna-nope')).toBeUndefined();
+    const h = listHeading({ like: 'tiger-king' })!;
+    expect(h.title).toBe(`${h.count} Documentaries Like Tiger King`);
+    expect(selectionFilms({ like: 'tiger-king' })[0]?.id).toBe('tickled');
+  });
+  it('only names titles that are in the catalogue', () => {
+    const ids = new Set(CATALOGUE.map(f => f.id));
+    for (const [id, page] of Object.entries(LIKE_PAGES)) for (const x of [id, ...(page.add ?? []), ...(page.drop ?? [])]) expect(ids.has(x), `${id}: ${x}`).toBe(true);
   });
 });
 describe('clean URLs', () => {

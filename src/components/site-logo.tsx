@@ -39,7 +39,7 @@ export function SiteLogo() {
     if (clicks.current.length === 3) { clicks.current = []; toggleExtras(); }
   };
   return (
-    <Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', browse: 'topics' }} onClick={countClick} aria-label="Documentary Club home"
+    <Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', browse: 'topics' }} onClick={countClick} aria-label="Documentary Club home"
       className="flex min-w-0 items-center gap-2.5 rounded-sm outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
       <CameraMark className="h-7 w-auto shrink-0 text-primary sm:h-8" />
       <span className="truncate font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">Documentary <span className="text-primary">Club</span></span>

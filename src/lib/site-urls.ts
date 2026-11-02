@@ -1,7 +1,8 @@
 import { CATEGORIES, type Category, type Film } from '@/data/films';
 import { AWARD_COPY, CATEGORY_COPY, MOOD_COPY } from '@/data/category-copy';
 import { CATALOGUE, SNAPSHOT } from '@/data/catalogue';
-import { AWARDS, EDITORIAL, MOODS, accolades, byAward, credits, isFeatured, makerIndex, rankFilms, topAwards } from '@/data/discovery-facets';
+import { AWARDS, EDITORIAL, MOODS, accolades, byAward, credits, documentariesLike, isFeatured, makerIndex, rankFilms, topAwards } from '@/data/discovery-facets';
+import { LIKE_PAGES } from '@/data/like-pages';
 import { LIST_INTROS } from '@/data/list-intros';
 import { PICK_TAGS, TAGS } from '@/data/tags';
 import { breadcrumbs, filmSchema, itemList, siteSchema } from '@/lib/structured-data';
@@ -28,13 +29,14 @@ const makerSlugs = () => {
   return makers;
 };
 
-type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; browse?: string };
+type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; like?: string; browse?: string };
 // The one clean path for a page, or null when it is a filter combination that stays on query parameters.
 export function pagePath(search: PageSearch) {
-  const { tag, maker, award, mood } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '';
+  const { tag, maker, award, mood, like } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '';
   if (search.film) return filmIds.has(search.film) ? `/film/${search.film}` : null;
-  if ([tag, cat, maker, award, mood].filter(Boolean).length !== 1) return [tag, cat, maker, award, mood].some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : search.browse === 'about' ? '/about' : '/';
+  if ([tag, cat, maker, award, mood, like].filter(Boolean).length !== 1) return [tag, cat, maker, award, mood, like].some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : search.browse === 'about' ? '/about' : '/';
   if (mood) return moodSlug(mood) ? `/moods/${moodSlug(mood)}` : null;
+  if (like) return LIKE_PAGES[like] ? `/documentaries-like/${like}` : null;
   if (award) { const slug = AWARDS.find(a => a.id === award)?.slug; return slug ? `/awards/${slug}` : null; }
   if (tag) return tagIds.has(tag) ? `/tags/${tag}` : null;
   if (cat) return categorySlug.has(cat) ? `/categories/${categorySlug.get(cat)}` : null;
@@ -58,6 +60,7 @@ export const urlRewrite = {
     if (!slug && section === 'moods') { url.pathname = '/'; url.searchParams.set('mood', MOODS[0].id); url.searchParams.set('browse', 'moods'); return url; }
     if (!slug) return undefined;
     if (section === 'awards' && AWARDS.some(a => a.slug === slug)) { url.searchParams.set('award', AWARDS.find(a => a.slug === slug)!.id); url.searchParams.set('browse', 'awards'); }
+    else if (section === 'documentaries-like' && LIKE_PAGES[slug]) url.searchParams.set('like', slug);
     else if (section === 'moods' && moodBySlug.has(slug)) { url.searchParams.set('mood', moodBySlug.get(slug)!); url.searchParams.set('browse', 'moods'); }
     else if (section === 'tags' && (tagIds.has(slug) || OLD_TAGS[slug])) { url.searchParams.set('tag', OLD_TAGS[slug] ?? slug); url.searchParams.set('browse', 'tags'); }
     else if (section === 'categories' && categoryBySlug.has(slug)) url.searchParams.set('cat', categoryBySlug.get(slug)!.id);
@@ -70,12 +73,12 @@ export const urlRewrite = {
   output: ({ url }: { url: URL }) => {
     if (url.pathname !== '/') return undefined;
     const get = (key: string) => readValue(url.searchParams.get(key) ?? '');
-    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), award: get('award'), mood: get('mood'), browse: get('browse') };
+    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), award: get('award'), mood: get('mood'), like: get('like'), browse: get('browse') };
     const path = pagePath(search);
     if (!path || path === '/') return undefined;
     if (search.film) url.searchParams.delete('film');
     else {
-      ['tag', 'cat', 'maker', 'award', 'mood', 'browse'].forEach(key => url.searchParams.delete(key));
+      ['tag', 'cat', 'maker', 'award', 'mood', 'like', 'browse'].forEach(key => url.searchParams.delete(key));
       if (get('q') === search.maker) url.searchParams.delete('q');
     }
     url.pathname = path;
@@ -90,6 +93,8 @@ const pickTags = new Set<string>(PICK_TAGS.map(t => t.id));
 // The titles one single-selection page lists, in the page's own order: winners first for awards, ranked for everything else.
 export function selectionFilms(search: PageSearch): Film[] {
   const cat = search.cat && search.cat !== 'all' ? search.cat : '';
+  const liked = search.like && LIKE_PAGES[search.like] ? CATALOGUE.find(f => f.id === search.like) : undefined;
+  if (liked) return documentariesLike(liked);
   if (search.award) return byAward(CATALOGUE.filter(f => accolades(f).some(a => a.body === search.award)), search.award);
   if (cat) return rankFilms(CATALOGUE.filter(f => f.categories.includes(cat as Category)));
   if (search.maker) return rankFilms(CATALOGUE.filter(f => credits(f).includes(search.maker!)));
@@ -98,7 +103,8 @@ export function selectionFilms(search: PageSearch): Film[] {
 }
 export function listHeading(search: PageSearch) {
   const cat = search.cat && search.cat !== 'all' ? search.cat : '';
-  if ([search.tag, cat, search.maker, search.mood, search.award].filter(Boolean).length !== 1) return null;
+  if ([search.tag, cat, search.maker, search.mood, search.award, search.like].filter(Boolean).length !== 1) return null;
+  if (search.like) return likeHeading(search.like);
   const base = baseHeading(search, cat);
   if (!base) return null;
   const key = search.tag ? `tag:${search.tag}` : cat ? `cat:${cat}` : search.mood ? `mood:${search.mood}` : search.maker ? `maker:${search.maker}` : `award:${search.award}`;
@@ -112,6 +118,17 @@ export function listHeading(search: PageSearch) {
     seoTitle: search.maker ? `${search.maker} Documentaries, Ranked` : undefined,
     intro: LIST_INTROS[key],
     indexable: search.maker ? featured : count >= MIN_LIST,
+  };
+}
+// "12 Documentaries Like Tiger King": numbered like the ranked lists, but never "Best".
+function likeHeading(id: string) {
+  const film = CATALOGUE.find(f => f.id === id), page = LIKE_PAGES[id];
+  if (!film || !page) return null;
+  const count = documentariesLike(film).length, snap = SNAPSHOT[film.id];
+  return {
+    title: `${count} Documentaries Like ${film.title}`, seoTitle: `${count} Documentaries Like ${film.title} to Watch Next`,
+    description: `If you liked ${film.title}, these are the ones to watch next.`, image: snap?.backdrops?.[0] ?? snap?.poster,
+    key: `like:${id}`, count, ranked: true, best: false, intro: page.intro, indexable: count >= MIN_LIST, film,
   };
 }
 function baseHeading(search: PageSearch, cat: string) {
@@ -158,7 +175,8 @@ function previewFor(search: PageSearch): Preview {
   if (heading) {
     const path = pagePath(search) ?? '/', films = selectionFilms(search);
     const top = heading.image || !search.maker ? undefined : films.find(f => SNAPSHOT[f.id]?.backdrops?.length);
-    const parent: [string, string][] = search.maker ? [['Directors', '/directors']] : search.award ? [['Awards', '/awards']] : [];
+    const liked = 'film' in heading ? heading.film : undefined;
+    const parent: [string, string][] = search.maker ? [['Directors', '/directors']] : search.award ? [['Awards', '/awards']] : liked ? [[liked.title, `/film/${liked.id}`]] : [];
     return {
       title: heading.title, seoTitle: heading.seoTitle, noindex: !heading.indexable,
       // The top three by name make each list's description its own.
@@ -204,6 +222,7 @@ export function listGroups() {
     group('By mood', MOODS.map(m => ({ search: { mood: m.id }, label: m.label }))),
     group('Topics', TAGS.filter(t => t.group === 'topics').map(t => ({ search: { tag: t.id }, label: t.label }))),
     group('Picks', PICK_TAGS.map(t => ({ search: { tag: t.id }, label: t.label }))),
+    group('If you liked…', Object.keys(LIKE_PAGES).map(id => ({ search: { like: id }, label: CATALOGUE.find(f => f.id === id)?.title ?? id }))),
     group('Directors', makerIndex().filter(isFeatured).map(m => ({ search: { maker: m.name }, label: m.name }))),
     group('Awards', AWARDS.map(a => ({ search: { award: a.id }, label: a.label }))),
   ].filter(g => g.items.length);

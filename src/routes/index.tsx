@@ -38,6 +38,7 @@ import {
   formatCommitment,
   moreFromDirector,
   moreLikeThis,
+  documentariesLike,
   rankFilms,
   seededRandom,
 } from "@/data/discovery-facets";
@@ -47,6 +48,7 @@ import { extrasOn } from "@/components/site-logo";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
 import { documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
 import { softClick } from "@/lib/utils";
+import { LIKE_PAGES } from "@/data/like-pages";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
 import { AboutContent } from "@/components/about-content";
@@ -113,6 +115,7 @@ const searchDefaults = {
   pick: "",
   maker: "",
   tag: "",
+  like: "",
   browse: "topics",
 };
 const text = (value: unknown, fallback = "") => (typeof value === "string" && value ? value : fallback);
@@ -132,6 +135,7 @@ export const Route = createFileRoute("/")({
     pick: text(search["pick"]),
     maker: text(search["maker"]),
     tag: text(search["tag"]),
+    like: text(search["like"]),
     browse: text(search["browse"], "topics"),
   }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
@@ -368,12 +372,14 @@ function RelatedRow({ title, films }: { title: ReactNode; films: CatalogueFilm[]
   );
 }
 // Below the trailer: the director's other titles, then similar ones. The picks are seeded by the film, so they're server-rendered links.
-function RelatedRows({ film, onDirector }: { film: CatalogueFilm; onDirector: (name: string) => void }) {
+function RelatedRows({ film, onDirector, onLike }: { film: CatalogueFilm; onDirector: (name: string) => void; onLike: (id: string) => void }) {
   const director = useMemo(() => moreFromDirector(film), [film]);
-  const like = useMemo(
-    () => moreLikeThis(film, new Set(director?.films.map((f) => f.id)), seededRandom(film.id)),
-    [film, director],
-  );
+  // Films with their own "Documentaries like" page show that list and link to it; the rest get seeded similar picks.
+  const page = LIKE_PAGES[film.id] ? `/documentaries-like/${film.id}` : undefined;
+  const like = useMemo(() => {
+    const exclude = new Set(director?.films.map((f) => f.id));
+    return page ? documentariesLike(film).filter((f) => !exclude.has(f.id)) : moreLikeThis(film, exclude, seededRandom(film.id));
+  }, [film, director, page]);
   return (
     <>
       {director && (
@@ -393,7 +399,20 @@ function RelatedRows({ film, onDirector }: { film: CatalogueFilm; onDirector: (n
           films={director.films}
         />
       )}
-      {like.length > 0 && <RelatedRow title="More like this" films={like} />}
+      {like.length > 0 && (
+        <RelatedRow
+          title={
+            page ? (
+              <a href={page} className="hover:text-primary hover:underline" onClick={softClick(() => onLike(film.id))}>
+                If you liked {film.title} →
+              </a>
+            ) : (
+              "More like this"
+            )
+          }
+          films={like}
+        />
+      )}
     </>
   );
 }
@@ -403,7 +422,12 @@ function Index() {
   const view = search.film ? "spotlight" : "gallery";
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
-  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award });
+  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award, like: search.like });
+  // A "Documentaries like X" page lists exactly its picks, in their own order.
+  const likeIds = useMemo(() => {
+    const film = LIKE_PAGES[search.like] ? CATALOGUE.find((f) => f.id === search.like) : undefined;
+    return film ? documentariesLike(film).map((f) => f.id) : undefined;
+  }, [search.like]);
   useEffect(() => {
     setOrder(shuffleIds(CATALOGUE.map((f) => f.id)));
   }, []);
@@ -539,7 +563,9 @@ function Index() {
       .filter((f) =>
         filter === "all" ? true : filter === "awards" ? accolades(f).length > 0 : f.categories.includes(filter),
       )
-      .filter((f) => matchesFacets(f, facet));
+      .filter((f) => matchesFacets(f, facet))
+      .filter((f) => !likeIds || likeIds.includes(f.id));
+    if (sort === "random" && likeIds) return [...filtered].sort((a, b) => likeIds.indexOf(a.id) - likeIds.indexOf(b.id));
     if (sort === "random" && facet.award) return byAward(filtered, facet.award);
     if (sort === "random" && heading?.ranked) return rankFilms(filtered);
     if (sort === "score") return sortByScore(filtered, SNAPSHOT);
@@ -565,6 +591,7 @@ function Index() {
     facet.maker,
     facet.tag,
     heading?.ranked,
+    likeIds,
   ]);
   useEffect(() => {
     setShown(PAGE);
@@ -642,7 +669,7 @@ function Index() {
     const pick = pool[Math.floor(Math.random() * pool.length)];
     if (pick) openSpotlight(pick.id);
   };
-  const selections = [facet.award, facet.mood, facet.maker, facet.tag, filter === "all" ? "" : filter].filter(Boolean).length;
+  const selections = [facet.award, facet.mood, facet.maker, facet.tag, likeIds ? search.like : "", filter === "all" ? "" : filter].filter(Boolean).length;
   // The tab's own selection is not a dropdown filter, so it doesn't count here.
   const activeFilters = [
     type !== "all",
@@ -654,6 +681,7 @@ function Index() {
     !!facet.pick,
     !!facet.maker,
     !!facet.tag,
+    !!likeIds,
     filter !== "all",
   ].filter(Boolean).length - Math.min(selections, 1);
   const filters: { id: Filter; label: string }[] = [{ id: "all", label: "All" }, ...CATEGORIES];
@@ -661,9 +689,9 @@ function Index() {
   const ranks = useMemo(
     () =>
       view === "gallery" && heading?.ranked && sort === "random" && !query && activeFilters === 0 && !listFilter
-        ? new Map(selectionFilms({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood }).map((f, i) => [f.id, i + 1]))
+        ? new Map(selectionFilms({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, like: search.like }).map((f, i) => [f.id, i + 1]))
         : undefined,
-    [view, heading?.ranked, sort, query, activeFilters, listFilter, search.tag, search.cat, search.maker, search.mood],
+    [view, heading?.ranked, sort, query, activeFilters, listFilter, search.tag, search.cat, search.maker, search.mood, search.like],
   );
   // Every tab opens on something: its first entry, or the whole collection for Categories.
   const tabDefaults = {
@@ -1393,7 +1421,7 @@ function Index() {
             playing={trailerOpen}
             onPlay={() => setTrailerOpen(true)}
           />
-          <RelatedRows film={film} onDirector={searchDirector} />
+          <RelatedRows film={film} onDirector={searchDirector} onLike={(id) => browseFrom({ like: id })} />
         </>
       )}
       <SiteIndex />
