@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { CATALOGUE, SNAPSHOT } from '@/data/catalogue';
 import { DocumentaryPoster } from '@/components/documentary-poster';
 import { SiteLogo } from '@/components/site-logo';
+import { NewsletterSignup } from '@/components/newsletter-signup';
 import { listGroups, routedHref, selectionFilms, staticPageHead } from '@/lib/site-urls';
 import { breadcrumbs } from '@/lib/structured-data';
 import { softClick } from '@/lib/utils';
@@ -42,5 +43,6 @@ function BestPage() {
         })}
       </ul>
     </section>)}
+    <NewsletterSignup source="best" className="mt-10" />
   </main>;
 }
