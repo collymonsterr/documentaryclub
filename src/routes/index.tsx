@@ -49,6 +49,7 @@ import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/cou
 import { documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
 import { softClick } from "@/lib/utils";
 import { LIKE_PAGES } from "@/data/like-pages";
+import { netflixCountry } from "@/data/netflix";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
 import { AboutContent } from "@/components/about-content";
@@ -91,6 +92,9 @@ const ERAS: [Era, string][] = [
   ["2020s", "2020s"],
   ["2010s", "2010s"],
   ["2000s", "2000s"],
+  ["1990s", "1990s"],
+  ["1980s", "1980s"],
+  ["1970s", "1970s"],
   ["pre2000", "Pre-2000"],
 ];
 const LENGTHS: [Length, string][] = [
@@ -423,7 +427,7 @@ function Index() {
   const view = search.film ? "spotlight" : "gallery";
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
-  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award, like: search.like });
+  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award, like: search.like, era: search.era, pick: search.pick });
   // A "Documentaries like X" page lists exactly its picks, in their own order.
   const likeIds = useMemo(() => {
     const film = LIKE_PAGES[search.like] ? CATALOGUE.find((f) => f.id === search.like) : undefined;
@@ -474,7 +478,7 @@ function Index() {
   const facet = {
     award: AWARDS.find((a) => a.id === (OLD_AWARD_IDS[search.award] ?? search.award))?.id ?? "",
     mood: MOODS.some((m) => m.id === search.mood) ? search.mood : "",
-    pick: "",
+    pick: netflixCountry(search.pick) ? search.pick : "",
     maker: makerIndex().some((m) => m.name === search.maker) ? search.maker : "",
     tag: TAGS.some((t) => t.id === search.tag) ? search.tag : "",
   };
@@ -675,7 +679,9 @@ function Index() {
       openSpotlight(pick.id);
     }
   };
-  const selections = [facet.award, facet.mood, facet.maker, facet.tag, likeIds ? search.like : "", filter === "all" ? "" : filter].filter(Boolean).length;
+  // A decade page's era is its selection, not a dropdown filter.
+  const decadePage = heading?.key.startsWith("decade:") === true;
+  const selections = [facet.award, facet.mood, facet.pick, facet.maker, facet.tag, likeIds ? search.like : "", filter === "all" ? "" : filter, decadePage ? era : ""].filter(Boolean).length;
   // The tab's own selection is not a dropdown filter, so it doesn't count here.
   const activeFilters = [
     type !== "all",
@@ -695,9 +701,9 @@ function Index() {
   const ranks = useMemo(
     () =>
       view === "gallery" && heading?.ranked && sort === "random" && !query && activeFilters === 0 && !listFilter
-        ? new Map(selectionFilms({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, like: search.like }).map((f, i) => [f.id, i + 1]))
+        ? new Map(selectionFilms({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, like: search.like, era: search.era, pick: search.pick }).map((f, i) => [f.id, i + 1]))
         : undefined,
-    [view, heading?.ranked, sort, query, activeFilters, listFilter, search.tag, search.cat, search.maker, search.mood, search.like],
+    [view, heading?.ranked, sort, query, activeFilters, listFilter, search.tag, search.cat, search.maker, search.mood, search.like, search.era, search.pick],
   );
   // Every tab opens on something: its first entry, or the whole collection for Categories.
   const tabDefaults = {

@@ -126,7 +126,10 @@ export function selectYouTubeTrailer(title: string, aliases: string[], items: Yo
 }
 
 // Era facet: 'recent' = released within the last two years; decades are inclusive [start, start+10); 'pre2000' is year < 2000.
-export type Era = 'all' | 'recent' | '2020s' | '2010s' | '2000s' | 'pre2000';
+export type Era = 'all' | 'recent' | 'pre2000' | (typeof DECADES)[number];
+// Decades with their own ranked page (/decades/x); older ones are too thin to list.
+export const DECADES = ['2020s', '2010s', '2000s', '1990s', '1980s', '1970s'] as const;
+export const isDecade = (era?: string): era is (typeof DECADES)[number] => DECADES.includes(era as (typeof DECADES)[number]);
 export function inEra(year: number, era: Era, now: number = new Date().getFullYear()) {
   if (era === 'all') return true;
   if (era === 'pre2000') return year < 2000;
