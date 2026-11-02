@@ -1,6 +1,7 @@
 import { CATALOGUE, SHEET, SNAPSHOT } from './catalogue';
 import type { Film } from './films';
 import { awardBody, awardRank, type AwardBody } from './award-bodies';
+import { TOPIC_TAGS } from './tags';
 
 export const MOODS = [
   { id: 'funny', label: 'Funny' }, { id: 'feelgood', label: 'Feel-good' },
@@ -73,6 +74,27 @@ export function discoveryShelves(films: Film[]) {
     ...MOODS.map(m => ({ ...m, selection: { award: '', mood: m.id, pick: '', maker: '' } })),
   ];
   return definitions.map(d => ({ ...d, films: films.filter(f => matchesFacets(f, d.selection)) })).filter(s => s.films.length >= 3);
+}
+// The film page's "More from" row: the first director with at least two other catalogue titles.
+export function moreFromDirector(film: Film, films: Film[] = CATALOGUE) {
+  for (const name of film.director.split(', ').map(n => n.trim()).filter(Boolean)) {
+    const others = films.filter(f => f.id !== film.id && credits(f).includes(name)).sort((a, b) => b.year - a.year);
+    if (others.length >= 2) return { name, films: others };
+  }
+  return undefined;
+}
+// Topic tags say what a film is about; availability and style tags (Presenter-led, Go in blind) don't.
+const SIMILAR_TAGS = new Set(TOPIC_TAGS.map(t => t.id).filter(t => !['free-on-youtube', 'netflix-original'].includes(t)));
+// "More like this": two or more shared topic tags, then one, then the same category; random within each tier.
+export function moreLikeThis(film: Film, exclude: Set<string>, rng: () => number = Math.random, limit = 8, films: Film[] = CATALOGUE) {
+  const tags = new Set((film.tags ?? []).filter(t => SIMILAR_TAGS.has(t)));
+  const tier = (f: Film) => {
+    const shared = (f.tags ?? []).filter(t => tags.has(t)).length;
+    return shared >= 2 ? 0 : shared ? 1 : f.categories.some(c => film.categories.includes(c)) ? 2 : 3;
+  };
+  return films.filter(f => f.id !== film.id && !exclude.has(f.id))
+    .map(f => ({ f, tier: tier(f), r: rng() })).filter(x => x.tier < 3)
+    .sort((a, b) => a.tier - b.tier || a.r - b.r).slice(0, limit).map(x => x.f);
 }
 // Short enough to share a gallery card line with the ratings.
 export const cardCommitment = (film: Film) => film.mediaType === 'tv' ? (film.episodes ? `${film.episodes} eps` : 'Series') : formatCommitment(film);

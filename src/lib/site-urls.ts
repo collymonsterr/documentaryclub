@@ -13,6 +13,8 @@ export const slugify = (text: string) => text.normalize('NFKD').replace(/[̀-ͯ]
 const categoryBySlug = new Map(CATEGORIES.map(c => [slugify(c.label), c]));
 const categorySlug = new Map(CATEGORIES.map(c => [c.id as string, slugify(c.label)]));
 const tagIds = new Set<string>(TAGS.map(t => t.id));
+// Renamed tags, so shared links keep working.
+const OLD_TAGS: Record<string, string> = { 'on-netflix': 'netflix-original' };
 const filmIds = new Set(CATALOGUE.map(f => f.id));
 let makers: { bySlug: Map<string, string>; byName: Map<string, string> } | undefined;
 const makerSlugs = () => {
@@ -50,7 +52,7 @@ export const urlRewrite = {
     if (!slug && section === 'awards') { url.pathname = '/'; url.searchParams.set('browse', 'awards'); return url; }
     if (!slug) return undefined;
     if (section === 'awards' && AWARDS.some(a => a.slug === slug)) { url.searchParams.set('award', AWARDS.find(a => a.slug === slug)!.id); url.searchParams.set('browse', 'awards'); }
-    else if (section === 'tags' && tagIds.has(slug)) { url.searchParams.set('tag', slug); url.searchParams.set('browse', 'tags'); }
+    else if (section === 'tags' && (tagIds.has(slug) || OLD_TAGS[slug])) { url.searchParams.set('tag', OLD_TAGS[slug] ?? slug); url.searchParams.set('browse', 'tags'); }
     else if (section === 'categories' && categoryBySlug.has(slug)) url.searchParams.set('cat', categoryBySlug.get(slug)!.id);
     else if (section === 'film' && filmIds.has(slug)) url.searchParams.set('film', searchValue(slug));
     else if (section === 'directors' && makerSlugs().bySlug.has(slug)) { url.searchParams.set('maker', makerSlugs().bySlug.get(slug)!); url.searchParams.set('browse', 'directors'); }

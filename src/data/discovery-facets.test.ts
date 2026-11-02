@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CATALOGUE } from './catalogue';
-import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment } from './discovery-facets';
+import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment, moreFromDirector, moreLikeThis } from './discovery-facets';
 const film = (id: string) => { const f = CATALOGUE.find(f => f.id === id); if (!f) throw new Error(id); return f; };
 describe('evidence-led discovery', () => {
   it('distinguishes Academy wins from nominations', () => {
@@ -47,5 +47,17 @@ describe('evidence-led discovery', () => {
     expect(formatCommitment(film('free-solo'), 100)).toBe('1h 40m');
     expect(formatCommitment({ ...film('free-solo'), mediaType: 'tv', episodes: 6 }, 45)).toBe('Series · 6 episodes · 45 min / ep');
     expect(formatCommitment({ ...film('free-solo'), mediaType: 'collection', parts: ['One', 'Two', 'Three'] })).toBe('3 films');
+  });
+  it('fills the film page rows: the director first, then shared tags, never repeating a title', () => {
+    const grizzly = film('grizzly-man'), director = moreFromDirector(grizzly);
+    expect(director?.name).toBe('Werner Herzog');
+    expect(director?.films.some(f => f.id === 'grizzly-man')).toBe(false);
+    const shown = new Set(director?.films.map(f => f.id));
+    const like = moreLikeThis(grizzly, shown, () => 0.5);
+    expect(like).toHaveLength(8);
+    expect(like.some(f => f.id === 'grizzly-man' || shown.has(f.id))).toBe(false);
+    const sharesTopic = (f: typeof grizzly) => f.categories.some(c => grizzly.categories.includes(c)) || (f.tags ?? []).some(t => grizzly.tags?.includes(t));
+    expect(like.every(sharesTopic)).toBe(true);
+    expect(moreFromDirector({ ...grizzly, director: 'Nobody Else' })).toBeUndefined();
   });
 });

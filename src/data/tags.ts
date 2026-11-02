@@ -2,7 +2,7 @@
 export const TAGS = [
   { id: 'editors-choice', label: "Editor's Choice", group: 'picks', title: "Editor's Choice", description: 'My personal favourites from the whole collection.' },
   { id: 'free-on-youtube', label: 'Free on YouTube', group: 'topics', title: 'Documentaries Free on YouTube', description: 'Full-length films you can watch free on YouTube.' },
-  { id: 'on-netflix', label: 'On Netflix', group: 'topics', title: 'Documentaries on Netflix', description: 'On Netflix in at least one country, so check the film page for yours.' },
+  { id: 'netflix-original', label: 'Netflix Original', group: 'topics', title: 'Netflix Original documentaries', description: 'Made or released by Netflix as Netflix Originals, so check the film page for where to watch.' },
   { id: 'presenter-led', label: 'Presenter-led', group: 'picks', title: 'Presenter-led Documentaries', description: 'Films where the person asking the questions is part of the story.' },
   { id: 'go-in-blind', label: 'Go in blind', group: 'picks', title: 'Documentaries to Go in Blind', description: 'Best watched knowing as little as possible, so avoid the trailers.' },
   { id: 'automotive', label: 'Automotive', group: 'topics', title: 'Automotive Documentaries', description: 'Racing, road trips and the people obsessed with cars and motorbikes.' },

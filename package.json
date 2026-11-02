@@ -15,7 +15,6 @@
     "sync-catalogue": "npx --yes bun scripts/sync-catalogue.ts && npx --yes bun scripts/sitemap.ts",
     "og-images": "npx --yes bun scripts/og-images.ts",
     "resolve-directors": "npx --yes bun scripts/resolve-directors.ts",
-    "refresh-netflix": "npx --yes bun scripts/refresh-netflix.ts",
     "youtube": "npx --yes bun scripts/youtube.ts"
   },
   "overrides": {

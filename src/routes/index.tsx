@@ -1,7 +1,7 @@
 import { createFileRoute, Link, stripSearchParams, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -35,6 +35,8 @@ import {
   makerIndex,
   cardCommitment,
   formatCommitment,
+  moreFromDirector,
+  moreLikeThis,
 } from "@/data/discovery-facets";
 import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
@@ -319,6 +321,74 @@ function FreeLegal({ film }: { film: { title: string; year: number; youtubeId?: 
     </Popover>
   );
 }
+type CatalogueFilm = (typeof CATALOGUE)[number];
+function RelatedCard({ film }: { film: CatalogueFilm }) {
+  return (
+    <Link
+      to="/"
+      search={(prev) => ({ ...searchDefaults, ...prev, film: film.id })}
+      className="group w-[min(36vw,10rem)] shrink-0 sm:w-40"
+    >
+      <div className="relative">
+        <DocumentaryPoster film={film} src={SNAPSHOT[film.id]?.poster} small />
+        <AwardIcons film={film} />
+      </div>
+      <h3 className="mt-2 line-clamp-2 min-h-10 text-sm font-medium leading-5 group-hover:text-primary">{film.title}</h3>
+      <div className="mt-1 flex items-center justify-between gap-2 text-xs leading-4 text-muted-foreground">
+        <p className="min-w-0 truncate">
+          {years(film)}
+          {cardCommitment(film) ? ` · ${cardCommitment(film)}` : ""}
+        </p>
+        <div className="flex shrink-0 items-center gap-2 tabular-nums">
+          {cardRatings(SNAPSHOT[film.id]).map((r) => (
+            <CardRating key={r.site} {...r} />
+          ))}
+        </div>
+      </div>
+    </Link>
+  );
+}
+function RelatedRow({ title, films }: { title: ReactNode; films: CatalogueFilm[] }) {
+  return (
+    <section className="mt-8" aria-label={typeof title === "string" ? title : undefined}>
+      <h2 className="mb-3 font-display text-xl font-semibold">{title}</h2>
+      <ScrollRow label="Documentaries" className="related-row">
+        <div className="flex gap-3">
+          {films.map((f) => (
+            <RelatedCard key={f.id} film={f} />
+          ))}
+        </div>
+      </ScrollRow>
+    </section>
+  );
+}
+// Below the trailer: the director's other titles, then a fresh random pick of similar ones on every visit.
+function RelatedRows({ film, onDirector }: { film: CatalogueFilm; onDirector: (name: string) => void }) {
+  const director = useMemo(() => moreFromDirector(film), [film]);
+  // Random picks are client-only, so the server render and hydration agree.
+  const [like, setLike] = useState<CatalogueFilm[]>([]);
+  useEffect(() => {
+    setLike(moreLikeThis(film, new Set(director?.films.map((f) => f.id))));
+  }, [film, director]);
+  return (
+    <>
+      {director && (
+        <RelatedRow
+          title={
+            <>
+              More from{" "}
+              <button type="button" className="hover:text-primary hover:underline" onClick={() => onDirector(director.name)}>
+                {director.name}
+              </button>
+            </>
+          }
+          films={director.films}
+        />
+      )}
+      {like.length > 0 && <RelatedRow title="More like this" films={like} />}
+    </>
+  );
+}
 function Index() {
   const search = Route.useSearch();
   const navigate = useNavigate({ from: "/" });
@@ -366,7 +436,7 @@ function Index() {
     apply();
     const r = requestAnimationFrame(apply);
     return () => cancelAnimationFrame(r);
-  }, [view]);
+  }, [view, search.film]); // A related-film card opens its film at the top.
   // Filters live in the URL so refresh/bookmarks restore the same view.
   const facet = {
     award: AWARDS.find((a) => a.id === (OLD_AWARD_IDS[search.award] ?? search.award))?.id ?? "",
@@ -1309,6 +1379,7 @@ function Index() {
             playing={trailerOpen}
             onPlay={() => setTrailerOpen(true)}
           />
+          <RelatedRows film={film} onDirector={searchDirector} />
         </>
       )}
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
