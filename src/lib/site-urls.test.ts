@@ -48,6 +48,29 @@ describe('documentaries like X', () => {
     for (const [id, page] of Object.entries(LIKE_PAGES)) for (const x of [id, ...(page.add ?? []), ...(page.drop ?? [])]) expect(ids.has(x), `${id}: ${x}`).toBe(true);
   });
 });
+describe('decade and Netflix pages', () => {
+  it('routes a decade on its own, and keeps it a filter beside another selection', () => {
+    expect(input('/decades/1980s')?.search).toBe('?era=1980s');
+    expect(input('/decades/1960s')).toBeUndefined();
+    expect(output('/?era=1990s')?.pathname).toBe('/decades/1990s');
+    const combined = output('/?tag=wine&era=2010s');
+    expect(combined?.pathname).toBe('/tags/wine');
+    expect(combined?.search).toBe('?era=2010s');
+    const h = listHeading({ era: '1980s' })!;
+    expect(h.title).toBe(`The ${h.count} Best Documentaries of the 1980s`);
+    expect(selectionFilms({ era: '1980s' }).every(f => f.year >= 1980 && f.year < 1990)).toBe(true);
+  });
+  it('routes each Netflix country from the saved snapshot', () => {
+    expect(input('/netflix/uk')?.search).toBe('?pick=netflix-gb');
+    expect(input('/netflix/france')).toBeUndefined();
+    expect(output('/?pick=netflix-ie')?.pathname).toBe('/netflix/ireland');
+    const h = listHeading({ pick: 'netflix-us' })!;
+    expect(h.title).toMatch(/^The \d+ Best Documentaries on Netflix in the US$/);
+    expect(h.key).toBe('netflix:US');
+    expect(listGroups().map(g => g.label)).toEqual(expect.arrayContaining(['On Netflix', 'By decade']));
+  });
+});
+
 describe('clean URLs', () => {
   it('maps public paths onto home filters', () => {
     expect(input('/tags/wine')?.search).toBe('?tag=wine&browse=tags');
