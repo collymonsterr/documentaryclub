@@ -49,7 +49,7 @@ import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/cou
 import { documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
 import { softClick } from "@/lib/utils";
 import { LIKE_PAGES } from "@/data/like-pages";
-import { netflixCountry } from "@/data/netflix";
+import { NETFLIX_PICK } from "@/data/netflix";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
 import { AboutContent } from "@/components/about-content";
@@ -478,7 +478,7 @@ function Index() {
   const facet = {
     award: AWARDS.find((a) => a.id === (OLD_AWARD_IDS[search.award] ?? search.award))?.id ?? "",
     mood: MOODS.some((m) => m.id === search.mood) ? search.mood : "",
-    pick: netflixCountry(search.pick) ? search.pick : "",
+    pick: search.pick === NETFLIX_PICK ? search.pick : "",
     maker: makerIndex().some((m) => m.name === search.maker) ? search.maker : "",
     tag: TAGS.some((t) => t.id === search.tag) ? search.tag : "",
   };

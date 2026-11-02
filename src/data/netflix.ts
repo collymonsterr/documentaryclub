@@ -1,15 +1,18 @@
 import availability from './netflix-availability.json';
 
-// "Best documentaries on Netflix" pages, one per country. Titles come from netflix-availability.json, a dated snapshot
-// written by `npm run netflix-availability`, so the pages never fetch providers at runtime. Netflix catalogues change: rerun it monthly.
+// The "Best documentaries on Netflix" page. Titles come from netflix-availability.json, a dated snapshot written by
+// `npm run netflix-availability`, so the page never fetches providers at runtime. Netflix catalogues change: rerun it monthly.
+// One page, not one per country: Netflix's documentaries are nearly all its own Originals, so the country lists came out
+// almost identical and would compete with each other in search.
 export const NETFLIX_COUNTRIES = [
-  { code: 'IE', slug: 'ireland', name: 'Ireland', in: 'in Ireland' },
-  { code: 'GB', slug: 'uk', name: 'UK', in: 'in the UK' },
-  { code: 'US', slug: 'us', name: 'US', in: 'in the US' },
+  { code: 'IE', name: 'Ireland' },
+  { code: 'GB', name: 'UK' },
+  { code: 'US', name: 'US' },
 ] as const;
-// The pick search param carries the page, e.g. pick=netflix-ie.
-export const netflixPick = (code: string) => `netflix-${code.toLowerCase()}`;
-export const netflixCountry = (pick?: string) => NETFLIX_COUNTRIES.find(c => netflixPick(c.code) === pick);
+// The pick search param carries the page; the old per-country slugs still lead to it.
+export const NETFLIX_PICK = 'netflix';
+export const OLD_NETFLIX_SLUGS = ['ireland', 'uk', 'us'];
 const saved = availability as Record<string, string[] | string | undefined>;
 export const NETFLIX_CHECKED = typeof saved['checked'] === 'string' ? saved['checked'] : '';
 export const onNetflixIn = (code: string, id: string) => (saved[code] as string[] | undefined)?.includes(id) === true;
+export const onNetflix = (id: string) => NETFLIX_COUNTRIES.some(c => onNetflixIn(c.code, id));

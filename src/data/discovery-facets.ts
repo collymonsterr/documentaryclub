@@ -3,7 +3,7 @@ import type { Film } from './films';
 import { awardBody, awardRank, type AwardBody } from './award-bodies';
 import { TOPIC_TAGS } from './tags';
 import { LIKE_PAGES } from './like-pages';
-import { netflixCountry, onNetflixIn } from './netflix';
+import { NETFLIX_PICK, onNetflix } from './netflix';
 
 export const MOODS = [
   { id: 'funny', label: 'Funny' }, { id: 'feelgood', label: 'Feel-good' },
@@ -65,7 +65,7 @@ export type FacetSelection = { award: string; mood: string; pick: string; maker:
 export function matchesFacets(film: Film, selection: FacetSelection) {
   return (!selection.award || accolades(film).some(a => a.body === selection.award))
     && (!selection.mood || EDITORIAL[film.id]?.moods.includes(selection.mood) === true)
-    && (!selection.pick || (selection.pick === 'makers' ? prolific.has(film.id) : netflixCountry(selection.pick) ? onNetflixIn(netflixCountry(selection.pick)!.code, film.id) : EDITORIAL[film.id]?.picks?.includes(selection.pick) === true))
+    && (!selection.pick || (selection.pick === 'makers' ? prolific.has(film.id) : selection.pick === NETFLIX_PICK ? onNetflix(film.id) : EDITORIAL[film.id]?.picks?.includes(selection.pick) === true))
     && (!selection.maker || credits(film).includes(selection.maker))
     && (!selection.tag || film.tags?.includes(selection.tag) === true);
 }

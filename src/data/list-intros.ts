@@ -1,4 +1,4 @@
-// Hand-written intros for the ranked list pages, keyed cat:<id>, tag:<id>, mood:<id>, decade:<era>, netflix:<country> or maker:<name>. Plain text, two to four sentences.
+// Hand-written intros for the ranked list pages, keyed cat:<id>, tag:<id>, mood:<id>, decade:<era>, netflix or maker:<name>. Plain text, two to four sentences.
 export const LIST_INTROS: Record<string, string> = {
   // Subjects
   'cat:psychology': "Cults are never as obvious from the inside. Going Clear on Scientology and Wild Wild Country on the Rajneesh commune in Oregon are the two to start with. Watch them back to back and you'll spot the same playbook every time.",
@@ -52,10 +52,8 @@ export const LIST_INTROS: Record<string, string> = {
   'decade:1990s': "Hoop Dreams follows two kids for five years and is still the sport documentary everything else is measured against. When We Were Kings is Ali and Foreman in Zaire, and Ken Burns's The Civil War is the series that made archive photos feel alive. American Movie is the funniest of the lot.",
   'decade:1980s': "The Thin Blue Line helped free an innocent man and changed how documentaries are made. The Times of Harvey Milk won an Oscar, and Roger & Me is Michael Moore before anyone knew who he was. Koyaanisqatsi has no words at all, just pictures and Philip Glass.",
   'decade:1970s': "Where a lot of modern documentary started. Harlan County, USA puts you on the picket line with Kentucky miners, and Hearts and Minds is the Vietnam film that won an Oscar while the war was still being argued about. Gimme Shelter is the Rolling Stones at Altamont, and it goes very wrong.",
-  // Netflix (availability changes, so these intros name no titles)
-  'netflix:IE': "Netflix has hundreds of documentaries and most of them aren't worth your evening. These are the ones streaming in Ireland that are, ranked best first. Netflix changes what it carries all the time, so check the film page for where to watch today.",
-  'netflix:GB': "Netflix has hundreds of documentaries and most of them aren't worth your evening. These are the ones streaming in the UK that are, ranked best first. Netflix changes what it carries all the time, so check the film page for where to watch today.",
-  'netflix:US': "Netflix has hundreds of documentaries and most of them aren't worth your evening. These are the ones streaming in the US that are, ranked best first. Netflix changes what it carries all the time, so check the film page for where to watch today.",
+  // Netflix (availability changes, so this intro names no titles)
+  'netflix': "Netflix has hundreds of documentaries and most of them aren't worth your evening. These are the ones that are, ranked best first. Almost all of them stream in Ireland, the UK and the US alike, and the film page shows where to watch in your country today.",
   // Picks
   'tag:editors-choice': "My personal favourites from the whole collection. If you only watch a handful of documentaries this year, make it these. Start with Dear Zachary and know nothing going in.",
   'tag:essential': "Where to start if you're new to documentaries, or want to fill the gaps. These are the films everything else gets compared to. The Thin Blue Line, The Fog of War and Free Solo are a good first weekend.",
