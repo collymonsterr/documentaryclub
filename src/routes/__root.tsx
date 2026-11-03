@@ -99,6 +99,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "manifest", href: "/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
+    // iPadOS 15.0–15.3 lack these; hydration calls Object.hasOwn, so without them older iPads only get plain links.
+    scripts: [
+      {
+        children:
+          "Object.hasOwn||(Object.hasOwn=function(o,k){return Object.prototype.hasOwnProperty.call(o,k)});" +
+          "[Array,String].forEach(function(C){C.prototype.at||Object.defineProperty(C.prototype,'at',{configurable:true,writable:true,value:function(n){n=Math.trunc(n)||0;if(n<0)n+=this.length;return this[n]}})});",
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Vite's default target (Safari 16.4) leaves syntax such as class static blocks in the bundle; older
+  // iPads can't parse it, so nothing hydrates and only plain links work. Safari 15 covers iPadOS 15 devices.
+  vite: { build: { target: ["es2020", "safari15", "chrome87", "firefox78", "edge88"] } },
 });
