@@ -1,12 +1,16 @@
 # YouTube results
 
-15 of 15 channels scanned, 188 of 475 films searched.
+15 of 26 channels scanned, 188 of 503 films searched.
 
-## Confirmed: 7
+## Confirmed: 11
 
 | id | Film | Video | Channel | Min (video / film) | Uploaded | Views |
 |---|---|---|---|---|---|---|
+| alphago | AlphaGo (2017) | [AlphaGo - The Movie / Full award-winning documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y) | Google DeepMind | 90 / 90 | 2020-03 | 38,520,419 |
+| the-thinking-game | The Thinking Game (2024) | [The Thinking Game / Full documentary / Tribeca Film Festival official selection](https://www.youtube.com/watch?v=d95J8yzvjbQ) | Google DeepMind | 84 / 84 | 2025-11 | 442,759,830 |
+| 13th | 13th (2016) | [13TH / FULL FEATURE / Netflix](https://www.youtube.com/watch?v=krfcq5pF8u8) | Netflix | 100 / 100 | 2020-04 | 16,665,131 |
 | aileen-wuornos-the-selling-of-a-serial-killer | Aileen Wuornos: The Selling of a Serial Killer (1992) | [Aileen Wuornos: The Selling of a Serial Killer (True Crime Documentary) / Real Stories](https://www.youtube.com/watch?v=FjaBBZmz_Vc) | Real Stories | 84 / 87 | 2021-12 | 886,778 |
+| burma-vj | Burma VJ (2008) | [Military censorship in Myanmar - Reporting from a closed country / "Burma VJ" (Documentary)](https://www.youtube.com/watch?v=MF-fPaBdRmk) | wocomoDOCS | 85 / 84 | 2021-07 | 537,249 |
 | winter-on-fire | Winter on Fire (2015) | [Winter on Fire: Ukraine's Fight for Freedom / Full Feature / Netflix](https://www.youtube.com/watch?v=yzNxLzFfR5w) | Netflix | 98 / 98 | 2022-03 | 1,543,347 |
 | requiem-for-the-american-dream | Requiem for the American Dream (2015) | [Requiem for the American Dream with Noam Chomsky DOCUMENTARY - Politics, Philosophy](https://www.youtube.com/watch?v=WEnv5I8Aq4I) | Gravitas Documentaries | 73 / 73 | 2023-02 | 1,074,784 |
 | the-man-who-skied-down-everest | The Man Who Skied Down Everest (1975) | [The Man Who Skied Down Everest (Oscar-Winning Documentary) / Real Stories](https://www.youtube.com/watch?v=ViFmRQx66Xg) | Real Stories | 83 / 86 | 2020-07 | 346,723 |
@@ -14,7 +18,7 @@
 | the-most-dangerous-man-in-america | The Most Dangerous Man in America (2009) | [The Most Dangerous Man in America: Daniel Ellsberg and the Pentagon Files (Full Documentary)](https://www.youtube.com/watch?v=qt1V5aBJI8w) | wocomoDOCS | 92 / 92 | 2026-03 | 88,420 |
 | crip-camp | Crip Camp (2020) | [CRIP CAMP: A DISABILITY REVOLUTION / Full Feature / Netflix](https://www.youtube.com/watch?v=OFS8SpwioZ4) | Netflix | 107 / 107 | 2020-07 | 1,201,295 |
 
-## Check by hand: 94
+## Check by hand: 90
 
 | id | Film | Video | Channel | Min (video / film) | Uploaded | Views |
 |---|---|---|---|---|---|---|
@@ -46,9 +50,7 @@
 | the-internet-s-own-boy | The Internet's Own Boy (2014) | [The Internet's Own Boy: The Story of Aaron Swartz / full movie (2014)](https://www.youtube.com/watch?v=9vz06QO3UkQ) | moviemaniacsDE | 105 / 105 | 2014-07 | 2,460,428 |
 | deep-web | Deep Web (2015) | [Deep Web: The Rise and Fall of the Silk Road Documentary](https://www.youtube.com/watch?v=7GAoeo4FnBU) | The Documentary Archives | 86 / 89 | 2022-08 | 103,490 |
 | hypernormalisation | HyperNormalisation (2016) | [Hypernormalisation / Full Documentary / Adam Curtis](https://www.youtube.com/watch?v=Gr7T07WfIhM) | Adam Curtis Documentaries | 167 / 167 | 2023-09 | 622,762 |
-| alphago | AlphaGo (2017) | [AlphaGo - The Movie / Full award-winning documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y) | Google DeepMind | 90 / 90 | 2020-03 | 38,520,419 |
 | general-magic | General Magic (2018) | [General Magic — The Smartphone That Came Too Early](https://www.youtube.com/watch?v=O3MH05KGiTU) | Inside The Shift | 90 / 92 | 2025-12 | 7,267 |
-| the-thinking-game | The Thinking Game (2024) | [The Thinking Game / Full documentary / Tribeca Film Festival official selection](https://www.youtube.com/watch?v=d95J8yzvjbQ) | Google DeepMind | 84 / 84 | 2025-11 | 442,759,830 |
 | the-thin-blue-line | The Thin Blue Line (1988) | [Cienka niebieska linia / "The thin blue line" (1988), lektor PL](https://www.youtube.com/watch?v=czqRprpPUqY) | Maciej Łukomski | 99 / 103 | 2017-08 | 51,450 |
 | paradise-lost | Paradise Lost (1996) | [Paradise Lost: Asesinato en Robin Hood Hills / Documental completo VOSE](https://www.youtube.com/watch?v=-T0Nl3zkDE4) | whoami | 149 / 150 | 2016-11 | 328,299 |
 | dear-zachary | Dear Zachary (2008) | [Dear Zachary: A Letter to a Son About His Father - 2008 (Türkçe Alt Yazılı Belgesel Film)](https://www.youtube.com/watch?v=cDSgMlVWbfU) | gitarisyen | 94 / 94 | 2018-02 | 922,903 |
@@ -56,7 +58,6 @@
 | abducted-in-plain-sight | Abducted in Plain Sight (2017) | [Abducted In Plain Sight](https://www.youtube.com/watch?v=O90aWU2lny8) | YouTube Movies | 90 / 91 | 2018-10 | 0 |
 | into-the-deep | Into the Deep (2020) | [Into the Deep: The Submarine Murder Case Watch Documentary Full Free](https://www.youtube.com/watch?v=OmFz49I94lE) | Paramita_Koen Renita | 86 / 90 | 2023-02 | 4,211 |
 | the-house-i-live-in | The House I Live In (2012) | [The House I Live In ( 2012)](https://www.youtube.com/watch?v=ijgFKu4-TI8) | sanjie lio | 105 / 110 | 2016-01 | 32,661 |
-| 13th | 13th (2016) | [13TH / FULL FEATURE / Netflix](https://www.youtube.com/watch?v=krfcq5pF8u8) | Netflix | 100 / 100 | 2020-04 | 16,665,131 |
 | the-act-of-killing | The Act of Killing (2012) | [JAGAL The Act of Killing full movie](https://www.youtube.com/watch?v=Do1_68LrpbU) | Jagal Senyap Film | 160 / 159 | 2014-03 | 193,450 |
 | the-unknown-known | The Unknown Known (2013) | [The Unknown Known / English Full Movie / Documentary Biography History](https://www.youtube.com/watch?v=44_CeRpJ4m8) | HFI: Vision Reels | 96 / 102 | 2025-08 | 3,704 |
 | bitter-lake | Bitter Lake (2015) | [Bitter Lake, Adam Curtis 2015 720p](https://www.youtube.com/watch?v=84P4dzow1Bw) | Godburn | 134 / 135 | 2019-04 | 377,329 |
@@ -107,15 +108,91 @@
 | the-witness | The Witness (2015) | [The True Story of Kitty Genovese / The Witness / FULL MOVIE / True Crime Documentary (2017)](https://www.youtube.com/watch?v=kepwlL44Neo) | FilmRise True Crime | 90 / 86 | 2023-02 | 322,354 |
 | amanda-knox | Amanda Knox (2016) | [Meredith Kercher & Amanda Knox / A Murder, a Villa, and a Storm to Come (Part 1)](https://www.youtube.com/watch?v=V1ow75YmqTQ) | Crime Weekly | 83 / 92 | 2026-01 | 258,716 |
 | time | Time (2020) | [Love in the Time of Fentanyl](https://www.youtube.com/watch?v=vU3Pcc2SmJQ) | VICE | 75 / 81 | 2026-03 | 277,228 |
-| burma-vj | Burma VJ (2008) | [Military censorship in Myanmar - Reporting from a closed country / "Burma VJ" (Documentary)](https://www.youtube.com/watch?v=MF-fPaBdRmk) | wocomoDOCS | 85 / 84 | 2021-07 | 537,249 |
 | the-true-cost | The True Cost (2015) | [$800 Billion Wasted: What Is The TRUE Cost Of Healthcare? (Health Documentary)](https://www.youtube.com/watch?v=rGraxnEKEts) | Real Stories | 84 / 92 | 2024-06 | 20,163 |
 | mountain | Mountain (2017) | [1 Mountain - Hunter Wood Mountain Skiing - Outdoors, Adventure, Inspirational - FULL DOCUMENTARY](https://www.youtube.com/watch?v=Ep4ljcehicY) | Gravitas Documentaries | 71 / 73 | 2023-08 | 2,513 |
 | road | Road (2014) | [Charlie Kirk: The Road To Courage](https://www.youtube.com/watch?v=dkTUKKO91tE) | Real Stories | 104 / 102 | 2026-09 | 21,998 |
 | 1 | 1 (2013) | [Inside the Polarization / Divided States of America Part 1 (full documentary) / FRONTLINE (PBS)](https://www.youtube.com/watch?v=dBPHMR5BVqU) | FRONTLINE PBS / Official | 113 / 112 | 2026-06 | 1,525,148 |
 
-## Tagged now, not confirmed: 4
+## Tagged now, not confirmed: 81
 
+- 20 Days in Mariupol (Film)
+- Dark Days (Film)
+- Stories We Tell (Film)
+- Going Clear (Film)
+- Enron: The Smartest Guys in the Room (Film)
+- Inside Job (Film)
+- The Century of the Self (Series)
+- Citizenfour (Film)
+- The Internet's Own Boy (Film)
+- Capturing the Friedmans (Film)
+- The Act of Killing (Film)
+- Grizzly Man (Film)
+- The Corporation (Film)
+- Paris Is Burning (Film)
+- Hearts of Darkness: A Filmmaker's Apocalypse (Film)
+- Hoop Dreams (Film)
+- Exit Through the Gift Shop (Film)
+- The Wolfpack (Film)
+- The Source Family (Film)
+- Startup.com (Film)
+- Hearts and Minds (Film)
+- Manufacturing Consent: Noam Chomsky and the Media (Film)
+- The Square (Film)
+- The Look of Silence (Film)
+- For Sama (Film)
+- Food, Inc. (Film)
+- Inequality for All (Film)
+- The True Cost (Film)
+- China's Van Gogh (Film)
+- Little Dieter Needs to Fly (Film)
+- Mountain (Film)
+- Freeway: Crack in the System (Film)
+- Magic Medicine (Film)
+- Sicko (Film)
+- My Scientology Movie (Film)
+- Aileen: Life and Death of a Serial Killer (Film)
+- Jiro Dreams of Sushi (Film)
+- Style Wars (Film)
+- Murderball (Film)
+- I Am Not Your Negro (Film)
+- 2000 Meters to Andriivka (Film)
+- Fastest (Film)
 - Truth in 24 II: Every Second Counts (Film)
+- Ferrari 312B (Film)
 - Endurance (Film)
 - And We Go Green (Film)
 - Valentino Rossi: The Doctor Series (Series)
+- Revenge of the Electric Car (Film)
+- The Birth of Sake (Film)
+- Noma: My Perfect Storm (Film)
+- Bill Cunningham New York (Film)
+- Salesman (Film)
+- Marley (Film)
+- The Most Hated Family in America (Film)
+- Hell House (Film)
+- Koyaanisqatsi (Film)
+- Our Planet (Series)
+- The Devil and Daniel Johnston (Film)
+- Muscle Shoals (Film)
+- Bukowski: Born Into This (Film)
+- Fed Up (Film)
+- The Decline of Western Civilization (Film)
+- The Decline of Western Civilization Part II: The Metal Years (Film)
+- Pumping Iron (Film)
+- David Lynch: The Art Life (Film)
+- Divide and Conquer: The Story of Roger Ailes (Film)
+- Guerrilla: The Taking of Patty Hearst (Film)
+- Something from Nothing: The Art of Rap (Film)
+- The September Issue (Film)
+- The Gift: The Journey of Johnny Cash (Film)
+- Sound City (Film)
+- Life in a Day (Film)
+- The Painter and the Thief (Film)
+- The Great Buster: A Celebration (Film)
+- Iraq in Fragments (Film)
+- Overnight (Film)
+- Crips and Bloods: Made in America (Film)
+- Where Dreams Go To Die (Film)
+- This Is the Zodiac Speaking (Film)
+- A Certain Kind of Death (Film)
+- RUIN: Money, Ego and Deception at FTX (Film)

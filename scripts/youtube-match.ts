@@ -1,5 +1,5 @@
 // Rules for accepting a YouTube video as the full film. Kept apart from the API calls so they can be tested.
-export const TOLERANCE_MINUTES = 10, MIN_AGE_DAYS = 183, REGIONS = ['IE', 'US', 'GB'];
+export const TOLERANCE_MINUTES = 10, REGIONS = ['IE', 'US', 'GB'];
 export type Video = { id: string; title: string; channelId: string; channelTitle: string; minutes: number; publishedAt: string; views: number; public: boolean; blocked: string[]; allowed?: string[] };
 export type Film = { title: string; aliases?: string[]; minutes?: number | undefined };
 export type Verdict = 'confirmed' | 'review';
@@ -21,11 +21,11 @@ export const playsIn = (v: Pick<Video, 'blocked' | 'allowed'>) => REGIONS.filter
 export const playable = (v: Video) => v.public && playsIn(v).length > 0;
 const distinctive = (title: string) => normalize(title).split(' ').length >= 2;
 
-// Official channels are tagged; anything else needs the owner's yes, and only once it has stayed up for months.
-export function judge(film: Film, video: Video, trusted: Set<string>, now = Date.now()): Verdict | null {
+// Any full upload counts, whoever posted it; the monthly check drops the ones that get taken down.
+// Official channels are tagged automatically; anything else needs a look to confirm it's the whole film.
+export function judge(film: Film, video: Video, trusted: Set<string>): Verdict | null {
   if (!namesFilm(video.title, film) || !playable(video) || ABOUT_THE_FILM.test(normalize(video.title))) return null;
   if (film.minutes && Math.abs(video.minutes - film.minutes) > TOLERANCE_MINUTES) return null;
   if (trusted.has(video.channelId)) return film.minutes && distinctive(film.title) && opensWith(video.title, film) ? 'confirmed' : 'review';
-  const days = (now - Date.parse(video.publishedAt)) / 86_400_000;
-  return days >= MIN_AGE_DAYS ? 'review' : null;
+  return 'review';
 }
