@@ -106,6 +106,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Object.hasOwn||(Object.hasOwn=function(o,k){return Object.prototype.hasOwnProperty.call(o,k)});" +
           "[Array,String].forEach(function(C){C.prototype.at||Object.defineProperty(C.prototype,'at',{configurable:true,writable:true,value:function(n){n=Math.trunc(n)||0;if(n<0)n+=this.length;return this[n]}})});",
       },
+      // Any URL with ?debug shows an on-screen report (public/diagnostics.js) for devices we can't test on.
+      { children: "if(/[?&]debug\\b/.test(location.search))document.write('<script src=\"/diagnostics.js\"><\\/script>')" },
     ],
   }),
   shellComponent: RootShell,
@@ -132,6 +134,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   // Only in production: a service worker caching dev-server files would serve stale code while editing.
   useEffect(() => {
+    (window as { __dcHydrated?: boolean }).__dcHydrated = true;
     if (import.meta.env.PROD && "serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => {});
   }, []);
 
