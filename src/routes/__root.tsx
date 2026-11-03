@@ -81,7 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-          ],
+      // Installable app: manifest, icons and the colours the phone uses around it (public/sw.js, scripts/app-icons.ts).
+      { name: "theme-color", content: "#14100c" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-title", content: "Doc Club" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+    ],
     links: [
       {
         rel: "stylesheet",
@@ -90,6 +96,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lato:wght@500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -114,6 +122,10 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  // Only in production: a service worker caching dev-server files would serve stale code while editing.
+  useEffect(() => {
+    if (import.meta.env.PROD && "serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => {});
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

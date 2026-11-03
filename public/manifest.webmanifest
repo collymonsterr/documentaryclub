@@ -1,0 +1,16 @@
+{
+  "name": "Documentary Club",
+  "short_name": "Doc Club",
+  "description": "The best documentaries, hand-picked, with where to watch them.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#14100c",
+  "theme_color": "#14100c",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
