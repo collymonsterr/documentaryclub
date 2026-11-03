@@ -2,8 +2,8 @@ import { Coffee } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 
 // Tips go through Ko-fi (no cut on one-off tips). A plain link rather than Ko-fi's widget, so no
-// third-party script loads and it matches the site. Empty until the Ko-fi page exists: nothing renders.
-export const KOFI_URL = '';
+// third-party script loads and it matches the site. Nothing renders if this is emptied.
+export const KOFI_URL = 'https://ko-fi.com/documentaryclub';
 
 const track = (placement: string) => () => trackEvent('support_click', { placement });
 
