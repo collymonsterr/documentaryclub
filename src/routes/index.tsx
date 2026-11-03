@@ -179,12 +179,14 @@ function WatchStrip({
   fallback,
   country,
   onCountry,
+  onYouTube = false,
 }: {
   loading: boolean;
   providers?: Enrichment["providers"] | undefined;
   fallback: string;
   country: string;
   onCountry: (country: string) => void;
+  onYouTube?: boolean;
 }) {
   const streaming = streamingLogos(providers?.flatrate);
   const countryName = COUNTRIES.find(([code]) => code === country)?.[1] ?? country;
@@ -206,7 +208,7 @@ function WatchStrip({
           )}
         </span>
       ) : (
-        <span className="text-muted-foreground">No streaming found in {countryName}</span>
+        <span className="text-muted-foreground">{onYouTube ? "Not on other streaming services" : "No streaming found"} in {countryName}</span>
       )}
       <Popover>
         <PopoverTrigger className="inline-flex min-h-7 items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">
@@ -323,12 +325,13 @@ function YouTubeListControls({ awards, onAwards, blocked, allRegions, onAllRegio
 function WatchOnYouTube({ film, country }: { film: { youtubeId?: string; youtubeRegions?: string[] }; country: string }) {
   if (!film.youtubeId) return null;
   const only = film.youtubeRegions?.length && !film.youtubeRegions.includes(country) ? film.youtubeRegions.map((c) => REGION_NAMES[c] ?? c).join(" & ") : "";
+  // The page's main action when there is one: YouTube red, first in the row.
   return (
-    <Button asChild variant="outline">
+    <Button asChild className="border-transparent bg-[#FF0000] font-semibold text-white hover:bg-[#FF0000]/85">
       <a href={`https://www.youtube.com/watch?v=${film.youtubeId}`} target="_blank" rel="noreferrer">
-        <Play className="fill-[#FF0000] text-[#FF0000]" />
+        <Play className="fill-current" />
         Watch free on YouTube
-        {only && <span className="text-xs font-normal text-muted-foreground">{only} only</span>}
+        {only && <span className="text-xs font-normal text-white/80">{only} only</span>}
       </a>
     </Button>
   );
@@ -1473,6 +1476,7 @@ function Index() {
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2">
+                <WatchOnYouTube film={film} country={country} />
                 <Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}>
                   <Heart className={shortlist.has(film.id) ? "fill-save text-save" : "text-save"} />
                   {shortlist.has(film.id) ? "Saved" : "Save"}
@@ -1490,8 +1494,7 @@ function Index() {
                     </a>
                   </Button>
                 )}
-                <WatchOnYouTube film={film} country={country} />
-                <FreeLegal film={film} />
+                {!film.youtubeId && <FreeLegal film={film} />}
                 <CopyLink path={`/film/${film.id}`} className="h-9" />
               </div>
               <WatchStrip
@@ -1500,6 +1503,7 @@ function Index() {
                 fallback={justWatchLink(film, country)}
                 country={country}
                 onCountry={chooseCountry}
+                onYouTube={Boolean(film.youtubeId)}
               />
               {surprised === film.id && (
                 <NewsletterSignup compact source="surprise" title="Liked the surprise? Get one every week" className="mt-4" />
