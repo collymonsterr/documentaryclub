@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { SuggestForm } from '@/components/suggest-form';
+import { SupportAbout } from '@/components/support';
 
 const paragraph = 'mt-4 leading-relaxed text-foreground/90';
 const heading = 'mt-8 font-display text-xl font-semibold';
@@ -13,6 +14,7 @@ export function AboutContent() {
     <h3 className={heading}>Where to start</h3>
     <p className={paragraph}>Editor's Choice is my personal favourites. Every title shows where it's streaming, and plenty are free on YouTube - look for the red "Watch free on YouTube" button.</p>
     <p className={paragraph}>Want it on your phone like an app? On iPhone, tap Share then "Add to Home Screen". On Android, open the browser menu and choose "Install app".</p>
+    <SupportAbout heading={heading} paragraph={paragraph} />
     <h3 className={heading}>Got one I'm missing?</h3>
     <p className={paragraph}>Send me a message or suggest a documentary using the form below.</p>
     <SuggestForm />

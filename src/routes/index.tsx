@@ -1,3 +1,4 @@
+import { SupportLine } from "@/components/support";
 import { createFileRoute, Link, stripSearchParams, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -1560,6 +1561,7 @@ function Index() {
         </>
       )}
       {view === "gallery" && listFilter !== "shortlist" && <NewsletterSignup source="footer" className="mt-10" />}
+      <SupportLine />
       <SiteIndex />
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
         <span>{CATALOGUE.length} curated true stories.</span>
