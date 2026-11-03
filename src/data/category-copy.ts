@@ -31,7 +31,7 @@ export const MOOD_COPY: Record<string, { title: string; description: string }> =
   weird: { title: 'Weird Documentaries', description: 'Strange people, stranger stories, and all of it true.' },
 };
 export const AWARD_COPY: Record<string, { title: string; description: string }> = {
-  oscar: { title: 'Oscar Documentaries', description: 'Academy Award winners and nominees.' },
+  oscar: { title: 'Oscar-Winning Documentaries', description: 'Every Academy Award winner in the collection, newest ceremony first, then the nominees.' },
   bafta: { title: 'BAFTA Winners', description: 'Documentaries that won a BAFTA.' },
   emmy: { title: 'Emmy Winners', description: 'Documentaries that won a Primetime Emmy.' },
   sundance: { title: 'Sundance Winners', description: 'Grand Jury, Audience and Directing award winners from Sundance.' },

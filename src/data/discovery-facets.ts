@@ -13,8 +13,8 @@ export const MOODS = [
 ] as const;
 export const PICKS = [{ id: 'makers', label: 'Great documentary makers' }] as const;
 export const AWARDS = [
-  { id: 'oscar', label: 'Oscars', slug: 'oscars' }, { id: 'bafta', label: 'BAFTA', slug: 'bafta' }, { id: 'emmy', label: 'Emmys', slug: 'emmys' },
-  { id: 'sundance', label: 'Sundance', slug: 'sundance' }, { id: 'tribeca', label: 'Tribeca', slug: 'tribeca' }, { id: 'ida', label: 'IDA', slug: 'ida' }, { id: 'cannes', label: 'Cannes', slug: 'cannes' },
+  { id: 'oscar', label: 'Oscars', slug: 'oscars' }, { id: 'bafta', label: 'BAFTA', slug: 'bafta' }, { id: 'cannes', label: 'Cannes', slug: 'cannes' }, { id: 'emmy', label: 'Emmys', slug: 'emmys' },
+  { id: 'sundance', label: 'Sundance', slug: 'sundance' }, { id: 'tribeca', label: 'Tribeca', slug: 'tribeca' }, { id: 'ida', label: 'IDA', slug: 'ida' },
 ] as const;
 // Links from before Awards was grouped by body.
 export const OLD_AWARD_IDS: Record<string, string> = { 'oscar-win': 'oscar', 'oscar-nominee': 'oscar', 'sundance-win': 'sundance' };
@@ -43,10 +43,13 @@ export const youtubePlaysIn = (film: Pick<Film, 'youtubeRegions'>, country: stri
   !(STREAMING_COUNTRIES as readonly string[]).includes(country) || !film.youtubeRegions?.length || film.youtubeRegions.includes(country);
 export const topAwards = (film: Film, limit = 3) => accolades(film).filter((a, i, all) => all.findIndex(b => b.body === a.body) === i).slice(0, limit);
 
-// The film's best award from one body, and a list led by winners, newest first.
+// The film's best award from one body, and a list led by winners, newest award first (the ceremony year, not the film's).
 export const awardFor = (film: Film, body: string) => accolades(film).find(a => a.body === body);
-export const byAward = (films: Film[], body: string) => [...films].sort((a, b) =>
-  (awardFor(a, body)?.result === 'Won' ? 0 : 1) - (awardFor(b, body)?.result === 'Won' ? 0 : 1) || b.year - a.year);
+export const awardYear = (label = '') => Number(label.match(/(\d{4})$/)?.[1] ?? 0);
+export const byAward = (films: Film[], body: string) => [...films].sort((a, b) => {
+  const x = awardFor(a, body), y = awardFor(b, body);
+  return (x?.result === 'Won' ? 0 : 1) - (y?.result === 'Won' ? 0 : 1) || awardYear(y?.label) - awardYear(x?.label) || a.title.localeCompare(b.title);
+});
 
 export function makerIndex(films: Film[] = CATALOGUE) {
   const map = new Map<string, Film[]>();

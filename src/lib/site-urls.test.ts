@@ -9,7 +9,7 @@ const output = (path: string) => urlRewrite.output({ url: new URL(`https://x.tes
 describe('browse headings', () => {
   it('heads every single selection and steps aside for combinations', () => {
     expect(listHeading({ mood: 'funny', cat: 'all' })?.title).toBe(`The ${listHeading({ mood: 'funny' })!.count} Best Funny Documentaries`);
-    expect(listHeading({ award: 'oscar' })?.title).toBe('Oscar Documentaries');
+    expect(listHeading({ award: 'oscar' })?.title).toBe('Oscar-Winning Documentaries');
     expect(pagePath({ award: 'sundance' })).toBe('/awards/sundance');
     expect(pagePath({ browse: 'awards' })).toBe('/awards');
     expect(listHeading({ mood: 'funny', cat: 'scams' })).toBeNull();

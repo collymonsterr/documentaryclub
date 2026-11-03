@@ -2,8 +2,8 @@
 export const AWARD_BODIES = [
   { id: 'oscar', name: 'Academy Awards', color: '#f4c430', match: /^Oscar\b|Academy Award/ },
   { id: 'bafta', name: 'BAFTA', color: '#f2f0e6', match: /^BAFTA\b/ },
-  { id: 'emmy', name: 'Emmy', color: '#b794f6', match: /\bEmmy\b/ },
   { id: 'cannes', name: 'Cannes', color: '#4ade80', match: /^Cannes\b/ },
+  { id: 'emmy', name: 'Emmy', color: '#b794f6', match: /\bEmmy\b/ },
   { id: 'sundance', name: 'Sundance', color: '#fb923c', match: /^Sundance\b/ },
   { id: 'tribeca', name: 'Tribeca', color: '#38bdf8', match: /^Tribeca\b/ },
   { id: 'ida', name: 'IDA', color: '#2dd4bf', match: /^IDA\b/ },

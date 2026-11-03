@@ -1,5 +1,6 @@
 import { SNAPSHOT } from '@/data/catalogue';
 import type { Film } from '@/data/films';
+import { accolades } from '@/data/discovery-facets';
 import { SITE_NAME as NAME, SITE_ORIGIN } from '@/lib/site-urls';
 
 // schema.org JSON-LD for search engines. Only facts we hold: no star ratings, because Google forbids marking up scores from other sites.
@@ -17,6 +18,7 @@ export const breadcrumbs = (items: [name: string, path: string][]) => ({
 
 export function filmSchema(film: Film) {
   const snap = SNAPSHOT[film.id], series = film.mediaType === 'tv', runtime = snap?.runtime ?? film.minutes;
+  const wins = accolades(film).filter(a => a.result === 'Won').map(a => a.label);
   return {
     '@context': 'https://schema.org', '@type': series ? 'TVSeries' : 'Movie',
     name: film.title, url: url(`/film/${film.id}`), genre: 'Documentary',
@@ -27,6 +29,8 @@ export function filmSchema(film: Film) {
     ...(snap?.overview ?? film.synopsis ? { description: snap?.overview ?? film.synopsis } : {}),
     ...(!series && runtime ? { duration: `PT${runtime}M` } : {}),
     ...(film.imdbId ? { sameAs: [`https://www.imdb.com/title/${film.imdbId}/`] } : {}),
+    // schema.org's award means one the film won, so nominations stay out.
+    ...(wins.length ? { award: wins } : {}),
   };
 }
 

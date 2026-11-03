@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CATALOGUE } from './catalogue';
-import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment, moreFromDirector, moreLikeThis, rankFilms, seededRandom, wonAward, youtubePlaysIn } from './discovery-facets';
+import { EDITORIAL, accolades, topAwards, discoveryShelves, makerIndex, matchesFacets, formatCommitment, moreFromDirector, moreLikeThis, rankFilms, seededRandom, wonAward, youtubePlaysIn, byAward, awardFor, awardYear } from './discovery-facets';
 const film = (id: string) => { const f = CATALOGUE.find(f => f.id === id); if (!f) throw new Error(id); return f; };
 describe('evidence-led discovery', () => {
   it('distinguishes Academy wins from nominations', () => {
@@ -81,3 +81,15 @@ describe('Free on YouTube page', () => {
     expect(CATALOGUE.some(f => accolades(f).length > 0 && !wonAward(f))).toBe(true);
   });
 });
+
+describe('award pages', () => {
+  it('sorts by the award year, newest first, winners before nominees', () => {
+    const years = (body: string) => byAward(CATALOGUE.filter(f => awardFor(f, body)), body).map(f => [awardFor(f, body)!.result, awardYear(awardFor(f, body)!.label)] as const);
+    for (const body of ['oscar', 'bafta', 'sundance']) {
+      const rows = years(body);
+      rows.forEach(([result, year], i) => { const next = rows[i + 1]; if (next && next[0] === result) expect(year).toBeGreaterThanOrEqual(next[1]); });
+      expect(rows.findIndex(r => r[0] === 'Nominated')).toBe(rows.some(r => r[0] === 'Nominated') ? rows.filter(r => r[0] === 'Won').length : -1);
+    }
+  });
+});
+

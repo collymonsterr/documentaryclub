@@ -1,7 +1,7 @@
 import { createFileRoute, Link, stripSearchParams, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Fragment, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -43,6 +43,7 @@ import {
   seededRandom,
   wonAward,
   youtubePlaysIn,
+  awardFor,
 } from "@/data/discovery-facets";
 import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
@@ -151,7 +152,8 @@ export const Route = createFileRoute("/")({
 });
 type Filter = "all" | Category | "awards";
 const AWARDED = CATALOGUE.filter((f) => accolades(f).length > 0);
-const AWARD_PILLS = AWARDS.map((a) => ({ ...a, count: AWARDED.filter((f) => accolades(f).some((x) => x.body === a.id)).length })).filter((a) => a.count >= 3);
+// Every award with a page gets a pill, however few films; the overview rows still need three.
+const AWARD_PILLS = AWARDS.map((a) => ({ ...a, count: AWARDED.filter((f) => accolades(f).some((x) => x.body === a.id)).length })).filter((a) => a.count > 0);
 const NOTES: Record<string, string> = {
   "beyond-utopia":
     "The escape unfolds through an underground network, with the family’s safety at stake at every border.",
@@ -766,6 +768,9 @@ function Index() {
         : undefined,
     [view, heading?.ranked, sort, query, activeFilters, listFilter, ytNarrowed, search.tag, search.cat, search.maker, search.mood, search.like, search.era, search.pick],
   );
+  // The Oscars page splits into Winners (newest ceremony first) and Nominees while it's in its own order.
+  const oscarWins = facet.award === "oscar" ? list.filter((f) => awardFor(f, "oscar")?.result === "Won").length : 0;
+  const oscarSplit = view === "gallery" && facet.award === "oscar" && sort === "random" && !query && oscarWins > 0 && oscarWins < list.length;
   // Every tab opens on something: its first entry, or the whole collection for Categories.
   const tabDefaults = {
     topics: {},
@@ -1242,8 +1247,14 @@ function Index() {
             aria-label="Film gallery"
             className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
           >
-            {list.slice(0, shown).map((f) => (
-                <div key={f.id} data-film-card={f.id} className="film-card min-w-0">
+            {list.slice(0, shown).map((f, i) => (
+              <Fragment key={f.id}>
+                {oscarSplit && (i === 0 || i === oscarWins) && (
+                  <h2 className="col-span-full -mb-2 mt-2 font-display text-lg font-semibold first:mt-0">
+                    {i < oscarWins ? `Winners · ${oscarWins}` : `Nominees · ${list.length - oscarWins}`}
+                  </h2>
+                )}
+                <div data-film-card={f.id} className="film-card min-w-0">
                   <div className="group relative">
                     <Button asChild variant="ghost" className="h-auto w-full p-0">
                       <a href={`/film/${f.id}`} aria-label={`Open ${f.title}`} onClick={softClick(() => openSpotlight(f.id))}>
@@ -1300,6 +1311,7 @@ function Index() {
                     </div>
                   </div>
                 </div>
+              </Fragment>
               ))}
           </section>
           {shown < list.length && (
@@ -1443,7 +1455,7 @@ function Index() {
                   {film.parts.length} films: {film.parts.join(", ")}
                 </p>
               )}
-              <AwardBadges film={film} />
+              <AwardBadges film={film} onAward={(award) => browseFrom({ award, browse: "awards" })} />
               <div className="mt-2 flex flex-wrap items-center gap-1.5">
                 <RatingPill site="imdb" film={film} score={extra?.omdb?.imdb} />
                 <RatingPill site="rt" film={film} score={extra?.omdb?.rottenTomatoes} />
