@@ -1074,14 +1074,25 @@ function Index() {
               ["directors", "Directors"],
               ["awards", "Awards"],
               ["tags", "Tags"],
+              ["youtube", "YouTube"],
               ["about", "About"],
             ] as const
-          ).map(([id, label]) => (
-            <Button key={id} asChild size="sm" variant="ghost" className="browse-tab" aria-pressed={browse === id}>
+          ).map(([id, label]) => id === "youtube" ? (
+            // Free on YouTube is a tag page, but it gets its own tab so people see it straight away.
+            <Button key={id} asChild size="sm" variant="ghost" className="browse-tab" aria-pressed={ytPage}>
+              <a
+                href={pagePath({ tag: "free-on-youtube" }) ?? "/"}
+                onClick={softClick(() => (ytPage ? setDiscovery({}) : setBrowse({ browse: "tags", tag: "free-on-youtube" })))}
+              >
+                <span><span className="desktop-label">Free on </span>YouTube</span>
+              </a>
+            </Button>
+          ) : (
+            <Button key={id} asChild size="sm" variant="ghost" className={`browse-tab browse-tab-${id}`} aria-pressed={browse === id && !(id === "tags" && ytPage)}>
               <a
                 href={pagePath({ browse: id, ...tabDefaults[id] }) ?? "/"}
                 onClick={softClick(() =>
-                  browse === id && id !== "directors" && id !== "awards" && id !== "about"
+                  browse === id && !ytPage && id !== "directors" && id !== "awards" && id !== "about"
                     ? setDiscovery({})
                     : setBrowse({ browse: id, ...tabDefaults[id] }),
                 )}
@@ -1137,9 +1148,9 @@ function Index() {
         </ScrollRow>
         )}
       </div>
-      {browse === "tags" && (
+      {browse === "tags" && !ytPage && (
         <nav aria-label="Tags" className="discovery-tags">
-          {TAGS.map((t) => (
+          {TAGS.filter((t) => t.id !== "free-on-youtube").map((t) => (
             <Button key={t.id} asChild size="sm" variant={facet.tag === t.id ? "default" : "ghost"} aria-pressed={facet.tag === t.id}>
               <a href={pagePath({ tag: t.id }) ?? "/"} onClick={softClick(() => setBrowse({ tag: t.id }))}>
                 {t.label}

@@ -181,6 +181,8 @@
   .header-brand svg { height: 21px; }
   .header-views button { width: 40px; }
   .browse-tabs { justify-content: space-between; gap: 10px; }
+  /* No room for seven tabs on a phone; About stays in the footer. */
+  .browse-tab-about { display: none; }
 }
 .film-poster { aspect-ratio: 2 / 3; width: 100%; overflow: hidden; border-radius: var(--radius); background: var(--secondary); }
 .spotlight-grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); align-items: start; gap: 36px; }
