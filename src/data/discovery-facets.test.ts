@@ -10,20 +10,15 @@ describe('evidence-led discovery', () => {
   });
   it('orders wins by prestige, then nominations, and caps cards at three bodies', () => {
     const f = { ...film('skywalkers'), awards: ['Oscar Nominee – Best Documentary Feature 2020', 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', "Cannes L'Œil d'or 2019", 'BAFTA Winner – Best Documentary 2020', 'Some Regional Prize 2019'] };
-    expect(accolades(f, '').map(a => a.label)).toEqual(['BAFTA Winner – Best Documentary 2020', "Cannes L'Œil d'or 2019", 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', 'Some Regional Prize 2019', 'Oscar Nominee – Best Documentary Feature 2020']);
+    expect(accolades(f).map(a => a.label)).toEqual(['BAFTA Winner – Best Documentary 2020', "Cannes L'Œil d'or 2019", 'Sundance Grand Jury Prize 2019', 'Sundance Audience Award 2019', 'Some Regional Prize 2019', 'Oscar Nominee – Best Documentary Feature 2020']);
     expect(topAwards(f).map(a => a.body)).toEqual(['bafta', 'cannes', 'sundance']);
   });
-  it('uses named OMDb Emmy and BAFTA wins only as a generic fallback', () => {
-    const blank = { ...film('skywalkers'), awards: [] };
-    expect(accolades(blank, 'Won 3 Primetime Emmys. 5 wins total')[0]).toMatchObject({ label: 'Emmy Winner', body: 'emmy' });
-    expect(accolades(blank, 'Won 1 BAFTA Award. 2 wins')[0]).toMatchObject({ label: 'BAFTA Winner', body: 'bafta' });
-    expect(accolades(blank, 'Nominated for 1 BAFTA Award. 2 wins')).toEqual([]);
-    expect(accolades(blank, 'Nominated for 1 Primetime Emmy. 2 wins')).toEqual([]);
-    expect(accolades({ ...blank, awards: ['BAFTA Winner – Best Documentary 2020'] }, 'Nominated for 1 BAFTA Award')).toHaveLength(1);
+  it("shows only the CSV's dated labels, never IMDb's award summary", () => {
+    expect(accolades({ ...film('skywalkers'), awards: [] })).toEqual([]);
+    expect(CATALOGUE.flatMap(accolades).every(a => /\b\d{4}$/.test(a.label))).toBe(true);
   });
-  it('never turns unnamed aggregate counts into festival awards', () => {
-    expect(accolades({ ...film('skywalkers'), awards: [] }, '1 win & 3 nominations')).toEqual([]);
-    expect(accolades({ ...film('skywalkers'), awards: [] }, 'Nominated for 1 Oscar. 5 wins total')[0]?.label).toBe('Oscar Nominee');
+  it('drops the BAFTAs IMDb credited to the wrong category', () => {
+    for (const id of ['man-on-wire', 'the-imposter', 'touching-the-void']) expect(accolades(film(id)).some(a => a.body === 'bafta')).toBe(false);
   });
   it('combines mood, pick, award and maker with AND', () => {
     expect(matchesFacets(film('pez-outlaw'), { award: '', mood: 'funny', pick: '', maker: '' })).toBe(true);

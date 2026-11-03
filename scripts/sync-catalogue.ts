@@ -22,7 +22,7 @@ const enrich = async (media: Media, id: number) => {
   return { status: 'resolved', ...meta, trailer: meta.trailer ?? selectAnyTrailer(d.videos), omdb: await omdb(meta.imdbId, media) };
 };
 const hasToken = Boolean(process.env['TMDB_READ_ACCESS_TOKEN']);
-const added: string[] = [], skipped: string[] = [], dropped: string[] = [], needsMood: string[] = [], refreshed: string[] = [];
+const added: string[] = [], skipped: string[] = [], dropped: string[] = [], needsMood: string[] = [], refreshed: string[] = [], needsAwards: string[] = [];
 
 async function addNew(r: CsvRow) {
   const name = `${r.title} (${r.year})`, hints = noteHints(r.notes), media = mediaOf(r);
@@ -43,6 +43,9 @@ async function addNew(r: CsvRow) {
   snapshot[id] = await enrich(media, res.meta.tmdbId);
   Object.assign(r, { id, status: 'live', tmdb_id: String(res.meta.tmdbId), imdb_id: res.meta.imdbId ?? '', director: r.director || res.meta.people.join(', ') });
   added.push(`${name} → ${res.meta.canonicalTitle} (${res.year}, TMDB ${media} ${res.meta.tmdbId}), ${res.reason}`);
+  // Awards are hand-checked into the CSV; IMDb's summary only flags which new titles need a look.
+  const summary = snapshot[id]?.omdb?.awards?.match(/\b(?:Won|Nominated for) \d+ (?:Oscars?|BAFTA|Primetime Emmys?)\b[^.]*/i)?.[0];
+  if (summary && !r.awards) needsAwards.push(`${r.title}: IMDb says "${summary}"`);
 }
 
 for (const r of rows) {
@@ -62,7 +65,7 @@ writeFileSync(SNAPSHOT, JSON.stringify(snapshot) + '\n');
 writeFileSync(SHEET, sheetJson(rows));
 
 const section = (title: string, items: string[]) => { if (items.length) console.log(`\n${title} (${items.length}):\n  ${items.join('\n  ')}`); };
-section('Added', added); section('Enrichment fetched', refreshed); section('Dropped', dropped); section('Skipped, check these', skipped); section('Live with no mood', needsMood);
+section('Added', added); section('Enrichment fetched', refreshed); section('Dropped', dropped); section('Skipped, check these', skipped); section('Live with no mood', needsMood); section('New titles to check for awards (add dated labels to the awards column)', needsAwards);
 const live = rows.filter(r => r.status === 'live');
 console.log(`\n${live.length} live titles.`);
 for (const t of TAGS) console.log(`  ${t.label}: ${live.filter(r => r.tags.split(',').map(s => s.trim()).includes(t.id)).length}`);

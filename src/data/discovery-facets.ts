@@ -29,14 +29,10 @@ const accolade = (label: string, source: Accolade['source']): Accolade => {
   const nominated = /nominee|nominated/i.test(label), body = awardBody(label);
   return { label, result: nominated ? 'Nominated' : 'Won', source, body };
 };
-export function accolades(film: Film, aggregate = SNAPSHOT[film.id]?.omdb?.awards): Accolade[] {
+// Only the CSV's dated, sourced labels. IMDb's one-line summary used to fill gaps, but a 2026 audit found it often wrong
+// (a BAFTA for another category, a News Emmy counted as Primetime), so sync-catalogue lists those films to check by hand instead.
+export function accolades(film: Film): Accolade[] {
   const records = film.awards.map(label => accolade(label, 'Curated'));
-  // Named Oscar wins and nominations, BAFTA and Primetime Emmy wins only. Never infer category/year or other prizes from aggregate counts.
-  const named = aggregate?.match(/\b(Won|Nominated for) \d+ (Oscar|BAFTA|Primetime Emmy)/i);
-  if (named && (/^won/i.test(named[1]!) || /oscar/i.test(named[2]!))) {
-    const won = /^won/i.test(named[1]!), label = `${named[2]!.replace('Primetime ', '')} ${won ? 'Winner' : 'Nominee'}`, body = awardBody(label);
-    if (!records.some(a => a.body === body && (!won || a.result === 'Won'))) records.push(accolade(label, 'OMDb'));
-  }
   // Wins by prestige, then nominations by the same order.
   return records.map((a, i) => [a, i] as const).sort(([a, i], [b, j]) => (a.result === 'Won' ? 0 : 1) - (b.result === 'Won' ? 0 : 1) || awardRank(a.body) - awardRank(b.body) || i - j).map(([a]) => a);
 }
