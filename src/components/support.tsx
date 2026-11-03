@@ -18,14 +18,13 @@ export function SupportLine() {
   </p>;
 }
 
-// The About page's fuller ask.
-export function SupportAbout({ heading, paragraph }: { heading: string; paragraph: string }) {
+// The About page's ask: a card near the top.
+export function SupportAbout() {
   if (!KOFI_URL) return null;
-  return <>
-    <h3 className={heading}>Keep it going</h3>
-    <p className={paragraph}>There are no ads, no paywall and no sponsored picks here, and I'd like to keep it that way. If the site has found you something worth watching, a coffee helps cover the running costs and keeps me adding films.</p>
-    <a href={KOFI_URL} target="_blank" rel="noopener" onClick={track('about')} className="mt-4 inline-flex h-10 items-center gap-2 rounded-md border border-primary/60 px-4 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
-      <Coffee className="size-4" aria-hidden />Buy me a coffee on Ko-fi
+  return <div className="mt-6 flex flex-col gap-3 rounded-lg border border-primary/40 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+    <p className="leading-relaxed text-foreground/90"><span className="font-semibold text-foreground">No ads, no paywall, no sponsored picks.</span> If the site has found you a good film, a coffee keeps it running.</p>
+    <a href={KOFI_URL} target="_blank" rel="noopener" onClick={track('about')} className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
+      <Coffee className="size-4" aria-hidden />Buy me a coffee
     </a>
-  </>;
+  </div>;
 }

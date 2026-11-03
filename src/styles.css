@@ -171,7 +171,8 @@
   .header-tools { grid-column: 1; grid-row: 4; z-index: 1; margin: 0; padding-right: 8px; border-right: 1px solid var(--border); background: var(--background); width: max-content; gap: 4px; }
   .header-tools button { width: 40px; height: 40px; padding: 0; position: relative; }
   .filter-trigger > span:last-child:not(.desktop-label) { position: absolute; top: 0; right: 0; }
-  .browse-tabs { grid-row: 3; gap: 20px; }
+  /* Seven tabs don't fit a phone: the row scrolls sideways, and the fade on the right shows there's more. */
+  .browse-tabs { grid-row: 3; gap: 16px; padding-right: 28px; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); }
   .discovery-chips { grid-row: 4; padding-left: 96px; min-width: 0; padding-block: 10px; }
   .spotlight-grid { scroll-margin-top: 178px; }
 }
@@ -180,9 +181,7 @@
   .header-brand a { gap: 5px; }
   .header-brand svg { height: 21px; }
   .header-views button { width: 40px; }
-  .browse-tabs { justify-content: space-between; gap: 10px; }
-  /* No room for seven tabs on a phone; About stays in the footer. */
-  .browse-tab-about { display: none; }
+  .browse-tabs { gap: 14px; }
 }
 .film-poster { aspect-ratio: 2 / 3; width: 100%; overflow: hidden; border-radius: var(--radius); background: var(--secondary); }
 .spotlight-grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); align-items: start; gap: 36px; }

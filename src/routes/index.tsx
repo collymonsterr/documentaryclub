@@ -594,6 +594,15 @@ function Index() {
   const [ytAllRegions, setYtAllRegions] = useState(false);
   const [ytAwards, setYtAwards] = useState(false);
   const ytPage = facet.tag === "free-on-youtube";
+  // On phones the tab row scrolls sideways: keep the selected tab in view (About is off the right edge).
+  useEffect(() => {
+    const nav = document.querySelector<HTMLElement>(".browse-tabs");
+    const tab = nav?.querySelector<HTMLElement>('[aria-pressed="true"]');
+    if (!nav || !tab) return;
+    const left = tab.offsetLeft - nav.offsetLeft, right = left + tab.offsetWidth;
+    if (right > nav.scrollLeft + nav.clientWidth - 36) nav.scrollLeft = right - nav.clientWidth + 40;
+    else if (left < nav.scrollLeft) nav.scrollLeft = left;
+  }, [browse, ytPage]);
   const ytRegionOnly = ytPage && hydrated && !ytAllRegions;
   // A saved choice wins, then the visitor's location, then their browser's language region.
   useEffect(() => {
@@ -1561,7 +1570,7 @@ function Index() {
         </>
       )}
       {view === "gallery" && listFilter !== "shortlist" && <NewsletterSignup source="footer" className="mt-10" />}
-      <SupportLine />
+      {browse !== "about" && <SupportLine />}
       <SiteIndex />
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
         <span>{CATALOGUE.length} curated true stories.</span>
