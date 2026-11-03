@@ -5,7 +5,7 @@ import { SITE_ORIGIN, listGroups, pagePath } from '../src/lib/site-urls';
 
 // Thin list pages (noindex) stay out; listGroups already applies that rule.
 const paths = [
-  '/', '/best', '/directors', '/awards', '/about', '/list', '/suggest', '/privacy',
+  '/', '/best', '/directors', '/awards', '/coming-soon', '/about', '/list', '/suggest', '/privacy',
   ...listGroups().flatMap(g => g.items.map(i => i.path)),
   ...CATALOGUE.map(f => pagePath({ film: f.id })),
 ].filter(Boolean);

@@ -1,0 +1,653 @@
+{
+ "checked": "2026-11-03",
+ "inCinemas": [
+  {
+   "tmdbId": 1755291,
+   "type": "movie",
+   "title": "NAZA",
+   "date": "2026-10-16",
+   "where": "In cinemas in the UK and Ireland",
+   "overview": "Filmed at night from Tel Aviv rooftops, this investigative documentary examines the civilian casualties of Israel's military operations in Gaza and the systems behind targeted killings of Palestinians.",
+   "directors": [
+    "Yuval Abraham",
+    "Rachel Szor"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/cbxiZ1l21KUATu2KKQQ8J8fJhpe.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/inju8joDtL7KHtlFEGjFZ2UuqFa.jpg",
+   "trailer": "40KW6knYMo4"
+  },
+  {
+   "tmdbId": 1603262,
+   "type": "movie",
+   "title": "Everest: The Other Side",
+   "date": "2026-10-30",
+   "where": "In cinemas in the UK and Ireland",
+   "overview": "An intimate portrait of two people bound by love, ambition, and the pursuit of the impossible. Elite ski mountaineers Jim Morrison and Hilaree Nelson fell deeply in love while reaching the pinnacle of their sport. Their drive sharpened into a shared dream: to climb and ski the direct North Face of Mount Everest—the most difficult and dangerous climb on the mountain and the most coveted ski line on Earth—something only a handful have ever achieved, and no one has successfully skied down.",
+   "directors": [
+    "Jimmy Chin",
+    "Elizabeth Chai Vasarhelyi"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/2m9ts8LfjG8d4xcUtx66aApngJL.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ySbav9wRhnA1yGadMIpoQnLgTq6.jpg",
+   "trailer": "q6XUlPdTuto"
+  },
+  {
+   "tmdbId": 1489932,
+   "type": "movie",
+   "title": "Always Lalisa",
+   "date": "2026-10-12",
+   "where": "In cinemas in the UK and Ireland",
+   "overview": "Documentary following global superstar LISA during a transformative year away from BLACKPINK, the K-pop phenomenon that made her one of the world's most recognizable performers. Documenting a year of risk, reinvention, and self-discovery as LISA begins to define her next chapter.",
+   "directors": [
+    "Sue Kim"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/pOZnrUX1UMblLiqq9ZtZUde3cQV.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/wJwTuwy1ZajIA6ivGjoe0Ee08XN.jpg",
+   "trailer": "s6NUEu1x64I"
+  },
+  {
+   "tmdbId": 1388805,
+   "type": "movie",
+   "title": "LINKIN PARK: UNSHATTER",
+   "date": "2026-09-30",
+   "where": "In cinemas in the UK and Ireland",
+   "overview": "After a seven-year hiatus following the devastating loss of their beloved bandmate Chester Bennington, LINKIN PARK'S remaining members struggled to find their way forward. Their shared history and enduring friendship, combined with the fresh perspective of two new band members Emily Armstrong and Colin Brittain spark a renewed creative energy that leads them on a transformative journey of artistic reinvention. Following the band from intimate 2022 studio sessions through their explosive FROM ZERO album release and concert in São Paulo, this documentary weaves together rare vault footage, electrifying performances from sold-out shows, and candid interviews with band members and fans—capturing the raw, honest story of what it means to start over.",
+   "directors": [
+    "Joe Hahn"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/kHNrz7DBVPrtyMhJxmBm2poS2l9.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uL1HCc4wmcFcSr1zS3kXX3CNUeE.jpg",
+   "trailer": "K9Lpxc7bVTM"
+  },
+  {
+   "tmdbId": 1299581,
+   "type": "movie",
+   "title": "Knife: The Attempted Murder of Salman Rushdie",
+   "date": "2026-10-02",
+   "where": "In cinemas in the UK and Ireland",
+   "overview": "In 2022, Salman Rushdie was preparing to deliver a lecture on the United States as a safe haven for writers when a man rushed the stage and, in 27 seconds, stabbed him 15 times. Airlifted to hospital, Rushdie survived, barely, and his wife Rachel Eliza Griffiths began filming immediately, capturing an unfiltered view of his recovery, return to life and how he regained his spirit and hope for the future.",
+   "directors": [
+    "Alex Gibney"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/zIHezCczCvRFtkuAoCm1tEJGa0W.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/nbnFwaYmajIbGEXfXgWgzpiwQXF.jpg",
+   "trailer": "4Dntq0XUcls"
+  },
+  {
+   "tmdbId": 1756742,
+   "type": "movie",
+   "title": "Out of Breath",
+   "date": "2026-09-29",
+   "where": "In cinemas in the UK",
+   "overview": "OUT OF BREATH shines the spotlight on the human cost paid by people living with sleep apnea and their loved ones. Yet, for all the darkness they face there is also light at the end of the tunnel as their hope, courage, and perseverance brings them closer to the promise of successful treatment.",
+   "directors": [
+    "George T. Nierenberg"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/cKnu9KN0HZ0JxzCU8RBp4d9xutU.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7JoDoh7SxwQz42aJi5SCg3imi7L.jpg",
+   "trailer": "tJZSI9CaYqE"
+  },
+  {
+   "tmdbId": 1517111,
+   "type": "movie",
+   "title": "Boorman and the Devil",
+   "date": "2026-09-25",
+   "where": "In cinemas in the UK",
+   "overview": "Featuring commentary from surviving participants, as well as other filmmakers and critics, this documentary chronicles the career of director John Boorman and the tumultuous production of his film Exorcist II: The Heretic, exploring its critical and commercial failure, how it changed the industry, and the importance of risk-taking in art.",
+   "directors": [
+    "David Kittredge"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/4HJzmhP8iMzkIQ7cjr2zfIcReiK.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/igS7kqXk6KJX7pe3xOHsWfKrgmp.jpg",
+   "trailer": "a_VjhXJ0N54"
+  },
+  {
+   "tmdbId": 1596306,
+   "type": "movie",
+   "title": "Kikuyu Land",
+   "date": "2026-10-02",
+   "where": "In cinemas in the UK",
+   "overview": "As a Nairobi journalist probes a land battle entangling the local government and a powerful multinational corporation, covered wounds are revealed and family secrets are exposed.",
+   "directors": [
+    "Andrew H. Brown",
+    "Bea Wangondu"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/a5YGraLDDgg6kTB5MxBzzrWjyWc.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/axxBd5qfi1uCOJI7JKBWFG1tMHz.jpg",
+   "trailer": "UdUztX9eiAo"
+  },
+  {
+   "tmdbId": 1285321,
+   "type": "movie",
+   "title": "Children of The Wicker Man",
+   "date": "2026-10-23",
+   "where": "In cinemas in the UK",
+   "overview": "Fifty years after The Wicker Man, director Robin Hardy’s lost papers resurface, prompting his sons Justin and Dominic to explore the legacy of the cult classic, and their father. Together, they uncover the truth behind Robin’s role in the film and confront the complexities of independent filmmaking, family, and myth.",
+   "directors": [
+    "Justin Hardy"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/cGALR5w2wkKteIXHmGrA1NSaSbt.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/p3rtTCpejKR3UyFEIBkoVokBZeE.jpg",
+   "trailer": "Lnjx6OjX050"
+  },
+  {
+   "tmdbId": 1775096,
+   "type": "movie",
+   "title": "Enter the Television",
+   "date": "2026-10-20",
+   "where": "In cinemas in the UK",
+   "overview": "From Tom Seymour creator of the VHS Massacre Trilogy. Enter the Television is a feature-length documentary exploring the dark corners of television from obscure commercials to unconventional cable programming. It examines the evolution of media through an underground lens, revealing how independent voices survive within systems controlled by powerful media corporations.",
+   "directors": [
+    "Thomas Edward Seymour"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/j16NRU3EZV9krlJJvTR8lkypTWE.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/oGFlCuIm2peLpAxHj31Lozrhl5H.jpg",
+   "trailer": "cyiECR7s-E4"
+  },
+  {
+   "tmdbId": 1669763,
+   "type": "movie",
+   "title": "The Dance of the Kokorrdit",
+   "date": "2026-10-05",
+   "where": "In cinemas in the UK",
+   "overview": "A Wounaan teenager and a leader of their community venture into the Darién in search of a sacred bird. Along the way, they will face the dangers that threaten their territory and their culture.",
+   "directors": [
+    "Elio B Cunampio",
+    "Guido Bilbao"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/u7tvuYcwylVaSGC5cnpFGOpUqiX.jpg",
+   "trailer": "h1linE9zKUs"
+  },
+  {
+   "tmdbId": 1686182,
+   "type": "movie",
+   "title": "Skyclimber: Scaling the Eiffel Tower",
+   "date": "2026-10-08",
+   "where": "In cinemas in the UK",
+   "overview": "Urban free climber Adam Lockwood attempts to scale the Eiffel Tower in a documentary that is equal parts high-altitude adventure and intimate personal portrait. A film that builds its tension with the precision of a heist movie, mapping every step of an audacious ascent.",
+   "directors": [
+    "Nick Hardie"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fqHQIdzGXkgBCrQx84i69IWNCNA.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/w0IAT9iWrklDB3xKTKRCTHtSPix.jpg",
+   "trailer": "haYd3CFAITI"
+  },
+  {
+   "tmdbId": 1785138,
+   "type": "movie",
+   "title": "DEQ",
+   "date": "2026-09-29",
+   "where": "In cinemas in the UK",
+   "overview": "\"DEQ\" is a legacy in Kurdish Culture. A bridge between Human and Nature and a way to find meaning of life.",
+   "directors": [
+    "Nima Beheshtinia"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/u7pupuDvqLR4cTtawP76K9Htl3R.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jcaMRkFON8PQHW1h4douBDNOUf6.jpg",
+   "trailer": "tFhbF6BxpWQ"
+  }
+ ],
+ "comingSoon": [
+  {
+   "tmdbId": 1786281,
+   "type": "movie",
+   "title": "Gentle by Birth",
+   "date": "2026-11-05",
+   "where": "In cinemas in the US",
+   "overview": "After her 23-year-old brother dies of an overdose, filmmaker Doree Simon Hatfield investigates the stigma she believes blocked his access to treatment and support. Her search takes her from her family’s living room to harm reduction sites, music festivals, and the halls of the Pennsylvania Capitol, where she meets experts working to change how addiction is understood and treated. But as her own fear and stigma around drugs begin to dissolve, Doree makes a radical choice to try them herself—transforming the film from a dissection of her brother’s addiction into a provocative reckoning that threatens her family’s fragile healing.",
+   "directors": [
+    "Doree Simon Hatfield"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/eyoRrU8bQXMhxotHePBCn7xUjBM.jpg",
+   "trailer": "PaoEYEd46WE"
+  },
+  {
+   "tmdbId": 306179,
+   "type": "tv",
+   "title": "Awkwafina: The Unlikely Cook",
+   "date": "2026-11-06",
+   "where": "Series on Apple TV",
+   "directors": [],
+   "overview": "Hollywood actor and comedian Nora Lum (a.k.a. Awkwafina) is the descendant of restaurant royalty...but she can't cook. Join the star on an inspiring culinary road trip as she learns the craft and attempts to revive her family's beloved Chinese eatery.",
+   "poster": "https://image.tmdb.org/t/p/w342/32rE04LRLyAM62Xdkqw5EIi0FyB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/vSMW22GgtzgsRaAmZaTM6xtPdNP.jpg",
+   "trailer": "uCAZET6TZ60"
+  },
+  {
+   "tmdbId": 1649403,
+   "type": "movie",
+   "title": "George Michael: The Faith Tour",
+   "date": "2026-11-06",
+   "where": "In cinemas in the UK",
+   "overview": "A stunning delve into George Michael's 1988 Faith Tour, as shot live at the famous Palais Omnisports de Paris-Bercy. This exclusive footage, assembled from a 14-camera shoot captured on 35mm over two nights (30–31 May 1988), features the 24-year-old pop star at the height of his powers.",
+   "directors": [
+    "Andy Morahan",
+    "David Austin"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/LXqHnaJ4ffkcx5YCuJN1noxkhr.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/srq06Q5iFZrgNUuFwvGS5vqwHAh.jpg",
+   "trailer": "H_NwyHRY9yk"
+  },
+  {
+   "tmdbId": 1591604,
+   "type": "movie",
+   "title": "Soul Patrol",
+   "date": "2026-11-06",
+   "where": "In cinemas in the US",
+   "overview": "From deep behind enemy lines, a hidden chapter of American military history is uncovered, prompting the question of whether reckoning with the past can bring peace to those who lived it. The Vietnam War’s first Black special operations team reunites to tell their story.",
+   "directors": [
+    "J.M. Harper"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sav8yadAjfykfFlZuFsclmrN9st.jpg",
+   "trailer": "D8LIYqag82E"
+  },
+  {
+   "tmdbId": 1595210,
+   "type": "movie",
+   "title": "Nuisance Bear",
+   "date": "2026-11-06",
+   "where": "In cinemas in the US",
+   "overview": "A polar bear is forced to navigate a human world of tourists, wildlife officers, and hunters as its ancient migration collides with modern life. When a sacred predator is branded a nuisance, it becomes unclear who truly belongs in this shared landscape.",
+   "directors": [
+    "Gabriela Osio Vanden",
+    "Jack Weisman"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/An1QdmHWNxX2V03kq3akOCid69r.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hqDiQteXWMoyezEmbPy0nRYdUST.jpg",
+   "trailer": "dL4lFKY8Cy4"
+  },
+  {
+   "tmdbId": 1798383,
+   "type": "movie",
+   "title": "Wolves Up Close with Bertie Gregory",
+   "date": "2026-11-06",
+   "where": "Disney+ / Hulu in the US",
+   "overview": "Reconnecting with a pack of wolves he has followed for seven years, Bertie sets out to capture one of the Arctic's most dangerous and rarely filmed hunts: wolves taking on a bull moose, prey roughly ten times their size. Led by Kona, a striking white breeding male, the pack faces a critical winter as dwindling food supplies, an encroaching rival wolf and an aging leader threaten its survival.",
+   "directors": [],
+   "poster": "https://image.tmdb.org/t/p/w342/fopmDU345HPkMC9iUaNQEY0uRkk.jpg",
+   "trailer": "3hCMUaREGL8"
+  },
+  {
+   "tmdbId": 1728838,
+   "type": "movie",
+   "title": "Wayward: How Women Changed Snowboarding",
+   "date": "2026-11-10",
+   "where": "Streaming in the US",
+   "overview": "Wayward is a feature documentary about the women who changed snowboarding by refusing to follow the status quo. Spanning 4 decades of progression, the film weaves together rare archival footage and firsthand accounts from pioneering athletes who fought for visibility, opportunity, and respect in a male-dominated industry. As the sport has evolved and new generations push boundaries further than ever before, Wayward examines what it took to get here, and what still lies ahead. This is a story of resilience, rebellion, and the power of those who shaped a sport & a culture into what it is today.",
+   "directors": [
+    "Mia Lambson Brady"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/zSUEFztuscGYLpTopsAM6Sts7Mo.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/nQDiDykO5RjCk6YwYEpEESxbfhm.jpg",
+   "trailer": "4CIicSfsqBo"
+  },
+  {
+   "tmdbId": 1309373,
+   "type": "movie",
+   "title": "Whispers in the Woods",
+   "date": "2026-11-13",
+   "where": "In cinemas in the UK and Ireland",
+   "overview": "In the heart of the tranquil Vosges forests, where lynxes, bears and deer roam freely, Vincent Munier accompanies his father on his expeditions. He not only seeks to capture the visual wonders of this forest kingdom, but also aims to make its sounds audible. Every whisper of the forest is a reminder of the knowledge of nature that his father once imbued in him – knowledge that Vincent now passes on to his own son. Vincent Munier combines breathtaking footage of nature and its sounds to create a fairytale-like cinematic experience that slows time down.",
+   "directors": [
+    "Vincent Munier"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6UCVRxRpZRXfDUPu9vwoGUEPYQ3.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/aUoZx5eljCac6fhKK4dafIvTYDY.jpg",
+   "trailer": "jNgDillNElk"
+  },
+  {
+   "tmdbId": 1637730,
+   "type": "movie",
+   "title": "Whiddy",
+   "date": "2026-11-13",
+   "where": "In cinemas in Ireland",
+   "overview": "A small rural community in Ireland welcomes in a major, global oil company with open arms but just 10 years and numerous oil spills later, that dream turns into an unimaginable nightmare. 50 lives lost in a tragedy that silenced and divided the community and still haunts it to this day.",
+   "directors": [
+    "Adrian McCarthy"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/spRPrwVmD08aXiZV951G5PQGVLb.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/suSAjZRAEE3HVrPG0Ukir1eSVr.jpg",
+   "trailer": "UvEm8WWIZ7M"
+  },
+  {
+   "tmdbId": 951018,
+   "type": "movie",
+   "title": "A Fox Under a Pink Moon",
+   "date": "2026-11-13",
+   "where": "In cinemas in the UK",
+   "overview": "At just 16, Soraya is already creating stunning drawings and sculptures that are as beautiful as they are dark. This strong-willed Afghan sculptor and illustrator has been trying for five years to escape Iran and join her mother in Austria.",
+   "directors": [
+    "Mehrdad Oskouei"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/67hNnsOQmC6DDYf7SuZc3ReldsB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/sdMLtTxADRF3WAHmtL9oUFNY5wt.jpg",
+   "trailer": "HBlaV0xOBLI"
+  },
+  {
+   "tmdbId": 1771402,
+   "type": "movie",
+   "title": "1 in 2",
+   "date": "2026-11-13",
+   "where": "In cinemas in the UK",
+   "overview": "Nearly one in two of us will be diagnosed with cancer at some point in our lives. David Nicholas Wilkinson is one of them, twice over. 1 in 2 follows Wilkinson through his own treatment, where he discovers a steep rise in bowel cancer among people far too young to be screened for it, and far too young, it seems, to be believed.",
+   "directors": [
+    "David Wilkinson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/7hudlkH1rGKVaMR4phOKYPCfJX7.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8i0Zn97qutpzF3uylIxyMUkl4Ll.jpg",
+   "trailer": "sy0Jkwf3e-4"
+  },
+  {
+   "tmdbId": 1757215,
+   "type": "movie",
+   "title": "American Amazon",
+   "date": "2026-11-13",
+   "where": "In cinemas in the US",
+   "overview": "A spectacular journey through natural wonders of a part of the country Grammy-winning musician and actor Jon Batiste knows very well: the vast network of wetlands spanning Alabama, Florida, Georgia, Louisiana, and the Carolinas.",
+   "directors": [
+    "Eric Bendick"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iXEjoGWBRzInoSkGnTLGeuARV79.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/lS23e2Dcutz6I0g87yAkx2FKiT.jpg",
+   "trailer": "FytNn_9GP-Q"
+  },
+  {
+   "tmdbId": 336199,
+   "type": "tv",
+   "title": "Crime and Punishment in America",
+   "date": "2026-11-16",
+   "where": "Series on PBS",
+   "directors": [],
+   "overview": "Explores the history of criminal justice in America — from the pre-colonial period to 21st century mass incarceration.",
+   "poster": "https://image.tmdb.org/t/p/w342/acfpMRRWRgVrsyA2Rb2gxV3BDgQ.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/2n9v3fBXyb0aId224d8Y4GIFqJK.jpg",
+   "trailer": "v_2DNrMUSjI"
+  },
+  {
+   "tmdbId": 1715868,
+   "type": "movie",
+   "title": "Good Luck, Kid",
+   "date": "2026-11-19",
+   "where": "In cinemas in the UK",
+   "overview": "Grit, gear, growth – this film is a portrait of Taylor Shaffer’s coming-of-age as a photographer and filmmaker, following his creative trajectory as he shepherds Alex Honnold and Tommy Caldwell through a 2,500-mile expedition to attempt a single-day traverse of the Devil’s Thumb massif and finds his artistic voice amid risk, friendship, and a changing Alaskan landscape.",
+   "directors": [
+    "Renan Öztürk"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/ap3Y7Pny1m5Dd6SfgUloRprvyiP.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/wqml8vV0dMtlorZtmyPBD7SRXyH.jpg",
+   "trailer": "z_R60mF2QXs"
+  },
+  {
+   "tmdbId": 1442281,
+   "type": "movie",
+   "title": "Observer",
+   "date": "2026-11-19",
+   "where": "In cinemas in the UK",
+   "overview": "Filmmaker Ian Cheney embarks on an experiment in which he brings a series of keen-eyed observers - scientists, artists, a hunter - to a range of locations around the world, often without telling them where they are going, and asks them simply to describe what they see. What unfolds is a deep exploration and celebration of the power of observation: what happens when you find new ways to sense and perceive the world around you?",
+   "directors": [
+    "Ian Cheney"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6WXHNcRr7RSdgPD26dBEFFTg2a3.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8mTsqKKjHTUpPInRlegDgh1TVgN.jpg",
+   "trailer": "of7Hfd0bNFQ"
+  },
+  {
+   "tmdbId": 1622868,
+   "type": "movie",
+   "title": "My Grandmother’s Sketchbook: Under Mont Blanc",
+   "date": "2026-11-19",
+   "where": "In cinemas in the UK",
+   "overview": "A 30-year-old sketchbook leads Max Romey to the Mont Blanc region. The Alaska-based watercolor artist and environmental advocate sets out to follow in the footsteps of his grandmother, who visited this landscape in the late 1990s and captured it in dozens of drawings. With mountain guide Hillary Gerardi, Max attempts to locate each sketch’s exact origin point. Many match perfectly—until the Mer de Glace throws him off course. The glacier has changed too much in 30 years to recognize.",
+   "directors": [
+    "Max Romey"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6lLWBlOClCNW4QsO2ZqQufTNZCS.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/oQddmpvmhE5MF7EGef1bRwBeszZ.jpg",
+   "trailer": "CY8IjYILXq4"
+  },
+  {
+   "tmdbId": 1597242,
+   "type": "movie",
+   "title": "Cameron Winter at Carnegie Hall",
+   "date": "2026-11-20",
+   "where": "In cinemas in the US",
+   "overview": "A concert film documenting Cameron Winter's sold-out performance at Carnegie Hall.",
+   "directors": [
+    "Paul Thomas Anderson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sQt2KQWkpGb79UKlCJNJ2BKobjo.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7wwJh55u7y5YoUJaABy5o47d14z.jpg",
+   "trailer": "E8olY56RpkU"
+  },
+  {
+   "tmdbId": 1809835,
+   "type": "movie",
+   "title": "The Hillbilly Scientist",
+   "date": "2026-11-20",
+   "where": "In cinemas in the UK",
+   "overview": "While modern running has evolved toward sleek curation, optimisation, and commercialisation, Lazarus Lake has spent 50 years designing formats with an unapologetic, honest difficulty. The Hillbilly Scientist reveals that Laz’s cruellest courses are rooted in a deeply scientific understanding of human psychology and physical limits. This is the only official documentary dedicated to the creator of the Barkley Marathons and Big’s Backyard Ultra. Filmed over more than a year, it reveals the man behind the myth through never-before-seen footage, exclusive testimonials, and exceptional access to Laz’s world.",
+   "directors": [
+    "Paul Mellor",
+    "Luke Jarmey"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/vqKm2739WhuEABnC3iDjl5ZWPWe.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/a4sWKGHcwv8WFXrC97zjMacT90u.jpg",
+   "trailer": "xWM-wMFWYBM"
+  },
+  {
+   "tmdbId": 1786136,
+   "type": "movie",
+   "title": "The Lost Cache",
+   "date": "2026-11-21",
+   "where": "In cinemas in the UK",
+   "overview": "History, science and exploration converged in a quest to find the lost camera of one of climbing’s most iconic photographers and cartographers, Bradford Washburn. Set against the backdrop of the pioneering lensmen’s storied 1937 Mount Lucania expedition, this film blurs the lines between adventure documentary, treasure hunt and meditation on why we risk everything to chase the improbable.",
+   "directors": [
+    "Todd Jones"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iP7Z6UHrBItOvex7NAGyMsHU6hw.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/sbBzG9YqpWri4uAGLAYMPMKYi9R.jpg",
+   "trailer": "kenvVcgaQHM"
+  },
+  {
+   "tmdbId": 1643130,
+   "type": "movie",
+   "title": "Remember the Summit",
+   "date": "2026-11-21",
+   "where": "In cinemas in the UK",
+   "overview": "Sir Chris Bonington’s return to Torres del Paine, 62 years after the first ascent of the Central Tower.  At 91 years old, and while living with Alzheimer’s disease, the documentary accompanies Bonington in a profoundly human return: an attempt to reconnect with memories that time has erased, but that the Patagonian landscape still seems to guard. During the filming, Chris once again set foot on the territory of Estancia Cerro Guido, closing a circle between past and present, between the epic of mountaineering and the fragility of memory.",
+   "directors": [
+    "Timothy Dhalleine"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fsGVbF7W0YCivuabOJRHuJulUTq.jpg",
+   "trailer": "-Dk7SPkvFRg"
+  },
+  {
+   "tmdbId": 1679802,
+   "type": "movie",
+   "title": "Excalibur, A Pursuit in Process",
+   "date": "2026-11-21",
+   "where": "In cinemas in the UK",
+   "overview": "Brooke Raboutou takes on Excalibur (5.15c / 9b+) in Arco, Italy. This film documents the process, hardships, and relentless perseverance—both mental and physical—behind her pursuit of one of the hardest routes in the world. At just 18 moves, Excalibur is a brutally condensed testpiece of pure power endurance on razor-sharp holds. Brooke’s ascent not only marks a leap in her career – becoming the first woman to climb 5.15c / 9b+ – but also represents a meaningful step in closing the long-standing gap between men and women at the absolute cutting edge of sport climbing.",
+   "directors": [
+    "Ben Neilson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/tOcTrlTlRB466gusjq514zuUoYZ.jpg",
+   "trailer": "t_TRhsVMkVU"
+  },
+  {
+   "tmdbId": 1496304,
+   "type": "movie",
+   "title": "Amazomania",
+   "date": "2026-11-22",
+   "where": "In cinemas in the UK",
+   "overview": "In 1996, a Brazilian official and a Swedish journalist ventured into the Amazon to document the isolated Korubo tribe caught in escalating land conflicts. Initially hailed as a heroic breakthrough, the footage now demands to be reexamined. Uncovering the hidden costs of “discovery,” the film confronts the colonial legacy and exposes the long-term repercussions for the Korubo.",
+   "directors": [
+    "Nathan Grossman"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/pYtnlC7sETuVfOWQ1WKLuZ9y3oS.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uNwE9ckM2IHhrmDD47pin6UnWSq.jpg",
+   "trailer": "UcKfEwSEkIY"
+  },
+  {
+   "tmdbId": 325484,
+   "type": "tv",
+   "title": "New Wave",
+   "date": "2026-11-23",
+   "where": "Series on MGM+",
+   "directors": [],
+   "overview": "The fascinating story of New Wave music and the decade from 1977 to 1987 that brought alternative culture into the mainstream.",
+   "poster": "https://image.tmdb.org/t/p/w342/8g4uZAZ7hZPVgWRDeJN8zQhI0v2.jpg",
+   "trailer": "-VgR9KfJM2c"
+  },
+  {
+   "tmdbId": 1578210,
+   "type": "movie",
+   "title": "Run Terry Run",
+   "date": "2026-11-24",
+   "where": "Streaming in the US",
+   "overview": "The extraordinary story of Canadian icon Terry Fox will be told like never before in Run Terry Run, a new feature-length documentary directed by acclaimed filmmaker Sean Menard. The film offers an intimate, behind-the-scenes look at Terry’s legendary 1980 Marathon of Hope, drawing from 96 reels of never-before-seen footage and unheard audio interviews that have remained untouched for 45 years.",
+   "directors": [
+    "Sean Menard"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sSstsc561xip9s5FKereo1r1I9i.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ldFeRtwity90hO5Yy9wVu4sDsW4.jpg",
+   "trailer": "upUdfgVR2NQ"
+  },
+  {
+   "tmdbId": 338435,
+   "type": "tv",
+   "title": "The Great Food Con",
+   "date": "2026-11-24",
+   "where": "Series on ABC TV",
+   "directors": [
+    "Craig Reucassel"
+   ],
+   "overview": "Craig Reucassel reveals how ultra-processed foods are now linked to a range of harmful health effects and asks - do we really know what we're eating anymore?",
+   "poster": "https://image.tmdb.org/t/p/w342/vLGKob4luRlywXZG28cqIkMjFnr.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hFLh4rah80uWzbzktBm5h8KftxE.jpg",
+   "trailer": "i5YJOxb6nAc"
+  },
+  {
+   "tmdbId": 1632599,
+   "type": "movie",
+   "title": "The Slightest Touch",
+   "date": "2026-11-25",
+   "where": "HBO Max in the US",
+   "overview": "As she turns forty - an age doctors once said she would never reach - Emma Fogarty, who lives with the rare and extremely painful condition Epidermolysis Bullosa, takes up an offer from longtime friend Colin Farrell; they agree to run the Dublin Marathon together, with Colin pushing Emma's wheelchair for the final four kilometres. Also follow their lives and the enduring friendship that has sustained them through the years.",
+   "directors": [
+    "Rachel Fleit"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9o1Y6bwmPaKcljx2edkllyGm8nM.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/2Puf7XExGfbhJuFDhbbmGNnll46.jpg",
+   "trailer": "ApBoWNQF7c4"
+  },
+  {
+   "tmdbId": 1811599,
+   "type": "movie",
+   "title": "Tyson Fury",
+   "date": "2026-11-27",
+   "where": "Netflix in the US",
+   "overview": "Discover the man beneath the Fury in this feature length documentary from Lucy Wilcox. With exclusive access to Paris, Tyson and John Fury, this film charts the rise, fall and redemption of the one and only Gypsy King.",
+   "directors": [
+    "Lucy Wilcox"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/wAffyCmjFZOI3uvmVvpg7Lz8Yn5.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/u4KtIySbavQYUxGHjjV3zT0H17c.jpg",
+   "trailer": "jb01qWUn62A"
+  },
+  {
+   "tmdbId": 330808,
+   "type": "tv",
+   "title": "Beyond Society",
+   "date": "2026-12-18",
+   "where": "Series on Netflix",
+   "directors": [
+    "J. A. Bayona",
+    "Carlos Torres"
+   ],
+   "overview": "The story of Flight 571 did not end on the day the survivors were rescued from the Andes. For them, and for the families of those who did not return, the hardest part was about to begin. Whilst silence reigned amongst those directly involved, the rest of the world continued to try to understand what had happened through books, films and documentaries. But how does one rebuild a life after such a tragedy?",
+   "poster": "https://image.tmdb.org/t/p/w342/mI0LygMjn0ke4tZi3kpgJiqaxGW.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/2XgaheMWrJUt1eHGBhFCPTIS2b3.jpg",
+   "trailer": "Kbqd8r-7oRY"
+  },
+  {
+   "tmdbId": 1807218,
+   "type": "movie",
+   "title": "Everything Is Not OK",
+   "date": "2027-01-01",
+   "where": "Streaming in the US",
+   "overview": "Artist Judith Blum Reddy's work, shaped by the Holocaust and displacement across continents, is explored alongside fellow artists who channeled displacement into art, framed by poetry and themes of memory and resistance.",
+   "directors": [
+    "Dev Benegal"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/RQir12OiuIg4bwAWNDOaEKClT2.jpg",
+   "trailer": "sc6ufCIP9Gk"
+  },
+  {
+   "tmdbId": 1666864,
+   "type": "movie",
+   "title": "Rehearsals for a Revolution",
+   "date": "2027-01-08",
+   "where": "In cinemas in the UK, Ireland and the US",
+   "overview": "Through five portraits of relatives and mentors, five expressions of resistance, Pegah Ahangarani sketches her life story. Drawing from personal archives, home videos, street protests footage, newspapers, and recorded voices, she retraces more than 40 years of Iran’s history. From the early days of 1979, until the war that began in 2026, she pieces together intimate and collective memories, forming the portrait of a country shaped by political repression and in constant hope for a revolution.",
+   "directors": [
+    "Pegah Ahangarani"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/mzocxy2wpTGoStwUlqcfHaNSxm2.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/vMZSG9ppXdHHSW7zXoThi4EvU6o.jpg",
+   "trailer": "oWofWD4gdbE"
+  },
+  {
+   "tmdbId": 1770051,
+   "type": "movie",
+   "title": "Animals",
+   "date": "2027-01-15",
+   "where": "In cinemas in the US",
+   "overview": "Still trapped in a doomsday bunker the scientist continues his mission to narrate over footage of the natural world, hoping if animals ever return to this planet they will be cherished.",
+   "directors": [
+    "Anthonee Smith"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/q7tb4tli0pZpzzYPADNIwDHzODn.jpg",
+   "trailer": "VUkx17F9WnM"
+  },
+  {
+   "tmdbId": 1747216,
+   "type": "movie",
+   "title": "Renoir & Love",
+   "date": "2027-01-19",
+   "where": "In cinemas in the UK",
+   "overview": "Pierre-Auguste Renoir is one of the world’s favourite artists, a founding member of the Impressionist movement and a constantly evolving artist. With exclusive access to the National Gallery’s new exciting show of the same name (3 October 2026 – 31 January 2027), Exhibition on Screen will bring Renoir’s world class works to cinema audiences. Be transported back to a Parisian summer of love through the eyes of a true visionary. An unmissable opportunity to fall in love with Renoir this winter.",
+   "directors": [
+    "Ali Ray"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/50h9zwCwzrTgnaHJ1GZwT5UyuMV.jpg",
+   "trailer": "eP653O5gvOU"
+  },
+  {
+   "tmdbId": 1776125,
+   "type": "movie",
+   "title": "2020 Hindsight or (A Disaster of Pandemic Level Proportions)",
+   "date": "2027-03-10",
+   "where": "In cinemas in the US",
+   "overview": "Six years after a school trip became one of the first casualties of the pandemic, a filmmaker revisits the footage he shot from that weekend, tracking down his old classmates, especially one he could not forget.",
+   "directors": [
+    "Aaron Saldaña Cisneros"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/wzT0ii0GDAdvq8R9DlTtwjXiV5i.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7z7eiCeixYxHqYSgP8Fj5pI7hOv.jpg",
+   "trailer": "r6yoUsllcKo"
+  },
+  {
+   "tmdbId": 1495044,
+   "type": "movie",
+   "title": "BORN SEXY YESTERDAY: Decoding the Enigma of Beauty",
+   "date": "2027-03-14",
+   "where": "Streaming in the US",
+   "overview": "The phrase \"Born Sexy Yesterday\" is derived from the 1950 film \"Born Yesterday.\" However beneath this superficial portrayal of some women lies a more complex understanding , revealing deeper narratives that resonate with many.  October 1, 1985. The chilling emptiness in Michele Avila's eyes. Her murder, a savage ballet of teenage fury, ripped through the town, festering wounds exposing the venomous underbelly of a seemingly innocent friendship. Jealousy, a serpent coiled in the heart of adolescence, struck with the force of a viper, revealing the terrifying depths of envy's reach. These weren't just girls; they were predators.  Women are born with many layers, a mix between good and evil. Ironically of all the positive tropes that can validate the existence of women, why is it that \"Born Sexy Yesterday\" is a trope that resonates with our male counterparts the most?",
+   "directors": [],
+   "poster": "https://image.tmdb.org/t/p/w342/fzXqKE1645nqc3ncWToKUH5AkPT.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8S5vIlKMBsH48T8Wtr8UfUKK4Ek.jpg",
+   "trailer": "OXuTQ57x2io"
+  }
+ ]
+}

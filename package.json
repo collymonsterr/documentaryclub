@@ -18,7 +18,8 @@
     "indexnow": "npx --yes bun scripts/indexnow.ts",
     "streaming-availability": "npx --yes bun scripts/streaming-availability.ts",
     "resolve-directors": "npx --yes bun scripts/resolve-directors.ts",
-    "youtube": "npx --yes bun scripts/youtube.ts"
+    "youtube": "npx --yes bun scripts/youtube.ts",
+    "coming-soon": "npx --yes bun scripts/coming-soon.ts"
   },
   "overrides": {
     "rolldown": "1.2.1"

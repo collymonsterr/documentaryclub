@@ -1,0 +1,4 @@
+# TMDB ids to leave off /coming-soon (one per line, # for notes). Hand-checked by the owner.
+1688795  # TOMORROW X TOGETHER world tour: K-pop concert film, not a documentary
+1797200  # SEVENTEEN world tour: K-pop concert film, not a documentary
+335981   # Cunk on Cinema: comedy mockumentary

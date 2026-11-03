@@ -33,14 +33,14 @@ const makerSlugs = () => {
 
 type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; like?: string; browse?: string; era?: string; pick?: string };
 // A decade is a page only on its own; with a tab selection it stays a dropdown filter on that page's URL.
-const decadeOnly = (search: PageSearch) => isDecade(search.era) && !selected(search).some(Boolean) && !search.browse?.match(/^(directors|awards|about)$/);
+const decadeOnly = (search: PageSearch) => isDecade(search.era) && !selected(search).some(Boolean) && !search.browse?.match(/^(directors|awards|soon|about)$/);
 const selected = (search: PageSearch) => [search.tag, search.cat && search.cat !== 'all' ? search.cat : '', search.maker, search.award, search.mood, search.like, service(search.pick) ? search.pick : ''];
 // The one clean path for a page, or null when it is a filter combination that stays on query parameters.
 export function pagePath(search: PageSearch) {
   const { tag, maker, award, mood, like } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '', streaming = service(search.pick);
   if (search.film) return filmIds.has(search.film) ? `/film/${search.film}` : null;
   if (decadeOnly(search)) return `/decades/${search.era}`;
-  if (selected(search).filter(Boolean).length !== 1) return selected(search).some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : search.browse === 'about' ? '/about' : '/';
+  if (selected(search).filter(Boolean).length !== 1) return selected(search).some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : search.browse === 'about' ? '/about' : search.browse === 'soon' ? '/coming-soon' : '/';
   if (streaming) return `/${streaming.id}`;
   if (mood) return moodSlug(mood) ? `/moods/${moodSlug(mood)}` : null;
   if (like) return LIKE_PAGES[like] ? `/documentaries-like/${like}` : null;
@@ -63,6 +63,7 @@ export const urlRewrite = {
     if (section === 'tags' && !slug) { url.pathname = '/'; url.searchParams.set('tag', TAGS[0].id); url.searchParams.set('browse', 'tags'); return url; }
     if (!slug && (section === 'directors' || section === 'makers')) { url.pathname = '/'; url.searchParams.set('browse', 'directors'); return url; }
     if (!slug && section === 'about') { url.pathname = '/'; url.searchParams.set('browse', 'about'); return url; }
+    if (!slug && section === 'coming-soon') { url.pathname = '/'; url.searchParams.set('browse', 'soon'); return url; }
     if (!slug && section === 'awards') { url.pathname = '/'; url.searchParams.set('browse', 'awards'); return url; }
     if (!slug && section === 'moods') { url.pathname = '/'; url.searchParams.set('mood', MOODS[0].id); url.searchParams.set('browse', 'moods'); return url; }
     if (!slug && service(section)) { url.pathname = '/'; url.searchParams.set('pick', section); return url; }
@@ -187,6 +188,7 @@ function previewFor(search: PageSearch): Preview {
     };
   }
   if (search.browse === 'directors' && !search.maker) return { title: 'Directors', seoTitle: 'Great Documentary Directors', description: 'The documentary filmmakers in the collection, with every title linked.', image: undefined };
+  if (search.browse === 'soon') return { title: 'Upcoming Documentaries: Trailers and Release Dates', description: 'New documentaries coming to cinemas and streaming in Ireland, the UK and the US, with trailers and confirmed release dates. Checked every month.', image: undefined };
   if (search.browse === 'about') return { title: 'About', description: 'A personal collection of documentaries worth your time, built in Ireland.', image: undefined };
   if (search.browse === 'awards' && !search.award) return { title: 'Awards', seoTitle: 'Award-winning Documentaries', description: 'Oscar, BAFTA, Emmy, Sundance, Tribeca, IDA and Cannes winners in the collection.', image: undefined };
   const heading = listHeading(search);

@@ -1,3 +1,4 @@
+import { ComingSoon } from "@/components/coming-soon";
 import { SupportLine } from "@/components/support";
 import { createFileRoute, Link, stripSearchParams, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
@@ -534,7 +535,7 @@ function Index() {
     maker: makerIndex().some((m) => m.name === search.maker) ? search.maker : "",
     tag: TAGS.some((t) => t.id === search.tag) ? search.tag : "",
   };
-  const browse = ["topics", "awards", "directors", "moods", "tags", "about"].includes(search.browse) ? search.browse : "topics";
+  const browse = ["topics", "awards", "directors", "moods", "tags", "soon", "about"].includes(search.browse) ? search.browse : "topics";
   const filterIds = new Set<string>(["all", "awards", ...CATEGORIES.map((c) => c.id)]);
   const filter = (filterIds.has(search.cat) ? search.cat : "all") as Filter;
   const era = (ERAS.some(([id]) => id === search.era) ? search.era : "all") as Era;
@@ -793,6 +794,7 @@ function Index() {
     directors: {},
     awards: {},
     tags: { tag: TAGS[0].id },
+    soon: {},
     about: {},
   };
   const filtersControl = (
@@ -1085,6 +1087,7 @@ function Index() {
               ["awards", "Awards"],
               ["tags", "Tags"],
               ["youtube", "YouTube"],
+              ["soon", "Coming soon"],
               ["about", "About"],
             ] as const
           ).map(([id, label]) => id === "youtube" ? (
@@ -1102,7 +1105,7 @@ function Index() {
               <a
                 href={pagePath({ browse: id, ...tabDefaults[id] }) ?? "/"}
                 onClick={softClick(() =>
-                  browse === id && !ytPage && id !== "directors" && id !== "awards" && id !== "about"
+                  browse === id && !ytPage && id !== "directors" && id !== "awards" && id !== "soon" && id !== "about"
                     ? setDiscovery({})
                     : setBrowse({ browse: id, ...tabDefaults[id] }),
                 )}
@@ -1126,7 +1129,7 @@ function Index() {
               className="h-9 w-full sm:w-64"
             />
           </div>
-        ) : browse === "tags" || browse === "about" ? null : (
+        ) : browse === "tags" || browse === "soon" || browse === "about" ? null : (
         <ScrollRow label="Discovery options" className="discovery-chips">
           {browse === "topics" ? (
             filters.map((f) => (
@@ -1208,7 +1211,7 @@ function Index() {
           </div>
         </div>
       )}
-      {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && browse !== "about" && (
+      {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && browse !== "soon" && browse !== "about" && (
         <div className="mb-3 flex items-center justify-between gap-2">
           <h1 className="sr-only">Extraordinary true stories: {CATALOGUE.length} of the best documentaries to watch</h1>
           <div className="phone-tools">{toolControls}</div>
@@ -1266,6 +1269,8 @@ function Index() {
       )}
       {browse === "about" && view === "gallery" && !query ? (
         <AboutContent />
+      ) : browse === "soon" && view === "gallery" && !query ? (
+        <ComingSoon onFilm={(id) => browseFrom({ film: id })} />
       ) : browse === "directors" && !facet.maker && view === "gallery" ? (
         <DirectorsList query={directorQuery} />
       ) : browse === "awards" && !facet.award && view === "gallery" ? (
@@ -1569,7 +1574,7 @@ function Index() {
           {surprised !== film.id && <NewsletterSignup source="film" className="mt-10" />}
         </>
       )}
-      {view === "gallery" && listFilter !== "shortlist" && <NewsletterSignup source="footer" className="mt-10" />}
+      {view === "gallery" && listFilter !== "shortlist" && browse !== "soon" && <NewsletterSignup source="footer" className="mt-10" />}
       {browse !== "about" && <SupportLine />}
       <SiteIndex />
       <footer className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-3 text-[10px] leading-relaxed text-muted-foreground">
