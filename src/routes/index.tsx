@@ -68,6 +68,8 @@ import { SiteIndex } from "@/components/site-index";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { TrailerPlayer } from "@/components/trailer-player";
 import { usePreference, useTracking } from "@/hooks/use-tracking";
+import { useCloudSync } from "@/hooks/use-cloud-sync";
+import { AccountSync } from "@/components/account-sync";
 import {
   browseSelection,
   gallerySelection,
@@ -569,12 +571,15 @@ function Index() {
   };
   const [shown, setShown] = useState(PAGE);
   const [shortlist, toggleShort, shortOps] = useTracking(TRACKING_KEYS.shortlist);
-  const [watched, toggleWatchedRaw] = useTracking(TRACKING_KEYS.watched);
+  const [watched, toggleWatchedRaw, watchedOps] = useTracking(TRACKING_KEYS.watched);
   // Marking watched clears Saved (one direction only).
   const toggleWatched = (id: string) => {
     if (!watched.has(id)) shortOps.remove(id);
     toggleWatchedRaw(id);
   };
+  // Optional Google account that syncs both lists across devices; Firebase loads only on these lists or for account holders.
+  const lists = useMemo(() => ({ shortlist: [...shortlist], watched: [...watched] }), [shortlist, watched]);
+  const sync = useCloudSync(lists, (next) => { shortOps.replace(next.shortlist); watchedOps.replace(next.watched); }, Boolean(listFilter));
   const [hideWatched, setHideWatched] = usePreference("dc-hide-watched", true);
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -1220,11 +1225,21 @@ function Index() {
           </Button>
         </p>
       )}
+      {listFilter && view === "gallery" && (
+        <AccountSync
+          ready={sync.ready}
+          account={sync.account}
+          synced={sync.synced}
+          error={sync.error}
+          onSignIn={sync.signIn}
+          onSignOut={sync.signOut}
+        />
+      )}
       {listFilter === "shortlist" && view === "gallery" && (
         <NewsletterSignup
           source="saved"
           title="Never run out of things to watch"
-          body="Your saved list lives in this browser. Get one new pick every week by email, plus the best new releases."
+          body="Get one new pick every week by email, plus the best new releases."
           className="mb-5"
         />
       )}
