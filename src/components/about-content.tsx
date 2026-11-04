@@ -11,6 +11,7 @@ export function AboutContent() {
     <SupportAbout />
     <h3 className={heading}>How the films are picked</h3>
     <p className={paragraph}>Every title is a feature film or series that documentary fans rate highly, with a lean towards award winners and great directors. Editor's Choice is my personal favourites, and plenty are free on YouTube.</p>
+    <p className={paragraph}>Not sure where to start? <Link to="/best" className="underline">See every list on the site</Link>: the best documentaries by subject, mood, decade, director, award and streaming service, all on one page.</p>
     <p className={paragraph}>Want it on your phone like an app? On iPhone, tap Share then "Add to Home Screen". On Android, choose "Install app" from the browser menu.</p>
     <h3 className={heading}>Got one I'm missing?</h3>
     <p className={paragraph}>Suggest a documentary or send me a message below.</p>

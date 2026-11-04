@@ -31,11 +31,13 @@ export const MOOD_COPY: Record<string, { title: string; description: string }> =
   weird: { title: 'Weird Documentaries', description: 'Strange people, stranger stories, and all of it true.' },
 };
 export const AWARD_COPY: Record<string, { title: string; description: string }> = {
-  oscar: { title: 'Oscar-Winning Documentaries', description: 'Every Academy Award winner in the collection, newest ceremony first, then the nominees.' },
-  bafta: { title: 'BAFTA Winners', description: 'Documentaries that won a BAFTA.' },
-  emmy: { title: 'Emmy Winners', description: 'Documentaries that won a Primetime Emmy.' },
-  sundance: { title: 'Sundance Winners', description: 'Grand Jury, Audience and Directing award winners from Sundance.' },
-  tribeca: { title: 'Tribeca Winners', description: 'Top documentary prize winners from the Tribeca Festival.' },
-  ida: { title: 'IDA Winners', description: 'Best Feature and Best Series winners at the IDA Documentary Awards.' },
-  cannes: { title: 'Cannes Winners', description: "Palme d'Or and L'Œil d'or winners from the Cannes Film Festival." },
+  // Titles name "documentary" and the award the way people search for it ("BAFTA-winning documentaries"), since they are
+  // the page title and h1. Oscar's says "and Nominated" because most of its list are nominees.
+  oscar: { title: 'Oscar-Winning and Nominated Documentaries', description: 'Every Academy Award-winning documentary in the collection, newest ceremony first, then the Oscar nominees.' },
+  bafta: { title: 'BAFTA-Winning Documentaries', description: 'Documentaries that won a BAFTA, mostly the British Academy award for Best Documentary.' },
+  emmy: { title: 'Emmy-Winning Documentaries', description: 'Documentaries and docuseries that won a Primetime Emmy.' },
+  sundance: { title: 'Sundance Award-Winning Documentaries', description: 'Documentaries that won the Grand Jury Prize, the Audience Award or the Directing Award at Sundance.' },
+  tribeca: { title: 'Tribeca Award-Winning Documentaries', description: 'Winners of the Best Documentary Feature prize at the Tribeca Festival.' },
+  ida: { title: 'IDA Documentary Award Winners', description: "Winners at the International Documentary Association's awards: Best Feature, Best Series and the earlier Distinguished Documentary Achievement awards." },
+  cannes: { title: 'Cannes Award-Winning Documentaries', description: "Documentaries that won the Palme d'Or or L'Œil d'or at the Cannes Film Festival." },
 };

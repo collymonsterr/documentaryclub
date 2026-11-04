@@ -1217,6 +1217,9 @@ function Index() {
               </a>
             </Button>
           ))}
+          <Button asChild size="sm" variant="ghost" className="text-primary">
+            <Link to="/best">All lists →</Link>
+          </Button>
         </nav>
       )}
       {(query || activeFilters > 0 || listFilter) && (
@@ -1333,7 +1336,14 @@ function Index() {
       ) : browse === "directors" && !facet.maker && view === "gallery" ? (
         <DirectorsList query={directorQuery} />
       ) : browse === "awards" && !facet.award && view === "gallery" ? (
-        <AwardsList films={list} onSeeAll={(award) => setBrowse({ award })} />
+        <>
+          <AwardsList films={list} onSeeAll={(award) => setBrowse({ award })} />
+          <p className="mt-6 text-sm">
+            <Link to="/best" className="text-primary underline-offset-4 hover:underline">
+              Browse every list on the site →
+            </Link>
+          </p>
+        </>
       ) : !film ? (
         <div className="py-16 text-center">
           <p className="text-muted-foreground">No films in this selection.</p>
