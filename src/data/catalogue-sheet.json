@@ -394,7 +394,7 @@
 {"id":"faster","title":"Faster","year":2003,"format":"Film","category":"Sport","director":"Mark Neale","moods":["Gripping"],"tags":["automotive"],"tmdbId":30129,"imdbId":"tt0368721"},
 {"id":"the-lost-leonardo","title":"The Lost Leonardo","year":2021,"format":"Film","category":"Art","director":"Andreas Koefoed","moods":["Gripping","Gloriously weird"],"tmdbId":822099,"imdbId":"tt11225756"},
 {"id":"beer-wars","title":"Beer Wars","year":2009,"format":"Film","category":"Food","director":"Anat Baron","moods":["Infuriating","Funny"],"tmdbId":19837,"imdbId":"tt1326194","trailer":"gNiIy17RKDo"},
-{"id":"how-beer-saved-the-world","title":"How Beer Saved the World","year":2011,"format":"Film","category":"Food","moods":["Funny"],"tmdbId":81765,"imdbId":"tt1832368"},
+{"id":"how-beer-saved-the-world","title":"How Beer Saved the World","year":2011,"format":"Film","category":"Food","moods":["Funny"],"tags":["editors-choice"],"tmdbId":81765,"imdbId":"tt1832368"},
 {"id":"an-open-secret","title":"An Open Secret","year":2014,"format":"Film","category":"Crime","director":"Amy J. Berg","moods":["Infuriating","Harrowing"],"tmdbId":294368,"imdbId":"tt3677412"},
 {"id":"bottled-life","title":"Bottled Life","year":2012,"format":"Film","category":"Economics","director":"Urs Schnell","moods":["Infuriating"],"tmdbId":86063,"imdbId":"tt2072910","trailer":"rdT3I4tiD_E"},
 {"id":"scared-straight","title":"Scared Straight!","year":1978,"format":"Film","category":"Crime","director":"Arnold Shapiro","moods":["Gripping","Gloriously weird"],"tmdbId":92215,"imdbId":"tt0078205","awards":["Oscar Winner 1979","Emmy Winner 1979"]},
