@@ -76,6 +76,13 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Bruce_Sinofsky",
     "blurb": "American director who made Brother's Keeper and the Paradise Lost films with Joe Berlinger."
   },
+  "D. A. Pennebaker": {
+    "tmdbPersonId": 21113,
+    "photo": "https://image.tmdb.org/t/p/w185/bLonM1nzO87XvyrPYyS6L2q9yV.jpg",
+    "imdbId": "nm0672060",
+    "wikipedia": "https://en.wikipedia.org/wiki/D._A._Pennebaker",
+    "blurb": "American pioneer of direct cinema, known for Dont Look Back and The War Room."
+  },
   "Elizabeth Chai Vasarhelyi": {
     "tmdbPersonId": 1027910,
     "photo": "https://image.tmdb.org/t/p/w185/hljaKxLMqS9JGYFuEIee0xi4fQg.jpg",
@@ -96,6 +103,13 @@
     "imdbId": "nm3011011",
     "wikipedia": "https://en.wikipedia.org/wiki/Jimmy_Chin",
     "blurb": "American climber, photographer and co-director of the Oscar-winning Free Solo."
+  },
+  "Kevin Macdonald": {
+    "tmdbPersonId": 17350,
+    "photo": "https://image.tmdb.org/t/p/w185/40P6puNsdMx2ov6bQnZUZ867O3j.jpg",
+    "imdbId": "nm0531817",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kevin_Macdonald_(director)",
+    "blurb": "Scottish director of the Oscar-winning One Day in September and Touching the Void."
   },
   "Morgan Neville": {
     "tmdbPersonId": 228643,
@@ -153,6 +167,19 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Asif_Kapadia",
     "blurb": "British director of archive-led portraits, including Senna and the Oscar-winning Amy."
   },
+  "Benjamin Ree": {
+    "tmdbPersonId": 1480225,
+    "photo": "https://image.tmdb.org/t/p/w185/e7x1TnOHUc8CCVCWza5eWgOMBNt.jpg",
+    "imdbId": "nm5558989",
+    "wikipedia": "https://en.wikipedia.org/wiki/Benjamin_Ree",
+    "blurb": "Norwegian director of The Painter and the Thief and The Remarkable Life of Ibelin."
+  },
+  "Bryan Storkel": {
+    "tmdbPersonId": 939400,
+    "photo": "https://image.tmdb.org/t/p/w185/1lAOsJAnn47CNZjN0fyh1lYWE8R.jpg",
+    "imdbId": "nm1596623",
+    "blurb": "American director drawn to oddball schemes, from The Pez Outlaw to Bitconned."
+  },
   "Chris Hegedus": {
     "tmdbPersonId": 115891,
     "photo": "https://image.tmdb.org/t/p/w185/qaI1Q9uD49zH2b0If3VYqvuLkyh.jpg",
@@ -160,26 +187,12 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Chris_Hegedus",
     "blurb": "American filmmaker who made The War Room with D. A. Pennebaker."
   },
-  "D. A. Pennebaker": {
-    "tmdbPersonId": 21113,
-    "photo": "https://image.tmdb.org/t/p/w185/bLonM1nzO87XvyrPYyS6L2q9yV.jpg",
-    "imdbId": "nm0672060",
-    "wikipedia": "https://en.wikipedia.org/wiki/D._A._Pennebaker",
-    "blurb": "American pioneer of direct cinema, known for Dont Look Back and The War Room."
-  },
   "David Maysles": {
     "tmdbPersonId": 139002,
     "photo": "https://image.tmdb.org/t/p/w185/7IDRKcdjutXI7VjuAKo5iWvrSZC.jpg",
     "imdbId": "nm0563100",
     "wikipedia": "https://en.wikipedia.org/wiki/David_Maysles",
     "blurb": "American pioneer of direct cinema, who made Salesman, Gimme Shelter and Grey Gardens with brother Albert."
-  },
-  "Davis Guggenheim": {
-    "tmdbPersonId": 19012,
-    "photo": "https://image.tmdb.org/t/p/w185/v0uvixJWNvXjur5kXoPDlAkTsEL.jpg",
-    "imdbId": "nm0346550",
-    "wikipedia": "https://en.wikipedia.org/wiki/Davis_Guggenheim",
-    "blurb": "American director of Waiting for \"Superman\" and Still: A Michael J. Fox Movie."
   },
   "Eugene Jarecki": {
     "tmdbPersonId": 84369,
@@ -202,13 +215,6 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Ken_Burns",
     "blurb": "American filmmaker known for long historical series, including The Civil War and The Vietnam War."
   },
-  "Kevin Macdonald": {
-    "tmdbPersonId": 17350,
-    "photo": "https://image.tmdb.org/t/p/w185/40P6puNsdMx2ov6bQnZUZ867O3j.jpg",
-    "imdbId": "nm0531817",
-    "wikipedia": "https://en.wikipedia.org/wiki/Kevin_Macdonald_(director)",
-    "blurb": "Scottish director of the Oscar-winning One Day in September and Touching the Void."
-  },
   "Kirby Dick": {
     "tmdbPersonId": 112588,
     "photo": "https://image.tmdb.org/t/p/w185/p9Ar5C5RvZexaqNGqUggQPW4LUp.jpg",
@@ -223,12 +229,26 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Liz_Garbus",
     "blurb": "American director of What Happened, Miss Simone? and I'll Be Gone in the Dark."
   },
+  "Lucy Walker": {
+    "tmdbPersonId": 34949,
+    "photo": "https://image.tmdb.org/t/p/w185/w1rQVe5GgJZyqAL2mGF6DhtCyGz.jpg",
+    "imdbId": "nm1013671",
+    "wikipedia": "https://en.wikipedia.org/wiki/Lucy_Walker_(director)",
+    "blurb": "British director of the Oscar-nominated Waste Land and Mountain Queen."
+  },
   "Mads Brügger": {
     "tmdbPersonId": 585182,
     "photo": "https://image.tmdb.org/t/p/w185/eEUBv4ZBqc7DKWi1dkLjJImRHUu.jpg",
     "imdbId": "nm1366561",
     "wikipedia": "https://en.wikipedia.org/wiki/Mads_Br%C3%BCgger",
     "blurb": "Danish journalist and filmmaker known for deadpan undercover stunts."
+  },
+  "Matt Tyrnauer": {
+    "tmdbPersonId": 1116251,
+    "photo": "https://image.tmdb.org/t/p/w185/lOSYgdedAdwTDuu2EBvf5uVjYmI.jpg",
+    "imdbId": "nm2961289",
+    "wikipedia": "https://en.wikipedia.org/wiki/Matt_Tyrnauer",
+    "blurb": "American director and journalist behind Studio 54 and Where's My Roy Cohn?"
   },
   "Rory Kennedy": {
     "tmdbPersonId": 1037308,
@@ -237,11 +257,25 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Rory_Kennedy",
     "blurb": "American director of Downfall: The Case Against Boeing and The Synanon Fix."
   },
+  "Stacy Peralta": {
+    "tmdbPersonId": 4319,
+    "photo": "https://image.tmdb.org/t/p/w185/mT2TkPs1Yjh2DaJWnYJpcoRwm1H.jpg",
+    "imdbId": "nm0672769",
+    "wikipedia": "https://en.wikipedia.org/wiki/Stacy_Peralta",
+    "blurb": "Skateboarding pioneer turned director of Dogtown and Z-Boys and Riding Giants."
+  },
   "Stanley Nelson": {
     "tmdbPersonId": 115893,
     "photo": "https://image.tmdb.org/t/p/w185/lRYyHCFY0U2RlMVJ7OpPYmkHMvA.jpg",
     "imdbId": "nm0625747",
     "wikipedia": "https://en.wikipedia.org/wiki/Stanley_Nelson_Jr.",
     "blurb": "American director known for films on Black American history, including Freedom Riders and Attica."
+  },
+  "Wim Wenders": {
+    "tmdbPersonId": 2303,
+    "photo": "https://image.tmdb.org/t/p/w185/7Y4mkVstQxhegwlOwAsGRfZfHXC.jpg",
+    "imdbId": "nm0000694",
+    "wikipedia": "https://en.wikipedia.org/wiki/Wim_Wenders",
+    "blurb": "German director of Buena Vista Social Club, Pina and The Salt of the Earth."
   }
 }

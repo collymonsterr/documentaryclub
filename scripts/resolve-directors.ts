@@ -11,8 +11,13 @@ const norm = (s: string) => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerC
 
 async function wikipedia(imdbId: string) {
   const query = `SELECT ?article WHERE { ?p wdt:P345 "${imdbId}". ?article schema:about ?p; schema:isPartOf <https://en.wikipedia.org/>. }`;
-  const r = await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`, { headers: { 'User-Agent': 'DocumentaryClubCatalogue/1.0 (private catalogue enrichment)' } });
-  if (!r.ok) throw new Error('Wikidata unavailable');
+  // Wikidata's query service refuses the odd request under load, so try a few times before giving up.
+  let r: Response | undefined;
+  for (let attempt = 0; attempt < 4 && !r?.ok; attempt++) {
+    if (attempt) await new Promise(res => setTimeout(res, 2000 * attempt));
+    r = await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`, { headers: { 'User-Agent': 'DocumentaryClubCatalogue/1.0 (private catalogue enrichment)' } });
+  }
+  if (!r?.ok) throw new Error(`Wikidata unavailable (${r?.status})`);
   const rows = (await r.json() as any).results.bindings;
   return rows.length === 1 ? rows[0].article.value as string : undefined;
 }
