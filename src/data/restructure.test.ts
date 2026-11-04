@@ -12,7 +12,7 @@ describe('catalogue sheet import', () => {
     expect(CATALOGUE.map(f => f.id).sort()).toEqual(SHEET.map(r => r.id).sort());
     for (const id of ['super-high-me', 'the-culture-high', 'rolling-papers', 'daughters-of-the-cult']) expect(film(id)).toBeUndefined();
     expect(film('the-last-dance')?.mediaType).toBe('tv');
-    expect(film('somm')?.tags).toEqual(expect.arrayContaining(['wine', 'essential']));
+    expect(film('somm')?.tags).toEqual(expect.arrayContaining(['wine', 'editors-choice']));
   });
   it('applies sheet category and director to existing titles by id', () => {
     for (const r of SHEET) {

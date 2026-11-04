@@ -26,7 +26,7 @@ export const Route = createFileRoute('/admin')({
 const LOVABLE = 'https://lovable.dev/projects/0a664d3a-65d9-43f6-9549-8ea0ef11bc3e';
 const PAGE = 60;
 type Cloud = Awaited<ReturnType<typeof loadCloud>>;
-type Filter = 'all' | 'editors-choice' | 'essential' | 'no-trailer';
+type Filter = 'all' | 'editors-choice' | 'no-trailer';
 const hasTrailer = (f: AdminFilm) => Boolean(f.trailer || SNAPSHOT[f.id]?.trailer);
 
 function Admin() {
@@ -92,7 +92,7 @@ function Admin() {
         </div>}
         {!films ? (!message?.error && <p className="mt-4 text-sm text-muted-foreground">Loading the catalogue…</p>) : <>
           <div className="mt-5 flex flex-wrap gap-2">
-            {([['all', 'All'], ['editors-choice', "Editor's Choice"], ['essential', 'Essential'], ['no-trailer', 'No trailer']] as const).map(([id, label]) =>
+            {([['all', 'All'], ['editors-choice', "Editor's Choice"], ['no-trailer', 'No trailer']] as const).map(([id, label]) =>
               <Button key={id} size="sm" variant={filter === id ? 'default' : 'outline'} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label} <span className="opacity-70">{count(id)}</span></Button>)}
           </div>
           <div className="mt-3 flex gap-2">

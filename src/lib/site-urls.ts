@@ -20,7 +20,7 @@ const categoryBySlug = new Map(CATEGORIES.map(c => [slugify(c.label), c]));
 const categorySlug = new Map(CATEGORIES.map(c => [c.id as string, slugify(c.label)]));
 const tagIds = new Set<string>(TAGS.map(t => t.id));
 // Renamed tags, so shared links keep working.
-const OLD_TAGS: Record<string, string> = { 'on-netflix': 'netflix-original' };
+const OLD_TAGS: Record<string, string> = { 'on-netflix': 'netflix-original', essential: 'editors-choice' };
 const filmIds = new Set(CATALOGUE.map(f => f.id));
 export const moodSlug = (id: string) => slugify(MOODS.find(m => m.id === id)?.label ?? '');
 const moodBySlug = new Map<string, string>(MOODS.map(m => [slugify(m.label), m.id]));

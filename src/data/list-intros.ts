@@ -63,7 +63,6 @@ export const LIST_INTROS: Record<string, string> = {
   'streaming:hbo-max': "HBO has been making serious documentaries for decades, long before streaming made them cool. These are the best of them on HBO Max, ranked. The US gets far more than Ireland and the UK, so check the film page for your country.",
   // Picks
   'tag:editors-choice': "My personal favourites from the whole collection. If you only watch a handful of documentaries this year, make it these. Start with Dear Zachary and know nothing going in.",
-  'tag:essential': "Where to start if you're new to documentaries, or want to fill the gaps. These are the films everything else gets compared to. The Thin Blue Line, The Fog of War and Free Solo are a good first weekend.",
   'tag:go-in-blind': "Best watched knowing as little as possible, so skip the trailers and don't read anything. Dear Zachary, The Jinx and Searching for Sugar Man all have turns you shouldn't see coming. Trust me on these.",
   'tag:presenter-led': "Films where the person asking the questions is part of the story. Icarus starts as a cycling doping experiment and ends up in the middle of a Russian state scandal. Louis Theroux and Michael Moore are the masters of it.",
 };

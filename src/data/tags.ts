@@ -8,7 +8,6 @@ export const TAGS = [
   { id: 'obsessives', label: 'Obsessives', group: 'topics', title: 'Documentaries About Obsessives', description: 'People who gave everything to something the rest of us ignore.' },
   { id: 'automotive', label: 'Automotive', group: 'topics', title: 'Car & Motorsport Documentaries', description: 'Racing, road trips and the people obsessed with cars and motorbikes.' },
   { id: 'wine', label: 'Wine', group: 'topics', title: 'Wine Documentaries', description: 'The people who grow it, judge it, collect it and fake it.' },
-  { id: 'essential', label: 'Essential', group: 'picks', title: 'Essential Documentaries', description: 'A starting point: the documentaries most worth seeing first.' },
   { id: 'wrongful-conviction', label: 'Wrongful conviction', group: 'topics', title: 'Wrongful Conviction Documentaries', description: 'Disputed verdicts, flawed investigations and the fight to overturn them.' },
   { id: 'mountains', label: 'Mountains', group: 'topics', title: 'Mountain Documentaries', description: 'Climbers, summits and what it takes to come back down.' },
   { id: 'ocean', label: 'Ocean', group: 'topics', title: 'Ocean Documentaries', description: 'Life at sea, under it and on the edge of it.' },

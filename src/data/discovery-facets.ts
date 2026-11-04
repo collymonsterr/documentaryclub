@@ -111,11 +111,11 @@ export function seededRandom(seed: string) {
     return ((h ^= h >>> 16) >>> 0) / 4294967296;
   };
 }
-// "Best" lists: Editor's Choice, then Essential, then a blend of IMDb and RT; titles without either rank last.
+// "Best" lists: Editor's Choice, then a blend of IMDb and RT; titles without either rank last.
 export function rankScore(film: Film, snap = SNAPSHOT[film.id]) {
   const o = snap?.omdb, imdb = o?.imdb !== undefined ? o.imdb * 10 : undefined, rt = o?.rottenTomatoes;
   const quality = imdb !== undefined && rt !== undefined ? 0.6 * imdb + 0.4 * rt : imdb ?? rt ?? (snap?.tmdbRating ?? 5) * 10 - 10;
-  return quality + (film.tags?.includes('editors-choice') ? 8 : 0) + (film.tags?.includes('essential') ? 5 : 0);
+  return quality + (film.tags?.includes('editors-choice') ? 8 : 0);
 }
 export const rankFilms = <T extends Film>(films: T[]) =>
   films.map(f => ({ f, s: rankScore(f) })).sort((a, b) => b.s - a.s || b.f.year - a.f.year || a.f.id.localeCompare(b.f.id)).map(x => x.f);

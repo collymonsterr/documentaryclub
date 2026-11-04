@@ -38,7 +38,7 @@ describe('tags', () => {
     expect(matchesFacets(CATALOGUE[0]!, { ...facets, tag: '' })).toBe(true);
   });
   it("puts Editor's Choice first and limits cards to two", () => {
-    expect(orderedTags(['ocean', 'essential', 'wine', 'editors-choice']).slice(0, 2)).toEqual(['editors-choice', 'essential']);
+    expect(orderedTags(['ocean', 'go-in-blind', 'wine', 'editors-choice']).slice(0, 2)).toEqual(['editors-choice', 'go-in-blind']);
     expect(orderedTags(['ocean', 'wine', 'editors-choice'])).toHaveLength(3);
   });
   it('ignores tags outside the approved list', () => {
