@@ -5,6 +5,7 @@ export const TAGS = [
   { id: 'netflix-original', label: 'Netflix Original', group: 'topics', title: 'Netflix Original Documentaries', description: 'Made or released by Netflix as Netflix Originals, so check the film page for where to watch.' },
   { id: 'presenter-led', label: 'Presenter-led', group: 'picks', title: 'Presenter-led Documentaries', description: 'Films where the person asking the questions is part of the story.' },
   { id: 'go-in-blind', label: 'Go in blind', group: 'picks', title: 'Documentaries to Go in Blind', description: 'Best watched knowing as little as possible, so avoid the trailers.' },
+  { id: 'obsessives', label: 'Obsessives', group: 'topics', title: 'Documentaries About Obsessives', description: 'People who gave everything to something the rest of us ignore.' },
   { id: 'automotive', label: 'Automotive', group: 'topics', title: 'Car & Motorsport Documentaries', description: 'Racing, road trips and the people obsessed with cars and motorbikes.' },
   { id: 'wine', label: 'Wine', group: 'topics', title: 'Wine Documentaries', description: 'The people who grow it, judge it, collect it and fake it.' },
   { id: 'essential', label: 'Essential', group: 'picks', title: 'Essential Documentaries', description: 'A starting point: the documentaries most worth seeing first.' },
