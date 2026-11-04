@@ -62,8 +62,10 @@ const restructured: Film[] = [...originals, ...imported].map(f => {
 
 // data/catalogue-master.csv (final authority, matched by stable id) generates catalogue-sheet.json via `npm run sync-catalogue`.
 // Titles not in the sheet are dropped; sheet titles with no curated source are built from the enrichment snapshot.
-export type SheetRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string; awards?: string[]; youtubeId?: string; youtubeRegions?: string[]; netflixId?: string };
+export type SheetRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string; awards?: string[]; youtubeId?: string; youtubeRegions?: string[]; netflixId?: string; trailer?: string };
 export const SHEET = sheetJson as SheetRow[];
+// A trailer picked by hand in the CSV's trailer column wins over TMDB's (and fills in where TMDB has none).
+for (const r of SHEET) if (r.trailer && SNAPSHOT[r.id]) SNAPSHOT[r.id] = { ...SNAPSHOT[r.id]!, trailer: r.trailer };
 const catId = (l: string) => CATEGORIES.find(c => c.label === l)?.id;
 const known = new Set(restructured.map(f => f.id));
 const created: Film[] = SHEET.filter(r => !known.has(r.id)).map(r => {

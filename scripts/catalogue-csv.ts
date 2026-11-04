@@ -1,7 +1,7 @@
 // data/catalogue-master.csv is the single source of truth for editorial fields; src/data/catalogue-sheet.json is generated from it.
-export const COLUMNS = ['id', 'title', 'year', 'type', 'category', 'tags', 'mood', 'director', 'tmdb_id', 'imdb_id', 'status', 'notes', 'awards', 'youtube_id', 'netflix_id', 'youtube_regions'] as const;
+export const COLUMNS = ['id', 'title', 'year', 'type', 'category', 'tags', 'mood', 'director', 'tmdb_id', 'imdb_id', 'status', 'notes', 'awards', 'youtube_id', 'netflix_id', 'youtube_regions', 'trailer'] as const;
 export type CsvRow = Record<(typeof COLUMNS)[number], string>;
-export type SheetJsonRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string; awards?: string[]; youtubeId?: string; youtubeRegions?: string[]; netflixId?: string };
+export type SheetJsonRow = { id: string; title: string; year: number; format: 'Film' | 'Series' | 'Collection'; director?: string; category: string; moods?: string[]; tags?: string[]; tmdbId?: number; imdbId?: string; awards?: string[]; youtubeId?: string; youtubeRegions?: string[]; netflixId?: string; trailer?: string };
 
 export function parseCsv(text: string): CsvRow[] {
   const rows: string[][] = []; let row: string[] = [], cell = '', quoted = false;
@@ -35,6 +35,7 @@ export const sheetRows = (rows: CsvRow[]): SheetJsonRow[] => rows.filter(r => r.
   ...(r.tmdb_id ? { tmdbId: Number(r.tmdb_id) } : {}), ...(r.imdb_id ? { imdbId: r.imdb_id } : {}),
   ...(r.awards ? { awards: r.awards.split(';').map(s => s.trim()).filter(Boolean) } : {}),
   ...(r.youtube_id ? { youtubeId: r.youtube_id } : {}), ...(r.youtube_id && r.youtube_regions ? { youtubeRegions: list(r.youtube_regions) } : {}), ...(r.netflix_id ? { netflixId: r.netflix_id } : {}),
+  ...(r.trailer ? { trailer: r.trailer } : {}),
 }));
 export const sheetJson = (rows: CsvRow[]) => `[\n${sheetRows(rows).map(r => JSON.stringify(r)).join(',\n')}\n]\n`;
 
@@ -52,6 +53,8 @@ export function validate(rows: CsvRow[], allowed: { tags: string[]; moods: strin
     if (r.youtube_id && !/^[\w-]{11}$/.test(r.youtube_id)) errors.push(`${name}: bad YouTube id "${r.youtube_id}"`);
     // Blank means it plays in Ireland, the UK and the US; otherwise the ones it does play in.
     for (const c of list(r.youtube_regions)) if (!['IE', 'GB', 'US'].includes(c)) errors.push(`${name}: bad YouTube region "${c}"`);
+    // A YouTube video id chosen by hand; it replaces TMDB's trailer (or fills in when TMDB has none).
+    if (r.trailer && !/^[\w-]{11}$/.test(r.trailer)) errors.push(`${name}: bad trailer id "${r.trailer}"`);
     if (r.netflix_id && !/^\d{5,9}$/.test(r.netflix_id)) errors.push(`${name}: bad Netflix id "${r.netflix_id}"`);
     if (r.status === 'live' && !r.id) errors.push(`${name}: live row has no id`);
     if (r.id && seen.has(r.id)) errors.push(`${name}: duplicate id "${r.id}"`);

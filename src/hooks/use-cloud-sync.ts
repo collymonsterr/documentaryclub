@@ -23,7 +23,7 @@ async function load() {
 }
 type Cloud = Awaited<ReturnType<typeof load>>;
 let loading: Promise<Cloud> | null = null;
-const loadCloud = () => (loading ??= load());
+export const loadCloud = () => (loading ??= load());
 
 const flag = { get: () => { try { return localStorage.getItem(SIGNED_IN) === '1'; } catch { return false; } },
   set: (on: boolean) => { try { on ? localStorage.setItem(SIGNED_IN, '1') : localStorage.removeItem(SIGNED_IN); } catch { /* storage blocked */ } } };

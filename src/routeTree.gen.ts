@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as BestRouteImport } from './routes/best'
 import { Route as ListRouteImport } from './routes/list'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -18,6 +19,11 @@ import { Route as SuggestRouteImport } from './routes/suggest'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BestRoute = BestRouteImport.update({
@@ -43,6 +49,7 @@ const SuggestRoute = SuggestRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/best': typeof BestRoute
   '/list': typeof ListRoute
   '/privacy': typeof PrivacyRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/best': typeof BestRoute
   '/list': typeof ListRoute
   '/privacy': typeof PrivacyRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/best': typeof BestRoute
   '/list': typeof ListRoute
   '/privacy': typeof PrivacyRoute
@@ -65,14 +74,15 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/best' | '/list' | '/privacy' | '/suggest'
+  fullPaths: '/' | '/admin' | '/best' | '/list' | '/privacy' | '/suggest'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/best' | '/list' | '/privacy' | '/suggest'
-  id: '__root__' | '/' | '/best' | '/list' | '/privacy' | '/suggest'
+  to: '/' | '/admin' | '/best' | '/list' | '/privacy' | '/suggest'
+  id: '__root__' | '/' | '/admin' | '/best' | '/list' | '/privacy' | '/suggest'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   BestRoute: typeof BestRoute
   ListRoute: typeof ListRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -86,6 +96,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/best': {
@@ -121,6 +138,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   BestRoute: BestRoute,
   ListRoute: ListRoute,
   PrivacyRoute: PrivacyRoute,
