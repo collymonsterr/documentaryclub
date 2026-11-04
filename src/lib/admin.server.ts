@@ -43,11 +43,12 @@ export async function verifyOwner(token: unknown) {
 
 // GitHub: GITHUB_TOKEN is a fine-grained token with Contents read and write on this repository only.
 const gh = async (path: string, init: RequestInit = {}) => {
-  const token = process.env['GITHUB_TOKEN'];
+  const token = process.env['GITHUB_TOKEN']?.trim();
   if (!token) throw new Error('GITHUB_TOKEN is not set');
   return fetch(`https://api.github.com/repos/${REPO}${path}`, {
     ...init, signal: AbortSignal.timeout(15000),
-    headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'documentary-club-admin', ...(init.body ? { 'Content-Type': 'application/json' } : {}) },
+    // init.headers come last so readFile can ask for the raw file instead of GitHub's JSON wrapper.
+    headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'documentary-club-admin', ...(init.body ? { 'Content-Type': 'application/json' } : {}), ...(init.headers as Record<string, string> | undefined) },
   });
 };
 const ok = async (res: Response, what: string) => {
@@ -59,17 +60,17 @@ const head = async () => (await ok(await gh(`/git/ref/heads/${BRANCH}`), 'ref'))
 export async function readFile(path: string, ref?: string) {
   const at = ref ?? (await head());
   const res = await gh(`/contents/${path}?ref=${at}`, { headers: { Accept: 'application/vnd.github.raw+json' } });
-  if (!res.ok) throw new Error(`GitHub read ${path}: ${res.status}`);
+  if (!res.ok) throw new Error(`GitHub read ${path}: ${res.status} ${(await res.text()).slice(0, 200)}`);
   return { text: await res.text(), commit: at };
 }
 
 // Writes several files as one commit on main, building on `parent` (the commit the edit was read from).
 // Returns false if main moved in between, so the caller can re-read and re-apply.
-export async function commitFiles(parent: string, files: Record<string, string>, message: string) {
+export async function commitFiles(parent: string, files: Record<string, string>, message: string, branch = BRANCH) {
   const base = (await ok(await gh(`/git/commits/${parent}`), 'commit')).tree.sha as string;
   const tree = await ok(await gh('/git/trees', { method: 'POST', body: JSON.stringify({ base_tree: base, tree: Object.entries(files).map(([path, content]) => ({ path, mode: '100644', type: 'blob', content })) }) }), 'tree');
   const commit = await ok(await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message, tree: tree.sha, parents: [parent] }) }), 'new commit');
-  const res = await gh(`/git/refs/heads/${BRANCH}`, { method: 'PATCH', body: JSON.stringify({ sha: commit.sha, force: false }) });
+  const res = await gh(`/git/refs/heads/${branch}`, { method: 'PATCH', body: JSON.stringify({ sha: commit.sha, force: false }) });
   if (res.status === 422) return false;
   await ok(res, 'update main');
   return true;

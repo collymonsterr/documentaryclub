@@ -10,7 +10,12 @@ type Result<T> = ({ ok: true } & T) | { ok: false; reason: string };
 const refuse = (e: unknown): { ok: false; reason: string } => {
   if (e instanceof NotOwner) return { ok: false, reason: 'This page is only for the site owner.' };
   console.error(`[admin] ${e instanceof Error ? e.message : String(e)}`);
-  return { ok: false, reason: String(e).includes('GITHUB_TOKEN') ? 'Saving isn’t set up yet: add the GITHUB_TOKEN secret in Lovable.' : 'Something went wrong. Try again in a minute.' };
+  // Only the verified owner gets this far, so name the cause plainly.
+  const text = String(e), status = text.match(/GitHub [^:]+: (\d{3})/)?.[1];
+  if (text.includes('GITHUB_TOKEN is not set')) return { ok: false, reason: 'Saving isn’t set up yet: add the GITHUB_TOKEN secret in Lovable.' };
+  if (status === '401') return { ok: false, reason: 'GitHub rejected the token (401). It may be mistyped or expired: make a new one and update GITHUB_TOKEN in Lovable.' };
+  if (status === '403' || status === '404') return { ok: false, reason: `GitHub refused (${status}). Check the token has access to the documentaryclub repository with Contents set to Read and write.` };
+  return { ok: false, reason: `Something went wrong: ${text.slice(0, 160)}` };
 };
 
 export const loadAdmin = createServerFn({ method: 'POST' })
