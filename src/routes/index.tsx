@@ -17,6 +17,8 @@ import {
   Shuffle,
   Award,
   SlidersHorizontal,
+  Globe,
+  MapPin,
   EyeOff,
   Search,
   Dices,
@@ -310,24 +312,39 @@ function CardRating({ site, value }: { site: "imdb" | "rt" | "tmdb"; value: stri
 // The full film, free on YouTube. A link that only plays in some of Ireland, the UK and the US says where, but only to visitors elsewhere.
 const REGION_NAMES: Record<string, string> = { IE: "Ireland", GB: "UK", US: "US" };
 const REGION_PLACES: Record<string, string> = { IE: "Ireland", GB: "the UK", US: "the US" };
-function YouTubeListControls({ awards, onAwards, blocked, allRegions, onAllRegions, country }: { awards: boolean; onAwards: (on: boolean) => void; blocked: number; allRegions: boolean; onAllRegions: (on: boolean) => void; country: string }) {
+// Two switches: which films (all or award winners) and where they play. The region one names the visitor's country
+// and both counts, so it's plain that the list is narrowed and how many more there are elsewhere.
+function YouTubeListControls({ awards, onAwards, shown, blocked, allRegions, onAllRegions, country }: { awards: boolean; onAwards: (on: boolean) => void; shown: number; blocked: number; allRegions: boolean; onAllRegions: (on: boolean) => void; country: string }) {
   const place = REGION_PLACES[country] ?? country;
+  const plays = allRegions ? shown - blocked : shown, total = allRegions ? shown : shown + blocked;
+  const on = "bg-primary/15 text-primary hover:bg-primary/20 hover:text-primary";
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
-      <div className="flex gap-1">
-        <Button asChild size="sm" variant={awards ? "ghost" : "default"} aria-pressed={!awards}>
-          <a href={pagePath({ tag: "free-on-youtube" }) ?? "/"} onClick={softClick(() => onAwards(false))}>All</a>
-        </Button>
-        <Button asChild size="sm" variant={awards ? "default" : "ghost"} aria-pressed={awards}>
-          <a href={YT_AWARDS_PATH} onClick={softClick(() => onAwards(true))}>Award winners</a>
-        </Button>
+    <div className="mt-3 space-y-2">
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="flex gap-1">
+          <Button asChild size="sm" variant={awards ? "ghost" : "default"} aria-pressed={!awards}>
+            <a href={pagePath({ tag: "free-on-youtube" }) ?? "/"} onClick={softClick(() => onAwards(false))}>All</a>
+          </Button>
+          <Button asChild size="sm" variant={awards ? "default" : "ghost"} aria-pressed={awards}>
+            <a href={YT_AWARDS_PATH} onClick={softClick(() => onAwards(true))}>Award winners</a>
+          </Button>
+        </div>
+        {blocked > 0 && (
+          <div className="flex gap-1 rounded-md border border-border p-0.5" role="group" aria-label="Where the films play">
+            <Button size="sm" variant="ghost" className={`h-7 ${allRegions ? "text-muted-foreground" : on}`} aria-pressed={!allRegions} onClick={() => onAllRegions(false)}>
+              <MapPin /> Plays in {place} · {plays}
+            </Button>
+            <Button size="sm" variant="ghost" className={`h-7 ${allRegions ? on : "text-muted-foreground"}`} aria-pressed={allRegions} onClick={() => onAllRegions(true)}>
+              <Globe /> All regions · {total}
+            </Button>
+          </div>
+        )}
       </div>
       {blocked > 0 && (
         <p className="text-xs text-muted-foreground">
-          {allRegions ? `Including ${blocked} that don't play in ${place}.` : `Showing the ones that play in ${place}.`}{" "}
-          <Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={() => onAllRegions(!allRegions)}>
-            {allRegions ? `Only ${place}` : "Show all regions"}
-          </Button>
+          {allRegions
+            ? `Showing every free upload. ${blocked} of these only play outside ${place}, so check the film's page before you press play.`
+            : `Showing the ${plays} that play free in ${place}. ${blocked} more only play in other countries.`}
         </p>
       )}
     </div>
@@ -1219,13 +1236,16 @@ function Index() {
           ) : (
             <div className="min-w-0">
               <h1 className="font-display text-2xl font-semibold">{heading.title}</h1>
-              <p className="mt-1 text-sm text-muted-foreground">{documentaryCount(list.length)}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {ytRegionOnly && ytBlocked > 0 ? `${list.length} of ${list.length + ytBlocked} play free in ${REGION_PLACES[country] ?? country}` : documentaryCount(list.length)}
+              </p>
               <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
               {heading.intro && <p className="mt-2 max-w-2xl text-sm leading-relaxed">{heading.intro}</p>}
               {ytPage && (
                 <YouTubeListControls
                   awards={ytAwards}
                   onAwards={(on) => navigate({ search: (prev) => { const { won: _won, ...rest } = gallerySelection(prev, {}); return on ? { ...rest, won: "1" } : rest; }, replace: true })}
+                  shown={list.length}
                   blocked={ytBlocked}
                   allRegions={ytAllRegions}
                   onAllRegions={setYtAllRegions}
@@ -1550,15 +1570,24 @@ function Index() {
                     )
                   : `${film.synopsis} ${NOTES[film.id] ?? ""}`}
               </p>
+              {/* Three kinds of label, styled apart: Editor's Choice (amber, starred), moods (outlined, what it feels like), topic tags (filled, what it's about). */}
               <div className="mt-3 flex flex-wrap gap-1" aria-label="Moods and tags">
+                {orderedTags(film.tags).filter((t) => t === "editors-choice").map((t) => (
+                  <Button asChild size="sm" variant="outline" key={t} className="gap-1 border-amber-400/50 bg-amber-400/10 hover:bg-amber-400/20">
+                    <a href={pagePath({ tag: t }) ?? "/"} onClick={softClick(() => browseFrom({ tag: t, browse: "tags" }))}>
+                      <Star className="size-3 fill-amber-400 text-amber-400" aria-hidden />
+                      {tagLabel(t)}
+                    </a>
+                  </Button>
+                ))}
                 {MOODS.filter((m) => EDITORIAL[film.id]?.moods.includes(m.id)).map((m) => (
-                  <Button asChild size="sm" variant="secondary" key={m.id}>
+                  <Button asChild size="sm" variant="outline" key={m.id} className="rounded-full shadow-none">
                     <a href={pagePath({ mood: m.id }) ?? "/"} onClick={softClick(() => browseFrom({ mood: m.id, browse: "moods" }))}>
                       {m.label}
                     </a>
                   </Button>
                 ))}
-                {orderedTags(film.tags).map((t) => (
+                {orderedTags(film.tags).filter((t) => t !== "editors-choice").map((t) => (
                   <Button asChild size="sm" variant="secondary" key={t}>
                     <a href={pagePath({ tag: t }) ?? "/"} onClick={softClick(() => browseFrom({ tag: t, browse: "tags" }))}>
                       {tagLabel(t)}
