@@ -274,7 +274,7 @@ function RatingPill({
       target="_blank"
       rel="noreferrer"
       aria-label={`${imdb ? "IMDb" : "Rotten Tomatoes"} ${imdb ? score.toFixed(1) : `${score}%`} — open in new tab`}
-      className="inline-flex items-center gap-1 rounded-full border border-border px-2 py-0.5 text-xs font-medium hover:border-primary"
+      className="relative inline-flex items-center gap-1 rounded-full border border-border px-2 py-0.5 text-xs font-medium hover:border-primary after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-['']"
     >
       {imdb ? (
         <span className="rounded-sm bg-primary px-1 text-[10px] font-bold text-primary-foreground">IMDb</span>
@@ -1508,7 +1508,7 @@ function Index() {
                 </p>
               )}
               <AwardBadges film={film} onAward={(award) => browseFrom({ award, browse: "awards" })} />
-              <div className="mt-2 flex flex-wrap items-center gap-1.5">
+              <div className="mt-2 flex flex-wrap items-center gap-2.5">
                 <RatingPill site="imdb" film={film} score={extra?.omdb?.imdb} />
                 <RatingPill site="rt" film={film} score={extra?.omdb?.rottenTomatoes} />
                 {extra?.omdb?.imdb === undefined && extra?.rating !== undefined && (
