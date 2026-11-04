@@ -51,7 +51,7 @@ import { CopyLink } from "@/components/copy-link";
 import { SORTS, SortMenu } from "@/components/sort-menu";
 import { extrasOn } from "@/components/site-logo";
 import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/countries";
-import { documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
+import { YT_AWARDS_PATH, documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
 import { softClick } from "@/lib/utils";
 import { LIKE_PAGES } from "@/data/like-pages";
 import { service } from "@/data/streaming";
@@ -151,6 +151,8 @@ export const Route = createFileRoute("/")({
     tag: text(search["tag"]),
     like: text(search["like"]),
     soon: text(search["soon"]),
+    // Optional, so the other routes that link here needn't name it.
+    ...(search["won"] === "1" || search["won"] === 1 ? { won: "1" } : {}),
     browse: text(search["browse"], "topics"),
   }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
@@ -313,11 +315,11 @@ function YouTubeListControls({ awards, onAwards, blocked, allRegions, onAllRegio
   return (
     <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
       <div className="flex gap-1">
-        <Button size="sm" variant={awards ? "ghost" : "default"} aria-pressed={!awards} onClick={() => onAwards(false)}>
-          All
+        <Button asChild size="sm" variant={awards ? "ghost" : "default"} aria-pressed={!awards}>
+          <a href={pagePath({ tag: "free-on-youtube" }) ?? "/"} onClick={softClick(() => onAwards(false))}>All</a>
         </Button>
-        <Button size="sm" variant={awards ? "default" : "ghost"} aria-pressed={awards} onClick={() => onAwards(true)}>
-          Award winners
+        <Button asChild size="sm" variant={awards ? "default" : "ghost"} aria-pressed={awards}>
+          <a href={YT_AWARDS_PATH} onClick={softClick(() => onAwards(true))}>Award winners</a>
         </Button>
       </div>
       {blocked > 0 && (
@@ -483,7 +485,7 @@ function Index() {
   const view = search.film ? "spotlight" : "gallery";
   const listFilter = search.list === "shortlist" || search.list === "watched" ? search.list : "";
   const [order, setOrder] = useState<string[] | null>(null);
-  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award, like: search.like, era: search.era, pick: search.pick });
+  const heading = listHeading({ tag: search.tag, cat: search.cat, maker: search.maker, mood: search.mood, award: OLD_AWARD_IDS[search.award] ?? search.award, like: search.like, era: search.era, pick: search.pick, won: search.won });
   // A "Documentaries like X" page lists exactly its picks, in their own order.
   const likeIds = useMemo(() => {
     const film = LIKE_PAGES[search.like] ? CATALOGUE.find((f) => f.id === search.like) : undefined;
@@ -598,7 +600,9 @@ function Index() {
   const closeNudge = () => { if (!sync.account) writeStore(PROMPT_KEYS.syncNudge, "dismissed"); setNudge(null); };
   const [hideWatched, setHideWatched] = usePreference("dc-hide-watched", true);
   const [trailerOpen, setTrailerOpen] = useState(false);
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  // The tools render twice (header on desktop, phone row on phones), so each copy needs its own open state:
+  // with one shared flag both dropdowns opened together and each closed the other as an outside click.
+  const [filtersOpen, setFiltersOpen] = useState<"header" | "phone" | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const fetchProviders = useServerFn(getProviders);
   const fetchCountry = useServerFn(getVisitorCountry);
@@ -607,8 +611,9 @@ function Index() {
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => setHydrated(true), []);
   const [ytAllRegions, setYtAllRegions] = useState(false);
-  const [ytAwards, setYtAwards] = useState(false);
   const ytPage = facet.tag === "free-on-youtube";
+  // Award winners is its own page (/free-on-youtube/award-winners), so the choice lives in the URL.
+  const ytAwards = ytPage && search.won === "1";
   // On phones the tab row scrolls sideways: keep the selected tab in view (About is off the right edge).
   useEffect(() => {
     const nav = document.querySelector<HTMLElement>(".browse-tabs");
@@ -822,8 +827,8 @@ function Index() {
     soon: {},
     about: {},
   };
-  const filtersControl = (
-    <Popover open={filtersOpen} onOpenChange={setFiltersOpen}>
+  const filtersControl = (where: "header" | "phone") => (
+    <Popover open={filtersOpen === where} onOpenChange={(open) => setFiltersOpen(open ? where : null)}>
       <PopoverTrigger asChild>
         <Button size="sm" variant="outline" className="filter-trigger" aria-label="More filters">
           <SlidersHorizontal />
@@ -999,9 +1004,9 @@ function Index() {
       </PopoverContent>
     </Popover>
   );
-  const toolControls = (
+  const toolControls = (where: "header" | "phone") => (
     <>
-      {filtersControl}
+      {filtersControl(where)}
       <Button
         size="sm"
         variant="outline"
@@ -1043,7 +1048,7 @@ function Index() {
               <X />
             </Button>
           </div>
-          <div className="header-tools">{toolControls}</div>
+          <div className="header-tools">{toolControls("header")}</div>
           <div className="header-views" role="group" aria-label="Browsing view">
             <Button
               size="icon"
@@ -1206,7 +1211,7 @@ function Index() {
           </Button>
         </div>
       )}
-      {view === "spotlight" && <div className="phone-tools mb-3">{toolControls}</div>}
+      {view === "spotlight" && <div className="phone-tools mb-3">{toolControls("phone")}</div>}
       {view === "gallery" && heading && (
         <div className="mb-4 flex flex-wrap items-start justify-between gap-3 md:flex-nowrap">
           {facet.maker ? (
@@ -1220,7 +1225,7 @@ function Index() {
               {ytPage && (
                 <YouTubeListControls
                   awards={ytAwards}
-                  onAwards={setYtAwards}
+                  onAwards={(on) => navigate({ search: (prev) => { const { won: _won, ...rest } = gallerySelection(prev, {}); return on ? { ...rest, won: "1" } : rest; }, replace: true })}
                   blocked={ytBlocked}
                   allRegions={ytAllRegions}
                   onAllRegions={setYtAllRegions}
@@ -1230,7 +1235,7 @@ function Index() {
             </div>
           )}
           <div className="flex shrink-0 items-center gap-2">
-            <div className="phone-tools">{toolControls}</div>
+            <div className="phone-tools">{toolControls("phone")}</div>
             <SortMenu value={sort} onChange={setSort} defaultLabel={facet.award ? "Winners first" : heading.ranked ? "Best first" : "Shuffled"} />
             <CopyLink />
           </div>
@@ -1239,7 +1244,7 @@ function Index() {
       {view === "gallery" && !heading && browse !== "directors" && browse !== "awards" && browse !== "soon" && browse !== "about" && (
         <div className="mb-3 flex items-center justify-between gap-2">
           <h1 className="sr-only">Extraordinary true stories: {CATALOGUE.length} of the best documentaries to watch</h1>
-          <div className="phone-tools">{toolControls}</div>
+          <div className="phone-tools">{toolControls("phone")}</div>
           <div className="ml-auto"><SortMenu value={sort} onChange={setSort} /></div>
         </div>
       )}

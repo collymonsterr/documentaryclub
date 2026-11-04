@@ -1,7 +1,7 @@
 import { CATEGORIES, type Category, type Film } from '@/data/films';
 import { AWARD_COPY, CATEGORY_COPY, MOOD_COPY } from '@/data/category-copy';
 import { CATALOGUE, SNAPSHOT } from '@/data/catalogue';
-import { AWARDS, EDITORIAL, MOODS, accolades, byAward, credits, documentariesLike, isFeatured, makerIndex, rankFilms, topAwards } from '@/data/discovery-facets';
+import { AWARDS, EDITORIAL, MOODS, accolades, byAward, credits, documentariesLike, isFeatured, makerIndex, rankFilms, topAwards, wonAward } from '@/data/discovery-facets';
 import { LIKE_PAGES } from '@/data/like-pages';
 import { LIST_INTROS } from '@/data/list-intros';
 import { OLD_NETFLIX_SLUGS, SERVICES, STREAMING_CHECKED, service, streamsOn } from '@/data/streaming';
@@ -32,7 +32,10 @@ const makerSlugs = () => {
   return makers;
 };
 
-type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; like?: string; browse?: string; era?: string; pick?: string; soon?: string };
+type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; like?: string; browse?: string; era?: string; pick?: string; soon?: string; won?: string | undefined };
+// Award winners free on YouTube: the Free on YouTube tag narrowed to films with a win, as its own shareable page.
+export const YT_AWARDS_PATH = '/free-on-youtube/award-winners';
+const ytAwards = (search: PageSearch) => search.tag === 'free-on-youtube' && search.won === '1';
 // A decade is a page only on its own; with a tab selection it stays a dropdown filter on that page's URL.
 const decadeOnly = (search: PageSearch) => isDecade(search.era) && !selected(search).some(Boolean) && !search.browse?.match(/^(directors|awards|soon|about)$/);
 const selected = (search: PageSearch) => [search.tag, search.cat && search.cat !== 'all' ? search.cat : '', search.maker, search.award, search.mood, search.like, service(search.pick) ? search.pick : ''];
@@ -47,7 +50,7 @@ export function pagePath(search: PageSearch) {
   if (mood) return moodSlug(mood) ? `/moods/${moodSlug(mood)}` : null;
   if (like) return LIKE_PAGES[like] ? `/documentaries-like/${like}` : null;
   if (award) { const slug = AWARDS.find(a => a.id === award)?.slug; return slug ? `/awards/${slug}` : null; }
-  if (tag) return tagIds.has(tag) ? `/tags/${tag}` : null;
+  if (tag) return ytAwards(search) ? YT_AWARDS_PATH : tagIds.has(tag) ? `/tags/${tag}` : null;
   if (cat) return categorySlug.has(cat) ? `/categories/${categorySlug.get(cat)}` : null;
   const slug = maker ? makerSlugs().byName.get(maker) : undefined;
   return slug ? `/directors/${slug}` : null;
@@ -70,6 +73,7 @@ export const urlRewrite = {
     if (!slug && section === 'moods') { url.pathname = '/'; url.searchParams.set('mood', MOODS[0].id); url.searchParams.set('browse', 'moods'); return url; }
     if (!slug && service(section)) { url.pathname = '/'; url.searchParams.set('pick', section); return url; }
     if (!slug) return undefined;
+    if (`/${section}/${slug}` === YT_AWARDS_PATH) { url.pathname = '/'; url.searchParams.set('tag', 'free-on-youtube'); url.searchParams.set('won', '1'); url.searchParams.set('browse', 'tags'); return url; }
     if (section === 'awards' && AWARDS.some(a => a.slug === slug)) { url.searchParams.set('award', AWARDS.find(a => a.slug === slug)!.id); url.searchParams.set('browse', 'awards'); }
     else if (section === 'coming-soon' && upcomingKey(slug)) { url.searchParams.set('browse', 'soon'); url.searchParams.set('soon', searchValue(slug)); }
     else if (section === 'documentaries-like' && LIKE_PAGES[slug]) url.searchParams.set('like', slug);
@@ -87,12 +91,12 @@ export const urlRewrite = {
   output: ({ url }: { url: URL }) => {
     if (url.pathname !== '/') return undefined;
     const get = (key: string) => readValue(url.searchParams.get(key) ?? '');
-    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), award: get('award'), mood: get('mood'), like: get('like'), browse: get('browse'), era: get('era'), pick: get('pick'), soon: get('soon') };
+    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), award: get('award'), mood: get('mood'), like: get('like'), browse: get('browse'), era: get('era'), pick: get('pick'), soon: get('soon'), won: get('won') };
     const path = pagePath(search);
     if (!path || path === '/') return undefined;
     if (search.film) url.searchParams.delete('film');
     else {
-      ['tag', 'cat', 'maker', 'award', 'mood', 'like', 'browse', 'soon', ...(path.startsWith('/decades/') ? ['era'] : []), ...(service(path.slice(1)) ? ['pick'] : [])].forEach(key => url.searchParams.delete(key));
+      ['tag', 'cat', 'maker', 'award', 'mood', 'like', 'browse', 'soon', ...(path === YT_AWARDS_PATH ? ['won'] : []), ...(path.startsWith('/decades/') ? ['era'] : []), ...(service(path.slice(1)) ? ['pick'] : [])].forEach(key => url.searchParams.delete(key));
       if (get('q') === search.maker) url.searchParams.delete('q');
     }
     url.pathname = path;
@@ -115,7 +119,7 @@ export function selectionFilms(search: PageSearch): Film[] {
   if (search.award) return byAward(CATALOGUE.filter(f => accolades(f).some(a => a.body === search.award)), search.award);
   if (cat) return rankFilms(CATALOGUE.filter(f => f.categories.includes(cat as Category)));
   if (search.maker) return rankFilms(CATALOGUE.filter(f => credits(f).includes(search.maker!)));
-  if (search.tag) return rankFilms(CATALOGUE.filter(f => f.tags?.includes(search.tag!)));
+  if (search.tag) return rankFilms(CATALOGUE.filter(f => f.tags?.includes(search.tag!) && (!ytAwards(search) || wonAward(f))));
   return rankFilms(CATALOGUE.filter(f => !!search.mood && EDITORIAL[f.id]?.moods.includes(search.mood) === true));
 }
 export function listHeading(search: PageSearch) {
@@ -124,14 +128,14 @@ export function listHeading(search: PageSearch) {
   if (search.like) return likeHeading(search.like);
   const base = baseHeading(search, cat);
   if (!base) return null;
-  const key = streaming ? `streaming:${streaming.id}` : decade ? `decade:${search.era}` : search.tag ? `tag:${search.tag}` : cat ? `cat:${cat}` : search.mood ? `mood:${search.mood}` : search.maker ? `maker:${search.maker}` : `award:${search.award}`;
+  const key = streaming ? `streaming:${streaming.id}` : decade ? `decade:${search.era}` : ytAwards(search) ? 'tag:free-on-youtube:award-winners' : search.tag ? `tag:${search.tag}` : cat ? `cat:${cat}` : search.mood ? `mood:${search.mood}` : search.maker ? `maker:${search.maker}` : `award:${search.award}`;
   const count = selectionFilms(search).length, ranked = !search.award;
   // Numbered "The 22 Best …" titles for subjects and moods; picks, directors and awards keep their own names.
-  const best = ranked && !search.maker && !pickTags.has(search.tag ?? '') && count >= MIN_LIST;
+  const best = ranked && !search.maker && !pickTags.has(search.tag ?? '') && !ytAwards(search) && count >= MIN_LIST;
   const featured = !!search.maker && isFeatured({ name: search.maker, films: selectionFilms(search) });
   return {
     ...base, key, count, ranked, best,
-    title: best ? `The ${count} Best ${base.title}` : base.title,
+    title: best ? `The ${count} Best ${base.title}` : ytAwards(search) ? `${count} ${base.title}` : base.title,
     // Streaming lists carry the month they were checked: searchers want a current list, and it says when it was true.
     seoTitle: search.maker ? `${search.maker} Documentaries, Ranked` : streaming && best && STREAMING_CHECKED ? `The ${count} Best ${base.title} (${checkedMonth()})` : undefined,
     intro: LIST_INTROS[key],
@@ -156,6 +160,7 @@ function baseHeading(search: PageSearch, cat: string) {
   if (decadeOnly(search)) return { title: `Documentaries of the ${search.era}`, description: `The documentaries from the ${search.era} worth your time, ranked.`, image: undefined };
   const copied = search.mood ? MOOD_COPY[search.mood] : search.award ? AWARD_COPY[search.award] : undefined;
   if (search.mood || search.award) return copied ? { ...copied, image: undefined } : null;
+  if (ytAwards(search)) return { title: 'Award-Winning Documentaries Free on YouTube', description: 'Oscar, BAFTA, Emmy, Sundance and Cannes winners you can watch in full, free and legally, on YouTube.', image: `/og/tags-free-on-youtube.jpg` };
   const tag = TAGS.find(t => t.id === search.tag);
   if (tag) return { title: tag.title, description: tag.description, image: `/og/tags-${tag.id}.jpg` };
   if (search.maker) return makerSlugs().byName.has(search.maker) ? { title: `Documentaries by ${search.maker}`, description: (profiles as Record<string, { blurb?: string }>)[search.maker]?.blurb ?? `The ${search.maker} documentaries in the collection.`, image: undefined } : null;
@@ -209,7 +214,7 @@ function previewFor(search: PageSearch): Preview {
     const path = pagePath(search) ?? '/', films = selectionFilms(search);
     const top = heading.image || !(search.maker || /^(streaming|decade):/.test(heading.key)) ? undefined : films.find(f => SNAPSHOT[f.id]?.backdrops?.length);
     const liked = 'film' in heading ? heading.film : undefined;
-    const parent: [string, string][] = search.maker ? [['Directors', '/directors']] : search.award ? [['Awards', '/awards']] : liked ? [[liked.title, `/film/${liked.id}`]] : [];
+    const parent: [string, string][] = search.maker ? [['Directors', '/directors']] : search.award ? [['Awards', '/awards']] : ytAwards(search) ? [['Free on YouTube', '/tags/free-on-youtube']] : liked ? [[liked.title, `/film/${liked.id}`]] : [];
     return {
       title: heading.title, seoTitle: heading.seoTitle, noindex: !heading.indexable,
       // The top three by name make each list's description its own.
@@ -259,7 +264,7 @@ export function listGroups() {
     group('Picks', PICK_TAGS.map(t => ({ search: { tag: t.id }, label: t.label }))),
     group('If you liked…', Object.keys(LIKE_PAGES).map(id => ({ search: { like: id }, label: CATALOGUE.find(f => f.id === id)?.title ?? id }))),
     group('Directors', makerIndex().filter(isFeatured).map(m => ({ search: { maker: m.name }, label: m.name }))),
-    group('Awards', AWARDS.map(a => ({ search: { award: a.id }, label: a.label }))),
+    group('Awards', [...AWARDS.map(a => ({ search: { award: a.id } as PageSearch, label: a.label })), { search: { tag: 'free-on-youtube', won: '1' }, label: 'Free on YouTube' }]),
   ].filter(g => g.items.length);
 }
 // In-app navigation to a clean path: the router's href navigation skips the input rewrite, so hand it the query form.

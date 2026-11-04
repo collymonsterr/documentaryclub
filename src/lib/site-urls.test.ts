@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { MIN_LIST, filmDescription, listGroups, listHeading, pagePath, selectionFilms, slugify, urlRewrite } from './site-urls';
+import { MIN_LIST, YT_AWARDS_PATH, filmDescription, listGroups, listHeading, pagePath, selectionFilms, slugify, urlRewrite } from './site-urls';
+import { wonAward } from '@/data/discovery-facets';
 import { TAGS } from '@/data/tags';
 import { CATALOGUE } from '@/data/catalogue';
 import { LIKE_PAGES } from '@/data/like-pages';
@@ -108,4 +109,21 @@ describe('clean URLs', () => {
     expect(output('/?tag=wine&cat=food')).toBeUndefined();
   });
   it('makes lowercase hyphenated slugs', () => { expect(slugify('Cults & Psychology')).toBe('cults-psychology'); expect(slugify('Werner Herzog')).toBe('werner-herzog'); });
+});
+
+describe('award winners free on YouTube', () => {
+  it('is its own page: one path both ways, only free films with a win, titled with the count', () => {
+    const search = { tag: 'free-on-youtube', won: '1' };
+    expect(pagePath(search)).toBe(YT_AWARDS_PATH);
+    expect(pagePath({ tag: 'free-on-youtube' })).toBe('/tags/free-on-youtube');
+    const url = urlRewrite.input({ url: new URL(YT_AWARDS_PATH, 'https://x.test') })!;
+    expect([url.searchParams.get('tag'), url.searchParams.get('won')]).toEqual(['free-on-youtube', '1']);
+    const out = urlRewrite.output({ url: new URL('https://x.test/?tag=free-on-youtube&won=1&browse=tags') })!;
+    expect(out.pathname + out.search).toBe(YT_AWARDS_PATH);
+    const films = selectionFilms(search);
+    expect(films.length).toBeGreaterThanOrEqual(8);
+    expect(films.every(f => f.tags?.includes('free-on-youtube') && wonAward(f))).toBe(true);
+    expect(listHeading(search)?.title).toBe(`${films.length} Award-Winning Documentaries Free on YouTube`);
+    expect(listGroups().flatMap(g => g.items.map(i => i.path))).toContain(YT_AWARDS_PATH);
+  });
 });
