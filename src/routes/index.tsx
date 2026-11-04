@@ -1,4 +1,4 @@
-import { ComingSoon } from "@/components/coming-soon";
+import { ComingSoon, UpcomingPage } from "@/components/coming-soon";
 import { SupportLine } from "@/components/support";
 import { createFileRoute, Link, stripSearchParams, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
@@ -128,6 +128,7 @@ const searchDefaults = {
   maker: "",
   tag: "",
   like: "",
+  soon: "",
   browse: "topics",
 };
 const text = (value: unknown, fallback = "") => (typeof value === "string" && value ? value : fallback);
@@ -148,6 +149,7 @@ export const Route = createFileRoute("/")({
     maker: text(search["maker"]),
     tag: text(search["tag"]),
     like: text(search["like"]),
+    soon: text(search["soon"]),
     browse: text(search["browse"], "topics"),
   }),
   search: { middlewares: [stripSearchParams(searchDefaults)] },
@@ -1269,8 +1271,17 @@ function Index() {
       )}
       {browse === "about" && view === "gallery" && !query ? (
         <AboutContent />
+      ) : browse === "soon" && view === "gallery" && !query && search.soon ? (
+        <UpcomingPage
+          slug={search.soon}
+          country={country}
+          onCountry={chooseCountry}
+          onOpen={(slug) => browseFrom({ browse: "soon", soon: slug })}
+          onBack={() => browseFrom({ browse: "soon" })}
+          onFilm={(id) => browseFrom({ film: id })}
+        />
       ) : browse === "soon" && view === "gallery" && !query ? (
-        <ComingSoon onFilm={(id) => browseFrom({ film: id })} country={country} onCountry={chooseCountry} />
+        <ComingSoon country={country} onCountry={chooseCountry} onOpen={(slug) => browseFrom({ browse: "soon", soon: slug })} />
       ) : browse === "directors" && !facet.maker && view === "gallery" ? (
         <DirectorsList query={directorQuery} />
       ) : browse === "awards" && !facet.award && view === "gallery" ? (

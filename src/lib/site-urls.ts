@@ -9,6 +9,7 @@ import { PICK_TAGS, TAGS } from '@/data/tags';
 import { DECADES, inEra, isDecade } from '@/lib/discovery';
 import { breadcrumbs, filmSchema, itemList, siteSchema } from '@/lib/structured-data';
 import profiles from '@/data/director-profiles.json';
+import { UPCOMING_TITLES, upcomingKey } from '@/data/upcoming';
 
 // Change this one value when the custom domain goes live: previews and canonical links use it.
 export const SITE_ORIGIN = 'https://documentaryclub.fyi';
@@ -31,7 +32,7 @@ const makerSlugs = () => {
   return makers;
 };
 
-type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; like?: string; browse?: string; era?: string; pick?: string };
+type PageSearch = { film?: string; tag?: string; cat?: string; maker?: string; mood?: string; award?: string; like?: string; browse?: string; era?: string; pick?: string; soon?: string };
 // A decade is a page only on its own; with a tab selection it stays a dropdown filter on that page's URL.
 const decadeOnly = (search: PageSearch) => isDecade(search.era) && !selected(search).some(Boolean) && !search.browse?.match(/^(directors|awards|soon|about)$/);
 const selected = (search: PageSearch) => [search.tag, search.cat && search.cat !== 'all' ? search.cat : '', search.maker, search.award, search.mood, search.like, service(search.pick) ? search.pick : ''];
@@ -39,6 +40,7 @@ const selected = (search: PageSearch) => [search.tag, search.cat && search.cat !
 export function pagePath(search: PageSearch) {
   const { tag, maker, award, mood, like } = search, cat = search.cat && search.cat !== 'all' ? search.cat : '', streaming = service(search.pick);
   if (search.film) return filmIds.has(search.film) ? `/film/${search.film}` : null;
+  if (search.browse === 'soon' && search.soon) return upcomingKey(search.soon) ? `/coming-soon/${search.soon}` : null;
   if (decadeOnly(search)) return `/decades/${search.era}`;
   if (selected(search).filter(Boolean).length !== 1) return selected(search).some(Boolean) ? null : search.browse === 'directors' ? '/directors' : search.browse === 'awards' ? '/awards' : search.browse === 'about' ? '/about' : search.browse === 'soon' ? '/coming-soon' : '/';
   if (streaming) return `/${streaming.id}`;
@@ -69,6 +71,7 @@ export const urlRewrite = {
     if (!slug && service(section)) { url.pathname = '/'; url.searchParams.set('pick', section); return url; }
     if (!slug) return undefined;
     if (section === 'awards' && AWARDS.some(a => a.slug === slug)) { url.searchParams.set('award', AWARDS.find(a => a.slug === slug)!.id); url.searchParams.set('browse', 'awards'); }
+    else if (section === 'coming-soon' && upcomingKey(slug)) { url.searchParams.set('browse', 'soon'); url.searchParams.set('soon', searchValue(slug)); }
     else if (section === 'documentaries-like' && LIKE_PAGES[slug]) url.searchParams.set('like', slug);
     else if (section === 'decades' && isDecade(slug)) url.searchParams.set('era', slug);
     else if (section === 'netflix' && OLD_NETFLIX_SLUGS.includes(slug)) url.searchParams.set('pick', 'netflix');
@@ -84,12 +87,12 @@ export const urlRewrite = {
   output: ({ url }: { url: URL }) => {
     if (url.pathname !== '/') return undefined;
     const get = (key: string) => readValue(url.searchParams.get(key) ?? '');
-    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), award: get('award'), mood: get('mood'), like: get('like'), browse: get('browse'), era: get('era'), pick: get('pick') };
+    const search = { film: get('film'), tag: get('tag'), cat: get('cat'), maker: get('maker'), award: get('award'), mood: get('mood'), like: get('like'), browse: get('browse'), era: get('era'), pick: get('pick'), soon: get('soon') };
     const path = pagePath(search);
     if (!path || path === '/') return undefined;
     if (search.film) url.searchParams.delete('film');
     else {
-      ['tag', 'cat', 'maker', 'award', 'mood', 'like', 'browse', ...(path.startsWith('/decades/') ? ['era'] : []), ...(service(path.slice(1)) ? ['pick'] : [])].forEach(key => url.searchParams.delete(key));
+      ['tag', 'cat', 'maker', 'award', 'mood', 'like', 'browse', 'soon', ...(path.startsWith('/decades/') ? ['era'] : []), ...(service(path.slice(1)) ? ['pick'] : [])].forEach(key => url.searchParams.delete(key));
       if (get('q') === search.maker) url.searchParams.delete('q');
     }
     url.pathname = path;
@@ -188,6 +191,16 @@ function previewFor(search: PageSearch): Preview {
     };
   }
   if (search.browse === 'directors' && !search.maker) return { title: 'Directors', seoTitle: 'Great Documentary Directors', description: 'The documentary filmmakers in the collection, with every title linked.', image: undefined };
+  const upcoming = search.browse === 'soon' && search.soon ? UPCOMING_TITLES[upcomingKey(search.soon) ?? ''] : undefined;
+  if (upcoming) {
+    const who = upcoming.directors.length ? `${names(upcoming.directors.slice(0, 2))}'s ` : 'A ';
+    const lead = `${who}new documentary${upcoming.type === 'tv' ? ' series' : ''}${upcoming.network ? ` on ${upcoming.network}` : ''}. Watch the trailer and see when it's out where you are.`;
+    return {
+      title: upcoming.title, seoTitle: `${upcoming.title}: Trailer and Release Date`,
+      description: `${lead} ${firstSentences(upcoming.overview, Math.max(80, 230 - lead.length))}`, image: upcoming.backdrop ?? upcoming.poster,
+      jsonLd: [breadcrumbs([['Home', '/'], ['Coming soon', '/coming-soon'], [upcoming.title, `/coming-soon/${upcoming.slug}`]])],
+    };
+  }
   if (search.browse === 'soon') return { title: 'Upcoming Documentaries: Trailers and Release Dates', description: 'New documentaries coming to cinemas and streaming in your country, with trailers and confirmed release dates. Checked every month.', image: undefined };
   if (search.browse === 'about') return { title: 'About', description: 'A personal collection of documentaries worth your time, built in Ireland.', image: undefined };
   if (search.browse === 'awards' && !search.award) return { title: 'Awards', seoTitle: 'Award-winning Documentaries', description: 'Oscar, BAFTA, Emmy, Sundance, Tribeca, IDA and Cannes winners in the collection.', image: undefined };

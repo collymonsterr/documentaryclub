@@ -23,7 +23,7 @@ function ListPage() {
     <header className="flex flex-wrap items-center justify-between gap-3 py-3">
       <div><SiteLogo /></div>
       <CopyLink className="ml-auto" />
-      <Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', browse: 'topics' }} className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Back to discovery</Link>
+      <Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', soon: '', browse: 'topics' }} className="flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:underline"><ArrowLeft className="size-3" />Back to discovery</Link>
     </header>
     <h1 className="font-display text-2xl font-semibold">All {CATALOGUE.length} documentaries by category</h1>
     <p className="mt-1 border-b border-border pb-3 text-xs leading-relaxed text-muted-foreground">{CATALOGUE.length} curated documentary films and series, grouped by subject — every title has exactly one home category. Every title links to its full details, trailer and streaming availability.</p>
@@ -37,8 +37,8 @@ function ListPage() {
         <ul className="mt-2 space-y-3">
           {films.map(f => <li key={f.id}>
             <div className="flex flex-wrap items-baseline gap-x-2">
-              <Link to="/" search={{ film: f.id, q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', browse: 'topics' }} className="font-medium text-foreground underline-offset-2 hover:underline">{f.title}</Link>
-              <span className="text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.director && <> · {f.director.split(', ').map((d, i, arr) => <span key={d}><Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: d, tag: '', like: '', browse: 'directors' }} className="underline-offset-2 hover:text-foreground hover:underline">{d}</Link>{i < arr.length - 1 ? ', ' : ''}</span>)}</>}</span>
+              <Link to="/" search={{ film: f.id, q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', soon: '', browse: 'topics' }} className="font-medium text-foreground underline-offset-2 hover:underline">{f.title}</Link>
+              <span className="text-xs text-muted-foreground">{years(f)} · {kind(f.mediaType)}{f.director && <> · {f.director.split(', ').map((d, i, arr) => <span key={d}><Link to="/" search={{ film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: d, tag: '', like: '', soon: '', browse: 'directors' }} className="underline-offset-2 hover:text-foreground hover:underline">{d}</Link>{i < arr.length - 1 ? ', ' : ''}</span>)}</>}</span>
             </div>
             <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{firstSentence(f.synopsis)}</p>
           </li>)}

@@ -11,9 +11,9 @@ describe('Spotlight discovery navigation', () => {
       .toEqual({ film: '', cat: 'sex' });
   });
   it('replaces the previous tab selection but keeps dropdown filters', () => {
-    const current = { film: 'mariupol', q: 'x', list: '', cat: 'scams', award: '', mood: '', pick: '', maker: '', tag: '', like: '', era: '2010s', browse: 'topics' };
+    const current = { film: 'mariupol', q: 'x', list: '', cat: 'scams', award: '', mood: '', pick: '', maker: '', tag: '', like: '', soon: '', era: '2010s', browse: 'topics' };
     expect(browseSelection(current, { award: 'oscar-win', browse: 'awards' }))
-      .toEqual({ film: '', q: '', list: '', cat: 'all', award: 'oscar-win', mood: '', pick: '', maker: '', tag: '', like: '', era: '2010s', browse: 'awards' });
+      .toEqual({ film: '', q: '', list: '', cat: 'all', award: 'oscar-win', mood: '', pick: '', maker: '', tag: '', like: '', soon: '', era: '2010s', browse: 'awards' });
   });
   it('preserves conjunctive filters from the dropdown', () => {
     expect(gallerySelection({ film: 'mariupol', cat: 'war', award: 'oscar-win', mood: '' }, { mood: 'harrowing' }))

@@ -33,9 +33,12 @@ type Listed = { id: number; title?: string; name?: string; popularity: number; p
 type Video = { key: string; site: string; type: string; official: boolean; iso_639_1: string; published_at: string };
 type ReleaseDates = { results: { iso_3166_1: string; release_dates: { type: number; release_date: string; note: string }[] }[] };
 // One record per title; each country's lists point at it with that country's date and where-to-watch line.
+// slug is the title's page, /coming-soon/{slug}; the rest is shown there.
 export type Upcoming = {
-  tmdbId: number; type: 'movie' | 'tv'; title: string; directors: string[];
+  tmdbId: number; type: 'movie' | 'tv'; slug: string; title: string; directors: string[];
   overview: string; poster: string; backdrop?: string; trailer: string; filmId?: string;
+  tagline?: string; runtime?: number; featuring?: string[]; genres?: string[]; language?: string; originalTitle?: string;
+  madeIn?: string[]; imdbId?: string; network?: string; seasons?: number;
 };
 export type Dated = { key: string; date: string; where: string };
 
@@ -88,31 +91,49 @@ const filmId = (key: string) => inCatalogue.has(key) ? { filmId: inCatalogue.get
 const titles = new Map<string, Upcoming>();
 const movieRows = new Map<number, Map<string, Row[]>>();
 const seriesInfo = new Map<number, { date: string; network: string; origin: string[] }>();
+type Details = {
+  tagline?: string; runtime?: number; imdb_id?: string; original_title?: string; original_name?: string; original_language: string;
+  genres: { name: string }[]; production_countries: { name: string }[]; spoken_languages: { iso_639_1: string; english_name: string }[];
+  videos: { results: Video[] }; credits: { cast: { name: string; order: number }[]; crew: { job: string; name: string }[] };
+};
+// The extras shown on a title's own page; anything TMDB leaves empty is simply left out.
+function extras(d: Details, title: string) {
+  const language = d.spoken_languages.find(l => l.iso_639_1 === d.original_language)?.english_name;
+  const original = d.original_title ?? d.original_name;
+  const genres = d.genres.map(g => g.name).filter(g => g !== 'Documentary');
+  const featuring = [...d.credits.cast].sort((a, b) => a.order - b.order).map(c => c.name).slice(0, 6);
+  return {
+    ...(d.tagline ? { tagline: d.tagline } : {}), ...(d.runtime ? { runtime: d.runtime } : {}),
+    ...(featuring.length ? { featuring } : {}), ...(genres.length ? { genres } : {}),
+    ...(language ? { language } : {}), ...(original && original !== title ? { originalTitle: original } : {}),
+    ...(d.production_countries.length ? { madeIn: d.production_countries.map(c => c.name).slice(0, 4) } : {}),
+    ...(d.imdb_id ? { imdbId: d.imdb_id } : {}),
+  };
+}
 async function loadMovie(m: Listed) {
   if (movieRows.has(m.id)) return;
   movieRows.set(m.id, new Map());
-  const [rd, videos, credits] = await Promise.all([
-    tmdb<ReleaseDates>(`movie/${m.id}/release_dates`), tmdb<{ results: Video[] }>(`movie/${m.id}/videos`), tmdb<{ crew: { job: string; name: string }[] }>(`movie/${m.id}/credits`),
-  ]);
-  const trailer = pickTrailer(videos.results);
+  const d = await tmdb<Details & { release_dates: ReleaseDates }>(`movie/${m.id}?append_to_response=release_dates,videos,credits`);
+  const trailer = pickTrailer(d.videos.results);
   if (!trailer) return;
-  movieRows.set(m.id, releases(rd));
+  movieRows.set(m.id, releases(d.release_dates));
   titles.set(`movie:${m.id}`, {
-    tmdbId: m.id, type: 'movie', title: m.title ?? '', overview: m.overview,
-    directors: [...new Set(credits.crew.filter(c => c.job === 'Director').map(c => c.name))].slice(0, 3),
+    tmdbId: m.id, type: 'movie', slug: '', title: m.title ?? '', overview: m.overview,
+    directors: [...new Set(d.credits.crew.filter(c => c.job === 'Director').map(c => c.name))].slice(0, 3),
     poster: image('w342', m.poster_path!), ...(m.backdrop_path ? { backdrop: image('w780', m.backdrop_path) } : {}), trailer, ...filmId(`movie:${m.id}`),
+    ...extras(d, m.title ?? ''),
   });
 }
 async function loadSeries(t: Listed) {
-  const [details, videos] = await Promise.all([
-    tmdb<{ first_air_date: string; networks: { name: string }[]; created_by: { name: string }[]; origin_country: string[] }>(`tv/${t.id}`), tmdb<{ results: Video[] }>(`tv/${t.id}/videos`),
-  ]);
-  const trailer = pickTrailer(videos.results);
-  if (!trailer || !details.first_air_date || details.first_air_date <= iso(today)) return;
-  seriesInfo.set(t.id, { date: details.first_air_date, network: details.networks[0]?.name ?? '', origin: details.origin_country });
+  const d = await tmdb<Details & { first_air_date: string; networks: { name: string }[]; created_by: { name: string }[]; origin_country: string[]; number_of_seasons?: number; external_ids?: { imdb_id?: string } }>(`tv/${t.id}?append_to_response=videos,credits,external_ids`);
+  const trailer = pickTrailer(d.videos.results);
+  if (!trailer || !d.first_air_date || d.first_air_date <= iso(today)) return;
+  seriesInfo.set(t.id, { date: d.first_air_date, network: d.networks[0]?.name ?? '', origin: d.origin_country });
   titles.set(`tv:${t.id}`, {
-    tmdbId: t.id, type: 'tv', title: t.name ?? '', directors: details.created_by.map(c => c.name).slice(0, 3), overview: t.overview,
+    tmdbId: t.id, type: 'tv', slug: '', title: t.name ?? '', directors: d.created_by.map(c => c.name).slice(0, 3), overview: t.overview,
     poster: image('w342', t.poster_path!), ...(t.backdrop_path ? { backdrop: image('w780', t.backdrop_path) } : {}), trailer, ...filmId(`tv:${t.id}`),
+    ...extras({ ...d, production_countries: d.production_countries ?? [], imdb_id: d.external_ids?.imdb_id }, t.name ?? ''),
+    ...(d.networks[0] ? { network: d.networks[0].name } : {}),
   });
 }
 
@@ -175,6 +196,14 @@ for (const country of ALL) {
 }
 
 const used = new Set(Object.values(countries).flatMap(c => [...c.inCinemas, ...c.comingSoon].map(x => x.key)));
+// Page names from the title; a clash (or a title with no Latin letters) adds the TMDB id.
+const slugify = (text: string) => text.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const taken = new Set<string>();
+for (const key of [...used].sort()) {
+  const t = titles.get(key)!, base = slugify(t.title);
+  t.slug = base && !taken.has(base) ? base : `${base ? `${base}-` : ''}${t.tmdbId}`;
+  taken.add(t.slug);
+}
 const checked = iso(today);
 writeFileSync('src/data/coming-soon.json', `${JSON.stringify({ checked, titles: Object.fromEntries([...titles].filter(([k]) => used.has(k))), countries }, null, 1)}\n`);
 console.log(`Checked ${checked}: ${used.size} titles`);

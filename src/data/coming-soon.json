@@ -4,6 +4,7 @@
   "movie:1765072": {
    "tmdbId": 1765072,
    "type": "movie",
+   "slug": "you-can-see-everything",
    "title": "You Can See Everything",
    "overview": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
    "directors": [
@@ -12,11 +13,26 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/nhIL3O4W9h5V5JbNQm7yjoDk3So.jpg",
-   "trailer": "IEx8D1Wb__U"
+   "trailer": "IEx8D1Wb__U",
+   "runtime": 174,
+   "featuring": [
+    "Elizabeth Holmes",
+    "Nathan Fielder",
+    "Billy Evans",
+    "Amanda Seyfried",
+    "Christopher Abbott",
+    "Lance Oppenheim"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt45368240"
   },
   "movie:1603262": {
    "tmdbId": 1603262,
    "type": "movie",
+   "slug": "everest-the-other-side",
    "title": "Everest: The Other Side",
    "overview": "An intimate portrait of two people bound by love, ambition, and the pursuit of the impossible. Elite ski mountaineers Jim Morrison and Hilaree Nelson fell deeply in love while reaching the pinnacle of their sport. Their drive sharpened into a shared dream: to climb and ski the direct North Face of Mount Everest—the most difficult and dangerous climb on the mountain and the most coveted ski line on Earth—something only a handful have ever achieved, and no one has successfully skied down.",
    "directors": [
@@ -25,23 +41,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/2m9ts8LfjG8d4xcUtx66aApngJL.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/ySbav9wRhnA1yGadMIpoQnLgTq6.jpg",
-   "trailer": "q6XUlPdTuto"
-  },
-  "movie:1388805": {
-   "tmdbId": 1388805,
-   "type": "movie",
-   "title": "LINKIN PARK: UNSHATTER",
-   "overview": "After a seven-year hiatus following the devastating loss of their beloved bandmate Chester Bennington, LINKIN PARK'S remaining members struggled to find their way forward. Their shared history and enduring friendship, combined with the fresh perspective of two new band members Emily Armstrong and Colin Brittain spark a renewed creative energy that leads them on a transformative journey of artistic reinvention. Following the band from intimate 2022 studio sessions through their explosive FROM ZERO album release and concert in São Paulo, this documentary weaves together rare vault footage, electrifying performances from sold-out shows, and candid interviews with band members and fans—capturing the raw, honest story of what it means to start over.",
-   "directors": [
-    "Joe Hahn"
+   "trailer": "q6XUlPdTuto",
+   "runtime": 115,
+   "featuring": [
+    "Hilaree Nelson",
+    "Jim Morrison",
+    "Jimmy Chin",
+    "Elizabeth Chai Vasarhelyi",
+    "Mikey Schaefer"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/kHNrz7DBVPrtyMhJxmBm2poS2l9.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/uL1HCc4wmcFcSr1zS3kXX3CNUeE.jpg",
-   "trailer": "K9Lpxc7bVTM"
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "China",
+    "Nepal"
+   ],
+   "imdbId": "tt38691481"
   },
   "movie:1489932": {
    "tmdbId": 1489932,
    "type": "movie",
+   "slug": "always-lalisa",
    "title": "Always Lalisa",
    "overview": "Documentary following global superstar LISA during a transformative year away from BLACKPINK, the K-pop phenomenon that made her one of the world's most recognizable performers. Documenting a year of risk, reinvention, and self-discovery as LISA begins to define her next chapter.",
    "directors": [
@@ -49,11 +69,57 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/pOZnrUX1UMblLiqq9ZtZUde3cQV.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/wJwTuwy1ZajIA6ivGjoe0Ee08XN.jpg",
-   "trailer": "s6NUEu1x64I"
+   "trailer": "s6NUEu1x64I",
+   "runtime": 98,
+   "featuring": [
+    "LISA"
+   ],
+   "genres": [
+    "Music"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Singapore"
+   ],
+   "imdbId": "tt37108970"
+  },
+  "movie:1388805": {
+   "tmdbId": 1388805,
+   "type": "movie",
+   "slug": "linkin-park-unshatter",
+   "title": "LINKIN PARK: UNSHATTER",
+   "overview": "After a seven-year hiatus following the devastating loss of their beloved bandmate Chester Bennington, LINKIN PARK'S remaining members struggled to find their way forward. Their shared history and enduring friendship, combined with the fresh perspective of two new band members Emily Armstrong and Colin Brittain spark a renewed creative energy that leads them on a transformative journey of artistic reinvention. Following the band from intimate 2022 studio sessions through their explosive FROM ZERO album release and concert in São Paulo, this documentary weaves together rare vault footage, electrifying performances from sold-out shows, and candid interviews with band members and fans—capturing the raw, honest story of what it means to start over.",
+   "directors": [
+    "Joe Hahn"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/kHNrz7DBVPrtyMhJxmBm2poS2l9.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uL1HCc4wmcFcSr1zS3kXX3CNUeE.jpg",
+   "trailer": "K9Lpxc7bVTM",
+   "tagline": "The hardest part of ending is starting again.",
+   "runtime": 108,
+   "featuring": [
+    "Mike Shinoda",
+    "Emily Armstrong",
+    "Joe Hahn",
+    "Dave Farrell",
+    "Colin Brittain",
+    "Alex Feder"
+   ],
+   "genres": [
+    "Music"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "South Korea"
+   ],
+   "imdbId": "tt43442522"
   },
   "movie:1649403": {
    "tmdbId": 1649403,
    "type": "movie",
+   "slug": "george-michael-the-faith-tour",
    "title": "George Michael: The Faith Tour",
    "overview": "A stunning delve into George Michael's 1988 Faith Tour, as shot live at the famous Palais Omnisports de Paris-Bercy. This exclusive footage, assembled from a 14-camera shoot captured on 35mm over two nights (30–31 May 1988), features the 24-year-old pop star at the height of his powers.",
    "directors": [
@@ -62,109 +128,26 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/LXqHnaJ4ffkcx5YCuJN1noxkhr.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/srq06Q5iFZrgNUuFwvGS5vqwHAh.jpg",
-   "trailer": "H_NwyHRY9yk"
-  },
-  "movie:1638741": {
-   "tmdbId": 1638741,
-   "type": "movie",
-   "title": "Man of Valor",
-   "overview": "This documentary-drama film follows Lance Sgt. Haane Manahi DCM of B Company, 28th Māori Battalion, a soldier of extraordinary courage, whose actions proved pivotal in the 1943 battle for the fortified summit of Takrouna, Tunisia.",
-   "directors": [
-    "Tearepa Kahi"
+   "trailer": "H_NwyHRY9yk",
+   "tagline": "Experience the iconic 1988 concert.",
+   "runtime": 113,
+   "featuring": [
+    "George Michael",
+    "Herb Ritts"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/jDZL5xGRa1kZNseZ7viB7dkhvpM.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/ccL4IyBD6eSTHUymKonLjltmMbN.jpg",
-   "trailer": "09TotbPow6Y"
-  },
-  "movie:1754364": {
-   "tmdbId": 1754364,
-   "type": "movie",
-   "title": "Making Marie Antoinette",
-   "overview": "Eleanor Coppola turns her camera on her daughter, Sofia, as she shoots Marie Antoinette. Catching every detail of the behind-the-scenes and on-set action, Eleanor captures the feat of Sofia’s directing a landmark film aged 34, and muses on what it means for a mother to watch her daughter at work.",
-   "directors": [
-    "Eleanor Coppola"
+   "genres": [
+    "Music"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/1vt7dhpq5dYA5H5VDEf7IITMbSg.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/x0jpUyJ5ETwRn5LmAKvDzEVHgb7.jpg",
-   "trailer": "CwPwUOdagkY"
-  },
-  "movie:1596296": {
-   "tmdbId": 1596296,
-   "type": "movie",
-   "title": "The History of Concrete",
-   "overview": "After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.",
-   "directors": [
-    "John Wilson"
+   "language": "English",
+   "madeIn": [
+    "United Kingdom"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/2GWR1g1VdUNnNpLh6XfAQ6LVfyd.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/dsyJUsyrl2rBiF0k9RpSKT2YQzL.jpg",
-   "trailer": "O05arcJjOd0"
-  },
-  "movie:1492865": {
-   "tmdbId": 1492865,
-   "type": "movie",
-   "title": "Steal This Story, Please!",
-   "overview": "New York-based independent investigative journalist Amy Goodman has been reporting from hotspots around the world for decades: from East Timor to Morocco, Nigeria, and Gaza, and closer to home during 9/11 and the Iraq War. Goodman and a small group of colleagues present the daily online, TV, and radio news program Democracy Now!, which has been on the air since 1996 with no government funding, thanks to contributions from donors, foundations, and news consumers.",
-   "directors": [
-    "Carl Deal",
-    "Tia Lessin"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/d7SqbT4URKiw1zmmZBSy0aTzD50.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/3BJhWB2HAiMRbgYUEMA86Pf0By7.jpg",
-   "trailer": "GumfuqgijpY"
-  },
-  "movie:1624363": {
-   "tmdbId": 1624363,
-   "type": "movie",
-   "title": "Lomu",
-   "overview": "A Tongan/Kiwi warrior who could run 100 metres in under 11 seconds. He was the youngest All Black to put on the jersey and still holds the record for the most tries scored in World Cup history.",
-   "directors": [
-    "Gavin FitzGerald",
-    "Vea Mafile'o"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/6uWYzJjf6ycj13wUU6OtWV5Xgf4.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/xYNGkUjo9VJKqHjKWVcQlCOOST5.jpg",
-   "trailer": "jxtHUcJ2nnc"
-  },
-  "movie:548845": {
-   "tmdbId": 548845,
-   "type": "movie",
-   "title": "To Kill a Nazi",
-   "overview": "A documentary feature by award-winning filmmaker Boaz Dvir, “To Kill a Nazi” tells the story of a French family man who sets out in to kill his father’s Gestapo executioner and ended up playing a pivotal role in history’s most audacious hostage rescue.",
-   "directors": [
-    "Boaz Dvir"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/cwwwaoudiqfN2QeV7nzUE9KdkAK.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/lbrfHieZrYmNHUJQnb4N6b2jlW6.jpg",
-   "trailer": "_Bk-xlPrs_0"
-  },
-  "movie:1723990": {
-   "tmdbId": 1723990,
-   "type": "movie",
-   "title": "Hard as Puck",
-   "overview": "A motley crew of para ice hockey skaters fight to keep their grassroots sporting club on the rink in this stirring, often hilarious documentary.",
-   "directors": [
-    "Isaac Elliott"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/fUk3NjC5InYfEw5BHiN8DtEFRHh.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/htCBEpfxs9pHMJnBScEt8z0u3m2.jpg",
-   "trailer": "o6kj4ZzpfwY"
-  },
-  "movie:1704729": {
-   "tmdbId": 1704729,
-   "type": "movie",
-   "title": "The Plastic Country",
-   "overview": "The new film from leading youth ocean and climate champion Kal Glanznig (Rising Up) is an eye-opening investigation of the impact of plastic on our bodies and ecosystems.",
-   "directors": [
-    "Kal Glanznig"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/c7zAY23moObDqx5W6WOIvTDC3Cu.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/tmBvOxcQ9v7vq1X4Jk1tnIcnxgt.jpg",
-   "trailer": "2haHCKyavV8"
+   "imdbId": "tt40564737"
   },
   "movie:1755291": {
    "tmdbId": 1755291,
    "type": "movie",
+   "slug": "naza",
    "title": "NAZA",
    "overview": "Filmed at night from Tel Aviv rooftops, this investigative documentary examines the civilian casualties of Israel's military operations in Gaza and the systems behind targeted killings of Palestinians.",
    "directors": [
@@ -173,11 +156,226 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/cbxiZ1l21KUATu2KKQQ8J8fJhpe.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/inju8joDtL7KHtlFEGjFZ2UuqFa.jpg",
-   "trailer": "40KW6knYMo4"
+   "trailer": "40KW6knYMo4",
+   "tagline": "A window into systems of mass killing.",
+   "runtime": 77,
+   "featuring": [
+    "Yuval Abraham",
+    "Benjamin Netanyahu"
+   ],
+   "genres": [
+    "War"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "United Kingdom"
+   ],
+   "imdbId": "tt44766123"
+  },
+  "movie:1638741": {
+   "tmdbId": 1638741,
+   "type": "movie",
+   "slug": "man-of-valor",
+   "title": "Man of Valor",
+   "overview": "This documentary-drama film follows Lance Sgt. Haane Manahi DCM of B Company, 28th Māori Battalion, a soldier of extraordinary courage, whose actions proved pivotal in the 1943 battle for the fortified summit of Takrouna, Tunisia.",
+   "directors": [
+    "Tearepa Kahi"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/jDZL5xGRa1kZNseZ7viB7dkhvpM.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ccL4IyBD6eSTHUymKonLjltmMbN.jpg",
+   "trailer": "09TotbPow6Y",
+   "tagline": "A true warrior never dies.",
+   "runtime": 89,
+   "featuring": [
+    "Alex Tarrant",
+    "Niwa Whatuira",
+    "Vinnie Bennett",
+    "Matu Ngaropo",
+    "Poroaki Merritt-McDonald",
+    "John Bach"
+   ],
+   "genres": [
+    "War",
+    "Action"
+   ],
+   "language": "English",
+   "originalTitle": "Sgt. Haane",
+   "madeIn": [
+    "New Zealand",
+    "Tunisia"
+   ],
+   "imdbId": "tt39026948"
+  },
+  "movie:1802703": {
+   "tmdbId": 1802703,
+   "type": "movie",
+   "slug": "rob-lowe-the-outsider",
+   "title": "Rob Lowe: The Outsider",
+   "overview": "Traces Lowe's career from his breakout roles in “The Outsiders” and “St. Elmo’s Fire” to his Emmy-nominated performance on “The West Wing” and how he maintained his Hollywood career.",
+   "directors": [
+    "Chris Smith"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/47xmeKxYTiKGQIwrKaPn6PSUIq5.jpg",
+   "trailer": "WxXQrtp5PDM",
+   "runtime": 91,
+   "featuring": [
+    "Rob Lowe"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt47597255"
+  },
+  "movie:1492865": {
+   "tmdbId": 1492865,
+   "type": "movie",
+   "slug": "steal-this-story-please",
+   "title": "Steal This Story, Please!",
+   "overview": "New York-based independent investigative journalist Amy Goodman has been reporting from hotspots around the world for decades: from East Timor to Morocco, Nigeria, and Gaza, and closer to home during 9/11 and the Iraq War. Goodman and a small group of colleagues present the daily online, TV, and radio news program Democracy Now!, which has been on the air since 1996 with no government funding, thanks to contributions from donors, foundations, and news consumers.",
+   "directors": [
+    "Carl Deal",
+    "Tia Lessin"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/d7SqbT4URKiw1zmmZBSy0aTzD50.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/3BJhWB2HAiMRbgYUEMA86Pf0By7.jpg",
+   "trailer": "GumfuqgijpY",
+   "runtime": 98,
+   "featuring": [
+    "Amy Goodman",
+    "Juan Gonzalez",
+    "Jeremy Scahill",
+    "Nermeen Shaikh",
+    "Dave Isay",
+    "Regis Philbin"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt36748956"
+  },
+  "movie:1754364": {
+   "tmdbId": 1754364,
+   "type": "movie",
+   "slug": "making-marie-antoinette",
+   "title": "Making Marie Antoinette",
+   "overview": "Eleanor Coppola turns her camera on her daughter, Sofia, as she shoots Marie Antoinette. Catching every detail of the behind-the-scenes and on-set action, Eleanor captures the feat of Sofia’s directing a landmark film aged 34, and muses on what it means for a mother to watch her daughter at work.",
+   "directors": [
+    "Eleanor Coppola"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/1vt7dhpq5dYA5H5VDEf7IITMbSg.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/x0jpUyJ5ETwRn5LmAKvDzEVHgb7.jpg",
+   "trailer": "CwPwUOdagkY",
+   "runtime": 86,
+   "featuring": [
+    "Diane Lane",
+    "Sofia Coppola",
+    "Kirsten Dunst",
+    "Jason Schwartzman",
+    "Rip Torn",
+    "Eleanor Coppola"
+   ],
+   "language": "English",
+   "madeIn": [
+    "Italy",
+    "France",
+    "United States of America"
+   ],
+   "imdbId": "tt43656794"
+  },
+  "movie:548845": {
+   "tmdbId": 548845,
+   "type": "movie",
+   "slug": "to-kill-a-nazi",
+   "title": "To Kill a Nazi",
+   "overview": "A documentary feature by award-winning filmmaker Boaz Dvir, “To Kill a Nazi” tells the story of a French family man who sets out in to kill his father’s Gestapo executioner and ended up playing a pivotal role in history’s most audacious hostage rescue.",
+   "directors": [
+    "Boaz Dvir"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/cwwwaoudiqfN2QeV7nzUE9KdkAK.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/lbrfHieZrYmNHUJQnb4N6b2jlW6.jpg",
+   "trailer": "_Bk-xlPrs_0",
+   "tagline": "A second chance comes only once",
+   "runtime": 101,
+   "featuring": [
+    "Jason Alexander",
+    "Michel Cojot",
+    "Olivier Cojot",
+    "Raphaël Delpard",
+    "Beate Klarsfeld",
+    "Serge Klarsfeld"
+   ],
+   "genres": [
+    "Drama"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt5258378"
+  },
+  "movie:1596296": {
+   "tmdbId": 1596296,
+   "type": "movie",
+   "slug": "the-history-of-concrete",
+   "title": "The History of Concrete",
+   "overview": "After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.",
+   "directors": [
+    "John Wilson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/2GWR1g1VdUNnNpLh6XfAQ6LVfyd.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/dsyJUsyrl2rBiF0k9RpSKT2YQzL.jpg",
+   "trailer": "O05arcJjOd0",
+   "runtime": 101,
+   "featuring": [
+    "John Wilson",
+    "Michael Imperioli",
+    "Jack Macco",
+    "Nathan Fielder",
+    "Timothée Chalamet",
+    "Josh Safdie"
+   ],
+   "genres": [
+    "Comedy"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt39150234"
+  },
+  "movie:1704729": {
+   "tmdbId": 1704729,
+   "type": "movie",
+   "slug": "the-plastic-country",
+   "title": "The Plastic Country",
+   "overview": "The new film from leading youth ocean and climate champion Kal Glanznig (Rising Up) is an eye-opening investigation of the impact of plastic on our bodies and ecosystems.",
+   "directors": [
+    "Kal Glanznig"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/c7zAY23moObDqx5W6WOIvTDC3Cu.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/tmBvOxcQ9v7vq1X4Jk1tnIcnxgt.jpg",
+   "trailer": "2haHCKyavV8",
+   "runtime": 70,
+   "featuring": [
+    "Kal Glanznig",
+    "Tim Silverwood",
+    "Sarah Dunlop",
+    "Grahame Lloyd",
+    "Colleen Hughson",
+    "Tayla Shaw"
+   ],
+   "language": "English",
+   "madeIn": [
+    "Australia"
+   ]
   },
   "movie:1715598": {
    "tmdbId": 1715598,
    "type": "movie",
+   "slug": "pulp-what-do-you-do-for-an-encore",
    "title": "Pulp: What Do You Do for an Encore?",
    "overview": "A fusion of the brilliantly choreographed stage spectacle of Pulp’s biggest ever arena show — part of the global tour for More, the band’s first album in 24 years — with four decades of colorful, never-seen-before archival material.",
    "directors": [
@@ -185,22 +383,101 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/iOdcLIc1mAlczfD1Mq6dg4IupIh.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/7VDiAet6Cj0G5TQMdu3DibuJte2.jpg",
-   "trailer": "BPIyAvBd6a4"
+   "trailer": "BPIyAvBd6a4",
+   "runtime": 98,
+   "featuring": [
+    "Jarvis Cocker",
+    "Candida Doyle",
+    "Nick Banks",
+    "Mark Webber",
+    "Emma Smith",
+    "Andrew McKinney"
+   ],
+   "genres": [
+    "Music"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom",
+    "United States of America"
+   ],
+   "imdbId": "tt43596978"
+  },
+  "movie:1624363": {
+   "tmdbId": 1624363,
+   "type": "movie",
+   "slug": "lomu",
+   "title": "Lomu",
+   "overview": "A Tongan/Kiwi warrior who could run 100 metres in under 11 seconds. He was the youngest All Black to put on the jersey and still holds the record for the most tries scored in World Cup history.",
+   "directors": [
+    "Gavin FitzGerald",
+    "Vea Mafile'o"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6uWYzJjf6ycj13wUU6OtWV5Xgf4.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/xYNGkUjo9VJKqHjKWVcQlCOOST5.jpg",
+   "trailer": "jxtHUcJ2nnc",
+   "tagline": "The world knew the legend... few knew the man.",
+   "runtime": 107,
+   "featuring": [
+    "Jonah Lomu"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom",
+    "New Zealand"
+   ],
+   "imdbId": "tt21990160"
+  },
+  "movie:1723990": {
+   "tmdbId": 1723990,
+   "type": "movie",
+   "slug": "hard-as-puck",
+   "title": "Hard as Puck",
+   "overview": "A motley crew of para ice hockey skaters fight to keep their grassroots sporting club on the rink in this stirring, often hilarious documentary.",
+   "directors": [
+    "Isaac Elliott"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fUk3NjC5InYfEw5BHiN8DtEFRHh.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/htCBEpfxs9pHMJnBScEt8z0u3m2.jpg",
+   "trailer": "o6kj4ZzpfwY",
+   "runtime": 92,
+   "featuring": [
+    "Belinda Green",
+    "Daniel Perrett",
+    "Cliff Nutt",
+    "Mike Francis",
+    "Rosa-Lee Principe",
+    "Dawn Watt"
+   ],
+   "genres": [
+    "Comedy"
+   ],
+   "madeIn": [
+    "Australia"
+   ],
+   "imdbId": "tt43349904"
   },
   "movie:1611111": {
    "tmdbId": 1611111,
    "type": "movie",
+   "slug": "meeting-the-buddha",
    "title": "Meeting the Buddha",
    "overview": "Meeting the Buddha presents the life and legacy of the 16th Karmapa, Rangjung Rigpe Dorje—the head of the Karma Kagyu lineage, one of four main schools of Tibetan Buddhism. The film captures the remarkable presence of this spiritual teacher, known as a Living Buddha and the King of the Yogis.  We meet Ole Nydahl, a wild young hippy from Denmark who, as a small child, had declared his wish to become the \"Danish champion of mind.\" His life is radically transformed by a chance encounter with the Karmapa in Nepal in 1969.  Ole and his wife, Hannah, become key figures in bringing Tibetan Buddhism to the West, founding hundreds of meditation centres—from Mexico City to Vladivostok—and carrying forward their teacher's vision with unshakable dedication.",
    "directors": [
     "Marta György-Kessler"
    ],
    "poster": "https://image.tmdb.org/t/p/w342/qvFWfr5Pk20zOrEpCOqstIumW8K.jpg",
-   "trailer": "WercQxySY5M"
+   "trailer": "WercQxySY5M",
+   "runtime": 144,
+   "madeIn": [
+    "United Kingdom"
+   ],
+   "imdbId": "tt40249136"
   },
   "movie:1515139": {
    "tmdbId": 1515139,
    "type": "movie",
+   "slug": "back-to-the-beginning-ozzy-s-final-bow",
    "title": "Back to the Beginning: Ozzy's Final Bow",
    "overview": "A powerful return to roots, this concert captures Black Sabbath in peak form - reuniting to deliver classic hits with raw energy and legendary precision.",
    "directors": [
@@ -208,23 +485,30 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/iO8vwdtmOivoyUguheJtDLXp2Gq.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/hFIhPUW8oO2EJYXLAuWFMJBzjsR.jpg",
-   "trailer": "REqdAeNUIho"
-  },
-  "movie:1788522": {
-   "tmdbId": 1788522,
-   "type": "movie",
-   "title": "In This Room",
-   "overview": "In a world that seems to be falling apart, poetry, empathy, and music remind us of the urgent need to understand one another. Through fado and the distinctive voice of its most famous singer, Carminho, a glimmer of hope emerges across the landscapes of a Japan once devastated by bombings. The film follows the Portuguese artist on tour across the country. Through concerts, backstage moments, hotel rooms, taxis, silences, and whispers, the film weaves together the world of fado and Japan’s cultural landscape.",
-   "directors": [
-    "Ana Rocha de Sousa"
+   "trailer": "REqdAeNUIho",
+   "runtime": 147,
+   "featuring": [
+    "Ozzy Osbourne",
+    "Tony Iommi",
+    "Geezer Butler",
+    "Bill Ward",
+    "Jason Momoa",
+    "Zakk Wylde"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/33229sHSpixM6jdiWBySxUDXpLB.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/kX26STQbAiVtXYVIhDOU6k27uVH.jpg",
-   "trailer": "3StB6-NteUA"
+   "genres": [
+    "Music"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "United Kingdom"
+   ],
+   "imdbId": "tt46055956"
   },
   "movie:577054": {
    "tmdbId": 577054,
    "type": "movie",
+   "slug": "talking-about-trees",
    "title": "Talking About Trees",
    "overview": "Filmmakers Ibrahim, Suliman, Eltayeb and Manar, close friends for many years, left their motherland in the sixties and seventies to study film abroad and founded the Sudanese Film Group in 1989. After years of distance and exile, they are reunited, hoping to finally make their old dream come true: to bring back cinema to Sudan by reopening the Halfaia Cinema, a dilapidated theater in Khartoum.",
    "directors": [
@@ -232,11 +516,28 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/yekoa8YOzD1biPudP4SxHiXyp7Y.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/z6UWLF1ScOGHD9pJop4qBQXNVA6.jpg",
-   "trailer": "hIvUF0Wdjf4"
+   "trailer": "hIvUF0Wdjf4",
+   "runtime": 94,
+   "featuring": [
+    "Ibrahim Shaddad",
+    "Suliman Mohamed Ibrahim Elnour",
+    "Eltayeb Mahdi",
+    "Manar al Hilo",
+    "Hana Abdelrahman Suliman"
+   ],
+   "language": "English",
+   "madeIn": [
+    "Chad",
+    "France",
+    "Germany",
+    "Qatar"
+   ],
+   "imdbId": "tt9658178"
   },
   "movie:787619": {
    "tmdbId": 787619,
    "type": "movie",
+   "slug": "purgatory",
    "title": "Purgatory",
    "overview": "From the earliest times, people have wondered what awaits them after death? And although no one has managed to penetrate the core of the mystery, over the centuries there have been people who... knew and saw more. Fulla Horak, St. Faustina Kowalska, Bl. Father Stanisław Papczyński and St. Padre Pio - these are mystics who received the grace of being visited by the souls in Purgatory and who for a moment could see the final judgment, heaven, hell and what is most mysterious - purgatory.",
    "directors": [
@@ -244,11 +545,53 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/8lXD4C42gfh1M3cKf2u9O4LcXnc.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/pBfRUv0OpCUJOSsjYjiIvYTzHEi.jpg",
-   "trailer": "1bo8rlcPoFI"
+   "trailer": "1bo8rlcPoFI",
+   "tagline": "The secret revelations of Padre Pio and Fulla Horak.",
+   "featuring": [
+    "Małgorzata Kożuchowska",
+    "Philippe Tłokiński",
+    "Kamila Kamińska",
+    "Ida Nowakowska",
+    "Marcin Kwaśny",
+    "Olga Bończyk"
+   ],
+   "genres": [
+    "Drama"
+   ],
+   "language": "Polish",
+   "originalTitle": "Czyściec",
+   "madeIn": [
+    "Poland"
+   ],
+   "imdbId": "tt13186122"
+  },
+  "movie:1788522": {
+   "tmdbId": 1788522,
+   "type": "movie",
+   "slug": "in-this-room",
+   "title": "In This Room",
+   "overview": "In a world that seems to be falling apart, poetry, empathy, and music remind us of the urgent need to understand one another. Through fado and the distinctive voice of its most famous singer, Carminho, a glimmer of hope emerges across the landscapes of a Japan once devastated by bombings. The film follows the Portuguese artist on tour across the country. Through concerts, backstage moments, hotel rooms, taxis, silences, and whispers, the film weaves together the world of fado and Japan’s cultural landscape.",
+   "directors": [
+    "Ana Rocha de Sousa"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/33229sHSpixM6jdiWBySxUDXpLB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/kX26STQbAiVtXYVIhDOU6k27uVH.jpg",
+   "trailer": "3StB6-NteUA",
+   "runtime": 93,
+   "featuring": [
+    "Carminho"
+   ],
+   "language": "Portuguese",
+   "originalTitle": "Neste Quarto",
+   "madeIn": [
+    "Portugal"
+   ],
+   "imdbId": "tt49405641"
   },
   "movie:1597242": {
    "tmdbId": 1597242,
    "type": "movie",
+   "slug": "cameron-winter-at-carnegie-hall",
    "title": "Cameron Winter at Carnegie Hall",
    "overview": "A concert film documenting Cameron Winter's sold-out performance at Carnegie Hall.",
    "directors": [
@@ -256,11 +599,25 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/sQt2KQWkpGb79UKlCJNJ2BKobjo.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/7wwJh55u7y5YoUJaABy5o47d14z.jpg",
-   "trailer": "E8olY56RpkU"
+   "trailer": "E8olY56RpkU",
+   "tagline": "On tour. On film. This fall.",
+   "runtime": 75,
+   "featuring": [
+    "Cameron Winter"
+   ],
+   "genres": [
+    "Music"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt44879019"
   },
   "movie:1480856": {
    "tmdbId": 1480856,
    "type": "movie",
+   "slug": "hanging-by-a-wire",
    "title": "Hanging by a Wire",
    "overview": "On a Tuesday morning in August 2023, a group of kids set off for school, climbing into a makeshift cable car for the journey across a mountain pass in northwest Pakistan. What happened next would make headlines around the world. Suddenly, 900 feet above the ground, two cables snapped, putting the teenagers in mortal danger.",
    "directors": [
@@ -268,23 +625,20 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/duZIrDULyk3PBIxoUmKXm3uqlBv.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/q90G7OV76xR7NOHu8m19iaudHO1.jpg",
-   "trailer": "XOiBpu4oWxo"
-  },
-  "movie:1743137": {
-   "tmdbId": 1743137,
-   "type": "movie",
-   "title": "GOAL: Striking Congo",
-   "overview": "Goal: Striking Congo follows former professional Ugo Kasuku, who has run a football academy for years in war-torn Goma and now launches the Future Pro League, bringing international scouts to offer youth opportunity, dignity, and hope for a wounded nation.",
-   "directors": [
-    "Mathieu Roy"
+   "trailer": "XOiBpu4oWxo",
+   "runtime": 77,
+   "language": "English",
+   "madeIn": [
+    "United Kingdom",
+    "United States of America",
+    "Pakistan"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/iTq1tcK1QVDiq77n3JLsOYEUDNx.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/6CRmnCkZtIzvyihTCWKd6lKCFGO.jpg",
-   "trailer": "O91rLSUAiLY"
+   "imdbId": "tt37405791"
   },
   "movie:1096228": {
    "tmdbId": 1096228,
    "type": "movie",
+   "slug": "musk",
    "title": "Musk",
    "overview": "An incisive look behind the legend of Elon Musk, the world's most heralded \"inventor-entrepreneur\" who has enormous influence on the world in which we all live.",
    "directors": [
@@ -292,11 +646,78 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/kTOeFV92c3QHJ3bEkT660P7BcWN.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/1CfHIKczBiAauSRBiNQ90bjLsCM.jpg",
-   "trailer": "eY_8SyndC10"
+   "trailer": "eY_8SyndC10",
+   "tagline": "An unflinching look at Earth's most unchecked man.",
+   "runtime": 235,
+   "featuring": [
+    "Elon Musk",
+    "Alex Gibney",
+    "Justine Musk",
+    "Ashley St. Clair",
+    "Kara Swisher",
+    "Martin Eberhard"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt27041231"
+  },
+  "movie:1743137": {
+   "tmdbId": 1743137,
+   "type": "movie",
+   "slug": "goal-striking-congo",
+   "title": "GOAL: Striking Congo",
+   "overview": "Goal: Striking Congo follows former professional Ugo Kasuku, who has run a football academy for years in war-torn Goma and now launches the Future Pro League, bringing international scouts to offer youth opportunity, dignity, and hope for a wounded nation.",
+   "directors": [
+    "Mathieu Roy"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iTq1tcK1QVDiq77n3JLsOYEUDNx.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/6CRmnCkZtIzvyihTCWKd6lKCFGO.jpg",
+   "trailer": "O91rLSUAiLY",
+   "runtime": 90,
+   "featuring": [
+    "Ugo Kasuku",
+    "Séraphin Usseni",
+    "Sefu",
+    "JC",
+    "Florent",
+    "Makenja"
+   ],
+   "language": "French",
+   "originalTitle": "Marquer le Congo",
+   "madeIn": [
+    "Canada"
+   ]
+  },
+  "movie:1775316": {
+   "tmdbId": 1775316,
+   "type": "movie",
+   "slug": "a-huldu-the-hidden-ones",
+   "title": "Á Huldu - The Hidden Ones",
+   "overview": "In the Icelandic countryside, a news cameraman is found dead under unsettling circumstances, his reporter colleague has vanished without a trace.  The mystery remains unsolved.  Years later, a documentary crew retraces the investigation, piecing together fragments of testimony, archival material, and newly uncovered footage. What begins as a cold case review becomes something more elusive as new evidence reveals hidden connections and unanswered questions.  Á Huldu – The Hidden Ones is an 85-minute English and Icelandic-language feature that adopts a true-crime documentary framework to explore the instability of truth, the ethics of observation, and the persistence of unresolved narratives.",
+   "directors": [
+    "Darren Borrowman"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/7KVxqJpDCPDpuX1OtWUpzpJVyx9.jpg",
+   "trailer": "bCj-2LnQsEc",
+   "tagline": "In Iceland, disappearances are rare. This is the exception.",
+   "runtime": 85,
+   "featuring": [
+    "Bryndís Geirsdóttir",
+    "Benedikt Gröndal",
+    "Aðalbjörg Árnadóttir",
+    "Gudmundur Thorvaldsson"
+   ],
+   "genres": [
+    "Horror"
+   ],
+   "language": "English"
   },
   "movie:1578210": {
    "tmdbId": 1578210,
    "type": "movie",
+   "slug": "run-terry-run",
    "title": "Run Terry Run",
    "overview": "The extraordinary story of Canadian icon Terry Fox will be told like never before in Run Terry Run, a new feature-length documentary directed by acclaimed filmmaker Sean Menard. The film offers an intimate, behind-the-scenes look at Terry’s legendary 1980 Marathon of Hope, drawing from 96 reels of never-before-seen footage and unheard audio interviews that have remained untouched for 45 years.",
    "directors": [
@@ -304,22 +725,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/sSstsc561xip9s5FKereo1r1I9i.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/ldFeRtwity90hO5Yy9wVu4sDsW4.jpg",
-   "trailer": "upUdfgVR2NQ"
-  },
-  "movie:1775316": {
-   "tmdbId": 1775316,
-   "type": "movie",
-   "title": "Á Huldu - The Hidden Ones",
-   "overview": "In the Icelandic countryside, a news cameraman is found dead under unsettling circumstances, his reporter colleague has vanished without a trace.  The mystery remains unsolved.  Years later, a documentary crew retraces the investigation, piecing together fragments of testimony, archival material, and newly uncovered footage. What begins as a cold case review becomes something more elusive as new evidence reveals hidden connections and unanswered questions.  Á Huldu – The Hidden Ones is an 85-minute English and Icelandic-language feature that adopts a true-crime documentary framework to explore the instability of truth, the ethics of observation, and the persistence of unresolved narratives.",
-   "directors": [
-    "Darren Borrowman"
+   "trailer": "upUdfgVR2NQ",
+   "tagline": "See the legend like never before.",
+   "runtime": 111,
+   "featuring": [
+    "Terry Fox",
+    "Doug Alward",
+    "Darrell Fox",
+    "Leslie Scrivener",
+    "Darryl Sittler",
+    "Bill Vigars"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/7KVxqJpDCPDpuX1OtWUpzpJVyx9.jpg",
-   "trailer": "bCj-2LnQsEc"
+   "language": "English",
+   "madeIn": [
+    "Canada"
+   ],
+   "imdbId": "tt39130015"
   },
   "movie:1393151": {
    "tmdbId": 1393151,
    "type": "movie",
+   "slug": "mr-nobody-against-putin",
    "title": "Mr. Nobody Against Putin",
    "overview": "As Russia launches its full-scale invasion of Ukraine, primary schools across Russia’s hinterlands are transformed into recruitment stages for the war. Facing the ethical dilemma of working in a system defined by propaganda and violence, a brave teacher goes undercover to film what’s really happening in his own school.",
    "directors": [
@@ -328,11 +754,30 @@
    "poster": "https://image.tmdb.org/t/p/w342/ss4NEGmPxgm4D73iMFeyjbE1m9b.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/3A0dDfZq5WxdDGt8qzmhFXqVZxJ.jpg",
    "trailer": "9150MCMSrgc",
-   "filmId": "mr-nobody-against-putin"
+   "filmId": "mr-nobody-against-putin",
+   "tagline": "The incredible story of an ordinary Russian teacher who exposed Putin's propaganda machine.",
+   "runtime": 90,
+   "featuring": [
+    "Pavel Talankin",
+    "Vladimir Putin",
+    "Roman Abalin",
+    "Lavrentiy Beria",
+    "Viktor Abakumov",
+    "Leon Trotsky"
+   ],
+   "originalTitle": "Mr. Nobody mod Putin",
+   "madeIn": [
+    "Denmark",
+    "Czech Republic",
+    "Germany",
+    "United Kingdom"
+   ],
+   "imdbId": "tt34965515"
   },
   "movie:1706746": {
    "tmdbId": 1706746,
    "type": "movie",
+   "slug": "robert-richardson-the-white-devil",
    "title": "Robert Richardson: The White Devil",
    "overview": "What started as a student exercise and master’s degree project soon evolved into a creative partnership and personal friendship between Jana Hojdová, a former cinematography student at Prague’s FAMU, and distinguished cinematographer Robert Richardson.",
    "directors": [
@@ -340,23 +785,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/lZrCSXgyQ0hojglvleQxJFOT801.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/eKukYhhGU93rNsVflMiCcv2cm59.jpg",
-   "trailer": "Y03xvJ4SYQg"
-  },
-  "movie:1739735": {
-   "tmdbId": 1739735,
-   "type": "movie",
-   "title": "James McNeill Whistler",
-   "overview": "Tate Britain is now holding the first major retrospective of Whistler in three decades. This blockbuster exhibition promises to reawaken the world to just how important Whistler is to art history, uniting world-famous masterpieces with rarely seen works. Exhibition on Screen will bring these stunning works and the incredible story behind them to cinemas around the world while the exhibition is still running, bringing this truly global artist to a global audience. This will be an unmissable chance to get to know this visually spectacular artist and the influence he has had on those who followed.",
-   "directors": [
-    "David Bickerstaff"
+   "trailer": "Y03xvJ4SYQg",
+   "runtime": 105,
+   "featuring": [
+    "Jana Hojdová",
+    "Robert Richardson",
+    "Robert Downey Jr.",
+    "Woody Harrelson",
+    "Kate Hudson",
+    "Martin Scorsese"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/wMVPRZGPL9DhyZHtSJvAkzhcp0E.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/kA4fWNVG2f629SxoNLwDhvtiqI5.jpg",
-   "trailer": "vAiN-useAN8"
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Czech Republic"
+   ],
+   "imdbId": "tt43329860"
   },
   "movie:57276": {
    "tmdbId": 57276,
    "type": "movie",
+   "slug": "pina",
    "title": "Pina",
    "overview": "Pina is a feature-length dance film in 3D with the ensemble of the Tanztheater Wuppertal Pina Bausch, featuring the unique and inspiring art of the great German choreographer, who died in the summer of 2009.",
    "directors": [
@@ -365,34 +814,28 @@
    "poster": "https://image.tmdb.org/t/p/w342/mKKtIJYtaGwcgpMfnVR2byYhfz9.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/p6GI3J6CfxhxwYmvHpBtYRVi7iq.jpg",
    "trailer": "F-cV74Mq7KU",
-   "filmId": "pina"
-  },
-  "movie:1799373": {
-   "tmdbId": 1799373,
-   "type": "movie",
-   "title": "Anatomy of a Crash",
-   "overview": "Jediná vteřina is a feature-length documentary by Vít Klusák about the fine line between everyday bad driving habits and a tragedy that cannot be undone. Using a mobile phone at the wheel, fatigue, rushing through a yellow light, or the feeling that we have everything under control. Bad habits behind the wheel that usually go unpunished. But what happens when they don’t? The film follows four stories of road accidents and the people involved, who must come to terms with the moment when the lives of so many were changed forever. Through intimate portraits, cinematic reconstructions and unusual encounters between the perpetrators and their victims or bereaved families, it explores responsibility, guilt and the possibility of forgiveness. The film reveals our ability to excuse our own failings and poses a disturbing question: what if we are less different from the people who caused the accidents than we would like to admit?",
-   "directors": [
-    "Vít Klusák"
+   "filmId": "pina",
+   "tagline": "Dance, dance, otherwise we are lost.",
+   "runtime": 106,
+   "featuring": [
+    "Regina Advento",
+    "Malou Airaudo",
+    "Ruth Amarante",
+    "Pina Bausch",
+    "Jorge Puerta",
+    "Mechthild Großmann"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/y3i3BKh74YOu8S5Y3raG8tNnwT5.jpg",
-   "trailer": "nzxfNbMhmLE"
-  },
-  "movie:1726607": {
-   "tmdbId": 1726607,
-   "type": "movie",
-   "title": "Because I Have To",
-   "overview": "Miloš Šejn: lying down, awake. And above all, creating. This documentary essay follows an artist whose work is “born of wonder” and who effortlessly navigates his longed-for path out of the city. Instead of an endless stream of sensory input, the film offers a space for concentration and mindfulness—a space that may well extend beyond the seventy minutes spent in the cinema",
-   "directors": [
-    "Jakub Kučera"
+   "language": "German",
+   "madeIn": [
+    "Germany",
+    "France"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/zlyuB3WgORzmDbdDrAx4GMb7pdt.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/mKrHYax9nU8KXzDXAhZvHpLVsBv.jpg",
-   "trailer": "r6PVnawQlqY"
+   "imdbId": "tt1440266"
   },
   "movie:1616833": {
    "tmdbId": 1616833,
    "type": "movie",
+   "slug": "if-pigeons-turned-to-gold",
    "title": "If Pigeons Turned to Gold",
    "overview": "Alcohol addiction is a constant in Pepa Lubojacki’s family. In an attempt to find a sisterly-brotherly way of dealing with it, text, long-term observation, beats and AI-animated photos are combined into an unflinching, yet loving form of disclosure.",
    "directors": [
@@ -400,35 +843,66 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/foNTQytbZzMwzq00NYl4LAON1vR.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/gkZGMcsuaG7NutjFTAkBraC1K2m.jpg",
-   "trailer": "5L5rsh-UINU"
-  },
-  "movie:1666864": {
-   "tmdbId": 1666864,
-   "type": "movie",
-   "title": "Rehearsals for a Revolution",
-   "overview": "Through five portraits of relatives and mentors, five expressions of resistance, Pegah Ahangarani sketches her life story. Drawing from personal archives, home videos, street protests footage, newspapers, and recorded voices, she retraces more than 40 years of Iran’s history. From the early days of 1979, until the war that began in 2026, she pieces together intimate and collective memories, forming the portrait of a country shaped by political repression and in constant hope for a revolution.",
-   "directors": [
-    "Pegah Ahangarani"
+   "trailer": "5L5rsh-UINU",
+   "runtime": 110,
+   "featuring": [
+    "Pepa Lubojacki",
+    "David Lubojacki",
+    "David Richter",
+    "Marco Arnone"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/mzocxy2wpTGoStwUlqcfHaNSxm2.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/vMZSG9ppXdHHSW7zXoThi4EvU6o.jpg",
-   "trailer": "oWofWD4gdbE"
-  },
-  "movie:1312310": {
-   "tmdbId": 1312310,
-   "type": "movie",
-   "title": "Gabin",
-   "overview": "Gabin, the youngest child of the Jourdel family, is set to take over his father's butcher shop. Torn between family loyalty and a desire to break free, he has other dreams.",
-   "directors": [
-    "Maxence Voiseux"
+   "language": "Czech",
+   "originalTitle": "Kdyby se holubi proměnili ve zlato",
+   "madeIn": [
+    "Czech Republic",
+    "Slovakia"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/9N5pi1BJB6HqhOrrkK8hIJhzBSG.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/ofuOuq4xd8oF5Q3v5Kg69jfoFhj.jpg",
-   "trailer": "_4XmhCbavrs"
+   "imdbId": "tt39383477"
+  },
+  "movie:1799373": {
+   "tmdbId": 1799373,
+   "type": "movie",
+   "slug": "anatomy-of-a-crash",
+   "title": "Anatomy of a Crash",
+   "overview": "Jediná vteřina is a feature-length documentary by Vít Klusák about the fine line between everyday bad driving habits and a tragedy that cannot be undone. Using a mobile phone at the wheel, fatigue, rushing through a yellow light, or the feeling that we have everything under control. Bad habits behind the wheel that usually go unpunished. But what happens when they don’t? The film follows four stories of road accidents and the people involved, who must come to terms with the moment when the lives of so many were changed forever. Through intimate portraits, cinematic reconstructions and unusual encounters between the perpetrators and their victims or bereaved families, it explores responsibility, guilt and the possibility of forgiveness. The film reveals our ability to excuse our own failings and poses a disturbing question: what if we are less different from the people who caused the accidents than we would like to admit?",
+   "directors": [
+    "Vít Klusák"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/y3i3BKh74YOu8S5Y3raG8tNnwT5.jpg",
+   "trailer": "nzxfNbMhmLE",
+   "runtime": 88,
+   "language": "Czech",
+   "originalTitle": "Jediná vteřina",
+   "madeIn": [
+    "Czech Republic"
+   ]
+  },
+  "movie:1726607": {
+   "tmdbId": 1726607,
+   "type": "movie",
+   "slug": "because-i-have-to",
+   "title": "Because I Have To",
+   "overview": "Miloš Šejn: lying down, awake. And above all, creating. This documentary essay follows an artist whose work is “born of wonder” and who effortlessly navigates his longed-for path out of the city. Instead of an endless stream of sensory input, the film offers a space for concentration and mindfulness—a space that may well extend beyond the seventy minutes spent in the cinema",
+   "directors": [
+    "Jakub Kučera"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/zlyuB3WgORzmDbdDrAx4GMb7pdt.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/mKrHYax9nU8KXzDXAhZvHpLVsBv.jpg",
+   "trailer": "r6PVnawQlqY",
+   "runtime": 71,
+   "featuring": [
+    "Miloš Šejn"
+   ],
+   "language": "Czech",
+   "originalTitle": "Podoby milostného vztahu ke světu",
+   "madeIn": [
+    "Czech Republic"
+   ]
   },
   "movie:1670563": {
    "tmdbId": 1670563,
    "type": "movie",
+   "slug": "thanks-for-coming",
    "title": "Thanks for Coming",
    "overview": "This is the story of a filmmaker. Alain Cavalier, always accompanied by his camera, continues to film life with passion, still learning about himself and, above all, about others. However, he is growing older and sees his speed, his vitality, his boldness, and his lightheartedness waning. With a slight lump in his throat but still laughing, he keeps a video diary of his farewell to cinema. This will be his last film.",
    "directors": [
@@ -436,34 +910,102 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/sg8u5F3cTrDl6UM0InfbXwVlkeL.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/uxUwpYPlFSidyaF7g4NyZvpoksE.jpg",
-   "trailer": "X7KSF8KEJts"
+   "trailer": "X7KSF8KEJts",
+   "tagline": "Filming as a way of life, living to shoot films",
+   "runtime": 86,
+   "featuring": [
+    "Alain Cavalier",
+    "Françoise Widhoff",
+    "Vincent Lindon",
+    "Nine d'Urso",
+    "Emmanuèle Bernheim",
+    "Suzanne Angevin"
+   ],
+   "language": "French",
+   "originalTitle": "Merci d'être venu",
+   "madeIn": [
+    "France"
+   ],
+   "imdbId": "tt41829928"
+  },
+  "movie:1312310": {
+   "tmdbId": 1312310,
+   "type": "movie",
+   "slug": "gabin",
+   "title": "Gabin",
+   "overview": "Gabin, the youngest child of the Jourdel family, is set to take over his father's butcher shop. Torn between family loyalty and a desire to break free, he has other dreams.",
+   "directors": [
+    "Maxence Voiseux"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9N5pi1BJB6HqhOrrkK8hIJhzBSG.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ofuOuq4xd8oF5Q3v5Kg69jfoFhj.jpg",
+   "trailer": "_4XmhCbavrs",
+   "runtime": 105,
+   "featuring": [
+    "Gabin Jourdel",
+    "Patricia Jourdel",
+    "Dominique Jourdel",
+    "Lilou Duflos-Lamotte",
+    "Catherine Ranson"
+   ],
+   "language": "French",
+   "madeIn": [
+    "France",
+    "Germany",
+    "Switzerland"
+   ],
+   "imdbId": "tt41829787"
+  },
+  "movie:1666864": {
+   "tmdbId": 1666864,
+   "type": "movie",
+   "slug": "rehearsals-for-a-revolution",
+   "title": "Rehearsals for a Revolution",
+   "overview": "Through five portraits of relatives and mentors, five expressions of resistance, Pegah Ahangarani sketches her life story. Drawing from personal archives, home videos, street protests footage, newspapers, and recorded voices, she retraces more than 40 years of Iran’s history. From the early days of 1979, until the war that began in 2026, she pieces together intimate and collective memories, forming the portrait of a country shaped by political repression and in constant hope for a revolution.",
+   "directors": [
+    "Pegah Ahangarani"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/mzocxy2wpTGoStwUlqcfHaNSxm2.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/vMZSG9ppXdHHSW7zXoThi4EvU6o.jpg",
+   "trailer": "oWofWD4gdbE",
+   "runtime": 101,
+   "featuring": [
+    "Pegah Ahangarani",
+    "Jamshid Ahangarani",
+    "Manijeh Hekmat"
+   ],
+   "language": "Persian",
+   "originalTitle": "تمرین‌هایی برای یک انقلاب",
+   "madeIn": [
+    "Czech Republic",
+    "Spain"
+   ],
+   "imdbId": "tt41593500"
   },
   "movie:1449729": {
    "tmdbId": 1449729,
    "type": "movie",
+   "slug": "mountain-of-gold",
    "title": "Mountain of Gold",
    "overview": "Gold fever has gripped northern Niger. In search of the precious metal, and despite the risks, an army of researchers has invaded the sites of interest. While camps are set up and dismantled as rumours of new leads spread, Moussa and his companions are banking on the Ikazan vein.",
    "directors": [
     "Roland Edzard"
    ],
    "poster": "https://image.tmdb.org/t/p/w342/3sA2oTcUMRH6dQUbAAInTkHhaM5.jpg",
-   "trailer": "TeCzsg6k9cQ"
-  },
-  "movie:1630801": {
-   "tmdbId": 1630801,
-   "type": "movie",
-   "title": "Love, Ted Bundy",
-   "overview": "As America's most notorious serial killer Ted Bundy awaited execution, he exchanged a series of death row letters with the woman who loved him like a brother - his cousin, Edna Martin.",
-   "directors": [
-    "Christopher Cassel"
+   "trailer": "TeCzsg6k9cQ",
+   "runtime": 85,
+   "language": "Hausa",
+   "originalTitle": "La Montagne d’or",
+   "madeIn": [
+    "Belgium",
+    "France"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/1QxozVBTyOM2U1ZP36ZvGzuEi6w.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/ptb6BsyatWDhzECE1yBsMrib12b.jpg",
-   "trailer": "m5qpUslL5As"
+   "imdbId": "tt36461267"
   },
   "movie:1599746": {
    "tmdbId": 1599746,
    "type": "movie",
+   "slug": "a-russian-winter",
    "title": "A Russian Winter",
    "overview": "After the full-scale invasion of Ukraine, many people in Russia faced a brutal choice: prison, the army – or exile. Margarita, Yuri and their friends are caught in the crosscurrents of history, with no way to return home, but also no place where they feel truly welcome.",
    "directors": [
@@ -471,11 +1013,19 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/gsHmPOz3Nk7P2xvMaHGzByVJ7VZ.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/pfoqzyrGgVSOyvQ3mprKXv7HWic.jpg",
-   "trailer": "nj9TXom19g4"
+   "trailer": "nj9TXom19g4",
+   "runtime": 87,
+   "language": "Russian",
+   "originalTitle": "Un hiver russe",
+   "madeIn": [
+    "France"
+   ],
+   "imdbId": "tt39215225"
   },
   "movie:1371557": {
    "tmdbId": 1371557,
    "type": "movie",
+   "slug": "i-am-martin-parr",
    "title": "I Am Martin Parr",
    "overview": "Since the 1970s‚ Martin Parr has fearlessly held out his unique photographic mirror and given us some of the most extraordinary and unique visual clichés of modern times. Sometimes serious‚ often absurd but always playful‚ his insightful and often acrid commentary on consumer society has always been a subject of controversy and discussion.",
    "directors": [
@@ -483,11 +1033,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/j91RP4cStadueVcVhWQEfNvetvS.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/7ImhJ3UN2HPr7s96nsDzFeUWZaF.jpg",
-   "trailer": "AKEFfxXxbvk"
+   "trailer": "AKEFfxXxbvk",
+   "runtime": 68,
+   "featuring": [
+    "Martin Parr",
+    "Susie Parr",
+    "Bruce Gilden",
+    "Tracy Marshall",
+    "Harry Gruyaert",
+    "Clémentine De La Féronnière"
+   ],
+   "language": "English",
+   "madeIn": [
+    "France",
+    "United Kingdom"
+   ],
+   "imdbId": "tt33985496"
   },
   "movie:1635584": {
    "tmdbId": 1635584,
    "type": "movie",
+   "slug": "let-our-mountains-live",
    "title": "Let Our Mountains Live",
    "overview": "Sami reindeer herders win a Supreme Court victory against Europe’s largest wind farm - but when the state refuses to act, their fight reveals a deeper crisis of justice and trust.",
    "directors": [
@@ -495,23 +1061,29 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/iBVQanqlWl0ccBoFyZpkJ82Qcdj.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/jQsGx0v85O3QgS6fzjjKbSQftR7.jpg",
-   "trailer": "S12WZx_U4nY"
-  },
-  "movie:1625362": {
-   "tmdbId": 1625362,
-   "type": "movie",
-   "title": "Holy Wood Dust",
-   "overview": "Every winter, millions of fir trees are chopped down, admired, and thrown away. The film follows their journey above and below ground, from human rituals to the hidden life inside the trees. A story about trees that we celebrate by cutting them down.",
-   "directors": [
-    "Viktor Kossakovsky"
+   "trailer": "S12WZx_U4nY",
+   "tagline": "A court victory without justice.",
+   "runtime": 100,
+   "featuring": [
+    "Terje Haugen",
+    "Sissel Stormo Holtan",
+    "Elise Holtan Pavall Årbogen",
+    "Lena Haugen",
+    "Ella Marie Hætta Isaksen",
+    "Terje Aasland"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/9pyQnb9hWr0ggm3Qwgka4ALGsBN.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/rqYZdzjP2BPCwX1AUS0lOH0UWmk.jpg",
-   "trailer": "9WowMLrnhaw"
+   "language": "Norwegian",
+   "originalTitle": "La fjella leve",
+   "madeIn": [
+    "Norway",
+    "Finland"
+   ],
+   "imdbId": "tt40036377"
   },
   "movie:1616868": {
    "tmdbId": 1616868,
    "type": "movie",
+   "slug": "einar-schleef-no-germany-did-i-find",
    "title": "Einar Schleef - No Germany Did I Find",
    "overview": "With his monumental productions, Einar Schleef pushed theatre to the outer reaches, confounded expectations in East and West alike, grappled with GDR origins and the BRD present. A universal artist emerges from the archive: “I’m not human, I’m dynamite”.",
    "directors": [
@@ -519,11 +1091,51 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/fNyAq1S63gsIQWdzfhc3UdOUxck.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/6ltaB20k1ennQIrp7fStZRXu08N.jpg",
-   "trailer": "A-PpgXxRO5A"
+   "trailer": "A-PpgXxRO5A",
+   "runtime": 93,
+   "featuring": [
+    "Einar Schleef",
+    "Wilhelm Schleef",
+    "Karl von Appen",
+    "Jutta Hoffmann",
+    "Jürgen Holtz",
+    "Gertrud Schleef"
+   ],
+   "language": "German",
+   "originalTitle": "Einar Schleef - Ich habe kein Deutschland gefunden",
+   "madeIn": [
+    "Germany"
+   ],
+   "imdbId": "tt39383370"
+  },
+  "movie:1625362": {
+   "tmdbId": 1625362,
+   "type": "movie",
+   "slug": "holy-wood-dust",
+   "title": "Holy Wood Dust",
+   "overview": "Every winter, millions of fir trees are chopped down, admired, and thrown away. The film follows their journey above and below ground, from human rituals to the hidden life inside the trees. A story about trees that we celebrate by cutting them down.",
+   "directors": [
+    "Viktor Kossakovsky"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9pyQnb9hWr0ggm3Qwgka4ALGsBN.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/rqYZdzjP2BPCwX1AUS0lOH0UWmk.jpg",
+   "trailer": "9WowMLrnhaw",
+   "runtime": 100,
+   "featuring": [
+    "Stefano Mancuso"
+   ],
+   "language": "German",
+   "madeIn": [
+    "Germany",
+    "Italy",
+    "Spain"
+   ],
+   "imdbId": "tt39567879"
   },
   "movie:1498729": {
    "tmdbId": 1498729,
    "type": "movie",
+   "slug": "brunello-the-gracious-visionary",
    "title": "Brunello: The Gracious Visionary",
    "overview": "A farmer's son transforms into a fashion mogul, building a billion-dollar luxury empire while staying true to his humanistic values and commitment to ethical business practices and fine craftsmanship.",
    "directors": [
@@ -531,23 +1143,30 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/1PRhmkQoi1DHa38YcM35sB9a9m4.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/AfdVZEhR5y0oLaC1pDgFNecn8fw.jpg",
-   "trailer": "DUSK3uec9SA"
-  },
-  "movie:1537518": {
-   "tmdbId": 1537518,
-   "type": "movie",
-   "title": "The Cycle of Love",
-   "overview": "Explores the romantic journey of PK Mahanandia, a Delhi street artist who trekked 6,000 miles by bicycle in 1977, venturing across continents to reunite with the woman he loved.",
-   "directors": [
-    "Orlando von Einsiedel"
+   "trailer": "DUSK3uec9SA",
+   "runtime": 121,
+   "featuring": [
+    "Brunello Cucinelli",
+    "Saul Nanni",
+    "Francesco Cannevale",
+    "Francesco Ferroni",
+    "Emma Fatone",
+    "Beatrice Carlani"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/3mUMZQ7mTBtCtnrWA7GhWNIHh7o.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/jqbyogJrwUM0HBOLYjvZIOb4EQC.jpg",
-   "trailer": "biXpA5aJPug"
+   "genres": [
+    "Drama"
+   ],
+   "language": "Italian",
+   "originalTitle": "Brunello - Il visionario garbato",
+   "madeIn": [
+    "Italy"
+   ],
+   "imdbId": "tt37107071"
   },
   "movie:1517161": {
    "tmdbId": 1517161,
    "type": "movie",
+   "slug": "broken-english",
    "title": "Broken English",
    "overview": "A survivor, provocateur and true original, Marianne has spent more than six decades defying expectations — releasing over thirty-five albums while constantly reinventing herself. Made with her full involvement, Broken English is an intimate and unflinching exploration of a fractured yet unbreakable life shaped by fame, creativity and relentless public scrutiny.",
    "directors": [
@@ -556,23 +1175,61 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/dhT0Okekfq6Ncqh5ttFBGM6TimF.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/253S3mBfoE7Bd0Ioe9pXEvdhlh6.jpg",
-   "trailer": "k7h6QkAfhjU"
-  },
-  "movie:1582371": {
-   "tmdbId": 1582371,
-   "type": "movie",
-   "title": "Disunited Nations",
-   "overview": "Francesca Albanese, the UN Special Rapporteur on human rights in the occupied Palestinian territories, had already labelled events in Gaza a genocide back in March 2024. Following her lead, this piece takes us deep into the heart of the institution’s crisis, as it struggles with its inability to stop the massacre of civilians.",
-   "directors": [
-    "Christophe Cotteret"
+   "trailer": "k7h6QkAfhjU",
+   "runtime": 99,
+   "featuring": [
+    "Marianne Faithfull",
+    "Tilda Swinton",
+    "George MacKay",
+    "Calvin Demba",
+    "Zawe Ashton",
+    "Sophia Di Martino"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/2dWOHGT0y4zHdTgDa9lVXmwkc4k.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/k3wJPmExxgv5gYsTZbrEpitGtq7.jpg",
-   "trailer": "phg5Voe1Y04"
+   "genres": [
+    "Music"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom"
+   ],
+   "imdbId": "tt37660889"
+  },
+  "movie:1537518": {
+   "tmdbId": 1537518,
+   "type": "movie",
+   "slug": "the-cycle-of-love",
+   "title": "The Cycle of Love",
+   "overview": "Explores the romantic journey of PK Mahanandia, a Delhi street artist who trekked 6,000 miles by bicycle in 1977, venturing across continents to reunite with the woman he loved.",
+   "directors": [
+    "Orlando von Einsiedel"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/3mUMZQ7mTBtCtnrWA7GhWNIHh7o.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jqbyogJrwUM0HBOLYjvZIOb4EQC.jpg",
+   "trailer": "biXpA5aJPug",
+   "tagline": "An impossible journey. An extraordinary love.",
+   "runtime": 98,
+   "featuring": [
+    "PK Mahanandia",
+    "Lotta von Schedvin",
+    "Chirag Lobo",
+    "Mina Dale"
+   ],
+   "genres": [
+    "Romance"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom",
+    "United States of America",
+    "India",
+    "Sweden"
+   ],
+   "imdbId": "tt38063160"
   },
   "movie:1596326": {
    "tmdbId": 1596326,
    "type": "movie",
+   "slug": "barbara-forever",
    "title": "Barbara Forever",
    "overview": "An archive-driven exploration of the life, work, and legacy of iconic, pioneering lesbian filmmaker Barbara Hammer.",
    "directors": [
@@ -580,11 +1237,52 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/kYjCmL8sg17zoKtm5Pb6Cn4H0nB.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/mlEsvwfQoNUXC9y7vOSgVkrSL5U.jpg",
-   "trailer": "8WW89Vm5O6A"
+   "trailer": "8WW89Vm5O6A",
+   "runtime": 102,
+   "featuring": [
+    "Barbara Hammer",
+    "Florrie Burke",
+    "Joey Carducci",
+    "Todd Haynes"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt39150008"
+  },
+  "movie:1582371": {
+   "tmdbId": 1582371,
+   "type": "movie",
+   "slug": "disunited-nations",
+   "title": "Disunited Nations",
+   "overview": "Francesca Albanese, the UN Special Rapporteur on human rights in the occupied Palestinian territories, had already labelled events in Gaza a genocide back in March 2024. Following her lead, this piece takes us deep into the heart of the institution’s crisis, as it struggles with its inability to stop the massacre of civilians.",
+   "directors": [
+    "Christophe Cotteret"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/2dWOHGT0y4zHdTgDa9lVXmwkc4k.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/k3wJPmExxgv5gYsTZbrEpitGtq7.jpg",
+   "trailer": "phg5Voe1Y04",
+   "runtime": 80,
+   "featuring": [
+    "Francesca Albanese",
+    "Johann Soufi",
+    "Osama Qashoo",
+    "Philippe Lazzarini",
+    "Hanadi Abu Taqa",
+    "Amos Goldberg"
+   ],
+   "language": "French",
+   "madeIn": [
+    "France",
+    "Belgium"
+   ],
+   "imdbId": "tt39195865"
   },
   "movie:1646767": {
    "tmdbId": 1646767,
    "type": "movie",
+   "slug": "junkies-of-dreaming",
    "title": "Junkies of Dreaming",
    "overview": "Orchestra rehearsals with Teodor Currentzis. The House of the Radio of the GDR in Berlin. A young couple in love. The artistic process viewed from the outside – and from the inside. Mahler’s boundary-breaking Third Symphony. What triggered the composition 130 years ago, and what does it trigger in us today?",
    "directors": [
@@ -592,11 +1290,21 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/5PhGi7PPruUHH2AWL9KvAWaeKnZ.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/sy8v5DAeWIDVDLOpBTDXbrlVJkE.jpg",
-   "trailer": "eQvVb6Rhvdg"
+   "trailer": "eQvVb6Rhvdg",
+   "runtime": 90,
+   "featuring": [
+    "Teodor Currentzis",
+    "Wiebke Lehmkuhl"
+   ],
+   "language": "English",
+   "madeIn": [
+    "Germany"
+   ]
   },
   "movie:1774428": {
    "tmdbId": 1774428,
    "type": "movie",
+   "slug": "between-summers",
    "title": "Between Summers",
    "overview": "Between french fries, TikToks, and sunscreen, carefree moments clash with self-doubt, and playful freedom with societal pressure. This is the vibrant world of adolescents searching for their place – on the lawn and in life. When the orange slide is torn down, the chapter of childhood comes to an end. Two years later, after the renovation, it's not just the public pool that has changed.",
    "directors": [
@@ -604,23 +1312,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/jSfBvcSOlqrGwfgkPrHxh0PAXcT.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/rwDQoKHijAeLSSCdlnsoRQrbSbk.jpg",
-   "trailer": "nrfFBQMDX6c"
-  },
-  "movie:1552998": {
-   "tmdbId": 1552998,
-   "type": "movie",
-   "title": "Inside Gaza",
-   "overview": "Free access to the Gaza Strip has remained closed to international journalists since the war began on October 7, 2023. AFP's permanent reporters are among the few professional witnesses to have experienced this conflict from the inside. They have watched, filmed, photographed, testified, all whilst struggling to ensure their own survival.  From their exile, they recount this war, which is the deadliest ever recorded for members of the press.",
-   "directors": [
-    "Hélène Lam Trong"
+   "trailer": "nrfFBQMDX6c",
+   "tagline": "One outdoor pool. Two summers. Six teenagers.",
+   "runtime": 52,
+   "featuring": [
+    "Yamely Bölk",
+    "Davide Masciulli",
+    "Tiana Müller",
+    "Mia Stankovic",
+    "Mauro Strebel",
+    "Fatma Zekiroska"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/hnGQvP7d4YfSJUgpLua6dMHBhps.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/e81VRcnsOS2ZspucmO2fGTKWP3.jpg",
-   "trailer": "H6Z-nR3TyyM"
+   "language": "German",
+   "originalTitle": "Zwei Sommer in der Badi",
+   "madeIn": [
+    "Switzerland"
+   ]
   },
   "movie:1498742": {
    "tmdbId": 1498742,
    "type": "movie",
+   "slug": "i-heard-that-they-are-not-going-to-see-each-other-anymore",
    "title": "I Heard That They Are Not Going To See Each Other Anymore",
    "overview": "In Taipei’s dreamscape, Tao’s incomprehensible love for Shin drives her to create painful memories. Meanwhile, Melih, burdened with self-blame, longs to connect with the perpetually drunk Ping.",
    "directors": [
@@ -628,47 +1340,56 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/gdAbcShk0yBraK3LGaiLfjvTCCX.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/2OgrTUoGAGxpdh6xla1vfVToV04.jpg",
-   "trailer": "2d1NRBSYbuo"
-  },
-  "movie:1596332": {
-   "tmdbId": 1596332,
-   "type": "movie",
-   "title": "American Doctor",
-   "overview": "United by a shared oath to save lives, three American doctors—Palestinian, Jewish, and Zoroastrian—work in a besieged hospital in Gaza in the middle of a genocide comitted by Israel, and return to the United States to fight for the patients and colleagues they left behind.",
-   "directors": [
-    "Poh Si Teng"
+   "trailer": "2d1NRBSYbuo",
+   "runtime": 86,
+   "featuring": [
+    "Elizabeth Tang",
+    "Melih Selçuk",
+    "Shin Cheung",
+    "Wang Yu-ping"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/sOSrlaXvItVdwU1P5Qpttcl12sd.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/yzNoanH2Jfn5bj7d6reKeaAbd4S.jpg",
-   "trailer": "Be7_u8jzHzU"
-  },
-  "movie:1637730": {
-   "tmdbId": 1637730,
-   "type": "movie",
-   "title": "Whiddy",
-   "overview": "A small rural community in Ireland welcomes in a major, global oil company with open arms but just 10 years and numerous oil spills later, that dream turns into an unimaginable nightmare. 50 lives lost in a tragedy that silenced and divided the community and still haunts it to this day.",
-   "directors": [
-    "Adrian McCarthy"
+   "genres": [
+    "Romance"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/spRPrwVmD08aXiZV951G5PQGVLb.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/suSAjZRAEE3HVrPG0Ukir1eSVr.jpg",
-   "trailer": "UvEm8WWIZ7M"
-  },
-  "movie:1299581": {
-   "tmdbId": 1299581,
-   "type": "movie",
-   "title": "Knife: The Attempted Murder of Salman Rushdie",
-   "overview": "In 2022, Salman Rushdie was preparing to deliver a lecture on the United States as a safe haven for writers when a man rushed the stage and, in 27 seconds, stabbed him 15 times. Airlifted to hospital, Rushdie survived, barely, and his wife Rachel Eliza Griffiths began filming immediately, capturing an unfiltered view of his recovery, return to life and how he regained his spirit and hope for the future.",
-   "directors": [
-    "Alex Gibney"
+   "language": "Mandarin",
+   "originalTitle": "傷心公園",
+   "madeIn": [
+    "Taiwan",
+    "United Kingdom",
+    "Hong Kong",
+    "Turkey"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/zIHezCczCvRFtkuAoCm1tEJGa0W.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/nbnFwaYmajIbGEXfXgWgzpiwQXF.jpg",
-   "trailer": "4Dntq0XUcls"
+   "imdbId": "tt40558543"
+  },
+  "movie:1552998": {
+   "tmdbId": 1552998,
+   "type": "movie",
+   "slug": "inside-gaza",
+   "title": "Inside Gaza",
+   "overview": "Free access to the Gaza Strip has remained closed to international journalists since the war began on October 7, 2023. AFP's permanent reporters are among the few professional witnesses to have experienced this conflict from the inside. They have watched, filmed, photographed, testified, all whilst struggling to ensure their own survival.  From their exile, they recount this war, which is the deadliest ever recorded for members of the press.",
+   "directors": [
+    "Hélène Lam Trong"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/hnGQvP7d4YfSJUgpLua6dMHBhps.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/e81VRcnsOS2ZspucmO2fGTKWP3.jpg",
+   "trailer": "H6Z-nR3TyyM",
+   "runtime": 90,
+   "genres": [
+    "History",
+    "War",
+    "TV Movie"
+   ],
+   "language": "French",
+   "madeIn": [
+    "France",
+    "Belgium"
+   ],
+   "imdbId": "tt32209577"
   },
   "movie:1309373": {
    "tmdbId": 1309373,
    "type": "movie",
+   "slug": "whispers-in-the-woods",
    "title": "Whispers in the Woods",
    "overview": "In the heart of the tranquil Vosges forests, where lynxes, bears and deer roam freely, Vincent Munier accompanies his father on his expeditions. He not only seeks to capture the visual wonders of this forest kingdom, but also aims to make its sounds audible. Every whisper of the forest is a reminder of the knowledge of nature that his father once imbued in him – knowledge that Vincent now passes on to his own son. Vincent Munier combines breathtaking footage of nature and its sounds to create a fairytale-like cinematic experience that slows time down.",
    "directors": [
@@ -676,11 +1397,99 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/6UCVRxRpZRXfDUPu9vwoGUEPYQ3.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/aUoZx5eljCac6fhKK4dafIvTYDY.jpg",
-   "trailer": "jNgDillNElk"
+   "trailer": "jNgDillNElk",
+   "runtime": 99,
+   "featuring": [
+    "Michel Munier",
+    "Simon Munier",
+    "Vincent Munier"
+   ],
+   "language": "French",
+   "originalTitle": "Le Chant des forêts",
+   "madeIn": [
+    "France"
+   ],
+   "imdbId": "tt32368068"
+  },
+  "movie:1299581": {
+   "tmdbId": 1299581,
+   "type": "movie",
+   "slug": "knife-the-attempted-murder-of-salman-rushdie",
+   "title": "Knife: The Attempted Murder of Salman Rushdie",
+   "overview": "In 2022, Salman Rushdie was preparing to deliver a lecture on the United States as a safe haven for writers when a man rushed the stage and, in 27 seconds, stabbed him 15 times. Airlifted to hospital, Rushdie survived, barely, and his wife Rachel Eliza Griffiths began filming immediately, capturing an unfiltered view of his recovery, return to life and how he regained his spirit and hope for the future.",
+   "directors": [
+    "Alex Gibney"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/zIHezCczCvRFtkuAoCm1tEJGa0W.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/nbnFwaYmajIbGEXfXgWgzpiwQXF.jpg",
+   "trailer": "4Dntq0XUcls",
+   "runtime": 107,
+   "featuring": [
+    "Salman Rushdie"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt32534849"
+  },
+  "movie:1637730": {
+   "tmdbId": 1637730,
+   "type": "movie",
+   "slug": "whiddy",
+   "title": "Whiddy",
+   "overview": "A small rural community in Ireland welcomes in a major, global oil company with open arms but just 10 years and numerous oil spills later, that dream turns into an unimaginable nightmare. 50 lives lost in a tragedy that silenced and divided the community and still haunts it to this day.",
+   "directors": [
+    "Adrian McCarthy"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/spRPrwVmD08aXiZV951G5PQGVLb.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/suSAjZRAEE3HVrPG0Ukir1eSVr.jpg",
+   "trailer": "UvEm8WWIZ7M",
+   "runtime": 105,
+   "featuring": [
+    "Adrian McCarthy",
+    "Maria Horgan"
+   ],
+   "language": "English",
+   "madeIn": [
+    "Ireland",
+    "France"
+   ],
+   "imdbId": "tt49237543"
+  },
+  "movie:1596332": {
+   "tmdbId": 1596332,
+   "type": "movie",
+   "slug": "american-doctor",
+   "title": "American Doctor",
+   "overview": "United by a shared oath to save lives, three American doctors—Palestinian, Jewish, and Zoroastrian—work in a besieged hospital in Gaza in the middle of a genocide comitted by Israel, and return to the United States to fight for the patients and colleagues they left behind.",
+   "directors": [
+    "Poh Si Teng"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sOSrlaXvItVdwU1P5Qpttcl12sd.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/yzNoanH2Jfn5bj7d6reKeaAbd4S.jpg",
+   "trailer": "Be7_u8jzHzU",
+   "tagline": "Do no harm.",
+   "runtime": 91,
+   "featuring": [
+    "Thaer Ahmad",
+    "Mark Perlmutter",
+    "Feroze Sidhwa",
+    "Dana Bash",
+    "Hasan Piker"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Palestinian Territory",
+    "Denmark"
+   ],
+   "imdbId": "tt39149951"
   },
   "movie:1400379": {
    "tmdbId": 1400379,
    "type": "movie",
+   "slug": "the-librarians",
    "title": "The Librarians",
    "overview": "As an unprecedented wave of book banning is sparked in Texas, Florida, and beyond, librarians under siege join forces as unlikely defenders fighting for intellectual freedom on the front lines of democracy.",
    "directors": [
@@ -688,11 +1497,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/y3Mu9meJ5Uu1I6laCr3eG9b4Hl3.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/6AK5MOWFItnOKTfrH3w1Y91Jbya.jpg",
-   "trailer": "gbm3xqW4Qys"
+   "trailer": "gbm3xqW4Qys",
+   "tagline": "America's war on books is more than a war on words.",
+   "runtime": 92,
+   "featuring": [
+    "Suzette Baker",
+    "Becky Calzada",
+    "Carolyn Foote",
+    "Martha Hickson",
+    "Amanda Jones",
+    "Marie Masferrer"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt34966678"
   },
   "movie:1745146": {
    "tmdbId": 1745146,
    "type": "movie",
+   "slug": "tunnel-vision",
    "title": "Tunnel Vision",
    "overview": "Tunnel Vision follows the hardcore graffiti bomber \"Rolex\", dedicated to a lost and rare discipline in the Stockholm graffiti scene – Painting hard-to-access innercity subway stations, knowing that as soon as he sets his foot next to the station platform, police and transit security will be on their way.",
    "directors": [
@@ -700,11 +1525,13 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/43ShkCuMKVjUf5f52g2FRFbPePO.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/pjLlciAYMGUT6wmSPP7OXOkq4Jq.jpg",
-   "trailer": "q_Rs3VZHWKM"
+   "trailer": "q_Rs3VZHWKM",
+   "runtime": 90
   },
   "movie:1320392": {
    "tmdbId": 1320392,
    "type": "movie",
+   "slug": "one-to-one-john-yoko",
    "title": "One to One: John & Yoko",
    "overview": "An exploration of the seminal and transformative 18 months that one of music’s most famous couples — John Lennon and Yoko Ono — spent living in Greenwich Village, New York City, in the early 1970s.",
    "directors": [
@@ -712,47 +1539,30 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/9SncSYtmHNJv2hwFkkHw6k8vNvX.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/9n78URb0Q3U8OjXQF98UNaw6MIZ.jpg",
-   "trailer": "oxagfYjeMV4"
-  },
-  "movie:1761050": {
-   "tmdbId": 1761050,
-   "type": "movie",
-   "title": "5 - The Time Called Arashi -",
-   "overview": "",
-   "directors": [
-    "Hirokazu Kore-eda"
+   "trailer": "oxagfYjeMV4",
+   "tagline": "A war of love and transformation.",
+   "runtime": 104,
+   "featuring": [
+    "John Lennon",
+    "Yoko Ono",
+    "Richard Nixon",
+    "Stan Bronstein",
+    "Dick Cavett",
+    "Charlie Chaplin"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/eEXFBWG5F6fOwQjekuCZTNMKVOG.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/hXXZCC2tdjmf6ikrmoBaj0cIdJ8.jpg",
-   "trailer": "t0d2CxpElPo"
-  },
-  "movie:1555218": {
-   "tmdbId": 1555218,
-   "type": "movie",
-   "title": "Are We Monsters?",
-   "overview": "A gay radical outsider, a flamboyant Muslim, and a nasty single mom live in a devout Muslim area on the Thai border under decades of martial law.",
-   "directors": [
-    "Thunska Pansittivorakul"
+   "genres": [
+    "Music"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/lbrvikUasxWamMEofn1lJIswNgu.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/uixGXsaulEDF1YO8matQWaTvBg4.jpg",
-   "trailer": "66GN3s2JUio"
-  },
-  "movie:1697647": {
-   "tmdbId": 1697647,
-   "type": "movie",
-   "title": "Shumei: The Living Legacy of Kabuki",
-   "overview": "A look at the succession ceremony in which Ichikawa Danjūrō XIII formally inherited the storied Danjūrō name in Kabuki, Japan’s classical performing art. The film records the behind-the-scenes preparations for the actor’s name-inheritance debut performance.",
-   "directors": [
-    "Takashi Miike"
+   "language": "English",
+   "madeIn": [
+    "United Kingdom"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/r5qnf8fzaicAbR1vREtZNVQIslb.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/8SL1IYHPtWsbq5INviyLhsrM7V3.jpg",
-   "trailer": "HKpQGx_5D9E"
+   "imdbId": "tt33029955"
   },
   "movie:1759805": {
    "tmdbId": 1759805,
    "type": "movie",
+   "slug": "revolving-lanterns",
    "title": "Revolving Lanterns",
    "overview": "A car makes its way through the pitch black on a snowy night, into a village deep in the mountains. Okugawa, nestled in the mountains of Fukushima, is the man's hometown. The village is slowly disappearing, its population dwindled down to just 500 elderly residents, yet the man begins building a new house.",
    "directors": [
@@ -760,35 +1570,130 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/8Gs1ALPgqDQw9KWvODUSUBkwPfB.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/aTdKWRaowS6r7RgiCVHEq1nmVgV.jpg",
-   "trailer": "O5s_CeciG8c"
-  },
-  "movie:1616685": {
-   "tmdbId": 1616685,
-   "type": "movie",
-   "title": "He Calls Me Daughter",
-   "overview": "An exploration of women shaped by absent or broken fathers as they find healing, courage, and restored identity through God’s faithful love. Through raw and powerful stories, HE CALLS ME DAUGHTER reveals a timeless truth: A heavenly Father changes everything.",
-   "directors": [
-    "Rick Altizer"
+   "trailer": "O5s_CeciG8c",
+   "runtime": 113,
+   "featuring": [
+    "Yoshihiro Yabe",
+    "Sakako Ogura",
+    "Yuako Ogura",
+    "Kazuichi Miyazawa",
+    "Yasuko Miyazawa",
+    "Tami Yabe"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/atMhUt0OTLaqhEpssL4jKhg3cqJ.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/hXDNBgZvDUzbyRIhVBJbAFQH6Z1.jpg",
-   "trailer": "um0Wm_fgIAk"
+   "language": "Japanese",
+   "originalTitle": "走馬灯",
+   "madeIn": [
+    "Japan",
+    "United States of America"
+   ]
   },
-  "movie:1303398": {
-   "tmdbId": 1303398,
+  "movie:1761050": {
+   "tmdbId": 1761050,
    "type": "movie",
-   "title": "The Gospel of Revolution",
-   "overview": "The revolutions that swept Latin America in the second half of the 20th century owe much to the participation of millions of Christians who engaged in political struggles in the name of their faith, paying a heavy toll for undermining the traditional relationship between the Church and power. Driven by Liberation theology, they challenged military regimes and oligarchies, risking their lives. Far from Marx's idea of religion as 'opium of the people', here the people fought for the advent of the Kingdom of God on Earth, rather than in Heaven.",
+   "slug": "5-the-time-called-arashi",
+   "title": "5 - The Time Called Arashi -",
+   "overview": "",
    "directors": [
-    "François-Xavier Drouet"
+    "Hirokazu Kore-eda"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/dU2Vp32sKP1W2EWsDJjHg4PxVyg.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/aYVmbLdTYUO0gEwp6OlXGvz44X0.jpg",
-   "trailer": "uIjcJtpLkks"
+   "poster": "https://image.tmdb.org/t/p/w342/eEXFBWG5F6fOwQjekuCZTNMKVOG.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hXXZCC2tdjmf6ikrmoBaj0cIdJ8.jpg",
+   "trailer": "t0d2CxpElPo",
+   "featuring": [
+    "Masaki Aiba",
+    "Jun Matsumoto",
+    "Kazunari Ninomiya",
+    "Satoshi Ohno",
+    "Sho Sakurai"
+   ],
+   "genres": [
+    "Music"
+   ],
+   "language": "Japanese",
+   "originalTitle": "5 - 嵐という時間 -",
+   "madeIn": [
+    "Japan"
+   ]
+  },
+  "movie:1697647": {
+   "tmdbId": 1697647,
+   "type": "movie",
+   "slug": "shumei-the-living-legacy-of-kabuki",
+   "title": "Shumei: The Living Legacy of Kabuki",
+   "overview": "A look at the succession ceremony in which Ichikawa Danjūrō XIII formally inherited the storied Danjūrō name in Kabuki, Japan’s classical performing art. The film records the behind-the-scenes preparations for the actor’s name-inheritance debut performance.",
+   "directors": [
+    "Takashi Miike"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/r5qnf8fzaicAbR1vREtZNVQIslb.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8SL1IYHPtWsbq5INviyLhsrM7V3.jpg",
+   "trailer": "HKpQGx_5D9E",
+   "runtime": 94,
+   "featuring": [
+    "Ichikawa Ebizo XI",
+    "Ichikawa Shinnosuke VIII"
+   ],
+   "language": "Japanese",
+   "originalTitle": "襲名",
+   "madeIn": [
+    "Japan"
+   ],
+   "imdbId": "tt42773154"
+  },
+  "movie:1555218": {
+   "tmdbId": 1555218,
+   "type": "movie",
+   "slug": "are-we-monsters",
+   "title": "Are We Monsters?",
+   "overview": "A gay radical outsider, a flamboyant Muslim, and a nasty single mom live in a devout Muslim area on the Thai border under decades of martial law.",
+   "directors": [
+    "Thunska Pansittivorakul"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/lbrvikUasxWamMEofn1lJIswNgu.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uixGXsaulEDF1YO8matQWaTvBg4.jpg",
+   "trailer": "66GN3s2JUio",
+   "tagline": "To be human is to be queer",
+   "runtime": 48,
+   "featuring": [
+    "Anuwat Apimukmongkon",
+    "Nitipong Nikaji",
+    "Sopita Ratta",
+    "Abdulim sulong"
+   ],
+   "language": "Thai",
+   "originalTitle": "อสูร",
+   "madeIn": [
+    "Thailand"
+   ]
+  },
+  "movie:1803043": {
+   "tmdbId": 1803043,
+   "type": "movie",
+   "slug": "inochi-ga-umareru",
+   "title": "Inochi Ga Umareru",
+   "overview": "\"Inochi Ga Umareru\" is about inner story from The Land of the Rising Sun , Japan.",
+   "directors": [
+    "Nima Beheshtinia"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/upbw6TJwIDXabpV0aKmDmbRMPS.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/GsMRIINQRgTrceHMNlBWw9nB4H.jpg",
+   "trailer": "QbmYPOp6Hvc",
+   "tagline": "\"Inochi Ga Umareru\" is about inner story from The Land of the Rising Sun , Japan.",
+   "runtime": 32,
+   "featuring": [
+    "Nima Beheshtinia"
+   ],
+   "genres": [
+    "Drama",
+    "History",
+    "Music"
+   ],
+   "language": "Japanese",
+   "imdbId": "tt49692165"
   },
   "movie:1188841": {
    "tmdbId": 1188841,
    "type": "movie",
+   "slug": "between-lands",
    "title": "Between Lands",
    "overview": "A long time ago, Ana Laura, Gustavo, and Jesús crossed the border in search of a better opportunity. They worked hard, built a family, and made a life in the United States. Day by day, years after their arbitrary deportations to Mexico, they deal with the grief of being separated from their families. As time goes by, the shattered existence of everyone is slowly and inevitably rebuilt, far away and apart from each other.",
    "directors": [
@@ -796,11 +1701,82 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/vmMbbvdPujunBNwmo2Pu0pDypqU.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/5cNmbU6kE6A1nWxEwsvorEJXbfQ.jpg",
-   "trailer": "GBgmJyOMakQ"
+   "trailer": "GBgmJyOMakQ",
+   "tagline": "There's life after deportation.",
+   "runtime": 72,
+   "featuring": [
+    "Ana Laura López",
+    "Gustavo Lavariega",
+    "Jesús Ortiz",
+    "Norma Nguyen",
+    "Alondra Lavariega",
+    "Alexia Lavariega"
+   ],
+   "language": "Spanish",
+   "originalTitle": "Entre Tierras",
+   "madeIn": [
+    "Mexico"
+   ],
+   "imdbId": "tt29259287"
+  },
+  "movie:1303398": {
+   "tmdbId": 1303398,
+   "type": "movie",
+   "slug": "the-gospel-of-revolution",
+   "title": "The Gospel of Revolution",
+   "overview": "The revolutions that swept Latin America in the second half of the 20th century owe much to the participation of millions of Christians who engaged in political struggles in the name of their faith, paying a heavy toll for undermining the traditional relationship between the Church and power. Driven by Liberation theology, they challenged military regimes and oligarchies, risking their lives. Far from Marx's idea of religion as 'opium of the people', here the people fought for the advent of the Kingdom of God on Earth, rather than in Heaven.",
+   "directors": [
+    "François-Xavier Drouet"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/dU2Vp32sKP1W2EWsDJjHg4PxVyg.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/aYVmbLdTYUO0gEwp6OlXGvz44X0.jpg",
+   "trailer": "uIjcJtpLkks",
+   "runtime": 115,
+   "featuring": [
+    "Leonardo Boff",
+    "Frei Betto",
+    "Padre Júlio Lancellotti",
+    "María López Vigil"
+   ],
+   "language": "French",
+   "originalTitle": "L'Évangile de la révolution",
+   "madeIn": [
+    "Belgium",
+    "France"
+   ],
+   "imdbId": "tt36047799"
+  },
+  "movie:1616685": {
+   "tmdbId": 1616685,
+   "type": "movie",
+   "slug": "he-calls-me-daughter",
+   "title": "He Calls Me Daughter",
+   "overview": "An exploration of women shaped by absent or broken fathers as they find healing, courage, and restored identity through God’s faithful love. Through raw and powerful stories, HE CALLS ME DAUGHTER reveals a timeless truth: A heavenly Father changes everything.",
+   "directors": [
+    "Rick Altizer"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/atMhUt0OTLaqhEpssL4jKhg3cqJ.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hXDNBgZvDUzbyRIhVBJbAFQH6Z1.jpg",
+   "trailer": "um0Wm_fgIAk",
+   "tagline": "A heavenly Father changes everything.",
+   "runtime": 85,
+   "featuring": [
+    "Chonda Pierce",
+    "Alex Kendrick",
+    "Meg Meeker",
+    "Lynsi Snyder",
+    "B.J. Arnett"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt38162479"
   },
   "movie:1765336": {
    "tmdbId": 1765336,
    "type": "movie",
+   "slug": "invisible-injuries",
    "title": "Invisible Injuries",
    "overview": "After war, Australian veteran Andy Fermo returned home carrying invisible wounds. Invisible Injuries explores PTSD's impact on identity, family and daily life, and the courage it takes to heal, reconnect and keep moving forward.",
    "directors": [
@@ -808,22 +1784,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/8hTVsqbmBoKOprQUH1e3MvcMB71.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/qOA02jA7ztDi9Vp6lYHE4iyLAMg.jpg",
-   "trailer": "lhnZsUPNyQs"
-  },
-  "movie:1562590": {
-   "tmdbId": 1562590,
-   "type": "movie",
-   "title": "Dear Lara",
-   "overview": "Unveiling abuse in classical music's elite institutions — violinist Lara St. John fights for justice, exposing complicity and systemic misogyny.",
-   "directors": [
-    "Lara St. John"
+   "trailer": "lhnZsUPNyQs",
+   "tagline": "From the Battlefield to the Mind Field",
+   "runtime": 89,
+   "featuring": [
+    "Andy Fermo",
+    "Neokahn Sulak",
+    "Enzo Cola",
+    "Elise Batchelor",
+    "Claire Fermo"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/grpQhtkqXrjMvx0Ay3lN0VniyR.jpg",
-   "trailer": "9TIq7F0evKU"
+   "language": "English",
+   "madeIn": [
+    "Australia",
+    "Netherlands"
+   ],
+   "imdbId": "tt35348663"
   },
   "movie:1404184": {
    "tmdbId": 1404184,
    "type": "movie",
+   "slug": "under-the-flags-the-sun",
    "title": "Under the Flags, the Sun",
    "overview": "This fully archival journey through the 35 years of Alfredo Stroessner’s regime in Paraguay reveals unseen footage and explores one of the longest-running dictatorships in history, whose effects still resonate today.",
    "directors": [
@@ -831,35 +1812,71 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/mDeLGptXyUkKGWNKqPQcIHXoaKo.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/pXXmAtKfEBdHuWf8Wh6uLfgZz4z.jpg",
-   "trailer": "j0S3uehaFRM"
-  },
-  "movie:1729736": {
-   "tmdbId": 1729736,
-   "type": "movie",
-   "title": "This is Not An Apple",
-   "overview": "Palestinian brothers Yahya and Reda live in a neighbourhood in Oslo where their role models are often local gangsters. What begins as a seemingly insignificant argument within the gang ends in an attempted murder that leaves Yahya with life-threatening injuries. Against all odds, he survives. The brothers are faced with the choice of taking revenge or choosing forgiveness.",
-   "directors": [
-    "Nefise Özkal Lorentzen"
+   "trailer": "j0S3uehaFRM",
+   "runtime": 90,
+   "featuring": [
+    "Alfredo Stroessner",
+    "Lyndon B. Johnson",
+    "Georges Pompidou",
+    "Jorge Rafael Videla",
+    "Andrés Rodríguez"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/uwwKo22q4dAnDoEUjt1WstgBKwi.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/41cw1qZoZGaEHjkylCyGRlk6hMg.jpg",
-   "trailer": "c50vH-d6yT4"
-  },
-  "movie:1640984": {
-   "tmdbId": 1640984,
-   "type": "movie",
-   "title": "Hex",
-   "overview": "Three young Norwegian women form a coven and start the black metal band Witch Club Satan. Before they know it, they are playing at major international festivals, but the battle has only just begun.",
-   "directors": [
-    "Maja Holand"
+   "language": "Spanish",
+   "originalTitle": "Bajo las banderas, el sol",
+   "madeIn": [
+    "United States of America",
+    "Argentina",
+    "Paraguay",
+    "France"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/6BhT2ocU5swP8Sf3JNomsVYeJru.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/xNYrnova9rhW6JZ94JGU5KfnLwX.jpg",
-   "trailer": "QPY0EVjvzjw"
+   "imdbId": "tt32279108"
+  },
+  "movie:1562590": {
+   "tmdbId": 1562590,
+   "type": "movie",
+   "slug": "dear-lara",
+   "title": "Dear Lara",
+   "overview": "Unveiling abuse in classical music's elite institutions — violinist Lara St. John fights for justice, exposing complicity and systemic misogyny.",
+   "directors": [
+    "Lara St. John"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/grpQhtkqXrjMvx0Ay3lN0VniyR.jpg",
+   "trailer": "9TIq7F0evKU",
+   "tagline": "The time has come to put the lives of survivors above the protection of power.",
+   "runtime": 95,
+   "featuring": [
+    "Lara St. John",
+    "Robie Brown",
+    "Lisamarie Vana",
+    "Mascha van Sloten",
+    "Zeneba Bowers",
+    "Katherine Needleman"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Canada",
+    "Netherlands",
+    "United Kingdom"
+   ],
+   "imdbId": "tt37022669"
+  },
+  "movie:1799210": {
+   "tmdbId": 1799210,
+   "type": "movie",
+   "slug": "the-children-of-rustoord",
+   "title": "The Children of Rustoord",
+   "overview": "Heusdensebaan in Oisterwijk is now home to Hotel De Leyhof, but the site was once occupied by Rustoord Children’s Home. From 1927 onwards, the home provided shelter for children from families facing difficulties, for example when a parent had died or a mother was unable to care for all her children. The home was run by the Sisters of Charity. In 1975, Rustoord closed its doors.",
+   "directors": [],
+   "poster": "https://image.tmdb.org/t/p/w342/dEqWMIDKrXVsP3jyvlQNKRgvvMk.jpg",
+   "trailer": "Y2bmE63nA7w",
+   "runtime": 55,
+   "originalTitle": "Kinderen van Rustoord"
   },
   "movie:1503771": {
    "tmdbId": 1503771,
    "type": "movie",
+   "slug": "the-beauty-of-errors",
    "title": "The Beauty of Errors",
    "overview": "A portrait of a relationship between three generations and how it shifts between the search for closeness, understanding and acceptance, as the teenage son steps closer to adulthood. The film continues to follow the lives of Tero and his son Henri, both previously featured in Kärkkäinen’s documentary The Living Room of a Nation.",
    "directors": [
@@ -867,11 +1884,101 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/oOPq6IPCoztaCnlUJzYF9jq5yuS.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/b3ivDVTwnblmRLskwPkAevrMA82.jpg",
-   "trailer": "aisvLNAeupM"
+   "trailer": "aisvLNAeupM",
+   "runtime": 94,
+   "featuring": [
+    "Tero Pihkakoski",
+    "Henri Pihkakoski"
+   ],
+   "language": "Finnish",
+   "originalTitle": "The Beauty of Errors - Kappale kauneinta Suomea",
+   "madeIn": [
+    "Finland",
+    "Sweden",
+    "Norway"
+   ],
+   "imdbId": "tt31995671"
+  },
+  "movie:1640984": {
+   "tmdbId": 1640984,
+   "type": "movie",
+   "slug": "hex",
+   "title": "Hex",
+   "overview": "Three young Norwegian women form a coven and start the black metal band Witch Club Satan. Before they know it, they are playing at major international festivals, but the battle has only just begun.",
+   "directors": [
+    "Maja Holand"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6BhT2ocU5swP8Sf3JNomsVYeJru.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/xNYrnova9rhW6JZ94JGU5KfnLwX.jpg",
+   "trailer": "QPY0EVjvzjw",
+   "runtime": 92,
+   "featuring": [
+    "Johanna Holt Kleive",
+    "Nikoline Spjelkavik",
+    "Victoria Røising"
+   ],
+   "genres": [
+    "Music"
+   ],
+   "language": "Norwegian",
+   "madeIn": [
+    "Norway"
+   ],
+   "imdbId": "tt39948152"
+  },
+  "movie:1729736": {
+   "tmdbId": 1729736,
+   "type": "movie",
+   "slug": "this-is-not-an-apple",
+   "title": "This is Not An Apple",
+   "overview": "Palestinian brothers Yahya and Reda live in a neighbourhood in Oslo where their role models are often local gangsters. What begins as a seemingly insignificant argument within the gang ends in an attempted murder that leaves Yahya with life-threatening injuries. Against all odds, he survives. The brothers are faced with the choice of taking revenge or choosing forgiveness.",
+   "directors": [
+    "Nefise Özkal Lorentzen"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/uwwKo22q4dAnDoEUjt1WstgBKwi.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/41cw1qZoZGaEHjkylCyGRlk6hMg.jpg",
+   "trailer": "c50vH-d6yT4",
+   "runtime": 87,
+   "featuring": [
+    "Reda B. Naser",
+    "Yahya B. Naser"
+   ],
+   "language": "Norwegian",
+   "originalTitle": "Dette er ikke et eple",
+   "madeIn": [
+    "Norway"
+   ],
+   "imdbId": "tt41993578"
+  },
+  "movie:1756543": {
+   "tmdbId": 1756543,
+   "type": "movie",
+   "slug": "paranormal-hollywood-haunting",
+   "title": "Paranormal Hollywood Haunting",
+   "overview": "British paranormal investigators explore a Hollywood mansion, uncovering true story of couple Daniel and Arthur, whose journey from homelessness to Hollywood history explores LGBTQ identity, resilience, and unexplained supernatural events.",
+   "directors": [
+    "Carl Medland"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/p6RzyednYXaEhbNsQFVmk1ziV4q.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jUwaAscUDiJNyIIgopLRdQMCRVt.jpg",
+   "trailer": "9pQeEBQojIk",
+   "tagline": "WE'RE NOT IN KANSAS ANYMORE TAZ.",
+   "runtime": 93,
+   "featuring": [
+    "Carl Medland",
+    "Mumataz Yildimar",
+    "Daniel P'Lopez",
+    "Ed Porter"
+   ],
+   "genres": [
+    "Thriller"
+   ],
+   "imdbId": "tt43452614"
   },
   "movie:1632599": {
    "tmdbId": 1632599,
    "type": "movie",
+   "slug": "the-slightest-touch",
    "title": "The Slightest Touch",
    "overview": "As she turns forty - an age doctors once said she would never reach - Emma Fogarty, who lives with the rare and extremely painful condition Epidermolysis Bullosa, takes up an offer from longtime friend Colin Farrell; they agree to run the Dublin Marathon together, with Colin pushing Emma's wheelchair for the final four kilometres. Also follow their lives and the enduring friendship that has sustained them through the years.",
    "directors": [
@@ -879,11 +1986,24 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/9o1Y6bwmPaKcljx2edkllyGm8nM.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/2Puf7XExGfbhJuFDhbbmGNnll46.jpg",
-   "trailer": "ApBoWNQF7c4"
+   "trailer": "ApBoWNQF7c4",
+   "runtime": 102,
+   "featuring": [
+    "Emma Fogarty",
+    "Colin Farrell"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom",
+    "Ireland",
+    "United States of America"
+   ],
+   "imdbId": "tt39461889"
   },
   "movie:1522259": {
    "tmdbId": 1522259,
    "type": "movie",
+   "slug": "country-doctor",
    "title": "Country Doctor",
    "overview": "Dr. James Graham, a physician in a struggling Oklahoma town, fights to save its bankrupt hospital.",
    "directors": [
@@ -892,23 +2012,43 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/m7XZWCBNYKUAULWSEfQKvpD8FpY.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/jwwcS0UF5YBjFkvqTjM2Mssiwt6.jpg",
-   "trailer": "0X6BeV6NsIc"
-  },
-  "movie:1756543": {
-   "tmdbId": 1756543,
-   "type": "movie",
-   "title": "Paranormal Hollywood Haunting",
-   "overview": "British paranormal investigators explore a Hollywood mansion, uncovering true story of couple Daniel and Arthur, whose journey from homelessness to Hollywood history explores LGBTQ identity, resilience, and unexplained supernatural events.",
-   "directors": [
-    "Carl Medland"
+   "trailer": "0X6BeV6NsIc",
+   "tagline": "Who is caring for rural America?",
+   "runtime": 38,
+   "language": "English",
+   "madeIn": [
+    "United States of America"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/p6RzyednYXaEhbNsQFVmk1ziV4q.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/jUwaAscUDiJNyIIgopLRdQMCRVt.jpg",
-   "trailer": "9pQeEBQojIk"
+   "imdbId": "tt37738705"
+  },
+  "movie:1655112": {
+   "tmdbId": 1655112,
+   "type": "movie",
+   "slug": "one-last-order",
+   "title": "One Last Order",
+   "overview": "A cherished drive-thru worker receives the day's proceeds as her going-away gift when the community queues up to bid her farewell on her last day in Gainesville.",
+   "directors": [
+    "Lauren DeFilippo",
+    "Sam Soko"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/ept9ZKHko1JbYPHEUxMK9cf6tzy.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7zhe6tkQVV8npDIMBQGxD9v45uY.jpg",
+   "trailer": "uxrhaidYnrw",
+   "runtime": 20,
+   "featuring": [
+    "Sighle Williams"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Kenya"
+   ],
+   "imdbId": "tt39646510"
   },
   "movie:1811599": {
    "tmdbId": 1811599,
    "type": "movie",
+   "slug": "tyson-fury",
    "title": "Tyson Fury",
    "overview": "Discover the man beneath the Fury in this feature length documentary from Lucy Wilcox. With exclusive access to Paris, Tyson and John Fury, this film charts the rise, fall and redemption of the one and only Gypsy King.",
    "directors": [
@@ -916,22 +2056,25 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/wAffyCmjFZOI3uvmVvpg7Lz8Yn5.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/u4KtIySbavQYUxGHjjV3zT0H17c.jpg",
-   "trailer": "jb01qWUn62A"
-  },
-  "movie:1154210": {
-   "tmdbId": 1154210,
-   "type": "movie",
-   "title": "The Korean Black Eyes",
-   "overview": "In 1966, the girl band ‘All Stars’ was formed centered on drummer Kitty (Jun-im Lim), a third-year high school student. They left the country with an understanding that they were going to perform in Southeast Asia. However, they arrived and put on a spot to perform, sometimes risking their lives, for the soldiers on the battlefield of Vietnam. Kitty was recognized for her musical talent, and formed the five-member girl band ‘Korean Black Eyes’ in Bangkok in 1971. The band moved onto Beirut as their base and toured throughout the Middle East and Africa, including Egypt and Nigeria. When they entered Spain in 1973, they went on a concert tour with Cliff Richard, Julio Iglesias, and others. They recorded an album in Portugal at the suggestion of a local producer, but had to quickly escape the country when the military revolution broke out. Wherever they went, including Vietnam and Lebanon, they encountered turbulent scenes of modern history.",
-   "directors": [
-    "Kim Dae-hyun"
+   "trailer": "jb01qWUn62A",
+   "runtime": 90,
+   "featuring": [
+    "Tyson Fury",
+    "Paris Fury",
+    "John Fury"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/3ZqpVBpyMByFJr9ViWW8xeFgDVM.jpg",
-   "trailer": "92Hqjlbk2p4"
+   "genres": [
+    "Drama"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom"
+   ]
   },
   "movie:1532477": {
    "tmdbId": 1532477,
    "type": "movie",
+   "slug": "in-i-in-motion",
    "title": "In-I In Motion",
    "overview": "In 2007, Juliette Binoche and Akram Khan took a break and co-created In-I, an original performance that toured the world. Today, Juliette Binoche revisits that exhilarating journey. Through unfamiliar images, she reflects on creation, its challenges, and the personal transformation it brings as a filmmaker.",
    "directors": [
@@ -939,23 +2082,24 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/kFIVqcaHcGfMEBBLMmp4DlbQaGb.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/4J4OlqCWFF6b9F4HuMxWmWlneBF.jpg",
-   "trailer": "mSkuzxi8hG4"
-  },
-  "movie:1511305": {
-   "tmdbId": 1511305,
-   "type": "movie",
-   "title": "Edhi Alice: Take",
-   "overview": "Edhi Alice: TAKE begins from the perspective of Alice, a gaffer pushed out of the field, as she confronts her own body, and transitions into the journey of another protagonist, Edhi, who discovers a new sense of embodiment. The narrative of transition expands beyond a personal life story to encompass relationships, bodily experiences, and the sense of space, becoming a cinematic transformation.",
-   "directors": [
-    "Kim Il-ran"
+   "trailer": "mSkuzxi8hG4",
+   "tagline": "Start with the sensations.",
+   "runtime": 127,
+   "featuring": [
+    "Juliette Binoche",
+    "Akram Kahn"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/eIgtTES9D7JZmVwCRsW7ALPWmJr.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/ua8MjqvAP2zdwSAOPZMJBBAdE2P.jpg",
-   "trailer": "ZxR2eucDlnI"
+   "language": "French",
+   "originalTitle": "En nous",
+   "madeIn": [
+    "France"
+   ],
+   "imdbId": "tt37964027"
   },
   "movie:1736731": {
    "tmdbId": 1736731,
    "type": "movie",
+   "slug": "muguruza-fm-40-tour",
    "title": "Muguruza FM 40 Tour",
    "overview": "Four decades after taking to the stage for the first time, Fermín Muguruza launches into his last major tour: a collective journey to celebrate 40 years of music, engagement and cultural resistance. This music documentary captures the pulse of that voyage: concerts packed to the hilt, endless kilometres on the road, all sorts of encounters on the way and a shared energy that stretches beyond generations, from the bands Kortatu and Negu Gorriak to his current solo career.​",
    "directors": [
@@ -963,23 +2107,18 @@
     "Fermin Muguruza"
    ],
    "poster": "https://image.tmdb.org/t/p/w342/8wtF8PKOLibEZsgKOvK1UMFTbpu.jpg",
-   "trailer": "6U4AvYL6i4Y"
-  },
-  "movie:1814847": {
-   "tmdbId": 1814847,
-   "type": "movie",
-   "title": "La Muerte Es Renacer",
-   "overview": "\"La Muerte Es Renacer\" is about inner story from Latin Culture.",
-   "directors": [
-    "Nima Beheshtinia"
+   "trailer": "6U4AvYL6i4Y",
+   "runtime": 103,
+   "language": "Basque",
+   "madeIn": [
+    "Spain"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/ec2ySM4cgQ65iLvx4h9WbOuWhxw.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/m8BXtKlPU0vBO5SLgtMbWhIgLIg.jpg",
-   "trailer": "7QDEglXfHTc"
+   "imdbId": "tt43686299"
   },
   "movie:1526227": {
    "tmdbId": 1526227,
    "type": "movie",
+   "slug": "while-the-green-grass-grows-a-diary-in-seven-parts",
    "title": "While the Green Grass Grows: A Diary in Seven Parts",
    "overview": "A chronicle of the wonders found in everyday life and events. Tragic and comic, philosophical and poetic, Mettler’s diary combines personal conversations, family history, memories, and love. The film gracefully explores our shared destiny and elevates the diary to the level of visionary cinema. Its meditative approach and investigative gaze create a space to capture the fragility of relationships, where reflections on the human condition and the environment merge in a stream of consciousness. Mettler travels between Switzerland and Canada, visits the mountains of New Mexico, and teaches at a film school in Cuba. He is always accompanied by the camera, “a machine that carries me through time.”",
    "directors": [
@@ -987,35 +2126,19 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/tnJPauwB05TT9Bjmd6nYZ0gT8JP.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/kfPcYbMmQQoTmrEOkRP0ui7WeJd.jpg",
-   "trailer": "f3Zfiy8DaI0"
-  },
-  "movie:1098534": {
-   "tmdbId": 1098534,
-   "type": "movie",
-   "title": "Orwell: 2+2=5",
-   "overview": "George Orwell was one of the most visionary authors of the 20th century, whose novels 1984 and Animal Farm foretold a chilling, authoritarian future. Acclaimed director Raoul Peck interweaves clips, readings from Orwell's diary, cinematic references, and modern-day footage to craft not only a portrait of the writer, but a fresh take on how prophetic his work has become.",
-   "directors": [
-    "Raoul Peck"
+   "trailer": "f3Zfiy8DaI0",
+   "runtime": 420,
+   "language": "English",
+   "madeIn": [
+    "Canada",
+    "Switzerland"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/qG1LjcK8ohi4mSJ9j8KHUs5svbe.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/iVqXcSZs4ye2HTROwUYQgy3Dx7c.jpg",
-   "trailer": "npwmcJxgLic"
-  },
-  "movie:142195": {
-   "tmdbId": 142195,
-   "type": "movie",
-   "title": "A Bigger Splash",
-   "overview": "After a difficult break-up, Hockney is left unable to paint, much to the concern of his friends.",
-   "directors": [
-    "Jack Hazan"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/2yQ5Sx1cNTnRQUjDeMZdbOuTIIP.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/ecIp5PjuT6hkz3TduDloAvRX8nx.jpg",
-   "trailer": "m2sEkXKxQs8"
+   "imdbId": "tt33336144"
   },
   "movie:629704": {
    "tmdbId": 629704,
    "type": "movie",
+   "slug": "the-booksellers",
    "title": "The Booksellers",
    "overview": "What once seemed like an esoteric world now seems essential to our culture: the community of rare book dealers and collectors who, in their love of the delicacy and tactility of books, are helping to keep the printed word alive. D.W. Young’s elegant and entertaining documentary, executive produced by Parker Posey, is a lively tour of New York’s book world, past and present, from the Park Avenue Armory’s annual Antiquarian Book Fair, where original editions can fetch hundreds of thousands of dollars; to the Strand and Argosy book stores, still standing against all odds; to the beautifully crammed apartments of collectors and buyers. The film features a litany of special guests, including Fran Lebowitz, Susan Orlean, Gay Talese, and a community of dedicated book dealers who strongly believe in the wonder of the object and the everlasting importance of what’s inside.",
    "directors": [
@@ -1023,11 +2146,25 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/qGi8ZCxoy0z7yO4ByT5hAksmErK.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/dBOHnvQxiONQslgiE3tJIPxnOh0.jpg",
-   "trailer": "ymcRRt3Ix04"
+   "trailer": "ymcRRt3Ix04",
+   "runtime": 99,
+   "featuring": [
+    "Parker Posey",
+    "Fran Lebowitz",
+    "Gay Talese",
+    "Susan Benne",
+    "David Bergman"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt9355194"
   },
   "movie:1418515": {
    "tmdbId": 1418515,
    "type": "movie",
+   "slug": "monk-in-pieces",
    "title": "Monk in Pieces",
    "overview": "Visionary composer and performer Meredith Monk overcame hostile critics to become one of the great artists of her time. In her seventh decade of creativity, she ponders how such singular work can continue without her.",
    "directors": [
@@ -1036,23 +2173,32 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/rDD5MqFljMeWBu36riwFFtoEvQu.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/tPFXjvkisHHSTfQI9o2wWhcDm46.jpg",
-   "trailer": "Lt-AvtsCsLg"
-  },
-  "movie:1165656": {
-   "tmdbId": 1165656,
-   "type": "movie",
-   "title": "IU CONCERT - The Golden Hour",
-   "overview": "Experience IU's first ever global cinema release, as the first Korean female singer to perform at the iconic Olympic Main Stadium in Seoul, the largest stadium in South Korea and the dream venue for music artists.  Starting with a thrilling acapella opening, the setlist is filled with beloved songs from across IU’s career. From the floating strawberry moon balloon, to fireworks and a stunning drone show, the enchanting stage production is a must-see in cinemas.  Embrace the happiness of the unforgettable 'Golden Hour' through IU's legendary performances and a fully-charged live show.",
-   "directors": [
-    "An Jong-ho"
+   "trailer": "Lt-AvtsCsLg",
+   "tagline": "\"She among all of us was--and still is--the uniquely gifted one.\" -Phillip Glass",
+   "runtime": 94,
+   "featuring": [
+    "Meredith Monk",
+    "David Byrne",
+    "Björk",
+    "Ping Chong",
+    "Joanna Lynn-Jacobs",
+    "John Schaefer"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/60sR9GYAa0lpRKnNrJwez3qgsOH.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/f5FjEf3u4ybAKfqUainQwJhZPy2.jpg",
-   "trailer": "UJPfPBCwNg4"
+   "genres": [
+    "Music"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Germany",
+    "France"
+   ],
+   "imdbId": "tt34542628"
   },
   "movie:1340449": {
    "tmdbId": 1340449,
    "type": "movie",
+   "slug": "wisdom-of-happiness",
    "title": "Wisdom of Happiness",
    "overview": "A deeply intimate and highly cinematic documentary featuring the Dalai Lama, who, at nearly ninety year of age, offers practical advice for navigating the 21st century's challenges.",
    "directors": [
@@ -1061,11 +2207,108 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/qigUDdP23FhLmMVKcy3TTdwFqQu.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/yyXEDXqI9iWXqtgn7pg5zoDGxDd.jpg",
-   "trailer": "ln-JHLtnH7A"
+   "trailer": "ln-JHLtnH7A",
+   "tagline": "A Heart-to-Heart with the Dalai Lama",
+   "runtime": 90,
+   "featuring": [
+    "Tenzin Gyatso"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Switzerland"
+   ],
+   "imdbId": "tt33055004"
+  },
+  "movie:1098534": {
+   "tmdbId": 1098534,
+   "type": "movie",
+   "slug": "orwell-2-2-5",
+   "title": "Orwell: 2+2=5",
+   "overview": "George Orwell was one of the most visionary authors of the 20th century, whose novels 1984 and Animal Farm foretold a chilling, authoritarian future. Acclaimed director Raoul Peck interweaves clips, readings from Orwell's diary, cinematic references, and modern-day footage to craft not only a portrait of the writer, but a fresh take on how prophetic his work has become.",
+   "directors": [
+    "Raoul Peck"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/qG1LjcK8ohi4mSJ9j8KHUs5svbe.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/iVqXcSZs4ye2HTROwUYQgy3Dx7c.jpg",
+   "trailer": "npwmcJxgLic",
+   "runtime": 119,
+   "featuring": [
+    "Damian Lewis",
+    "George Orwell",
+    "George W. Bush",
+    "Viktor Orbán",
+    "Colin Powell",
+    "Joseph Stalin"
+   ],
+   "language": "English",
+   "madeIn": [
+    "France",
+    "United States of America"
+   ],
+   "imdbId": "tt27052428"
+  },
+  "movie:142195": {
+   "tmdbId": 142195,
+   "type": "movie",
+   "slug": "a-bigger-splash",
+   "title": "A Bigger Splash",
+   "overview": "After a difficult break-up, Hockney is left unable to paint, much to the concern of his friends.",
+   "directors": [
+    "Jack Hazan"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/2yQ5Sx1cNTnRQUjDeMZdbOuTIIP.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ecIp5PjuT6hkz3TduDloAvRX8nx.jpg",
+   "trailer": "m2sEkXKxQs8",
+   "tagline": "David Hockney and the painting that transformed the art world",
+   "runtime": 106,
+   "featuring": [
+    "David Hockney",
+    "Celia Birtwell",
+    "Mo McDermott",
+    "Henry Geldzahler",
+    "John Kasmin",
+    "Ossie Clark"
+   ],
+   "genres": [
+    "Drama"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom"
+   ],
+   "imdbId": "tt0071219"
+  },
+  "movie:1165656": {
+   "tmdbId": 1165656,
+   "type": "movie",
+   "slug": "iu-concert-the-golden-hour",
+   "title": "IU CONCERT - The Golden Hour",
+   "overview": "Experience IU's first ever global cinema release, as the first Korean female singer to perform at the iconic Olympic Main Stadium in Seoul, the largest stadium in South Korea and the dream venue for music artists.  Starting with a thrilling acapella opening, the setlist is filled with beloved songs from across IU’s career. From the floating strawberry moon balloon, to fireworks and a stunning drone show, the enchanting stage production is a must-see in cinemas.  Embrace the happiness of the unforgettable 'Golden Hour' through IU's legendary performances and a fully-charged live show.",
+   "directors": [
+    "An Jong-ho"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/60sR9GYAa0lpRKnNrJwez3qgsOH.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/f5FjEf3u4ybAKfqUainQwJhZPy2.jpg",
+   "trailer": "UJPfPBCwNg4",
+   "runtime": 171,
+   "featuring": [
+    "淫片网 448832𝟵.com  黄漫片网 448856𝟵.com"
+   ],
+   "genres": [
+    "Music"
+   ],
+   "language": "Korean",
+   "originalTitle": "아이유 콘서트 : 더 골든 아워",
+   "madeIn": [
+    "South Korea"
+   ],
+   "imdbId": "tt28997098"
   },
   "movie:1769785": {
    "tmdbId": 1769785,
    "type": "movie",
+   "slug": "the-breath-of-freedom",
    "title": "The Breath Of Freedom",
    "overview": "Because taming and caring for the wild horses is demanding, they are released back into the mountains before winter arrives, left to their fate in the hope of capturing them again the following year. Witnessed through the eyes of a young boy, this story explores, through images, the delicate balance between nature and humanity, and the tension between ownership and freedom.",
    "directors": [
@@ -1073,11 +2316,33 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/hFdCffxnEG91479JSEy8UBxkEUg.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/SmIrNoHrZJkEHKM0zz41uexIbP.jpg",
-   "trailer": "xHNA12scwZg"
+   "trailer": "xHNA12scwZg",
+   "runtime": 32,
+   "language": "Turkish",
+   "originalTitle": "Özgürlüğün Nefesi",
+   "madeIn": [
+    "Turkey"
+   ]
+  },
+  "movie:1747216": {
+   "tmdbId": 1747216,
+   "type": "movie",
+   "slug": "renoir-love",
+   "title": "Renoir & Love",
+   "overview": "Pierre-Auguste Renoir is one of the world’s favourite artists, a founding member of the Impressionist movement and a constantly evolving artist. With exclusive access to the National Gallery’s new exciting show of the same name (3 October 2026 – 31 January 2027), Exhibition on Screen will bring Renoir’s world class works to cinema audiences. Be transported back to a Parisian summer of love through the eyes of a true visionary. An unmissable opportunity to fall in love with Renoir this winter.",
+   "directors": [
+    "Ali Ray"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/50h9zwCwzrTgnaHJ1GZwT5UyuMV.jpg",
+   "trailer": "eP653O5gvOU",
+   "runtime": 90,
+   "language": "English",
+   "imdbId": "tt43754565"
   },
   "movie:1595210": {
    "tmdbId": 1595210,
    "type": "movie",
+   "slug": "nuisance-bear",
    "title": "Nuisance Bear",
    "overview": "A polar bear is forced to navigate a human world of tourists, wildlife officers, and hunters as its ancient migration collides with modern life. When a sacred predator is branded a nuisance, it becomes unclear who truly belongs in this shared landscape.",
    "directors": [
@@ -1086,22 +2351,25 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/An1QdmHWNxX2V03kq3akOCid69r.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/hqDiQteXWMoyezEmbPy0nRYdUST.jpg",
-   "trailer": "dL4lFKY8Cy4"
-  },
-  "movie:1747216": {
-   "tmdbId": 1747216,
-   "type": "movie",
-   "title": "Renoir & Love",
-   "overview": "Pierre-Auguste Renoir is one of the world’s favourite artists, a founding member of the Impressionist movement and a constantly evolving artist. With exclusive access to the National Gallery’s new exciting show of the same name (3 October 2026 – 31 January 2027), Exhibition on Screen will bring Renoir’s world class works to cinema audiences. Be transported back to a Parisian summer of love through the eyes of a true visionary. An unmissable opportunity to fall in love with Renoir this winter.",
-   "directors": [
-    "Ali Ray"
+   "trailer": "dL4lFKY8Cy4",
+   "tagline": "The bear is back.",
+   "runtime": 89,
+   "featuring": [
+    "Mike Tunalaaq Gibbons",
+    "Saad Kassis-Mohamed"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/50h9zwCwzrTgnaHJ1GZwT5UyuMV.jpg",
-   "trailer": "eP653O5gvOU"
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "Canada",
+    "United Kingdom"
+   ],
+   "imdbId": "tt39150922"
   },
   "movie:951018": {
    "tmdbId": 951018,
    "type": "movie",
+   "slug": "a-fox-under-a-pink-moon",
    "title": "A Fox Under a Pink Moon",
    "overview": "At just 16, Soraya is already creating stunning drawings and sculptures that are as beautiful as they are dark. This strong-willed Afghan sculptor and illustrator has been trying for five years to escape Iran and join her mother in Austria.",
    "directors": [
@@ -1109,11 +2377,22 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/67hNnsOQmC6DDYf7SuZc3ReldsB.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/sdMLtTxADRF3WAHmtL9oUFNY5wt.jpg",
-   "trailer": "HBlaV0xOBLI"
+   "trailer": "HBlaV0xOBLI",
+   "runtime": 76,
+   "language": "Persian",
+   "originalTitle": "روباه و ماه صورتی",
+   "madeIn": [
+    "Iran",
+    "France",
+    "United Kingdom",
+    "United States of America"
+   ],
+   "imdbId": "tt18163224"
   },
   "movie:1786136": {
    "tmdbId": 1786136,
    "type": "movie",
+   "slug": "the-lost-cache",
    "title": "The Lost Cache",
    "overview": "History, science and exploration converged in a quest to find the lost camera of one of climbing’s most iconic photographers and cartographers, Bradford Washburn. Set against the backdrop of the pioneering lensmen’s storied 1937 Mount Lucania expedition, this film blurs the lines between adventure documentary, treasure hunt and meditation on why we risk everything to chase the improbable.",
    "directors": [
@@ -1121,106 +2400,45 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/iP7Z6UHrBItOvex7NAGyMsHU6hw.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/sbBzG9YqpWri4uAGLAYMPMKYi9R.jpg",
-   "trailer": "kenvVcgaQHM"
+   "trailer": "kenvVcgaQHM",
+   "tagline": "Odds are never zero ... searching for Bradford Washburn's lost camera",
+   "runtime": 63,
+   "featuring": [
+    "Griffin Post",
+    "Jeremy Jones",
+    "Robin Van Gyn",
+    "Dora Medrzycka",
+    "Michael Sfraga",
+    "Jimmy Chin"
+   ],
+   "madeIn": [
+    "United States of America"
+   ]
   },
   "movie:1643130": {
    "tmdbId": 1643130,
    "type": "movie",
+   "slug": "remember-the-summit",
    "title": "Remember the Summit",
    "overview": "Sir Chris Bonington’s return to Torres del Paine, 62 years after the first ascent of the Central Tower.  At 91 years old, and while living with Alzheimer’s disease, the documentary accompanies Bonington in a profoundly human return: an attempt to reconnect with memories that time has erased, but that the Patagonian landscape still seems to guard. During the filming, Chris once again set foot on the territory of Estancia Cerro Guido, closing a circle between past and present, between the epic of mountaineering and the fragility of memory.",
    "directors": [
     "Timothy Dhalleine"
    ],
    "poster": "https://image.tmdb.org/t/p/w342/fsGVbF7W0YCivuabOJRHuJulUTq.jpg",
-   "trailer": "-Dk7SPkvFRg"
-  },
-  "movie:1500112": {
-   "tmdbId": 1500112,
-   "type": "movie",
-   "title": "Women & the Wind",
-   "overview": "Shot over the course of 30 days at sea, filmmaker Alizé Jireh documents the group’s voyage across the North Atlantic—from moments of stillness and calm to the chaos of storms and setbacks. With an observational approach and an eye for the emotional and physical rhythms of life at sea, Jireh captures not just the external landscape, but the internal shifts that come with navigating the vast unknown.",
-   "directors": [
-    "Alizé Jireh",
-    "Kiana Weltzien"
+   "trailer": "-Dk7SPkvFRg",
+   "tagline": "A legacy of Sir Chris Bonington",
+   "featuring": [
+    "Chris Bonington"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/nErDsB6IFyfYoLrUWwRAnRhndOW.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/xgDJqFxCUQGK67V2CF50FSQQkTe.jpg",
-   "trailer": "4qM7TChwwsE"
-  },
-  "movie:1771402": {
-   "tmdbId": 1771402,
-   "type": "movie",
-   "title": "1 in 2",
-   "overview": "Nearly one in two of us will be diagnosed with cancer at some point in our lives. David Nicholas Wilkinson is one of them, twice over. 1 in 2 follows Wilkinson through his own treatment, where he discovers a steep rise in bowel cancer among people far too young to be screened for it, and far too young, it seems, to be believed.",
-   "directors": [
-    "David Wilkinson"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/7hudlkH1rGKVaMR4phOKYPCfJX7.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/8i0Zn97qutpzF3uylIxyMUkl4Ll.jpg",
-   "trailer": "sy0Jkwf3e-4"
-  },
-  "movie:1715868": {
-   "tmdbId": 1715868,
-   "type": "movie",
-   "title": "Good Luck, Kid",
-   "overview": "Grit, gear, growth – this film is a portrait of Taylor Shaffer’s coming-of-age as a photographer and filmmaker, following his creative trajectory as he shepherds Alex Honnold and Tommy Caldwell through a 2,500-mile expedition to attempt a single-day traverse of the Devil’s Thumb massif and finds his artistic voice amid risk, friendship, and a changing Alaskan landscape.",
-   "directors": [
-    "Renan Öztürk"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/ap3Y7Pny1m5Dd6SfgUloRprvyiP.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/wqml8vV0dMtlorZtmyPBD7SRXyH.jpg",
-   "trailer": "z_R60mF2QXs"
-  },
-  "movie:1496304": {
-   "tmdbId": 1496304,
-   "type": "movie",
-   "title": "Amazomania",
-   "overview": "In 1996, a Brazilian official and a Swedish journalist ventured into the Amazon to document the isolated Korubo tribe caught in escalating land conflicts. Initially hailed as a heroic breakthrough, the footage now demands to be reexamined. Uncovering the hidden costs of “discovery,” the film confronts the colonial legacy and exposes the long-term repercussions for the Korubo.",
-   "directors": [
-    "Nathan Grossman"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/pYtnlC7sETuVfOWQ1WKLuZ9y3oS.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/uNwE9ckM2IHhrmDD47pin6UnWSq.jpg",
-   "trailer": "UcKfEwSEkIY"
-  },
-  "movie:1686182": {
-   "tmdbId": 1686182,
-   "type": "movie",
-   "title": "Skyclimber: Scaling the Eiffel Tower",
-   "overview": "Urban free climber Adam Lockwood attempts to scale the Eiffel Tower in a documentary that is equal parts high-altitude adventure and intimate personal portrait. A film that builds its tension with the precision of a heist movie, mapping every step of an audacious ascent.",
-   "directors": [
-    "Nick Hardie"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/fqHQIdzGXkgBCrQx84i69IWNCNA.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/w0IAT9iWrklDB3xKTKRCTHtSPix.jpg",
-   "trailer": "haYd3CFAITI"
-  },
-  "movie:1679802": {
-   "tmdbId": 1679802,
-   "type": "movie",
-   "title": "Excalibur, A Pursuit in Process",
-   "overview": "Brooke Raboutou takes on Excalibur (5.15c / 9b+) in Arco, Italy. This film documents the process, hardships, and relentless perseverance—both mental and physical—behind her pursuit of one of the hardest routes in the world. At just 18 moves, Excalibur is a brutally condensed testpiece of pure power endurance on razor-sharp holds. Brooke’s ascent not only marks a leap in her career – becoming the first woman to climb 5.15c / 9b+ – but also represents a meaningful step in closing the long-standing gap between men and women at the absolute cutting edge of sport climbing.",
-   "directors": [
-    "Ben Neilson"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/tOcTrlTlRB466gusjq514zuUoYZ.jpg",
-   "trailer": "t_TRhsVMkVU"
-  },
-  "movie:1622868": {
-   "tmdbId": 1622868,
-   "type": "movie",
-   "title": "My Grandmother’s Sketchbook: Under Mont Blanc",
-   "overview": "A 30-year-old sketchbook leads Max Romey to the Mont Blanc region. The Alaska-based watercolor artist and environmental advocate sets out to follow in the footsteps of his grandmother, who visited this landscape in the late 1990s and captured it in dozens of drawings. With mountain guide Hillary Gerardi, Max attempts to locate each sketch’s exact origin point. Many match perfectly—until the Mer de Glace throws him off course. The glacier has changed too much in 30 years to recognize.",
-   "directors": [
-    "Max Romey"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/6lLWBlOClCNW4QsO2ZqQufTNZCS.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/oQddmpvmhE5MF7EGef1bRwBeszZ.jpg",
-   "trailer": "CY8IjYILXq4"
+   "language": "English",
+   "madeIn": [
+    "Chile"
+   ]
   },
   "movie:1445251": {
    "tmdbId": 1445251,
    "type": "movie",
+   "slug": "voices-from-the-abyss",
    "title": "Voices from the Abyss",
    "overview": "La Quebrada Cliff Divers in Acapulco, Guerrero, earn their living by diving 100 feet into the sea from a dangerous cliff as part of a thrilling show at La Quebrada. In Voices from the Abyss, we explore the nature of their dives through slow-motion footage, personal testimonies, and an original poem recited by the divers themselves.",
    "directors": [
@@ -1229,24 +2447,114 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/lhMfj2YFjB4LlcTvoPPwg4eBZEC.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/doRcxvt2prUnVLCCpKNSfnMgB6G.jpg",
-   "trailer": "femqTe2oXiQ"
-  },
-  "movie:1809835": {
-   "tmdbId": 1809835,
-   "type": "movie",
-   "title": "The Hillbilly Scientist",
-   "overview": "While modern running has evolved toward sleek curation, optimisation, and commercialisation, Lazarus Lake has spent 50 years designing formats with an unapologetic, honest difficulty. The Hillbilly Scientist reveals that Laz’s cruellest courses are rooted in a deeply scientific understanding of human psychology and physical limits. This is the only official documentary dedicated to the creator of the Barkley Marathons and Big’s Backyard Ultra. Filmed over more than a year, it reveals the man behind the myth through never-before-seen footage, exclusive testimonials, and exceptional access to Laz’s world.",
-   "directors": [
-    "Paul Mellor",
-    "Luke Jarmey"
+   "trailer": "femqTe2oXiQ",
+   "runtime": 23,
+   "featuring": [
+    "Clavadistas de la Quebrada"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/vqKm2739WhuEABnC3iDjl5ZWPWe.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/a4sWKGHcwv8WFXrC97zjMacT90u.jpg",
-   "trailer": "xWM-wMFWYBM"
+   "language": "Spanish",
+   "originalTitle": "Las voces del despeñadero",
+   "madeIn": [
+    "Mexico"
+   ],
+   "imdbId": "tt36161223"
+  },
+  "movie:1771402": {
+   "tmdbId": 1771402,
+   "type": "movie",
+   "slug": "1-in-2",
+   "title": "1 in 2",
+   "overview": "Nearly one in two of us will be diagnosed with cancer at some point in our lives. David Nicholas Wilkinson is one of them, twice over. 1 in 2 follows Wilkinson through his own treatment, where he discovers a steep rise in bowel cancer among people far too young to be screened for it, and far too young, it seems, to be believed.",
+   "directors": [
+    "David Wilkinson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/7hudlkH1rGKVaMR4phOKYPCfJX7.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8i0Zn97qutpzF3uylIxyMUkl4Ll.jpg",
+   "trailer": "sy0Jkwf3e-4",
+   "tagline": "This documentary may just save your life.",
+   "runtime": 142,
+   "featuring": [
+    "David Wilkinson",
+    "Laura Lee",
+    "Amaryllis Roberts",
+    "David Burke",
+    "Sada Hamilton",
+    "Dale Vimalachandran"
+   ],
+   "language": "English",
+   "imdbId": "tt33506764"
+  },
+  "movie:1715868": {
+   "tmdbId": 1715868,
+   "type": "movie",
+   "slug": "good-luck-kid",
+   "title": "Good Luck, Kid",
+   "overview": "Grit, gear, growth – this film is a portrait of Taylor Shaffer’s coming-of-age as a photographer and filmmaker, following his creative trajectory as he shepherds Alex Honnold and Tommy Caldwell through a 2,500-mile expedition to attempt a single-day traverse of the Devil’s Thumb massif and finds his artistic voice amid risk, friendship, and a changing Alaskan landscape.",
+   "directors": [
+    "Renan Öztürk"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/ap3Y7Pny1m5Dd6SfgUloRprvyiP.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/wqml8vV0dMtlorZtmyPBD7SRXyH.jpg",
+   "trailer": "z_R60mF2QXs",
+   "runtime": 22,
+   "featuring": [
+    "Alex Honnold",
+    "Tommy Caldwell",
+    "Taylor Shaffer"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ]
+  },
+  "movie:1500112": {
+   "tmdbId": 1500112,
+   "type": "movie",
+   "slug": "women-the-wind",
+   "title": "Women & the Wind",
+   "overview": "Shot over the course of 30 days at sea, filmmaker Alizé Jireh documents the group’s voyage across the North Atlantic—from moments of stillness and calm to the chaos of storms and setbacks. With an observational approach and an eye for the emotional and physical rhythms of life at sea, Jireh captures not just the external landscape, but the internal shifts that come with navigating the vast unknown.",
+   "directors": [
+    "Alizé Jireh",
+    "Kiana Weltzien"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/nErDsB6IFyfYoLrUWwRAnRhndOW.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/xgDJqFxCUQGK67V2CF50FSQQkTe.jpg",
+   "trailer": "4qM7TChwwsE",
+   "tagline": "One catamaran, three women, and the North Atlantic ocean",
+   "runtime": 90,
+   "featuring": [
+    "Kiana Weltzien",
+    "Lærke Heilmann",
+    "Alizé Jireh"
+   ],
+   "language": "English",
+   "imdbId": "tt31830901"
+  },
+  "movie:1496304": {
+   "tmdbId": 1496304,
+   "type": "movie",
+   "slug": "amazomania",
+   "title": "Amazomania",
+   "overview": "In 1996, a Brazilian official and a Swedish journalist ventured into the Amazon to document the isolated Korubo tribe caught in escalating land conflicts. Initially hailed as a heroic breakthrough, the footage now demands to be reexamined. Uncovering the hidden costs of “discovery,” the film confronts the colonial legacy and exposes the long-term repercussions for the Korubo.",
+   "directors": [
+    "Nathan Grossman"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/pYtnlC7sETuVfOWQ1WKLuZ9y3oS.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uNwE9ckM2IHhrmDD47pin6UnWSq.jpg",
+   "trailer": "UcKfEwSEkIY",
+   "runtime": 93,
+   "language": "Swedish",
+   "madeIn": [
+    "Sweden",
+    "Denmark",
+    "France"
+   ],
+   "imdbId": "tt39920935"
   },
   "movie:1756742": {
    "tmdbId": 1756742,
    "type": "movie",
+   "slug": "out-of-breath",
    "title": "Out of Breath",
    "overview": "OUT OF BREATH shines the spotlight on the human cost paid by people living with sleep apnea and their loved ones. Yet, for all the darkness they face there is also light at the end of the tunnel as their hope, courage, and perseverance brings them closer to the promise of successful treatment.",
    "directors": [
@@ -1254,23 +2562,24 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/cKnu9KN0HZ0JxzCU8RBp4d9xutU.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/7JoDoh7SxwQz42aJi5SCg3imi7L.jpg",
-   "trailer": "tJZSI9CaYqE"
-  },
-  "movie:1517111": {
-   "tmdbId": 1517111,
-   "type": "movie",
-   "title": "Boorman and the Devil",
-   "overview": "Featuring commentary from surviving participants, as well as other filmmakers and critics, this documentary chronicles the career of director John Boorman and the tumultuous production of his film Exorcist II: The Heretic, exploring its critical and commercial failure, how it changed the industry, and the importance of risk-taking in art.",
-   "directors": [
-    "David Kittredge"
+   "trailer": "tJZSI9CaYqE",
+   "tagline": "1 Billion People Gasping for Air",
+   "runtime": 83,
+   "featuring": [
+    "Victor Boyd",
+    "Danielle Davidson",
+    "Billy Toto",
+    "Kalyn McKenzie"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/4HJzmhP8iMzkIQ7cjr2zfIcReiK.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/igS7kqXk6KJX7pe3xOHsWfKrgmp.jpg",
-   "trailer": "a_VjhXJ0N54"
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ]
   },
   "movie:1442281": {
    "tmdbId": 1442281,
    "type": "movie",
+   "slug": "observer",
    "title": "Observer",
    "overview": "Filmmaker Ian Cheney embarks on an experiment in which he brings a series of keen-eyed observers - scientists, artists, a hunter - to a range of locations around the world, often without telling them where they are going, and asks them simply to describe what they see. What unfolds is a deep exploration and celebration of the power of observation: what happens when you find new ways to sense and perceive the world around you?",
    "directors": [
@@ -1278,59 +2587,46 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/6WXHNcRr7RSdgPD26dBEFFTg2a3.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/8mTsqKKjHTUpPInRlegDgh1TVgN.jpg",
-   "trailer": "of7Hfd0bNFQ"
+   "trailer": "of7Hfd0bNFQ",
+   "tagline": "There's a universe everywhere you turn",
+   "runtime": 95,
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ]
   },
-  "movie:1285321": {
-   "tmdbId": 1285321,
+  "movie:1517111": {
+   "tmdbId": 1517111,
    "type": "movie",
-   "title": "Children of The Wicker Man",
-   "overview": "Fifty years after The Wicker Man, director Robin Hardy’s lost papers resurface, prompting his sons Justin and Dominic to explore the legacy of the cult classic, and their father. Together, they uncover the truth behind Robin’s role in the film and confront the complexities of independent filmmaking, family, and myth.",
+   "slug": "boorman-and-the-devil",
+   "title": "Boorman and the Devil",
+   "overview": "Featuring commentary from surviving participants, as well as other filmmakers and critics, this documentary chronicles the career of director John Boorman and the tumultuous production of his film Exorcist II: The Heretic, exploring its critical and commercial failure, how it changed the industry, and the importance of risk-taking in art.",
    "directors": [
-    "Justin Hardy"
+    "David Kittredge"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/cGALR5w2wkKteIXHmGrA1NSaSbt.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/p3rtTCpejKR3UyFEIBkoVokBZeE.jpg",
-   "trailer": "Lnjx6OjX050"
-  },
-  "movie:1775096": {
-   "tmdbId": 1775096,
-   "type": "movie",
-   "title": "Enter the Television",
-   "overview": "From Tom Seymour creator of the VHS Massacre Trilogy. Enter the Television is a feature-length documentary exploring the dark corners of television from obscure commercials to unconventional cable programming. It examines the evolution of media through an underground lens, revealing how independent voices survive within systems controlled by powerful media corporations.",
-   "directors": [
-    "Thomas Edward Seymour"
+   "poster": "https://image.tmdb.org/t/p/w342/4HJzmhP8iMzkIQ7cjr2zfIcReiK.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/igS7kqXk6KJX7pe3xOHsWfKrgmp.jpg",
+   "trailer": "a_VjhXJ0N54",
+   "tagline": "Every artist has his demon.",
+   "runtime": 112,
+   "featuring": [
+    "John Boorman",
+    "Louise Fletcher",
+    "Karyn Kusama",
+    "Mike Flanagan",
+    "Joe Dante",
+    "Simon Abrams"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/j16NRU3EZV9krlJJvTR8lkypTWE.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/oGFlCuIm2peLpAxHj31Lozrhl5H.jpg",
-   "trailer": "cyiECR7s-E4"
-  },
-  "movie:1669763": {
-   "tmdbId": 1669763,
-   "type": "movie",
-   "title": "The Dance of the Kokorrdit",
-   "overview": "A Wounaan teenager and a leader of their community venture into the Darién in search of a sacred bird. Along the way, they will face the dangers that threaten their territory and their culture.",
-   "directors": [
-    "Elio B Cunampio",
-    "Guido Bilbao"
+   "language": "English",
+   "madeIn": [
+    "United States of America"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/u7tvuYcwylVaSGC5cnpFGOpUqiX.jpg",
-   "trailer": "h1linE9zKUs"
-  },
-  "movie:1785138": {
-   "tmdbId": 1785138,
-   "type": "movie",
-   "title": "DEQ",
-   "overview": "\"DEQ\" is a legacy in Kurdish Culture. A bridge between Human and Nature and a way to find meaning of life.",
-   "directors": [
-    "Nima Beheshtinia"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/u7pupuDvqLR4cTtawP76K9Htl3R.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/jcaMRkFON8PQHW1h4douBDNOUf6.jpg",
-   "trailer": "tFhbF6BxpWQ"
+   "imdbId": "tt37654454"
   },
   "movie:1596306": {
    "tmdbId": 1596306,
    "type": "movie",
+   "slug": "kikuyu-land",
    "title": "Kikuyu Land",
    "overview": "As a Nairobi journalist probes a land battle entangling the local government and a powerful multinational corporation, covered wounds are revealed and family secrets are exposed.",
    "directors": [
@@ -1339,31 +2635,139 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/a5YGraLDDgg6kTB5MxBzzrWjyWc.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/axxBd5qfi1uCOJI7JKBWFG1tMHz.jpg",
-   "trailer": "UdUztX9eiAo"
+   "trailer": "UdUztX9eiAo",
+   "tagline": "The soil is fertile but the land is cursed.",
+   "runtime": 96,
+   "language": "English",
+   "madeIn": [
+    "Kenya"
+   ],
+   "imdbId": "tt38390390"
+  },
+  "movie:1285321": {
+   "tmdbId": 1285321,
+   "type": "movie",
+   "slug": "children-of-the-wicker-man",
+   "title": "Children of The Wicker Man",
+   "overview": "Fifty years after The Wicker Man, director Robin Hardy’s lost papers resurface, prompting his sons Justin and Dominic to explore the legacy of the cult classic, and their father. Together, they uncover the truth behind Robin’s role in the film and confront the complexities of independent filmmaking, family, and myth.",
+   "directors": [
+    "Justin Hardy"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/cGALR5w2wkKteIXHmGrA1NSaSbt.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/p3rtTCpejKR3UyFEIBkoVokBZeE.jpg",
+   "trailer": "Lnjx6OjX050",
+   "runtime": 92,
+   "featuring": [
+    "Justin Hardy",
+    "Dominic Hardy",
+    "Tim Plester",
+    "Gary Carpenter",
+    "Peter Snell",
+    "Seamus Flannery"
+   ],
+   "genres": [
+    "Horror"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom"
+   ],
+   "imdbId": "tt32582337"
+  },
+  "movie:1775096": {
+   "tmdbId": 1775096,
+   "type": "movie",
+   "slug": "enter-the-television",
+   "title": "Enter the Television",
+   "overview": "From Tom Seymour creator of the VHS Massacre Trilogy. Enter the Television is a feature-length documentary exploring the dark corners of television from obscure commercials to unconventional cable programming. It examines the evolution of media through an underground lens, revealing how independent voices survive within systems controlled by powerful media corporations.",
+   "directors": [
+    "Thomas Edward Seymour"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/j16NRU3EZV9krlJJvTR8lkypTWE.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/oGFlCuIm2peLpAxHj31Lozrhl5H.jpg",
+   "trailer": "cyiECR7s-E4",
+   "tagline": "Exploring the dark corners of commercials and unconventional cable programming",
+   "runtime": 74,
+   "featuring": [
+    "Lloyd Kaufman",
+    "Rhonda Shear",
+    "Debbie Rochon",
+    "Bill D. Russell",
+    "John Patrick Brennan",
+    "Thomas Edward Seymour"
+   ],
+   "language": "English",
+   "imdbId": "tt39117304"
+  },
+  "movie:1669763": {
+   "tmdbId": 1669763,
+   "type": "movie",
+   "slug": "the-dance-of-the-kokorrdit",
+   "title": "The Dance of the Kokorrdit",
+   "overview": "A Wounaan teenager and a leader of their community venture into the Darién in search of a sacred bird. Along the way, they will face the dangers that threaten their territory and their culture.",
+   "directors": [
+    "Elio B Cunampio",
+    "Guido Bilbao"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/u7tvuYcwylVaSGC5cnpFGOpUqiX.jpg",
+   "trailer": "h1linE9zKUs",
+   "runtime": 76,
+   "language": "Spanish",
+   "originalTitle": "El Viaje del Kokorrdit",
+   "madeIn": [
+    "Panama",
+    "Mexico"
+   ]
   },
   "movie:1591604": {
    "tmdbId": 1591604,
    "type": "movie",
+   "slug": "soul-patrol",
    "title": "Soul Patrol",
    "overview": "From deep behind enemy lines, a hidden chapter of American military history is uncovered, prompting the question of whether reckoning with the past can bring peace to those who lived it. The Vietnam War’s first Black special operations team reunites to tell their story.",
    "directors": [
     "J.M. Harper"
    ],
    "poster": "https://image.tmdb.org/t/p/w342/sav8yadAjfykfFlZuFsclmrN9st.jpg",
-   "trailer": "D8LIYqag82E"
+   "trailer": "D8LIYqag82E",
+   "runtime": 100,
+   "featuring": [
+    "Danielle Lyn",
+    "Michael Oloyede",
+    "Deion Smith"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt38952225"
   },
   "movie:1798383": {
    "tmdbId": 1798383,
    "type": "movie",
+   "slug": "wolves-up-close-with-bertie-gregory",
    "title": "Wolves Up Close with Bertie Gregory",
    "overview": "Reconnecting with a pack of wolves he has followed for seven years, Bertie sets out to capture one of the Arctic's most dangerous and rarely filmed hunts: wolves taking on a bull moose, prey roughly ten times their size. Led by Kona, a striking white breeding male, the pack faces a critical winter as dwindling food supplies, an encroaching rival wolf and an aging leader threaten its survival.",
    "directors": [],
    "poster": "https://image.tmdb.org/t/p/w342/fopmDU345HPkMC9iUaNQEY0uRkk.jpg",
-   "trailer": "3hCMUaREGL8"
+   "trailer": "3hCMUaREGL8",
+   "runtime": 44,
+   "featuring": [
+    "Bertie Gregory",
+    "Albert \"Butch\" Saunders",
+    "Mike Reimer"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "United Kingdom"
+   ],
+   "imdbId": "tt49241977"
   },
   "movie:1728838": {
    "tmdbId": 1728838,
    "type": "movie",
+   "slug": "wayward-how-women-changed-snowboarding",
    "title": "Wayward: How Women Changed Snowboarding",
    "overview": "Wayward is a feature documentary about the women who changed snowboarding by refusing to follow the status quo. Spanning 4 decades of progression, the film weaves together rare archival footage and firsthand accounts from pioneering athletes who fought for visibility, opportunity, and respect in a male-dominated industry. As the sport has evolved and new generations push boundaries further than ever before, Wayward examines what it took to get here, and what still lies ahead. This is a story of resilience, rebellion, and the power of those who shaped a sport & a culture into what it is today.",
    "directors": [
@@ -1371,22 +2775,57 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/zSUEFztuscGYLpTopsAM6Sts7Mo.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/nQDiDykO5RjCk6YwYEpEESxbfhm.jpg",
-   "trailer": "4CIicSfsqBo"
+   "trailer": "4CIicSfsqBo",
+   "tagline": "How women changed snowboarding",
+   "runtime": 104,
+   "featuring": [
+    "Anna Gasser",
+    "Barrett Christy",
+    "Brooke Geery",
+    "Chanelle Sladics",
+    "Circe Wallace",
+    "Darrah Reid-McLean"
+   ],
+   "genres": [
+    "History",
+    "Adventure",
+    "Action"
+   ],
+   "madeIn": [
+    "United States of America",
+    "Canada"
+   ]
   },
   "movie:1786281": {
    "tmdbId": 1786281,
    "type": "movie",
+   "slug": "gentle-by-birth",
    "title": "Gentle by Birth",
    "overview": "After her 23-year-old brother dies of an overdose, filmmaker Doree Simon Hatfield investigates the stigma she believes blocked his access to treatment and support. Her search takes her from her family’s living room to harm reduction sites, music festivals, and the halls of the Pennsylvania Capitol, where she meets experts working to change how addiction is understood and treated. But as her own fear and stigma around drugs begin to dissolve, Doree makes a radical choice to try them herself—transforming the film from a dissection of her brother’s addiction into a provocative reckoning that threatens her family’s fragile healing.",
    "directors": [
     "Doree Simon Hatfield"
    ],
    "poster": "https://image.tmdb.org/t/p/w342/eyoRrU8bQXMhxotHePBCn7xUjBM.jpg",
-   "trailer": "PaoEYEd46WE"
+   "trailer": "PaoEYEd46WE",
+   "runtime": 100,
+   "featuring": [
+    "Carl Hart",
+    "Maia Szalavitz",
+    "Kassandra Frederique",
+    "Bethany Hallam",
+    "Gary Mendell",
+    "Doree Simon Hatfield"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt48913651"
   },
   "movie:1776125": {
    "tmdbId": 1776125,
    "type": "movie",
+   "slug": "2020-hindsight-or-a-disaster-of-pandemic-level-proportions",
    "title": "2020 Hindsight or (A Disaster of Pandemic Level Proportions)",
    "overview": "Six years after a school trip became one of the first casualties of the pandemic, a filmmaker revisits the footage he shot from that weekend, tracking down his old classmates, especially one he could not forget.",
    "directors": [
@@ -1394,21 +2833,79 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/wzT0ii0GDAdvq8R9DlTtwjXiV5i.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/7z7eiCeixYxHqYSgP8Fj5pI7hOv.jpg",
-   "trailer": "r6yoUsllcKo"
+   "trailer": "r6yoUsllcKo",
+   "tagline": "Do I like control? Yeah, I'm a film director.",
+   "runtime": 21,
+   "featuring": [
+    "Aaron Saldaña Cisneros",
+    "Angelica Dulen"
+   ],
+   "genres": [
+    "Comedy"
+   ],
+   "language": "English"
+  },
+  "movie:1807218": {
+   "tmdbId": 1807218,
+   "type": "movie",
+   "slug": "everything-is-not-ok",
+   "title": "Everything Is Not OK",
+   "overview": "Artist Judith Blum Reddy's work, shaped by the Holocaust and displacement across continents, is explored alongside fellow artists who channeled displacement into art, framed by poetry and themes of memory and resistance.",
+   "directors": [
+    "Dev Benegal"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/RQir12OiuIg4bwAWNDOaEKClT2.jpg",
+   "trailer": "sc6ufCIP9Gk",
+   "runtime": 82,
+   "featuring": [
+    "Adam Bakri",
+    "Judith Blum Reddy",
+    "Annemarie Jacir",
+    "Dev Benegal"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt34379182"
   },
   "movie:1495044": {
    "tmdbId": 1495044,
    "type": "movie",
+   "slug": "born-sexy-yesterday-decoding-the-enigma-of-beauty",
    "title": "BORN SEXY YESTERDAY: Decoding the Enigma of Beauty",
    "overview": "The phrase \"Born Sexy Yesterday\" is derived from the 1950 film \"Born Yesterday.\" However beneath this superficial portrayal of some women lies a more complex understanding , revealing deeper narratives that resonate with many.  October 1, 1985. The chilling emptiness in Michele Avila's eyes. Her murder, a savage ballet of teenage fury, ripped through the town, festering wounds exposing the venomous underbelly of a seemingly innocent friendship. Jealousy, a serpent coiled in the heart of adolescence, struck with the force of a viper, revealing the terrifying depths of envy's reach. These weren't just girls; they were predators.  Women are born with many layers, a mix between good and evil. Ironically of all the positive tropes that can validate the existence of women, why is it that \"Born Sexy Yesterday\" is a trope that resonates with our male counterparts the most?",
    "directors": [],
    "poster": "https://image.tmdb.org/t/p/w342/fzXqKE1645nqc3ncWToKUH5AkPT.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/8S5vIlKMBsH48T8Wtr8UfUKK4Ek.jpg",
-   "trailer": "OXuTQ57x2io"
+   "trailer": "OXuTQ57x2io",
+   "tagline": "Seductive Warfare: The Battle for the Soul",
+   "runtime": 140,
+   "featuring": [
+    "Emunah La-Paz",
+    "Lavender Lashay",
+    "Kim Corder",
+    "Sabella Dawson",
+    "Carly Stoltenberg",
+    "Jake Stoltenberg"
+   ],
+   "genres": [
+    "Crime",
+    "Drama",
+    "Mystery",
+    "History"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "France",
+    "United Kingdom"
+   ]
   },
   "movie:1757215": {
    "tmdbId": 1757215,
    "type": "movie",
+   "slug": "american-amazon",
    "title": "American Amazon",
    "overview": "A spectacular journey through natural wonders of a part of the country Grammy-winning musician and actor Jon Batiste knows very well: the vast network of wetlands spanning Alabama, Florida, Georgia, Louisiana, and the Carolinas.",
    "directors": [
@@ -1416,22 +2913,21 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/iXEjoGWBRzInoSkGnTLGeuARV79.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/lS23e2Dcutz6I0g87yAkx2FKiT.jpg",
-   "trailer": "FytNn_9GP-Q"
-  },
-  "movie:1770051": {
-   "tmdbId": 1770051,
-   "type": "movie",
-   "title": "Animals",
-   "overview": "Still trapped in a doomsday bunker the scientist continues his mission to narrate over footage of the natural world, hoping if animals ever return to this planet they will be cherished.",
-   "directors": [
-    "Anthonee Smith"
+   "trailer": "FytNn_9GP-Q",
+   "tagline": "The world's best kept secret.",
+   "featuring": [
+    "Jon Batiste"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/q7tb4tli0pZpzzYPADNIwDHzODn.jpg",
-   "trailer": "VUkx17F9WnM"
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt44872039"
   },
   "movie:1596303": {
    "tmdbId": 1596303,
    "type": "movie",
+   "slug": "the-last-first-winter-k2",
    "title": "The Last First: Winter K2",
    "overview": "A historic race to become the first to summit K2 in winter unravels into tragedy, exposing how ambition, ego, and the pursuit of glory can be as dangerous as the mountain itself.",
    "directors": [
@@ -1439,11 +2935,28 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/97QpXbNNXj2eQ1MdmhFdGlU0jnW.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/wtzSwtnQ4RsRbV5cc114Nb1q3b0.jpg",
-   "trailer": "zgGpyr5MFK8"
+   "trailer": "zgGpyr5MFK8",
+   "tagline": "Reach the summit or lose everything.",
+   "runtime": 98,
+   "featuring": [
+    "John Snorri Sigurjónsson",
+    "Muhammad Ali Sadpara",
+    "Sajid Sadpara",
+    "Lina Moey",
+    "Angela Benavides",
+    "Elia Saikaly"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America",
+    "United Kingdom"
+   ],
+   "imdbId": "tt39150288"
   },
   "movie:1629356": {
    "tmdbId": 1629356,
    "type": "movie",
+   "slug": "capturing-bigfoot",
    "title": "Capturing Bigfoot",
    "overview": "On October 20, 1967, Roger Patterson captured 60 seconds of film showing a creature walking through the Northern California woods—footage that became the most analyzed and debated in history. Fifty-seven years later, a reel of 16mm film discovered in a safe changes everything, revealing the untold story behind the world's greatest mystery, told for the first time by Patterson's own son and the people who were there.",
    "directors": [
@@ -1451,11 +2964,29 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/t1ACTBkvJu6RrSmWIwOvmGvDbi1.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/tFP1ckHdNhrv8NK3nXF7L5sNngm.jpg",
-   "trailer": "aEOzQTdjVYc"
+   "trailer": "aEOzQTdjVYc",
+   "runtime": 103,
+   "featuring": [
+    "Clint Patterson",
+    "Bob Heironimus",
+    "Bob Gimlin",
+    "Vaile Thompson",
+    "Bill Munns",
+    "Jeffrey Meldrum"
+   ],
+   "genres": [
+    "Mystery"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt31457111"
   },
   "movie:1756268": {
    "tmdbId": 1756268,
    "type": "movie",
+   "slug": "paging-hezbollah",
    "title": "Paging Hezbollah",
    "overview": "Paging Hezbollah is the extraordinary true story behind an intelligence operation that seemed impossible—how it was conceived, engineered and carried out, as well as the profound geopolitical consequences that followed.",
    "directors": [
@@ -1463,23 +2994,19 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/CCFiWX5MFh7UukM5oMoBe2VpNg.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/xX0QLmlluhugIRzombX5owE7nh4.jpg",
-   "trailer": "oTNnqivCH2Y"
-  },
-  "movie:1596319": {
-   "tmdbId": 1596319,
-   "type": "movie",
-   "title": "Closure",
-   "overview": "After his teenage son goes missing, Daniel scours the depths of the Vistula River, torn between the dread of a fatal leap and the hope that his son may still be alive.",
-   "directors": [
-    "Michał Marczak"
+   "trailer": "oTNnqivCH2Y",
+   "tagline": "Outsmarted, Infiltrated, Humiliated.",
+   "runtime": 93,
+   "language": "English",
+   "madeIn": [
+    "United States of America"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/6K19w1M8ga9ur7yHs6PkdSqoPUz.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/gFI1HmPtsDXEUGydyPpF4yE7xkc.jpg",
-   "trailer": "C-Q9Zl259yU"
+   "imdbId": "tt47647390"
   },
   "movie:1162823": {
    "tmdbId": 1162823,
    "type": "movie",
+   "slug": "who-killed-alex-odeh",
    "title": "Who Killed Alex Odeh?",
    "overview": "In October 1985, Santa Ana, California was shaken by a brazen act of political violence when Palestinian American Alex Odeh, a beloved teacher and community leader, was killed by a tripwire bomb planted in his office. Despite substantial evidence and identified suspects, the case was never solved. Who Killed Alex Odeh? reopens the mystery, tracking a renewed investigation in real time as new leads emerge, long-buried records come to light, and the forces behind a political assassination are finally confronted.",
    "directors": [
@@ -1488,33 +3015,68 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/gWN2cQ79PXGc0Vyf5KmAeu3zKgY.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/w2xj76FYLdPSwka9f7aFgmWx5EG.jpg",
-   "trailer": "NHt55w3k_TM"
+   "trailer": "NHt55w3k_TM",
+   "runtime": 83,
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt39150038"
+  },
+  "movie:1596319": {
+   "tmdbId": 1596319,
+   "type": "movie",
+   "slug": "closure",
+   "title": "Closure",
+   "overview": "After his teenage son goes missing, Daniel scours the depths of the Vistula River, torn between the dread of a fatal leap and the hope that his son may still be alive.",
+   "directors": [
+    "Michał Marczak"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6K19w1M8ga9ur7yHs6PkdSqoPUz.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/gFI1HmPtsDXEUGydyPpF4yE7xkc.jpg",
+   "trailer": "C-Q9Zl259yU",
+   "runtime": 105,
+   "featuring": [
+    "Daniel Dymiński"
+   ],
+   "language": "Polish",
+   "originalTitle": "Bez końca",
+   "madeIn": [
+    "Poland",
+    "France"
+   ],
+   "imdbId": "tt39075417"
   },
   "movie:1565345": {
    "tmdbId": 1565345,
    "type": "movie",
+   "slug": "the-bridge",
    "title": "The Bridge",
    "overview": "Young Israeli survivors of the October 7 attacks travel to Los Angeles for Rock ’n’ Roll Fantasy Camp, discovering healing and strength through music and shared resilience.",
    "directors": [
     "Brad Allgood"
    ],
    "poster": "https://image.tmdb.org/t/p/w342/fPkeszK2q9RiFZOeJDUw5UrOJDk.jpg",
-   "trailer": "CjP-_gNqqAI"
-  },
-  "movie:1807218": {
-   "tmdbId": 1807218,
-   "type": "movie",
-   "title": "Everything Is Not OK",
-   "overview": "Artist Judith Blum Reddy's work, shaped by the Holocaust and displacement across continents, is explored alongside fellow artists who channeled displacement into art, framed by poetry and themes of memory and resistance.",
-   "directors": [
-    "Dev Benegal"
+   "trailer": "CjP-_gNqqAI",
+   "tagline": "A journey from trauma to healing through music.",
+   "runtime": 70,
+   "featuring": [
+    "Yaniv Avitan",
+    "Raz Shifer",
+    "Dov Engel",
+    "Bar Rudaeff",
+    "Valeria Dvorkin",
+    "Ben King"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/RQir12OiuIg4bwAWNDOaEKClT2.jpg",
-   "trailer": "sc6ufCIP9Gk"
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ]
   },
   "movie:1596300": {
    "tmdbId": 1596300,
    "type": "movie",
+   "slug": "once-upon-a-time-in-harlem",
    "title": "Once Upon a Time in Harlem",
    "overview": "A decade after his death, genre-defying filmmaker William Greaves has one last trick up his sleeve with what he considered the most important event he captured on film: a 1972 party he engineered with the living luminaries of the Harlem Renaissance.",
    "directors": [
@@ -1523,40 +3085,27 @@
    ],
    "poster": "https://image.tmdb.org/t/p/w342/9eukk5gby8NZCwraiC7mloZmasP.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/wk9dLaji3CXpl5FxIYBXR5ojcY6.jpg",
-   "trailer": "ESnX3LQbCVI"
-  },
-  "tv:306179": {
-   "tmdbId": 306179,
-   "type": "tv",
-   "title": "Awkwafina: The Unlikely Cook",
-   "directors": [],
-   "overview": "Hollywood actor and comedian Nora Lum (a.k.a. Awkwafina) is the descendant of restaurant royalty...but she can't cook. Join the star on an inspiring culinary road trip as she learns the craft and attempts to revive her family's beloved Chinese eatery.",
-   "poster": "https://image.tmdb.org/t/p/w342/32rE04LRLyAM62Xdkqw5EIi0FyB.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/vSMW22GgtzgsRaAmZaTM6xtPdNP.jpg",
-   "trailer": "uCAZET6TZ60"
-  },
-  "tv:336199": {
-   "tmdbId": 336199,
-   "type": "tv",
-   "title": "Crime and Punishment in America",
-   "directors": [],
-   "overview": "Explores the history of criminal justice in America — from the pre-colonial period to 21st century mass incarceration.",
-   "poster": "https://image.tmdb.org/t/p/w342/acfpMRRWRgVrsyA2Rb2gxV3BDgQ.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/2n9v3fBXyb0aId224d8Y4GIFqJK.jpg",
-   "trailer": "v_2DNrMUSjI"
-  },
-  "tv:325484": {
-   "tmdbId": 325484,
-   "type": "tv",
-   "title": "New Wave",
-   "directors": [],
-   "overview": "The fascinating story of New Wave music and the decade from 1977 to 1987 that brought alternative culture into the mainstream.",
-   "poster": "https://image.tmdb.org/t/p/w342/8g4uZAZ7hZPVgWRDeJN8zQhI0v2.jpg",
-   "trailer": "-VgR9KfJM2c"
+   "trailer": "ESnX3LQbCVI",
+   "tagline": "You are cordially invited to a film 50 years in the making.",
+   "runtime": 100,
+   "featuring": [
+    "Aaron Douglas",
+    "Richard Bruce Nugent",
+    "Ernest Crichlow",
+    "Eubie Blake",
+    "Leigh Whipper",
+    "Arna Bontemps"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt39163347"
   },
   "tv:330808": {
    "tmdbId": 330808,
    "type": "tv",
+   "slug": "beyond-society",
    "title": "Beyond Society",
    "directors": [
     "J. A. Bayona",
@@ -1565,11 +3114,52 @@
    "overview": "The story of Flight 571 did not end on the day the survivors were rescued from the Andes. For them, and for the families of those who did not return, the hardest part was about to begin. Whilst silence reigned amongst those directly involved, the rest of the world continued to try to understand what had happened through books, films and documentaries. But how does one rebuild a life after such a tragedy?",
    "poster": "https://image.tmdb.org/t/p/w342/mI0LygMjn0ke4tZi3kpgJiqaxGW.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/2XgaheMWrJUt1eHGBhFCPTIS2b3.jpg",
-   "trailer": "Kbqd8r-7oRY"
+   "trailer": "Kbqd8r-7oRY",
+   "language": "Spanish",
+   "originalTitle": "Más allá de la sociedad",
+   "imdbId": "tt43659288",
+   "network": "Netflix"
+  },
+  "tv:325484": {
+   "tmdbId": 325484,
+   "type": "tv",
+   "slug": "new-wave",
+   "title": "New Wave",
+   "directors": [],
+   "overview": "The fascinating story of New Wave music and the decade from 1977 to 1987 that brought alternative culture into the mainstream.",
+   "poster": "https://image.tmdb.org/t/p/w342/8g4uZAZ7hZPVgWRDeJN8zQhI0v2.jpg",
+   "trailer": "-VgR9KfJM2c",
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt46218028",
+   "network": "MGM+"
+  },
+  "tv:336199": {
+   "tmdbId": 336199,
+   "type": "tv",
+   "slug": "crime-and-punishment-in-america",
+   "title": "Crime and Punishment in America",
+   "directors": [],
+   "overview": "Explores the history of criminal justice in America — from the pre-colonial period to 21st century mass incarceration.",
+   "poster": "https://image.tmdb.org/t/p/w342/acfpMRRWRgVrsyA2Rb2gxV3BDgQ.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/2n9v3fBXyb0aId224d8Y4GIFqJK.jpg",
+   "trailer": "v_2DNrMUSjI",
+   "featuring": [
+    "Keith David"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United States of America"
+   ],
+   "imdbId": "tt40939600",
+   "network": "PBS"
   },
   "tv:338435": {
    "tmdbId": 338435,
    "type": "tv",
+   "slug": "the-great-food-con",
    "title": "The Great Food Con",
    "directors": [
     "Craig Reucassel"
@@ -1577,7 +3167,36 @@
    "overview": "Craig Reucassel reveals how ultra-processed foods are now linked to a range of harmful health effects and asks - do we really know what we're eating anymore?",
    "poster": "https://image.tmdb.org/t/p/w342/vLGKob4luRlywXZG28cqIkMjFnr.jpg",
    "backdrop": "https://image.tmdb.org/t/p/w780/hFLh4rah80uWzbzktBm5h8KftxE.jpg",
-   "trailer": "i5YJOxb6nAc"
+   "trailer": "i5YJOxb6nAc",
+   "featuring": [
+    "Craig Reucassel"
+   ],
+   "language": "English",
+   "madeIn": [
+    "Australia"
+   ],
+   "network": "ABC TV"
+  },
+  "tv:306179": {
+   "tmdbId": 306179,
+   "type": "tv",
+   "slug": "awkwafina-the-unlikely-cook",
+   "title": "Awkwafina: The Unlikely Cook",
+   "directors": [],
+   "overview": "Hollywood actor and comedian Nora Lum (a.k.a. Awkwafina) is the descendant of restaurant royalty...but she can't cook. Join the star on an inspiring culinary road trip as she learns the craft and attempts to revive her family's beloved Chinese eatery.",
+   "poster": "https://image.tmdb.org/t/p/w342/32rE04LRLyAM62Xdkqw5EIi0FyB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/vSMW22GgtzgsRaAmZaTM6xtPdNP.jpg",
+   "trailer": "uCAZET6TZ60",
+   "tagline": "Awkwafina's reviving the family restaurant. Now she just needs to learn how to cook.",
+   "featuring": [
+    "Awkwafina"
+   ],
+   "language": "English",
+   "madeIn": [
+    "United Kingdom"
+   ],
+   "imdbId": "tt38992068",
+   "network": "Apple TV"
   }
  },
  "countries": {
@@ -1589,23 +3208,23 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1603262",
-     "date": "2026-10-29",
-     "where": "In cinemas"
-    },
-    {
      "key": "movie:1596296",
      "date": "2026-10-09",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1603262",
+     "date": "2026-10-29",
      "where": "In cinemas"
     },
     {
      "key": "movie:1388805",
      "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -1666,6 +3285,11 @@
      "where": "In cinemas"
     },
     {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
+    },
+    {
      "key": "tv:338435",
      "date": "2026-11-24",
      "where": "Series on ABC TV"
@@ -1685,11 +3309,6 @@
      "where": "In cinemas in Germany"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
-     "where": "In cinemas in Germany"
-    },
-    {
      "key": "movie:1388805",
      "date": "2026-09-30",
      "where": "In cinemas"
@@ -1697,6 +3316,11 @@
     {
      "key": "movie:1393151",
      "date": "2026-09-24",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas in Germany"
     },
     {
@@ -1715,13 +3339,13 @@
      "where": "In cinemas in Germany"
     },
     {
-     "key": "movie:1646767",
-     "date": "2026-10-15",
+     "key": "movie:1774428",
+     "date": "2026-10-11",
      "where": "In cinemas in Germany"
     },
     {
-     "key": "movie:1774428",
-     "date": "2026-10-11",
+     "key": "movie:1646767",
+     "date": "2026-10-15",
      "where": "In cinemas in Germany"
     },
     {
@@ -1750,6 +3374,11 @@
      "key": "movie:1635584",
      "date": "2026-11-15",
      "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix in Germany"
     },
     {
      "key": "movie:1371557",
@@ -1811,13 +3440,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-09-30",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-09-30",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -1826,13 +3455,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1788522",
-     "date": "2026-10-15",
+     "key": "movie:577054",
+     "date": "2026-09-30",
      "where": "In cinemas"
     },
     {
-     "key": "movie:577054",
-     "date": "2026-09-30",
+     "key": "movie:1788522",
+     "date": "2026-10-15",
      "where": "In cinemas"
     },
     {
@@ -1924,6 +3553,11 @@
      "where": "In cinemas"
     },
     {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
+    },
+    {
      "key": "movie:1597242",
      "date": "2026-12-02",
      "where": "In cinemas"
@@ -1948,13 +3582,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-09-30",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-09-30",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -1995,11 +3629,6 @@
      "where": "Series on Apple TV"
     },
     {
-     "key": "movie:1739735",
-     "date": "2026-11-17",
-     "where": "In cinemas"
-    },
-    {
      "key": "movie:1706746",
      "date": "2026-12-03",
      "where": "In cinemas"
@@ -2034,11 +3663,6 @@
      "key": "tv:306179",
      "date": "2026-11-06",
      "where": "Series on Apple TV"
-    },
-    {
-     "key": "movie:1630801",
-     "date": "2026-11-08",
-     "where": "Canal+"
     },
     {
      "key": "movie:1449729",
@@ -2080,11 +3704,6 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
-     "where": "In cinemas"
-    },
-    {
      "key": "movie:1388805",
      "date": "2026-09-30",
      "where": "In cinemas"
@@ -2092,6 +3711,11 @@
     {
      "key": "movie:1393151",
      "date": "2026-09-24",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -2110,13 +3734,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1646767",
-     "date": "2026-10-15",
+     "key": "movie:1774428",
+     "date": "2026-10-11",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1774428",
-     "date": "2026-10-11",
+     "key": "movie:1646767",
+     "date": "2026-10-15",
      "where": "In cinemas"
     }
    ],
@@ -2145,6 +3769,11 @@
      "key": "movie:1765072",
      "date": "2026-11-19",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
     },
     {
      "key": "movie:1371557",
@@ -2196,13 +3825,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-10-16",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-10-16",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     }
    ],
@@ -2247,13 +3876,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-09-30",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-09-30",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -2267,13 +3896,13 @@
      "where": "In cinemas in the UK"
     },
     {
-     "key": "movie:1517111",
-     "date": "2026-09-25",
+     "key": "movie:1596306",
+     "date": "2026-10-02",
      "where": "In cinemas in the UK"
     },
     {
-     "key": "movie:1596306",
-     "date": "2026-10-02",
+     "key": "movie:1517111",
+     "date": "2026-09-25",
      "where": "In cinemas in the UK"
     },
     {
@@ -2289,16 +3918,6 @@
     {
      "key": "movie:1669763",
      "date": "2026-10-05",
-     "where": "In cinemas in the UK"
-    },
-    {
-     "key": "movie:1686182",
-     "date": "2026-10-08",
-     "where": "In cinemas in the UK"
-    },
-    {
-     "key": "movie:1785138",
-     "date": "2026-09-29",
      "where": "In cinemas in the UK"
     }
    ],
@@ -2349,17 +3968,12 @@
      "where": "In cinemas in the UK"
     },
     {
-     "key": "movie:1715868",
-     "date": "2026-11-19",
-     "where": "In cinemas in the UK"
-    },
-    {
      "key": "movie:1442281",
      "date": "2026-11-19",
      "where": "In cinemas in the UK"
     },
     {
-     "key": "movie:1622868",
+     "key": "movie:1715868",
      "date": "2026-11-19",
      "where": "In cinemas in the UK"
     },
@@ -2374,22 +3988,12 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1809835",
-     "date": "2026-11-20",
-     "where": "In cinemas in the UK"
-    },
-    {
      "key": "movie:1786136",
      "date": "2026-11-21",
      "where": "In cinemas in the UK"
     },
     {
      "key": "movie:1643130",
-     "date": "2026-11-21",
-     "where": "In cinemas in the UK"
-    },
-    {
-     "key": "movie:1679802",
      "date": "2026-11-21",
      "where": "In cinemas in the UK"
     },
@@ -2402,6 +4006,11 @@
      "key": "movie:1496304",
      "date": "2026-11-22",
      "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
     },
     {
      "key": "movie:1515139",
@@ -2433,13 +4042,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-09-30",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-09-30",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -2507,6 +4116,11 @@
      "key": "movie:1555218",
      "date": "2026-10-03",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1803043",
+     "date": "2026-10-20",
+     "where": "In cinemas"
     }
    ],
    "comingSoon": [
@@ -2565,13 +4179,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1303398",
-     "date": "2026-10-02",
+     "key": "movie:1616685",
+     "date": "2026-10-15",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1616685",
-     "date": "2026-10-15",
+     "key": "movie:1303398",
+     "date": "2026-10-02",
      "where": "In cinemas"
     },
     {
@@ -2624,6 +4238,11 @@
      "key": "movie:1537518",
      "date": "2026-10-01",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1799210",
+     "date": "2026-10-14",
+     "where": "In cinemas"
     }
    ],
    "comingSoon": [
@@ -2667,24 +4286,24 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1603262",
-     "date": "2026-10-29",
-     "where": "In cinemas in Australia"
-    },
-    {
      "key": "movie:1596296",
      "date": "2026-10-23",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1603262",
+     "date": "2026-10-29",
      "where": "In cinemas in Australia"
     },
     {
      "key": "movie:1388805",
      "date": "2026-09-30",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas in Australia"
     },
     {
      "key": "movie:1715598",
@@ -2734,6 +4353,11 @@
      "where": "In cinemas in Australia"
     },
     {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix in Australia"
+    },
+    {
      "key": "tv:330808",
      "date": "2026-12-18",
      "where": "Series on Netflix"
@@ -2780,6 +4404,11 @@
      "where": "In cinemas"
     },
     {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
+    },
+    {
      "key": "tv:330808",
      "date": "2026-12-18",
      "where": "Series on Netflix"
@@ -2789,13 +4418,13 @@
   "PH": {
    "inCinemas": [
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-10-03",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-10-03",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     }
    ],
@@ -2837,31 +4466,16 @@
     }
    ]
   },
-  "KR": {
+  "SG": {
    "inCinemas": [
     {
+     "key": "movie:1755291",
+     "date": "2026-10-19",
+     "where": "In cinemas"
+    },
+    {
      "key": "movie:1489932",
-     "date": "2026-10-17",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1388805",
-     "date": "2026-09-30",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1498729",
-     "date": "2026-10-28",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1532477",
-     "date": "2026-10-14",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1511305",
-     "date": "2026-10-28",
+     "date": "2026-10-12",
      "where": "In cinemas"
     }
    ],
@@ -2872,9 +4486,29 @@
      "where": "Series on Apple TV"
     },
     {
-     "key": "movie:1154210",
-     "date": "2026-11-11",
+     "key": "movie:1649403",
+     "date": "2026-11-20",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
+    },
+    {
+     "key": "movie:1655112",
+     "date": "2026-11-24",
+     "where": "Netflix"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-26",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1811599",
+     "date": "2026-11-27",
+     "where": "Netflix"
     },
     {
      "key": "tv:330808",
@@ -2898,11 +4532,6 @@
     {
      "key": "movie:1515139",
      "date": "2026-10-28",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1814847",
-     "date": "2026-11-01",
      "where": "In cinemas"
     }
    ],
@@ -2989,6 +4618,11 @@
      "where": "In cinemas"
     },
     {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
+    },
+    {
      "key": "tv:330808",
      "date": "2026-12-18",
      "where": "Series on Netflix"
@@ -3003,14 +4637,14 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
-     "where": "In cinemas in Germany"
-    },
-    {
      "key": "movie:1388805",
      "date": "2026-09-30",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas in Germany"
     },
     {
      "key": "movie:1596326",
@@ -3053,6 +4687,11 @@
      "key": "movie:1635584",
      "date": "2026-11-15",
      "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix in Germany"
     },
     {
      "key": "movie:1371557",
@@ -3099,11 +4738,6 @@
   "TW": {
    "inCinemas": [
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
-     "where": "In cinemas"
-    },
-    {
      "key": "movie:1388805",
      "date": "2026-09-30",
      "where": "In cinemas"
@@ -3111,6 +4745,11 @@
     {
      "key": "movie:1393151",
      "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -3129,12 +4768,12 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1418515",
+     "key": "movie:1165656",
      "date": "2026-10-23",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1165656",
+     "key": "movie:1418515",
      "date": "2026-10-23",
      "where": "In cinemas"
     }
@@ -3149,6 +4788,11 @@
      "key": "movie:1340449",
      "date": "2026-11-06",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
     },
     {
      "key": "movie:629704",
@@ -3175,13 +4819,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-09-30",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-09-30",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     }
    ],
@@ -3221,13 +4865,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1388805",
+     "date": "2026-09-30",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1388805",
-     "date": "2026-09-30",
+     "key": "movie:1489932",
+     "date": "2026-10-12",
      "where": "In cinemas"
     },
     {
@@ -3241,13 +4885,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1517111",
-     "date": "2026-09-25",
+     "key": "movie:1596306",
+     "date": "2026-10-02",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1596306",
-     "date": "2026-10-02",
+     "key": "movie:1517111",
+     "date": "2026-09-25",
      "where": "In cinemas"
     },
     {
@@ -3263,16 +4907,6 @@
     {
      "key": "movie:1669763",
      "date": "2026-10-05",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1686182",
-     "date": "2026-10-08",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1785138",
-     "date": "2026-09-29",
      "where": "In cinemas"
     }
    ],
@@ -3318,17 +4952,12 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1715868",
-     "date": "2026-11-19",
-     "where": "In cinemas"
-    },
-    {
      "key": "movie:1442281",
      "date": "2026-11-19",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1622868",
+     "key": "movie:1715868",
      "date": "2026-11-19",
      "where": "In cinemas"
     },
@@ -3343,22 +4972,12 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1809835",
-     "date": "2026-11-20",
-     "where": "In cinemas"
-    },
-    {
      "key": "movie:1786136",
      "date": "2026-11-21",
      "where": "In cinemas"
     },
     {
      "key": "movie:1643130",
-     "date": "2026-11-21",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1679802",
      "date": "2026-11-21",
      "where": "In cinemas"
     },
@@ -3371,6 +4990,11 @@
      "key": "movie:1496304",
      "date": "2026-11-22",
      "where": "In cinemas"
+    },
+    {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
     },
     {
      "key": "movie:1515139",
@@ -3407,13 +5031,13 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1596303",
-     "date": "2026-10-02",
+     "key": "movie:1596296",
+     "date": "2026-09-25",
      "where": "In cinemas"
     },
     {
-     "key": "movie:1096228",
-     "date": "2026-10-09",
+     "key": "movie:1596303",
+     "date": "2026-10-02",
      "where": "In cinemas"
     },
     {
@@ -3422,13 +5046,8 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1596296",
-     "date": "2026-09-25",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1489932",
-     "date": "2026-10-12",
+     "key": "movie:1096228",
+     "date": "2026-10-09",
      "where": "In cinemas"
     },
     {
@@ -3437,18 +5056,13 @@
      "where": "In cinemas"
     },
     {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
      "key": "movie:1629356",
      "date": "2026-10-20",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1756268",
-     "date": "2026-10-30",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1596319",
-     "date": "2026-10-28",
      "where": "In cinemas"
     },
     {
@@ -3457,23 +5071,33 @@
      "where": "In cinemas"
     },
     {
-     "key": "movie:1515139",
-     "date": "2026-10-28",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1565345",
-     "date": "2026-10-05",
-     "where": "In cinemas"
-    },
-    {
      "key": "movie:1596300",
      "date": "2026-10-16",
      "where": "In cinemas"
     },
     {
+     "key": "movie:1596319",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
      "key": "movie:1715598",
      "date": "2026-09-24",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1756268",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1565345",
+     "date": "2026-10-05",
      "where": "In cinemas"
     }
    ],
@@ -3529,9 +5153,19 @@
      "where": "Series on MGM+"
     },
     {
+     "key": "movie:1802703",
+     "date": "2026-11-24",
+     "where": "Netflix"
+    },
+    {
      "key": "movie:1578210",
      "date": "2026-11-24",
      "where": "Streaming"
+    },
+    {
+     "key": "movie:1655112",
+     "date": "2026-11-24",
+     "where": "Netflix"
     },
     {
      "key": "movie:1632599",
@@ -3566,11 +5200,6 @@
     {
      "key": "movie:1666864",
      "date": "2027-01-08",
-     "where": "In cinemas"
-    },
-    {
-     "key": "movie:1770051",
-     "date": "2027-01-15",
      "where": "In cinemas"
     },
     {

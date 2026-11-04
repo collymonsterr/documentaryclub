@@ -10,7 +10,7 @@ import { slugify } from '@/lib/site-urls';
 
 type Profile = { photo?: string; imdbId?: string; wikipedia?: string; blurb: string };
 const PROFILES: Record<string, Profile> = profiles;
-const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', browse: 'topics' } as const;
+const base = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', soon: '', browse: 'topics' } as const;
 const titles = (n: number) => `${n} ${n === 1 ? 'documentary' : 'documentaries'}`;
 const ProfileLink = ({ href, label }: { href: string; label: string }) =>
   <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">{label}<ExternalLink className="size-3" /></a>;

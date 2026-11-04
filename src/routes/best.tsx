@@ -9,7 +9,7 @@ import { breadcrumbs } from '@/lib/structured-data';
 import { softClick } from '@/lib/utils';
 
 const GROUPS = listGroups();
-const SEARCH = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', browse: 'topics' };
+const SEARCH = { film: '', q: '', list: '', cat: 'all', era: 'all', len: 'all', type: 'all', sort: 'random', award: '', mood: '', pick: '', maker: '', tag: '', like: '', soon: '', browse: 'topics' };
 // The hub for every ranked list, so each one is a click from one page and the sitemap.
 export const Route = createFileRoute('/best')({
   head: () => staticPageHead('The Best Documentary Lists', `Every ranked list in the collection, by subject, mood, topic and director, drawn from ${CATALOGUE.length} hand-picked documentaries.`, '/best', { jsonLd: [breadcrumbs([['Home', '/'], ['Best documentary lists', '/best']])] }),

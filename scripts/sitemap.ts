@@ -1,13 +1,16 @@
-// Runs after `npm run sync-catalogue`: writes public/sitemap.xml and the robots.txt pointer from the live catalogue and SITE_ORIGIN.
+// Runs after `npm run sync-catalogue` and `npm run coming-soon`: writes public/sitemap.xml and the robots.txt pointer from the live catalogue and SITE_ORIGIN.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { CATALOGUE } from '../src/data/catalogue';
 import { SITE_ORIGIN, listGroups, pagePath } from '../src/lib/site-urls';
+import { upcomingSlugs } from '../src/data/upcoming';
 
 // Thin list pages (noindex) stay out; listGroups already applies that rule.
 const paths = [
   '/', '/best', '/directors', '/awards', '/coming-soon', '/about', '/list', '/suggest', '/privacy',
   ...listGroups().flatMap(g => g.items.map(i => i.path)),
   ...CATALOGUE.map(f => pagePath({ film: f.id })),
+  // Upcoming titles come and go with the monthly `npm run coming-soon`, which reruns this.
+  ...upcomingSlugs().map(slug => pagePath({ browse: 'soon', soon: slug })),
 ].filter(Boolean);
 writeFileSync('public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${SITE_ORIGIN}${p}</loc></url>`).join('\n')}\n</urlset>\n`);
 const robots = readFileSync('public/robots.txt', 'utf8').replace(/\n*Sitemap: .*\n?/g, '\n').trimEnd();
