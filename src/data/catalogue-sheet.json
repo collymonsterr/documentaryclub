@@ -538,7 +538,7 @@
 {"id":"hail-satan","title":"Hail Satan?","year":2019,"format":"Film","category":"Politics","director":"Penny Lane","tags":["religion"],"tmdbId":565719,"imdbId":"tt9358044"},
 {"id":"hell-house","title":"Hell House","year":2001,"format":"Film","category":"Cults & Psychology","director":"George Ratliff","tags":["religion","free-on-youtube"],"tmdbId":33068,"imdbId":"tt0301235","youtubeId":"NNFGjQ_QydA","netflixId":"60025130"},
 {"id":"religulous","title":"Religulous","year":2008,"format":"Film","category":"Politics","director":"Larry Charles","tags":["religion"],"tmdbId":13007,"imdbId":"tt0815241","netflixId":"70087539"},
-{"id":"samsara","title":"Samsara","year":2011,"format":"Film","category":"Art","director":"Ron Fricke","moods":["Breathtaking"],"tmdbId":89708,"imdbId":"tt0770802"},
+{"id":"samsara","title":"Samsara","year":2011,"format":"Film","category":"Art","director":"Ron Fricke","moods":["Breathtaking"],"tags":["editors-choice"],"tmdbId":89708,"imdbId":"tt0770802"},
 {"id":"baraka","title":"Baraka","year":1992,"format":"Film","category":"Art","director":"Ron Fricke","moods":["Breathtaking"],"tmdbId":14002,"imdbId":"tt0103767","netflixId":"283136"},
 {"id":"koyaanisqatsi","title":"Koyaanisqatsi","year":1982,"format":"Film","category":"Art","director":"Godfrey Reggio","moods":["Breathtaking"],"tags":["free-on-youtube"],"tmdbId":11314,"imdbId":"tt0085809","youtubeId":"ILlaTWG25OE","youtubeRegions":["GB"],"netflixId":"60023737"},
 {"id":"the-salt-of-the-earth","title":"The Salt of the Earth","year":2014,"format":"Film","category":"Art","director":"Wim Wenders, Juliano Ribeiro Salgado","moods":["Breathtaking"],"tmdbId":265297,"imdbId":"tt3674140","awards":["Oscar Nominee 2015"]},
