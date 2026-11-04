@@ -106,6 +106,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Object.hasOwn||(Object.hasOwn=function(o,k){return Object.prototype.hasOwnProperty.call(o,k)});" +
           "[Array,String].forEach(function(C){C.prototype.at||Object.defineProperty(C.prototype,'at',{configurable:true,writable:true,value:function(n){n=Math.trunc(n)||0;if(n<0)n+=this.length;return this[n]}})});",
       },
+      // Marks that scripts run at all; without it the "JavaScript is off" note below stays visible.
+      { children: "document.documentElement.classList.add('js')" },
       // Any URL with ?debug shows an on-screen report (public/diagnostics.js) for devices we can't test on.
       { children: "if(/[?&]debug\\b/.test(location.search))document.write('<script src=\"/diagnostics.js\"><\\/script>')" },
     ],
@@ -118,11 +120,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    // suppressHydrationWarning: the inline script adds the "js" class before React starts.
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
+        {/* Shown only when no script runs (JavaScript switched off, or blocked by a content blocker or Screen Time):
+            links still work, but buttons such as Filters, Save and trailers can't, so say why and how to fix it. */}
+        <div className="no-js-note" role="note">
+          JavaScript is switched off or blocked in this browser, so buttons like Filters, Save and trailers won't work (links still do).
+          On iPhone or iPad: Settings → Apps → Safari → Advanced → turn on JavaScript, and check any content blockers.
+        </div>
         {children}
         <Scripts />
       </body>

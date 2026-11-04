@@ -219,3 +219,7 @@
   .discovery-chips { padding-left: 0; }
   .spotlight-grid { scroll-margin-top: 232px; }
 }
+
+/* "JavaScript is off" note (__root): visible until an inline script marks <html class="js">. */
+.no-js-note { padding: 10px 16px; background: #7c2d12; color: #fff; font-size: 14px; line-height: 1.4; text-align: center; }
+html.js .no-js-note { display: none; }
