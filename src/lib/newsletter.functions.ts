@@ -3,7 +3,7 @@ import { getRequestHeader } from '@tanstack/react-start/server';
 import { SITE_ORIGIN } from '@/lib/site-urls';
 
 // Where a signup came from, so Kit's export shows which placement works.
-export const SIGNUP_SOURCES = ['footer', 'film', 'surprise', 'saved', 'best', 'list', 'soon'] as const;
+export const SIGNUP_SOURCES = ['footer', 'film', 'surprise', 'saved', 'best', 'list', 'soon', 'engaged'] as const;
 export type SignupSource = (typeof SIGNUP_SOURCES)[number];
 type Signup = { email: string; source: SignupSource; path: string; website: string };
 

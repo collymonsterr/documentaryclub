@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { User } from 'firebase/auth';
 import { fromDoc, mergeFirst, sameLists, type Lists } from '@/lib/cloud-sync';
+import { trackEvent } from '@/lib/analytics';
 
 // Optional Google sign-in that syncs Saved and Watched across devices (Firebase project "documentary-club").
 // These values are public by design; the Firestore rules (users/{uid}, owner only) are what protect the data.
@@ -74,12 +75,13 @@ export function useCloudSync(local: Lists, replace: (lists: Lists) => void, want
   }, [cloud, user, synced, local]);
 
   // Must run inside the tap itself, so Firebase has to be loaded already (see the effect above).
-  const signIn = useCallback(() => {
+  // placement says which ask worked (the Saved/Watched lists, or the note under Save), for the consent-gated sign_in event.
+  const signIn = useCallback((placement: 'list' | 'save' = 'list') => {
     if (!cloud) return;
     setError('');
     firstHere.current = !flag.get();
     cloud.auth.signInWithPopup(cloud.authInstance, new cloud.auth.GoogleAuthProvider())
-      .then(() => flag.set(true))
+      .then(() => { flag.set(true); trackEvent('sign_in', { placement }); })
       .catch((e: { code?: string }) => { if (e.code !== 'auth/popup-closed-by-user' && e.code !== 'auth/cancelled-popup-request') setError("Sign-in didn't work. Please try again."); });
   }, [cloud]);
   const signOut = useCallback(() => { if (cloud) cloud.auth.signOut(cloud.authInstance); }, [cloud]);

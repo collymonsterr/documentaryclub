@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useServerFn } from '@tanstack/react-start';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { X } from 'lucide-react';
+import { PROMPT_KEYS, writeStore } from '@/lib/prompts';
 import { trackEvent } from '@/lib/analytics';
 import { subscribe, type SignupSource } from '@/lib/newsletter.functions';
 import { cn } from '@/lib/utils';
@@ -12,7 +14,7 @@ const COPY: Record<'block' | 'compact', { title: string; body: string }> = {
 };
 
 // One email field and a button. Kit sends the confirmation email; nothing here pops up on its own.
-export function NewsletterSignup({ source, title, body, compact = false, className }: { source: SignupSource; title?: string; body?: string; compact?: boolean; className?: string }) {
+export function NewsletterSignup({ source, title, body, compact = false, className, onDismiss }: { source: SignupSource; title?: string; body?: string; compact?: boolean; className?: string; onDismiss?: () => void }) {
   const send = useServerFn(subscribe);
   const [email, setEmail] = useState(''), [website, setWebsite] = useState('');
   const [state, setState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
@@ -23,9 +25,10 @@ export function NewsletterSignup({ source, title, body, compact = false, classNa
     const result = await send({ data: { email, source, path: window.location.pathname, website } }).catch(() => ({ ok: false }));
     const ok = result?.ok === true;
     setState(ok ? 'done' : 'error');
-    if (ok) trackEvent('newsletter_signup', { source });
+    if (ok) { trackEvent('newsletter_signup', { source }); writeStore(PROMPT_KEYS.newsletter, 'subscribed'); }
   };
-  return <section aria-label="Weekly email" className={cn('rounded-lg border border-border bg-card/40', compact ? 'p-3' : 'p-4 sm:p-5', className)}>
+  return <section aria-label="Weekly email" className={cn('relative rounded-lg border border-border bg-card/40', compact ? 'p-3' : 'p-4 sm:p-5', onDismiss && 'pr-10', className)}>
+    {onDismiss && state !== 'sending' && <Button type="button" variant="ghost" size="icon" aria-label="Close" onClick={onDismiss} className="absolute right-1 top-1 size-8 text-muted-foreground"><X /></Button>}
     <h2 className={cn('font-display font-semibold', compact ? 'text-base' : 'text-lg')}>{title ?? copy.title}</h2>
     {state === 'done' ? <p className="mt-1 text-sm" role="status">Nearly there. Check your inbox and click the link to confirm, and you're in.</p> : <>
       <p className="mt-1 text-sm text-muted-foreground">{body ?? copy.body}</p>

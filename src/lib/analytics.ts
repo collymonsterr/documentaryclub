@@ -1,3 +1,4 @@
+import { arrivalSource } from '@/lib/prompts';
 const MEASUREMENT_ID = 'G-4H3Z8664MT';
 const CONSENT_KEY = 'dc-analytics-consent';
 type Consent = 'granted' | 'denied';
@@ -44,4 +45,16 @@ export function startAnalytics() {
 }
 export const trackPageView = () => (window as GtagWindow).gtag?.('event', 'page_view', { page_location: window.location.href, page_title: document.title });
 // Only reaches Google once the visitor has accepted analytics; otherwise gtag doesn't exist and nothing is sent.
-export const trackEvent = (name: string, params: Record<string, string>) => (window as GtagWindow).gtag?.('event', name, params);
+export const trackEvent = (name: string, params: Record<string, string>) => (window as GtagWindow).gtag?.('event', name, { ...params, from: arrivedFrom() });
+
+// Where this visit started (e.g. reddit.com), noted once per tab before the router tidies the URL, so signups and
+// sign-ins can be counted by where people came from. Kept in sessionStorage only; sent with events after consent.
+const FROM_KEY = 'dc-from';
+export function arrivedFrom() {
+  try { return sessionStorage.getItem(FROM_KEY) ?? 'direct'; } catch { return 'direct'; }
+}
+if (typeof window !== 'undefined') {
+  try {
+    if (!sessionStorage.getItem(FROM_KEY)) sessionStorage.setItem(FROM_KEY, arrivalSource(location.search, document.referrer, location.hostname));
+  } catch { /* storage blocked */ }
+}

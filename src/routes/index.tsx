@@ -71,7 +71,8 @@ import { NewsletterSignup } from "@/components/newsletter-signup";
 import { TrailerPlayer } from "@/components/trailer-player";
 import { usePreference, useTracking } from "@/hooks/use-tracking";
 import { useCloudSync } from "@/hooks/use-cloud-sync";
-import { AccountSync } from "@/components/account-sync";
+import { AccountSync, SyncNudge } from "@/components/account-sync";
+import { PROMPT_KEYS, canNudgeSync, nextNudgeState, readStore, showNewsletterCard, writeStore } from "@/lib/prompts";
 import {
   browseSelection,
   gallerySelection,
@@ -583,7 +584,18 @@ function Index() {
   };
   // Optional Google account that syncs both lists across devices; Firebase loads only on these lists or for account holders.
   const lists = useMemo(() => ({ shortlist: [...shortlist], watched: [...watched] }), [shortlist, watched]);
-  const sync = useCloudSync(lists, (next) => { shortOps.replace(next.shortlist); watchedOps.replace(next.watched); }, Boolean(listFilter));
+  // The sign-in note under Save on a film page (see SyncNudge); showing it also starts loading Firebase.
+  const [nudge, setNudge] = useState<"save" | "watched" | null>(null);
+  const sync = useCloudSync(lists, (next) => { shortOps.replace(next.shortlist); watchedOps.replace(next.watched); }, Boolean(listFilter) || nudge !== null);
+  useEffect(() => { if (sync.account) writeStore(PROMPT_KEYS.syncNudge, "done"); }, [sync.account]);
+  const maybeNudge = (kind: "save" | "watched") => {
+    if (nudge || sync.account) return;
+    const state = readStore(PROMPT_KEYS.syncNudge);
+    if (!canNudgeSync(state)) return;
+    writeStore(PROMPT_KEYS.syncNudge, nextNudgeState(state));
+    setNudge(kind);
+  };
+  const closeNudge = () => { if (!sync.account) writeStore(PROMPT_KEYS.syncNudge, "dismissed"); setNudge(null); };
   const [hideWatched, setHideWatched] = usePreference("dc-hide-watched", true);
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -707,6 +719,17 @@ function Index() {
   useEffect(() => {
     setTrailerOpen(false);
   }, [film?.id]);
+  // Count film pages opened in this browser; from the third, a weekly-email card sits under the buttons until they sign up or close it.
+  const [newsletterAsk, setNewsletterAsk] = useState({ engaged: false, quiet: false });
+  const spotlightId = view === "spotlight" ? (film?.id ?? "") : "";
+  useEffect(() => {
+    setNudge(null);
+    if (!spotlightId) return;
+    const views = (Number(readStore(PROMPT_KEYS.views)) || 0) + 1;
+    writeStore(PROMPT_KEYS.views, String(views));
+    const state = readStore(PROMPT_KEYS.newsletter);
+    setNewsletterAsk({ engaged: showNewsletterCard(views, state), quiet: state === "subscribed" || state === "dismissed" });
+  }, [spotlightId]);
   useEffect(() => {
     const handle = (e: KeyboardEvent) => {
       if (view !== "spotlight" || !canNavigate(e.target, trailerOpen) || document.querySelector('[role="dialog"]'))
@@ -1257,7 +1280,7 @@ function Index() {
           account={sync.account}
           synced={sync.synced}
           error={sync.error}
-          onSignIn={sync.signIn}
+          onSignIn={() => sync.signIn("list")}
           onSignOut={sync.signOut}
         />
       )}
@@ -1541,11 +1564,25 @@ function Index() {
 
               <div className="mt-4 flex flex-wrap gap-2">
                 <WatchOnYouTube film={film} country={country} />
-                <Button variant="outline" aria-pressed={shortlist.has(film.id)} onClick={() => toggleShort(film.id)}>
+                <Button
+                  variant="outline"
+                  aria-pressed={shortlist.has(film.id)}
+                  onClick={() => {
+                    if (!shortlist.has(film.id)) maybeNudge("save");
+                    toggleShort(film.id);
+                  }}
+                >
                   <Heart className={shortlist.has(film.id) ? "fill-save text-save" : "text-save"} />
                   {shortlist.has(film.id) ? "Saved" : "Save"}
                 </Button>
-                <Button variant="outline" aria-pressed={watched.has(film.id)} onClick={() => toggleWatched(film.id)}>
+                <Button
+                  variant="outline"
+                  aria-pressed={watched.has(film.id)}
+                  onClick={() => {
+                    if (!watched.has(film.id)) maybeNudge("watched");
+                    toggleWatched(film.id);
+                  }}
+                >
                   <Check />
                   {watched.has(film.id) ? "Watched" : "Mark watched"}
                 </Button>
@@ -1561,6 +1598,16 @@ function Index() {
                 {!film.youtubeId && <FreeLegal film={film} />}
                 <CopyLink path={`/film/${film.id}`} className="h-9" />
               </div>
+              {nudge && (
+                <SyncNudge
+                  ready={sync.ready}
+                  account={sync.account}
+                  error={sync.error}
+                  watched={nudge === "watched"}
+                  onSignIn={() => sync.signIn("save")}
+                  onClose={closeNudge}
+                />
+              )}
               <WatchStrip
                 loading={providers.isFetching}
                 providers={extra?.providers}
@@ -1569,8 +1616,22 @@ function Index() {
                 onCountry={chooseCountry}
                 onYouTube={Boolean(film.youtubeId)}
               />
-              {surprised === film.id && (
+              {surprised === film.id ? (
                 <NewsletterSignup compact source="surprise" title="Liked the surprise? Get one every week" className="mt-4" />
+              ) : (
+                newsletterAsk.engaged && (
+                  <NewsletterSignup
+                    compact
+                    source="engaged"
+                    title="Enjoying these? Get one great documentary a week"
+                    body="One pick every week by email, plus the best new releases. No spam."
+                    className="mt-4"
+                    onDismiss={() => {
+                      writeStore(PROMPT_KEYS.newsletter, "dismissed");
+                      setNewsletterAsk({ engaged: false, quiet: true });
+                    }}
+                  />
+                )
               )}
             </div>
           </section>
@@ -1582,7 +1643,9 @@ function Index() {
             onPlay={() => setTrailerOpen(true)}
           />
           <RelatedRows film={film} onDirector={searchDirector} onLike={(id) => browseFrom({ like: id })} />
-          {surprised !== film.id && <NewsletterSignup source="film" className="mt-10" />}
+          {surprised !== film.id && !newsletterAsk.engaged && !newsletterAsk.quiet && (
+            <NewsletterSignup source="film" className="mt-10" />
+          )}
         </>
       )}
       {view === "gallery" && listFilter !== "shortlist" && browse !== "soon" && <NewsletterSignup source="footer" className="mt-10" />}
