@@ -1,27 +1,23 @@
 {
- "checked": "2026-11-03",
- "inCinemas": [
-  {
-   "tmdbId": 1755291,
+ "checked": "2026-11-04",
+ "titles": {
+  "movie:1765072": {
+   "tmdbId": 1765072,
    "type": "movie",
-   "title": "NAZA",
-   "date": "2026-10-16",
-   "where": "In cinemas in the UK and Ireland",
-   "overview": "Filmed at night from Tel Aviv rooftops, this investigative documentary examines the civilian casualties of Israel's military operations in Gaza and the systems behind targeted killings of Palestinians.",
+   "title": "You Can See Everything",
+   "overview": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
    "directors": [
-    "Yuval Abraham",
-    "Rachel Szor"
+    "Nathan Fielder",
+    "Lance Oppenheim"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/cbxiZ1l21KUATu2KKQQ8J8fJhpe.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/inju8joDtL7KHtlFEGjFZ2UuqFa.jpg",
-   "trailer": "40KW6knYMo4"
+   "poster": "https://image.tmdb.org/t/p/w342/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/nhIL3O4W9h5V5JbNQm7yjoDk3So.jpg",
+   "trailer": "IEx8D1Wb__U"
   },
-  {
+  "movie:1603262": {
    "tmdbId": 1603262,
    "type": "movie",
    "title": "Everest: The Other Side",
-   "date": "2026-10-30",
-   "where": "In cinemas in the UK and Ireland",
    "overview": "An intimate portrait of two people bound by love, ambition, and the pursuit of the impossible. Elite ski mountaineers Jim Morrison and Hilaree Nelson fell deeply in love while reaching the pinnacle of their sport. Their drive sharpened into a shared dream: to climb and ski the direct North Face of Mount Everest—the most difficult and dangerous climb on the mountain and the most coveted ski line on Earth—something only a handful have ever achieved, and no one has successfully skied down.",
    "directors": [
     "Jimmy Chin",
@@ -31,26 +27,10 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/ySbav9wRhnA1yGadMIpoQnLgTq6.jpg",
    "trailer": "q6XUlPdTuto"
   },
-  {
-   "tmdbId": 1489932,
-   "type": "movie",
-   "title": "Always Lalisa",
-   "date": "2026-10-12",
-   "where": "In cinemas in the UK and Ireland",
-   "overview": "Documentary following global superstar LISA during a transformative year away from BLACKPINK, the K-pop phenomenon that made her one of the world's most recognizable performers. Documenting a year of risk, reinvention, and self-discovery as LISA begins to define her next chapter.",
-   "directors": [
-    "Sue Kim"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/pOZnrUX1UMblLiqq9ZtZUde3cQV.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/wJwTuwy1ZajIA6ivGjoe0Ee08XN.jpg",
-   "trailer": "s6NUEu1x64I"
-  },
-  {
+  "movie:1388805": {
    "tmdbId": 1388805,
    "type": "movie",
    "title": "LINKIN PARK: UNSHATTER",
-   "date": "2026-09-30",
-   "where": "In cinemas in the UK and Ireland",
    "overview": "After a seven-year hiatus following the devastating loss of their beloved bandmate Chester Bennington, LINKIN PARK'S remaining members struggled to find their way forward. Their shared history and enduring friendship, combined with the fresh perspective of two new band members Emily Armstrong and Colin Brittain spark a renewed creative energy that leads them on a transformative journey of artistic reinvention. Following the band from intimate 2022 studio sessions through their explosive FROM ZERO album release and concert in São Paulo, this documentary weaves together rare vault footage, electrifying performances from sold-out shows, and candid interviews with band members and fans—capturing the raw, honest story of what it means to start over.",
    "directors": [
     "Joe Hahn"
@@ -59,166 +39,22 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/uL1HCc4wmcFcSr1zS3kXX3CNUeE.jpg",
    "trailer": "K9Lpxc7bVTM"
   },
-  {
-   "tmdbId": 1299581,
+  "movie:1489932": {
+   "tmdbId": 1489932,
    "type": "movie",
-   "title": "Knife: The Attempted Murder of Salman Rushdie",
-   "date": "2026-10-02",
-   "where": "In cinemas in the UK and Ireland",
-   "overview": "In 2022, Salman Rushdie was preparing to deliver a lecture on the United States as a safe haven for writers when a man rushed the stage and, in 27 seconds, stabbed him 15 times. Airlifted to hospital, Rushdie survived, barely, and his wife Rachel Eliza Griffiths began filming immediately, capturing an unfiltered view of his recovery, return to life and how he regained his spirit and hope for the future.",
+   "title": "Always Lalisa",
+   "overview": "Documentary following global superstar LISA during a transformative year away from BLACKPINK, the K-pop phenomenon that made her one of the world's most recognizable performers. Documenting a year of risk, reinvention, and self-discovery as LISA begins to define her next chapter.",
    "directors": [
-    "Alex Gibney"
+    "Sue Kim"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/zIHezCczCvRFtkuAoCm1tEJGa0W.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/nbnFwaYmajIbGEXfXgWgzpiwQXF.jpg",
-   "trailer": "4Dntq0XUcls"
+   "poster": "https://image.tmdb.org/t/p/w342/pOZnrUX1UMblLiqq9ZtZUde3cQV.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/wJwTuwy1ZajIA6ivGjoe0Ee08XN.jpg",
+   "trailer": "s6NUEu1x64I"
   },
-  {
-   "tmdbId": 1756742,
-   "type": "movie",
-   "title": "Out of Breath",
-   "date": "2026-09-29",
-   "where": "In cinemas in the UK",
-   "overview": "OUT OF BREATH shines the spotlight on the human cost paid by people living with sleep apnea and their loved ones. Yet, for all the darkness they face there is also light at the end of the tunnel as their hope, courage, and perseverance brings them closer to the promise of successful treatment.",
-   "directors": [
-    "George T. Nierenberg"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/cKnu9KN0HZ0JxzCU8RBp4d9xutU.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/7JoDoh7SxwQz42aJi5SCg3imi7L.jpg",
-   "trailer": "tJZSI9CaYqE"
-  },
-  {
-   "tmdbId": 1517111,
-   "type": "movie",
-   "title": "Boorman and the Devil",
-   "date": "2026-09-25",
-   "where": "In cinemas in the UK",
-   "overview": "Featuring commentary from surviving participants, as well as other filmmakers and critics, this documentary chronicles the career of director John Boorman and the tumultuous production of his film Exorcist II: The Heretic, exploring its critical and commercial failure, how it changed the industry, and the importance of risk-taking in art.",
-   "directors": [
-    "David Kittredge"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/4HJzmhP8iMzkIQ7cjr2zfIcReiK.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/igS7kqXk6KJX7pe3xOHsWfKrgmp.jpg",
-   "trailer": "a_VjhXJ0N54"
-  },
-  {
-   "tmdbId": 1596306,
-   "type": "movie",
-   "title": "Kikuyu Land",
-   "date": "2026-10-02",
-   "where": "In cinemas in the UK",
-   "overview": "As a Nairobi journalist probes a land battle entangling the local government and a powerful multinational corporation, covered wounds are revealed and family secrets are exposed.",
-   "directors": [
-    "Andrew H. Brown",
-    "Bea Wangondu"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/a5YGraLDDgg6kTB5MxBzzrWjyWc.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/axxBd5qfi1uCOJI7JKBWFG1tMHz.jpg",
-   "trailer": "UdUztX9eiAo"
-  },
-  {
-   "tmdbId": 1285321,
-   "type": "movie",
-   "title": "Children of The Wicker Man",
-   "date": "2026-10-23",
-   "where": "In cinemas in the UK",
-   "overview": "Fifty years after The Wicker Man, director Robin Hardy’s lost papers resurface, prompting his sons Justin and Dominic to explore the legacy of the cult classic, and their father. Together, they uncover the truth behind Robin’s role in the film and confront the complexities of independent filmmaking, family, and myth.",
-   "directors": [
-    "Justin Hardy"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/cGALR5w2wkKteIXHmGrA1NSaSbt.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/p3rtTCpejKR3UyFEIBkoVokBZeE.jpg",
-   "trailer": "Lnjx6OjX050"
-  },
-  {
-   "tmdbId": 1775096,
-   "type": "movie",
-   "title": "Enter the Television",
-   "date": "2026-10-20",
-   "where": "In cinemas in the UK",
-   "overview": "From Tom Seymour creator of the VHS Massacre Trilogy. Enter the Television is a feature-length documentary exploring the dark corners of television from obscure commercials to unconventional cable programming. It examines the evolution of media through an underground lens, revealing how independent voices survive within systems controlled by powerful media corporations.",
-   "directors": [
-    "Thomas Edward Seymour"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/j16NRU3EZV9krlJJvTR8lkypTWE.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/oGFlCuIm2peLpAxHj31Lozrhl5H.jpg",
-   "trailer": "cyiECR7s-E4"
-  },
-  {
-   "tmdbId": 1669763,
-   "type": "movie",
-   "title": "The Dance of the Kokorrdit",
-   "date": "2026-10-05",
-   "where": "In cinemas in the UK",
-   "overview": "A Wounaan teenager and a leader of their community venture into the Darién in search of a sacred bird. Along the way, they will face the dangers that threaten their territory and their culture.",
-   "directors": [
-    "Elio B Cunampio",
-    "Guido Bilbao"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/u7tvuYcwylVaSGC5cnpFGOpUqiX.jpg",
-   "trailer": "h1linE9zKUs"
-  },
-  {
-   "tmdbId": 1686182,
-   "type": "movie",
-   "title": "Skyclimber: Scaling the Eiffel Tower",
-   "date": "2026-10-08",
-   "where": "In cinemas in the UK",
-   "overview": "Urban free climber Adam Lockwood attempts to scale the Eiffel Tower in a documentary that is equal parts high-altitude adventure and intimate personal portrait. A film that builds its tension with the precision of a heist movie, mapping every step of an audacious ascent.",
-   "directors": [
-    "Nick Hardie"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/fqHQIdzGXkgBCrQx84i69IWNCNA.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/w0IAT9iWrklDB3xKTKRCTHtSPix.jpg",
-   "trailer": "haYd3CFAITI"
-  },
-  {
-   "tmdbId": 1785138,
-   "type": "movie",
-   "title": "DEQ",
-   "date": "2026-09-29",
-   "where": "In cinemas in the UK",
-   "overview": "\"DEQ\" is a legacy in Kurdish Culture. A bridge between Human and Nature and a way to find meaning of life.",
-   "directors": [
-    "Nima Beheshtinia"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/u7pupuDvqLR4cTtawP76K9Htl3R.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/jcaMRkFON8PQHW1h4douBDNOUf6.jpg",
-   "trailer": "tFhbF6BxpWQ"
-  }
- ],
- "comingSoon": [
-  {
-   "tmdbId": 1786281,
-   "type": "movie",
-   "title": "Gentle by Birth",
-   "date": "2026-11-05",
-   "where": "In cinemas in the US",
-   "overview": "After her 23-year-old brother dies of an overdose, filmmaker Doree Simon Hatfield investigates the stigma she believes blocked his access to treatment and support. Her search takes her from her family’s living room to harm reduction sites, music festivals, and the halls of the Pennsylvania Capitol, where she meets experts working to change how addiction is understood and treated. But as her own fear and stigma around drugs begin to dissolve, Doree makes a radical choice to try them herself—transforming the film from a dissection of her brother’s addiction into a provocative reckoning that threatens her family’s fragile healing.",
-   "directors": [
-    "Doree Simon Hatfield"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/eyoRrU8bQXMhxotHePBCn7xUjBM.jpg",
-   "trailer": "PaoEYEd46WE"
-  },
-  {
-   "tmdbId": 306179,
-   "type": "tv",
-   "title": "Awkwafina: The Unlikely Cook",
-   "date": "2026-11-06",
-   "where": "Series on Apple TV",
-   "directors": [],
-   "overview": "Hollywood actor and comedian Nora Lum (a.k.a. Awkwafina) is the descendant of restaurant royalty...but she can't cook. Join the star on an inspiring culinary road trip as she learns the craft and attempts to revive her family's beloved Chinese eatery.",
-   "poster": "https://image.tmdb.org/t/p/w342/32rE04LRLyAM62Xdkqw5EIi0FyB.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/vSMW22GgtzgsRaAmZaTM6xtPdNP.jpg",
-   "trailer": "uCAZET6TZ60"
-  },
-  {
+  "movie:1649403": {
    "tmdbId": 1649403,
    "type": "movie",
    "title": "George Michael: The Faith Tour",
-   "date": "2026-11-06",
-   "where": "In cinemas in the UK",
    "overview": "A stunning delve into George Michael's 1988 Faith Tour, as shot live at the famous Palais Omnisports de Paris-Bercy. This exclusive footage, assembled from a 14-camera shoot captured on 35mm over two nights (30–31 May 1988), features the 24-year-old pop star at the height of his powers.",
    "directors": [
     "Andy Morahan",
@@ -228,25 +64,1021 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/srq06Q5iFZrgNUuFwvGS5vqwHAh.jpg",
    "trailer": "H_NwyHRY9yk"
   },
-  {
-   "tmdbId": 1591604,
+  "movie:1638741": {
+   "tmdbId": 1638741,
    "type": "movie",
-   "title": "Soul Patrol",
-   "date": "2026-11-06",
-   "where": "In cinemas in the US",
-   "overview": "From deep behind enemy lines, a hidden chapter of American military history is uncovered, prompting the question of whether reckoning with the past can bring peace to those who lived it. The Vietnam War’s first Black special operations team reunites to tell their story.",
+   "title": "Man of Valor",
+   "overview": "This documentary-drama film follows Lance Sgt. Haane Manahi DCM of B Company, 28th Māori Battalion, a soldier of extraordinary courage, whose actions proved pivotal in the 1943 battle for the fortified summit of Takrouna, Tunisia.",
    "directors": [
-    "J.M. Harper"
+    "Tearepa Kahi"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/sav8yadAjfykfFlZuFsclmrN9st.jpg",
-   "trailer": "D8LIYqag82E"
+   "poster": "https://image.tmdb.org/t/p/w342/jDZL5xGRa1kZNseZ7viB7dkhvpM.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ccL4IyBD6eSTHUymKonLjltmMbN.jpg",
+   "trailer": "09TotbPow6Y"
   },
-  {
+  "movie:1754364": {
+   "tmdbId": 1754364,
+   "type": "movie",
+   "title": "Making Marie Antoinette",
+   "overview": "Eleanor Coppola turns her camera on her daughter, Sofia, as she shoots Marie Antoinette. Catching every detail of the behind-the-scenes and on-set action, Eleanor captures the feat of Sofia’s directing a landmark film aged 34, and muses on what it means for a mother to watch her daughter at work.",
+   "directors": [
+    "Eleanor Coppola"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/1vt7dhpq5dYA5H5VDEf7IITMbSg.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/x0jpUyJ5ETwRn5LmAKvDzEVHgb7.jpg",
+   "trailer": "CwPwUOdagkY"
+  },
+  "movie:1596296": {
+   "tmdbId": 1596296,
+   "type": "movie",
+   "title": "The History of Concrete",
+   "overview": "After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.",
+   "directors": [
+    "John Wilson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/2GWR1g1VdUNnNpLh6XfAQ6LVfyd.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/dsyJUsyrl2rBiF0k9RpSKT2YQzL.jpg",
+   "trailer": "O05arcJjOd0"
+  },
+  "movie:1492865": {
+   "tmdbId": 1492865,
+   "type": "movie",
+   "title": "Steal This Story, Please!",
+   "overview": "New York-based independent investigative journalist Amy Goodman has been reporting from hotspots around the world for decades: from East Timor to Morocco, Nigeria, and Gaza, and closer to home during 9/11 and the Iraq War. Goodman and a small group of colleagues present the daily online, TV, and radio news program Democracy Now!, which has been on the air since 1996 with no government funding, thanks to contributions from donors, foundations, and news consumers.",
+   "directors": [
+    "Carl Deal",
+    "Tia Lessin"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/d7SqbT4URKiw1zmmZBSy0aTzD50.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/3BJhWB2HAiMRbgYUEMA86Pf0By7.jpg",
+   "trailer": "GumfuqgijpY"
+  },
+  "movie:1624363": {
+   "tmdbId": 1624363,
+   "type": "movie",
+   "title": "Lomu",
+   "overview": "A Tongan/Kiwi warrior who could run 100 metres in under 11 seconds. He was the youngest All Black to put on the jersey and still holds the record for the most tries scored in World Cup history.",
+   "directors": [
+    "Gavin FitzGerald",
+    "Vea Mafile'o"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6uWYzJjf6ycj13wUU6OtWV5Xgf4.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/xYNGkUjo9VJKqHjKWVcQlCOOST5.jpg",
+   "trailer": "jxtHUcJ2nnc"
+  },
+  "movie:548845": {
+   "tmdbId": 548845,
+   "type": "movie",
+   "title": "To Kill a Nazi",
+   "overview": "A documentary feature by award-winning filmmaker Boaz Dvir, “To Kill a Nazi” tells the story of a French family man who sets out in to kill his father’s Gestapo executioner and ended up playing a pivotal role in history’s most audacious hostage rescue.",
+   "directors": [
+    "Boaz Dvir"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/cwwwaoudiqfN2QeV7nzUE9KdkAK.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/lbrfHieZrYmNHUJQnb4N6b2jlW6.jpg",
+   "trailer": "_Bk-xlPrs_0"
+  },
+  "movie:1723990": {
+   "tmdbId": 1723990,
+   "type": "movie",
+   "title": "Hard as Puck",
+   "overview": "A motley crew of para ice hockey skaters fight to keep their grassroots sporting club on the rink in this stirring, often hilarious documentary.",
+   "directors": [
+    "Isaac Elliott"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fUk3NjC5InYfEw5BHiN8DtEFRHh.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/htCBEpfxs9pHMJnBScEt8z0u3m2.jpg",
+   "trailer": "o6kj4ZzpfwY"
+  },
+  "movie:1704729": {
+   "tmdbId": 1704729,
+   "type": "movie",
+   "title": "The Plastic Country",
+   "overview": "The new film from leading youth ocean and climate champion Kal Glanznig (Rising Up) is an eye-opening investigation of the impact of plastic on our bodies and ecosystems.",
+   "directors": [
+    "Kal Glanznig"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/c7zAY23moObDqx5W6WOIvTDC3Cu.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/tmBvOxcQ9v7vq1X4Jk1tnIcnxgt.jpg",
+   "trailer": "2haHCKyavV8"
+  },
+  "movie:1755291": {
+   "tmdbId": 1755291,
+   "type": "movie",
+   "title": "NAZA",
+   "overview": "Filmed at night from Tel Aviv rooftops, this investigative documentary examines the civilian casualties of Israel's military operations in Gaza and the systems behind targeted killings of Palestinians.",
+   "directors": [
+    "Yuval Abraham",
+    "Rachel Szor"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/cbxiZ1l21KUATu2KKQQ8J8fJhpe.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/inju8joDtL7KHtlFEGjFZ2UuqFa.jpg",
+   "trailer": "40KW6knYMo4"
+  },
+  "movie:1715598": {
+   "tmdbId": 1715598,
+   "type": "movie",
+   "title": "Pulp: What Do You Do for an Encore?",
+   "overview": "A fusion of the brilliantly choreographed stage spectacle of Pulp’s biggest ever arena show — part of the global tour for More, the band’s first album in 24 years — with four decades of colorful, never-seen-before archival material.",
+   "directors": [
+    "Garth Jennings"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iOdcLIc1mAlczfD1Mq6dg4IupIh.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7VDiAet6Cj0G5TQMdu3DibuJte2.jpg",
+   "trailer": "BPIyAvBd6a4"
+  },
+  "movie:1611111": {
+   "tmdbId": 1611111,
+   "type": "movie",
+   "title": "Meeting the Buddha",
+   "overview": "Meeting the Buddha presents the life and legacy of the 16th Karmapa, Rangjung Rigpe Dorje—the head of the Karma Kagyu lineage, one of four main schools of Tibetan Buddhism. The film captures the remarkable presence of this spiritual teacher, known as a Living Buddha and the King of the Yogis.  We meet Ole Nydahl, a wild young hippy from Denmark who, as a small child, had declared his wish to become the \"Danish champion of mind.\" His life is radically transformed by a chance encounter with the Karmapa in Nepal in 1969.  Ole and his wife, Hannah, become key figures in bringing Tibetan Buddhism to the West, founding hundreds of meditation centres—from Mexico City to Vladivostok—and carrying forward their teacher's vision with unshakable dedication.",
+   "directors": [
+    "Marta György-Kessler"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/qvFWfr5Pk20zOrEpCOqstIumW8K.jpg",
+   "trailer": "WercQxySY5M"
+  },
+  "movie:1515139": {
+   "tmdbId": 1515139,
+   "type": "movie",
+   "title": "Back to the Beginning: Ozzy's Final Bow",
+   "overview": "A powerful return to roots, this concert captures Black Sabbath in peak form - reuniting to deliver classic hits with raw energy and legendary precision.",
+   "directors": [
+    "Ben Wainwright-Pearce"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iO8vwdtmOivoyUguheJtDLXp2Gq.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hFIhPUW8oO2EJYXLAuWFMJBzjsR.jpg",
+   "trailer": "REqdAeNUIho"
+  },
+  "movie:1788522": {
+   "tmdbId": 1788522,
+   "type": "movie",
+   "title": "In This Room",
+   "overview": "In a world that seems to be falling apart, poetry, empathy, and music remind us of the urgent need to understand one another. Through fado and the distinctive voice of its most famous singer, Carminho, a glimmer of hope emerges across the landscapes of a Japan once devastated by bombings. The film follows the Portuguese artist on tour across the country. Through concerts, backstage moments, hotel rooms, taxis, silences, and whispers, the film weaves together the world of fado and Japan’s cultural landscape.",
+   "directors": [
+    "Ana Rocha de Sousa"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/33229sHSpixM6jdiWBySxUDXpLB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/kX26STQbAiVtXYVIhDOU6k27uVH.jpg",
+   "trailer": "3StB6-NteUA"
+  },
+  "movie:577054": {
+   "tmdbId": 577054,
+   "type": "movie",
+   "title": "Talking About Trees",
+   "overview": "Filmmakers Ibrahim, Suliman, Eltayeb and Manar, close friends for many years, left their motherland in the sixties and seventies to study film abroad and founded the Sudanese Film Group in 1989. After years of distance and exile, they are reunited, hoping to finally make their old dream come true: to bring back cinema to Sudan by reopening the Halfaia Cinema, a dilapidated theater in Khartoum.",
+   "directors": [
+    "Suhaib Gasmelbari"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/yekoa8YOzD1biPudP4SxHiXyp7Y.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/z6UWLF1ScOGHD9pJop4qBQXNVA6.jpg",
+   "trailer": "hIvUF0Wdjf4"
+  },
+  "movie:787619": {
+   "tmdbId": 787619,
+   "type": "movie",
+   "title": "Purgatory",
+   "overview": "From the earliest times, people have wondered what awaits them after death? And although no one has managed to penetrate the core of the mystery, over the centuries there have been people who... knew and saw more. Fulla Horak, St. Faustina Kowalska, Bl. Father Stanisław Papczyński and St. Padre Pio - these are mystics who received the grace of being visited by the souls in Purgatory and who for a moment could see the final judgment, heaven, hell and what is most mysterious - purgatory.",
+   "directors": [
+    "Michał Kondrat"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/8lXD4C42gfh1M3cKf2u9O4LcXnc.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/pBfRUv0OpCUJOSsjYjiIvYTzHEi.jpg",
+   "trailer": "1bo8rlcPoFI"
+  },
+  "movie:1597242": {
+   "tmdbId": 1597242,
+   "type": "movie",
+   "title": "Cameron Winter at Carnegie Hall",
+   "overview": "A concert film documenting Cameron Winter's sold-out performance at Carnegie Hall.",
+   "directors": [
+    "Paul Thomas Anderson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sQt2KQWkpGb79UKlCJNJ2BKobjo.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7wwJh55u7y5YoUJaABy5o47d14z.jpg",
+   "trailer": "E8olY56RpkU"
+  },
+  "movie:1480856": {
+   "tmdbId": 1480856,
+   "type": "movie",
+   "title": "Hanging by a Wire",
+   "overview": "On a Tuesday morning in August 2023, a group of kids set off for school, climbing into a makeshift cable car for the journey across a mountain pass in northwest Pakistan. What happened next would make headlines around the world. Suddenly, 900 feet above the ground, two cables snapped, putting the teenagers in mortal danger.",
+   "directors": [
+    "Mohammed Naqvi"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/duZIrDULyk3PBIxoUmKXm3uqlBv.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/q90G7OV76xR7NOHu8m19iaudHO1.jpg",
+   "trailer": "XOiBpu4oWxo"
+  },
+  "movie:1743137": {
+   "tmdbId": 1743137,
+   "type": "movie",
+   "title": "GOAL: Striking Congo",
+   "overview": "Goal: Striking Congo follows former professional Ugo Kasuku, who has run a football academy for years in war-torn Goma and now launches the Future Pro League, bringing international scouts to offer youth opportunity, dignity, and hope for a wounded nation.",
+   "directors": [
+    "Mathieu Roy"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iTq1tcK1QVDiq77n3JLsOYEUDNx.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/6CRmnCkZtIzvyihTCWKd6lKCFGO.jpg",
+   "trailer": "O91rLSUAiLY"
+  },
+  "movie:1096228": {
+   "tmdbId": 1096228,
+   "type": "movie",
+   "title": "Musk",
+   "overview": "An incisive look behind the legend of Elon Musk, the world's most heralded \"inventor-entrepreneur\" who has enormous influence on the world in which we all live.",
+   "directors": [
+    "Alex Gibney"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/kTOeFV92c3QHJ3bEkT660P7BcWN.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/1CfHIKczBiAauSRBiNQ90bjLsCM.jpg",
+   "trailer": "eY_8SyndC10"
+  },
+  "movie:1578210": {
+   "tmdbId": 1578210,
+   "type": "movie",
+   "title": "Run Terry Run",
+   "overview": "The extraordinary story of Canadian icon Terry Fox will be told like never before in Run Terry Run, a new feature-length documentary directed by acclaimed filmmaker Sean Menard. The film offers an intimate, behind-the-scenes look at Terry’s legendary 1980 Marathon of Hope, drawing from 96 reels of never-before-seen footage and unheard audio interviews that have remained untouched for 45 years.",
+   "directors": [
+    "Sean Menard"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sSstsc561xip9s5FKereo1r1I9i.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ldFeRtwity90hO5Yy9wVu4sDsW4.jpg",
+   "trailer": "upUdfgVR2NQ"
+  },
+  "movie:1775316": {
+   "tmdbId": 1775316,
+   "type": "movie",
+   "title": "Á Huldu - The Hidden Ones",
+   "overview": "In the Icelandic countryside, a news cameraman is found dead under unsettling circumstances, his reporter colleague has vanished without a trace.  The mystery remains unsolved.  Years later, a documentary crew retraces the investigation, piecing together fragments of testimony, archival material, and newly uncovered footage. What begins as a cold case review becomes something more elusive as new evidence reveals hidden connections and unanswered questions.  Á Huldu – The Hidden Ones is an 85-minute English and Icelandic-language feature that adopts a true-crime documentary framework to explore the instability of truth, the ethics of observation, and the persistence of unresolved narratives.",
+   "directors": [
+    "Darren Borrowman"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/7KVxqJpDCPDpuX1OtWUpzpJVyx9.jpg",
+   "trailer": "bCj-2LnQsEc"
+  },
+  "movie:1393151": {
+   "tmdbId": 1393151,
+   "type": "movie",
+   "title": "Mr. Nobody Against Putin",
+   "overview": "As Russia launches its full-scale invasion of Ukraine, primary schools across Russia’s hinterlands are transformed into recruitment stages for the war. Facing the ethical dilemma of working in a system defined by propaganda and violence, a brave teacher goes undercover to film what’s really happening in his own school.",
+   "directors": [
+    "David Borenstein"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/ss4NEGmPxgm4D73iMFeyjbE1m9b.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/3A0dDfZq5WxdDGt8qzmhFXqVZxJ.jpg",
+   "trailer": "9150MCMSrgc",
+   "filmId": "mr-nobody-against-putin"
+  },
+  "movie:1706746": {
+   "tmdbId": 1706746,
+   "type": "movie",
+   "title": "Robert Richardson: The White Devil",
+   "overview": "What started as a student exercise and master’s degree project soon evolved into a creative partnership and personal friendship between Jana Hojdová, a former cinematography student at Prague’s FAMU, and distinguished cinematographer Robert Richardson.",
+   "directors": [
+    "Jana Hojdová"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/lZrCSXgyQ0hojglvleQxJFOT801.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/eKukYhhGU93rNsVflMiCcv2cm59.jpg",
+   "trailer": "Y03xvJ4SYQg"
+  },
+  "movie:1739735": {
+   "tmdbId": 1739735,
+   "type": "movie",
+   "title": "James McNeill Whistler",
+   "overview": "Tate Britain is now holding the first major retrospective of Whistler in three decades. This blockbuster exhibition promises to reawaken the world to just how important Whistler is to art history, uniting world-famous masterpieces with rarely seen works. Exhibition on Screen will bring these stunning works and the incredible story behind them to cinemas around the world while the exhibition is still running, bringing this truly global artist to a global audience. This will be an unmissable chance to get to know this visually spectacular artist and the influence he has had on those who followed.",
+   "directors": [
+    "David Bickerstaff"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/wMVPRZGPL9DhyZHtSJvAkzhcp0E.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/kA4fWNVG2f629SxoNLwDhvtiqI5.jpg",
+   "trailer": "vAiN-useAN8"
+  },
+  "movie:57276": {
+   "tmdbId": 57276,
+   "type": "movie",
+   "title": "Pina",
+   "overview": "Pina is a feature-length dance film in 3D with the ensemble of the Tanztheater Wuppertal Pina Bausch, featuring the unique and inspiring art of the great German choreographer, who died in the summer of 2009.",
+   "directors": [
+    "Wim Wenders"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/mKKtIJYtaGwcgpMfnVR2byYhfz9.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/p6GI3J6CfxhxwYmvHpBtYRVi7iq.jpg",
+   "trailer": "F-cV74Mq7KU",
+   "filmId": "pina"
+  },
+  "movie:1799373": {
+   "tmdbId": 1799373,
+   "type": "movie",
+   "title": "Anatomy of a Crash",
+   "overview": "Jediná vteřina is a feature-length documentary by Vít Klusák about the fine line between everyday bad driving habits and a tragedy that cannot be undone. Using a mobile phone at the wheel, fatigue, rushing through a yellow light, or the feeling that we have everything under control. Bad habits behind the wheel that usually go unpunished. But what happens when they don’t? The film follows four stories of road accidents and the people involved, who must come to terms with the moment when the lives of so many were changed forever. Through intimate portraits, cinematic reconstructions and unusual encounters between the perpetrators and their victims or bereaved families, it explores responsibility, guilt and the possibility of forgiveness. The film reveals our ability to excuse our own failings and poses a disturbing question: what if we are less different from the people who caused the accidents than we would like to admit?",
+   "directors": [
+    "Vít Klusák"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/y3i3BKh74YOu8S5Y3raG8tNnwT5.jpg",
+   "trailer": "nzxfNbMhmLE"
+  },
+  "movie:1726607": {
+   "tmdbId": 1726607,
+   "type": "movie",
+   "title": "Because I Have To",
+   "overview": "Miloš Šejn: lying down, awake. And above all, creating. This documentary essay follows an artist whose work is “born of wonder” and who effortlessly navigates his longed-for path out of the city. Instead of an endless stream of sensory input, the film offers a space for concentration and mindfulness—a space that may well extend beyond the seventy minutes spent in the cinema",
+   "directors": [
+    "Jakub Kučera"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/zlyuB3WgORzmDbdDrAx4GMb7pdt.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/mKrHYax9nU8KXzDXAhZvHpLVsBv.jpg",
+   "trailer": "r6PVnawQlqY"
+  },
+  "movie:1616833": {
+   "tmdbId": 1616833,
+   "type": "movie",
+   "title": "If Pigeons Turned to Gold",
+   "overview": "Alcohol addiction is a constant in Pepa Lubojacki’s family. In an attempt to find a sisterly-brotherly way of dealing with it, text, long-term observation, beats and AI-animated photos are combined into an unflinching, yet loving form of disclosure.",
+   "directors": [
+    "Pepa Lubojacki"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/foNTQytbZzMwzq00NYl4LAON1vR.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/gkZGMcsuaG7NutjFTAkBraC1K2m.jpg",
+   "trailer": "5L5rsh-UINU"
+  },
+  "movie:1666864": {
+   "tmdbId": 1666864,
+   "type": "movie",
+   "title": "Rehearsals for a Revolution",
+   "overview": "Through five portraits of relatives and mentors, five expressions of resistance, Pegah Ahangarani sketches her life story. Drawing from personal archives, home videos, street protests footage, newspapers, and recorded voices, she retraces more than 40 years of Iran’s history. From the early days of 1979, until the war that began in 2026, she pieces together intimate and collective memories, forming the portrait of a country shaped by political repression and in constant hope for a revolution.",
+   "directors": [
+    "Pegah Ahangarani"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/mzocxy2wpTGoStwUlqcfHaNSxm2.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/vMZSG9ppXdHHSW7zXoThi4EvU6o.jpg",
+   "trailer": "oWofWD4gdbE"
+  },
+  "movie:1312310": {
+   "tmdbId": 1312310,
+   "type": "movie",
+   "title": "Gabin",
+   "overview": "Gabin, the youngest child of the Jourdel family, is set to take over his father's butcher shop. Torn between family loyalty and a desire to break free, he has other dreams.",
+   "directors": [
+    "Maxence Voiseux"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9N5pi1BJB6HqhOrrkK8hIJhzBSG.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ofuOuq4xd8oF5Q3v5Kg69jfoFhj.jpg",
+   "trailer": "_4XmhCbavrs"
+  },
+  "movie:1670563": {
+   "tmdbId": 1670563,
+   "type": "movie",
+   "title": "Thanks for Coming",
+   "overview": "This is the story of a filmmaker. Alain Cavalier, always accompanied by his camera, continues to film life with passion, still learning about himself and, above all, about others. However, he is growing older and sees his speed, his vitality, his boldness, and his lightheartedness waning. With a slight lump in his throat but still laughing, he keeps a video diary of his farewell to cinema. This will be his last film.",
+   "directors": [
+    "Alain Cavalier"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sg8u5F3cTrDl6UM0InfbXwVlkeL.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uxUwpYPlFSidyaF7g4NyZvpoksE.jpg",
+   "trailer": "X7KSF8KEJts"
+  },
+  "movie:1449729": {
+   "tmdbId": 1449729,
+   "type": "movie",
+   "title": "Mountain of Gold",
+   "overview": "Gold fever has gripped northern Niger. In search of the precious metal, and despite the risks, an army of researchers has invaded the sites of interest. While camps are set up and dismantled as rumours of new leads spread, Moussa and his companions are banking on the Ikazan vein.",
+   "directors": [
+    "Roland Edzard"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/3sA2oTcUMRH6dQUbAAInTkHhaM5.jpg",
+   "trailer": "TeCzsg6k9cQ"
+  },
+  "movie:1630801": {
+   "tmdbId": 1630801,
+   "type": "movie",
+   "title": "Love, Ted Bundy",
+   "overview": "As America's most notorious serial killer Ted Bundy awaited execution, he exchanged a series of death row letters with the woman who loved him like a brother - his cousin, Edna Martin.",
+   "directors": [
+    "Christopher Cassel"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/1QxozVBTyOM2U1ZP36ZvGzuEi6w.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ptb6BsyatWDhzECE1yBsMrib12b.jpg",
+   "trailer": "m5qpUslL5As"
+  },
+  "movie:1599746": {
+   "tmdbId": 1599746,
+   "type": "movie",
+   "title": "A Russian Winter",
+   "overview": "After the full-scale invasion of Ukraine, many people in Russia faced a brutal choice: prison, the army – or exile. Margarita, Yuri and their friends are caught in the crosscurrents of history, with no way to return home, but also no place where they feel truly welcome.",
+   "directors": [
+    "Patric Chiha"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/gsHmPOz3Nk7P2xvMaHGzByVJ7VZ.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/pfoqzyrGgVSOyvQ3mprKXv7HWic.jpg",
+   "trailer": "nj9TXom19g4"
+  },
+  "movie:1371557": {
+   "tmdbId": 1371557,
+   "type": "movie",
+   "title": "I Am Martin Parr",
+   "overview": "Since the 1970s‚ Martin Parr has fearlessly held out his unique photographic mirror and given us some of the most extraordinary and unique visual clichés of modern times. Sometimes serious‚ often absurd but always playful‚ his insightful and often acrid commentary on consumer society has always been a subject of controversy and discussion.",
+   "directors": [
+    "Lee Shulman"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/j91RP4cStadueVcVhWQEfNvetvS.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7ImhJ3UN2HPr7s96nsDzFeUWZaF.jpg",
+   "trailer": "AKEFfxXxbvk"
+  },
+  "movie:1635584": {
+   "tmdbId": 1635584,
+   "type": "movie",
+   "title": "Let Our Mountains Live",
+   "overview": "Sami reindeer herders win a Supreme Court victory against Europe’s largest wind farm - but when the state refuses to act, their fight reveals a deeper crisis of justice and trust.",
+   "directors": [
+    "Håvard Bustnes"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iBVQanqlWl0ccBoFyZpkJ82Qcdj.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jQsGx0v85O3QgS6fzjjKbSQftR7.jpg",
+   "trailer": "S12WZx_U4nY"
+  },
+  "movie:1625362": {
+   "tmdbId": 1625362,
+   "type": "movie",
+   "title": "Holy Wood Dust",
+   "overview": "Every winter, millions of fir trees are chopped down, admired, and thrown away. The film follows their journey above and below ground, from human rituals to the hidden life inside the trees. A story about trees that we celebrate by cutting them down.",
+   "directors": [
+    "Viktor Kossakovsky"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9pyQnb9hWr0ggm3Qwgka4ALGsBN.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/rqYZdzjP2BPCwX1AUS0lOH0UWmk.jpg",
+   "trailer": "9WowMLrnhaw"
+  },
+  "movie:1616868": {
+   "tmdbId": 1616868,
+   "type": "movie",
+   "title": "Einar Schleef - No Germany Did I Find",
+   "overview": "With his monumental productions, Einar Schleef pushed theatre to the outer reaches, confounded expectations in East and West alike, grappled with GDR origins and the BRD present. A universal artist emerges from the archive: “I’m not human, I’m dynamite”.",
+   "directors": [
+    "Sandra Prechtel"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fNyAq1S63gsIQWdzfhc3UdOUxck.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/6ltaB20k1ennQIrp7fStZRXu08N.jpg",
+   "trailer": "A-PpgXxRO5A"
+  },
+  "movie:1498729": {
+   "tmdbId": 1498729,
+   "type": "movie",
+   "title": "Brunello: The Gracious Visionary",
+   "overview": "A farmer's son transforms into a fashion mogul, building a billion-dollar luxury empire while staying true to his humanistic values and commitment to ethical business practices and fine craftsmanship.",
+   "directors": [
+    "Giuseppe Tornatore"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/1PRhmkQoi1DHa38YcM35sB9a9m4.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/AfdVZEhR5y0oLaC1pDgFNecn8fw.jpg",
+   "trailer": "DUSK3uec9SA"
+  },
+  "movie:1537518": {
+   "tmdbId": 1537518,
+   "type": "movie",
+   "title": "The Cycle of Love",
+   "overview": "Explores the romantic journey of PK Mahanandia, a Delhi street artist who trekked 6,000 miles by bicycle in 1977, venturing across continents to reunite with the woman he loved.",
+   "directors": [
+    "Orlando von Einsiedel"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/3mUMZQ7mTBtCtnrWA7GhWNIHh7o.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jqbyogJrwUM0HBOLYjvZIOb4EQC.jpg",
+   "trailer": "biXpA5aJPug"
+  },
+  "movie:1517161": {
+   "tmdbId": 1517161,
+   "type": "movie",
+   "title": "Broken English",
+   "overview": "A survivor, provocateur and true original, Marianne has spent more than six decades defying expectations — releasing over thirty-five albums while constantly reinventing herself. Made with her full involvement, Broken English is an intimate and unflinching exploration of a fractured yet unbreakable life shaped by fame, creativity and relentless public scrutiny.",
+   "directors": [
+    "Jane Pollard",
+    "Iain Forsyth"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/dhT0Okekfq6Ncqh5ttFBGM6TimF.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/253S3mBfoE7Bd0Ioe9pXEvdhlh6.jpg",
+   "trailer": "k7h6QkAfhjU"
+  },
+  "movie:1582371": {
+   "tmdbId": 1582371,
+   "type": "movie",
+   "title": "Disunited Nations",
+   "overview": "Francesca Albanese, the UN Special Rapporteur on human rights in the occupied Palestinian territories, had already labelled events in Gaza a genocide back in March 2024. Following her lead, this piece takes us deep into the heart of the institution’s crisis, as it struggles with its inability to stop the massacre of civilians.",
+   "directors": [
+    "Christophe Cotteret"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/2dWOHGT0y4zHdTgDa9lVXmwkc4k.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/k3wJPmExxgv5gYsTZbrEpitGtq7.jpg",
+   "trailer": "phg5Voe1Y04"
+  },
+  "movie:1596326": {
+   "tmdbId": 1596326,
+   "type": "movie",
+   "title": "Barbara Forever",
+   "overview": "An archive-driven exploration of the life, work, and legacy of iconic, pioneering lesbian filmmaker Barbara Hammer.",
+   "directors": [
+    "Brydie O'Connor"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/kYjCmL8sg17zoKtm5Pb6Cn4H0nB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/mlEsvwfQoNUXC9y7vOSgVkrSL5U.jpg",
+   "trailer": "8WW89Vm5O6A"
+  },
+  "movie:1646767": {
+   "tmdbId": 1646767,
+   "type": "movie",
+   "title": "Junkies of Dreaming",
+   "overview": "Orchestra rehearsals with Teodor Currentzis. The House of the Radio of the GDR in Berlin. A young couple in love. The artistic process viewed from the outside – and from the inside. Mahler’s boundary-breaking Third Symphony. What triggered the composition 130 years ago, and what does it trigger in us today?",
+   "directors": [
+    "Jan Schmidt-Garre"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/5PhGi7PPruUHH2AWL9KvAWaeKnZ.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/sy8v5DAeWIDVDLOpBTDXbrlVJkE.jpg",
+   "trailer": "eQvVb6Rhvdg"
+  },
+  "movie:1774428": {
+   "tmdbId": 1774428,
+   "type": "movie",
+   "title": "Between Summers",
+   "overview": "Between french fries, TikToks, and sunscreen, carefree moments clash with self-doubt, and playful freedom with societal pressure. This is the vibrant world of adolescents searching for their place – on the lawn and in life. When the orange slide is torn down, the chapter of childhood comes to an end. Two years later, after the renovation, it's not just the public pool that has changed.",
+   "directors": [
+    "Romana Lanfranconi"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/jSfBvcSOlqrGwfgkPrHxh0PAXcT.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/rwDQoKHijAeLSSCdlnsoRQrbSbk.jpg",
+   "trailer": "nrfFBQMDX6c"
+  },
+  "movie:1552998": {
+   "tmdbId": 1552998,
+   "type": "movie",
+   "title": "Inside Gaza",
+   "overview": "Free access to the Gaza Strip has remained closed to international journalists since the war began on October 7, 2023. AFP's permanent reporters are among the few professional witnesses to have experienced this conflict from the inside. They have watched, filmed, photographed, testified, all whilst struggling to ensure their own survival.  From their exile, they recount this war, which is the deadliest ever recorded for members of the press.",
+   "directors": [
+    "Hélène Lam Trong"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/hnGQvP7d4YfSJUgpLua6dMHBhps.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/e81VRcnsOS2ZspucmO2fGTKWP3.jpg",
+   "trailer": "H6Z-nR3TyyM"
+  },
+  "movie:1498742": {
+   "tmdbId": 1498742,
+   "type": "movie",
+   "title": "I Heard That They Are Not Going To See Each Other Anymore",
+   "overview": "In Taipei’s dreamscape, Tao’s incomprehensible love for Shin drives her to create painful memories. Meanwhile, Melih, burdened with self-blame, longs to connect with the perpetually drunk Ping.",
+   "directors": [
+    "Wong Ka Ki"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/gdAbcShk0yBraK3LGaiLfjvTCCX.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/2OgrTUoGAGxpdh6xla1vfVToV04.jpg",
+   "trailer": "2d1NRBSYbuo"
+  },
+  "movie:1596332": {
+   "tmdbId": 1596332,
+   "type": "movie",
+   "title": "American Doctor",
+   "overview": "United by a shared oath to save lives, three American doctors—Palestinian, Jewish, and Zoroastrian—work in a besieged hospital in Gaza in the middle of a genocide comitted by Israel, and return to the United States to fight for the patients and colleagues they left behind.",
+   "directors": [
+    "Poh Si Teng"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sOSrlaXvItVdwU1P5Qpttcl12sd.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/yzNoanH2Jfn5bj7d6reKeaAbd4S.jpg",
+   "trailer": "Be7_u8jzHzU"
+  },
+  "movie:1637730": {
+   "tmdbId": 1637730,
+   "type": "movie",
+   "title": "Whiddy",
+   "overview": "A small rural community in Ireland welcomes in a major, global oil company with open arms but just 10 years and numerous oil spills later, that dream turns into an unimaginable nightmare. 50 lives lost in a tragedy that silenced and divided the community and still haunts it to this day.",
+   "directors": [
+    "Adrian McCarthy"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/spRPrwVmD08aXiZV951G5PQGVLb.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/suSAjZRAEE3HVrPG0Ukir1eSVr.jpg",
+   "trailer": "UvEm8WWIZ7M"
+  },
+  "movie:1299581": {
+   "tmdbId": 1299581,
+   "type": "movie",
+   "title": "Knife: The Attempted Murder of Salman Rushdie",
+   "overview": "In 2022, Salman Rushdie was preparing to deliver a lecture on the United States as a safe haven for writers when a man rushed the stage and, in 27 seconds, stabbed him 15 times. Airlifted to hospital, Rushdie survived, barely, and his wife Rachel Eliza Griffiths began filming immediately, capturing an unfiltered view of his recovery, return to life and how he regained his spirit and hope for the future.",
+   "directors": [
+    "Alex Gibney"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/zIHezCczCvRFtkuAoCm1tEJGa0W.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/nbnFwaYmajIbGEXfXgWgzpiwQXF.jpg",
+   "trailer": "4Dntq0XUcls"
+  },
+  "movie:1309373": {
+   "tmdbId": 1309373,
+   "type": "movie",
+   "title": "Whispers in the Woods",
+   "overview": "In the heart of the tranquil Vosges forests, where lynxes, bears and deer roam freely, Vincent Munier accompanies his father on his expeditions. He not only seeks to capture the visual wonders of this forest kingdom, but also aims to make its sounds audible. Every whisper of the forest is a reminder of the knowledge of nature that his father once imbued in him – knowledge that Vincent now passes on to his own son. Vincent Munier combines breathtaking footage of nature and its sounds to create a fairytale-like cinematic experience that slows time down.",
+   "directors": [
+    "Vincent Munier"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6UCVRxRpZRXfDUPu9vwoGUEPYQ3.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/aUoZx5eljCac6fhKK4dafIvTYDY.jpg",
+   "trailer": "jNgDillNElk"
+  },
+  "movie:1400379": {
+   "tmdbId": 1400379,
+   "type": "movie",
+   "title": "The Librarians",
+   "overview": "As an unprecedented wave of book banning is sparked in Texas, Florida, and beyond, librarians under siege join forces as unlikely defenders fighting for intellectual freedom on the front lines of democracy.",
+   "directors": [
+    "Kim A. Snyder"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/y3Mu9meJ5Uu1I6laCr3eG9b4Hl3.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/6AK5MOWFItnOKTfrH3w1Y91Jbya.jpg",
+   "trailer": "gbm3xqW4Qys"
+  },
+  "movie:1745146": {
+   "tmdbId": 1745146,
+   "type": "movie",
+   "title": "Tunnel Vision",
+   "overview": "Tunnel Vision follows the hardcore graffiti bomber \"Rolex\", dedicated to a lost and rare discipline in the Stockholm graffiti scene – Painting hard-to-access innercity subway stations, knowing that as soon as he sets his foot next to the station platform, police and transit security will be on their way.",
+   "directors": [
+    "Lukas Wigardt"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/43ShkCuMKVjUf5f52g2FRFbPePO.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/pjLlciAYMGUT6wmSPP7OXOkq4Jq.jpg",
+   "trailer": "q_Rs3VZHWKM"
+  },
+  "movie:1320392": {
+   "tmdbId": 1320392,
+   "type": "movie",
+   "title": "One to One: John & Yoko",
+   "overview": "An exploration of the seminal and transformative 18 months that one of music’s most famous couples — John Lennon and Yoko Ono — spent living in Greenwich Village, New York City, in the early 1970s.",
+   "directors": [
+    "Kevin Macdonald"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9SncSYtmHNJv2hwFkkHw6k8vNvX.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/9n78URb0Q3U8OjXQF98UNaw6MIZ.jpg",
+   "trailer": "oxagfYjeMV4"
+  },
+  "movie:1761050": {
+   "tmdbId": 1761050,
+   "type": "movie",
+   "title": "5 - The Time Called Arashi -",
+   "overview": "",
+   "directors": [
+    "Hirokazu Kore-eda"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/eEXFBWG5F6fOwQjekuCZTNMKVOG.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hXXZCC2tdjmf6ikrmoBaj0cIdJ8.jpg",
+   "trailer": "t0d2CxpElPo"
+  },
+  "movie:1555218": {
+   "tmdbId": 1555218,
+   "type": "movie",
+   "title": "Are We Monsters?",
+   "overview": "A gay radical outsider, a flamboyant Muslim, and a nasty single mom live in a devout Muslim area on the Thai border under decades of martial law.",
+   "directors": [
+    "Thunska Pansittivorakul"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/lbrvikUasxWamMEofn1lJIswNgu.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uixGXsaulEDF1YO8matQWaTvBg4.jpg",
+   "trailer": "66GN3s2JUio"
+  },
+  "movie:1697647": {
+   "tmdbId": 1697647,
+   "type": "movie",
+   "title": "Shumei: The Living Legacy of Kabuki",
+   "overview": "A look at the succession ceremony in which Ichikawa Danjūrō XIII formally inherited the storied Danjūrō name in Kabuki, Japan’s classical performing art. The film records the behind-the-scenes preparations for the actor’s name-inheritance debut performance.",
+   "directors": [
+    "Takashi Miike"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/r5qnf8fzaicAbR1vREtZNVQIslb.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8SL1IYHPtWsbq5INviyLhsrM7V3.jpg",
+   "trailer": "HKpQGx_5D9E"
+  },
+  "movie:1759805": {
+   "tmdbId": 1759805,
+   "type": "movie",
+   "title": "Revolving Lanterns",
+   "overview": "A car makes its way through the pitch black on a snowy night, into a village deep in the mountains. Okugawa, nestled in the mountains of Fukushima, is the man's hometown. The village is slowly disappearing, its population dwindled down to just 500 elderly residents, yet the man begins building a new house.",
+   "directors": [
+    "Itaru Matsui"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/8Gs1ALPgqDQw9KWvODUSUBkwPfB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/aTdKWRaowS6r7RgiCVHEq1nmVgV.jpg",
+   "trailer": "O5s_CeciG8c"
+  },
+  "movie:1616685": {
+   "tmdbId": 1616685,
+   "type": "movie",
+   "title": "He Calls Me Daughter",
+   "overview": "An exploration of women shaped by absent or broken fathers as they find healing, courage, and restored identity through God’s faithful love. Through raw and powerful stories, HE CALLS ME DAUGHTER reveals a timeless truth: A heavenly Father changes everything.",
+   "directors": [
+    "Rick Altizer"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/atMhUt0OTLaqhEpssL4jKhg3cqJ.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hXDNBgZvDUzbyRIhVBJbAFQH6Z1.jpg",
+   "trailer": "um0Wm_fgIAk"
+  },
+  "movie:1303398": {
+   "tmdbId": 1303398,
+   "type": "movie",
+   "title": "The Gospel of Revolution",
+   "overview": "The revolutions that swept Latin America in the second half of the 20th century owe much to the participation of millions of Christians who engaged in political struggles in the name of their faith, paying a heavy toll for undermining the traditional relationship between the Church and power. Driven by Liberation theology, they challenged military regimes and oligarchies, risking their lives. Far from Marx's idea of religion as 'opium of the people', here the people fought for the advent of the Kingdom of God on Earth, rather than in Heaven.",
+   "directors": [
+    "François-Xavier Drouet"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/dU2Vp32sKP1W2EWsDJjHg4PxVyg.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/aYVmbLdTYUO0gEwp6OlXGvz44X0.jpg",
+   "trailer": "uIjcJtpLkks"
+  },
+  "movie:1188841": {
+   "tmdbId": 1188841,
+   "type": "movie",
+   "title": "Between Lands",
+   "overview": "A long time ago, Ana Laura, Gustavo, and Jesús crossed the border in search of a better opportunity. They worked hard, built a family, and made a life in the United States. Day by day, years after their arbitrary deportations to Mexico, they deal with the grief of being separated from their families. As time goes by, the shattered existence of everyone is slowly and inevitably rebuilt, far away and apart from each other.",
+   "directors": [
+    "Atzin Ortiz Gonzalez"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/vmMbbvdPujunBNwmo2Pu0pDypqU.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/5cNmbU6kE6A1nWxEwsvorEJXbfQ.jpg",
+   "trailer": "GBgmJyOMakQ"
+  },
+  "movie:1765336": {
+   "tmdbId": 1765336,
+   "type": "movie",
+   "title": "Invisible Injuries",
+   "overview": "After war, Australian veteran Andy Fermo returned home carrying invisible wounds. Invisible Injuries explores PTSD's impact on identity, family and daily life, and the courage it takes to heal, reconnect and keep moving forward.",
+   "directors": [
+    "Kelly Bergsma"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/8hTVsqbmBoKOprQUH1e3MvcMB71.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/qOA02jA7ztDi9Vp6lYHE4iyLAMg.jpg",
+   "trailer": "lhnZsUPNyQs"
+  },
+  "movie:1562590": {
+   "tmdbId": 1562590,
+   "type": "movie",
+   "title": "Dear Lara",
+   "overview": "Unveiling abuse in classical music's elite institutions — violinist Lara St. John fights for justice, exposing complicity and systemic misogyny.",
+   "directors": [
+    "Lara St. John"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/grpQhtkqXrjMvx0Ay3lN0VniyR.jpg",
+   "trailer": "9TIq7F0evKU"
+  },
+  "movie:1404184": {
+   "tmdbId": 1404184,
+   "type": "movie",
+   "title": "Under the Flags, the Sun",
+   "overview": "This fully archival journey through the 35 years of Alfredo Stroessner’s regime in Paraguay reveals unseen footage and explores one of the longest-running dictatorships in history, whose effects still resonate today.",
+   "directors": [
+    "Juanjo Pereira"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/mDeLGptXyUkKGWNKqPQcIHXoaKo.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/pXXmAtKfEBdHuWf8Wh6uLfgZz4z.jpg",
+   "trailer": "j0S3uehaFRM"
+  },
+  "movie:1729736": {
+   "tmdbId": 1729736,
+   "type": "movie",
+   "title": "This is Not An Apple",
+   "overview": "Palestinian brothers Yahya and Reda live in a neighbourhood in Oslo where their role models are often local gangsters. What begins as a seemingly insignificant argument within the gang ends in an attempted murder that leaves Yahya with life-threatening injuries. Against all odds, he survives. The brothers are faced with the choice of taking revenge or choosing forgiveness.",
+   "directors": [
+    "Nefise Özkal Lorentzen"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/uwwKo22q4dAnDoEUjt1WstgBKwi.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/41cw1qZoZGaEHjkylCyGRlk6hMg.jpg",
+   "trailer": "c50vH-d6yT4"
+  },
+  "movie:1640984": {
+   "tmdbId": 1640984,
+   "type": "movie",
+   "title": "Hex",
+   "overview": "Three young Norwegian women form a coven and start the black metal band Witch Club Satan. Before they know it, they are playing at major international festivals, but the battle has only just begun.",
+   "directors": [
+    "Maja Holand"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6BhT2ocU5swP8Sf3JNomsVYeJru.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/xNYrnova9rhW6JZ94JGU5KfnLwX.jpg",
+   "trailer": "QPY0EVjvzjw"
+  },
+  "movie:1503771": {
+   "tmdbId": 1503771,
+   "type": "movie",
+   "title": "The Beauty of Errors",
+   "overview": "A portrait of a relationship between three generations and how it shifts between the search for closeness, understanding and acceptance, as the teenage son steps closer to adulthood. The film continues to follow the lives of Tero and his son Henri, both previously featured in Kärkkäinen’s documentary The Living Room of a Nation.",
+   "directors": [
+    "Jukka Kärkkäinen"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/oOPq6IPCoztaCnlUJzYF9jq5yuS.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/b3ivDVTwnblmRLskwPkAevrMA82.jpg",
+   "trailer": "aisvLNAeupM"
+  },
+  "movie:1632599": {
+   "tmdbId": 1632599,
+   "type": "movie",
+   "title": "The Slightest Touch",
+   "overview": "As she turns forty - an age doctors once said she would never reach - Emma Fogarty, who lives with the rare and extremely painful condition Epidermolysis Bullosa, takes up an offer from longtime friend Colin Farrell; they agree to run the Dublin Marathon together, with Colin pushing Emma's wheelchair for the final four kilometres. Also follow their lives and the enduring friendship that has sustained them through the years.",
+   "directors": [
+    "Rachel Fleit"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9o1Y6bwmPaKcljx2edkllyGm8nM.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/2Puf7XExGfbhJuFDhbbmGNnll46.jpg",
+   "trailer": "ApBoWNQF7c4"
+  },
+  "movie:1522259": {
+   "tmdbId": 1522259,
+   "type": "movie",
+   "title": "Country Doctor",
+   "overview": "Dr. James Graham, a physician in a struggling Oklahoma town, fights to save its bankrupt hospital.",
+   "directors": [
+    "Shari Cookson",
+    "Nick Doob"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/m7XZWCBNYKUAULWSEfQKvpD8FpY.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jwwcS0UF5YBjFkvqTjM2Mssiwt6.jpg",
+   "trailer": "0X6BeV6NsIc"
+  },
+  "movie:1756543": {
+   "tmdbId": 1756543,
+   "type": "movie",
+   "title": "Paranormal Hollywood Haunting",
+   "overview": "British paranormal investigators explore a Hollywood mansion, uncovering true story of couple Daniel and Arthur, whose journey from homelessness to Hollywood history explores LGBTQ identity, resilience, and unexplained supernatural events.",
+   "directors": [
+    "Carl Medland"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/p6RzyednYXaEhbNsQFVmk1ziV4q.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jUwaAscUDiJNyIIgopLRdQMCRVt.jpg",
+   "trailer": "9pQeEBQojIk"
+  },
+  "movie:1811599": {
+   "tmdbId": 1811599,
+   "type": "movie",
+   "title": "Tyson Fury",
+   "overview": "Discover the man beneath the Fury in this feature length documentary from Lucy Wilcox. With exclusive access to Paris, Tyson and John Fury, this film charts the rise, fall and redemption of the one and only Gypsy King.",
+   "directors": [
+    "Lucy Wilcox"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/wAffyCmjFZOI3uvmVvpg7Lz8Yn5.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/u4KtIySbavQYUxGHjjV3zT0H17c.jpg",
+   "trailer": "jb01qWUn62A"
+  },
+  "movie:1154210": {
+   "tmdbId": 1154210,
+   "type": "movie",
+   "title": "The Korean Black Eyes",
+   "overview": "In 1966, the girl band ‘All Stars’ was formed centered on drummer Kitty (Jun-im Lim), a third-year high school student. They left the country with an understanding that they were going to perform in Southeast Asia. However, they arrived and put on a spot to perform, sometimes risking their lives, for the soldiers on the battlefield of Vietnam. Kitty was recognized for her musical talent, and formed the five-member girl band ‘Korean Black Eyes’ in Bangkok in 1971. The band moved onto Beirut as their base and toured throughout the Middle East and Africa, including Egypt and Nigeria. When they entered Spain in 1973, they went on a concert tour with Cliff Richard, Julio Iglesias, and others. They recorded an album in Portugal at the suggestion of a local producer, but had to quickly escape the country when the military revolution broke out. Wherever they went, including Vietnam and Lebanon, they encountered turbulent scenes of modern history.",
+   "directors": [
+    "Kim Dae-hyun"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/3ZqpVBpyMByFJr9ViWW8xeFgDVM.jpg",
+   "trailer": "92Hqjlbk2p4"
+  },
+  "movie:1532477": {
+   "tmdbId": 1532477,
+   "type": "movie",
+   "title": "In-I In Motion",
+   "overview": "In 2007, Juliette Binoche and Akram Khan took a break and co-created In-I, an original performance that toured the world. Today, Juliette Binoche revisits that exhilarating journey. Through unfamiliar images, she reflects on creation, its challenges, and the personal transformation it brings as a filmmaker.",
+   "directors": [
+    "Juliette Binoche"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/kFIVqcaHcGfMEBBLMmp4DlbQaGb.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/4J4OlqCWFF6b9F4HuMxWmWlneBF.jpg",
+   "trailer": "mSkuzxi8hG4"
+  },
+  "movie:1511305": {
+   "tmdbId": 1511305,
+   "type": "movie",
+   "title": "Edhi Alice: Take",
+   "overview": "Edhi Alice: TAKE begins from the perspective of Alice, a gaffer pushed out of the field, as she confronts her own body, and transitions into the journey of another protagonist, Edhi, who discovers a new sense of embodiment. The narrative of transition expands beyond a personal life story to encompass relationships, bodily experiences, and the sense of space, becoming a cinematic transformation.",
+   "directors": [
+    "Kim Il-ran"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/eIgtTES9D7JZmVwCRsW7ALPWmJr.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ua8MjqvAP2zdwSAOPZMJBBAdE2P.jpg",
+   "trailer": "ZxR2eucDlnI"
+  },
+  "movie:1736731": {
+   "tmdbId": 1736731,
+   "type": "movie",
+   "title": "Muguruza FM 40 Tour",
+   "overview": "Four decades after taking to the stage for the first time, Fermín Muguruza launches into his last major tour: a collective journey to celebrate 40 years of music, engagement and cultural resistance. This music documentary captures the pulse of that voyage: concerts packed to the hilt, endless kilometres on the road, all sorts of encounters on the way and a shared energy that stretches beyond generations, from the bands Kortatu and Negu Gorriak to his current solo career.​",
+   "directors": [
+    "Ander Merino Etxebeste",
+    "Fermin Muguruza"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/8wtF8PKOLibEZsgKOvK1UMFTbpu.jpg",
+   "trailer": "6U4AvYL6i4Y"
+  },
+  "movie:1814847": {
+   "tmdbId": 1814847,
+   "type": "movie",
+   "title": "La Muerte Es Renacer",
+   "overview": "\"La Muerte Es Renacer\" is about inner story from Latin Culture.",
+   "directors": [
+    "Nima Beheshtinia"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/ec2ySM4cgQ65iLvx4h9WbOuWhxw.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/m8BXtKlPU0vBO5SLgtMbWhIgLIg.jpg",
+   "trailer": "7QDEglXfHTc"
+  },
+  "movie:1526227": {
+   "tmdbId": 1526227,
+   "type": "movie",
+   "title": "While the Green Grass Grows: A Diary in Seven Parts",
+   "overview": "A chronicle of the wonders found in everyday life and events. Tragic and comic, philosophical and poetic, Mettler’s diary combines personal conversations, family history, memories, and love. The film gracefully explores our shared destiny and elevates the diary to the level of visionary cinema. Its meditative approach and investigative gaze create a space to capture the fragility of relationships, where reflections on the human condition and the environment merge in a stream of consciousness. Mettler travels between Switzerland and Canada, visits the mountains of New Mexico, and teaches at a film school in Cuba. He is always accompanied by the camera, “a machine that carries me through time.”",
+   "directors": [
+    "Peter Mettler"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/tnJPauwB05TT9Bjmd6nYZ0gT8JP.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/kfPcYbMmQQoTmrEOkRP0ui7WeJd.jpg",
+   "trailer": "f3Zfiy8DaI0"
+  },
+  "movie:1098534": {
+   "tmdbId": 1098534,
+   "type": "movie",
+   "title": "Orwell: 2+2=5",
+   "overview": "George Orwell was one of the most visionary authors of the 20th century, whose novels 1984 and Animal Farm foretold a chilling, authoritarian future. Acclaimed director Raoul Peck interweaves clips, readings from Orwell's diary, cinematic references, and modern-day footage to craft not only a portrait of the writer, but a fresh take on how prophetic his work has become.",
+   "directors": [
+    "Raoul Peck"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/qG1LjcK8ohi4mSJ9j8KHUs5svbe.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/iVqXcSZs4ye2HTROwUYQgy3Dx7c.jpg",
+   "trailer": "npwmcJxgLic"
+  },
+  "movie:142195": {
+   "tmdbId": 142195,
+   "type": "movie",
+   "title": "A Bigger Splash",
+   "overview": "After a difficult break-up, Hockney is left unable to paint, much to the concern of his friends.",
+   "directors": [
+    "Jack Hazan"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/2yQ5Sx1cNTnRQUjDeMZdbOuTIIP.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/ecIp5PjuT6hkz3TduDloAvRX8nx.jpg",
+   "trailer": "m2sEkXKxQs8"
+  },
+  "movie:629704": {
+   "tmdbId": 629704,
+   "type": "movie",
+   "title": "The Booksellers",
+   "overview": "What once seemed like an esoteric world now seems essential to our culture: the community of rare book dealers and collectors who, in their love of the delicacy and tactility of books, are helping to keep the printed word alive. D.W. Young’s elegant and entertaining documentary, executive produced by Parker Posey, is a lively tour of New York’s book world, past and present, from the Park Avenue Armory’s annual Antiquarian Book Fair, where original editions can fetch hundreds of thousands of dollars; to the Strand and Argosy book stores, still standing against all odds; to the beautifully crammed apartments of collectors and buyers. The film features a litany of special guests, including Fran Lebowitz, Susan Orlean, Gay Talese, and a community of dedicated book dealers who strongly believe in the wonder of the object and the everlasting importance of what’s inside.",
+   "directors": [
+    "D.W. Young"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/qGi8ZCxoy0z7yO4ByT5hAksmErK.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/dBOHnvQxiONQslgiE3tJIPxnOh0.jpg",
+   "trailer": "ymcRRt3Ix04"
+  },
+  "movie:1418515": {
+   "tmdbId": 1418515,
+   "type": "movie",
+   "title": "Monk in Pieces",
+   "overview": "Visionary composer and performer Meredith Monk overcame hostile critics to become one of the great artists of her time. In her seventh decade of creativity, she ponders how such singular work can continue without her.",
+   "directors": [
+    "Billy Shebar",
+    "David C. Roberts"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/rDD5MqFljMeWBu36riwFFtoEvQu.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/tPFXjvkisHHSTfQI9o2wWhcDm46.jpg",
+   "trailer": "Lt-AvtsCsLg"
+  },
+  "movie:1165656": {
+   "tmdbId": 1165656,
+   "type": "movie",
+   "title": "IU CONCERT - The Golden Hour",
+   "overview": "Experience IU's first ever global cinema release, as the first Korean female singer to perform at the iconic Olympic Main Stadium in Seoul, the largest stadium in South Korea and the dream venue for music artists.  Starting with a thrilling acapella opening, the setlist is filled with beloved songs from across IU’s career. From the floating strawberry moon balloon, to fireworks and a stunning drone show, the enchanting stage production is a must-see in cinemas.  Embrace the happiness of the unforgettable 'Golden Hour' through IU's legendary performances and a fully-charged live show.",
+   "directors": [
+    "An Jong-ho"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/60sR9GYAa0lpRKnNrJwez3qgsOH.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/f5FjEf3u4ybAKfqUainQwJhZPy2.jpg",
+   "trailer": "UJPfPBCwNg4"
+  },
+  "movie:1340449": {
+   "tmdbId": 1340449,
+   "type": "movie",
+   "title": "Wisdom of Happiness",
+   "overview": "A deeply intimate and highly cinematic documentary featuring the Dalai Lama, who, at nearly ninety year of age, offers practical advice for navigating the 21st century's challenges.",
+   "directors": [
+    "Philip Delaquis",
+    "Barbara Miller"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/qigUDdP23FhLmMVKcy3TTdwFqQu.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/yyXEDXqI9iWXqtgn7pg5zoDGxDd.jpg",
+   "trailer": "ln-JHLtnH7A"
+  },
+  "movie:1769785": {
+   "tmdbId": 1769785,
+   "type": "movie",
+   "title": "The Breath Of Freedom",
+   "overview": "Because taming and caring for the wild horses is demanding, they are released back into the mountains before winter arrives, left to their fate in the hope of capturing them again the following year. Witnessed through the eyes of a young boy, this story explores, through images, the delicate balance between nature and humanity, and the tension between ownership and freedom.",
+   "directors": [
+    "Fatih Köçer"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/hFdCffxnEG91479JSEy8UBxkEUg.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/SmIrNoHrZJkEHKM0zz41uexIbP.jpg",
+   "trailer": "xHNA12scwZg"
+  },
+  "movie:1595210": {
    "tmdbId": 1595210,
    "type": "movie",
    "title": "Nuisance Bear",
-   "date": "2026-11-06",
-   "where": "In cinemas in the US",
    "overview": "A polar bear is forced to navigate a human world of tourists, wildlife officers, and hunters as its ancient migration collides with modern life. When a sacred predator is branded a nuisance, it becomes unclear who truly belongs in this shared landscape.",
    "directors": [
     "Gabriela Osio Vanden",
@@ -256,65 +1088,21 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/hqDiQteXWMoyezEmbPy0nRYdUST.jpg",
    "trailer": "dL4lFKY8Cy4"
   },
-  {
-   "tmdbId": 1798383,
+  "movie:1747216": {
+   "tmdbId": 1747216,
    "type": "movie",
-   "title": "Wolves Up Close with Bertie Gregory",
-   "date": "2026-11-06",
-   "where": "Disney+ / Hulu in the US",
-   "overview": "Reconnecting with a pack of wolves he has followed for seven years, Bertie sets out to capture one of the Arctic's most dangerous and rarely filmed hunts: wolves taking on a bull moose, prey roughly ten times their size. Led by Kona, a striking white breeding male, the pack faces a critical winter as dwindling food supplies, an encroaching rival wolf and an aging leader threaten its survival.",
-   "directors": [],
-   "poster": "https://image.tmdb.org/t/p/w342/fopmDU345HPkMC9iUaNQEY0uRkk.jpg",
-   "trailer": "3hCMUaREGL8"
-  },
-  {
-   "tmdbId": 1728838,
-   "type": "movie",
-   "title": "Wayward: How Women Changed Snowboarding",
-   "date": "2026-11-10",
-   "where": "Streaming in the US",
-   "overview": "Wayward is a feature documentary about the women who changed snowboarding by refusing to follow the status quo. Spanning 4 decades of progression, the film weaves together rare archival footage and firsthand accounts from pioneering athletes who fought for visibility, opportunity, and respect in a male-dominated industry. As the sport has evolved and new generations push boundaries further than ever before, Wayward examines what it took to get here, and what still lies ahead. This is a story of resilience, rebellion, and the power of those who shaped a sport & a culture into what it is today.",
+   "title": "Renoir & Love",
+   "overview": "Pierre-Auguste Renoir is one of the world’s favourite artists, a founding member of the Impressionist movement and a constantly evolving artist. With exclusive access to the National Gallery’s new exciting show of the same name (3 October 2026 – 31 January 2027), Exhibition on Screen will bring Renoir’s world class works to cinema audiences. Be transported back to a Parisian summer of love through the eyes of a true visionary. An unmissable opportunity to fall in love with Renoir this winter.",
    "directors": [
-    "Mia Lambson Brady"
+    "Ali Ray"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/zSUEFztuscGYLpTopsAM6Sts7Mo.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/nQDiDykO5RjCk6YwYEpEESxbfhm.jpg",
-   "trailer": "4CIicSfsqBo"
+   "poster": "https://image.tmdb.org/t/p/w342/50h9zwCwzrTgnaHJ1GZwT5UyuMV.jpg",
+   "trailer": "eP653O5gvOU"
   },
-  {
-   "tmdbId": 1309373,
-   "type": "movie",
-   "title": "Whispers in the Woods",
-   "date": "2026-11-13",
-   "where": "In cinemas in the UK and Ireland",
-   "overview": "In the heart of the tranquil Vosges forests, where lynxes, bears and deer roam freely, Vincent Munier accompanies his father on his expeditions. He not only seeks to capture the visual wonders of this forest kingdom, but also aims to make its sounds audible. Every whisper of the forest is a reminder of the knowledge of nature that his father once imbued in him – knowledge that Vincent now passes on to his own son. Vincent Munier combines breathtaking footage of nature and its sounds to create a fairytale-like cinematic experience that slows time down.",
-   "directors": [
-    "Vincent Munier"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/6UCVRxRpZRXfDUPu9vwoGUEPYQ3.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/aUoZx5eljCac6fhKK4dafIvTYDY.jpg",
-   "trailer": "jNgDillNElk"
-  },
-  {
-   "tmdbId": 1637730,
-   "type": "movie",
-   "title": "Whiddy",
-   "date": "2026-11-13",
-   "where": "In cinemas in Ireland",
-   "overview": "A small rural community in Ireland welcomes in a major, global oil company with open arms but just 10 years and numerous oil spills later, that dream turns into an unimaginable nightmare. 50 lives lost in a tragedy that silenced and divided the community and still haunts it to this day.",
-   "directors": [
-    "Adrian McCarthy"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/spRPrwVmD08aXiZV951G5PQGVLb.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/suSAjZRAEE3HVrPG0Ukir1eSVr.jpg",
-   "trailer": "UvEm8WWIZ7M"
-  },
-  {
+  "movie:951018": {
    "tmdbId": 951018,
    "type": "movie",
    "title": "A Fox Under a Pink Moon",
-   "date": "2026-11-13",
-   "where": "In cinemas in the UK",
    "overview": "At just 16, Soraya is already creating stunning drawings and sculptures that are as beautiful as they are dark. This strong-willed Afghan sculptor and illustrator has been trying for five years to escape Iran and join her mother in Austria.",
    "directors": [
     "Mehrdad Oskouei"
@@ -323,12 +1111,46 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/sdMLtTxADRF3WAHmtL9oUFNY5wt.jpg",
    "trailer": "HBlaV0xOBLI"
   },
-  {
+  "movie:1786136": {
+   "tmdbId": 1786136,
+   "type": "movie",
+   "title": "The Lost Cache",
+   "overview": "History, science and exploration converged in a quest to find the lost camera of one of climbing’s most iconic photographers and cartographers, Bradford Washburn. Set against the backdrop of the pioneering lensmen’s storied 1937 Mount Lucania expedition, this film blurs the lines between adventure documentary, treasure hunt and meditation on why we risk everything to chase the improbable.",
+   "directors": [
+    "Todd Jones"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iP7Z6UHrBItOvex7NAGyMsHU6hw.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/sbBzG9YqpWri4uAGLAYMPMKYi9R.jpg",
+   "trailer": "kenvVcgaQHM"
+  },
+  "movie:1643130": {
+   "tmdbId": 1643130,
+   "type": "movie",
+   "title": "Remember the Summit",
+   "overview": "Sir Chris Bonington’s return to Torres del Paine, 62 years after the first ascent of the Central Tower.  At 91 years old, and while living with Alzheimer’s disease, the documentary accompanies Bonington in a profoundly human return: an attempt to reconnect with memories that time has erased, but that the Patagonian landscape still seems to guard. During the filming, Chris once again set foot on the territory of Estancia Cerro Guido, closing a circle between past and present, between the epic of mountaineering and the fragility of memory.",
+   "directors": [
+    "Timothy Dhalleine"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fsGVbF7W0YCivuabOJRHuJulUTq.jpg",
+   "trailer": "-Dk7SPkvFRg"
+  },
+  "movie:1500112": {
+   "tmdbId": 1500112,
+   "type": "movie",
+   "title": "Women & the Wind",
+   "overview": "Shot over the course of 30 days at sea, filmmaker Alizé Jireh documents the group’s voyage across the North Atlantic—from moments of stillness and calm to the chaos of storms and setbacks. With an observational approach and an eye for the emotional and physical rhythms of life at sea, Jireh captures not just the external landscape, but the internal shifts that come with navigating the vast unknown.",
+   "directors": [
+    "Alizé Jireh",
+    "Kiana Weltzien"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/nErDsB6IFyfYoLrUWwRAnRhndOW.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/xgDJqFxCUQGK67V2CF50FSQQkTe.jpg",
+   "trailer": "4qM7TChwwsE"
+  },
+  "movie:1771402": {
    "tmdbId": 1771402,
    "type": "movie",
    "title": "1 in 2",
-   "date": "2026-11-13",
-   "where": "In cinemas in the UK",
    "overview": "Nearly one in two of us will be diagnosed with cancer at some point in our lives. David Nicholas Wilkinson is one of them, twice over. 1 in 2 follows Wilkinson through his own treatment, where he discovers a steep rise in bowel cancer among people far too young to be screened for it, and far too young, it seems, to be believed.",
    "directors": [
     "David Wilkinson"
@@ -337,38 +1159,10 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/8i0Zn97qutpzF3uylIxyMUkl4Ll.jpg",
    "trailer": "sy0Jkwf3e-4"
   },
-  {
-   "tmdbId": 1757215,
-   "type": "movie",
-   "title": "American Amazon",
-   "date": "2026-11-13",
-   "where": "In cinemas in the US",
-   "overview": "A spectacular journey through natural wonders of a part of the country Grammy-winning musician and actor Jon Batiste knows very well: the vast network of wetlands spanning Alabama, Florida, Georgia, Louisiana, and the Carolinas.",
-   "directors": [
-    "Eric Bendick"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/iXEjoGWBRzInoSkGnTLGeuARV79.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/lS23e2Dcutz6I0g87yAkx2FKiT.jpg",
-   "trailer": "FytNn_9GP-Q"
-  },
-  {
-   "tmdbId": 336199,
-   "type": "tv",
-   "title": "Crime and Punishment in America",
-   "date": "2026-11-16",
-   "where": "Series on PBS",
-   "directors": [],
-   "overview": "Explores the history of criminal justice in America — from the pre-colonial period to 21st century mass incarceration.",
-   "poster": "https://image.tmdb.org/t/p/w342/acfpMRRWRgVrsyA2Rb2gxV3BDgQ.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/2n9v3fBXyb0aId224d8Y4GIFqJK.jpg",
-   "trailer": "v_2DNrMUSjI"
-  },
-  {
+  "movie:1715868": {
    "tmdbId": 1715868,
    "type": "movie",
    "title": "Good Luck, Kid",
-   "date": "2026-11-19",
-   "where": "In cinemas in the UK",
    "overview": "Grit, gear, growth – this film is a portrait of Taylor Shaffer’s coming-of-age as a photographer and filmmaker, following his creative trajectory as he shepherds Alex Honnold and Tommy Caldwell through a 2,500-mile expedition to attempt a single-day traverse of the Devil’s Thumb massif and finds his artistic voice amid risk, friendship, and a changing Alaskan landscape.",
    "directors": [
     "Renan Öztürk"
@@ -377,26 +1171,45 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/wqml8vV0dMtlorZtmyPBD7SRXyH.jpg",
    "trailer": "z_R60mF2QXs"
   },
-  {
-   "tmdbId": 1442281,
+  "movie:1496304": {
+   "tmdbId": 1496304,
    "type": "movie",
-   "title": "Observer",
-   "date": "2026-11-19",
-   "where": "In cinemas in the UK",
-   "overview": "Filmmaker Ian Cheney embarks on an experiment in which he brings a series of keen-eyed observers - scientists, artists, a hunter - to a range of locations around the world, often without telling them where they are going, and asks them simply to describe what they see. What unfolds is a deep exploration and celebration of the power of observation: what happens when you find new ways to sense and perceive the world around you?",
+   "title": "Amazomania",
+   "overview": "In 1996, a Brazilian official and a Swedish journalist ventured into the Amazon to document the isolated Korubo tribe caught in escalating land conflicts. Initially hailed as a heroic breakthrough, the footage now demands to be reexamined. Uncovering the hidden costs of “discovery,” the film confronts the colonial legacy and exposes the long-term repercussions for the Korubo.",
    "directors": [
-    "Ian Cheney"
+    "Nathan Grossman"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/6WXHNcRr7RSdgPD26dBEFFTg2a3.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/8mTsqKKjHTUpPInRlegDgh1TVgN.jpg",
-   "trailer": "of7Hfd0bNFQ"
+   "poster": "https://image.tmdb.org/t/p/w342/pYtnlC7sETuVfOWQ1WKLuZ9y3oS.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/uNwE9ckM2IHhrmDD47pin6UnWSq.jpg",
+   "trailer": "UcKfEwSEkIY"
   },
-  {
+  "movie:1686182": {
+   "tmdbId": 1686182,
+   "type": "movie",
+   "title": "Skyclimber: Scaling the Eiffel Tower",
+   "overview": "Urban free climber Adam Lockwood attempts to scale the Eiffel Tower in a documentary that is equal parts high-altitude adventure and intimate personal portrait. A film that builds its tension with the precision of a heist movie, mapping every step of an audacious ascent.",
+   "directors": [
+    "Nick Hardie"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fqHQIdzGXkgBCrQx84i69IWNCNA.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/w0IAT9iWrklDB3xKTKRCTHtSPix.jpg",
+   "trailer": "haYd3CFAITI"
+  },
+  "movie:1679802": {
+   "tmdbId": 1679802,
+   "type": "movie",
+   "title": "Excalibur, A Pursuit in Process",
+   "overview": "Brooke Raboutou takes on Excalibur (5.15c / 9b+) in Arco, Italy. This film documents the process, hardships, and relentless perseverance—both mental and physical—behind her pursuit of one of the hardest routes in the world. At just 18 moves, Excalibur is a brutally condensed testpiece of pure power endurance on razor-sharp holds. Brooke’s ascent not only marks a leap in her career – becoming the first woman to climb 5.15c / 9b+ – but also represents a meaningful step in closing the long-standing gap between men and women at the absolute cutting edge of sport climbing.",
+   "directors": [
+    "Ben Neilson"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/tOcTrlTlRB466gusjq514zuUoYZ.jpg",
+   "trailer": "t_TRhsVMkVU"
+  },
+  "movie:1622868": {
    "tmdbId": 1622868,
    "type": "movie",
    "title": "My Grandmother’s Sketchbook: Under Mont Blanc",
-   "date": "2026-11-19",
-   "where": "In cinemas in the UK",
    "overview": "A 30-year-old sketchbook leads Max Romey to the Mont Blanc region. The Alaska-based watercolor artist and environmental advocate sets out to follow in the footsteps of his grandmother, who visited this landscape in the late 1990s and captured it in dozens of drawings. With mountain guide Hillary Gerardi, Max attempts to locate each sketch’s exact origin point. Many match perfectly—until the Mer de Glace throws him off course. The glacier has changed too much in 30 years to recognize.",
    "directors": [
     "Max Romey"
@@ -405,26 +1218,23 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/oQddmpvmhE5MF7EGef1bRwBeszZ.jpg",
    "trailer": "CY8IjYILXq4"
   },
-  {
-   "tmdbId": 1597242,
+  "movie:1445251": {
+   "tmdbId": 1445251,
    "type": "movie",
-   "title": "Cameron Winter at Carnegie Hall",
-   "date": "2026-11-20",
-   "where": "In cinemas in the US",
-   "overview": "A concert film documenting Cameron Winter's sold-out performance at Carnegie Hall.",
+   "title": "Voices from the Abyss",
+   "overview": "La Quebrada Cliff Divers in Acapulco, Guerrero, earn their living by diving 100 feet into the sea from a dangerous cliff as part of a thrilling show at La Quebrada. In Voices from the Abyss, we explore the nature of their dives through slow-motion footage, personal testimonies, and an original poem recited by the divers themselves.",
    "directors": [
-    "Paul Thomas Anderson"
+    "Irving Serrano",
+    "Víctor Rejon"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/sQt2KQWkpGb79UKlCJNJ2BKobjo.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/7wwJh55u7y5YoUJaABy5o47d14z.jpg",
-   "trailer": "E8olY56RpkU"
+   "poster": "https://image.tmdb.org/t/p/w342/lhMfj2YFjB4LlcTvoPPwg4eBZEC.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/doRcxvt2prUnVLCCpKNSfnMgB6G.jpg",
+   "trailer": "femqTe2oXiQ"
   },
-  {
+  "movie:1809835": {
    "tmdbId": 1809835,
    "type": "movie",
    "title": "The Hillbilly Scientist",
-   "date": "2026-11-20",
-   "where": "In cinemas in the UK",
    "overview": "While modern running has evolved toward sleek curation, optimisation, and commercialisation, Lazarus Lake has spent 50 years designing formats with an unapologetic, honest difficulty. The Hillbilly Scientist reveals that Laz’s cruellest courses are rooted in a deeply scientific understanding of human psychology and physical limits. This is the only official documentary dedicated to the creator of the Barkley Marathons and Big’s Backyard Ultra. Filmed over more than a year, it reveals the man behind the myth through never-before-seen footage, exclusive testimonials, and exceptional access to Laz’s world.",
    "directors": [
     "Paul Mellor",
@@ -434,133 +1244,320 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/a4sWKGHcwv8WFXrC97zjMacT90u.jpg",
    "trailer": "xWM-wMFWYBM"
   },
-  {
-   "tmdbId": 1786136,
+  "movie:1756742": {
+   "tmdbId": 1756742,
    "type": "movie",
-   "title": "The Lost Cache",
-   "date": "2026-11-21",
-   "where": "In cinemas in the UK",
-   "overview": "History, science and exploration converged in a quest to find the lost camera of one of climbing’s most iconic photographers and cartographers, Bradford Washburn. Set against the backdrop of the pioneering lensmen’s storied 1937 Mount Lucania expedition, this film blurs the lines between adventure documentary, treasure hunt and meditation on why we risk everything to chase the improbable.",
+   "title": "Out of Breath",
+   "overview": "OUT OF BREATH shines the spotlight on the human cost paid by people living with sleep apnea and their loved ones. Yet, for all the darkness they face there is also light at the end of the tunnel as their hope, courage, and perseverance brings them closer to the promise of successful treatment.",
    "directors": [
-    "Todd Jones"
+    "George T. Nierenberg"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/iP7Z6UHrBItOvex7NAGyMsHU6hw.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/sbBzG9YqpWri4uAGLAYMPMKYi9R.jpg",
-   "trailer": "kenvVcgaQHM"
+   "poster": "https://image.tmdb.org/t/p/w342/cKnu9KN0HZ0JxzCU8RBp4d9xutU.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7JoDoh7SxwQz42aJi5SCg3imi7L.jpg",
+   "trailer": "tJZSI9CaYqE"
   },
-  {
-   "tmdbId": 1643130,
+  "movie:1517111": {
+   "tmdbId": 1517111,
    "type": "movie",
-   "title": "Remember the Summit",
-   "date": "2026-11-21",
-   "where": "In cinemas in the UK",
-   "overview": "Sir Chris Bonington’s return to Torres del Paine, 62 years after the first ascent of the Central Tower.  At 91 years old, and while living with Alzheimer’s disease, the documentary accompanies Bonington in a profoundly human return: an attempt to reconnect with memories that time has erased, but that the Patagonian landscape still seems to guard. During the filming, Chris once again set foot on the territory of Estancia Cerro Guido, closing a circle between past and present, between the epic of mountaineering and the fragility of memory.",
+   "title": "Boorman and the Devil",
+   "overview": "Featuring commentary from surviving participants, as well as other filmmakers and critics, this documentary chronicles the career of director John Boorman and the tumultuous production of his film Exorcist II: The Heretic, exploring its critical and commercial failure, how it changed the industry, and the importance of risk-taking in art.",
    "directors": [
-    "Timothy Dhalleine"
+    "David Kittredge"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/fsGVbF7W0YCivuabOJRHuJulUTq.jpg",
-   "trailer": "-Dk7SPkvFRg"
+   "poster": "https://image.tmdb.org/t/p/w342/4HJzmhP8iMzkIQ7cjr2zfIcReiK.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/igS7kqXk6KJX7pe3xOHsWfKrgmp.jpg",
+   "trailer": "a_VjhXJ0N54"
   },
-  {
-   "tmdbId": 1679802,
+  "movie:1442281": {
+   "tmdbId": 1442281,
    "type": "movie",
-   "title": "Excalibur, A Pursuit in Process",
-   "date": "2026-11-21",
-   "where": "In cinemas in the UK",
-   "overview": "Brooke Raboutou takes on Excalibur (5.15c / 9b+) in Arco, Italy. This film documents the process, hardships, and relentless perseverance—both mental and physical—behind her pursuit of one of the hardest routes in the world. At just 18 moves, Excalibur is a brutally condensed testpiece of pure power endurance on razor-sharp holds. Brooke’s ascent not only marks a leap in her career – becoming the first woman to climb 5.15c / 9b+ – but also represents a meaningful step in closing the long-standing gap between men and women at the absolute cutting edge of sport climbing.",
+   "title": "Observer",
+   "overview": "Filmmaker Ian Cheney embarks on an experiment in which he brings a series of keen-eyed observers - scientists, artists, a hunter - to a range of locations around the world, often without telling them where they are going, and asks them simply to describe what they see. What unfolds is a deep exploration and celebration of the power of observation: what happens when you find new ways to sense and perceive the world around you?",
    "directors": [
-    "Ben Neilson"
+    "Ian Cheney"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/tOcTrlTlRB466gusjq514zuUoYZ.jpg",
-   "trailer": "t_TRhsVMkVU"
+   "poster": "https://image.tmdb.org/t/p/w342/6WXHNcRr7RSdgPD26dBEFFTg2a3.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8mTsqKKjHTUpPInRlegDgh1TVgN.jpg",
+   "trailer": "of7Hfd0bNFQ"
   },
-  {
-   "tmdbId": 1496304,
+  "movie:1285321": {
+   "tmdbId": 1285321,
    "type": "movie",
-   "title": "Amazomania",
-   "date": "2026-11-22",
-   "where": "In cinemas in the UK",
-   "overview": "In 1996, a Brazilian official and a Swedish journalist ventured into the Amazon to document the isolated Korubo tribe caught in escalating land conflicts. Initially hailed as a heroic breakthrough, the footage now demands to be reexamined. Uncovering the hidden costs of “discovery,” the film confronts the colonial legacy and exposes the long-term repercussions for the Korubo.",
+   "title": "Children of The Wicker Man",
+   "overview": "Fifty years after The Wicker Man, director Robin Hardy’s lost papers resurface, prompting his sons Justin and Dominic to explore the legacy of the cult classic, and their father. Together, they uncover the truth behind Robin’s role in the film and confront the complexities of independent filmmaking, family, and myth.",
    "directors": [
-    "Nathan Grossman"
+    "Justin Hardy"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/pYtnlC7sETuVfOWQ1WKLuZ9y3oS.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/uNwE9ckM2IHhrmDD47pin6UnWSq.jpg",
-   "trailer": "UcKfEwSEkIY"
+   "poster": "https://image.tmdb.org/t/p/w342/cGALR5w2wkKteIXHmGrA1NSaSbt.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/p3rtTCpejKR3UyFEIBkoVokBZeE.jpg",
+   "trailer": "Lnjx6OjX050"
   },
-  {
+  "movie:1775096": {
+   "tmdbId": 1775096,
+   "type": "movie",
+   "title": "Enter the Television",
+   "overview": "From Tom Seymour creator of the VHS Massacre Trilogy. Enter the Television is a feature-length documentary exploring the dark corners of television from obscure commercials to unconventional cable programming. It examines the evolution of media through an underground lens, revealing how independent voices survive within systems controlled by powerful media corporations.",
+   "directors": [
+    "Thomas Edward Seymour"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/j16NRU3EZV9krlJJvTR8lkypTWE.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/oGFlCuIm2peLpAxHj31Lozrhl5H.jpg",
+   "trailer": "cyiECR7s-E4"
+  },
+  "movie:1669763": {
+   "tmdbId": 1669763,
+   "type": "movie",
+   "title": "The Dance of the Kokorrdit",
+   "overview": "A Wounaan teenager and a leader of their community venture into the Darién in search of a sacred bird. Along the way, they will face the dangers that threaten their territory and their culture.",
+   "directors": [
+    "Elio B Cunampio",
+    "Guido Bilbao"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/u7tvuYcwylVaSGC5cnpFGOpUqiX.jpg",
+   "trailer": "h1linE9zKUs"
+  },
+  "movie:1785138": {
+   "tmdbId": 1785138,
+   "type": "movie",
+   "title": "DEQ",
+   "overview": "\"DEQ\" is a legacy in Kurdish Culture. A bridge between Human and Nature and a way to find meaning of life.",
+   "directors": [
+    "Nima Beheshtinia"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/u7pupuDvqLR4cTtawP76K9Htl3R.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/jcaMRkFON8PQHW1h4douBDNOUf6.jpg",
+   "trailer": "tFhbF6BxpWQ"
+  },
+  "movie:1596306": {
+   "tmdbId": 1596306,
+   "type": "movie",
+   "title": "Kikuyu Land",
+   "overview": "As a Nairobi journalist probes a land battle entangling the local government and a powerful multinational corporation, covered wounds are revealed and family secrets are exposed.",
+   "directors": [
+    "Andrew H. Brown",
+    "Bea Wangondu"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/a5YGraLDDgg6kTB5MxBzzrWjyWc.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/axxBd5qfi1uCOJI7JKBWFG1tMHz.jpg",
+   "trailer": "UdUztX9eiAo"
+  },
+  "movie:1591604": {
+   "tmdbId": 1591604,
+   "type": "movie",
+   "title": "Soul Patrol",
+   "overview": "From deep behind enemy lines, a hidden chapter of American military history is uncovered, prompting the question of whether reckoning with the past can bring peace to those who lived it. The Vietnam War’s first Black special operations team reunites to tell their story.",
+   "directors": [
+    "J.M. Harper"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/sav8yadAjfykfFlZuFsclmrN9st.jpg",
+   "trailer": "D8LIYqag82E"
+  },
+  "movie:1798383": {
+   "tmdbId": 1798383,
+   "type": "movie",
+   "title": "Wolves Up Close with Bertie Gregory",
+   "overview": "Reconnecting with a pack of wolves he has followed for seven years, Bertie sets out to capture one of the Arctic's most dangerous and rarely filmed hunts: wolves taking on a bull moose, prey roughly ten times their size. Led by Kona, a striking white breeding male, the pack faces a critical winter as dwindling food supplies, an encroaching rival wolf and an aging leader threaten its survival.",
+   "directors": [],
+   "poster": "https://image.tmdb.org/t/p/w342/fopmDU345HPkMC9iUaNQEY0uRkk.jpg",
+   "trailer": "3hCMUaREGL8"
+  },
+  "movie:1728838": {
+   "tmdbId": 1728838,
+   "type": "movie",
+   "title": "Wayward: How Women Changed Snowboarding",
+   "overview": "Wayward is a feature documentary about the women who changed snowboarding by refusing to follow the status quo. Spanning 4 decades of progression, the film weaves together rare archival footage and firsthand accounts from pioneering athletes who fought for visibility, opportunity, and respect in a male-dominated industry. As the sport has evolved and new generations push boundaries further than ever before, Wayward examines what it took to get here, and what still lies ahead. This is a story of resilience, rebellion, and the power of those who shaped a sport & a culture into what it is today.",
+   "directors": [
+    "Mia Lambson Brady"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/zSUEFztuscGYLpTopsAM6Sts7Mo.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/nQDiDykO5RjCk6YwYEpEESxbfhm.jpg",
+   "trailer": "4CIicSfsqBo"
+  },
+  "movie:1786281": {
+   "tmdbId": 1786281,
+   "type": "movie",
+   "title": "Gentle by Birth",
+   "overview": "After her 23-year-old brother dies of an overdose, filmmaker Doree Simon Hatfield investigates the stigma she believes blocked his access to treatment and support. Her search takes her from her family’s living room to harm reduction sites, music festivals, and the halls of the Pennsylvania Capitol, where she meets experts working to change how addiction is understood and treated. But as her own fear and stigma around drugs begin to dissolve, Doree makes a radical choice to try them herself—transforming the film from a dissection of her brother’s addiction into a provocative reckoning that threatens her family’s fragile healing.",
+   "directors": [
+    "Doree Simon Hatfield"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/eyoRrU8bQXMhxotHePBCn7xUjBM.jpg",
+   "trailer": "PaoEYEd46WE"
+  },
+  "movie:1776125": {
+   "tmdbId": 1776125,
+   "type": "movie",
+   "title": "2020 Hindsight or (A Disaster of Pandemic Level Proportions)",
+   "overview": "Six years after a school trip became one of the first casualties of the pandemic, a filmmaker revisits the footage he shot from that weekend, tracking down his old classmates, especially one he could not forget.",
+   "directors": [
+    "Aaron Saldaña Cisneros"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/wzT0ii0GDAdvq8R9DlTtwjXiV5i.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/7z7eiCeixYxHqYSgP8Fj5pI7hOv.jpg",
+   "trailer": "r6yoUsllcKo"
+  },
+  "movie:1495044": {
+   "tmdbId": 1495044,
+   "type": "movie",
+   "title": "BORN SEXY YESTERDAY: Decoding the Enigma of Beauty",
+   "overview": "The phrase \"Born Sexy Yesterday\" is derived from the 1950 film \"Born Yesterday.\" However beneath this superficial portrayal of some women lies a more complex understanding , revealing deeper narratives that resonate with many.  October 1, 1985. The chilling emptiness in Michele Avila's eyes. Her murder, a savage ballet of teenage fury, ripped through the town, festering wounds exposing the venomous underbelly of a seemingly innocent friendship. Jealousy, a serpent coiled in the heart of adolescence, struck with the force of a viper, revealing the terrifying depths of envy's reach. These weren't just girls; they were predators.  Women are born with many layers, a mix between good and evil. Ironically of all the positive tropes that can validate the existence of women, why is it that \"Born Sexy Yesterday\" is a trope that resonates with our male counterparts the most?",
+   "directors": [],
+   "poster": "https://image.tmdb.org/t/p/w342/fzXqKE1645nqc3ncWToKUH5AkPT.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/8S5vIlKMBsH48T8Wtr8UfUKK4Ek.jpg",
+   "trailer": "OXuTQ57x2io"
+  },
+  "movie:1757215": {
+   "tmdbId": 1757215,
+   "type": "movie",
+   "title": "American Amazon",
+   "overview": "A spectacular journey through natural wonders of a part of the country Grammy-winning musician and actor Jon Batiste knows very well: the vast network of wetlands spanning Alabama, Florida, Georgia, Louisiana, and the Carolinas.",
+   "directors": [
+    "Eric Bendick"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/iXEjoGWBRzInoSkGnTLGeuARV79.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/lS23e2Dcutz6I0g87yAkx2FKiT.jpg",
+   "trailer": "FytNn_9GP-Q"
+  },
+  "movie:1770051": {
+   "tmdbId": 1770051,
+   "type": "movie",
+   "title": "Animals",
+   "overview": "Still trapped in a doomsday bunker the scientist continues his mission to narrate over footage of the natural world, hoping if animals ever return to this planet they will be cherished.",
+   "directors": [
+    "Anthonee Smith"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/q7tb4tli0pZpzzYPADNIwDHzODn.jpg",
+   "trailer": "VUkx17F9WnM"
+  },
+  "movie:1596303": {
+   "tmdbId": 1596303,
+   "type": "movie",
+   "title": "The Last First: Winter K2",
+   "overview": "A historic race to become the first to summit K2 in winter unravels into tragedy, exposing how ambition, ego, and the pursuit of glory can be as dangerous as the mountain itself.",
+   "directors": [
+    "Amir Bar-Lev"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/97QpXbNNXj2eQ1MdmhFdGlU0jnW.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/wtzSwtnQ4RsRbV5cc114Nb1q3b0.jpg",
+   "trailer": "zgGpyr5MFK8"
+  },
+  "movie:1629356": {
+   "tmdbId": 1629356,
+   "type": "movie",
+   "title": "Capturing Bigfoot",
+   "overview": "On October 20, 1967, Roger Patterson captured 60 seconds of film showing a creature walking through the Northern California woods—footage that became the most analyzed and debated in history. Fifty-seven years later, a reel of 16mm film discovered in a safe changes everything, revealing the untold story behind the world's greatest mystery, told for the first time by Patterson's own son and the people who were there.",
+   "directors": [
+    "Marq Evans"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/t1ACTBkvJu6RrSmWIwOvmGvDbi1.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/tFP1ckHdNhrv8NK3nXF7L5sNngm.jpg",
+   "trailer": "aEOzQTdjVYc"
+  },
+  "movie:1756268": {
+   "tmdbId": 1756268,
+   "type": "movie",
+   "title": "Paging Hezbollah",
+   "overview": "Paging Hezbollah is the extraordinary true story behind an intelligence operation that seemed impossible—how it was conceived, engineered and carried out, as well as the profound geopolitical consequences that followed.",
+   "directors": [
+    "Justin Folk"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/CCFiWX5MFh7UukM5oMoBe2VpNg.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/xX0QLmlluhugIRzombX5owE7nh4.jpg",
+   "trailer": "oTNnqivCH2Y"
+  },
+  "movie:1596319": {
+   "tmdbId": 1596319,
+   "type": "movie",
+   "title": "Closure",
+   "overview": "After his teenage son goes missing, Daniel scours the depths of the Vistula River, torn between the dread of a fatal leap and the hope that his son may still be alive.",
+   "directors": [
+    "Michał Marczak"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/6K19w1M8ga9ur7yHs6PkdSqoPUz.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/gFI1HmPtsDXEUGydyPpF4yE7xkc.jpg",
+   "trailer": "C-Q9Zl259yU"
+  },
+  "movie:1162823": {
+   "tmdbId": 1162823,
+   "type": "movie",
+   "title": "Who Killed Alex Odeh?",
+   "overview": "In October 1985, Santa Ana, California was shaken by a brazen act of political violence when Palestinian American Alex Odeh, a beloved teacher and community leader, was killed by a tripwire bomb planted in his office. Despite substantial evidence and identified suspects, the case was never solved. Who Killed Alex Odeh? reopens the mystery, tracking a renewed investigation in real time as new leads emerge, long-buried records come to light, and the forces behind a political assassination are finally confronted.",
+   "directors": [
+    "Jason Osder",
+    "William Lafi Youmans"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/gWN2cQ79PXGc0Vyf5KmAeu3zKgY.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/w2xj76FYLdPSwka9f7aFgmWx5EG.jpg",
+   "trailer": "NHt55w3k_TM"
+  },
+  "movie:1565345": {
+   "tmdbId": 1565345,
+   "type": "movie",
+   "title": "The Bridge",
+   "overview": "Young Israeli survivors of the October 7 attacks travel to Los Angeles for Rock ’n’ Roll Fantasy Camp, discovering healing and strength through music and shared resilience.",
+   "directors": [
+    "Brad Allgood"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/fPkeszK2q9RiFZOeJDUw5UrOJDk.jpg",
+   "trailer": "CjP-_gNqqAI"
+  },
+  "movie:1807218": {
+   "tmdbId": 1807218,
+   "type": "movie",
+   "title": "Everything Is Not OK",
+   "overview": "Artist Judith Blum Reddy's work, shaped by the Holocaust and displacement across continents, is explored alongside fellow artists who channeled displacement into art, framed by poetry and themes of memory and resistance.",
+   "directors": [
+    "Dev Benegal"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/RQir12OiuIg4bwAWNDOaEKClT2.jpg",
+   "trailer": "sc6ufCIP9Gk"
+  },
+  "movie:1596300": {
+   "tmdbId": 1596300,
+   "type": "movie",
+   "title": "Once Upon a Time in Harlem",
+   "overview": "A decade after his death, genre-defying filmmaker William Greaves has one last trick up his sleeve with what he considered the most important event he captured on film: a 1972 party he engineered with the living luminaries of the Harlem Renaissance.",
+   "directors": [
+    "William Greaves",
+    "David Greaves"
+   ],
+   "poster": "https://image.tmdb.org/t/p/w342/9eukk5gby8NZCwraiC7mloZmasP.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/wk9dLaji3CXpl5FxIYBXR5ojcY6.jpg",
+   "trailer": "ESnX3LQbCVI"
+  },
+  "tv:306179": {
+   "tmdbId": 306179,
+   "type": "tv",
+   "title": "Awkwafina: The Unlikely Cook",
+   "directors": [],
+   "overview": "Hollywood actor and comedian Nora Lum (a.k.a. Awkwafina) is the descendant of restaurant royalty...but she can't cook. Join the star on an inspiring culinary road trip as she learns the craft and attempts to revive her family's beloved Chinese eatery.",
+   "poster": "https://image.tmdb.org/t/p/w342/32rE04LRLyAM62Xdkqw5EIi0FyB.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/vSMW22GgtzgsRaAmZaTM6xtPdNP.jpg",
+   "trailer": "uCAZET6TZ60"
+  },
+  "tv:336199": {
+   "tmdbId": 336199,
+   "type": "tv",
+   "title": "Crime and Punishment in America",
+   "directors": [],
+   "overview": "Explores the history of criminal justice in America — from the pre-colonial period to 21st century mass incarceration.",
+   "poster": "https://image.tmdb.org/t/p/w342/acfpMRRWRgVrsyA2Rb2gxV3BDgQ.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/2n9v3fBXyb0aId224d8Y4GIFqJK.jpg",
+   "trailer": "v_2DNrMUSjI"
+  },
+  "tv:325484": {
    "tmdbId": 325484,
    "type": "tv",
    "title": "New Wave",
-   "date": "2026-11-23",
-   "where": "Series on MGM+",
    "directors": [],
    "overview": "The fascinating story of New Wave music and the decade from 1977 to 1987 that brought alternative culture into the mainstream.",
    "poster": "https://image.tmdb.org/t/p/w342/8g4uZAZ7hZPVgWRDeJN8zQhI0v2.jpg",
    "trailer": "-VgR9KfJM2c"
   },
-  {
-   "tmdbId": 1578210,
-   "type": "movie",
-   "title": "Run Terry Run",
-   "date": "2026-11-24",
-   "where": "Streaming in the US",
-   "overview": "The extraordinary story of Canadian icon Terry Fox will be told like never before in Run Terry Run, a new feature-length documentary directed by acclaimed filmmaker Sean Menard. The film offers an intimate, behind-the-scenes look at Terry’s legendary 1980 Marathon of Hope, drawing from 96 reels of never-before-seen footage and unheard audio interviews that have remained untouched for 45 years.",
-   "directors": [
-    "Sean Menard"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/sSstsc561xip9s5FKereo1r1I9i.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/ldFeRtwity90hO5Yy9wVu4sDsW4.jpg",
-   "trailer": "upUdfgVR2NQ"
-  },
-  {
-   "tmdbId": 338435,
-   "type": "tv",
-   "title": "The Great Food Con",
-   "date": "2026-11-24",
-   "where": "Series on ABC TV",
-   "directors": [
-    "Craig Reucassel"
-   ],
-   "overview": "Craig Reucassel reveals how ultra-processed foods are now linked to a range of harmful health effects and asks - do we really know what we're eating anymore?",
-   "poster": "https://image.tmdb.org/t/p/w342/vLGKob4luRlywXZG28cqIkMjFnr.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/hFLh4rah80uWzbzktBm5h8KftxE.jpg",
-   "trailer": "i5YJOxb6nAc"
-  },
-  {
-   "tmdbId": 1632599,
-   "type": "movie",
-   "title": "The Slightest Touch",
-   "date": "2026-11-25",
-   "where": "HBO Max in the US",
-   "overview": "As she turns forty - an age doctors once said she would never reach - Emma Fogarty, who lives with the rare and extremely painful condition Epidermolysis Bullosa, takes up an offer from longtime friend Colin Farrell; they agree to run the Dublin Marathon together, with Colin pushing Emma's wheelchair for the final four kilometres. Also follow their lives and the enduring friendship that has sustained them through the years.",
-   "directors": [
-    "Rachel Fleit"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/9o1Y6bwmPaKcljx2edkllyGm8nM.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/2Puf7XExGfbhJuFDhbbmGNnll46.jpg",
-   "trailer": "ApBoWNQF7c4"
-  },
-  {
-   "tmdbId": 1811599,
-   "type": "movie",
-   "title": "Tyson Fury",
-   "date": "2026-11-27",
-   "where": "Netflix in the US",
-   "overview": "Discover the man beneath the Fury in this feature length documentary from Lucy Wilcox. With exclusive access to Paris, Tyson and John Fury, this film charts the rise, fall and redemption of the one and only Gypsy King.",
-   "directors": [
-    "Lucy Wilcox"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/wAffyCmjFZOI3uvmVvpg7Lz8Yn5.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/u4KtIySbavQYUxGHjjV3zT0H17c.jpg",
-   "trailer": "jb01qWUn62A"
-  },
-  {
+  "tv:330808": {
    "tmdbId": 330808,
    "type": "tv",
    "title": "Beyond Society",
-   "date": "2026-12-18",
-   "where": "Series on Netflix",
    "directors": [
     "J. A. Bayona",
     "Carlos Torres"
@@ -570,84 +1567,2023 @@
    "backdrop": "https://image.tmdb.org/t/p/w780/2XgaheMWrJUt1eHGBhFCPTIS2b3.jpg",
    "trailer": "Kbqd8r-7oRY"
   },
-  {
-   "tmdbId": 1807218,
-   "type": "movie",
-   "title": "Everything Is Not OK",
-   "date": "2027-01-01",
-   "where": "Streaming in the US",
-   "overview": "Artist Judith Blum Reddy's work, shaped by the Holocaust and displacement across continents, is explored alongside fellow artists who channeled displacement into art, framed by poetry and themes of memory and resistance.",
+  "tv:338435": {
+   "tmdbId": 338435,
+   "type": "tv",
+   "title": "The Great Food Con",
    "directors": [
-    "Dev Benegal"
+    "Craig Reucassel"
    ],
-   "poster": "https://image.tmdb.org/t/p/w342/RQir12OiuIg4bwAWNDOaEKClT2.jpg",
-   "trailer": "sc6ufCIP9Gk"
-  },
-  {
-   "tmdbId": 1666864,
-   "type": "movie",
-   "title": "Rehearsals for a Revolution",
-   "date": "2027-01-08",
-   "where": "In cinemas in the UK, Ireland and the US",
-   "overview": "Through five portraits of relatives and mentors, five expressions of resistance, Pegah Ahangarani sketches her life story. Drawing from personal archives, home videos, street protests footage, newspapers, and recorded voices, she retraces more than 40 years of Iran’s history. From the early days of 1979, until the war that began in 2026, she pieces together intimate and collective memories, forming the portrait of a country shaped by political repression and in constant hope for a revolution.",
-   "directors": [
-    "Pegah Ahangarani"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/mzocxy2wpTGoStwUlqcfHaNSxm2.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/vMZSG9ppXdHHSW7zXoThi4EvU6o.jpg",
-   "trailer": "oWofWD4gdbE"
-  },
-  {
-   "tmdbId": 1770051,
-   "type": "movie",
-   "title": "Animals",
-   "date": "2027-01-15",
-   "where": "In cinemas in the US",
-   "overview": "Still trapped in a doomsday bunker the scientist continues his mission to narrate over footage of the natural world, hoping if animals ever return to this planet they will be cherished.",
-   "directors": [
-    "Anthonee Smith"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/q7tb4tli0pZpzzYPADNIwDHzODn.jpg",
-   "trailer": "VUkx17F9WnM"
-  },
-  {
-   "tmdbId": 1747216,
-   "type": "movie",
-   "title": "Renoir & Love",
-   "date": "2027-01-19",
-   "where": "In cinemas in the UK",
-   "overview": "Pierre-Auguste Renoir is one of the world’s favourite artists, a founding member of the Impressionist movement and a constantly evolving artist. With exclusive access to the National Gallery’s new exciting show of the same name (3 October 2026 – 31 January 2027), Exhibition on Screen will bring Renoir’s world class works to cinema audiences. Be transported back to a Parisian summer of love through the eyes of a true visionary. An unmissable opportunity to fall in love with Renoir this winter.",
-   "directors": [
-    "Ali Ray"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/50h9zwCwzrTgnaHJ1GZwT5UyuMV.jpg",
-   "trailer": "eP653O5gvOU"
-  },
-  {
-   "tmdbId": 1776125,
-   "type": "movie",
-   "title": "2020 Hindsight or (A Disaster of Pandemic Level Proportions)",
-   "date": "2027-03-10",
-   "where": "In cinemas in the US",
-   "overview": "Six years after a school trip became one of the first casualties of the pandemic, a filmmaker revisits the footage he shot from that weekend, tracking down his old classmates, especially one he could not forget.",
-   "directors": [
-    "Aaron Saldaña Cisneros"
-   ],
-   "poster": "https://image.tmdb.org/t/p/w342/wzT0ii0GDAdvq8R9DlTtwjXiV5i.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/7z7eiCeixYxHqYSgP8Fj5pI7hOv.jpg",
-   "trailer": "r6yoUsllcKo"
-  },
-  {
-   "tmdbId": 1495044,
-   "type": "movie",
-   "title": "BORN SEXY YESTERDAY: Decoding the Enigma of Beauty",
-   "date": "2027-03-14",
-   "where": "Streaming in the US",
-   "overview": "The phrase \"Born Sexy Yesterday\" is derived from the 1950 film \"Born Yesterday.\" However beneath this superficial portrayal of some women lies a more complex understanding , revealing deeper narratives that resonate with many.  October 1, 1985. The chilling emptiness in Michele Avila's eyes. Her murder, a savage ballet of teenage fury, ripped through the town, festering wounds exposing the venomous underbelly of a seemingly innocent friendship. Jealousy, a serpent coiled in the heart of adolescence, struck with the force of a viper, revealing the terrifying depths of envy's reach. These weren't just girls; they were predators.  Women are born with many layers, a mix between good and evil. Ironically of all the positive tropes that can validate the existence of women, why is it that \"Born Sexy Yesterday\" is a trope that resonates with our male counterparts the most?",
-   "directors": [],
-   "poster": "https://image.tmdb.org/t/p/w342/fzXqKE1645nqc3ncWToKUH5AkPT.jpg",
-   "backdrop": "https://image.tmdb.org/t/p/w780/8S5vIlKMBsH48T8Wtr8UfUKK4Ek.jpg",
-   "trailer": "OXuTQ57x2io"
+   "overview": "Craig Reucassel reveals how ultra-processed foods are now linked to a range of harmful health effects and asks - do we really know what we're eating anymore?",
+   "poster": "https://image.tmdb.org/t/p/w342/vLGKob4luRlywXZG28cqIkMjFnr.jpg",
+   "backdrop": "https://image.tmdb.org/t/p/w780/hFLh4rah80uWzbzktBm5h8KftxE.jpg",
+   "trailer": "i5YJOxb6nAc"
   }
- ]
+ },
+ "countries": {
+  "AU": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2026-10-29",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596296",
+     "date": "2026-10-09",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1715598",
+     "date": "2026-09-23",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1624363",
+     "date": "2026-10-08",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:548845",
+     "date": "2026-10-21",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1723990",
+     "date": "2026-11-04",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1704729",
+     "date": "2026-10-20",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1754364",
+     "date": "2026-11-06",
+     "where": "MUBI"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1638741",
+     "date": "2026-11-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1492865",
+     "date": "2026-11-19",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:338435",
+     "date": "2026-11-24",
+     "where": "Series on ABC TV"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "AT": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-01",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1393151",
+     "date": "2026-09-24",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1596326",
+     "date": "2026-10-08",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-10-28",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1582371",
+     "date": "2026-09-24",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1646767",
+     "date": "2026-10-15",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1774428",
+     "date": "2026-10-11",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1611111",
+     "date": "2026-09-25",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1616868",
+     "date": "2026-11-05",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-12",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1635584",
+     "date": "2026-11-15",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1371557",
+     "date": "2026-11-26",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1498729",
+     "date": "2026-11-26",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-12-03",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1625362",
+     "date": "2026-12-03",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1517161",
+     "date": "2026-12-17",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2027-01-06",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1666864",
+     "date": "2027-01-27",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1537518",
+     "date": "2027-02-18",
+     "where": "In cinemas in Germany"
+    }
+   ]
+  },
+  "BR": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-01",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2026-10-29",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1788522",
+     "date": "2026-10-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:577054",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:787619",
+     "date": "2026-10-26",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-26",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "CA": {
+   "inCinemas": [
+    {
+     "key": "movie:1765072",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1480856",
+     "date": "2026-10-21",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1096228",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1715598",
+     "date": "2026-09-23",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1578210",
+     "date": "2026-10-08",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1775316",
+     "date": "2026-09-28",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1754364",
+     "date": "2026-11-06",
+     "where": "MUBI"
+    },
+    {
+     "key": "movie:1743137",
+     "date": "2026-11-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1597242",
+     "date": "2026-12-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-12-11",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "CZ": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-09",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:57276",
+     "date": "2026-10-29",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1616833",
+     "date": "2026-09-24",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1799373",
+     "date": "2026-10-27",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1726607",
+     "date": "2026-10-08",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1739735",
+     "date": "2026-11-17",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1706746",
+     "date": "2026-12-03",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "FR": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-10-01",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1599746",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1630801",
+     "date": "2026-11-08",
+     "where": "Canal+"
+    },
+    {
+     "key": "movie:1449729",
+     "date": "2026-11-11",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1312310",
+     "date": "2026-11-18",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1670563",
+     "date": "2026-11-25",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-12-01",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1666864",
+     "date": "2026-12-09",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "DE": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-01",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1393151",
+     "date": "2026-09-24",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596326",
+     "date": "2026-10-08",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1582371",
+     "date": "2026-09-24",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1646767",
+     "date": "2026-10-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1774428",
+     "date": "2026-10-11",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1616868",
+     "date": "2026-11-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1635584",
+     "date": "2026-11-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-19",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1371557",
+     "date": "2026-11-26",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1498729",
+     "date": "2026-11-26",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1625362",
+     "date": "2026-12-03",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1517161",
+     "date": "2026-12-17",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2027-01-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1666864",
+     "date": "2027-01-27",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1537518",
+     "date": "2027-02-18",
+     "where": "In cinemas"
+    }
+   ]
+  },
+  "HK": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-22",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1498729",
+     "date": "2026-11-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1498742",
+     "date": "2026-11-21",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1552998",
+     "date": "2026-11-22",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "IE": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1299581",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1756742",
+     "date": "2026-09-29",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1517111",
+     "date": "2026-09-25",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1596306",
+     "date": "2026-10-02",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1285321",
+     "date": "2026-10-23",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1775096",
+     "date": "2026-10-20",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1669763",
+     "date": "2026-10-05",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1686182",
+     "date": "2026-10-08",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1785138",
+     "date": "2026-09-29",
+     "where": "In cinemas in the UK"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-06",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1754364",
+     "date": "2026-11-06",
+     "where": "MUBI"
+    },
+    {
+     "key": "movie:1309373",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1595210",
+     "date": "2026-11-13",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1637730",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:951018",
+     "date": "2026-11-13",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1771402",
+     "date": "2026-11-13",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1500112",
+     "date": "2026-11-19",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1715868",
+     "date": "2026-11-19",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1442281",
+     "date": "2026-11-19",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1622868",
+     "date": "2026-11-19",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-20",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1596332",
+     "date": "2026-11-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1809835",
+     "date": "2026-11-20",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1786136",
+     "date": "2026-11-21",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1643130",
+     "date": "2026-11-21",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1679802",
+     "date": "2026-11-21",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1445251",
+     "date": "2026-11-22",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1496304",
+     "date": "2026-11-22",
+     "where": "In cinemas in the UK"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-12-11",
+     "where": "Streaming in the UK"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1666864",
+     "date": "2027-01-08",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1747216",
+     "date": "2027-01-19",
+     "where": "In cinemas in the UK"
+    }
+   ]
+  },
+  "IT": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-09-25",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1400379",
+     "date": "2026-09-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1754364",
+     "date": "2026-10-25",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1745146",
+     "date": "2026-09-26",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1309373",
+     "date": "2026-11-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1625362",
+     "date": "2026-11-23",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-27",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "JP": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-24",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1393151",
+     "date": "2026-10-03",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1697647",
+     "date": "2026-09-25",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1555218",
+     "date": "2026-10-03",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1552998",
+     "date": "2026-11-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1759805",
+     "date": "2026-12-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1761050",
+     "date": "2026-12-15",
+     "where": "Prime Video"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1320392",
+     "date": "2027-01-01",
+     "where": "In cinemas"
+    }
+   ]
+  },
+  "MX": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-22",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2026-10-29",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1715598",
+     "date": "2026-09-24",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1303398",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1616685",
+     "date": "2026-10-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1188841",
+     "date": "2026-10-15",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-26",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "NL": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-01",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1635584",
+     "date": "2026-10-10",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1404184",
+     "date": "2026-10-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1537518",
+     "date": "2026-10-01",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1765336",
+     "date": "2026-11-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1562590",
+     "date": "2026-11-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2027-01-07",
+     "where": "In cinemas"
+    }
+   ]
+  },
+  "NZ": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2026-10-29",
+     "where": "In cinemas in Australia"
+    },
+    {
+     "key": "movie:1596296",
+     "date": "2026-10-23",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas in Australia"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1715598",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:548845",
+     "date": "2026-10-21",
+     "where": "In cinemas in Australia"
+    },
+    {
+     "key": "movie:1723990",
+     "date": "2026-11-04",
+     "where": "In cinemas in Australia"
+    },
+    {
+     "key": "movie:1704729",
+     "date": "2026-10-20",
+     "where": "In cinemas in Australia"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1754364",
+     "date": "2026-11-06",
+     "where": "MUBI in Australia"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-12",
+     "where": "In cinemas in Australia"
+    },
+    {
+     "key": "movie:1492865",
+     "date": "2026-11-19",
+     "where": "In cinemas in Australia"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "NO": {
+   "inCinemas": [
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1635584",
+     "date": "2026-10-09",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1503771",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1640984",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1729736",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "PH": {
+   "inCinemas": [
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-10-03",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1522259",
+     "date": "2026-11-05",
+     "where": "HBO Max"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-11",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-18",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1632599",
+     "date": "2026-11-26",
+     "where": "HBO Max"
+    },
+    {
+     "key": "movie:1756543",
+     "date": "2026-12-01",
+     "where": "Streaming"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "KR": {
+   "inCinemas": [
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-17",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1498729",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1532477",
+     "date": "2026-10-14",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1511305",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1154210",
+     "date": "2026-11-11",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "ES": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1814847",
+     "date": "2026-11-01",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1745146",
+     "date": "2026-11-07",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1736731",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-12-25",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1498729",
+     "date": "2027-01-22",
+     "where": "In cinemas"
+    }
+   ]
+  },
+  "SE": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-01",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1299581",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1400379",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1312310",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-21",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "CH": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596326",
+     "date": "2026-10-08",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-10-28",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1646767",
+     "date": "2026-10-15",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1526227",
+     "date": "2026-10-03",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1616868",
+     "date": "2026-11-05",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-12",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1635584",
+     "date": "2026-11-15",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1371557",
+     "date": "2026-11-26",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1498729",
+     "date": "2026-11-26",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-12-03",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1625362",
+     "date": "2026-12-03",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2027-01-06",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1666864",
+     "date": "2027-01-27",
+     "where": "In cinemas in Germany"
+    },
+    {
+     "key": "movie:1537518",
+     "date": "2027-02-18",
+     "where": "In cinemas in Germany"
+    }
+   ]
+  },
+  "TW": {
+   "inCinemas": [
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1393151",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1098534",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:142195",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1532477",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1418515",
+     "date": "2026-10-23",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1165656",
+     "date": "2026-10-23",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1340449",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:629704",
+     "date": "2026-12-11",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    }
+   ]
+  },
+  "TR": {
+   "inCinemas": [
+    {
+     "key": "movie:1765072",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1769785",
+     "date": "2026-12-31",
+     "where": "In cinemas"
+    }
+   ]
+  },
+  "GB": {
+   "inCinemas": [
+    {
+     "key": "movie:1755291",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1299581",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1756742",
+     "date": "2026-09-29",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1517111",
+     "date": "2026-09-25",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596306",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1285321",
+     "date": "2026-10-23",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1775096",
+     "date": "2026-10-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1669763",
+     "date": "2026-10-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1686182",
+     "date": "2026-10-08",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1785138",
+     "date": "2026-09-29",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1754364",
+     "date": "2026-11-06",
+     "where": "MUBI"
+    },
+    {
+     "key": "movie:1309373",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1595210",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:951018",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1771402",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1500112",
+     "date": "2026-11-19",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1715868",
+     "date": "2026-11-19",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1442281",
+     "date": "2026-11-19",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1622868",
+     "date": "2026-11-19",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1765072",
+     "date": "2026-11-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596332",
+     "date": "2026-11-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1809835",
+     "date": "2026-11-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1786136",
+     "date": "2026-11-21",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1643130",
+     "date": "2026-11-21",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1679802",
+     "date": "2026-11-21",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1445251",
+     "date": "2026-11-22",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1496304",
+     "date": "2026-11-22",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-12-11",
+     "where": "Streaming"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1666864",
+     "date": "2027-01-08",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1747216",
+     "date": "2027-01-19",
+     "where": "In cinemas"
+    }
+   ]
+  },
+  "US": {
+   "inCinemas": [
+    {
+     "key": "movie:1765072",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1755291",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596303",
+     "date": "2026-10-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1096228",
+     "date": "2026-10-09",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1603262",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596296",
+     "date": "2026-09-25",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1489932",
+     "date": "2026-10-12",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1388805",
+     "date": "2026-09-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1629356",
+     "date": "2026-10-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1756268",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596319",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1162823",
+     "date": "2026-10-30",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1515139",
+     "date": "2026-10-28",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1565345",
+     "date": "2026-10-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1596300",
+     "date": "2026-10-16",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1715598",
+     "date": "2026-09-24",
+     "where": "In cinemas"
+    }
+   ],
+   "comingSoon": [
+    {
+     "key": "movie:1786281",
+     "date": "2026-11-05",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:306179",
+     "date": "2026-11-06",
+     "where": "Series on Apple TV"
+    },
+    {
+     "key": "movie:1591604",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1595210",
+     "date": "2026-11-06",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1798383",
+     "date": "2026-11-06",
+     "where": "Disney+ / Hulu"
+    },
+    {
+     "key": "movie:1728838",
+     "date": "2026-11-10",
+     "where": "Streaming"
+    },
+    {
+     "key": "movie:1757215",
+     "date": "2026-11-13",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:336199",
+     "date": "2026-11-16",
+     "where": "Series on PBS"
+    },
+    {
+     "key": "movie:1597242",
+     "date": "2026-11-20",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:325484",
+     "date": "2026-11-23",
+     "where": "Series on MGM+"
+    },
+    {
+     "key": "movie:1578210",
+     "date": "2026-11-24",
+     "where": "Streaming"
+    },
+    {
+     "key": "movie:1632599",
+     "date": "2026-11-25",
+     "where": "HBO Max"
+    },
+    {
+     "key": "movie:1811599",
+     "date": "2026-11-27",
+     "where": "Netflix"
+    },
+    {
+     "key": "movie:951018",
+     "date": "2026-12-02",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1649403",
+     "date": "2026-12-11",
+     "where": "In cinemas"
+    },
+    {
+     "key": "tv:330808",
+     "date": "2026-12-18",
+     "where": "Series on Netflix"
+    },
+    {
+     "key": "movie:1807218",
+     "date": "2027-01-01",
+     "where": "Streaming"
+    },
+    {
+     "key": "movie:1666864",
+     "date": "2027-01-08",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1770051",
+     "date": "2027-01-15",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1776125",
+     "date": "2027-03-10",
+     "where": "In cinemas"
+    },
+    {
+     "key": "movie:1495044",
+     "date": "2027-03-14",
+     "where": "Streaming"
+    }
+   ]
+  }
+ }
 }

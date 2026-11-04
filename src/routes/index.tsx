@@ -1270,7 +1270,7 @@ function Index() {
       {browse === "about" && view === "gallery" && !query ? (
         <AboutContent />
       ) : browse === "soon" && view === "gallery" && !query ? (
-        <ComingSoon onFilm={(id) => browseFrom({ film: id })} />
+        <ComingSoon onFilm={(id) => browseFrom({ film: id })} country={country} onCountry={chooseCountry} />
       ) : browse === "directors" && !facet.maker && view === "gallery" ? (
         <DirectorsList query={directorQuery} />
       ) : browse === "awards" && !facet.award && view === "gallery" ? (

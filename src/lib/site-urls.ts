@@ -188,7 +188,7 @@ function previewFor(search: PageSearch): Preview {
     };
   }
   if (search.browse === 'directors' && !search.maker) return { title: 'Directors', seoTitle: 'Great Documentary Directors', description: 'The documentary filmmakers in the collection, with every title linked.', image: undefined };
-  if (search.browse === 'soon') return { title: 'Upcoming Documentaries: Trailers and Release Dates', description: 'New documentaries coming to cinemas and streaming in Ireland, the UK and the US, with trailers and confirmed release dates. Checked every month.', image: undefined };
+  if (search.browse === 'soon') return { title: 'Upcoming Documentaries: Trailers and Release Dates', description: 'New documentaries coming to cinemas and streaming in your country, with trailers and confirmed release dates. Checked every month.', image: undefined };
   if (search.browse === 'about') return { title: 'About', description: 'A personal collection of documentaries worth your time, built in Ireland.', image: undefined };
   if (search.browse === 'awards' && !search.award) return { title: 'Awards', seoTitle: 'Award-winning Documentaries', description: 'Oscar, BAFTA, Emmy, Sundance, Tribeca, IDA and Cannes winners in the collection.', image: undefined };
   const heading = listHeading(search);
