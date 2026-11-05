@@ -97,7 +97,7 @@ export function AdminStats({ cloud, user }: { cloud: Cloud; user: User }) {
     </div>
     {error && <p className="text-destructive">{error}</p>}
 
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
       <Tile label="Visits" value={fmt(t.visit)} note={`${fmt(t.page)} page views`} />
       <Tile label="Film page views" value={fmt(t.view)} note={`${fmt(summary?.top.view?.length)} different films`} />
       <Tile label="Saves" value={fmt(t.save)} note={`${fmt(t.watched)} marked watched`} />
@@ -112,7 +112,7 @@ export function AdminStats({ cloud, user }: { cloud: Cloud; user: User }) {
         {CHARTS.map((c) => <button key={c.id} type="button" aria-pressed={chart === c.id} onClick={() => setChart(c.id)}
           className={cn('rounded-full border px-2.5 py-1 text-xs', chart === c.id ? 'border-primary bg-primary text-primary-foreground' : 'border-border text-muted-foreground hover:border-primary')}>{c.label}</button>)}
       </div>
-      <ChartContainer config={config} className="mt-3 aspect-auto h-56 w-full">
+      <ChartContainer config={config} className="mt-3 aspect-auto h-56 w-full lg:h-72">
         <BarChart data={series} margin={{ left: -20, right: 4 }}>
           <CartesianGrid vertical={false} />
           <XAxis dataKey="day" tickLine={false} axisLine={false} interval="preserveStartEnd" minTickGap={16} />
@@ -145,7 +145,7 @@ export function AdminStats({ cloud, user }: { cloud: Cloud; user: User }) {
       </div>
     </section>
 
-    <div className="grid gap-8 sm:grid-cols-2">
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <List title="Where visits come from" rows={summary?.top.visit} label={(k) => (k === 'direct' ? 'Direct or unknown' : k)} />
       <List title="Countries" rows={summary?.top.country} label={(k) => countries?.of(k.toUpperCase()) ?? k.toUpperCase()} />
       <List title="Top pages" rows={summary?.top.page} label={(k) => (k === 'home' ? 'Home' : `/${k.replace(/\|/g, '/')}`)} href={(k) => (k === 'home' ? '/' : `/${k.replace(/\|/g, '/')}`)} />

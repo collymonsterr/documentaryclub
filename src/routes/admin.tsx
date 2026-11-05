@@ -87,7 +87,7 @@ function Admin() {
   useEffect(() => setShown(PAGE), [filter, cat, query]);
   const count = (fl: Filter) => (films ?? []).filter((f) => (fl === 'no-trailer' ? !hasTrailer(f) : fl === 'all' || f.tags.includes(fl))).length;
 
-  return <SimplePage title="Admin">
+  return <SimplePage title="Admin" wide>
     {user === undefined ? <p className="mt-4 text-sm text-muted-foreground">Loading…</p>
       : !user ? <div className="mt-4 space-y-3 text-sm">
         <p className="text-muted-foreground">Sign in with the site owner's Google account to edit the catalogue.</p>
