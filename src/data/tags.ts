@@ -15,6 +15,7 @@ export const TAGS = [
   { id: 'filmmaking', label: 'Filmmaking', group: 'topics', title: 'Documentaries About Filmmaking', description: 'How films get made, and how they sometimes fall apart.' },
   { id: 'psychedelics', label: 'Psychedelics', group: 'topics', title: 'Psychedelic Documentaries', description: 'The science, history and culture of mind-altering drugs.' },
   { id: 'narcos', label: 'Narcos', group: 'topics', title: 'Drug Cartel Documentaries', description: 'Cartels, traffickers and the people caught up in the drug trade.' },
+  { id: 'ai', label: 'AI', group: 'topics', title: 'AI Documentaries', description: 'Artificial intelligence, the people building it and what it might do to the rest of us.' },
   { id: 'hackers-and-leaks', label: 'Hackers & leaks', group: 'topics', title: 'Hacking & Leaks Documentaries', description: 'Whistleblowers, hackers and the secrets they brought out.' },
   { id: 'startups', label: 'Startups', group: 'topics', title: 'Startup Documentaries', description: 'Big ideas, bigger egos and what happened to the money.' },
   { id: 'internet-culture', label: 'Internet culture', group: 'topics', title: 'Internet Culture Documentaries', description: 'How life online changed the way people think and behave.' },
