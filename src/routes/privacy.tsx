@@ -8,7 +8,7 @@ export const Route = createFileRoute('/privacy')({
   head: () => staticPageHead('Privacy', 'What Documentary Club collects and why.', '/privacy'),
   component: () => <SimplePage title="Privacy">
     <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/90">
-      <p><strong>Analytics.</strong> If you accept, Google Analytics sets cookies and records which pages are visited, so I can see what people use. If you decline, it never loads.</p>
+      <p><strong>Analytics.</strong> If you accept, Google Analytics sets cookies and records which pages are visited, so I can see what people use. If you decline, it never loads. Accepting also lets the site remember you've visited before, so I can count how many people come back; that note stays in your browser and is removed if you change your choice below.</p>
       <p><strong>Anonymous counts.</strong> Without cookies, the site adds 1 to simple daily tallies: page and film page views, saves, trailer plays, clicks to Netflix or YouTube, searches that find nothing, and visits by referring site, country and device type. Nothing that identifies you is stored with them, and they can't be linked back to you.</p>
       <p><strong>Your device.</strong> Your saved films, watched list, country and analytics choice are kept in your own browser; only the anonymous counts above reach me.</p>
       <p><strong>Your country.</strong> It is worked out from your connection to show the right streaming services. It is only stored as part of the anonymous count of visits per country.</p>

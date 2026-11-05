@@ -22,6 +22,7 @@ export function saveConsent(value: Consent) {
 export const clearConsent = () => {
   try {
     localStorage.removeItem(CONSENT_KEY);
+    localStorage.removeItem('dc-seen');
   } catch {
     // Nothing stored to clear.
   }

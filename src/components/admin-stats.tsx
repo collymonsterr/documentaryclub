@@ -150,6 +150,8 @@ export function AdminStats({ cloud, user }: { cloud: Cloud; user: User }) {
       <List title="Countries" rows={summary?.top.country} label={(k) => countries?.of(k.toUpperCase()) ?? k.toUpperCase()} />
       <List title="Top pages" rows={summary?.top.page} label={(k) => (k === 'home' ? 'Home' : `/${k.replace(/\|/g, '/')}`)} href={(k) => (k === 'home' ? '/' : `/${k.replace(/\|/g, '/')}`)} />
       <List title="Devices" rows={summary?.top.device} label={(k) => k[0]!.toUpperCase() + k.slice(1)} />
+      <List title="New or returning (people who accept cookies)" rows={summary?.top.returning} label={(k) => (k === 'new' ? 'First visits' : 'Return visits')}
+        empty="Counts start when someone accepts the cookie banner." />
       <List title="Searches that found nothing" rows={summary?.top.nosearch} label={(k) => k.replace(/-/g, ' ')} empty="None yet. These are worth adding to the catalogue." />
       <List title="Email signups by placement (all time)" rows={kit && !('error' in kit) ? Object.entries(kit.bySource).map(([k, n]) => ({ k, n })).sort((a, b) => b.n - a.n) : undefined} label={(k) => k} />
       <List title="Most saved by account holders (now)" rows={accounts?.saved} label={(k) => TITLES.get(k) ?? k} href={(k) => `/film/${k}`} />

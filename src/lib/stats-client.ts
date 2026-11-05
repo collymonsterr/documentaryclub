@@ -1,4 +1,4 @@
-import { arrivedFrom } from '@/lib/analytics';
+import { arrivedFrom, readConsent } from '@/lib/analytics';
 import { recordStats } from '@/lib/stats.functions';
 import type { Metric, StatEvent } from '@/lib/stats';
 
@@ -6,7 +6,7 @@ import type { Metric, StatEvent } from '@/lib/stats';
 // Only the live site counts (not previews or local dev), never automated browsers, and never the owner's
 // own devices: /admin sets dc-no-stats once the owner signs in there.
 const NO_STATS = 'dc-no-stats';
-const VISIT = 'dc-visit';
+const VISIT = 'dc-visit', SEEN = 'dc-seen';
 const queue: StatEvent[] = [];
 let timer: number | undefined;
 const once = new Set<string>();
@@ -47,12 +47,22 @@ export function statPage(pathname: string) {
       sessionStorage.setItem(VISIT, '1');
       stat('visit', arrivedFrom());
       stat('device', device());
+      newOrReturning();
     }
   } catch { /* storage blocked: skip visit counting */ }
   const path = pathname === '/' ? 'home' : pathname.replace(/^\/|\/$/g, '');
   stat('page', path, { unique: true });
   const film = /^\/film\/([^/]+)/.exec(pathname)?.[1];
   if (film) stat('view', film, { unique: true });
+}
+// Whether a visitor has been before needs a note kept on their device, so it's only counted for people who
+// accepted analytics (the banner calls this on accept; clearing consent removes the note).
+export function newOrReturning() {
+  if (!enabled() || readConsent() !== 'granted') return;
+  try {
+    if (localStorage.getItem(SEEN)) stat('returning', 'returning');
+    else { localStorage.setItem(SEEN, '1'); stat('returning', 'new'); }
+  } catch { /* storage blocked */ }
 }
 // Outbound clicks are caught in one place, so the buttons themselves stay plain links.
 export function statClick(event: MouseEvent) {

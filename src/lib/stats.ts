@@ -19,6 +19,7 @@ export const METRICS = {
   kofi: 'Ko-fi tip clicks',
   country: 'Visits by country',
   device: 'Visits by device',
+  returning: 'New or returning (visitors who accept cookies)',
 } as const;
 export type Metric = keyof typeof METRICS;
 export type StatEvent = { m: Metric; k: string };

@@ -2,6 +2,7 @@ import { Link, useRouter } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { readConsent, saveConsent, startAnalytics, trackPageView } from '@/lib/analytics';
+import { newOrReturning } from '@/lib/stats-client';
 
 export function ConsentBanner() {
   const router = useRouter();
@@ -16,7 +17,7 @@ export function ConsentBanner() {
   const choose = (value: 'granted' | 'denied') => {
     saveConsent(value);
     setOpen(false);
-    if (value === 'granted') { startAnalytics(); trackPageView(); }
+    if (value === 'granted') { startAnalytics(); trackPageView(); newOrReturning(); }
   };
   return (
     <div role="region" aria-label="Analytics choice" className="fixed inset-x-3 bottom-3 z-50 mx-auto flex max-w-xl flex-wrap items-center gap-3 rounded-lg border border-border bg-card p-3 text-sm shadow-lg">
