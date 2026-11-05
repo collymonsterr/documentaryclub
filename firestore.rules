@@ -1,0 +1,39 @@
+rules_version = '2';
+
+// Documentary Club (Firebase project documentary-club). This file is the record of the published rules:
+// paste it into Firebase console > Firestore > Rules and publish after changing it.
+// - users/{uid}: each signed-in person's saved and watched film IDs. Only that person can change it; the
+//   site owner can read them (as totals on /admin Stats).
+// - stats/{day~metric~key}: anonymous counts (see src/lib/stats.ts). Anyone may only add to a count;
+//   only the owner can read them.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner() {
+      return request.auth != null && request.auth.token.email == 'colinfitz@gmail.com' && request.auth.token.email_verified == true;
+    }
+
+    match /users/{uid} {
+      allow read: if (request.auth != null && request.auth.uid == uid) || isOwner();
+      allow delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['shortlist', 'watched', 'updatedAt'])
+        && request.resource.data.shortlist is list && request.resource.data.shortlist.size() <= 3000
+        && request.resource.data.watched is list && request.resource.data.watched.size() <= 3000;
+    }
+
+    function validStat(id) {
+      let s = request.resource.data;
+      return s.keys().hasOnly(['d', 'm', 'k', 'n'])
+        && s.d is string && s.m is string && s.k is string && s.n is int
+        && id == s.d + '~' + s.m + '~' + s.k
+        && s.d.matches('20[0-9]{2}-[01][0-9]-[0-3][0-9]')
+        && s.m.matches('[a-z]{2,10}')
+        && s.k.matches('[a-z0-9._|-]{1,80}');
+    }
+    match /stats/{id} {
+      allow read: if isOwner();
+      allow create: if validStat(id) && request.resource.data.n >= 1 && request.resource.data.n <= 20;
+      allow update: if validStat(id) && request.resource.data.n > resource.data.n && request.resource.data.n <= resource.data.n + 20;
+    }
+  }
+}

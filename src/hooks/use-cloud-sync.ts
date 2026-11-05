@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { User } from 'firebase/auth';
 import { fromDoc, mergeFirst, sameLists, type Lists } from '@/lib/cloud-sync';
 import { trackEvent } from '@/lib/analytics';
+import { stat } from '@/lib/stats-client';
 
 // Optional Google sign-in that syncs Saved and Watched across devices (Firebase project "documentary-club").
 // These values are public by design; the Firestore rules (users/{uid}, owner only) are what protect the data.
@@ -58,6 +59,8 @@ export function useCloudSync(local: Lists, replace: (lists: Lists) => void, want
     return cloud.store.onSnapshot(ref, (snap) => {
       if (snap.metadata.hasPendingWrites) return;
       const remote = fromDoc(snap.data());
+      // No record yet means a brand-new account (counted anonymously for the owner's Stats page).
+      if (!snap.exists() && !snap.metadata.fromCache) stat('account', 'new', { unique: true });
       const next = firstHere.current || !snap.exists() ? mergeFirst(localRef.current, remote) : remote;
       firstHere.current = false;
       last.current = next;

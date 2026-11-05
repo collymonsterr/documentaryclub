@@ -5,6 +5,7 @@ import type { User } from 'firebase/auth';
 import { ExternalLink, Film as FilmIcon, Pencil, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { AdminStats } from '@/components/admin-stats';
 import { SimplePage } from '@/components/simple-page';
 import { SNAPSHOT } from '@/data/catalogue';
 import { CATEGORIES } from '@/data/films';
@@ -13,6 +14,7 @@ import { loadCloud } from '@/hooks/use-cloud-sync';
 import { ADMIN_TAGS, trailerId, type AdminEdit, type AdminFilm } from '@/lib/admin-edit';
 import { loadAdmin, saveFilm } from '@/lib/admin.functions';
 import { staticPageHead } from '@/lib/site-urls';
+import { excludeThisDevice } from '@/lib/stats-client';
 import { cn } from '@/lib/utils';
 
 // The owner's editing page: Editor's Choice, tags, category, moods and trailers. Saves go to GitHub as commits on main,
@@ -41,6 +43,10 @@ function Admin() {
   const [shown, setShown] = useState(PAGE);
   const [editing, setEditing] = useState('');
   const [busy, setBusy] = useState('');
+  // Stats or film editing; remembered on this device.
+  const [view, setViewState] = useState<'stats' | 'films'>('stats');
+  useEffect(() => { try { if (localStorage.getItem('dc-admin-view') === 'films') setViewState('films'); } catch { /* storage blocked */ } }, []);
+  const setView = (v: 'stats' | 'films') => { setViewState(v); try { localStorage.setItem('dc-admin-view', v); } catch { /* storage blocked */ } };
 
   // Firebase loads on arrival so the Google popup can open straight from the tap (iPhone and iPad block it otherwise).
   useEffect(() => {
@@ -50,6 +56,8 @@ function Admin() {
   }, []);
   useEffect(() => {
     if (!user) { setFilms(null); return; }
+    // The owner's own browsing shouldn't show up in the site counts.
+    excludeThisDevice();
     user.getIdToken().then((token) => load({ data: { token } })).then((r) => {
       if (r.ok) setFilms(r.films); else setMessage({ text: r.reason, error: true });
     }, () => setMessage({ text: "Couldn't load the catalogue.", error: true }));
@@ -90,7 +98,11 @@ function Admin() {
         {message && <div role="status" className={cn('sticky top-2 z-10 mt-4 rounded-lg border px-3 py-2 text-sm shadow-sm', message.error ? 'border-destructive/50 bg-background text-destructive' : 'border-primary/40 bg-background')}>
           {message.text}{message.saved && <> It goes live when you <a href={LOVABLE} target="_blank" rel="noreferrer" className="font-medium text-primary underline underline-offset-4">publish on Lovable <ExternalLink className="inline size-3" /></a> (a minute after saving).</>}
         </div>}
-        {!films ? (!message?.error && <p className="mt-4 text-sm text-muted-foreground">Loading the catalogue…</p>) : <>
+        <div className="mt-4 flex gap-2 border-b border-border pb-3">
+          {(['stats', 'films'] as const).map((v) => <Button key={v} size="sm" variant={view === v ? 'default' : 'ghost'} aria-pressed={view === v} onClick={() => setView(v)}>{v === 'stats' ? 'Stats' : 'Edit films'}</Button>)}
+        </div>
+        {view === 'stats' ? cloud && <AdminStats cloud={cloud} user={user} />
+        : !films ? (!message?.error && <p className="mt-4 text-sm text-muted-foreground">Loading the catalogue…</p>) : <>
           <div className="mt-5 flex flex-wrap gap-2">
             {([['all', 'All'], ['editors-choice', "Editor's Choice"], ['no-trailer', 'No trailer']] as const).map(([id, label]) =>
               <Button key={id} size="sm" variant={filter === id ? 'default' : 'outline'} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label} <span className="opacity-70">{count(id)}</span></Button>)}

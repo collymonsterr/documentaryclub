@@ -11,6 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import { ConsentBanner } from "../components/consent-banner";
+import { StatsTracker } from "../components/stats-tracker";
 import { Toaster } from "../components/ui/sonner";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -153,6 +154,7 @@ function RootComponent() {
       <Outlet />
       <Toaster />
       <ConsentBanner />
+      <StatsTracker />
     </QueryClientProvider>
   );
 }

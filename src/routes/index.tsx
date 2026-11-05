@@ -72,6 +72,7 @@ import { SiteIndex } from "@/components/site-index";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { TrailerPlayer } from "@/components/trailer-player";
 import { usePreference, useTracking } from "@/hooks/use-tracking";
+import { stat } from "@/lib/stats-client";
 import { useCloudSync } from "@/hooks/use-cloud-sync";
 import { AccountSync, SyncNudge } from "@/components/account-sync";
 import { PROMPT_KEYS, canNudgeSync, nextNudgeState, readStore, showNewsletterCard, writeStore } from "@/lib/prompts";
@@ -594,11 +595,16 @@ function Index() {
     navigate({ search: (prev) => ({ ...prev, q: value, film: "" }), replace: true });
   };
   const [shown, setShown] = useState(PAGE);
-  const [shortlist, toggleShort, shortOps] = useTracking(TRACKING_KEYS.shortlist);
+  const [shortlist, toggleShortRaw, shortOps] = useTracking(TRACKING_KEYS.shortlist);
   const [watched, toggleWatchedRaw, watchedOps] = useTracking(TRACKING_KEYS.watched);
+  // Saves and watched marks are counted anonymously for the owner's Stats page (only when added).
+  const toggleShort = (id: string) => {
+    if (!shortlist.has(id)) stat("save", id);
+    toggleShortRaw(id);
+  };
   // Marking watched clears Saved (one direction only).
   const toggleWatched = (id: string) => {
-    if (!watched.has(id)) shortOps.remove(id);
+    if (!watched.has(id)) { stat("watched", id); shortOps.remove(id); }
     toggleWatchedRaw(id);
   };
   // Optional Google account that syncs both lists across devices; Firebase loads only on these lists or for account holders.
@@ -711,6 +717,13 @@ function Index() {
     ytAwards,
     country,
   ]);
+  // A search that finds nothing in the whole catalogue hints at what to add next: counted once the visitor stops typing.
+  useEffect(() => {
+    const q = query.trim();
+    if (q.length < 3 || searchCatalogue(CATALOGUE, q, "all").length) return;
+    const t = window.setTimeout(() => stat("nosearch", q, { unique: true }), 2000);
+    return () => window.clearTimeout(t);
+  }, [query]);
   const ytBlocked = ytPage && hydrated ? selectionFilms({ tag: "free-on-youtube" }).filter((f) => !youtubePlaysIn(f, country) && (!ytAwards || wonAward(f))).length : 0;
   const ytNarrowed = ytAwards || (ytRegionOnly && ytBlocked > 0);
   useEffect(() => {
@@ -801,6 +814,7 @@ function Index() {
     const pool = list.length > 1 ? list.filter((f) => f.id !== search.film) : list;
     const pick = pool[Math.floor(Math.random() * pool.length)];
     if (pick) {
+      stat("surprise", pick.id);
       setSurprised(pick.id);
       openSpotlight(pick.id);
     }
@@ -1684,7 +1698,7 @@ function Index() {
             trailer={extra?.trailer}
             backdrop={extra?.backdrops?.[0]}
             playing={trailerOpen}
-            onPlay={() => setTrailerOpen(true)}
+            onPlay={() => { setTrailerOpen(true); stat("trailer", film.id); }}
           />
           <RelatedRows film={film} onDirector={searchDirector} onLike={(id) => browseFrom({ like: id })} />
           {surprised !== film.id && !newsletterAsk.engaged && !newsletterAsk.quiet && (
