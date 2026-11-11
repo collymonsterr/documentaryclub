@@ -57,7 +57,7 @@ export function DirectorsList({ query }: { query: string }) {
         <div className="flex items-start gap-4">
           <Portrait name={m.name} />
           <div className="min-w-0">
-            <h3 className="font-display text-xl font-semibold"><Link to="/" search={{ ...base, maker: m.name, browse: 'directors' }} className="hover:text-primary">{m.name}</Link></h3>
+            <h2 className="font-display text-xl font-semibold"><Link to="/" search={{ ...base, maker: m.name, browse: 'directors' }} className="hover:text-primary">{m.name}</Link></h2>
             <p className="text-sm text-muted-foreground">{titles(m.films.length)}</p>
             {p?.blurb && <p className="mt-1 max-w-2xl text-sm">{p.blurb}</p>}
             <ProfileLinks name={m.name}>

@@ -170,7 +170,7 @@ function baseHeading(search: PageSearch, cat: string) {
 const countLabel = (n: number) => `${n} ${n === 1 ? 'documentary' : 'documentaries'}`;
 export const documentaryCount = countLabel;
 
-type Preview = { title: string; description: string; image?: string | undefined; seoTitle?: string | undefined; noindex?: boolean; jsonLd?: object[] };
+type Preview = { title: string; description: string; image?: string | undefined; seoTitle?: string | undefined; noindex?: boolean; ogTitle?: string; ogType?: string; jsonLd?: object[] };
 const names = (list: string[]) => list.length > 1 ? `${list.slice(0, -1).join(', ')} and ${list.at(-1)}` : list[0] ?? '';
 // Our own summary leads (director, year, best award, scores), so the description isn't the synopsis every other site copies.
 export function filmDescription(film: Film) {
@@ -192,6 +192,7 @@ function previewFor(search: PageSearch): Preview {
     return {
       title: `${film.title} (${film.year})`, seoTitle: `${film.title} (${film.year}): Trailer, Ratings & Where to Watch`,
       description: filmDescription(film), image: snap?.backdrops?.[0] ?? snap?.poster,
+      ogType: 'article',
       jsonLd: [filmSchema(film), breadcrumbs([['Home', '/'], ...(crumb ? [crumb] : []), [film.title, `/film/${film.id}`]])],
     };
   }
@@ -223,19 +224,19 @@ function previewFor(search: PageSearch): Preview {
       jsonLd: [itemList(heading.seoTitle ?? heading.title, films), breadcrumbs([['Home', '/'], ...parent, [heading.seoTitle ?? heading.title, path]])],
     };
   }
-  return { title: 'Extraordinary true stories', seoTitle: 'Extraordinary True Stories: The Best Documentaries to Watch', description: `${CATALOGUE.length} documentaries worth your time, with trailers, ratings and where to watch them.`, image: undefined, jsonLd: siteSchema() };
+  return { title: 'Extraordinary true stories', ogTitle: 'Documentary Club: The Best Documentaries to Watch', seoTitle: 'Extraordinary True Stories: The Best Documentaries to Watch', description: `${CATALOGUE.length} documentaries worth your time, with trailers, ratings and where to watch them.`, image: undefined, jsonLd: siteSchema() };
 }
 const absolute = (path: string) => (path.startsWith('http') ? path : `${SITE_ORIGIN}${path}`);
 // Absolute, server-rendered tags: WhatsApp, LinkedIn and Reddit read these without running any JavaScript.
 export function previewHead(preview: Preview, path: string | null) {
-  const title = `${preview.title} | ${SITE_NAME}`, image = absolute(preview.image ?? '/og/default.jpg');
+  const title = preview.ogTitle ?? `${preview.title} | ${SITE_NAME}`, image = absolute(preview.image ?? '/og/default.jpg');
   const url = path ? absolute(path) : undefined;
   return {
     meta: [
       { title: `${preview.seoTitle ?? preview.title} | ${SITE_NAME}` }, { name: 'description', content: preview.description },
       ...(preview.noindex ? [{ name: 'robots', content: 'noindex, follow' }] : []),
       { property: 'og:site_name', content: SITE_NAME }, { property: 'og:title', content: title }, { property: 'og:description', content: preview.description },
-      { property: 'og:type', content: 'website' }, { property: 'og:image', content: image }, ...(url ? [{ property: 'og:url', content: url }] : []),
+      { property: 'og:type', content: preview.ogType ?? 'website' }, { property: 'og:image', content: image }, ...(url ? [{ property: 'og:url', content: url }] : []),
       { name: 'twitter:card', content: 'summary_large_image' }, { name: 'twitter:title', content: title }, { name: 'twitter:description', content: preview.description }, { name: 'twitter:image', content: image },
       // TanStack renders this meta form as a JSON-LD script; its types only know HTML meta attributes.
       ...(preview.jsonLd ?? []).map(data => ({ 'script:ld+json': data }) as unknown as { name: string; content: string }),

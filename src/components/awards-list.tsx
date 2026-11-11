@@ -23,7 +23,7 @@ export function AwardsList({ films, onSeeAll }: { films: Film[]; onSeeAll: (awar
       <div className="flex items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2">
           <AwardIcon body={r.id as AwardBody} className="size-5" />
-          <h3 className="font-display text-xl font-semibold">{r.label}</h3>
+          <h2 className="font-display text-xl font-semibold">{r.label}</h2>
           <span className="text-sm text-muted-foreground">{documentaryCount(r.films.length)}</span>
         </div>
         <Button asChild variant="link" size="sm" className="h-auto shrink-0 p-0">
