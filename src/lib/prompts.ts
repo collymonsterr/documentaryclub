@@ -14,7 +14,8 @@ export const nextNudgeState = (state: string | null) => String((Number(state) ||
 
 // Where a visit came from: utm_source when a shared link has one, else the referring site (reddit.com for any Reddit domain).
 export function arrivalSource(search: string, referrer: string, ownHost: string) {
-  const utm = new URLSearchParams(search).get('utm_source')?.trim().toLowerCase();
+  // utm_source, else a partner's ?ref= (Documentary First links with ?ref=documentaryfirst), else the referring site.
+  const params = new URLSearchParams(search), utm = (params.get('utm_source') || params.get('ref'))?.trim().toLowerCase();
   if (utm) return utm.slice(0, 40);
   try {
     const host = new URL(referrer).hostname.toLowerCase();

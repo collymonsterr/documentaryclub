@@ -17,6 +17,8 @@ describe('asks', () => {
   });
   it('names where a visit came from', () => {
     expect(arrivalSource('?utm_source=Reddit', 'https://www.reddit.com/', 'documentaryclub.fyi')).toBe('reddit');
+    expect(arrivalSource('?ref=documentaryfirst', '', 'documentaryclub.fyi')).toBe('documentaryfirst');
+    expect(arrivalSource('?utm_source=documentaryfirst&ref=x', '', 'documentaryclub.fyi')).toBe('documentaryfirst');
     expect(arrivalSource('', 'https://old.reddit.com/r/Documentaries/', 'documentaryclub.fyi')).toBe('reddit.com');
     expect(arrivalSource('', 'https://out.reddit.com/t3_x', 'documentaryclub.fyi')).toBe('reddit.com');
     expect(arrivalSource('', 'https://www.google.com/', 'documentaryclub.fyi')).toBe('google.com');

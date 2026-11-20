@@ -1,0 +1,416 @@
+{
+ "checked": "2026-11-20",
+ "picks": [
+  {
+   "film": "the-ai-doc-or-how-i-became-an-apocaloptimist",
+   "title": "The AI Doc: Or How I Became an Apocaloptimist",
+   "guest": "Anne Easton",
+   "episode": 290,
+   "aired": "2026-11-19"
+  },
+  {
+   "film": "undefeated",
+   "title": "Undefeated",
+   "guest": "Andre N. Jackson",
+   "aired": "2026-08-21"
+  },
+  {
+   "film": "searching-for-sugar-man",
+   "title": "Searching for Sugar Man",
+   "guest": "Jonathan de Jong",
+   "episode": 284,
+   "aired": "2026-08-06"
+  },
+  {
+   "film": "searching-for-sugar-man",
+   "title": "Searching for Sugar Man",
+   "guest": "Andrew Gans",
+   "aired": "2026-06-18"
+  },
+  {
+   "film": "pez-outlaw",
+   "title": "The Pez Outlaw",
+   "guest": "Robin Canfield",
+   "episode": 276,
+   "aired": "2026-04-23"
+  },
+  {
+   "film": "crumb",
+   "title": "Crumb",
+   "guest": "Erik Ewers",
+   "episode": 275,
+   "aired": "2026-04-09"
+  },
+  {
+   "film": "hearts-of-darkness-a-filmmaker-s-apocalypse",
+   "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+   "guest": "Erik Ewers",
+   "episode": 275,
+   "aired": "2026-04-09"
+  },
+  {
+   "film": "jiro-dreams-of-sushi",
+   "title": "Jiro Dreams of Sushi",
+   "guest": "Erik Ewers",
+   "episode": 275,
+   "aired": "2026-04-09"
+  },
+  {
+   "film": "man-on-wire",
+   "title": "Man on Wire",
+   "guest": "Christopher Loren Ewers",
+   "episode": 275,
+   "aired": "2026-04-09"
+  },
+  {
+   "film": "the-thin-blue-line",
+   "title": "The Thin Blue Line",
+   "guest": "Erik Ewers",
+   "episode": 275,
+   "aired": "2026-04-09"
+  },
+  {
+   "film": "crip-camp",
+   "title": "Crip Camp: A Disability Revolution",
+   "guest": "Quinnolyn Benson-Yates",
+   "episode": 272,
+   "aired": "2026-02-25"
+  },
+  {
+   "film": "free-solo",
+   "title": "Free Solo",
+   "guest": "Quinnolyn Benson-Yates",
+   "episode": 272,
+   "aired": "2026-02-25"
+  },
+  {
+   "film": "meru",
+   "title": "Meru",
+   "guest": "Quinnolyn Benson-Yates",
+   "episode": 272,
+   "aired": "2026-02-25"
+  },
+  {
+   "film": "fyre",
+   "title": "Fyre: The Greatest Party That Never Happened",
+   "guest": "Charles Olivier",
+   "episode": 270,
+   "aired": "2026-01-29"
+  },
+  {
+   "film": "the-kid-stays-in-the-picture",
+   "title": "The Kid Stays in the Picture",
+   "guest": "Jeffrey Roth",
+   "episode": 269,
+   "aired": "2026-01-15"
+  },
+  {
+   "film": "virunga",
+   "title": "Virunga",
+   "guest": "Peter Kelly",
+   "episode": 268,
+   "aired": "2026-01-01"
+  },
+  {
+   "film": "burden-of-dreams",
+   "title": "Burden of Dreams",
+   "guest": "Josh Roush",
+   "episode": 262,
+   "aired": "2025-10-09"
+  },
+  {
+   "film": "the-kid-stays-in-the-picture",
+   "title": "The Kid Stays in the Picture",
+   "guest": "Steve Cohen",
+   "episode": 257,
+   "aired": "2025-07-24"
+  },
+  {
+   "film": "mountain-queen-the-summits-of-lhakpa-sherpa",
+   "title": "Mountain Queen: The Summits of Lhakpa Sherpa",
+   "guest": "Greg Fitzpatrick",
+   "episode": 249,
+   "aired": "2025-04-10"
+  },
+  {
+   "film": "the-jinx",
+   "title": "The Jinx: The Life and Deaths of Robert Durst",
+   "guest": "Anne Easton",
+   "episode": 248,
+   "aired": "2025-03-26"
+  },
+  {
+   "film": "three-identical-strangers",
+   "title": "Three Identical Strangers",
+   "guest": "Eric Gardner",
+   "episode": 247,
+   "aired": "2025-03-14"
+  },
+  {
+   "film": "no-other-land",
+   "title": "No Other Land",
+   "guest": "Abby Ginzberg",
+   "episode": 245,
+   "aired": "2025-03-01"
+  },
+  {
+   "film": "porcelain-war",
+   "title": "Porcelain War",
+   "guest": "Abby Ginzberg",
+   "episode": 245,
+   "aired": "2025-03-01"
+  },
+  {
+   "film": "13th",
+   "title": "13th",
+   "guest": "Robin Hamilton",
+   "episode": 243,
+   "aired": "2025-01-30"
+  },
+  {
+   "film": "touching-the-void",
+   "title": "Touching the Void",
+   "guest": "Alex Harz",
+   "episode": 242,
+   "aired": "2025-01-16"
+  },
+  {
+   "film": "how-to-survive-a-plague",
+   "title": "How to Survive a Plague",
+   "guest": "David McMahon",
+   "episode": 239,
+   "aired": "2024-11-19"
+  },
+  {
+   "film": "when-we-were-kings",
+   "title": "When We Were Kings",
+   "guest": "Sarah Burns",
+   "episode": 239,
+   "aired": "2024-11-19"
+  },
+  {
+   "film": "still-a-michael-j-fox-movie",
+   "title": "Still: A Michael J. Fox Movie",
+   "guest": "Matt Beurois",
+   "episode": 238,
+   "aired": "2024-11-14"
+  },
+  {
+   "film": "paradise-lost",
+   "title": "Paradise Lost: The Child Murders at Robin Hood Hills",
+   "guest": "Evan Wise",
+   "episode": 237,
+   "aired": "2024-11-06"
+  },
+  {
+   "film": "fire-of-love",
+   "title": "Fire of Love",
+   "guest": "Inbal Lessner",
+   "episode": 231,
+   "aired": "2024-08-22"
+  },
+  {
+   "film": "harlan-county-usa",
+   "title": "Harlan County, U.S.A.",
+   "guest": "Cecilia Peck",
+   "episode": 231,
+   "aired": "2024-08-22"
+  },
+  {
+   "film": "won-t-you-be-my-neighbor",
+   "title": "Won't You Be My Neighbor?",
+   "guest": "Josh Haygood",
+   "episode": 225,
+   "aired": "2024-06-08"
+  },
+  {
+   "film": "greatest-night",
+   "title": "The Greatest Night in Pop",
+   "guest": "David Paterson",
+   "episode": 224,
+   "aired": "2024-05-24"
+  },
+  {
+   "film": "capturing-the-friedmans",
+   "title": "Capturing the Friedmans",
+   "guest": "Juan Pablo Reinoso",
+   "episode": 222,
+   "aired": "2024-04-25"
+  },
+  {
+   "film": "dear-zachary",
+   "title": "Dear Zachary: A Letter to a Son About His Father",
+   "guest": "Juan Pablo Reinoso",
+   "episode": 222,
+   "aired": "2024-04-25"
+  },
+  {
+   "film": "mariupol",
+   "title": "20 Days in Mariupol",
+   "guest": "Juan Pablo Reinoso",
+   "episode": 222,
+   "aired": "2024-04-25"
+  },
+  {
+   "film": "searching-for-sugar-man",
+   "title": "Searching for Sugar Man",
+   "guest": "Alex Ivany",
+   "episode": 221,
+   "aired": "2024-04-11"
+  },
+  {
+   "film": "three-identical-strangers",
+   "title": "Three Identical Strangers",
+   "guest": "Yvette Amirian",
+   "episode": 219,
+   "aired": "2024-03-15"
+  },
+  {
+   "film": "senna",
+   "title": "Senna",
+   "guest": "Laela Kilbourn",
+   "episode": 217,
+   "aired": "2024-02-14"
+  },
+  {
+   "film": "minding-the-gap",
+   "title": "Minding the Gap",
+   "guest": "Mark Pedri",
+   "episode": 213,
+   "aired": "2023-12-21"
+  },
+  {
+   "film": "the-deepest-breath",
+   "title": "The Deepest Breath",
+   "guest": "Gail Gilbert",
+   "episode": 210,
+   "aired": "2023-11-09"
+  },
+  {
+   "film": "the-pigeon-tunnel",
+   "title": "The Pigeon Tunnel",
+   "guest": "Gail Gilbert",
+   "episode": 210,
+   "aired": "2023-11-09"
+  },
+  {
+   "film": "gimme-shelter",
+   "title": "Gimme Shelter",
+   "guest": "Andrew Cohen",
+   "episode": 207,
+   "aired": "2023-10-12"
+  },
+  {
+   "film": "the-two-escobars",
+   "title": "The Two Escobars",
+   "guest": "Andrew Cohen",
+   "episode": 206,
+   "aired": "2023-09-29"
+  },
+  {
+   "film": "summer-of-soul",
+   "title": "Summer of Soul (...Or, When the Revolution Could Not Be Televised)",
+   "guest": "Craig Renaud",
+   "episode": 204,
+   "aired": "2023-08-31"
+  },
+  {
+   "film": "the-staircase",
+   "title": "The Staircase",
+   "guest": "Kara Talve",
+   "episode": 203,
+   "aired": "2023-08-17"
+  },
+  {
+   "film": "particle-fever",
+   "title": "Particle Fever",
+   "guest": "Neil Losin",
+   "episode": 201,
+   "aired": "2023-07-20"
+  },
+  {
+   "film": "fire-of-love",
+   "title": "Fire of Love",
+   "guest": "Joe Amodei",
+   "episode": 194,
+   "aired": "2023-04-13"
+  },
+  {
+   "film": "all-the-beauty-and-the-bloodshed",
+   "title": "All the Beauty and the Bloodshed",
+   "guest": "Zach Callahan",
+   "episode": 192,
+   "aired": "2023-03-16"
+  },
+  {
+   "film": "navalny",
+   "title": "Navalny",
+   "guest": "Chad Gilchrist",
+   "episode": 191,
+   "aired": "2023-03-01"
+  },
+  {
+   "film": "the-dissident",
+   "title": "The Dissident",
+   "guest": "Chad Gilchrist",
+   "episode": 187,
+   "aired": "2023-01-05"
+  },
+  {
+   "film": "into-the-deep",
+   "title": "Into the Deep",
+   "guest": "Tayler Gilchrist",
+   "episode": 186,
+   "aired": "2022-12-22"
+  },
+  {
+   "film": "f-for-fake",
+   "title": "F for Fake",
+   "guest": "Zach Callahan",
+   "episode": 182,
+   "aired": "2022-10-27"
+  },
+  {
+   "film": "undefeated",
+   "title": "Undefeated",
+   "guest": "Robbie Davis",
+   "episode": 181,
+   "aired": "2022-10-12"
+  },
+  {
+   "film": "our-father",
+   "title": "Our Father",
+   "guest": "Jeff Kurtenacker",
+   "episode": 174,
+   "aired": "2022-07-14"
+  },
+  {
+   "film": "minding-the-gap",
+   "title": "Minding the Gap",
+   "guest": "Zach Callahan",
+   "episode": 172,
+   "aired": "2022-06-29"
+  },
+  {
+   "film": "navalny",
+   "title": "Navalny",
+   "guest": "Zach Callahan",
+   "episode": 172,
+   "aired": "2022-06-29"
+  },
+  {
+   "film": "formula-1-drive-to-survive",
+   "title": "Formula 1: Drive to Survive",
+   "guest": "Mindy Cook",
+   "episode": 158,
+   "aired": "2022-03-17"
+  },
+  {
+   "film": "muscle-shoals",
+   "title": "Muscle Shoals",
+   "guest": "Jeff Kurtenacker",
+   "episode": 150,
+   "aired": "2022-01-20"
+  }
+ ]
+}

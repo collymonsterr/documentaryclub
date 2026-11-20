@@ -56,6 +56,8 @@ import { COUNTRIES, DEFAULT_COUNTRY, browserCountry, isCountry } from "@/lib/cou
 import { YT_AWARDS_PATH, documentaryCount, listHeading, pageHead, pagePath, selectionFilms } from "@/lib/site-urls";
 import { softClick } from "@/lib/utils";
 import { LIKE_PAGES } from "@/data/like-pages";
+import { DF_ID } from "@/data/documentary-first";
+import { DocumentaryFirstCredit, DocumentaryFirstListLink } from "@/components/documentary-first";
 import { service } from "@/data/streaming";
 import { PICK_TAGS, TAGS, TOPIC_TAGS, orderedTags, tagLabel } from "@/data/tags";
 import { AwardCaption, AwardIcon, AwardIcons } from "@/components/award-icons";
@@ -554,7 +556,7 @@ function Index() {
   const facet = {
     award: AWARDS.find((a) => a.id === (OLD_AWARD_IDS[search.award] ?? search.award))?.id ?? "",
     mood: MOODS.some((m) => m.id === search.mood) ? search.mood : "",
-    pick: service(search.pick) ? search.pick : "",
+    pick: service(search.pick) || search.pick === DF_ID ? search.pick : "",
     maker: makerIndex().some((m) => m.name === search.maker) ? search.maker : "",
     tag: TAGS.some((t) => t.id === search.tag) ? search.tag : "",
   };
@@ -1258,6 +1260,7 @@ function Index() {
               </p>
               <p className="mt-1 text-sm text-muted-foreground">{heading.description}</p>
               {heading.intro && <p className="mt-2 max-w-2xl text-sm leading-relaxed">{heading.intro}</p>}
+              {heading.key === `collection:${DF_ID}` && <DocumentaryFirstListLink />}
               {ytPage && (
                 <YouTubeListControls
                   awards={ytAwards}
@@ -1619,6 +1622,7 @@ function Index() {
                   </Button>
                 ))}
               </div>
+              <DocumentaryFirstCredit filmId={film.id} onAll={() => browseFrom({ pick: DF_ID })} />
 
               <div className="mt-4 flex flex-wrap gap-2">
                 <WatchOnYouTube film={film} country={country} />
